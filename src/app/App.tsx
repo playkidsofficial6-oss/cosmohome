@@ -5,7 +5,7 @@ import {
 import {
   ArrowRight, Menu, X, Instagram, Facebook,
   Home, MessageCircle, ClipboardList, Sparkles, Heart, Award,
-  Shield, AlertTriangle, CheckCircle, XCircle,
+  Shield, AlertTriangle, CheckCircle, XCircle, Phone,
   BadgeCheck, Stethoscope, GraduationCap, Users, ChevronRight,
 } from "lucide-react";
 
@@ -14,8 +14,8 @@ const D = { fontFamily: "'Fraunces', serif" };
 const M = { fontFamily: "'DM Mono', monospace" };
 const B = { fontFamily: "'DM Sans', sans-serif" };
 const GOLD = "#C9956A";
-const EASE: [number,number,number,number] = [0.22, 1, 0.36, 1];
-const EASE2: [number,number,number,number] = [0.76, 0, 0.24, 1];
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const EASE2: [number, number, number, number] = [0.76, 0, 0.24, 1];
 const GRAIN = `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`;
 
 /* ══ SHARED HELPERS ══ */
@@ -31,7 +31,7 @@ function FadeUp({ children, delay = 0, className = "" }: { children: React.React
   );
 }
 
-function SlideIn({ children, delay = 0, from = "left", className = "" }: { children: React.ReactNode; delay?: number; from?: "left"|"right"; className?: string }) {
+function SlideIn({ children, delay = 0, from = "left", className = "" }: { children: React.ReactNode; delay?: number; from?: "left" | "right"; className?: string }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   return (
@@ -65,7 +65,7 @@ function Preloader({ onDone }: { onDone: () => void }) {
         style={{ background: "radial-gradient(circle, #C9956A 0%, transparent 65%)" }}
         initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 0.18, scale: 1.5 }}
         transition={{ duration: 2.5 }} />
-      {["top-8 left-8 border-t border-l","top-8 right-8 border-t border-r","bottom-8 left-8 border-b border-l","bottom-8 right-8 border-b border-r"].map((c, i) => (
+      {["top-8 left-8 border-t border-l", "top-8 right-8 border-t border-r", "bottom-8 left-8 border-b border-l", "bottom-8 right-8 border-b border-r"].map((c, i) => (
         <motion.div key={i} className={`absolute w-10 h-10 border-[#C9956A]/40 ${c}`}
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 + i * 0.1 }} />
       ))}
@@ -128,21 +128,48 @@ function Nav({ ready }: { ready: boolean }) {
       </motion.header>
       <AnimatePresence>
         {open && (
-          <motion.div className="fixed inset-0 z-40 bg-[#FAF7F2] flex flex-col items-center justify-center gap-8"
-            initial={{ clipPath: "inset(0 0 100% 0)" }} animate={{ clipPath: "inset(0 0 0% 0)" }}
-            exit={{ clipPath: "inset(0 0 100% 0)" }} transition={{ duration: 0.5, ease: EASE2 }}>
-            <button onClick={() => setOpen(false)} className="absolute top-5 right-6 text-[#2C1810]"><X size={22} /></button>
-            {links.map((l, i) => (
-              <motion.a key={l.label} href={l.href} onClick={() => setOpen(false)}
-                className="text-3xl text-[#2C1810] hover:text-[#C9956A] transition-colors" style={D}
-                initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.25 + i * 0.07 }}>{l.label}</motion.a>
-            ))}
-            <motion.a href="#invitation" onClick={() => setOpen(false)} style={M}
-              className="text-xs tracking-[0.3em] uppercase text-[#C9956A] mt-2"
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
-              Book Consultation →
-            </motion.a>
+          <motion.div className="fixed inset-0 z-50 bg-[#160A05] flex flex-col"
+            initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }} transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}>
+
+            {/* Top Bar inside Menu */}
+            <div className="flex items-center justify-between px-6 h-[72px] shrink-0">
+              <a href="#" className="flex flex-col leading-none" onClick={() => setOpen(false)}>
+                <span className="text-xl tracking-[0.12em] uppercase text-[#FAF7F2]" style={D}>Cosmo Home</span>
+                <span className="text-[9px] tracking-[0.3em] uppercase text-[#C9956A] mt-0.5" style={M}>Aesthetic Medicine</span>
+              </a>
+              <button onClick={() => setOpen(false)} className="p-2 -mr-2 text-[#FAF7F2] hover:text-[#C9956A] transition-colors">
+                <X size={24} strokeWidth={1.5} />
+              </button>
+            </div>
+
+            {/* Links */}
+            <div className="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-8">
+              {links.map((l, i) => (
+                <motion.a key={l.label} href={l.href} onClick={() => setOpen(false)}
+                  className="text-sm tracking-[0.15em] uppercase text-[#FAF7F2] hover:text-[#C9956A] transition-colors" style={D}
+                  initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.12 + i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
+                  {l.label}
+                </motion.a>
+              ))}
+            </div>
+
+            {/* Bottom Buttons inside Menu */}
+            <div className="px-6 pb-24 pt-6 flex flex-col gap-3">
+              <motion.a href="tel:09946336480" onClick={() => setOpen(false)}
+                className="flex items-center justify-center gap-3 w-full py-4 border border-[#2C1810] bg-[#160A05] text-[#FAF7F2] hover:border-[#C9956A] hover:text-[#C9956A] transition-colors"
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45, duration: 0.5, ease: [0.22, 1, 0.36, 1] }} style={B}>
+                <Phone size={16} className="text-[#C9956A]" />
+                <span className="text-xs font-medium tracking-[0.15em] uppercase">Call 099463 36480</span>
+              </motion.a>
+              <motion.a href="https://wa.me/669946336480" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}
+                className="flex items-center justify-center gap-3 w-full py-4 bg-[#C9956A] text-[#160A05] hover:bg-[#d6a57c] transition-colors"
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55, duration: 0.5, ease: [0.22, 1, 0.36, 1] }} style={B}>
+                <MessageCircle size={16} className="fill-current" />
+                <span className="text-xs font-medium tracking-[0.15em] uppercase">WhatsApp Us</span>
+              </motion.a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -255,8 +282,8 @@ function Philosophy() {
           </div>
           <div className="flex flex-col gap-8 lg:pt-4">
             {[
-              { n: "I",   title: "Beauty should feel personal",     body: "No two faces are alike. No two journeys are alike. COSMO HOME was built on the belief that aesthetic medicine must begin with listening — truly listening — before it begins with treating." },
-              { n: "II",  title: "Expertise is an act of care",     body: "The most beautiful outcomes come not from the newest technology, but from the deepest understanding of anatomy, proportion, and the subtlety of natural ageing." },
+              { n: "I", title: "Beauty should feel personal", body: "No two faces are alike. No two journeys are alike. COSMO HOME was built on the belief that aesthetic medicine must begin with listening — truly listening — before it begins with treating." },
+              { n: "II", title: "Expertise is an act of care", body: "The most beautiful outcomes come not from the newest technology, but from the deepest understanding of anatomy, proportion, and the subtlety of natural ageing." },
               { n: "III", title: "You deserve to feel at home here", body: "Most clinics are transactional. We built COSMO HOME to be the opposite — a place where you feel safe, heard, and genuinely cared for. Not a number. A person." },
             ].map((item, i) => (
               <FadeUp key={item.n} delay={0.1 + i * 0.1}>
@@ -297,7 +324,7 @@ function ExtraordinaryCare() {
                 animate={{ rotate: 360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }}>
                 <motion.div animate={{ rotate: -360 }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }}>
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C9956A" strokeWidth="1.5">
-                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                    <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
                   </svg>
                 </motion.div>
                 {Array.from({ length: 12 }).map((_, i) => (
@@ -498,12 +525,12 @@ function Experiences() {
 type Step = { Icon: React.FC<{ size?: number; color?: string }>; n: string; phase: string; emoji: string; color: string; desc: string };
 
 const STEPS: Step[] = [
-  { Icon: Home,          n: "01", phase: "Arrival",       emoji: "🏡", color: "#C9956A", desc: "You are welcomed — not checked in. Chamomile tea. A calm room. No rush. Just warmth from the moment you arrive." },
-  { Icon: MessageCircle, n: "02", phase: "Conversation",  emoji: "💬", color: "#B8806A", desc: "Dr. Ruxana listens first. Your 60-minute consultation begins with you talking, and her understanding who you are." },
-  { Icon: ClipboardList, n: "03", phase: "Your Plan",     emoji: "📋", color: "#A87060", desc: "A bespoke plan designed for you — staged, thoughtful, honest. If nothing is right for you today, she will say so." },
-  { Icon: Sparkles,      n: "04", phase: "Experience",    emoji: "✨", color: "#C9956A", desc: "Calm music. Warm lighting. Every step narrated clearly so nothing is unexpected. You remain in control." },
-  { Icon: Heart,         n: "05", phase: "Aftercare",     emoji: "💛", color: "#B8806A", desc: "Dr. Ruxana's direct line. A personalised aftercare guide. A 48-hour check-in. The care continues long after." },
-  { Icon: Award,         n: "06", phase: "Results",       emoji: "🌟", color: "#A87060", desc: "Results documented with clinical photography — honouring your journey and the confidence you carry home." },
+  { Icon: Home, n: "01", phase: "Arrival", emoji: "🏡", color: "#C9956A", desc: "You are welcomed — not checked in. Chamomile tea. A calm room. No rush. Just warmth from the moment you arrive." },
+  { Icon: MessageCircle, n: "02", phase: "Conversation", emoji: "💬", color: "#B8806A", desc: "Dr. Ruxana listens first. Your 60-minute consultation begins with you talking, and her understanding who you are." },
+  { Icon: ClipboardList, n: "03", phase: "Your Plan", emoji: "📋", color: "#A87060", desc: "A bespoke plan designed for you — staged, thoughtful, honest. If nothing is right for you today, she will say so." },
+  { Icon: Sparkles, n: "04", phase: "Experience", emoji: "✨", color: "#C9956A", desc: "Calm music. Warm lighting. Every step narrated clearly so nothing is unexpected. You remain in control." },
+  { Icon: Heart, n: "05", phase: "Aftercare", emoji: "💛", color: "#B8806A", desc: "Dr. Ruxana's direct line. A personalised aftercare guide. A 48-hour check-in. The care continues long after." },
+  { Icon: Award, n: "06", phase: "Results", emoji: "🌟", color: "#A87060", desc: "Results documented with clinical photography — honouring your journey and the confidence you carry home." },
 ];
 
 /* ── Modern roadmap step card ── */
@@ -733,16 +760,16 @@ const DOCTORS = [
 ];
 
 const STANDARDS = [
-  { Icon: GraduationCap, label: "Full medical degrees",      body: "Every doctor at COSMO HOME holds a recognised medical degree (MBBS minimum) plus specialist postgraduate qualifications. No exceptions." },
-  { Icon: BadgeCheck,    label: "Board-certified specialists", body: "Our dermatologists are MD/DNB-qualified — the highest clinical standard for skin medicine in India and internationally recognised." },
-  { Icon: Stethoscope,   label: "Emergency-ready clinicians", body: "All practitioners are trained to recognise and immediately manage complications — including vascular occlusion and severe adverse reactions." },
-  { Icon: Shield,        label: "Fully insured & indemnified", body: "Every procedure is covered by comprehensive medical indemnity. Your safety is our first legal and ethical obligation." },
-  { Icon: Users,         label: "Named consultant care",      body: "You always know who is treating you and exactly what their qualifications are. We never delegate procedures to unqualified staff." },
-  { Icon: CheckCircle,   label: "Honest about what we won't do", body: "We decline treatments we cannot perform safely. Knowing when to say no is the mark of a genuine clinician — not a salesperson." },
+  { Icon: GraduationCap, label: "Full medical degrees", body: "Every doctor at COSMO HOME holds a recognised medical degree (MBBS minimum) plus specialist postgraduate qualifications. No exceptions." },
+  { Icon: BadgeCheck, label: "Board-certified specialists", body: "Our dermatologists are MD/DNB-qualified — the highest clinical standard for skin medicine in India and internationally recognised." },
+  { Icon: Stethoscope, label: "Emergency-ready clinicians", body: "All practitioners are trained to recognise and immediately manage complications — including vascular occlusion and severe adverse reactions." },
+  { Icon: Shield, label: "Fully insured & indemnified", body: "Every procedure is covered by comprehensive medical indemnity. Your safety is our first legal and ethical obligation." },
+  { Icon: Users, label: "Named consultant care", body: "You always know who is treating you and exactly what their qualifications are. We never delegate procedures to unqualified staff." },
+  { Icon: CheckCircle, label: "Honest about what we won't do", body: "We decline treatments we cannot perform safely. Knowing when to say no is the mark of a genuine clinician — not a salesperson." },
 ];
 
 function TeamAndStandards() {
-  const [tab, setTab] = useState<"danger"|"standards">("standards");
+  const [tab, setTab] = useState<"danger" | "standards">("standards");
   return (
     <section id="our-team" className="bg-[#FAF7F2]">
       {/* ── ANTI-QUACKERY first ── */}
@@ -975,10 +1002,10 @@ function Invitation() {
             </p>
             <div className="flex flex-col gap-4 mb-10">
               {[
-                { label: "Phone",   value: "+44 20 7946 0512" },
-                { label: "Email",   value: "hello@cosmohome.co.uk" },
+                { label: "Phone", value: "+44 20 7946 0512" },
+                { label: "Email", value: "hello@cosmohome.co.uk" },
                 { label: "Address", value: "14 Harley Street, London W1G" },
-                { label: "Hours",   value: "Mon–Sat · 9am–7pm" },
+                { label: "Hours", value: "Mon–Sat · 9am–7pm" },
               ].map(({ label, value }, i) => (
                 <motion.div key={label} initial={{ opacity: 0, x: -14 }} whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="flex gap-6">
@@ -1129,36 +1156,18 @@ function MobileBottomCTA() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.4, ease: EASE }}
-          className="lg:hidden fixed bottom-0 inset-x-0 z-50 flex gap-3 px-4 py-3"
-          style={{ background: "linear-gradient(to top, rgba(28,14,8,0.98) 70%, transparent)" }}
+          className="fixed bottom-0 left-0 right-0 z-50 block md:hidden bg-[#160A05]/95 backdrop-blur-md border-t border-[#C9956A]/20 shadow-2xl"
         >
-          {/* Book Appointment */}
-          <motion.a
-            href="#invitation"
-            whileTap={{ scale: 0.96 }}
-            className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.18em] uppercase rounded-xl font-medium shadow-lg shadow-[#C9956A]/30"
-            style={B}
-          >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-            </svg>
-            Book Appointment
-          </motion.a>
-
-          {/* WhatsApp */}
-          <motion.a
-            href="https://wa.me/441234567890"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileTap={{ scale: 0.96 }}
-            className="flex items-center justify-center gap-2 px-5 py-3.5 bg-[#25D366] text-white text-xs tracking-[0.1em] uppercase rounded-xl font-medium shadow-lg shadow-[#25D366]/25"
-            style={B}
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            WhatsApp
-          </motion.a>
+          <div className="grid grid-cols-2 gap-px bg-[#FAF7F2]/10">
+            <a href="tel:09946336480" className="flex items-center justify-center space-x-2 py-4 bg-[#1C0E08] text-[#FAF7F2] hover:bg-[#2C1810] active:bg-[#160A05] transition-colors" style={B}>
+              <Phone className="w-4 h-4 text-[#C9956A]" />
+              <span className="text-[10px] sm:text-xs font-medium tracking-[0.1em] uppercase">Call Cosmo Home</span>
+            </a>
+            <a href="https://wa.me/669946336480" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 py-4 bg-[#C9956A] text-[#160A05] hover:bg-[#d6a57c] active:bg-[#B8806A] transition-colors" style={B}>
+              <MessageCircle className="w-4 h-4 fill-current" />
+              <span className="text-[10px] sm:text-xs font-medium tracking-[0.1em] uppercase">WhatsApp</span>
+            </a>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
