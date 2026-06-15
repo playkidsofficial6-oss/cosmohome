@@ -163,7 +163,7 @@ function Nav({ ready }: { ready: boolean }) {
                 <Phone size={16} className="text-[#C9956A]" />
                 <span className="text-xs font-medium tracking-[0.15em] uppercase">Call 099463 36480</span>
               </motion.a>
-              <motion.a href="https://wa.me/669946336480" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}
+              <motion.a href="https://api.whatsapp.com/send?phone=919946336480" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}
                 className="flex items-center justify-center gap-3 w-full py-4 bg-[#C9956A] text-[#160A05] hover:bg-[#d6a57c] transition-colors"
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55, duration: 0.5, ease: [0.22, 1, 0.36, 1] }} style={B}>
                 <MessageCircle size={16} className="fill-current" />
@@ -1163,7 +1163,7 @@ function MobileBottomCTA() {
               <Phone className="w-4 h-4 text-[#C9956A]" />
               <span className="text-[10px] sm:text-xs font-medium tracking-[0.1em] uppercase">Call Cosmo Home</span>
             </a>
-            <a href="https://wa.me/669946336480" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 py-4 bg-[#C9956A] text-[#160A05] hover:bg-[#d6a57c] active:bg-[#B8806A] transition-colors" style={B}>
+            <a href="https://api.whatsapp.com/send?phone=919946336480" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 py-4 bg-[#C9956A] text-[#160A05] hover:bg-[#d6a57c] active:bg-[#B8806A] transition-colors" style={B}>
               <MessageCircle className="w-4 h-4 fill-current" />
               <span className="text-[10px] sm:text-xs font-medium tracking-[0.1em] uppercase">WhatsApp</span>
             </a>
