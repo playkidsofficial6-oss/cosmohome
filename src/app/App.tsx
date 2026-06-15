@@ -10,9 +10,9 @@ import {
 } from "lucide-react";
 
 /* ─── design tokens ─── */
-const D = { fontFamily: "'Bodoni Moda', serif" };
+const D = { fontFamily: "'Fraunces', serif" };
 const M = { fontFamily: "'DM Mono', monospace" };
-const B = { fontFamily: "'Jost', sans-serif" };
+const B = { fontFamily: "'DM Sans', sans-serif" };
 const GOLD = "#C9956A";
 const EASE: [number,number,number,number] = [0.22, 1, 0.36, 1];
 const EASE2: [number,number,number,number] = [0.76, 0, 0.24, 1];
@@ -111,7 +111,7 @@ function Nav({ ready }: { ready: boolean }) {
           <nav className="hidden lg:flex items-center gap-8">
             {links.map(l => (
               <a key={l.label} href={l.href} style={B}
-                className="relative text-sm text-[#8C7B72] hover:text-[#2C1810] transition-colors tracking-wide group">
+                className="relative text-sm text-[#5C4A42] hover:text-[#2C1810] transition-colors tracking-wide group">
                 {l.label}
                 <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-[#C9956A] group-hover:w-full transition-all duration-300" />
               </a>
@@ -189,7 +189,7 @@ function Hero({ ready }: { ready: boolean }) {
           ))}
         </h1>
 
-        <motion.p className="text-[#FAF7F2]/70 text-sm md:text-base lg:text-lg font-light max-w-lg leading-relaxed mb-8" style={B}
+        <motion.p className="text-[#FAF7F2]/90 text-base md:text-lg max-w-lg leading-loose mb-8" style={B}
           initial={{ opacity: 0, y: 18 }} animate={ready ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: d(0.95) }}>
           Expert-led aesthetic medicine designed around confidence, care, and your most natural beauty.
@@ -203,7 +203,7 @@ function Hero({ ready }: { ready: boolean }) {
             Begin Your Journey <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </motion.a>
           <motion.a href="#philosophy" whileHover={{ scale: 1.02 }} style={B}
-            className="inline-flex items-center gap-2 text-[#FAF7F2]/60 text-xs tracking-[0.2em] uppercase hover:text-[#FAF7F2] transition-colors py-4 border-b border-[#FAF7F2]/20 hover:border-[#C9956A]">
+            className="inline-flex items-center gap-2 text-[#FAF7F2]/82 text-xs tracking-[0.2em] uppercase hover:text-[#FAF7F2] transition-colors py-4 border-b border-[#FAF7F2]/20 hover:border-[#C9956A]">
             Discover Our Story
           </motion.a>
         </motion.div>
@@ -214,7 +214,7 @@ function Hero({ ready }: { ready: boolean }) {
             <motion.div key={l} initial={{ opacity: 0, y: 12 }} animate={ready ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: d(1.5 + i * 0.12) }}>
               <p className="text-[#C9956A] text-2xl md:text-3xl" style={D}>{n}</p>
-              <p className="text-[#FAF7F2]/45 text-xs tracking-widest mt-1 uppercase" style={M}>{l}</p>
+              <p className="text-[#FAF7F2]/88 text-xs tracking-widest mt-1 uppercase" style={M}>{l}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -238,7 +238,7 @@ function Philosophy() {
             </FadeUp>
             <Rule delay={0.2} />
             <FadeUp delay={0.1}>
-              <p className="text-base md:text-lg font-light text-[#2C1810] leading-relaxed" style={B}>
+              <p className="text-base md:text-lg text-[#2C1810] leading-relaxed" style={B}>
                 We help you become the most radiant, confident version of yourself.
               </p>
             </FadeUp>
@@ -265,7 +265,7 @@ function Philosophy() {
                   <span className="text-sm text-[#C9956A] mt-0.5 shrink-0 w-6 font-medium" style={M}>{item.n}</span>
                   <div>
                     <p className="text-base text-[#2C1810] mb-1.5" style={{ ...D, fontStyle: "italic" }}>{item.title}</p>
-                    <p className="text-sm font-light text-[#8C7B72] leading-relaxed" style={B}>{item.body}</p>
+                    <p className="text-base text-[#5C4A42] leading-loose" style={B}>{item.body}</p>
                   </div>
                 </motion.div>
               </FadeUp>
@@ -315,13 +315,13 @@ function ExtraordinaryCare() {
                 </h2>
               </FadeUp>
               <FadeUp delay={0.1}>
-                <p className="text-base font-light text-[#FAF7F2]/65 leading-relaxed mb-4 max-w-2xl" style={B}>
+                <p className="text-base text-[#FAF7F2]/90 leading-loose mb-5 max-w-2xl" style={B}>
                   We have heard you. We know that sometimes, the wait feels long. And we want you to understand why — because the answer is <em>you</em>.
                 </p>
-                <p className="text-base font-light text-[#FAF7F2]/65 leading-relaxed mb-4 max-w-2xl" style={B}>
+                <p className="text-base text-[#FAF7F2]/90 leading-loose mb-5 max-w-2xl" style={B}>
                   <strong className="text-[#FAF7F2]/90 font-medium">Every patient deserves to be heard, understood, and guided with complete attention.</strong> When the patient before you is with Dr. Ruxana, they are not being hurried. Their concerns are being listened to fully. Their questions answered honestly.
                 </p>
-                <p className="text-base font-light text-[#FAF7F2]/50 leading-relaxed max-w-2xl" style={B}>
+                <p className="text-base text-[#FAF7F2]/75 leading-relaxed max-w-2xl" style={B}>
                   When it is your turn, you will receive exactly the same. We do not believe in 10-minute appointments. We believe in the time it takes to truly care.
                 </p>
               </FadeUp>
@@ -360,7 +360,7 @@ function DrRuxana() {
               transition={{ duration: 0.7, delay: 0.4 }} whileHover={{ y: -4 }}
               className="absolute -bottom-5 -right-2 md:right-4 bg-[#2C1810] text-[#FAF7F2] px-6 py-5 max-w-[210px]">
               <p className="text-xs tracking-[0.2em] uppercase text-[#C9956A] mb-2" style={M}>🎓 Credentials</p>
-              <p className="text-sm font-light leading-relaxed" style={B}>MBBS · MRCS<br />Dip. Aesthetic Med.<br />Fellow, BCAM</p>
+              <p className="text-sm leading-relaxed" style={B}>MBBS · MRCS<br />Dip. Aesthetic Med.<br />Fellow, BCAM</p>
             </motion.div>
             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -370,10 +370,10 @@ function DrRuxana() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-[#2C1810] mb-6" style={D}>
               Meet Dr.<br /><em>Ruxana.</em>
             </h2>
-            <p className="text-base font-light text-[#2C1810] leading-relaxed mb-4" style={B}>
+            <p className="text-base text-[#2C1810] leading-loose mb-4" style={B}>
               Dr. Ruxana did not enter aesthetic medicine to sell treatments. She entered it because she witnessed, again and again, how much a woman's confidence shapes her entire life — her relationships, her ambitions, her sense of self.
             </p>
-            <p className="text-sm font-light text-[#8C7B72] leading-relaxed mb-8" style={B}>
+            <p className="text-base text-[#5C4A42] leading-loose mb-8" style={B}>
               She trained for over a decade before founding COSMO HOME — not as a clinic, but as a philosophy. A belief that the most powerful aesthetic outcomes are gentle, natural, and deeply personal.
             </p>
             <motion.blockquote initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }}
@@ -419,7 +419,7 @@ function Transformation() {
                     <p className="text-[#FAF7F2] text-lg" style={D}>{s.name}</p>
                   </div>
                 </div>
-                <p className="text-sm font-light text-[#8C7B72] leading-relaxed flex-1" style={{ ...D, fontStyle: "italic" }}>{s.story}</p>
+                <p className="text-base text-[#5C4A42] leading-loose flex-1" style={{ ...D, fontStyle: "italic" }}>{s.story}</p>
               </motion.div>
             </FadeUp>
           ))}
@@ -468,16 +468,22 @@ function Experiences() {
               <motion.div key={active} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.4, ease: EASE }}>
                 <h3 className="text-2xl md:text-3xl text-[#FAF7F2] mb-4" style={{ ...D, fontStyle: "italic" }}>{exps[active].name}</h3>
-                <p className="text-sm font-light text-[#FAF7F2]/60 leading-relaxed mb-7" style={B}>{exps[active].desc}</p>
+                <p className="text-base text-[#FAF7F2]/90 leading-loose mb-7" style={B}>{exps[active].desc}</p>
                 {[{ label: "Duration", val: exps[active].duration }, { label: "Suited for", val: exps[active].suitedFor }].map(({ label, val }) => (
                   <div key={label} className="flex gap-4 mb-3">
                     <span className="text-xs tracking-[0.25em] uppercase text-[#C9956A] w-24 shrink-0 pt-0.5" style={M}>{label}</span>
-                    <span className="text-sm text-[#FAF7F2]/65 font-light" style={B}>{val}</span>
+                    <span className="text-sm text-[#FAF7F2]/85" style={B}>{val}</span>
                   </div>
                 ))}
-                <motion.a href="#invitation" whileHover={{ x: 4 }} style={B}
-                  className="mt-8 inline-flex items-center gap-2 text-xs tracking-[0.22em] uppercase text-[#C9956A] hover:text-[#FAF7F2] transition-colors">
-                  Enquire <ArrowRight size={11} />
+                <motion.a
+                  href="#invitation"
+                  whileHover={{ scale: 1.03, boxShadow: "0 0 28px rgba(201,149,106,0.5)" }}
+                  whileTap={{ scale: 0.97 }}
+                  style={B}
+                  className="mt-8 inline-flex items-center gap-3 px-7 py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-lg shadow-lg shadow-[#C9956A]/30 group"
+                >
+                  Enquire About This Experience
+                  <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                 </motion.a>
               </motion.div>
             </AnimatePresence>
@@ -500,73 +506,92 @@ const STEPS: Step[] = [
   { Icon: Award,         n: "06", phase: "Results",       emoji: "🌟", color: "#A87060", desc: "Results documented with clinical photography — honouring your journey and the confidence you carry home." },
 ];
 
-/* ── Single bento step card ── */
-function BentoStep({ step, index, sectionInView }: { step: Step; index: number; sectionInView: boolean }) {
+/* ── Modern roadmap step card ── */
+function RoadmapStep({ step, index, sectionInView }: { step: Step; index: number; sectionInView: boolean }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
-  const isActive = sectionInView;
+  const inView = useInView(ref, { once: true, margin: "-30px" });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 36 }}
+      initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay: 0.15 + index * 0.1, ease: EASE }}
-      whileHover="hover"
-      className="group relative overflow-hidden rounded-2xl cursor-default"
-      style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)", border: "1px solid rgba(201,149,106,0.15)" }}
+      transition={{ duration: 0.65, delay: 0.1 + index * 0.12, ease: EASE }}
+      className="relative flex flex-col"
     >
-      {/* Hover glow border */}
-      <motion.div
-        className="absolute inset-0 rounded-2xl pointer-events-none"
-        style={{ boxShadow: "inset 0 0 0 1px rgba(201,149,106,0)" }}
-        variants={{ hover: { boxShadow: "inset 0 0 0 1px rgba(201,149,106,0.6), 0 0 32px rgba(201,149,106,0.12)" } }}
-        transition={{ duration: 0.3 }}
-      />
-
-      {/* Large ghost number */}
-      <div className="absolute top-3 right-4 text-[80px] font-bold leading-none select-none pointer-events-none"
-        style={{ ...D, color: "rgba(201,149,106,0.06)", lineHeight: 1 }}>
-        {index + 1}
-      </div>
-
-      <div className="relative z-10 p-6 md:p-7 flex flex-col h-full min-h-[220px]">
-        {/* Top row: number tag + icon */}
-        <div className="flex items-center justify-between mb-5">
-          <span className="text-xs tracking-[0.3em] uppercase px-2.5 py-1 rounded-full"
-            style={{ ...M, color: step.color, background: `${step.color}18`, border: `1px solid ${step.color}30` }}>
-            {step.n}
-          </span>
+      {/* ── Desktop: track dot + connector above card ── */}
+      <div className="hidden lg:flex items-center mb-6">
+        {/* Dot on the track */}
+        <div className="relative flex items-center justify-center shrink-0">
           <motion.div
-            className="relative w-11 h-11 rounded-full flex items-center justify-center shrink-0"
-            style={{ background: `${step.color}15`, border: `1px solid ${step.color}40` }}
-            variants={{ hover: { scale: 1.15 } }}
-            transition={{ type: "spring", stiffness: 280 }}
+            className="w-12 h-12 rounded-full flex items-center justify-center z-10 relative"
+            style={{ background: `linear-gradient(135deg, ${step.color}30, ${step.color}10)`, border: `1.5px solid ${step.color}` }}
+            whileHover={{ scale: 1.18 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
-            {isActive && (
+            {sectionInView && (
               <motion.div
                 className="absolute top-0 left-0 right-0 bottom-0 rounded-full"
                 style={{ border: `1px solid ${step.color}` }}
-                animate={{ scale: [1, 1.7, 1], opacity: [0.4, 0, 0.4] }}
-                transition={{ duration: 2.8, repeat: Infinity, delay: index * 0.4 }} />
+                animate={{ scale: [1, 1.8, 1], opacity: [0.5, 0, 0.5] }}
+                transition={{ duration: 2.5, repeat: Infinity, delay: index * 0.35 }}
+              />
             )}
-            <step.Icon size={18} color={step.color} />
+            <step.Icon size={20} color={step.color} />
           </motion.div>
         </div>
+        {/* Step number badge */}
+        <span className="ml-3 text-xs tracking-[0.3em] uppercase" style={{ ...M, color: step.color }}>
+          Step {step.n}
+        </span>
+      </div>
 
-        {/* Emoji + title */}
-        <div className="mb-3">
-          <span className="text-xl mr-2">{step.emoji}</span>
-          <p className="text-lg text-[#FAF7F2] mt-1 leading-tight" style={{ ...D, fontStyle: "italic" }}>
-            {step.phase}
+      {/* Card body */}
+      <motion.div
+        className="relative overflow-hidden rounded-2xl flex flex-col flex-1 cursor-default"
+        style={{
+          background: "linear-gradient(160deg, rgba(201,149,106,0.08) 0%, rgba(255,255,255,0.02) 100%)",
+          border: "1px solid rgba(201,149,106,0.18)",
+        }}
+        whileHover={{ borderColor: "rgba(201,149,106,0.55)", y: -4, transition: { duration: 0.25 } }}
+      >
+        {/* Ghost number watermark */}
+        <span
+          className="absolute -top-2 -right-2 text-[90px] font-bold select-none pointer-events-none leading-none"
+          style={{ ...D, color: "rgba(201,149,106,0.05)" }}
+        >
+          {index + 1}
+        </span>
+
+        <div className="relative z-10 p-6 flex flex-col gap-4">
+          {/* Mobile: icon + step label row */}
+          <div className="flex items-center gap-3 lg:hidden">
+            <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
+              style={{ background: `${step.color}20`, border: `1px solid ${step.color}50` }}>
+              <step.Icon size={17} color={step.color} />
+            </div>
+            <span className="text-xs tracking-[0.25em] uppercase" style={{ ...M, color: step.color }}>
+              Step {step.n}
+            </span>
+          </div>
+
+          {/* Phase title */}
+          <div>
+            <span className="text-2xl">{step.emoji}</span>
+            <h3 className="text-xl text-[#FAF7F2] mt-1 leading-snug" style={{ ...D, fontStyle: "italic" }}>
+              {step.phase}
+            </h3>
+          </div>
+
+          {/* Divider */}
+          <div className="h-px w-10" style={{ background: `${step.color}60` }} />
+
+          {/* Description */}
+          <p className="text-base text-[#FAF7F2]/90 leading-loose" style={B}>
+            {step.desc}
           </p>
         </div>
-
-        {/* Description */}
-        <p className="text-sm font-light text-[#FAF7F2]/50 leading-relaxed mt-auto" style={B}>
-          {step.desc}
-        </p>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
@@ -596,44 +621,62 @@ function Journey() {
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <p className="text-sm font-light text-[#FAF7F2]/40 max-w-xs leading-relaxed" style={B}>
+            <p className="text-sm text-[#FAF7F2]/65 max-w-xs leading-relaxed" style={B}>
               Six moments. One unbroken thread of care — from your first breath at our door to the confidence you carry home.
             </p>
           </FadeUp>
         </div>
 
-        {/* ── BENTO GRID (all screen sizes, responsive) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {STEPS.map((step, i) => (
-            <BentoStep key={step.n} step={step} index={i} sectionInView={inView} />
-          ))}
-        </div>
-
-        {/* Flow hint — desktop only */}
-        <FadeUp delay={0.5}>
-          <div className="hidden lg:flex items-center justify-center gap-3 mt-8">
+        {/* ── DESKTOP: track rail + 3-col grid ── */}
+        <div className="hidden lg:block">
+          {/* Animated connecting rail drawn across the top */}
+          <div className="relative h-12 mb-0 flex items-center px-6">
+            <motion.div
+              className="absolute left-6 right-6 h-px origin-left"
+              style={{ background: "linear-gradient(to right, transparent, rgba(201,149,106,0.5) 10%, rgba(201,149,106,0.5) 90%, transparent)" }}
+              initial={{ scaleX: 0 }}
+              animate={inView ? { scaleX: 1 } : {}}
+              transition={{ duration: 1.4, delay: 0.3, ease: EASE }}
+            />
+            {/* Station dots on the rail */}
             {STEPS.map((step, i) => (
-              <div key={step.n} className="flex items-center gap-3">
-                <motion.div className="w-2 h-2 rounded-full"
-                  style={{ backgroundColor: step.color }}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={inView ? { opacity: 0.7, scale: 1 } : {}}
-                  transition={{ delay: 0.8 + i * 0.1 }} />
-                {i < STEPS.length - 1 && (
-                  <motion.div className="h-px w-8"
-                    style={{ background: "linear-gradient(to right, rgba(201,149,106,0.4), rgba(201,149,106,0.1))" }}
-                    initial={{ scaleX: 0 }} animate={inView ? { scaleX: 1 } : {}}
-                    transition={{ delay: 0.9 + i * 0.1, duration: 0.4 }} />
-                )}
-              </div>
+              <motion.div key={step.n}
+                className="absolute w-2 h-2 rounded-full"
+                style={{ left: `calc(${(i / (STEPS.length - 1)) * 100}% - 4px)`, backgroundColor: step.color }}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={inView ? { scale: 1, opacity: 1 } : {}}
+                transition={{ delay: 0.4 + i * 0.18, type: "spring", stiffness: 300 }}
+              />
             ))}
           </div>
-        </FadeUp>
+          <div className="grid grid-cols-3 gap-5">
+            {STEPS.map((step, i) => (
+              <RoadmapStep key={step.n} step={step} index={i} sectionInView={inView} />
+            ))}
+          </div>
+        </div>
+
+        {/* ── MOBILE: vertical timeline ── */}
+        <div className="lg:hidden relative pl-6">
+          {/* Vertical line */}
+          <motion.div
+            className="absolute left-4 top-0 bottom-0 w-px origin-top"
+            style={{ background: "linear-gradient(to bottom, rgba(201,149,106,0.6), rgba(201,149,106,0.1))" }}
+            initial={{ scaleY: 0 }}
+            animate={inView ? { scaleY: 1 } : {}}
+            transition={{ duration: 1.6, delay: 0.3, ease: EASE }}
+          />
+          <div className="flex flex-col gap-5">
+            {STEPS.map((step, i) => (
+              <RoadmapStep key={step.n} step={step} index={i} sectionInView={inView} />
+            ))}
+          </div>
+        </div>
 
         {/* CTA */}
         <FadeUp delay={0.4}>
           <div className="mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-5 pt-10 border-t border-[#FAF7F2]/10">
-            <p className="text-sm font-light text-[#FAF7F2]/35 text-center" style={B}>
+            <p className="text-sm text-[#FAF7F2]/65 text-center" style={B}>
               Every journey begins with a single conversation. 🌸
             </p>
             <motion.a href="#invitation"
@@ -718,10 +761,10 @@ function TeamAndStandards() {
               </h2>
             </SlideIn>
             <SlideIn from="right" delay={0.1}>
-              <p className="text-base font-light text-[#FAF7F2]/65 leading-relaxed mb-4" style={B}>
+              <p className="text-base text-[#FAF7F2]/85 leading-relaxed mb-4" style={B}>
                 <strong className="text-[#FAF7F2]/90 font-medium">The aesthetics industry has a problem.</strong> Anyone — with zero medical training — can legally inject your face. Thousands of people every year are harmed by unqualified practitioners operating out of beauty salons and pop-up clinics.
               </p>
-              <p className="text-base font-light text-[#FAF7F2]/65 leading-relaxed mb-6" style={B}>
+              <p className="text-base text-[#FAF7F2]/85 leading-relaxed mb-6" style={B}>
                 Dr. Ruxana has been a vocal advocate against this — because she has seen the consequences. Patients arriving with occlusions, necrosis, and lasting trauma from treatments performed by people who had no right to perform them.
               </p>
               <motion.blockquote initial={{ opacity: 0, x: -14 }} whileInView={{ opacity: 1, x: 0 }}
@@ -739,7 +782,7 @@ function TeamAndStandards() {
             <div className="flex flex-wrap gap-0 border border-[#FAF7F2]/15 w-fit mb-10">
               {[{ id: "standards" as const, label: "🛡️ COSMO HOME Standards" }, { id: "danger" as const, label: "⚠️ The Dangers" }].map(({ id, label }) => (
                 <button key={id} onClick={() => setTab(id)} style={B}
-                  className={`px-5 py-3 text-xs tracking-[0.15em] uppercase transition-all duration-300 ${tab === id ? "bg-[#C9956A] text-[#FAF7F2]" : "text-[#FAF7F2]/40 hover:text-[#FAF7F2]/70"}`}>
+                  className={`px-5 py-3 text-xs tracking-[0.15em] uppercase transition-all duration-300 ${tab === id ? "bg-[#C9956A] text-[#FAF7F2]" : "text-[#FAF7F2]/65 hover:text-[#FAF7F2]/88"}`}>
                   {label}
                 </button>
               ))}
@@ -761,7 +804,7 @@ function TeamAndStandards() {
                         <s.Icon size={18} color={GOLD} />
                       </motion.div>
                       <p className="text-base text-[#FAF7F2]" style={{ ...D, fontStyle: "italic" }}>{s.label}</p>
-                      <p className="text-sm font-light text-[#FAF7F2]/50 leading-relaxed" style={B}>{s.body}</p>
+                      <p className="text-base text-[#FAF7F2]/90 leading-loose" style={B}>{s.body}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -786,14 +829,14 @@ function TeamAndStandards() {
                       </div>
                       <div>
                         <p className="text-base text-[#FAF7F2] mb-2" style={{ ...D, fontStyle: "italic" }}>{r.label}</p>
-                        <p className="text-sm font-light text-[#FAF7F2]/50 leading-relaxed" style={B}>{r.body}</p>
+                        <p className="text-base text-[#FAF7F2]/90 leading-loose" style={B}>{r.body}</p>
                       </div>
                     </motion.div>
                   ))}
                 </div>
                 <FadeUp delay={0.3}>
                   <div className="mt-6 p-6 bg-[#C9956A]/10 border border-[#C9956A]/25">
-                    <p className="text-sm font-light text-[#FAF7F2]/75 leading-relaxed" style={B}>
+                    <p className="text-base text-[#FAF7F2]/90 leading-loose" style={B}>
                       ⚠️ <strong className="text-[#FAF7F2]/90 font-medium">Before booking any aesthetic treatment, anywhere:</strong> Ask to see the practitioner's full medical qualifications. Confirm GMC/GDC registration. Check the clinic is CQC-registered. Ensure they carry medical indemnity. If they can't answer clearly — walk away.
                     </p>
                   </div>
@@ -814,7 +857,7 @@ function TeamAndStandards() {
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <p className="text-sm font-light text-[#8C7B72] max-w-sm leading-relaxed" style={B}>
+            <p className="text-sm text-[#5C4A42] max-w-sm leading-relaxed" style={B}>
               These are the faces behind the credentials. Every member of our clinical team holds postgraduate specialist qualifications — not weekend certifications.
             </p>
           </FadeUp>
@@ -835,11 +878,11 @@ function TeamAndStandards() {
                   <motion.div className="absolute inset-0 bg-[#2C1810]/88 flex flex-col items-center justify-center px-5 text-center"
                     initial={{ opacity: 0 }} variants={{ hover: { opacity: 1 } }} transition={{ duration: 0.3 }}>
                     <p className="text-xs tracking-[0.18em] uppercase text-[#C9956A] mb-3" style={M}>🎓 Qualifications</p>
-                    <p className="text-sm text-[#FAF7F2] leading-relaxed font-light" style={B}>{doc.creds}</p>
+                    <p className="text-sm text-[#FAF7F2] leading-relaxed" style={B}>{doc.creds}</p>
                   </motion.div>
                 </div>
                 <p className="text-lg text-[#2C1810]" style={D}>{doc.name}</p>
-                <p className="text-sm text-[#8C7B72] font-light mt-0.5" style={B}>{doc.role}</p>
+                <p className="text-sm text-[#5C4A42] mt-0.5" style={B}>{doc.role}</p>
                 <p className="text-xs tracking-[0.18em] uppercase text-[#C9956A] mt-1.5" style={M}>{doc.spec}</p>
               </motion.div>
             </FadeUp>
@@ -880,7 +923,7 @@ function Stories() {
                   <p className="text-xs text-[#C9956A] mt-1 tracking-wide" style={M}>{s.context}</p>
                 </div>
                 <div className={`border-l border-[rgba(44,24,16,0.12)] pl-8 ${i % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}`}>
-                  <p className="text-base font-light text-[#8C7B72] leading-relaxed" style={B}>{s.body}</p>
+                  <p className="text-base text-[#2C1810] leading-loose" style={B}>{s.body}</p>
                 </div>
               </div>
             </FadeUp>
@@ -896,10 +939,10 @@ function InputField({ label, type = "text", placeholder }: { label: string; type
   const [focused, setFocused] = useState(false);
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-xs tracking-[0.25em] uppercase text-[#8C7B72]" style={M}>{label}</label>
+      <label className="text-xs tracking-[0.25em] uppercase text-[#5C4A42]" style={M}>{label}</label>
       <div className={`relative transition-all duration-300 ${focused ? "shadow-[0_0_0_2px_rgba(201,149,106,0.35)]" : ""}`}>
         <input type={type} placeholder={placeholder}
-          className="w-full border-b-2 bg-transparent pb-2.5 pt-1 text-sm font-light text-[#2C1810] placeholder:text-[#8C7B72]/40 focus:outline-none transition-colors"
+          className="w-full border-b-2 bg-transparent pb-2.5 pt-1 text-sm text-[#2C1810] placeholder:text-[#5C4A42]/40 focus:outline-none transition-colors"
           onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
           style={{ borderBottomColor: focused ? GOLD : "rgba(44,24,16,0.2)", ...B }} />
       </div>
@@ -927,7 +970,7 @@ function Invitation() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#FAF7F2] leading-[1.05] mt-3 mb-5" style={D}>
               Your journey<br /><em>begins here.</em>
             </h2>
-            <p className="text-base font-light text-[#FAF7F2]/60 leading-relaxed mb-10 max-w-sm" style={B}>
+            <p className="text-base text-[#FAF7F2]/82 leading-relaxed mb-10 max-w-sm" style={B}>
               Book a private consultation with Dr. Ruxana and discover what truly personalised aesthetic care feels like. No pressure. No treatment menu. Just a conversation.
             </p>
             <div className="flex flex-col gap-4 mb-10">
@@ -940,11 +983,11 @@ function Invitation() {
                 <motion.div key={label} initial={{ opacity: 0, x: -14 }} whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="flex gap-6">
                   <span className="text-xs tracking-[0.25em] uppercase text-[#C9956A] w-16 shrink-0 pt-0.5" style={M}>{label}</span>
-                  <span className="text-sm font-light text-[#FAF7F2]/60" style={B}>{value}</span>
+                  <span className="text-sm text-[#FAF7F2]/82" style={B}>{value}</span>
                 </motion.div>
               ))}
             </div>
-            <p className="text-xs text-[#FAF7F2]/25 font-light" style={B}>
+            <p className="text-xs text-[#FAF7F2]/25" style={B}>
               Initial consultations: £150 · Redeemable against any experience
             </p>
           </FadeUp>
@@ -965,10 +1008,10 @@ function Invitation() {
 
                   {/* Select */}
                   <div className="flex flex-col gap-2">
-                    <label className="text-xs tracking-[0.25em] uppercase text-[#8C7B72]" style={M}>Experience of interest</label>
+                    <label className="text-xs tracking-[0.25em] uppercase text-[#5C4A42]" style={M}>Experience of interest</label>
                     <div className={`transition-all duration-300 ${focused === "select" ? "shadow-[0_0_0_2px_rgba(201,149,106,0.35)]" : ""}`}>
                       <select style={{ borderBottomColor: focused === "select" ? GOLD : "rgba(44,24,16,0.2)", ...B }}
-                        className="w-full border-b-2 bg-transparent pb-2.5 pt-1 text-sm font-light text-[#2C1810] focus:outline-none transition-colors appearance-none"
+                        className="w-full border-b-2 bg-transparent pb-2.5 pt-1 text-sm text-[#2C1810] focus:outline-none transition-colors appearance-none"
                         onFocus={() => setFocused("select")} onBlur={() => setFocused(null)}>
                         <option value="">I am not sure yet</option>
                         <option>Skin Renewal Experience</option>
@@ -982,10 +1025,10 @@ function Invitation() {
 
                   {/* Textarea */}
                   <div className="flex flex-col gap-2">
-                    <label className="text-xs tracking-[0.25em] uppercase text-[#8C7B72]" style={M}>Tell us a little</label>
+                    <label className="text-xs tracking-[0.25em] uppercase text-[#5C4A42]" style={M}>Tell us a little</label>
                     <div className={`transition-all duration-300 ${focused === "msg" ? "shadow-[0_0_0_2px_rgba(201,149,106,0.35)]" : ""}`}>
                       <textarea rows={3} placeholder="What matters most to you right now?" style={{ borderBottomColor: focused === "msg" ? GOLD : "rgba(44,24,16,0.2)", ...B }}
-                        className="w-full border-b-2 bg-transparent pb-2.5 pt-1 text-sm font-light text-[#2C1810] placeholder:text-[#8C7B72]/40 focus:outline-none transition-colors resize-none"
+                        className="w-full border-b-2 bg-transparent pb-2.5 pt-1 text-sm text-[#2C1810] placeholder:text-[#5C4A42]/40 focus:outline-none transition-colors resize-none"
                         onFocus={() => setFocused("msg")} onBlur={() => setFocused(null)} />
                     </div>
                   </div>
@@ -997,7 +1040,7 @@ function Invitation() {
                     Send My Request
                     <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </motion.button>
-                  <p className="text-xs text-[#8C7B72] text-center" style={B}>Dr. Ruxana personally reviews every request. 💛</p>
+                  <p className="text-xs text-[#5C4A42] text-center" style={B}>Dr. Ruxana personally reviews every request. 💛</p>
                 </motion.form>
               ) : (
                 <motion.div key="thanks" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
@@ -1010,7 +1053,7 @@ function Invitation() {
                   </motion.div>
                   <p className="text-4xl mb-4">🌸</p>
                   <p className="text-2xl text-[#2C1810] mb-4" style={{ ...D, fontStyle: "italic" }}>Thank you.</p>
-                  <p className="text-sm font-light text-[#8C7B72] leading-relaxed" style={B}>
+                  <p className="text-base text-[#5C4A42] leading-loose" style={B}>
                     Dr. Ruxana will personally review your request and be in touch within 24 hours. Your journey begins now.
                   </p>
                 </motion.div>
@@ -1032,12 +1075,12 @@ function Footer() {
           <div>
             <p className="text-xl tracking-[0.1em]" style={D}>Cosmo Home</p>
             <p className="text-xs tracking-[0.3em] uppercase text-[#C9956A] mt-1 mb-5" style={M}>✨ Aesthetic Medicine</p>
-            <p className="text-sm font-light text-[#FAF7F2]/35 leading-relaxed max-w-xs" style={B}>
+            <p className="text-sm text-[#FAF7F2]/65 leading-relaxed max-w-xs" style={B}>
               A luxury destination where beauty, confidence, expertise, and care come together.
             </p>
             <div className="flex gap-5 mt-7">
               {[Instagram, Facebook].map((Icon, i) => (
-                <motion.a key={i} href="#" whileHover={{ y: -3 }} className="text-[#FAF7F2]/30 hover:text-[#C9956A] transition-colors">
+                <motion.a key={i} href="#" whileHover={{ y: -3 }} className="text-[#FAF7F2]/60 hover:text-[#C9956A] transition-colors">
                   <Icon size={16} />
                 </motion.a>
               ))}
@@ -1052,7 +1095,7 @@ function Footer() {
               <ul className="flex flex-col gap-3">
                 {links.map(l => (
                   <li key={l}>
-                    <motion.a href="#" whileHover={{ x: 3 }} className="text-sm font-light text-[#FAF7F2]/35 hover:text-[#FAF7F2] transition-colors block" style={B}>{l}</motion.a>
+                    <motion.a href="#" whileHover={{ x: 3 }} className="text-sm text-[#FAF7F2]/65 hover:text-[#FAF7F2] transition-colors block" style={B}>{l}</motion.a>
                   </li>
                 ))}
               </ul>
@@ -1060,8 +1103,8 @@ function Footer() {
           ))}
         </div>
         <div className="flex flex-col sm:flex-row justify-between gap-3">
-          <p className="text-xs text-[#FAF7F2]/20" style={B}>© 2024 COSMO HOME Ltd. All rights reserved.</p>
-          <p className="text-xs text-[#FAF7F2]/20" style={B}>Privacy · Terms · 🛡️ CQC Registered</p>
+          <p className="text-xs text-[#FAF7F2]/55" style={B}>© 2024 COSMO HOME Ltd. All rights reserved.</p>
+          <p className="text-xs text-[#FAF7F2]/55" style={B}>Privacy · Terms · 🛡️ CQC Registered</p>
         </div>
       </div>
     </footer>
@@ -1069,6 +1112,59 @@ function Footer() {
 }
 
 /* ══ APP ══ */
+/* ══ MOBILE BOTTOM CTA BAR ══ */
+function MobileBottomCTA() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 300);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 100, opacity: 0 }}
+          transition={{ duration: 0.4, ease: EASE }}
+          className="lg:hidden fixed bottom-0 inset-x-0 z-50 flex gap-3 px-4 py-3"
+          style={{ background: "linear-gradient(to top, rgba(28,14,8,0.98) 70%, transparent)" }}
+        >
+          {/* Book Appointment */}
+          <motion.a
+            href="#invitation"
+            whileTap={{ scale: 0.96 }}
+            className="flex-1 flex items-center justify-center gap-2 py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.18em] uppercase rounded-xl font-medium shadow-lg shadow-[#C9956A]/30"
+            style={B}
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Book Appointment
+          </motion.a>
+
+          {/* WhatsApp */}
+          <motion.a
+            href="https://wa.me/441234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileTap={{ scale: 0.96 }}
+            className="flex items-center justify-center gap-2 px-5 py-3.5 bg-[#25D366] text-white text-xs tracking-[0.1em] uppercase rounded-xl font-medium shadow-lg shadow-[#25D366]/25"
+            style={B}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp
+          </motion.a>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export default function App() {
   const [ready, setReady] = useState(false);
   return (
@@ -1085,9 +1181,12 @@ export default function App() {
         <Journey />
         <TeamAndStandards />
         <Stories />
+        {/* Extra bottom padding on mobile so last content isn't hidden behind fixed bar */}
+        <div className="lg:hidden h-20" />
         <Invitation />
         <Footer />
       </motion.div>
+      <MobileBottomCTA />
     </div>
   );
 }
