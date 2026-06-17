@@ -1,11 +1,11 @@
 
-import { useState, useEffect, useRef } from "react";
-import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Menu, X, Instagram, Facebook, Home, MessageCircle, ClipboardList, Sparkles, Heart, Award, Shield, AlertTriangle, CheckCircle, XCircle, Phone, BadgeCheck, Stethoscope, GraduationCap, Users, ChevronRight } from "lucide-react";
+import { ArrowRight, Heart, AlertTriangle, XCircle, ChevronRight } from "lucide-react";
 
-import { D, M, B, GOLD, EASE, EASE2, GRAIN, STEPS, DOCTORS, STANDARDS } from "../lib/constants";
-import { FadeUp, SlideIn, Rule, Tag, InputField, CTAButtons } from "../components/ui/shared";
+import { D, M, B, GOLD, EASE, GRAIN, STEPS, DOCTORS, STANDARDS, type Step } from "../lib/constants";
+import { FadeUp, SlideIn, Rule, Tag, InputField } from "../components/ui/shared";
 export function Hero({ ready }: { ready: boolean }) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -197,7 +197,7 @@ export function DrRuxana() {
     <section id="dr-ruxana" className="bg-[#E8DDD1] overflow-hidden">
 
       {/* Chapter tag — inside padded container */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-10 md:pt-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-5 md:pt-10">
         <FadeUp>
           <div className="relative mb-8 pl-5 pt-4">
             <div className="absolute left-0 top-0 w-20 h-px bg-[#C9956A]/55" />
@@ -216,7 +216,13 @@ export function DrRuxana() {
             <motion.img
               src="/banner.png"
               alt="Dr. Ruxana K (MBBS, DDVL)"
-              className="w-full h-auto block"
+              className="w-full h-auto hidden lg:block"
+            />
+
+            <motion.img
+              src="/banner-mob.png"
+              alt="Dr. Ruxana K (MBBS, DDVL)"
+              className="w-full h-auto block lg:hidden"
             />
 
             {/* Right-edge fade — subtle blend into bg at the very edge */}
@@ -245,7 +251,7 @@ export function DrRuxana() {
         </FadeUp>
 
         {/* ── Text Column — padded on left, spaced on right ── */}
-        <FadeUp delay={0.15} className="order-1 lg:order-2 px-8 md:px-12 lg:pl-14 xl:pl-20 pr-4 md:pr-6 lg:pr-8 pb-12 lg:pb-0">
+        <FadeUp delay={0.15} className="order-1 lg:order-2 px-8 md:px-12 lg:pl-14 xl:pl-20 pr-4 md:pr-6 lg:pr-8 pb-6 lg:pb-0">
           <h2 className="text-[2.8rem] sm:text-5xl md:text-6xl lg:text-[3.8rem] xl:text-[4.5rem] leading-[1.0] text-[#2C1810] mb-6" style={D}>
             Meet Dr.<br /><em>Ruxana.</em>
           </h2>
@@ -269,7 +275,7 @@ export function DrRuxana() {
             <p className="mt-2.5 text-[9px] text-[#C9956A] tracking-[0.28em] uppercase" style={M}>— Dr. Ruxana</p>
           </motion.div>
 
-          <div className="pb-16 md:pb-24" />
+          <div className="pb-5 md:pb-0" />
         </FadeUp>
       </div>
     </section>
