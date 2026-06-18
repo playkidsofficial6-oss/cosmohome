@@ -26,10 +26,10 @@ export function Hero({ ready }: { ready: boolean }) {
 
       <motion.div className="relative z-20 flex flex-col justify-end pb-16 md:pb-24 pt-32 px-6 md:px-16 lg:px-24 min-h-screen max-w-7xl mx-auto w-full"
         style={{ y: textY }}>
-        <motion.p className="text-[#C9956A] text-xs tracking-[0.45em] uppercase mb-6" style={M}
+        <motion.p className="text-[#C9956A] text-xs tracking-[0.15em] uppercase mb-6" style={M}
           initial={{ opacity: 0, x: -16 }} animate={ready ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7, delay: d(0.3) }}>
-          ✨ Est. London · Aesthetic Medicine
+          ✨ EXPERT-LED · SKIN · HAIR · AESTHETICS
         </motion.p>
 
         <h1 className="text-[#FAF7F2] text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[0.95] mb-6 max-w-3xl" style={D}>
@@ -784,9 +784,7 @@ export function Invitation() {
                 </motion.div>
               ))}
             </div>
-            <p className="text-xs text-[#FAF7F2]/25" style={B}>
-              Initial consultations: £150 · Redeemable against any experience
-            </p>
+
           </FadeUp>
 
           <FadeUp delay={0.12}>
