@@ -215,7 +215,7 @@ export function DrRuxana() {
         <FadeUp delay={0.1} className="relative order-2 lg:order-1">
           <div className="relative w-full">
             <motion.img
-              src="/banner.png"
+              src="/banner.webp"
               alt="Dr. Ruxana K (MBBS, DDVL)"
               className="w-full h-auto hidden lg:block"
             />
@@ -848,18 +848,16 @@ export function Invitation() {
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{ delay: i * 0.03, duration: 0.2 }}
                                   onClick={() => { setSelected(opt === "I am not sure yet" ? "" : opt); setDropOpen(false); }}
-                                  className={`px-5 py-3 text-sm cursor-pointer transition-all duration-200 flex items-center gap-3 ${
-                                    (selected === opt || (!selected && opt === "I am not sure yet"))
+                                  className={`px-5 py-3 text-sm cursor-pointer transition-all duration-200 flex items-center gap-3 ${(selected === opt || (!selected && opt === "I am not sure yet"))
                                       ? "bg-[#C9956A]/10 text-[#C9956A]"
                                       : "text-[#2C1810] hover:bg-[#FAF7F2] hover:text-[#C9956A]"
-                                  }`}
+                                    }`}
                                   style={B}
                                 >
-                                  <span className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors ${
-                                    (selected === opt || (!selected && opt === "I am not sure yet"))
+                                  <span className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors ${(selected === opt || (!selected && opt === "I am not sure yet"))
                                       ? "bg-[#C9956A]"
                                       : "bg-[#2C1810]/15"
-                                  }`} />
+                                    }`} />
                                   {opt}
                                 </motion.li>
                               ))}
