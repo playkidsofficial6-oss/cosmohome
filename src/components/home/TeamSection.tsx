@@ -7,19 +7,19 @@ const OTHER_DOCTORS = [
     name: "Dr. Anas Abdulla",
     role: "Cosmetic Dermatologist",
     spec: "DERMATOLOGY &\nVENEREOLOGY",
-    img: "/doctor/dr1.png",
+    img: "/doctor/dr1.webp",
   },
   {
     name: "Dr. Mohammed Navas M",
     role: "Cosmetic Dermatologist",
     spec: "DERMATOLOGY &\nVENEREOLOGY",
-    img: "/doctor/dr2.png",
+    img: "/doctor/dr2.webp",
   },
   {
     name: "Dr. Marjan\nAbdul Nazar",
     role: "Cosmetic Dermatologist",
     spec: "DERMATOLOGY &\nVENEREOLOGY",
-    img: "/doctor/dr3.png",
+    img: "/doctor/dr3.webp",
   },
 ];
 
