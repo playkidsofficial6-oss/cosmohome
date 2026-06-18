@@ -62,7 +62,7 @@ export function TeamSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              src="/doctor/ruxana.png"
+              src="/doctor/ruxana.webp"
               alt="Dr. Ruxana"
               className="h-[95%] w-auto object-contain object-bottom relative z-10 drop-shadow-xl"
             />
