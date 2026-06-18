@@ -137,7 +137,7 @@ export function ExtraordinaryCare() {
   const scl = useTransform(scrollYProgress, [0, 0.5, 1], [0.97, 1, 0.97]);
   return (
     <section ref={ref} className="relative py-4 bg-[#FAF7F2]">
-      <motion.div style={{ scale: scl }} className="bg-[#1C0E08] mx-4 md:mx-10 lg:mx-16 relative overflow-hidden">
+      <motion.div className="bg-[#1C0E08] mx-0 md:mx-10 lg:mx-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
         <motion.div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, #C9956A 0%, transparent 70%)" }}
