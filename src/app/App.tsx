@@ -13,6 +13,7 @@ export function AppContent() {
     const location = useLocation();
     const [ready, setReady] = useState(() => location.pathname !== "/");
     useEffect(() => {
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
       window.scrollTo(0, 0);
     }, [location.pathname]);
     return (
