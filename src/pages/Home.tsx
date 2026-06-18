@@ -1,5 +1,5 @@
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
 import { ArrowRight, Heart, AlertTriangle, XCircle, ChevronRight } from "lucide-react";
@@ -740,6 +740,16 @@ export function Stories() {
 export function Invitation() {
   const [sent, setSent] = useState(false);
   const [focused, setFocused] = useState<string | null>(null);
+  const [dropOpen, setDropOpen] = useState(false);
+  const [selected, setSelected] = useState("");
+  const dropRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (dropRef.current && !dropRef.current.contains(e.target as Node)) setDropOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
   return (
     <section id="invitation" className="relative py-20 md:py-32 overflow-hidden bg-[#2C1810]">
       <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
@@ -791,24 +801,74 @@ export function Invitation() {
                     <InputField label="First name" placeholder="First name" />
                     <InputField label="Last name" placeholder="Last name" />
                   </div>
-                  <InputField label="Email" type="email" placeholder="your@email.com" />
+                  <InputField label="Phone" type="tel" placeholder="+91 98765 43210" />
 
-                  {/* Select */}
-                  <div className="flex flex-col gap-2">
-                    <label className="text-xs tracking-[0.25em] uppercase text-[#5C4A42]" style={M}>Experience of interest</label>
-                    <div className={`transition-all duration-300 ${focused === "select" ? "shadow-[0_0_0_2px_rgba(201,149,106,0.35)]" : ""}`}>
-                      <select style={{ borderBottomColor: focused === "select" ? GOLD : "rgba(44,24,16,0.2)", ...B }}
-                        className="w-full border-b-2 bg-transparent pb-2.5 pt-1 text-sm text-[#2C1810] focus:outline-none transition-colors appearance-none"
-                        onFocus={() => setFocused("select")} onBlur={() => setFocused(null)}>
-                        <option value="">I am not sure yet</option>
-                        <option>Skin Renewal Experience</option>
-                        <option>Age Gracefully Experience</option>
-                        <option>Confidence Restoration</option>
-                        <option>Hair Revival Experience</option>
-                        <option>Personalised Aesthetic Journey</option>
-                      </select>
-                    </div>
-                  </div>
+                  {/* Custom Dropdown */}
+                  {(() => {
+                    const options = [
+                      "I am not sure yet",
+                      "Skin Renewal Experience",
+                      "Age Gracefully Experience",
+                      "Confidence Restoration",
+                      "Hair Revival Experience",
+                      "Personalised Aesthetic Journey",
+                    ];
+                    return (
+                      <div ref={dropRef} className="flex flex-col gap-2 relative">
+                        <label className="text-xs tracking-[0.25em] uppercase text-[#5C4A42]" style={M}>Experience of interest</label>
+                        <button
+                          type="button"
+                          onClick={() => setDropOpen(!dropOpen)}
+                          className="w-full border-b-2 bg-transparent pb-2.5 pt-1 text-sm text-left flex items-center justify-between gap-2 focus:outline-none transition-colors"
+                          style={{ borderBottomColor: dropOpen ? GOLD : "rgba(44,24,16,0.2)", color: selected ? "#2C1810" : "#5C4A42", ...B }}
+                        >
+                          <span>{selected || "I am not sure yet"}</span>
+                          <motion.svg
+                            animate={{ rotate: dropOpen ? 180 : 0 }}
+                            transition={{ duration: 0.25 }}
+                            width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9956A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                            className="shrink-0"
+                          >
+                            <polyline points="6 9 12 15 18 9" />
+                          </motion.svg>
+                        </button>
+                        <AnimatePresence>
+                          {dropOpen && (
+                            <motion.ul
+                              initial={{ opacity: 0, y: -6, scaleY: 0.96 }}
+                              animate={{ opacity: 1, y: 0, scaleY: 1 }}
+                              exit={{ opacity: 0, y: -6, scaleY: 0.96 }}
+                              transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                              className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-2xl border border-[#2C1810]/8 overflow-hidden z-50 origin-top"
+                            >
+                              {options.map((opt, i) => (
+                                <motion.li
+                                  key={opt}
+                                  initial={{ opacity: 0, x: -8 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: i * 0.03, duration: 0.2 }}
+                                  onClick={() => { setSelected(opt === "I am not sure yet" ? "" : opt); setDropOpen(false); }}
+                                  className={`px-5 py-3 text-sm cursor-pointer transition-all duration-200 flex items-center gap-3 ${
+                                    (selected === opt || (!selected && opt === "I am not sure yet"))
+                                      ? "bg-[#C9956A]/10 text-[#C9956A]"
+                                      : "text-[#2C1810] hover:bg-[#FAF7F2] hover:text-[#C9956A]"
+                                  }`}
+                                  style={B}
+                                >
+                                  <span className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors ${
+                                    (selected === opt || (!selected && opt === "I am not sure yet"))
+                                      ? "bg-[#C9956A]"
+                                      : "bg-[#2C1810]/15"
+                                  }`} />
+                                  {opt}
+                                </motion.li>
+                              ))}
+                            </motion.ul>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  })()}
 
                   {/* Textarea */}
                   <div className="flex flex-col gap-2">
