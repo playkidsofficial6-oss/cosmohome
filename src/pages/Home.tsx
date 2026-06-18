@@ -772,9 +772,9 @@ export function Invitation() {
             </p>
             <div className="flex flex-col gap-4 mb-10">
               {[
-                { label: "Phone", value: "+44 20 7946 0512" },
-                { label: "Email", value: "hello@cosmohome.co.uk" },
-                { label: "Address", value: "14 Harley Street, London W1G" },
+                { label: "Phone", value: "+91 99463 36480" },
+                { label: "Email", value: "cosmohomenilambur@gmail.com" },
+                { label: "Address", value: "Kalathinkadavu Rd, Nilambur, Kerala 679329" },
                 { label: "Hours", value: "Mon–Sat · 9am–7pm" },
               ].map(({ label, value }, i) => (
                 <motion.div key={label} initial={{ opacity: 0, x: -14 }} whileInView={{ opacity: 1, x: 0 }}
