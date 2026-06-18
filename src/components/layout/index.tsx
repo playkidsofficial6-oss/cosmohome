@@ -6,26 +6,26 @@ import { ArrowRight, Menu, X, Instagram, Facebook, Home, MessageCircle, Clipboar
 
 import { D, M, B, GOLD, EASE, WA_PATH } from "../../lib/constants";
 export function Nav({ ready }: { ready: boolean }) {
-    const [open, setOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
-    const navigate = useNavigate();
-    const location = useLocation();
-    useEffect(() => {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
-    }, []);
-    const isHome = location.pathname === "/";
-    const hasBg = scrolled || !isHome;
-    const links = [
-            { label: "Philosophy", href: "/#philosophy" },
-            { label: "Service", action: () => navigate("/service") },
-            { label: "Dr. Ruxana", href: "/#dr-ruxana" },
-            { label: "Experiences", href: "/#experiences" },
-            { label: "Our Team", href: "/#our-team" },
-            { label: "Stories", href: "/#stories" },
-          ];
-    return (
+  }, []);
+  const isHome = location.pathname === "/";
+  const hasBg = scrolled || !isHome;
+  const links = [
+    { label: "Philosophy", href: "/#philosophy" },
+    { label: "Service", action: () => navigate("/service") },
+    { label: "Dr. Ruxana", href: "/#dr-ruxana" },
+    { label: "Experiences", href: "/#experiences" },
+    { label: "Our Team", href: "/#our-team" },
+    { label: "Stories", href: "/#stories" },
+  ];
+  return (
     <>
       <motion.header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${hasBg ? "bg-[#FAF7F2]/95 backdrop-blur-md shadow-sm" : ""}`}
         initial={{ y: -80, opacity: 0 }} animate={ready ? { y: 0, opacity: 1 } : {}}
@@ -38,17 +38,17 @@ export function Nav({ ready }: { ready: boolean }) {
           <nav className="hidden lg:flex items-center gap-8">
             {links.map(l => (
               l.href ? (
-              <a key={l.label} href={l.href} style={B}
-                className="relative text-sm text-[#5C4A42] hover:text-[#2C1810] transition-colors tracking-wide group">
-                {l.label}
-                <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-[#C9956A] group-hover:w-full transition-all duration-300" />
-              </a>
+                <a key={l.label} href={l.href} style={B}
+                  className="relative text-sm text-[#5C4A42] hover:text-[#2C1810] transition-colors tracking-wide group">
+                  {l.label}
+                  <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-[#C9956A] group-hover:w-full transition-all duration-300" />
+                </a>
               ) : (
-              <button key={l.label} onClick={l.action} style={B}
-                className="relative text-sm text-[#5C4A42] hover:text-[#2C1810] transition-colors tracking-wide group">
-                {l.label}
-                <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-[#C9956A] group-hover:w-full transition-all duration-300" />
-              </button>
+                <button key={l.label} onClick={l.action} style={B}
+                  className="relative text-sm text-[#5C4A42] hover:text-[#2C1810] transition-colors tracking-wide group">
+                  {l.label}
+                  <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-[#C9956A] group-hover:w-full transition-all duration-300" />
+                </button>
               )
             ))}
           </nav>
@@ -82,19 +82,19 @@ export function Nav({ ready }: { ready: boolean }) {
             <div className="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-8">
               {links.map((l, i) => (
                 l.href ? (
-                <motion.a key={l.label} href={l.href} onClick={() => setOpen(false)}
-                  className="text-sm tracking-[0.15em] uppercase text-[#FAF7F2] hover:text-[#C9956A] transition-colors" style={D}
-                  initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.12 + i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
-                  {l.label}
-                </motion.a>
+                  <motion.a key={l.label} href={l.href} onClick={() => setOpen(false)}
+                    className="text-sm tracking-[0.15em] uppercase text-[#FAF7F2] hover:text-[#C9956A] transition-colors" style={D}
+                    initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.12 + i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
+                    {l.label}
+                  </motion.a>
                 ) : (
-                <motion.button key={l.label} onClick={() => { setOpen(false); l.action?.(); }}
-                  className="text-sm tracking-[0.15em] uppercase text-[#FAF7F2] hover:text-[#C9956A] transition-colors text-left" style={D}
-                  initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.12 + i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
-                  {l.label}
-                </motion.button>
+                  <motion.button key={l.label} onClick={() => { setOpen(false); l.action?.(); }}
+                    className="text-sm tracking-[0.15em] uppercase text-[#FAF7F2] hover:text-[#C9956A] transition-colors text-left" style={D}
+                    initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.12 + i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
+                    {l.label}
+                  </motion.button>
                 )
               ))}
             </div>
@@ -118,11 +118,11 @@ export function Nav({ ready }: { ready: boolean }) {
         )}
       </AnimatePresence>
     </>
-    );
+  );
 }
 
 export function Footer() {
-    return (
+  return (
     <footer className="bg-[#160A05] text-[#FAF7F2] py-14 px-6 md:px-16 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[2fr_1fr_1fr] gap-10 mb-10 pb-10 border-b border-[#FAF7F2]/8">
@@ -157,22 +157,22 @@ export function Footer() {
           ))}
         </div>
         <div className="flex flex-col sm:flex-row justify-between gap-3">
-          <p className="text-xs text-[#FAF7F2]/55" style={B}>© 2024 COSMO HOME Ltd. All rights reserved.</p>
+          <p className="text-xs text-[#FAF7F2]/55" style={B}>© {new Date().getFullYear()} COSMO HOME Ltd. All rights reserved.</p>
           <p className="text-xs text-[#FAF7F2]/55" style={B}>Privacy · Terms · 🛡️ CQC Registered</p>
         </div>
       </div>
     </footer>
-    );
+  );
 }
 
 export function MobileBottomCTA() {
-    const [visible, setVisible] = useState(false);
-    useEffect(() => {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 300);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-    }, []);
-    return (
+  }, []);
+  return (
     <AnimatePresence>
       {visible && (
         <motion.div
@@ -195,5 +195,5 @@ export function MobileBottomCTA() {
         </motion.div>
       )}
     </AnimatePresence>
-    );
+  );
 }

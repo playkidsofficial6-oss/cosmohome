@@ -71,7 +71,7 @@ export function Preloader({ onDone }: { onDone: () => void }) {
                 animate={{ pathLength: 1, fillOpacity: 1 }}
                 transition={{
                   pathLength: { duration: 1.5, ease: EASE },
-                  fillOpacity: { delay: 1.0, duration: 0.8, ease: EASE }
+                  fillOpacity: { delay: 1.0, duration: 1.5, ease: EASE }
                 }}
               />
               <motion.path
@@ -83,19 +83,21 @@ export function Preloader({ onDone }: { onDone: () => void }) {
                 animate={{ pathLength: 1, fillOpacity: 1 }}
                 transition={{
                   pathLength: { duration: 1.5, ease: EASE },
-                  fillOpacity: { delay: 0.6, duration: 0.8, ease: EASE }
+                  fillOpacity: { delay: 0.6, duration: 1.5, ease: EASE }
                 }}
               />
             </motion.svg>
+
+
           </motion.div>
 
           <motion.div className="overflow-hidden flex flex-col items-end whitespace-nowrap"
             initial={{ maxWidth: 0, opacity: 0, paddingLeft: 0 }}
             animate={{ maxWidth: 500, opacity: 1, paddingLeft: "1.75rem" }}
             transition={{
-              maxWidth: { delay: 1.1, duration: 1.2, ease: EASE },
-              paddingLeft: { delay: 1.1, duration: 1.2, ease: EASE },
-              opacity: { delay: 1.3, duration: 0.8, ease: EASE }
+              maxWidth: { delay: 1.1, duration: 2, ease: EASE },
+              paddingLeft: { delay: 1.1, duration: 2, ease: EASE },
+              opacity: { delay: 1.3, duration: 1.0, ease: EASE }
             }}>
             <h1 className="text-[#a6906c] text-[32px] md:text-[44px] font-medium" style={D}>
               COSMO HOME
@@ -103,15 +105,14 @@ export function Preloader({ onDone }: { onDone: () => void }) {
             <p className="w-full text-right text-[#7d5745] text-[10px] md:text-[13px] font-medium uppercase pr-1" style={M}>
               Skin Care Centre
             </p>
+            <motion.p className="text-[#a6906c] text-[15px] md:text-[18px] w-full text-center mt-3 pointer-events-none" style={{ ...D, fontStyle: "italic" }}
+              initial={{ opacity: 0, y: -10, textShadow: "0 0 0px rgba(166,144,108,0)" }}
+              animate={{ opacity: 1, y: 0, textShadow: "0 0 15px rgba(166,144,108,0.5)" }}
+              transition={{ delay: 1.6, duration: 1, ease: EASE }}>
+              Aesthetics at home ambience
+            </motion.p>
           </motion.div>
         </div>
-
-        <motion.p className="absolute -bottom-8 md:-bottom-12 text-[#a6906c] text-[15px] md:text-[18px] whitespace-nowrap w-[400px] text-center pointer-events-none" style={{ ...D, fontStyle: "italic" }}
-          initial={{ opacity: 0, y: -10, textShadow: "0 0 0px rgba(166,144,108,0)" }}
-          animate={{ opacity: 1, y: 0, textShadow: "0 0 15px rgba(166,144,108,0.5)" }}
-          transition={{ delay: 1.6, duration: 1, ease: EASE }}>
-          Aesthetics at home ambience
-        </motion.p>
       </div>
     </motion.div>
   );
