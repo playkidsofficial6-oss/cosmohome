@@ -140,13 +140,13 @@ export function CTAButtons({ light = false }: { light?: boolean }) {
       <motion.a href="#sp-book"
         whileHover={{ scale: 1.04, boxShadow: "0 0 36px rgba(201,149,106,0.55)" }}
         whileTap={{ scale: 0.97 }}
-        className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-xl shadow-xl shadow-[#C9956A]/30 font-medium group" style={B}>
-        Book Consultation <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+        className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase whitespace-nowrap rounded-xl shadow-xl shadow-[#C9956A]/30 font-medium group" style={B}>
+        Book Consultation <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform shrink-0" />
       </motion.a>
       <motion.a href="https://wa.me/441234567890" target="_blank" rel="noopener noreferrer"
         whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
-        className={`inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl border text-xs tracking-[0.18em] uppercase transition-all duration-300 font-medium ${light ? "border-[#2C1810]/20 text-[#2C1810] hover:border-[#C9956A] hover:text-[#C9956A]" : "border-[#FAF7F2]/20 text-[#FAF7F2] hover:border-[#C9956A] hover:text-[#C9956A]"}`} style={B}>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d={WA_PATH} /></svg>
+        className={`inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl border text-xs tracking-[0.18em] uppercase whitespace-nowrap transition-all duration-300 font-medium ${light ? "border-[#2C1810]/20 text-[#2C1810] hover:border-[#C9956A] hover:text-[#C9956A]" : "border-[#FAF7F2]/20 text-[#FAF7F2] hover:border-[#C9956A] hover:text-[#C9956A]"}`} style={B}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366" className="shrink-0"><path d={WA_PATH} /></svg>
         WhatsApp Us
       </motion.a>
     </div>

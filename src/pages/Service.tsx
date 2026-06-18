@@ -12,10 +12,6 @@ export default function ServicePage() {
     <AnimatePresence>
       <motion.div
         key="service-page"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
-        transition={{ duration: 0.5, ease: EASE }}
         style={B}
         className="min-h-screen bg-[#FAF7F2]"
       >
