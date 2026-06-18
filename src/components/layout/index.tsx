@@ -31,9 +31,12 @@ export function Nav({ ready }: { ready: boolean }) {
         initial={{ y: -80, opacity: 0 }} animate={ready ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, delay: 0.3, ease: EASE }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
-          <a href="/" className="flex flex-col leading-none">
-            <span className="text-xl tracking-[0.12em] uppercase text-[#2C1810]" style={D}>Cosmo Home</span>
-            <span className="text-[9px] tracking-[0.3em] uppercase text-[#C9956A] mt-0.5" style={M}>Aesthetic Medicine</span>
+          <a href="/" className="flex items-center gap-2">
+            <img src="/icon.svg" alt="Cosmo Home Icon" className="h-8 md:h-10 w-auto" />
+            <div className="flex flex-col leading-none">
+              <span className="text-xl tracking-[0.12em] uppercase text-[#2C1810]" style={D}>Cosmo Home</span>
+              <span className="text-[9px] tracking-[0.3em] uppercase text-[#C9956A] mt-0.5" style={M}>Aesthetic Medicine</span>
+            </div>
           </a>
           <nav className="hidden lg:flex items-center gap-8">
             {links.map(l => (
@@ -127,8 +130,13 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[2fr_1fr_1fr] gap-10 mb-10 pb-10 border-b border-[#FAF7F2]/8">
           <div>
-            <p className="text-xl tracking-[0.1em]" style={D}>Cosmo Home</p>
-            <p className="text-xs tracking-[0.3em] uppercase text-[#C9956A] mt-1 mb-5" style={M}>✨ Aesthetic Medicine</p>
+            <div className="flex items-center gap-3 mb-5">
+              <img src="/icon.svg" alt="Cosmo Home Icon" className="h-10 md:h-12 w-auto" />
+              <div>
+                <p className="text-xl tracking-[0.1em]" style={D}>Cosmo Home</p>
+                <p className="text-[10px] tracking-[0.3em] uppercase text-[#C9956A] mt-1" style={M}>Aesthetic Medicine</p>
+              </div>
+            </div>
             <p className="text-sm text-[#FAF7F2]/65 leading-relaxed max-w-xs" style={B}>
               A luxury destination where beauty, confidence, expertise, and care come together.
             </p>
