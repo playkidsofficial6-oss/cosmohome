@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Menu, X, Instagram, Facebook, Home, MessageCircle, ClipboardList, Sparkles, Heart, Award, Shield, AlertTriangle, CheckCircle, XCircle, Phone, BadgeCheck, Stethoscope, GraduationCap, Users, ChevronRight } from "lucide-react";
+import { ArrowRight, Menu, X, Instagram, Facebook, Youtube, Home, MessageCircle, ClipboardList, Sparkles, Heart, Award, Shield, AlertTriangle, CheckCircle, XCircle, Phone, BadgeCheck, Stethoscope, GraduationCap, Users, ChevronRight } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, WA_PATH } from "../../lib/constants";
 export function Nav({ ready }: { ready: boolean }) {
@@ -141,11 +141,15 @@ export function Footer() {
               A luxury destination where beauty, confidence, expertise, and care come together.
             </p>
             <div className="flex gap-5 mt-7">
-              {[Instagram, Facebook].map((Icon, i) => (
-                <motion.a key={i} href="#" whileHover={{ y: -3 }} className="text-[#FAF7F2]/60 hover:text-[#C9956A] transition-colors">
-                  <Icon size={16} />
-                </motion.a>
-              ))}
+              <motion.a href="https://www.instagram.com/cosmohomeskincare" target="_blank" rel="noreferrer" whileHover={{ y: -3 }} className="text-[#FAF7F2]/60 hover:text-[#C9956A] transition-colors">
+                <Instagram size={16} />
+              </motion.a>
+              <motion.a href="https://www.facebook.com/CosmoHomeSkincare/" target="_blank" rel="noreferrer" whileHover={{ y: -3 }} className="text-[#FAF7F2]/60 hover:text-[#C9956A] transition-colors">
+                <Facebook size={16} />
+              </motion.a>
+              <motion.a href="https://www.youtube.com/@cosmohome5593" target="_blank" rel="noreferrer" whileHover={{ y: -3 }} className="text-[#FAF7F2]/60 hover:text-[#C9956A] transition-colors">
+                <Youtube size={16} />
+              </motion.a>
             </div>
           </div>
           {[
