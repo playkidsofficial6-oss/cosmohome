@@ -31,7 +31,7 @@ export function Nav({ ready }: { ready: boolean }) {
         initial={{ y: -80, opacity: 0 }} animate={ready ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, delay: 0.3, ease: EASE }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
-          <a href="/" className="flex items-center gap-2">
+          <a href="/" onClick={(e) => { e.preventDefault(); navigate("/"); }} className="flex items-center gap-2 cursor-pointer">
             <img src="/icon.svg" alt="Cosmo Home Icon" className="h-8 md:h-10 w-auto" />
             <div className="flex flex-col leading-none">
               <span className="text-xl tracking-[0.12em] uppercase text-[#2C1810]" style={D}>Cosmo Home</span>
@@ -41,8 +41,8 @@ export function Nav({ ready }: { ready: boolean }) {
           <nav className="hidden lg:flex items-center gap-8">
             {links.map(l => (
               l.href ? (
-                <a key={l.label} href={l.href} style={B}
-                  className="relative text-sm text-[#5C4A42] hover:text-[#2C1810] transition-colors tracking-wide group">
+                <a key={l.label} href={l.href} onClick={(e) => { e.preventDefault(); navigate(l.href!); }} style={B}
+                  className="relative text-sm text-[#5C4A42] hover:text-[#2C1810] transition-colors tracking-wide group cursor-pointer">
                   {l.label}
                   <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-[#C9956A] group-hover:w-full transition-all duration-300" />
                 </a>
@@ -72,7 +72,7 @@ export function Nav({ ready }: { ready: boolean }) {
 
             {/* Top Bar inside Menu */}
             <div className="flex items-center justify-between px-6 h-[72px] shrink-0">
-              <a href="/" className="flex flex-col leading-none" onClick={() => setOpen(false)}>
+              <a href="/" className="flex flex-col leading-none cursor-pointer" onClick={(e) => { e.preventDefault(); setOpen(false); navigate("/"); }}>
                 <span className="text-xl tracking-[0.12em] uppercase text-[#FAF7F2]" style={D}>Cosmo Home</span>
                 <span className="text-[9px] tracking-[0.3em] uppercase text-[#C9956A] mt-0.5" style={M}>Aesthetic Medicine</span>
               </a>
@@ -85,7 +85,7 @@ export function Nav({ ready }: { ready: boolean }) {
             <div className="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-8">
               {links.map((l, i) => (
                 l.href ? (
-                  <motion.a key={l.label} href={l.href} onClick={() => setOpen(false)}
+                  <motion.a key={l.label} href={l.href} onClick={(e) => { e.preventDefault(); setOpen(false); navigate(l.href!); }}
                     className="text-sm tracking-[0.15em] uppercase text-[#FAF7F2] hover:text-[#C9956A] transition-colors" style={D}
                     initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.12 + i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>

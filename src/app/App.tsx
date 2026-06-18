@@ -10,8 +10,8 @@ import { Nav, Footer, MobileBottomCTA } from "../components/layout";
 import HomePage from "../pages/Home";
 import ServicePage from "../pages/Service";
 export function AppContent() {
-    const [ready, setReady] = useState(false);
     const location = useLocation();
+    const [ready, setReady] = useState(() => location.pathname !== "/");
     useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     }, [location.pathname]);
