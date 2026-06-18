@@ -1,18 +1,19 @@
 
-import { useState, useEffect, useRef } from "react";
-import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Menu, X, Instagram, Facebook, Home, MessageCircle, ClipboardList, Sparkles, Heart, Award, Shield, AlertTriangle, CheckCircle, XCircle, Phone, BadgeCheck, Stethoscope, GraduationCap, Users, ChevronRight } from "lucide-react";
+import { ArrowRight, Heart, AlertTriangle, XCircle, ChevronRight } from "lucide-react";
 
-import { D, M, B, GOLD, EASE, EASE2, GRAIN, STEPS, DOCTORS, STANDARDS } from "../lib/constants";
-import { FadeUp, SlideIn, Rule, Tag, InputField, CTAButtons } from "../components/ui/shared";
+import { D, M, B, GOLD, EASE, GRAIN, STEPS, DOCTORS, STANDARDS, type Step } from "../lib/constants";
+import { FadeUp, SlideIn, Rule, Tag, InputField } from "../components/ui/shared";
+import { TeamSection } from "../components/home/TeamSection";
 export function Hero({ ready }: { ready: boolean }) {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-    const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
-    const textY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
-    const d = (base: number) => ready ? base : 999;
-    return (
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
+  const d = (base: number) => ready ? base : 999;
+  return (
     <section ref={ref} className="relative min-h-screen overflow-hidden bg-[#2C1810] flex flex-col">
       <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.04]"
         style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
@@ -64,7 +65,7 @@ export function Hero({ ready }: { ready: boolean }) {
 
         <motion.div className="mt-10 pt-8 border-t border-[#FAF7F2]/15 flex flex-wrap gap-6 sm:gap-14"
           initial={{ opacity: 0 }} animate={ready ? { opacity: 1 } : {}} transition={{ delay: d(1.4) }}>
-          {[{ n: "12+", l: "Years of Care" }, { n: "3,800+", l: "Transformations" }, { n: "4 Doctors", l: "On Your Side" }].map(({ n, l }, i) => (
+          {[{ n: "20+", l: "Years of Care" }, { n: "3,800+", l: "Transformations" }, { n: "5 Doctors", l: "On Your Side" }].map(({ n, l }, i) => (
             <motion.div key={l} initial={{ opacity: 0, y: 12 }} animate={ready ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: d(1.5 + i * 0.12) }}>
               <p className="text-[#C9956A] text-2xl md:text-3xl" style={D}>{n}</p>
@@ -74,11 +75,11 @@ export function Hero({ ready }: { ready: boolean }) {
         </motion.div>
       </motion.div>
     </section>
-    );
+  );
 }
 
 export function Philosophy() {
-    return (
+  return (
     <section id="philosophy" className="py-20 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto">
         <FadeUp><Tag>Chapter 02 — The Philosophy</Tag></FadeUp>
@@ -127,16 +128,16 @@ export function Philosophy() {
         </div>
       </div>
     </section>
-    );
+  );
 }
 
 export function ExtraordinaryCare() {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-    const scl = useTransform(scrollYProgress, [0, 0.5, 1], [0.97, 1, 0.97]);
-    return (
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const scl = useTransform(scrollYProgress, [0, 0.5, 1], [0.97, 1, 0.97]);
+  return (
     <section ref={ref} className="relative py-4 bg-[#FAF7F2]">
-      <motion.div style={{ scale: scl }} className="bg-[#1C0E08] mx-4 md:mx-10 lg:mx-16 relative overflow-hidden">
+      <motion.div className="bg-[#1C0E08] mx-0 md:mx-10 lg:mx-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
         <motion.div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, #C9956A 0%, transparent 70%)" }}
@@ -188,65 +189,108 @@ export function ExtraordinaryCare() {
         </div>
       </motion.div>
     </section>
-    );
+  );
 }
 
 export function DrRuxana() {
-    const imgRef = useRef(null);
-    const { scrollYProgress } = useScroll({ target: imgRef, offset: ["start end", "end start"] });
-    const imgY = useTransform(scrollYProgress, [0, 1], ["-7%", "7%"]);
-    return (
-    <section id="dr-ruxana" className="bg-[#F3EDE4] py-20 md:py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
-        <FadeUp><Tag>Chapter 03 — The Story</Tag></FadeUp>
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-24 mt-10 items-center">
-          <FadeUp delay={0.1} className="relative order-2 lg:order-1">
-            <div ref={imgRef} className="relative aspect-[3/4] overflow-hidden bg-[#EDE5D8]">
-              <motion.img src="https://images.unsplash.com/photo-1659353888906-adb3e0041693?w=900&h=1200&fit=crop&auto=format&crop=faces"
-                alt="Dr. Ruxana, founder of COSMO HOME" className="w-full h-full object-cover object-top"
-                style={{ y: imgY, scale: 1.1 }} />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/30 to-transparent" />
-            </div>
-            <motion.div initial={{ opacity: 0, x: 28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.4 }} whileHover={{ y: -4 }}
-              className="absolute -bottom-5 -right-2 md:right-4 bg-[#2C1810] text-[#FAF7F2] px-6 py-5 max-w-[210px]">
-              <p className="text-xs tracking-[0.2em] uppercase text-[#C9956A] mb-2" style={M}>🎓 Credentials</p>
-              <p className="text-sm leading-relaxed" style={B}>MBBS · MRCS<br />Dip. Aesthetic Med.<br />Fellow, BCAM</p>
+  return (
+    /* bg-[#E8DDD1] matches the warm beige of the photo background for seamless blending */
+    <section id="dr-ruxana" className="bg-[#E8DDD1] overflow-hidden">
+
+      {/* Chapter tag — inside padded container */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-5 md:pt-10">
+        <FadeUp>
+          <div className="relative mb-8 pl-5 pt-4">
+            <div className="absolute left-0 top-0 w-20 h-px bg-[#C9956A]/55" />
+            <div className="absolute left-0 top-0 w-px h-14 bg-[#C9956A]/55" />
+            <p className="text-[10px] tracking-[0.28em] uppercase text-[#8B6B53]" style={M}>Chapter 03 — The Story</p>
+          </div>
+        </FadeUp>
+      </div>
+
+      {/* Full-width grid — image column starts at absolute left edge of section */}
+      <div className="grid lg:grid-cols-[55%_45%] gap-0 items-center">
+
+        {/* ── Image Column — no left padding, starts at screen left edge ── */}
+        <FadeUp delay={0.1} className="relative order-2 lg:order-1">
+          <div className="relative w-full">
+            <motion.img
+              src="/ruxana/banner.webp"
+              alt="Dr. Ruxana K (MBBS, DDVL)"
+              className="w-full h-auto hidden lg:block"
+            />
+
+            <motion.img
+              src="/ruxana/banner-mob.png"
+              alt="Dr. Ruxana K (MBBS, DDVL)"
+              className="w-full h-auto block lg:hidden"
+            />
+
+            {/* Right-edge fade — subtle blend into bg at the very edge */}
+            <div
+              className="absolute inset-y-0 right-0 w-1/6 z-[5] pointer-events-none"
+              style={{ background: "linear-gradient(to right, transparent, #E8DDD1)" }}
+            />
+
+            {/* Credentials box — overlaps the right side of the image at desk level */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5 }}
+              whileHover={{ y: -3 }}
+              className="absolute bg-[#2E1A10] text-[#FAF7F2] px-5 py-4 z-10"
+              style={{ bottom: "18%", right: "4%" }}
+            >
+              <div className="flex items-center gap-1.5 mb-2.5">
+                <span className="text-[9px] text-[#C9956A]">✨</span>
+                <p className="text-[9px] tracking-[0.22em] uppercase text-[#C9956A]" style={M}>Credentials</p>
+              </div>
+              <p className="text-[11px] leading-[1.85] text-[#FAF7F2]/90" style={B}>
+                MBBS · MRCS<br />Dip. Aesthetic Med.<br />Fellow, BCAM
+              </p>
             </motion.div>
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="absolute -top-4 -left-4 w-20 h-20 border-t-2 border-l-2 border-[#C9956A] pointer-events-none" />
-          </FadeUp>
-          <FadeUp delay={0.15} className="order-1 lg:order-2 lg:pt-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-[#2C1810] mb-6" style={D}>
-              Meet Dr.<br /><em>Ruxana.</em>
-            </h2>
-            <p className="text-base text-[#2C1810] leading-loose mb-4" style={B}>
-              Dr. Ruxana did not enter aesthetic medicine to sell treatments. She entered it because she witnessed, again and again, how much a woman's confidence shapes her entire life — her relationships, her ambitions, her sense of self.
+          </div>
+        </FadeUp>
+
+        {/* ── Text Column — padded on left, spaced on right ── */}
+        <FadeUp delay={0.15} className="order-1 lg:order-2 px-8 md:px-12 lg:pl-14 xl:pl-20 pr-4 md:pr-6 lg:pr-8 pb-6 lg:pb-0">
+          <h2 className="text-[2.8rem] sm:text-5xl md:text-6xl lg:text-[3.8rem] xl:text-[4.5rem] leading-[1.0] text-[#2C1810] mb-6" style={D}>
+            Meet Dr.<br /><em>Ruxana.</em>
+          </h2>
+
+          <p className="text-[13px] md:text-sm text-[#2C1810]/80 leading-[1.85] mb-4 max-w-[450px]" style={B}>
+            Dr. Ruxana did not enter aesthetic medicine to sell treatments. She entered it because she witnessed, again and again, how much a woman's confidence shapes her entire life — her relationships, her ambitions, her sense of self.
+          </p>
+          <p className="text-[13px] md:text-sm text-[#2C1810]/80 leading-[1.85] mb-8 max-w-[450px]" style={B}>
+            She trained for over a decade before founding COSMO HOME — not as a clinic, but as a philosophy. A belief that the most powerful aesthetic outcomes are gentle, natural, and deeply personal.
+          </p>
+
+          <motion.div
+            initial={{ opacity: 0, x: -14 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
+            className="border-l border-[#C9956A]/60 pl-5 max-w-[450px]"
+          >
+            <p className="text-[13px] md:text-sm text-[#2C1810] leading-[1.75]" style={{ ...D, fontStyle: "italic" }}>
+              "I want every patient to leave feeling more like themselves — not different. More radiant. More free."
             </p>
-            <p className="text-base text-[#5C4A42] leading-loose mb-8" style={B}>
-              She trained for over a decade before founding COSMO HOME — not as a clinic, but as a philosophy. A belief that the most powerful aesthetic outcomes are gentle, natural, and deeply personal.
-            </p>
-            <motion.blockquote initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}
-              className="border-l-2 border-[#C9956A] pl-6 text-lg md:text-xl text-[#2C1810] leading-snug" style={{ ...D, fontStyle: "italic" }}>
-              "I want every patient to leave feeling more like themselves — not different. More radiant. More free." 💛
-            </motion.blockquote>
-            <p className="mt-3 text-xs text-[#C9956A] tracking-widest" style={M}>— Dr. Ruxana</p>
-          </FadeUp>
-        </div>
+            <div className="mt-3 text-base">🧡</div>
+            <p className="mt-2.5 text-[9px] text-[#C9956A] tracking-[0.28em] uppercase" style={M}>— Dr. Ruxana</p>
+          </motion.div>
+
+          <div className="pb-5 md:pb-0" />
+        </FadeUp>
       </div>
     </section>
-    );
+  );
 }
 
+
 export function Transformation() {
-    const stories = [
-            { name: "Sofia, 38", tag: "Confidence Restored ✨", story: '"After two children and a decade of putting myself last, I forgot what it felt like to look in the mirror and feel proud. Dr. Ruxana gave me that back — quietly, naturally."', img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=1000&fit=crop&auto=format" },
-            { name: "Amara, 45", tag: "Natural Renewal 🌿", story: '"People kept asking if I had been on holiday. That was all I wanted — to look rested, not treated. Dr. Ruxana understood that without me having to explain it twice."', img: "https://images.unsplash.com/photo-1593351799227-75df2026356b?w=800&h=1000&fit=crop&auto=format" },
-            { name: "Elena, 31", tag: "New Chapter 🦋", story: '"Starting a business changes you. I needed to feel as capable on the outside as I felt within. COSMO HOME did not change me — it aligned how I look with who I have become."', img: "https://images.unsplash.com/photo-1544717304-a2db4a7b16ee?w=800&h=1000&fit=crop&auto=format" },
-          ];
-    return (
+  const stories = [
+    { name: "Sofia, 38", tag: "Confidence Restored ✨", story: '"After two children and a decade of putting myself last, I forgot what it felt like to look in the mirror and feel proud. Dr. Ruxana gave me that back — quietly, naturally."', img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=1000&fit=crop&auto=format" },
+    { name: "Amara, 45", tag: "Natural Renewal 🌿", story: '"People kept asking if I had been on holiday. That was all I wanted — to look rested, not treated. Dr. Ruxana understood that without me having to explain it twice."', img: "https://images.unsplash.com/photo-1593351799227-75df2026356b?w=800&h=1000&fit=crop&auto=format" },
+    { name: "Elena, 31", tag: "New Chapter 🦋", story: '"Starting a business changes you. I needed to feel as capable on the outside as I felt within. COSMO HOME did not change me — it aligned how I look with who I have become."', img: "https://images.unsplash.com/photo-1544717304-a2db4a7b16ee?w=800&h=1000&fit=crop&auto=format" },
+  ];
+  return (
     <section className="py-20 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
@@ -276,20 +320,20 @@ export function Transformation() {
         </div>
       </div>
     </section>
-    );
+  );
 }
 
 export function Experiences() {
-    const [active, setActive] = useState(0);
-    const navigate = useNavigate();
-    const exps = [
-            { name: "Skin Renewal Experience ✨", tagline: "Rediscover your glow", desc: "A deeply personalised skin journey combining medical-grade analysis, bespoke topical protocols, and precision regenerative treatments. Designed to restore luminosity and texture — naturally, gradually, lastingly.", duration: "From 3 sessions", suitedFor: "All skin types seeking radiance" },
-            { name: "Age Gracefully Experience 🌸", tagline: "Confidence, not correction", desc: "A staged approach to natural facial rejuvenation. We work with the architecture of your face — not against it — using subtle volume restoration and refined contouring.", duration: "Ongoing, quarterly", suitedFor: "35–60 · natural longevity seekers" },
-            { name: "Confidence Restoration 🦋", tagline: "Return to yourself", desc: "For those at a turning point — post-pregnancy, post-illness, post-life-change — built around rebuilding your relationship with yourself and your reflection.", duration: "Bespoke programme", suitedFor: "Women navigating life transitions" },
-            { name: "Hair Revival Experience 🌿", tagline: "Strength from within", desc: "A clinical and holistic approach to hair thinning and scalp health. Addressing the root cause, not just the symptom, through advanced growth factor therapies.", duration: "6-month programme", suitedFor: "Hair thinning at any age" },
-            { name: "Personalised Aesthetic Journey 💫", tagline: "Your vision. Our expertise.", desc: "A comprehensive long-term relationship with aesthetic care. Dr. Ruxana designs a multi-year plan aligned with your goals, lifestyle, and evolving beauty.", duration: "Annual programme", suitedFor: "Anyone committed to the long view" },
-          ];
-    return (
+  const [active, setActive] = useState(0);
+  const navigate = useNavigate();
+  const exps = [
+    { name: "Skin Renewal Experience ✨", tagline: "Rediscover your glow", desc: "A deeply personalised skin journey combining medical-grade analysis, bespoke topical protocols, and precision regenerative treatments. Designed to restore luminosity and texture — naturally, gradually, lastingly.", duration: "From 3 sessions", suitedFor: "All skin types seeking radiance" },
+    { name: "Age Gracefully Experience 🌸", tagline: "Confidence, not correction", desc: "A staged approach to natural facial rejuvenation. We work with the architecture of your face — not against it — using subtle volume restoration and refined contouring.", duration: "Ongoing, quarterly", suitedFor: "35–60 · natural longevity seekers" },
+    { name: "Confidence Restoration 🦋", tagline: "Return to yourself", desc: "For those at a turning point — post-pregnancy, post-illness, post-life-change — built around rebuilding your relationship with yourself and your reflection.", duration: "Bespoke programme", suitedFor: "Women navigating life transitions" },
+    { name: "Hair Revival Experience 🌿", tagline: "Strength from within", desc: "A clinical and holistic approach to hair thinning and scalp health. Addressing the root cause, not just the symptom, through advanced growth factor therapies.", duration: "6-month programme", suitedFor: "Hair thinning at any age" },
+    { name: "Personalised Aesthetic Journey 💫", tagline: "Your vision. Our expertise.", desc: "A comprehensive long-term relationship with aesthetic care. Dr. Ruxana designs a multi-year plan aligned with your goals, lifestyle, and evolving beauty.", duration: "Annual programme", suitedFor: "Anyone committed to the long view" },
+  ];
+  return (
     <section id="experiences" className="py-20 md:py-32 bg-[#2C1810]">
       <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
         <FadeUp>
@@ -355,13 +399,13 @@ export function Experiences() {
         </div>
       </div>
     </section>
-    );
+  );
 }
 
 export function RoadmapStep({ step, index, sectionInView }: { step: Step; index: number; sectionInView: boolean }) {
-    const ref = useRef(null);
-    const inView = useInView(ref, { once: true, margin: "-30px" });
-    return (
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-30px" });
+  return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
@@ -443,13 +487,13 @@ export function RoadmapStep({ step, index, sectionInView }: { step: Step; index:
         </div>
       </motion.div>
     </motion.div>
-    );
+  );
 }
 
 export function Journey() {
-    const ref = useRef(null);
-    const inView = useInView(ref, { once: true, margin: "-60px" });
-    return (
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+  return (
     <section id="journey" ref={ref} className="relative py-20 md:py-32 bg-[#160A05] overflow-hidden">
       {/* Ambient glows */}
       <motion.div className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
@@ -538,12 +582,12 @@ export function Journey() {
         </FadeUp>
       </div>
     </section>
-    );
+  );
 }
 
 export function TeamAndStandards() {
-    const [tab, setTab] = useState<"danger" | "standards">("standards");
-    return (
+  const [tab, setTab] = useState<"danger" | "standards">("standards");
+  return (
     <section id="our-team" className="bg-[#FAF7F2]">
       {/* ── ANTI-QUACKERY first ── */}
       <div id="our-standards" className="bg-[#1C0E08] relative overflow-hidden">
@@ -647,59 +691,19 @@ export function TeamAndStandards() {
         </div>
       </div>
 
-      {/* ── TEAM — proof our doctors are qualified ── */}
-      <div className="py-20 md:py-28 px-6 md:px-16 lg:px-24 max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
-          <FadeUp>
-            <Tag>Meet the Team Behind the Standard 👩‍⚕️</Tag>
-            <h2 className="text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
-              Every doctor,<br /><em>board-qualified.</em>
-            </h2>
-          </FadeUp>
-          <FadeUp delay={0.1}>
-            <p className="text-sm text-[#5C4A42] max-w-sm leading-relaxed" style={B}>
-              These are the faces behind the credentials. Every member of our clinical team holds postgraduate specialist qualifications — not weekend certifications.
-            </p>
-          </FadeUp>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {DOCTORS.map((doc, i) => (
-            <FadeUp key={doc.name} delay={i * 0.1}>
-              <motion.div className="group flex flex-col" whileHover="hover">
-                <div className="relative overflow-hidden aspect-[3/4] bg-[#EDE5D8] mb-5">
-                  <motion.img src={doc.img} alt={doc.alt} className="w-full h-full object-cover object-top"
-                    variants={{ hover: { scale: 1.05 } }} transition={{ duration: 0.6, ease: EASE }} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/55 to-transparent" />
-                  {doc.highlight && (
-                    <div className="absolute top-4 left-4 bg-[#C9956A] px-3 py-1">
-                      <p className="text-xs text-[#FAF7F2] tracking-widest uppercase" style={M}>Founder</p>
-                    </div>
-                  )}
-                  <motion.div className="absolute inset-0 bg-[#2C1810]/88 flex flex-col items-center justify-center px-5 text-center"
-                    initial={{ opacity: 0 }} variants={{ hover: { opacity: 1 } }} transition={{ duration: 0.3 }}>
-                    <p className="text-xs tracking-[0.18em] uppercase text-[#C9956A] mb-3" style={M}>🎓 Qualifications</p>
-                    <p className="text-sm text-[#FAF7F2] leading-relaxed" style={B}>{doc.creds}</p>
-                  </motion.div>
-                </div>
-                <p className="text-lg text-[#2C1810]" style={D}>{doc.name}</p>
-                <p className="text-sm text-[#5C4A42] mt-0.5" style={B}>{doc.role}</p>
-                <p className="text-xs tracking-[0.18em] uppercase text-[#C9956A] mt-1.5" style={M}>{doc.spec}</p>
-              </motion.div>
-            </FadeUp>
-          ))}
-        </div>
-      </div>
+      {/* ── TEAM — completely new composed design ── */}
+      <TeamSection />
     </section>
-    );
+  );
 }
 
 export function Stories() {
-    const stories = [
-            { author: "Isabelle W., 42", context: "Entrepreneur · Skin Renewal Experience", pull: "I had forgotten what my own confidence felt like. 💛", body: "Two years running a company, two years of putting everything else first. When I finally walked through COSMO HOME's door, I did not want a procedure. I wanted to feel like myself again. Six months in, my team keeps asking what I have changed. I tell them: my relationship with myself." },
-            { author: "Nadia P., 35", context: "Creative Director · Age Gracefully Experience", pull: "She listened before she said a single word about treatment. 🌸", body: "I had been to two other clinics before COSMO HOME. Both had a menu ready before I finished a sentence. Dr. Ruxana asked me what I was feeling. A year later, I look the way I feel on my best days. That is all I ever wanted." },
-            { author: "Claudia M., 51", context: "Architect · Personalised Aesthetic Journey", pull: "Beauty should grow with you, not fight against you. ✨", body: "Dr. Ruxana designed a two-year plan for me. Not to look younger — to look like myself at my best. The most considered, thoughtful investment I have made in myself. I am more proud of how I look at 51 than I ever was at 35." },
-          ];
-    return (
+  const stories = [
+    { author: "Isabelle W., 42", context: "Entrepreneur · Skin Renewal Experience", pull: "I had forgotten what my own confidence felt like. 💛", body: "Two years running a company, two years of putting everything else first. When I finally walked through COSMO HOME's door, I did not want a procedure. I wanted to feel like myself again. Six months in, my team keeps asking what I have changed. I tell them: my relationship with myself." },
+    { author: "Nadia P., 35", context: "Creative Director · Age Gracefully Experience", pull: "She listened before she said a single word about treatment. 🌸", body: "I had been to two other clinics before COSMO HOME. Both had a menu ready before I finished a sentence. Dr. Ruxana asked me what I was feeling. A year later, I look the way I feel on my best days. That is all I ever wanted." },
+    { author: "Claudia M., 51", context: "Architect · Personalised Aesthetic Journey", pull: "Beauty should grow with you, not fight against you. ✨", body: "Dr. Ruxana designed a two-year plan for me. Not to look younger — to look like myself at my best. The most considered, thoughtful investment I have made in myself. I am more proud of how I look at 51 than I ever was at 35." },
+  ];
+  return (
     <section id="stories" className="py-20 md:py-32 bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
         <FadeUp>
@@ -730,13 +734,23 @@ export function Stories() {
         </div>
       </div>
     </section>
-    );
+  );
 }
 
 export function Invitation() {
-    const [sent, setSent] = useState(false);
-    const [focused, setFocused] = useState<string | null>(null);
-    return (
+  const [sent, setSent] = useState(false);
+  const [focused, setFocused] = useState<string | null>(null);
+  const [dropOpen, setDropOpen] = useState(false);
+  const [selected, setSelected] = useState("");
+  const dropRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (dropRef.current && !dropRef.current.contains(e.target as Node)) setDropOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+  return (
     <section id="invitation" className="relative py-20 md:py-32 overflow-hidden bg-[#2C1810]">
       <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
       <motion.div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full pointer-events-none"
@@ -758,9 +772,9 @@ export function Invitation() {
             </p>
             <div className="flex flex-col gap-4 mb-10">
               {[
-                { label: "Phone", value: "+44 20 7946 0512" },
-                { label: "Email", value: "hello@cosmohome.co.uk" },
-                { label: "Address", value: "14 Harley Street, London W1G" },
+                { label: "Phone", value: "+91 99463 36480" },
+                { label: "Email", value: "cosmohomenilambur@gmail.com" },
+                { label: "Address", value: "Kalathinkadavu Rd, Nilambur, Kerala 679329" },
                 { label: "Hours", value: "Mon–Sat · 9am–7pm" },
               ].map(({ label, value }, i) => (
                 <motion.div key={label} initial={{ opacity: 0, x: -14 }} whileInView={{ opacity: 1, x: 0 }}
@@ -787,24 +801,72 @@ export function Invitation() {
                     <InputField label="First name" placeholder="First name" />
                     <InputField label="Last name" placeholder="Last name" />
                   </div>
-                  <InputField label="Email" type="email" placeholder="your@email.com" />
+                  <InputField label="Phone" type="tel" placeholder="+91 98765 43210" />
 
-                  {/* Select */}
-                  <div className="flex flex-col gap-2">
-                    <label className="text-xs tracking-[0.25em] uppercase text-[#5C4A42]" style={M}>Experience of interest</label>
-                    <div className={`transition-all duration-300 ${focused === "select" ? "shadow-[0_0_0_2px_rgba(201,149,106,0.35)]" : ""}`}>
-                      <select style={{ borderBottomColor: focused === "select" ? GOLD : "rgba(44,24,16,0.2)", ...B }}
-                        className="w-full border-b-2 bg-transparent pb-2.5 pt-1 text-sm text-[#2C1810] focus:outline-none transition-colors appearance-none"
-                        onFocus={() => setFocused("select")} onBlur={() => setFocused(null)}>
-                        <option value="">I am not sure yet</option>
-                        <option>Skin Renewal Experience</option>
-                        <option>Age Gracefully Experience</option>
-                        <option>Confidence Restoration</option>
-                        <option>Hair Revival Experience</option>
-                        <option>Personalised Aesthetic Journey</option>
-                      </select>
-                    </div>
-                  </div>
+                  {/* Custom Dropdown */}
+                  {(() => {
+                    const options = [
+                      "I am not sure yet",
+                      "Skin Renewal Experience",
+                      "Age Gracefully Experience",
+                      "Confidence Restoration",
+                      "Hair Revival Experience",
+                      "Personalised Aesthetic Journey",
+                    ];
+                    return (
+                      <div ref={dropRef} className="flex flex-col gap-2 relative">
+                        <label className="text-xs tracking-[0.25em] uppercase text-[#5C4A42]" style={M}>Experience of interest</label>
+                        <button
+                          type="button"
+                          onClick={() => setDropOpen(!dropOpen)}
+                          className="w-full border-b-2 bg-transparent pb-2.5 pt-1 text-sm text-left flex items-center justify-between gap-2 focus:outline-none transition-colors"
+                          style={{ borderBottomColor: dropOpen ? GOLD : "rgba(44,24,16,0.2)", color: selected ? "#2C1810" : "#5C4A42", ...B }}
+                        >
+                          <span>{selected || "I am not sure yet"}</span>
+                          <motion.svg
+                            animate={{ rotate: dropOpen ? 180 : 0 }}
+                            transition={{ duration: 0.25 }}
+                            width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9956A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                            className="shrink-0"
+                          >
+                            <polyline points="6 9 12 15 18 9" />
+                          </motion.svg>
+                        </button>
+                        <AnimatePresence>
+                          {dropOpen && (
+                            <motion.ul
+                              initial={{ opacity: 0, y: -6, scaleY: 0.96 }}
+                              animate={{ opacity: 1, y: 0, scaleY: 1 }}
+                              exit={{ opacity: 0, y: -6, scaleY: 0.96 }}
+                              transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                              className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-2xl border border-[#2C1810]/8 overflow-hidden z-50 origin-top"
+                            >
+                              {options.map((opt, i) => (
+                                <motion.li
+                                  key={opt}
+                                  initial={{ opacity: 0, x: -8 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: i * 0.03, duration: 0.2 }}
+                                  onClick={() => { setSelected(opt === "I am not sure yet" ? "" : opt); setDropOpen(false); }}
+                                  className={`px-5 py-3 text-sm cursor-pointer transition-all duration-200 flex items-center gap-3 ${(selected === opt || (!selected && opt === "I am not sure yet"))
+                                    ? "bg-[#C9956A]/10 text-[#C9956A]"
+                                    : "text-[#2C1810] hover:bg-[#FAF7F2] hover:text-[#C9956A]"
+                                    }`}
+                                  style={B}
+                                >
+                                  <span className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors ${(selected === opt || (!selected && opt === "I am not sure yet"))
+                                    ? "bg-[#C9956A]"
+                                    : "bg-[#2C1810]/15"
+                                    }`} />
+                                  {opt}
+                                </motion.li>
+                              ))}
+                            </motion.ul>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  })()}
 
                   {/* Textarea */}
                   <div className="flex flex-col gap-2">
@@ -846,11 +908,11 @@ export function Invitation() {
         </div>
       </div>
     </section>
-    );
+  );
 }
 
 export default function HomePage({ ready }: { ready: boolean }) {
-    return (
+  return (
     <>
       <Hero ready={ready} />
       <Philosophy />
@@ -864,5 +926,5 @@ export default function HomePage({ ready }: { ready: boolean }) {
       <div className="lg:hidden h-20" />
       <Invitation />
     </>
-    );
+  );
 }

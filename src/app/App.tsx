@@ -10,10 +10,11 @@ import { Nav, Footer, MobileBottomCTA } from "../components/layout";
 import HomePage from "../pages/Home";
 import ServicePage from "../pages/Service";
 export function AppContent() {
-    const [ready, setReady] = useState(false);
     const location = useLocation();
+    const [ready, setReady] = useState(() => location.pathname !== "/");
     useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
     }, [location.pathname]);
     return (
     <div style={B} className="bg-background">
