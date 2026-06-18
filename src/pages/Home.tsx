@@ -1,11 +1,11 @@
 
-import { useState, useEffect, useRef } from "react";
-import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Menu, X, Instagram, Facebook, Home, MessageCircle, ClipboardList, Sparkles, Heart, Award, Shield, AlertTriangle, CheckCircle, XCircle, Phone, BadgeCheck, Stethoscope, GraduationCap, Users, ChevronRight } from "lucide-react";
+import { ArrowRight, Heart, AlertTriangle, XCircle, ChevronRight } from "lucide-react";
 
-import { D, M, B, GOLD, EASE, EASE2, GRAIN, STEPS, DOCTORS, STANDARDS } from "../lib/constants";
-import { FadeUp, SlideIn, Rule, Tag, InputField, CTAButtons } from "../components/ui/shared";
+import { D, M, B, GOLD, EASE, GRAIN, STEPS, DOCTORS, STANDARDS, type Step } from "../lib/constants";
+import { FadeUp, SlideIn, Rule, Tag, InputField } from "../components/ui/shared";
 export function Hero({ ready }: { ready: boolean }) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -192,53 +192,96 @@ export function ExtraordinaryCare() {
 }
 
 export function DrRuxana() {
-    const imgRef = useRef(null);
-    const { scrollYProgress } = useScroll({ target: imgRef, offset: ["start end", "end start"] });
-    const imgY = useTransform(scrollYProgress, [0, 1], ["-7%", "7%"]);
     return (
-    <section id="dr-ruxana" className="bg-[#F3EDE4] py-20 md:py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
-        <FadeUp><Tag>Chapter 03 — The Story</Tag></FadeUp>
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-24 mt-10 items-center">
-          <FadeUp delay={0.1} className="relative order-2 lg:order-1">
-            <div ref={imgRef} className="relative aspect-[3/4] overflow-hidden bg-[#EDE5D8]">
-              <motion.img src="https://images.unsplash.com/photo-1659353888906-adb3e0041693?w=900&h=1200&fit=crop&auto=format&crop=faces"
-                alt="Dr. Ruxana, founder of COSMO HOME" className="w-full h-full object-cover object-top"
-                style={{ y: imgY, scale: 1.1 }} />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/30 to-transparent" />
-            </div>
-            <motion.div initial={{ opacity: 0, x: 28 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.4 }} whileHover={{ y: -4 }}
-              className="absolute -bottom-5 -right-2 md:right-4 bg-[#2C1810] text-[#FAF7F2] px-6 py-5 max-w-[210px]">
-              <p className="text-xs tracking-[0.2em] uppercase text-[#C9956A] mb-2" style={M}>🎓 Credentials</p>
-              <p className="text-sm leading-relaxed" style={B}>MBBS · MRCS<br />Dip. Aesthetic Med.<br />Fellow, BCAM</p>
+    /* bg-[#E8DDD1] matches the warm beige of the photo background for seamless blending */
+    <section id="dr-ruxana" className="bg-[#E8DDD1] overflow-hidden">
+
+      {/* Chapter tag — inside padded container */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-5 md:pt-10">
+        <FadeUp>
+          <div className="relative mb-8 pl-5 pt-4">
+            <div className="absolute left-0 top-0 w-20 h-px bg-[#C9956A]/55" />
+            <div className="absolute left-0 top-0 w-px h-14 bg-[#C9956A]/55" />
+            <p className="text-[10px] tracking-[0.28em] uppercase text-[#8B6B53]" style={M}>Chapter 03 — The Story</p>
+          </div>
+        </FadeUp>
+      </div>
+
+      {/* Full-width grid — image column starts at absolute left edge of section */}
+      <div className="grid lg:grid-cols-[55%_45%] gap-0 items-center">
+
+        {/* ── Image Column — no left padding, starts at screen left edge ── */}
+        <FadeUp delay={0.1} className="relative order-2 lg:order-1">
+          <div className="relative w-full">
+            <motion.img
+              src="/banner.png"
+              alt="Dr. Ruxana K (MBBS, DDVL)"
+              className="w-full h-auto hidden lg:block"
+            />
+
+            <motion.img
+              src="/banner-mob.png"
+              alt="Dr. Ruxana K (MBBS, DDVL)"
+              className="w-full h-auto block lg:hidden"
+            />
+
+            {/* Right-edge fade — subtle blend into bg at the very edge */}
+            <div
+              className="absolute inset-y-0 right-0 w-1/6 z-[5] pointer-events-none"
+              style={{ background: "linear-gradient(to right, transparent, #E8DDD1)" }}
+            />
+
+            {/* Credentials box — overlaps the right side of the image at desk level */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.5 }}
+              whileHover={{ y: -3 }}
+              className="absolute bg-[#2E1A10] text-[#FAF7F2] px-5 py-4 z-10"
+              style={{ bottom: "18%", right: "4%" }}
+            >
+              <div className="flex items-center gap-1.5 mb-2.5">
+                <span className="text-[9px] text-[#C9956A]">✨</span>
+                <p className="text-[9px] tracking-[0.22em] uppercase text-[#C9956A]" style={M}>Credentials</p>
+              </div>
+              <p className="text-[11px] leading-[1.85] text-[#FAF7F2]/90" style={B}>
+                MBBS · MRCS<br />Dip. Aesthetic Med.<br />Fellow, BCAM
+              </p>
             </motion.div>
-            <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="absolute -top-4 -left-4 w-20 h-20 border-t-2 border-l-2 border-[#C9956A] pointer-events-none" />
-          </FadeUp>
-          <FadeUp delay={0.15} className="order-1 lg:order-2 lg:pt-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-[#2C1810] mb-6" style={D}>
-              Meet Dr.<br /><em>Ruxana.</em>
-            </h2>
-            <p className="text-base text-[#2C1810] leading-loose mb-4" style={B}>
-              Dr. Ruxana did not enter aesthetic medicine to sell treatments. She entered it because she witnessed, again and again, how much a woman's confidence shapes her entire life — her relationships, her ambitions, her sense of self.
+          </div>
+        </FadeUp>
+
+        {/* ── Text Column — padded on left, spaced on right ── */}
+        <FadeUp delay={0.15} className="order-1 lg:order-2 px-8 md:px-12 lg:pl-14 xl:pl-20 pr-4 md:pr-6 lg:pr-8 pb-6 lg:pb-0">
+          <h2 className="text-[2.8rem] sm:text-5xl md:text-6xl lg:text-[3.8rem] xl:text-[4.5rem] leading-[1.0] text-[#2C1810] mb-6" style={D}>
+            Meet Dr.<br /><em>Ruxana.</em>
+          </h2>
+
+          <p className="text-[13px] md:text-sm text-[#2C1810]/80 leading-[1.85] mb-4 max-w-[450px]" style={B}>
+            Dr. Ruxana did not enter aesthetic medicine to sell treatments. She entered it because she witnessed, again and again, how much a woman's confidence shapes her entire life — her relationships, her ambitions, her sense of self.
+          </p>
+          <p className="text-[13px] md:text-sm text-[#2C1810]/80 leading-[1.85] mb-8 max-w-[450px]" style={B}>
+            She trained for over a decade before founding COSMO HOME — not as a clinic, but as a philosophy. A belief that the most powerful aesthetic outcomes are gentle, natural, and deeply personal.
+          </p>
+
+          <motion.div
+            initial={{ opacity: 0, x: -14 }} whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
+            className="border-l border-[#C9956A]/60 pl-5 max-w-[450px]"
+          >
+            <p className="text-[13px] md:text-sm text-[#2C1810] leading-[1.75]" style={{ ...D, fontStyle: "italic" }}>
+              "I want every patient to leave feeling more like themselves — not different. More radiant. More free."
             </p>
-            <p className="text-base text-[#5C4A42] leading-loose mb-8" style={B}>
-              She trained for over a decade before founding COSMO HOME — not as a clinic, but as a philosophy. A belief that the most powerful aesthetic outcomes are gentle, natural, and deeply personal.
-            </p>
-            <motion.blockquote initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}
-              className="border-l-2 border-[#C9956A] pl-6 text-lg md:text-xl text-[#2C1810] leading-snug" style={{ ...D, fontStyle: "italic" }}>
-              "I want every patient to leave feeling more like themselves — not different. More radiant. More free." 💛
-            </motion.blockquote>
-            <p className="mt-3 text-xs text-[#C9956A] tracking-widest" style={M}>— Dr. Ruxana</p>
-          </FadeUp>
-        </div>
+            <div className="mt-3 text-base">🧡</div>
+            <p className="mt-2.5 text-[9px] text-[#C9956A] tracking-[0.28em] uppercase" style={M}>— Dr. Ruxana</p>
+          </motion.div>
+
+          <div className="pb-5 md:pb-0" />
+        </FadeUp>
       </div>
     </section>
     );
 }
+
 
 export function Transformation() {
     const stories = [
