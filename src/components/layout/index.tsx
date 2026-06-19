@@ -158,7 +158,7 @@ export function Nav({ ready }: { ready: boolean }) {
                         >
                           <div className="flex items-center gap-4">
                             <Icon size={20} className={isActive ? 'text-[#C9956A]' : 'text-[#8A6D5C]'} strokeWidth={1.5} />
-                            <span style={B} className="text-[15px] font-medium">{cat}</span>
+                            <span style={B} className="text-[15px] font-normal tracking-wide">{cat}</span>
                           </div>
                           <ChevronRight size={16} className={isActive ? 'text-[#C9956A]' : 'text-[#8A6D5C]/30'} strokeWidth={1.5} />
                         </button>
@@ -168,10 +168,10 @@ export function Nav({ ready }: { ready: boolean }) {
 
                   {/* Middle Column: Treatments */}
                   <div className="w-[32%] p-8 flex flex-col border-r border-[#E8E1D7]/50">
-                    <h3 style={M} className="text-[11px] tracking-[0.2em] uppercase text-[#C9956A] mb-6">{activeCategory}</h3>
-                    <div className="flex flex-col gap-4 flex-1 overflow-y-auto custom-scrollbar">
+                    <h3 style={B} className="text-[11px] font-medium tracking-[0.2em] uppercase text-[#C9956A] mb-7">{activeCategory}</h3>
+                    <div className="flex flex-col gap-5 flex-1">
                       {MEGA_MENU_CONTENT[activeCategory].treatments.map((treatment) => (
-                        <a href="#" key={treatment} style={B} className="text-[14px] text-[#2C1810] hover:text-[#C9956A] transition-colors">
+                        <a href="#" key={treatment} style={B} className="text-[14px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors">
                           {treatment}
                         </a>
                       ))}
@@ -195,10 +195,10 @@ export function Nav({ ready }: { ready: boolean }) {
                         </div>
                       </div>
                       <div className="px-5 py-5 mt-3 border-t border-[#E8E1D7]/80 shrink-0 flex items-center">
-                        <p style={D} className="text-[15px] text-[#2C1810] leading-relaxed">
+                        <p style={D} className="text-[16px] text-[#2C1810] leading-relaxed tracking-wide">
                           {MEGA_MENU_CONTENT[activeCategory].desc.split(', ').map((part, i, arr) => (
-                            <span key={i} className={i > 0 ? "italic text-[#5C4A42]" : ""}>
-                              {part}{i < arr.length - 1 ? ", " : ""}
+                            <span key={i} className={i > 0 ? "italic text-[#5C4A42] block mt-1" : "block"}>
+                              {part}{i === 0 ? "," : ""}
                             </span>
                           ))}
                         </p>

@@ -501,7 +501,7 @@ export default function ServicePage() {
                       <span className="text-sm text-[#FAF7F2] font-medium" style={B}>{val}</span>
                     </div>
                   ))}
-                  <motion.a href="#invitation"
+                  <motion.a href="/book-consultation"
                     whileHover={{ scale: 1.03, boxShadow: "0 0 24px rgba(201,149,106,0.45)" }}
                     className="mt-6 w-full flex items-center justify-center gap-2 py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase rounded-xl font-medium" style={B}>
                     Book Now <ArrowRight size={13} />
