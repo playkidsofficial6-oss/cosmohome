@@ -24,7 +24,7 @@ export function Hero({ ready }: { ready: boolean }) {
           alt="The spirit of COSMO HOME" className="w-full h-full object-cover object-bottom block md:hidden" />
       </motion.div>
 
-      <motion.div className="relative z-20 flex flex-col justify-end pb-16 md:pb-24 pt-32 px-6 md:px-16 lg:px-24 min-h-screen max-w-7xl mx-auto w-full"
+      <motion.div className="relative z-20 flex flex-col justify-end pb-24 md:pb-24 pt-24 px-6 md:px-16 lg:px-24 min-h-screen max-w-7xl mx-auto w-full"
         style={{ y: textY }}>
         <motion.p className="text-[#C9956A] text-xs tracking-[0.15em] uppercase mb-6" style={M}
           initial={{ opacity: 0, x: -16 }} animate={ready ? { opacity: 1, x: 0 } : {}}
