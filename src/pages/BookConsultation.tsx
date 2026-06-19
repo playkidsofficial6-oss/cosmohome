@@ -57,6 +57,182 @@ const TIME_SLOTS = {
   ],
 };
 
+const COUNTRY_CODES = [
+  { code: "+93", flag: "🇦🇫", country: "Afghanistan" },
+  { code: "+355", flag: "🇦🇱", country: "Albania" },
+  { code: "+213", flag: "🇩🇿", country: "Algeria" },
+  { code: "+376", flag: "🇦🇩", country: "Andorra" },
+  { code: "+244", flag: "🇦🇴", country: "Angola" },
+  { code: "+54", flag: "🇦🇷", country: "Argentina" },
+  { code: "+374", flag: "🇦🇲", country: "Armenia" },
+  { code: "+61", flag: "🇦🇺", country: "Australia" },
+  { code: "+43", flag: "🇦🇹", country: "Austria" },
+  { code: "+994", flag: "🇦🇿", country: "Azerbaijan" },
+  { code: "+973", flag: "🇧🇭", country: "Bahrain" },
+  { code: "+880", flag: "🇧🇩", country: "Bangladesh" },
+  { code: "+375", flag: "🇧🇾", country: "Belarus" },
+  { code: "+32", flag: "🇧🇪", country: "Belgium" },
+  { code: "+501", flag: "🇧🇿", country: "Belize" },
+  { code: "+229", flag: "🇧🇯", country: "Benin" },
+  { code: "+975", flag: "🇧🇹", country: "Bhutan" },
+  { code: "+591", flag: "🇧🇴", country: "Bolivia" },
+  { code: "+387", flag: "🇧🇦", country: "Bosnia and Herzegovina" },
+  { code: "+267", flag: "🇧🇼", country: "Botswana" },
+  { code: "+55", flag: "🇧🇷", country: "Brazil" },
+  { code: "+673", flag: "🇧🇳", country: "Brunei" },
+  { code: "+359", flag: "🇧🇬", country: "Bulgaria" },
+  { code: "+226", flag: "🇧🇫", country: "Burkina Faso" },
+  { code: "+257", flag: "🇧🇮", country: "Burundi" },
+  { code: "+855", flag: "🇰🇭", country: "Cambodia" },
+  { code: "+237", flag: "🇨🇲", country: "Cameroon" },
+  { code: "+1", flag: "🇨🇦", country: "Canada" },
+  { code: "+238", flag: "🇨🇻", country: "Cape Verde" },
+  { code: "+236", flag: "🇨🇫", country: "Central African Republic" },
+  { code: "+235", flag: "🇹🇩", country: "Chad" },
+  { code: "+56", flag: "🇨🇱", country: "Chile" },
+  { code: "+86", flag: "🇨🇳", country: "China" },
+  { code: "+57", flag: "🇨🇴", country: "Colombia" },
+  { code: "+269", flag: "🇰🇲", country: "Comoros" },
+  { code: "+242", flag: "🇨🇬", country: "Congo" },
+  { code: "+506", flag: "🇨🇷", country: "Costa Rica" },
+  { code: "+385", flag: "🇭🇷", country: "Croatia" },
+  { code: "+53", flag: "🇨🇺", country: "Cuba" },
+  { code: "+357", flag: "🇨🇾", country: "Cyprus" },
+  { code: "+420", flag: "🇨🇿", country: "Czech Republic" },
+  { code: "+45", flag: "🇩🇰", country: "Denmark" },
+  { code: "+253", flag: "🇩🇯", country: "Djibouti" },
+  { code: "+1", flag: "🇩🇴", country: "Dominican Republic" },
+  { code: "+593", flag: "🇪🇨", country: "Ecuador" },
+  { code: "+20", flag: "🇪🇬", country: "Egypt" },
+  { code: "+503", flag: "🇸🇻", country: "El Salvador" },
+  { code: "+240", flag: "🇬🇶", country: "Equatorial Guinea" },
+  { code: "+291", flag: "🇪🇷", country: "Eritrea" },
+  { code: "+372", flag: "🇪🇪", country: "Estonia" },
+  { code: "+251", flag: "🇪🇹", country: "Ethiopia" },
+  { code: "+679", flag: "🇫🇯", country: "Fiji" },
+  { code: "+358", flag: "🇫🇮", country: "Finland" },
+  { code: "+33", flag: "🇫🇷", country: "France" },
+  { code: "+241", flag: "🇬🇦", country: "Gabon" },
+  { code: "+220", flag: "🇬🇲", country: "Gambia" },
+  { code: "+995", flag: "🇬🇪", country: "Georgia" },
+  { code: "+49", flag: "🇩🇪", country: "Germany" },
+  { code: "+233", flag: "🇬🇭", country: "Ghana" },
+  { code: "+30", flag: "🇬🇷", country: "Greece" },
+  { code: "+502", flag: "🇬🇹", country: "Guatemala" },
+  { code: "+224", flag: "🇬🇳", country: "Guinea" },
+  { code: "+245", flag: "🇬🇼", country: "Guinea-Bissau" },
+  { code: "+592", flag: "🇬🇾", country: "Guyana" },
+  { code: "+509", flag: "🇭🇹", country: "Haiti" },
+  { code: "+504", flag: "🇭🇳", country: "Honduras" },
+  { code: "+36", flag: "🇭🇺", country: "Hungary" },
+  { code: "+354", flag: "🇮🇸", country: "Iceland" },
+  { code: "+91", flag: "🇮🇳", country: "India" },
+  { code: "+62", flag: "🇮🇩", country: "Indonesia" },
+  { code: "+98", flag: "🇮🇷", country: "Iran" },
+  { code: "+964", flag: "🇮🇶", country: "Iraq" },
+  { code: "+353", flag: "🇮🇪", country: "Ireland" },
+  { code: "+972", flag: "🇮🇱", country: "Israel" },
+  { code: "+39", flag: "🇮🇹", country: "Italy" },
+  { code: "+1", flag: "🇯🇲", country: "Jamaica" },
+  { code: "+81", flag: "🇯🇵", country: "Japan" },
+  { code: "+962", flag: "🇯🇴", country: "Jordan" },
+  { code: "+7", flag: "🇰🇿", country: "Kazakhstan" },
+  { code: "+254", flag: "🇰🇪", country: "Kenya" },
+  { code: "+686", flag: "🇰🇮", country: "Kiribati" },
+  { code: "+965", flag: "🇰🇼", country: "Kuwait" },
+  { code: "+996", flag: "🇰🇬", country: "Kyrgyzstan" },
+  { code: "+856", flag: "🇱🇦", country: "Laos" },
+  { code: "+371", flag: "🇱🇻", country: "Latvia" },
+  { code: "+961", flag: "🇱🇧", country: "Lebanon" },
+  { code: "+266", flag: "🇱🇸", country: "Lesotho" },
+  { code: "+231", flag: "🇱🇷", country: "Liberia" },
+  { code: "+218", flag: "🇱🇾", country: "Libya" },
+  { code: "+423", flag: "🇱🇮", country: "Liechtenstein" },
+  { code: "+370", flag: "🇱🇹", country: "Lithuania" },
+  { code: "+352", flag: "🇱🇺", country: "Luxembourg" },
+  { code: "+261", flag: "🇲🇬", country: "Madagascar" },
+  { code: "+265", flag: "🇲🇼", country: "Malawi" },
+  { code: "+60", flag: "🇲🇾", country: "Malaysia" },
+  { code: "+960", flag: "🇲🇻", country: "Maldives" },
+  { code: "+223", flag: "🇲🇱", country: "Mali" },
+  { code: "+356", flag: "🇲🇹", country: "Malta" },
+  { code: "+222", flag: "🇲🇷", country: "Mauritania" },
+  { code: "+230", flag: "🇲🇺", country: "Mauritius" },
+  { code: "+52", flag: "🇲🇽", country: "Mexico" },
+  { code: "+373", flag: "🇲🇩", country: "Moldova" },
+  { code: "+377", flag: "🇲🇨", country: "Monaco" },
+  { code: "+976", flag: "🇲🇳", country: "Mongolia" },
+  { code: "+382", flag: "🇲🇪", country: "Montenegro" },
+  { code: "+212", flag: "🇲🇦", country: "Morocco" },
+  { code: "+258", flag: "🇲🇿", country: "Mozambique" },
+  { code: "+95", flag: "🇲🇲", country: "Myanmar" },
+  { code: "+264", flag: "🇳🇦", country: "Namibia" },
+  { code: "+977", flag: "🇳🇵", country: "Nepal" },
+  { code: "+31", flag: "🇳🇱", country: "Netherlands" },
+  { code: "+64", flag: "🇳🇿", country: "New Zealand" },
+  { code: "+505", flag: "🇳🇮", country: "Nicaragua" },
+  { code: "+227", flag: "🇳🇪", country: "Niger" },
+  { code: "+234", flag: "🇳🇬", country: "Nigeria" },
+  { code: "+850", flag: "🇰🇵", country: "North Korea" },
+  { code: "+47", flag: "🇳🇴", country: "Norway" },
+  { code: "+968", flag: "🇴🇲", country: "Oman" },
+  { code: "+92", flag: "🇵🇰", country: "Pakistan" },
+  { code: "+680", flag: "🇵🇼", country: "Palau" },
+  { code: "+970", flag: "🇵🇸", country: "Palestine" },
+  { code: "+507", flag: "🇵🇦", country: "Panama" },
+  { code: "+675", flag: "🇵🇬", country: "Papua New Guinea" },
+  { code: "+595", flag: "🇵🇾", country: "Paraguay" },
+  { code: "+51", flag: "🇵🇪", country: "Peru" },
+  { code: "+63", flag: "🇵🇭", country: "Philippines" },
+  { code: "+48", flag: "🇵🇱", country: "Poland" },
+  { code: "+351", flag: "🇵🇹", country: "Portugal" },
+  { code: "+974", flag: "🇶🇦", country: "Qatar" },
+  { code: "+40", flag: "🇷🇴", country: "Romania" },
+  { code: "+7", flag: "🇷🇺", country: "Russia" },
+  { code: "+250", flag: "🇷🇼", country: "Rwanda" },
+  { code: "+685", flag: "🇼🇸", country: "Samoa" },
+  { code: "+378", flag: "🇸🇲", country: "San Marino" },
+  { code: "+966", flag: "🇸🇦", country: "Saudi Arabia" },
+  { code: "+221", flag: "🇸🇳", country: "Senegal" },
+  { code: "+381", flag: "🇷🇸", country: "Serbia" },
+  { code: "+248", flag: "🇸🇨", country: "Seychelles" },
+  { code: "+232", flag: "🇸🇱", country: "Sierra Leone" },
+  { code: "+65", flag: "🇸🇬", country: "Singapore" },
+  { code: "+421", flag: "🇸🇰", country: "Slovakia" },
+  { code: "+386", flag: "🇸🇮", country: "Slovenia" },
+  { code: "+252", flag: "🇸🇴", country: "Somalia" },
+  { code: "+27", flag: "🇿🇦", country: "South Africa" },
+  { code: "+82", flag: "🇰🇷", country: "South Korea" },
+  { code: "+34", flag: "🇪🇸", country: "Spain" },
+  { code: "+94", flag: "🇱🇰", country: "Sri Lanka" },
+  { code: "+249", flag: "🇸🇩", country: "Sudan" },
+  { code: "+597", flag: "🇸🇷", country: "Suriname" },
+  { code: "+46", flag: "🇸🇪", country: "Sweden" },
+  { code: "+41", flag: "🇨🇭", country: "Switzerland" },
+  { code: "+963", flag: "🇸🇾", country: "Syria" },
+  { code: "+886", flag: "🇹🇼", country: "Taiwan" },
+  { code: "+992", flag: "🇹🇯", country: "Tajikistan" },
+  { code: "+255", flag: "🇹🇿", country: "Tanzania" },
+  { code: "+66", flag: "🇹🇭", country: "Thailand" },
+  { code: "+228", flag: "🇹🇬", country: "Togo" },
+  { code: "+676", flag: "🇹🇴", country: "Tonga" },
+  { code: "+216", flag: "🇹🇳", country: "Tunisia" },
+  { code: "+90", flag: "🇹🇷", country: "Turkey" },
+  { code: "+993", flag: "🇹🇲", country: "Turkmenistan" },
+  { code: "+256", flag: "🇺🇬", country: "Uganda" },
+  { code: "+380", flag: "🇺🇦", country: "Ukraine" },
+  { code: "+971", flag: "🇦🇪", country: "United Arab Emirates" },
+  { code: "+44", flag: "🇬🇧", country: "United Kingdom" },
+  { code: "+1", flag: "🇺🇸", country: "United States" },
+  { code: "+598", flag: "🇺🇾", country: "Uruguay" },
+  { code: "+998", flag: "🇺🇿", country: "Uzbekistan" },
+  { code: "+58", flag: "🇻🇪", country: "Venezuela" },
+  { code: "+84", flag: "🇻🇳", country: "Vietnam" },
+  { code: "+967", flag: "🇾🇪", country: "Yemen" },
+  { code: "+260", flag: "🇿🇲", country: "Zambia" },
+  { code: "+263", flag: "🇿🇼", country: "Zimbabwe" },
+];
+
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1615022702095-ff2c036f3360?w=800&q=80&fit=crop";
 
@@ -327,6 +503,8 @@ export default function BookConsultation() {
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
+    countryCode: "+91",
+    countryFlag: "🇮🇳",
     email: "",
     treatment: "",
     branch: "Cosmo Home, Kochi",
@@ -336,6 +514,7 @@ export default function BookConsultation() {
   /* ── dropdown open state ── */
   const [branchOpen, setBranchOpen] = useState(false);
   const [treatmentOpen, setTreatmentOpen] = useState(false);
+  const [countryCodeOpen, setCountryCodeOpen] = useState(false);
 
   /* ── mobile step wizard ── */
   const [mobileStep, setMobileStep] = useState(1); // 1-6
@@ -570,19 +749,51 @@ export default function BookConsultation() {
                       Phone number
                     </label>
                     <div className="flex">
-                      <div className="flex items-center gap-1 px-3 py-3 border border-[#E5D5C5] border-r-0 rounded-l-lg bg-white text-sm">
-                        <span>🇮🇳</span>
-                        <span className="text-[#5C4A42]" style={B}>
-                          +91
-                        </span>
+                      <div className="relative shrink-0 flex">
+                        <button
+                          type="button"
+                          onClick={() => { setCountryCodeOpen(!countryCodeOpen); setBranchOpen(false); setTreatmentOpen(false); }}
+                          className="flex items-center gap-1.5 px-3 py-3 border border-r-0 rounded-l-lg bg-white text-sm h-full focus:outline-none transition-colors"
+                          style={{ borderColor: countryCodeOpen ? "#986E4F" : "#E5D5C5", ...B }}
+                        >
+                          <span>{formData.countryFlag}</span>
+                          <span className="text-xs text-[#2C1810] min-w-[24px] text-left">
+                            {formData.countryCode}
+                          </span>
+                          <motion.svg animate={{ rotate: countryCodeOpen ? 180 : 0 }} transition={{ duration: 0.25 }} width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C4B4A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 ml-0.5">
+                            <polyline points="6 9 12 15 18 9" />
+                          </motion.svg>
+                        </button>
+                        <AnimatePresence>
+                          {countryCodeOpen && (
+                            <motion.ul
+                              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                              transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                              className="absolute top-full left-0 mt-1 w-52 bg-white rounded-xl shadow-2xl border border-[#2C1810]/10 overflow-hidden z-50 max-h-60 overflow-y-auto custom-scrollbar"
+                            >
+                              {COUNTRY_CODES.map((opt) => (
+                                <li
+                                  key={opt.code}
+                                  onClick={() => { handleInput("countryCode", opt.code); handleInput("countryFlag", opt.flag); setCountryCodeOpen(false); }}
+                                  className={`px-4 py-2.5 text-xs cursor-pointer transition-all duration-200 flex items-center gap-3 ${formData.countryCode === opt.code ? "bg-[#C9956A]/10 text-[#C9956A]" : "text-[#2C1810] hover:bg-[#FAF7F2] hover:text-[#C9956A]"}`}
+                                  style={B}
+                                >
+                                  <span className="text-sm">{opt.flag}</span>
+                                  <span className="font-medium min-w-[32px]">{opt.code}</span>
+                                  <span className="text-[#5C4A42] truncate">{opt.country}</span>
+                                </li>
+                              ))}
+                            </motion.ul>
+                          )}
+                        </AnimatePresence>
                       </div>
                       <input
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => handleInput("phone", e.target.value)}
                         placeholder="Enter your number"
-                        className="flex-1 px-4 py-3 border border-[#E5D5C5] rounded-r-lg text-sm focus:outline-none focus:border-[#986E4F] bg-white"
-                        style={B}
+                        className="flex-1 px-4 py-3 border border-[#E5D5C5] rounded-r-lg text-sm focus:outline-none focus:border-[#986E4F] bg-white w-full"
+                        style={{ borderLeftColor: countryCodeOpen ? "#986E4F" : "#E5D5C5", ...B }}
                       />
                     </div>
                   </div>
@@ -606,7 +817,7 @@ export default function BookConsultation() {
                     <label className="text-xs text-[#2C1810]" style={B}>Treatment / Concern</label>
                     <button
                       type="button"
-                      onClick={() => { setTreatmentOpen(!treatmentOpen); setBranchOpen(false); }}
+                      onClick={() => { setTreatmentOpen(!treatmentOpen); setBranchOpen(false); setCountryCodeOpen(false); }}
                       className="w-full px-4 py-3 border rounded-lg text-sm text-left flex items-center justify-between gap-2 focus:outline-none transition-colors bg-white"
                       style={{ borderColor: treatmentOpen ? "#986E4F" : "#E5D5C5", color: formData.treatment ? "#2C1810" : "#5C4A42", ...B }}
                     >
@@ -643,7 +854,7 @@ export default function BookConsultation() {
                     <label className="text-xs text-[#2C1810]" style={B}>Preferred branch</label>
                     <button
                       type="button"
-                      onClick={() => { setBranchOpen(!branchOpen); setTreatmentOpen(false); }}
+                      onClick={() => { setBranchOpen(!branchOpen); setTreatmentOpen(false); setCountryCodeOpen(false); }}
                       className="w-full px-4 py-3 border rounded-lg text-sm text-left flex items-center justify-between gap-2 focus:outline-none transition-colors bg-white"
                       style={{ borderColor: branchOpen ? "#986E4F" : "#E5D5C5", color: "#2C1810", ...B }}
                     >
@@ -931,6 +1142,8 @@ export default function BookConsultation() {
                     setFormData({
                       fullName: "",
                       phone: "",
+                      countryCode: "+91",
+                      countryFlag: "🇮🇳",
                       email: "",
                       treatment: "",
                       branch: "Cosmo Home, Kochi",
@@ -1284,15 +1497,43 @@ export default function BookConsultation() {
                         Phone number
                       </label>
                       <div className="flex">
-                        <div className="flex items-center gap-1 px-3 py-3 border border-[#E5D5C5] border-r-0 rounded-l-lg bg-transparent text-sm shrink-0">
-                          <span>🇮🇳</span>
-                          <span className="text-xs text-[#5C4A42]" style={B}>
-                            +91
-                          </span>
-                          <ChevronRight
-                            size={10}
-                            className="text-[#C4B4A8] rotate-90"
-                          />
+                        <div className="relative shrink-0 flex">
+                          <button
+                            type="button"
+                            onClick={() => { setCountryCodeOpen(!countryCodeOpen); setBranchOpen(false); setTreatmentOpen(false); }}
+                            className="flex items-center gap-1.5 px-3 py-3 border border-r-0 rounded-l-lg bg-transparent text-sm h-full focus:outline-none transition-colors"
+                            style={{ borderColor: countryCodeOpen ? "#986E4F" : "#E5D5C5", ...B }}
+                          >
+                            <span>{formData.countryFlag}</span>
+                            <span className="text-xs text-[#2C1810] min-w-[24px] text-left">
+                              {formData.countryCode}
+                            </span>
+                            <motion.svg animate={{ rotate: countryCodeOpen ? 180 : 0 }} transition={{ duration: 0.25 }} width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C4B4A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 ml-0.5">
+                              <polyline points="6 9 12 15 18 9" />
+                            </motion.svg>
+                          </button>
+                          <AnimatePresence>
+                            {countryCodeOpen && (
+                              <motion.ul
+                                initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                                transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                                className="absolute top-full left-0 mt-1 w-52 bg-white rounded-xl shadow-2xl border border-[#2C1810]/10 overflow-hidden z-50 max-h-60 overflow-y-auto custom-scrollbar"
+                              >
+                                {COUNTRY_CODES.map((opt) => (
+                                  <li
+                                    key={opt.code}
+                                    onClick={() => { handleInput("countryCode", opt.code); handleInput("countryFlag", opt.flag); setCountryCodeOpen(false); }}
+                                    className={`px-4 py-2.5 text-xs cursor-pointer transition-all duration-200 flex items-center gap-3 ${formData.countryCode === opt.code ? "bg-[#C9956A]/10 text-[#C9956A]" : "text-[#2C1810] hover:bg-[#FAF7F2] hover:text-[#C9956A]"}`}
+                                    style={B}
+                                  >
+                                    <span className="text-sm">{opt.flag}</span>
+                                    <span className="font-medium min-w-[32px]">{opt.code}</span>
+                                    <span className="text-[#5C4A42] truncate">{opt.country}</span>
+                                  </li>
+                                ))}
+                              </motion.ul>
+                            )}
+                          </AnimatePresence>
                         </div>
                         <input
                           type="tel"
@@ -1302,7 +1543,7 @@ export default function BookConsultation() {
                           }
                           placeholder="Enter your number"
                           className="flex-1 px-4 py-3 border border-[#E5D5C5] rounded-r-lg text-sm focus:outline-none focus:border-[#986E4F] bg-transparent w-full"
-                          style={B}
+                          style={{ borderLeftColor: countryCodeOpen ? "#986E4F" : "#E5D5C5", ...B }}
                         />
                       </div>
                     </div>
@@ -1312,7 +1553,7 @@ export default function BookConsultation() {
                       <label className="text-xs text-[#2C1810]" style={B}>Preferred branch</label>
                       <button
                         type="button"
-                        onClick={() => { setBranchOpen(!branchOpen); setTreatmentOpen(false); }}
+                        onClick={() => { setBranchOpen(!branchOpen); setTreatmentOpen(false); setCountryCodeOpen(false); }}
                         className="w-full px-4 py-3 border rounded-lg text-sm text-left flex items-center justify-between gap-2 focus:outline-none transition-colors bg-transparent"
                         style={{ borderColor: branchOpen ? "#986E4F" : "#E5D5C5", color: "#2C1810", ...B }}
                       >
@@ -1365,7 +1606,7 @@ export default function BookConsultation() {
                       <label className="text-xs text-[#2C1810]" style={B}>Concern / Treatment</label>
                       <button
                         type="button"
-                        onClick={() => { setTreatmentOpen(!treatmentOpen); setBranchOpen(false); }}
+                        onClick={() => { setTreatmentOpen(!treatmentOpen); setBranchOpen(false); setCountryCodeOpen(false); }}
                         className="w-full px-4 py-3 border rounded-lg text-sm text-left flex items-center justify-between gap-2 focus:outline-none transition-colors bg-transparent"
                         style={{ borderColor: treatmentOpen ? "#986E4F" : "#E5D5C5", color: formData.treatment ? "#2C1810" : "#5C4A42", ...B }}
                       >
