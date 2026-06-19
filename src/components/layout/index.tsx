@@ -214,25 +214,25 @@ export function Nav({ ready }: { ready: boolean }) {
 
       <AnimatePresence>
         {open && (
-          <motion.div className="fixed inset-0 z-[60] bg-[#FAF7F2] flex flex-col"
+          <motion.div className="fixed inset-0 z-[60] bg-[#332B23] flex flex-col"
             initial={{ opacity: 0, x: "100%" }} animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
 
             {/* Top Bar inside Menu */}
-            <div className="flex items-center justify-between px-6 h-[72px] border-b border-[#E8E1D7]/50 shrink-0">
-              <button onClick={() => setOpen(false)} className="p-2 -ml-2 text-[#2C1810] hover:text-[#C9956A] transition-colors">
+            <div className="flex items-center justify-between px-6 h-[72px] border-b border-[#E8E1D7]/10 shrink-0">
+              <button onClick={() => setOpen(false)} className="p-2 -ml-2 text-[#FAF7F2] hover:text-[#C9956A] transition-colors">
                 <X size={24} strokeWidth={1.5} />
               </button>
               <a href="/" className="flex flex-col items-center leading-none cursor-pointer absolute left-1/2 -translate-x-1/2" onClick={(e) => { e.preventDefault(); setOpen(false); navigate("/"); }}>
                 <div className="flex items-center gap-2">
-                  <img src="/icon.svg" alt="Cosmo Home Icon" className="h-7 w-auto" />
+                  <img src="/icon.svg" alt="Cosmo Home Icon" className="h-7 w-auto brightness-0 invert" />
                   <div className="flex flex-col">
-                    <span className="text-sm tracking-[0.12em] uppercase text-[#2C1810]" style={D}>Cosmo Home</span>
+                    <span className="text-sm tracking-[0.12em] uppercase text-[#FAF7F2]" style={D}>Cosmo Home</span>
                     <span className="text-[6px] tracking-[0.3em] uppercase text-[#C9956A] mt-0.5" style={M}>Aesthetic Medicine</span>
                   </div>
                 </div>
               </a>
-              <button className="bg-[#A0603A] rounded-[4px] text-[#FAF7F2] text-[10px] tracking-widest px-4 py-2 uppercase font-medium" style={B} onClick={() => { setOpen(false); navigate('/book-consultation'); }}>
+              <button className="bg-[#C9956A] rounded-[4px] text-[#FAF7F2] text-[10px] tracking-widest px-4 py-2 uppercase font-medium hover:bg-[#A0603A] transition-colors" style={B} onClick={() => { setOpen(false); navigate('/book-consultation'); }}>
                 Book
               </button>
             </div>
@@ -242,27 +242,27 @@ export function Nav({ ready }: { ready: boolean }) {
               {/* Nav links */}
               <div className="flex flex-col">
                 {links.map((l, i) => (
-                  <div key={l.label} className="border-b border-[#E8E1D7]/50 last:border-0">
+                  <div key={l.label} className="border-b border-[#E8E1D7]/10 last:border-0">
                     <button
                       onClick={() => {
                         if (l.hasDropdown) toggleMobileExpanded(l.label);
                         else { setOpen(false); l.action ? l.action() : navigate(l.href!); }
                       }}
-                      className="w-full flex items-center justify-between py-4 text-[#2C1810] transition-colors"
+                      className="w-full flex items-center justify-between py-4 text-[#FAF7F2] transition-colors group"
                     >
                       <div className="flex items-center gap-4">
-                        {l.label === "Philosophy" && <motion.div whileTap={{ scale: 0.9 }}><Heart size={20} className="text-[#8A6D5C]" strokeWidth={1.5} /></motion.div>}
-                        {l.label === "Service" && <motion.div whileTap={{ scale: 0.9 }}><Sparkles size={20} className="text-[#8A6D5C]" strokeWidth={1.5} /></motion.div>}
-                        {l.label === "Treatments" && <motion.div whileTap={{ scale: 0.9 }}><Sparkles size={20} className="text-[#8A6D5C]" strokeWidth={1.5} /></motion.div>}
-                        {l.label === "Dr. Ruxana" && <motion.div whileTap={{ scale: 0.9 }}><User size={20} className="text-[#8A6D5C]" strokeWidth={1.5} /></motion.div>}
-                        {l.label === "Results" && <motion.div whileTap={{ scale: 0.9 }}><Award size={20} className="text-[#8A6D5C]" strokeWidth={1.5} /></motion.div>}
-                        {l.label === "Journal" && <motion.div whileTap={{ scale: 0.9 }}><ClipboardList size={20} className="text-[#8A6D5C]" strokeWidth={1.5} /></motion.div>}
-                        <span className="text-[15px] font-medium" style={B}>{l.label}</span>
+                        {l.label === "Philosophy" && <motion.div whileTap={{ scale: 0.9 }}><Heart size={20} className="text-[#C9956A]" strokeWidth={1.5} /></motion.div>}
+                        {l.label === "Service" && <motion.div whileTap={{ scale: 0.9 }}><Sparkles size={20} className="text-[#C9956A]" strokeWidth={1.5} /></motion.div>}
+                        {l.label === "Treatments" && <motion.div whileTap={{ scale: 0.9 }}><Sparkles size={20} className="text-[#C9956A]" strokeWidth={1.5} /></motion.div>}
+                        {l.label === "Dr. Ruxana" && <motion.div whileTap={{ scale: 0.9 }}><User size={20} className="text-[#C9956A]" strokeWidth={1.5} /></motion.div>}
+                        {l.label === "Results" && <motion.div whileTap={{ scale: 0.9 }}><Award size={20} className="text-[#C9956A]" strokeWidth={1.5} /></motion.div>}
+                        {l.label === "Journal" && <motion.div whileTap={{ scale: 0.9 }}><ClipboardList size={20} className="text-[#C9956A]" strokeWidth={1.5} /></motion.div>}
+                        <span className="text-[15px] font-medium group-hover:text-[#C9956A] transition-colors" style={B}>{l.label}</span>
                       </div>
                       {l.hasDropdown ? (
-                        mobileExpanded[l.label] ? <Minus size={18} className="text-[#8A6D5C]" /> : <Plus size={18} className="text-[#8A6D5C]" />
+                        mobileExpanded[l.label] ? <Minus size={18} className="text-[#C9956A]" /> : <Plus size={18} className="text-[#C9956A]" />
                       ) : (
-                        <ChevronRight size={18} className="text-[#8A6D5C]/50" />
+                        <ChevronRight size={18} className="text-[#C9956A]/50 group-hover:text-[#C9956A] transition-colors" />
                       )}
                     </button>
                     {/* Expandable Content for Treatments */}
@@ -274,18 +274,18 @@ export function Nav({ ready }: { ready: boolean }) {
                           exit={{ height: 0, opacity: 0 }}
                           className="overflow-hidden"
                         >
-                          <div className="pl-12 pb-4 flex flex-col gap-4">
+                          <div className="pl-12 pb-4 flex flex-col gap-4 mt-2">
                             {l.label === "Treatments" && Object.keys(MEGA_MENU_CONTENT).map(cat => (
-                              <button key={cat} onClick={() => { setOpen(false); navigate("/service"); }} className="text-left text-[14px] text-[#5C4A42] py-1 flex items-center justify-between" style={B}>
+                              <button key={cat} onClick={() => { setOpen(false); navigate("/service"); }} className="text-left text-[14px] text-[#E8E1D7] py-1 flex items-center justify-between hover:text-[#C9956A] transition-colors" style={B}>
                                 {cat}
-                                <ChevronRight size={14} className="text-[#8A6D5C]/30 mr-2" />
+                                <ChevronRight size={14} className="text-[#C9956A]/30 mr-2" />
                               </button>
                             ))}
                             {l.label === "Journal" && (
                               <>
-                                <button className="text-left text-[14px] text-[#5C4A42] py-1" style={B}>Latest Articles</button>
-                                <button className="text-left text-[14px] text-[#5C4A42] py-1" style={B}>Skincare Tips</button>
-                                <button className="text-left text-[14px] text-[#5C4A42] py-1" style={B}>News</button>
+                                <button className="text-left text-[14px] text-[#E8E1D7] py-1 hover:text-[#C9956A] transition-colors" style={B}>Latest Articles</button>
+                                <button className="text-left text-[14px] text-[#E8E1D7] py-1 hover:text-[#C9956A] transition-colors" style={B}>Skincare Tips</button>
+                                <button className="text-left text-[14px] text-[#E8E1D7] py-1 hover:text-[#C9956A] transition-colors" style={B}>News</button>
                               </>
                             )}
                           </div>
@@ -307,7 +307,7 @@ export function Nav({ ready }: { ready: boolean }) {
               </button>
 
               {/* Bottom Contact Buttons */}
-              <div className="mt-auto pt-16 pb-20 flex flex-col gap-4">
+              <div className="pt-8 pb-8 flex flex-col gap-4">
                 <a href="tel:09946336480"
                   className="flex items-center justify-center gap-3 w-full py-5 bg-[#0A0502] border border-[#2C1810] text-[#FAF7F2] transition-colors"
                 >
