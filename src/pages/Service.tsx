@@ -96,7 +96,7 @@ export default function ServicePage() {
                 </p>
 
                 {/* Benefit grid */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                   {[
                     { icon: "🧬", b: "Clinically proven", d: "Peer-reviewed efficacy data" },
                     { icon: "🩺", b: "Doctor-prescribed", d: "Bespoke serum protocol" },
@@ -157,12 +157,12 @@ export default function ServicePage() {
             </div>
 
             {/* Side-by-side machine showcase + comparison table */}
-            <div className="grid lg:grid-cols-[1fr_1fr] gap-8">
+            <div className="grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-10">
               {/* Machine card */}
               <FadeUp delay={0.05}>
-                <div className="relative rounded-3xl overflow-hidden h-full"
+                <div className="relative rounded-3xl overflow-hidden h-full flex flex-col"
                   style={{ background: "linear-gradient(145deg, rgba(44,24,16,0.9), rgba(22,10,5,0.95))", border: "1px solid rgba(201,149,106,0.25)" }}>
-                  <div className="absolute top-5 left-5 px-3 py-1 rounded-full text-xs text-[#C9956A] font-medium" style={{ background: "rgba(201,149,106,0.15)", border: "1px solid rgba(201,149,106,0.35)", ...M }}>
+                  <div className="absolute top-4 left-4 sm:top-5 sm:left-5 px-4 py-1.5 rounded-full text-xs text-[#C9956A] font-medium z-10" style={{ background: "rgba(22,10,5,0.85)", backdropFilter: "blur(8px)", border: "1px solid rgba(201,149,106,0.35)", ...M }}>
                     ✅ Our Device
                   </div>
                   <div className="aspect-[16/9] overflow-hidden">
@@ -188,21 +188,33 @@ export default function ServicePage() {
 
               {/* Comparison table */}
               <FadeUp delay={0.12}>
-                <div className="flex flex-col gap-3">
-                  <p className="text-xs tracking-[0.2em] uppercase text-[#FAF7F2]/65 mb-1" style={M}>COSMO HOME vs Standard Clinic</p>
+                <div className="flex flex-col gap-3 md:gap-4 mt-2 lg:mt-0">
+                  <p className="text-xs tracking-[0.2em] uppercase text-[#FAF7F2]/65 mb-1 md:mb-2" style={M}>COSMO HOME vs Standard Clinic</p>
                   {MACHINE_SPECS.map((row, i) => (
                     <motion.div key={row.label} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }} transition={{ delay: i * 0.07 }}
-                      className="grid grid-cols-[auto_1fr_1fr] gap-3 items-start rounded-xl p-4"
+                      className="flex flex-col md:grid md:grid-cols-[auto_1fr_1fr] gap-4 md:gap-3 items-start rounded-xl p-5 md:p-4"
                       style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(201,149,106,0.1)" }}>
-                      <p className="text-xs text-[#C9956A] pt-0.5 w-24 shrink-0" style={M}>{row.label}</p>
-                      <div className="flex gap-2 items-start">
-                        <span className="text-sm shrink-0">✅</span>
-                        <p className="text-xs text-[#FAF7F2]/88 leading-relaxed" style={B}>{row.ours}</p>
+                      <p className="text-sm md:text-xs text-[#C9956A] md:pt-0.5 md:w-24 shrink-0 border-b border-[#C9956A]/10 md:border-0 pb-2 md:pb-0 w-full" style={M}>{row.label}</p>
+
+                      <div className="flex flex-col gap-1.5 w-full">
+                        <div className="flex gap-3 md:gap-2 items-start">
+                          <span className="text-base md:text-sm shrink-0 mt-0.5 md:mt-0">✅</span>
+                          <div>
+                            <span className="text-[10px] uppercase tracking-wider text-[#FAF7F2]/40 md:hidden block mb-0.5" style={M}>Cosmo Home</span>
+                            <p className="text-sm md:text-xs text-[#FAF7F2]/88 leading-relaxed" style={B}>{row.ours}</p>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex gap-2 items-start">
-                        <span className="text-sm shrink-0">⚠️</span>
-                        <p className="text-xs text-[#FAF7F2]/50 leading-relaxed" style={B}>{row.standard}</p>
+
+                      <div className="flex flex-col gap-1.5 w-full mt-1 md:mt-0 pt-3 border-t border-white/5 md:border-0 md:pt-0">
+                        <div className="flex gap-3 md:gap-2 items-start">
+                          <span className="text-base md:text-sm shrink-0 mt-0.5 md:mt-0">⚠️</span>
+                          <div>
+                            <span className="text-[10px] uppercase tracking-wider text-[#FAF7F2]/40 md:hidden block mb-0.5" style={M}>Standard Clinic</span>
+                            <p className="text-sm md:text-xs text-[#FAF7F2]/50 leading-relaxed" style={B}>{row.standard}</p>
+                          </div>
+                        </div>
                       </div>
                     </motion.div>
                   ))}
