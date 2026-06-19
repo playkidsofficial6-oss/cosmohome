@@ -62,7 +62,7 @@ export default function ServicePage() {
           </div>
 
           {/* Right — full image */}
-          <div className="relative min-h-[50vh] lg:min-h-full">
+          <div className="relative min-h-[50vh] lg:min-h-full hidden lg:block">
             <img src="https://images.unsplash.com/photo-1761718209794-e0588aafbcc4?w=1000&h=1400&fit=crop&auto=format"
               alt="Skin Renewal treatment" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#160A05] via-transparent to-transparent lg:from-transparent lg:via-transparent" />
