@@ -60,7 +60,7 @@ export function Nav({ ready }: { ready: boolean }) {
             Book Consultation
           </motion.a>
           <button onClick={() => setOpen(!open)} className="lg:hidden p-2 text-[#2C1810]">
-            {open ? <X size={20} /> : <Menu size={20} />}
+            {open ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </motion.header>
