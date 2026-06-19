@@ -97,7 +97,7 @@ export function Nav({ ready }: { ready: boolean }) {
           <a href="/" onClick={(e) => { e.preventDefault(); navigate("/"); }} className="flex items-center gap-2 cursor-pointer z-10">
             <img src="/icon.svg" alt="Cosmo Home Icon" className="h-8 md:h-10 w-auto" />
             <div className="flex flex-col leading-none">
-              <span className="text-xl tracking-[0.12em] uppercase text-[#2C1810]" style={D}>Cosmo Home</span>
+              <span className={`text-xl tracking-[0.12em] uppercase transition-colors ${hasBg ? 'text-[#2C1810]' : 'text-[#C9956A]'}`} style={D}>Cosmo Home</span>
               <span className="text-[9px] tracking-[0.3em] uppercase text-[#C9956A] mt-0.5" style={M}>Aesthetic Medicine</span>
             </div>
           </a>
@@ -106,12 +106,12 @@ export function Nav({ ready }: { ready: boolean }) {
               <div key={l.label} className="relative h-full flex items-center" onMouseEnter={() => l.hasDropdown ? handleMouseEnter(l.label) : handleMouseEnter('')}>
                 {l.href ? (
                   <a href={l.href} onClick={(e) => { e.preventDefault(); navigate(l.href!); }} style={B}
-                    className={`relative text-sm transition-colors tracking-wide group cursor-pointer ${activeMenu === l.label ? 'text-[#C9956A]' : 'text-[#5C4A42] hover:text-[#2C1810]'}`}>
+                    className={`relative text-sm transition-colors tracking-wide group cursor-pointer ${activeMenu === l.label ? 'text-[#C9956A]' : hasBg ? 'text-[#5C4A42] hover:text-[#2C1810]' : 'text-[#C9956A] hover:text-[#FAF7F2]'}`}>
                     {l.label}
                   </a>
                 ) : (
                   <button onClick={l.action} style={B}
-                    className={`relative text-sm transition-colors tracking-wide group ${activeMenu === l.label ? 'text-[#C9956A]' : 'text-[#5C4A42] hover:text-[#2C1810]'}`}>
+                    className={`relative text-sm transition-colors tracking-wide group ${activeMenu === l.label ? 'text-[#C9956A]' : hasBg ? 'text-[#5C4A42] hover:text-[#2C1810]' : 'text-[#C9956A] hover:text-[#FAF7F2]'}`}>
                     {l.label}
                   </button>
                 )}
@@ -124,11 +124,11 @@ export function Nav({ ready }: { ready: boolean }) {
 
           <div className="hidden lg:flex z-10">
             <motion.a href="/book-consultation" style={B} whileHover={{ scale: 1.02 }}
-              className="text-[11px] font-semibold tracking-[0.15em] border border-[#C9956A] rounded-[4px] uppercase px-6 py-2.5 text-[#2C1810] hover:bg-[#C9956A] hover:text-[#FAF7F2] transition-all duration-300">
+              className={`text-[11px] font-semibold tracking-[0.15em] border border-[#C9956A] rounded-[4px] uppercase px-6 py-2.5 hover:bg-[#C9956A] hover:text-[#FAF7F2] transition-all duration-300 ${hasBg ? 'text-[#2C1810]' : 'text-[#C9956A]'}`}>
               Book Consultation
             </motion.a>
           </div>
-          <button onClick={() => setOpen(true)} className="lg:hidden p-2 text-[#2C1810]">
+          <button onClick={() => setOpen(true)} className={`lg:hidden p-2 transition-colors ${hasBg ? 'text-[#2C1810]' : 'text-[#C9956A]'}`}>
             <Menu size={26} />
           </button>
 
@@ -184,16 +184,18 @@ export function Nav({ ready }: { ready: boolean }) {
 
                   {/* Right Column: Image */}
                   <div className="w-[40%] p-6">
-                    <div className="w-full h-full rounded-lg overflow-hidden bg-white flex flex-col shadow-sm border border-[#E8E1D7]/30">
-                      <div className="relative flex-1 w-full shrink-0">
-                        <img
-                          src={MEGA_MENU_CONTENT[activeCategory].image}
-                          alt={activeCategory}
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
+                    <div className="w-full h-full rounded-lg bg-[#FAF7F2] flex flex-col shadow-md border border-[#E8E1D7]/80">
+                      <div className="relative flex-1 w-full shrink-0 p-2 pb-0">
+                        <div className="w-full h-full relative rounded-[4px] overflow-hidden">
+                          <img
+                            src={MEGA_MENU_CONTENT[activeCategory].image}
+                            alt={activeCategory}
+                            className="absolute inset-0 w-full h-full object-cover"
+                          />
+                        </div>
                       </div>
-                      <div className="p-6 bg-white shrink-0 flex items-center">
-                        <p style={D} className="text-[17px] text-[#2C1810] leading-snug">
+                      <div className="px-5 py-5 mt-3 border-t border-[#E8E1D7]/80 shrink-0 flex items-center">
+                        <p style={D} className="text-[15px] text-[#2C1810] leading-relaxed">
                           {MEGA_MENU_CONTENT[activeCategory].desc.split(', ').map((part, i, arr) => (
                             <span key={i} className={i > 0 ? "italic text-[#5C4A42]" : ""}>
                               {part}{i < arr.length - 1 ? ", " : ""}
@@ -297,36 +299,27 @@ export function Nav({ ready }: { ready: boolean }) {
               {/* Book Consultation CTA */}
               <button
                 onClick={() => { setOpen(false); navigate("/book-consultation"); }}
-                className="w-full py-4 border border-[#C9956A] text-[#A0603A] uppercase tracking-[0.2em] text-[11px] font-semibold text-center hover:bg-[#C9956A] hover:text-[#FAF7F2] transition-colors rounded-[4px]"
+                className="w-full mt-2 py-5 px-6 bg-[#C9956A] text-[#FAF7F2] uppercase tracking-[0.15em] text-xs font-semibold flex justify-between items-center transition-colors hover:bg-[#d6a57c] shadow-[0_0_35px_rgba(201,149,106,0.4)]"
                 style={B}
               >
-                Book Consultation
+                <span>Book Consultation</span>
+                <ArrowRight size={16} className="text-[#FAF7F2]" />
               </button>
 
-              {/* Contact Buttons */}
-              <div className="flex flex-col gap-3">
-                <a href="https://api.whatsapp.com/send?phone=919946336480" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 border border-[#E8E1D7]/50 rounded-lg bg-[#FAF7F2]/50 hover:bg-[#F2EAE1] transition-colors">
-                  <MessageCircle size={20} className="text-[#2C1810]" strokeWidth={1.5} />
-                  <span className="text-[14px] text-[#2C1810] font-medium" style={B}>WhatsApp Concierge</span>
-                </a>
+              {/* Bottom Contact Buttons */}
+              <div className="mt-auto pt-16 pb-20 flex flex-col gap-4">
                 <a href="tel:09946336480"
-                  className="flex items-center gap-4 p-4 border border-[#E8E1D7]/50 rounded-lg bg-[#FAF7F2]/50 hover:bg-[#F2EAE1] transition-colors">
-                  <Phone size={20} className="text-[#2C1810]" strokeWidth={1.5} />
-                  <span className="text-[14px] text-[#2C1810] font-medium" style={B}>Call Us</span>
+                  className="flex items-center justify-center gap-3 w-full py-5 bg-[#0A0502] border border-[#2C1810] text-[#FAF7F2] transition-colors"
+                >
+                  <Phone size={16} className="text-[#C9956A]" />
+                  <span className="text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase" style={B}>Call 099463 36480</span>
                 </a>
-              </div>
-
-              {/* Bottom Image Card */}
-              <div className="mt-4 rounded-2xl overflow-hidden relative min-h-[260px] mb-8 shrink-0">
-                <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop" alt="Expert Care" className="absolute inset-0 w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 flex flex-col justify-between">
-                  <div className="text-[9px] tracking-[0.2em] uppercase text-white/80" style={M}>Expert-Led Care</div>
-                  <div>
-                    <h3 className="text-[26px] text-[#FAF7F2] mb-3 leading-tight" style={D}>Natural results.<br /><span className="italic text-[#E8E1D7]">Timeless you.</span></h3>
-                    <p className="text-[13px] text-white/80 max-w-[220px] leading-relaxed" style={B}>Advanced aesthetic solutions, personalised for you.</p>
-                  </div>
-                </div>
+                <a href="https://api.whatsapp.com/send?phone=919946336480" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 w-full py-5 bg-[#C9956A] text-[#160A05] transition-colors"
+                >
+                  <MessageCircle size={16} className="fill-current" />
+                  <span className="text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase" style={B}>WhatsApp Us</span>
+                </a>
               </div>
 
             </div>
