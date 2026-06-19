@@ -165,21 +165,21 @@ export default function ServicePage() {
                   <div className="absolute top-4 left-4 sm:top-5 sm:left-5 px-4 py-1.5 rounded-full text-xs text-[#C9956A] font-medium z-10" style={{ background: "rgba(22,10,5,0.85)", backdropFilter: "blur(8px)", border: "1px solid rgba(201,149,106,0.35)", ...M }}>
                     ✅ Our Device
                   </div>
-                  <div className="aspect-[16/9] overflow-hidden">
+                  <div className="relative aspect-[16/9] overflow-hidden shrink-0">
                     <img src="https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format"
                       alt="HydraFacial MD Elite" className="w-full h-full object-cover opacity-75" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#160A05]/80" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#160A05]/90" />
                   </div>
-                  <div className="p-7">
+                  <div className="p-7 relative z-10">
                     <h3 className="text-2xl text-[#FAF7F2] mb-1" style={{ ...D, fontStyle: "italic" }}>HydraFacial MD Elite</h3>
                     <p className="text-xs text-[#C9956A] tracking-widest uppercase mb-4" style={M}>Medical-Grade · FDA Cleared · Hospital Standard</p>
-                    <p className="text-base text-[#FAF7F2]/88 leading-loose mb-5" style={B}>
+                    <p className="text-base text-[#FAF7F2] opacity-90 leading-loose mb-5" style={B}>
                       The gold standard for medical skin resurfacing — used in leading dermatology hospitals worldwide. Delivers simultaneous multi-step treatment with doctor-prescribed serum infusion that no standard device can replicate.
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2.5">
                       {["Vortex-Fusion® System", "Medical-grade suction", "AI skin analysis", "Custom serums"].map(f => (
-                        <span key={f} className="px-3 py-1 rounded-full text-xs text-[#C9956A]"
-                          style={{ background: "rgba(201,149,106,0.12)", border: "1px solid rgba(201,149,106,0.25)", ...B }}>{f}</span>
+                        <span key={f} className="px-4 py-1.5 rounded-full text-xs text-white font-medium"
+                          style={{ background: "rgba(201,149,106,0.25)", border: "1px solid rgba(201,149,106,0.6)", letterSpacing: "0.05em", ...B }}>{f}</span>
                       ))}
                     </div>
                   </div>
@@ -501,7 +501,7 @@ export default function ServicePage() {
                       <span className="text-sm text-[#FAF7F2] font-medium" style={B}>{val}</span>
                     </div>
                   ))}
-                  <motion.a href="#invitation"
+                  <motion.a href="/book-consultation"
                     whileHover={{ scale: 1.03, boxShadow: "0 0 24px rgba(201,149,106,0.45)" }}
                     className="mt-6 w-full flex items-center justify-center gap-2 py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase rounded-xl font-medium" style={B}>
                     Book Now <ArrowRight size={13} />
