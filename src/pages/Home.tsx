@@ -77,7 +77,7 @@ export function Hero({ ready }: { ready: boolean }) {
       </motion.div>
 
       {/* --- MOBILE CONTENT --- */}
-      <motion.div className="relative z-20 flex md:hidden flex-col justify-between pt-28 pb-6 px-6 h-[100dvh] w-full">
+      <motion.div className="relative z-20 flex md:hidden flex-col justify-between pt-28 pb-6 px-6 h-[100svh] w-full">
         <div className="flex flex-col">
           <motion.p className="text-[#C9956A] text-[10px] tracking-[0.15em] uppercase mb-4" style={M}
             initial={{ opacity: 0, x: -16 }} animate={ready ? { opacity: 1, x: 0 } : {}}
