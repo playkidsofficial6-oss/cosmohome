@@ -9,6 +9,7 @@ import { Preloader } from "../components/ui/shared";
 import { Nav, Footer, MobileBottomCTA } from "../components/layout";
 import HomePage from "../pages/Home";
 import ServicePage from "../pages/Service";
+import BookConsultationPage from "../pages/BookConsultation";
 export function AppContent() {
     const location = useLocation();
     const [ready, setReady] = useState(() => location.pathname !== "/");
@@ -19,15 +20,16 @@ export function AppContent() {
     return (
     <div style={B} className="bg-background">
       <AnimatePresence>{!ready && <Preloader onDone={() => setReady(true)} />}</AnimatePresence>
-      <motion.div initial={{ opacity: 0 }} animate={ready ? { opacity: 1 } : {}} transition={{ duration: 0.6 }}>
+      <motion.div initial={false} animate={ready ? { opacity: 1 } : { opacity: 0 }} transition={{ duration: 0.6 }}>
         <Nav ready={ready} />
         <Routes>
           <Route path="/" element={<HomePage ready={ready} />} />
           <Route path="/service" element={<ServicePage />} />
+          <Route path="/book-consultation" element={<BookConsultationPage />} />
         </Routes>
         <Footer />
       </motion.div>
-      <MobileBottomCTA />
+      {location.pathname !== "/book-consultation" && <MobileBottomCTA />}
     </div>
     );
 }
