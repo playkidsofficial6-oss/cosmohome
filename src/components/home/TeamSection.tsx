@@ -39,7 +39,7 @@ export function TeamSection() {
             <h2 className="text-5xl sm:text-6xl md:text-[5rem] text-[#2C1810] leading-[1.0] mb-8" style={D}>
               Every doctor,<br /><em>board-qualified.</em>
             </h2>
-            <p className="text-sm md:text-base text-[#2C1810]/80 leading-loose max-w-sm" style={B}>
+            <p className="text-base md:text-base text-[#2C1810]/80 leading-loose max-w-sm" style={B}>
               These are the faces behind the credentials.<br />
               Every member of our clinical team holds<br />
               postgraduate specialist qualifications —<br />
