@@ -343,21 +343,71 @@ export function Experiences() {
         <div className="grid lg:grid-cols-2 gap-0 border-t border-[#FAF7F2]/10">
           <div className="flex flex-col border-b lg:border-b-0 lg:border-r border-[#FAF7F2]/10">
             {exps.map((e, i) => (
-              <motion.button key={e.name} onClick={() => setActive(i)} whileHover={{ x: 5 }}
-                className={`text-left py-6 border-b border-[#FAF7F2]/10 transition-opacity duration-300 ${active === i ? "opacity-100" : "opacity-35 hover:opacity-65"}`}>
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-lg md:text-xl text-[#FAF7F2]" style={D}>{e.name}</p>
-                    <p className="text-xs tracking-[0.18em] text-[#C9956A] mt-1 uppercase" style={M}>{e.tagline}</p>
+              <div key={e.name} className="flex flex-col border-b border-[#FAF7F2]/10">
+                <motion.button onClick={() => setActive(i)} whileHover={{ x: 5 }}
+                  className={`text-left py-6 transition-opacity duration-300 ${active === i ? "opacity-100" : "opacity-35 hover:opacity-65"}`}>
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <p className="text-lg md:text-xl text-[#FAF7F2]" style={D}>{e.name}</p>
+                      <p className="text-xs tracking-[0.18em] text-[#C9956A] mt-1 uppercase" style={M}>{e.tagline}</p>
+                    </div>
+                    <motion.div animate={{ rotate: active === i ? 90 : 0 }} className="lg:hidden shrink-0 text-[#C9956A] transition-transform">
+                      <ChevronRight size={16} />
+                    </motion.div>
+                    <motion.div animate={{ x: active === i ? 5 : 0 }} className="hidden lg:block shrink-0 text-[#C9956A] transition-transform">
+                      <ChevronRight size={16} />
+                    </motion.div>
                   </div>
-                  <motion.div animate={{ x: active === i ? 5 : 0 }} transition={{ type: "spring", stiffness: 300 }}>
-                    <ChevronRight size={16} className="shrink-0 text-[#C9956A]" />
-                  </motion.div>
-                </div>
-              </motion.button>
+                </motion.button>
+
+                {/* Mobile Accordion Content */}
+                <AnimatePresence initial={false}>
+                  {active === i && (
+                    <motion.div
+                      className="lg:hidden overflow-hidden"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: EASE }}
+                    >
+                      <div className="pb-8 pt-2">
+                        <p className="text-sm text-[#FAF7F2]/90 leading-loose mb-5" style={B}>{exps[active].desc}</p>
+                        {[{ label: "Duration", val: exps[active].duration }, { label: "Suited for", val: exps[active].suitedFor }].map(({ label, val }) => (
+                          <div key={label} className="flex gap-4 mb-2">
+                            <span className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] w-20 shrink-0 pt-0.5" style={M}>{label}</span>
+                            <span className="text-xs text-[#FAF7F2]/85" style={B}>{val}</span>
+                          </div>
+                        ))}
+                        <div className="mt-6 flex flex-col gap-3">
+                          {active === 0 && (
+                            <motion.button
+                              onClick={() => navigate("/service")}
+                              whileTap={{ scale: 0.97 }}
+                              style={B}
+                              className="inline-flex justify-center items-center gap-3 w-full py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-lg shadow-lg shadow-[#C9956A]/30 group"
+                            >
+                              View Full Service Details
+                              <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                            </motion.button>
+                          )}
+                          <motion.a
+                            href="/#invitation"
+                            whileTap={{ scale: 0.97 }}
+                            style={B}
+                            className="inline-flex justify-center items-center gap-3 w-full py-3.5 border border-[#C9956A]/40 text-[#C9956A] text-xs tracking-[0.22em] uppercase rounded-lg hover:bg-[#C9956A]/10 transition-colors group"
+                          >
+                            Enquire
+                            <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                          </motion.a>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             ))}
           </div>
-          <div className="lg:pl-14 pt-6 lg:pt-0 flex flex-col justify-center">
+          <div className="hidden lg:flex lg:pl-14 pt-6 lg:pt-0 flex-col justify-center">
             <AnimatePresence mode="wait">
               <motion.div key={active} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.4, ease: EASE }}>

@@ -157,7 +157,7 @@ export default function ServicePage() {
             </div>
 
             {/* Side-by-side machine showcase + comparison table */}
-            <div className="grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-10">
+            <div className="grid lg:grid-cols-[1fr_1fr] gap-10">
               {/* Machine card */}
               <FadeUp delay={0.05}>
                 <div className="relative rounded-3xl overflow-hidden h-full flex flex-col"
@@ -280,24 +280,61 @@ export default function ServicePage() {
                 {/* Session selector */}
                 <div className="flex flex-col gap-2">
                   {SESSION_PLAN.map((s, i) => (
-                    <motion.button key={s.n} onClick={() => setActiveSession(i)}
-                      whileHover={{ x: 4 }}
-                      className={`text-left px-5 py-4 rounded-xl transition-all duration-250 flex items-center justify-between gap-4 ${activeSession === i ? "bg-[#C9956A] text-[#FAF7F2]" : "text-[#FAF7F2]/65 hover:text-[#FAF7F2]"}`}
-                      style={{ background: activeSession === i ? "#C9956A" : "rgba(255,255,255,0.04)", border: `1px solid ${activeSession === i ? "#C9956A" : "rgba(201,149,106,0.15)"}` }}>
-                      <div className="flex items-center gap-4">
-                        <span className="text-sm w-10 shrink-0" style={M}>{s.n}</span>
-                        <div>
-                          <p className="text-sm font-medium" style={B}>{s.label}</p>
-                          <p className="text-xs opacity-70 mt-0.5" style={B}>{s.duration}</p>
+                    <div key={s.n} className="flex flex-col gap-2">
+                      <motion.button onClick={() => setActiveSession(i)}
+                        whileHover={{ x: 4 }}
+                        className={`text-left px-5 py-4 rounded-xl transition-all duration-250 flex items-center justify-between gap-4 ${activeSession === i ? "bg-[#C9956A] text-[#FAF7F2]" : "text-[#FAF7F2]/65 hover:text-[#FAF7F2]"}`}
+                        style={{ background: activeSession === i ? "#C9956A" : "rgba(255,255,255,0.04)", border: `1px solid ${activeSession === i ? "#C9956A" : "rgba(201,149,106,0.15)"}` }}>
+                        <div className="flex items-center gap-4">
+                          <span className="text-sm w-10 shrink-0" style={M}>{s.n}</span>
+                          <div>
+                            <p className="text-sm font-medium" style={B}>{s.label}</p>
+                            <p className="text-xs opacity-70 mt-0.5" style={B}>{s.duration}</p>
+                          </div>
                         </div>
-                      </div>
-                      <ArrowRight size={14} className={`shrink-0 transition-transform ${activeSession === i ? "translate-x-1" : ""}`} />
-                    </motion.button>
+                        <motion.div animate={{ rotate: activeSession === i ? 90 : 0 }} className="lg:hidden shrink-0 transition-transform">
+                          <ArrowRight size={14} />
+                        </motion.div>
+                        <ArrowRight size={14} className={`hidden lg:block shrink-0 transition-transform ${activeSession === i ? "translate-x-1" : ""}`} />
+                      </motion.button>
+
+                      {/* Mobile Accordion Content */}
+                      <AnimatePresence initial={false}>
+                        {activeSession === i && (
+                          <motion.div
+                            className="lg:hidden overflow-hidden"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.35, ease: EASE }}
+                          >
+                            <div className="pt-2 pb-4">
+                              <div className="relative p-6 rounded-2xl overflow-hidden"
+                                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(201,149,106,0.25)" }}>
+                                {/* Ghost number */}
+                                <span className="absolute -top-4 -right-2 text-[80px] font-bold leading-none select-none pointer-events-none"
+                                  style={{ ...D, color: "rgba(201,149,106,0.06)" }}>{activeSession + 1}</span>
+                                <p className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] mb-2" style={M}>
+                                  Session {SESSION_PLAN[activeSession].n} · {SESSION_PLAN[activeSession].duration}
+                                </p>
+                                <h3 className="text-xl text-[#FAF7F2] mb-3" style={{ ...D, fontStyle: "italic" }}>
+                                  {SESSION_PLAN[activeSession].label}
+                                </h3>
+                                <div className="h-px w-8 bg-[#C9956A]/50 mb-4" />
+                                <p className="text-sm text-[#FAF7F2]/90 leading-relaxed" style={B}>
+                                  {SESSION_PLAN[activeSession].detail}
+                                </p>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
                   ))}
                 </div>
               </FadeUp>
 
-              <div className="lg:pt-16">
+              <div className="hidden lg:block lg:pt-16">
                 <AnimatePresence mode="wait">
                   <motion.div key={activeSession} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.35, ease: EASE }}>
