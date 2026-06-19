@@ -80,7 +80,7 @@ export function Hero({ ready }: { ready: boolean }) {
 
 export function Philosophy() {
   return (
-    <section id="philosophy" className="py-20 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
+    <section id="philosophy" className="py-6 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto">
         <FadeUp><Tag>Chapter 02 — The Philosophy</Tag></FadeUp>
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-24 items-start mt-10">
@@ -107,7 +107,7 @@ export function Philosophy() {
               </motion.div>
             </FadeUp>
           </div>
-          <div className="flex flex-col gap-8 lg:pt-4">
+          <div className="flex flex-col gap-6 lg:pt-4">
             {[
               { n: "I", title: "Beauty should feel personal", body: "No two faces are alike. No two journeys are alike. COSMO HOME was built on the belief that aesthetic medicine must begin with listening — truly listening — before it begins with treating." },
               { n: "II", title: "Expertise is an act of care", body: "The most beautiful outcomes come not from the newest technology, but from the deepest understanding of anatomy, proportion, and the subtlety of natural ageing." },
@@ -136,13 +136,13 @@ export function ExtraordinaryCare() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const scl = useTransform(scrollYProgress, [0, 0.5, 1], [0.97, 1, 0.97]);
   return (
-    <section ref={ref} className="relative py-4 bg-[#FAF7F2]">
+    <section ref={ref} className="relative  bg-[#FAF7F2]">
       <motion.div className="bg-[#1C0E08] mx-0 md:mx-10 lg:mx-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
         <motion.div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, #C9956A 0%, transparent 70%)" }}
           animate={{ opacity: [0.1, 0.2, 0.1] }} transition={{ duration: 7, repeat: Infinity }} />
-        <div className="relative z-10 px-5 sm:px-8 md:px-16 lg:px-24 py-14 md:py-24 max-w-6xl mx-auto">
+        <div className="relative z-10 px-5 sm:px-8 md:px-16 lg:px-24 py-6 md:py-24 max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-[140px_1fr] gap-8 lg:gap-16 items-start">
             {/* Clock */}
             <FadeUp className="flex flex-col items-center lg:items-start gap-4 lg:pt-2">
@@ -291,9 +291,9 @@ export function Transformation() {
     { name: "Elena, 31", tag: "New Chapter 🦋", story: '"Starting a business changes you. I needed to feel as capable on the outside as I felt within. COSMO HOME did not change me — it aligned how I look with who I have become."', img: "https://images.unsplash.com/photo-1544717304-a2db4a7b16ee?w=800&h=1000&fit=crop&auto=format" },
   ];
   return (
-    <section className="py-20 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
+    <section className="py-6 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-6 gap-6">
           <FadeUp>
             <Tag>Chapter 04 — Transformation</Tag>
             <h2 className="text-4xl md:text-5xl leading-[1.05] text-[#2C1810] mt-3" style={D}>The art of<br /><em>becoming.</em></h2>
@@ -334,11 +334,11 @@ export function Experiences() {
     { name: "Personalised Aesthetic Journey 💫", tagline: "Your vision. Our expertise.", desc: "A comprehensive long-term relationship with aesthetic care. Dr. Ruxana designs a multi-year plan aligned with your goals, lifestyle, and evolving beauty.", duration: "Annual programme", suitedFor: "Anyone committed to the long view" },
   ];
   return (
-    <section id="experiences" className="py-20 md:py-32 bg-[#2C1810]">
+    <section id="experiences" className="py-6 md:py-32 bg-[#2C1810]">
       <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
         <FadeUp>
           <Tag>Chapter 05 — Signature Experiences</Tag>
-          <h2 className="text-4xl md:text-5xl text-[#FAF7F2] leading-[1.05] mt-3 mb-12" style={D}>Not treatments.<br /><em>Experiences.</em></h2>
+          <h2 className="text-4xl md:text-5xl text-[#FAF7F2] leading-[1.05] mt-3 mb-6" style={D}>Not treatments.<br /><em>Experiences.</em></h2>
         </FadeUp>
         <div className="grid lg:grid-cols-2 gap-0 border-t border-[#FAF7F2]/10">
           <div className="flex flex-col border-b lg:border-b-0 lg:border-r border-[#FAF7F2]/10">
@@ -357,7 +357,7 @@ export function Experiences() {
               </motion.button>
             ))}
           </div>
-          <div className="lg:pl-14 py-8 lg:py-0 flex flex-col justify-center">
+          <div className="lg:pl-14 pt-6 lg:pt-0 flex flex-col justify-center">
             <AnimatePresence mode="wait">
               <motion.div key={active} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.4, ease: EASE }}>
@@ -494,7 +494,7 @@ export function Journey() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
-    <section id="journey" ref={ref} className="relative py-20 md:py-32 bg-[#160A05] overflow-hidden">
+    <section id="journey" ref={ref} className="relative py-6 md:py-32 bg-[#160A05] overflow-hidden">
       {/* Ambient glows */}
       <motion.div className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(201,149,106,0.08) 0%, transparent 70%)" }}
@@ -550,10 +550,10 @@ export function Journey() {
         </div>
 
         {/* ── MOBILE: vertical timeline ── */}
-        <div className="lg:hidden relative pl-6">
+        <div className="lg:hidden relative">
           {/* Vertical line */}
           <motion.div
-            className="absolute left-4 top-0 bottom-0 w-px origin-top"
+            className="absolute left-4 top-0 bottom-0 w-px origin-top hidden lg:block"
             style={{ background: "linear-gradient(to bottom, rgba(201,149,106,0.6), rgba(201,149,106,0.1))" }}
             initial={{ scaleY: 0 }}
             animate={inView ? { scaleY: 1 } : {}}
@@ -596,8 +596,8 @@ export function TeamAndStandards() {
           style={{ background: "radial-gradient(circle, #C9956A 0%, transparent 65%)", opacity: 0.08 }}
           animate={{ scale: [1, 1.15, 1] }} transition={{ duration: 9, repeat: Infinity }} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-16 lg:px-24 py-16 md:py-28">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 mb-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-16 lg:px-24 py-6 md:py-28">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 mb-6">
             <SlideIn from="left">
               <Tag>🛡️ Our Standards — Anti-Quackery</Tag>
               <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#FAF7F2] leading-[1.05] mt-3" style={D}>
@@ -623,7 +623,7 @@ export function TeamAndStandards() {
 
           {/* Tab switcher */}
           <FadeUp>
-            <div className="flex w-full sm:w-fit border border-[#FAF7F2]/15 mb-10">
+            <div className="flex w-full sm:w-fit border border-[#FAF7F2]/15 mb-6">
               {[{ id: "standards" as const, icon: "🛡️", label: "COSMO HOME Standards" }, { id: "danger" as const, icon: "⚠️", label: "The Dangers" }].map(({ id, icon, label }) => (
                 <button key={id} onClick={() => setTab(id)} style={B}
                   className={`w-1/2 lg:w-auto flex items-center justify-center gap-1 px-5 py-3 text-xs tracking-[0.15em] uppercase transition-all duration-300 ${tab === id ? "bg-[#C9956A] text-[#FAF7F2]" : "text-[#FAF7F2]/65 hover:text-[#FAF7F2]/88"}`}>
@@ -705,7 +705,7 @@ export function Stories() {
     { author: "Claudia M., 51", context: "Architect · Personalised Aesthetic Journey", pull: "Beauty should grow with you, not fight against you. ✨", body: "Dr. Ruxana designed a two-year plan for me. Not to look younger — to look like myself at my best. The most considered, thoughtful investment I have made in myself. I am more proud of how I look at 51 than I ever was at 35." },
   ];
   return (
-    <section id="stories" className="py-20 md:py-32 bg-[#FAF7F2]">
+    <section id="stories" className="py-6 md:py-32 bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
         <FadeUp>
           <Tag>Chapter 07 — Real Stories 💬</Tag>
@@ -713,7 +713,7 @@ export function Stories() {
             People remember<br /><em>stories.</em>
           </h2>
         </FadeUp>
-        <div className="flex flex-col gap-16">
+        <div className="flex flex-col gap-14">
           {stories.map((s, i) => (
             <FadeUp key={s.author} delay={0.08}>
               <div className={`grid lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16 items-start ${i % 2 === 1 ? "lg:grid-flow-dense" : ""}`}>
@@ -752,7 +752,7 @@ export function Invitation() {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
   return (
-    <section id="invitation" className="relative py-20 md:py-32 overflow-hidden bg-[#2C1810]">
+    <section id="invitation" className="relative py-6 md:py-32 overflow-hidden bg-[#2C1810]">
       <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
       <motion.div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, #C9956A 0%, transparent 70%)" }}
@@ -919,7 +919,7 @@ export default function HomePage({ ready }: { ready: boolean }) {
       <Journey />
       <TeamAndStandards />
       <Stories />
-      <div className="lg:hidden h-20" />
+      {/* <div className="lg:hidden h-20" /> */}
       <Invitation />
     </>
   );

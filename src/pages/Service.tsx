@@ -7,8 +7,8 @@ import { ArrowRight, Menu, X, Instagram, Facebook, Home, MessageCircle, Clipboar
 import { D, M, B, GOLD, EASE, GRAIN, MACHINE_SPECS, WHO_NEEDS, SESSION_PLAN, TIMELINE, WA_PATH } from "../lib/constants";
 import { CTAButtons, FadeUp, Tag } from "../components/ui/shared";
 export default function ServicePage() {
-    const [activeSession, setActiveSession] = useState(0);
-    return (
+  const [activeSession, setActiveSession] = useState(0);
+  return (
     <AnimatePresence>
       <motion.div
         key="service-page"
@@ -57,7 +57,7 @@ export default function ServicePage() {
 
             <FadeUp delay={0.2}>
               <CTAButtons />
-              <p className="mt-4 text-xs text-[#FAF7F2]/40" style={B}>Consultation: £150 · Redeemable against treatment</p>
+
             </FadeUp>
           </div>
 
@@ -80,9 +80,9 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 2. WHAT IS THIS ══ */}
-        <section className="py-20 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
+        <section className="pt-6 pb-12 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-[1fr_1fr] gap-14 lg:gap-20 items-center">
+            <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-20 items-center">
               <FadeUp>
                 <Tag>What Is This?</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-6" style={D}>
@@ -140,7 +140,7 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 3. MACHINE ══ */}
-        <section className="py-20 md:py-28 bg-[#1C0E08] relative overflow-hidden">
+        <section className="py-6 md:py-28 bg-[#1C0E08] relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
           <motion.div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(201,149,106,0.1) 0%, transparent 65%)" }}
@@ -213,9 +213,9 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 4. WHO NEEDS THIS ══ */}
-        <section className="py-20 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
+        <section className="py-6 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-[380px_1fr] gap-14 lg:gap-20 items-start">
+            <div className="grid lg:grid-cols-[380px_1fr] gap-6 lg:gap-20 items-start">
               <FadeUp>
                 <Tag>Is This For You?</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-5" style={D}>
@@ -253,10 +253,10 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 5. SESSION PLAN — interactive ══ */}
-        <section className="py-20 md:py-28 bg-[#2C1810] relative overflow-hidden">
+        <section className="py-6 md:py-28 bg-[#2C1810] relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
           <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-16 relative z-10">
-            <div className="grid lg:grid-cols-[1fr_1fr] gap-14 lg:gap-20 items-start">
+            <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-20 items-start">
               <FadeUp>
                 <Tag>Your Treatment Plan</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#FAF7F2] leading-[1.05] mt-3 mb-6" style={D}>
@@ -325,9 +325,9 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 6. RESULTS TIMELINE ══ */}
-        <section className="py-20 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
+        <section className="py-6 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-14 gap-6">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-6 gap-6">
               <FadeUp>
                 <Tag>What to Expect</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
@@ -371,7 +371,7 @@ export default function ServicePage() {
                 <FadeUp key={t.when} delay={i * 0.08}>
                   <div className="relative mb-8 last:mb-0">
                     <div className="absolute -left-9 top-1 w-5 h-5 rounded-full border-2 border-[#C9956A] bg-[#FAF7F2] flex items-center justify-center text-[10px]">
-                      {["✨","🌱","🌿","🌸","🏆"][i]}
+                      {["✨", "🌱", "🌿", "🌸", "🏆"][i]}
                     </div>
                     <p className="text-xs tracking-[0.22em] uppercase text-[#C9956A] mb-1" style={M}>{t.when}</p>
                     <p className="text-base text-[#2C1810] leading-loose" style={B}>{t.what}</p>
@@ -395,7 +395,7 @@ export default function ServicePage() {
             style={{ background: "radial-gradient(circle, rgba(201,149,106,0.15) 0%, transparent 70%)" }}
             animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }} transition={{ duration: 7, repeat: Infinity }} />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-10 md:px-16 py-24 md:py-36">
+          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-10 md:px-16 py-6 md:py-36">
             <div className="grid lg:grid-cols-[1fr_auto] gap-14 lg:gap-24 items-center">
               <FadeUp>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
@@ -421,14 +421,14 @@ export default function ServicePage() {
                   <motion.a href="https://wa.me/441234567890" target="_blank" rel="noopener noreferrer"
                     whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
                     className="inline-flex items-center justify-center gap-3 px-9 py-5 border-2 border-[#FAF7F2]/20 text-[#FAF7F2] text-sm tracking-[0.18em] uppercase rounded-2xl hover:border-[#C9956A] hover:text-[#C9956A] transition-all font-medium" style={B}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d={WA_PATH}/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d={WA_PATH} /></svg>
                     Ask Dr. Ruxana
                   </motion.a>
                 </div>
 
                 {/* Trust signals */}
                 <div className="flex flex-wrap gap-6">
-                  {["👩‍⚕️ Doctor-led only", "⏱️ Zero downtime", "💰 £150 redeemable", "🔒 Full confidentiality"].map(t => (
+                  {["👩‍⚕️ Doctor-led only", "⏱️ Zero downtime", "🔒 Full confidentiality"].map(t => (
                     <p key={t} className="text-sm text-[#FAF7F2]/65" style={B}>{t}</p>
                   ))}
                 </div>
@@ -463,8 +463,8 @@ export default function ServicePage() {
           </div>
         </section>
 
-        <div className="lg:hidden h-20" />
+        {/* <div className="lg:hidden h-20" /> */}
       </motion.div>
     </AnimatePresence>
-    );
+  );
 }
