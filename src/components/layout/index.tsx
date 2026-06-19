@@ -55,10 +55,10 @@ export function Nav({ ready }: { ready: boolean }) {
               )
             ))}
           </nav>
-          <motion.button onClick={() => navigate("/book-consultation")} style={B} whileHover={{ scale: 1.02 }}
+          <motion.a href="/book-consultation" style={B} whileHover={{ scale: 1.02 }}
             className="hidden lg:inline-flex text-xs tracking-[0.2em] uppercase px-5 py-2.5 bg-[#C9956A] text-[#FAF7F2] hover:bg-[#2C1810] transition-all duration-300 shadow-md shadow-[#C9956A]/20">
             Book Consultation
-          </motion.button>
+          </motion.a>
           <button onClick={() => setOpen(!open)} className="lg:hidden p-2 text-[#2C1810]">
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -82,24 +82,40 @@ export function Nav({ ready }: { ready: boolean }) {
             </div>
 
             {/* Links */}
-            <div className="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-8">
-              {links.map((l, i) => (
-                l.href ? (
-                  <motion.a key={l.label} href={l.href} onClick={(e) => { e.preventDefault(); setOpen(false); navigate(l.href!); }}
-                    className="text-sm tracking-[0.15em] uppercase text-[#FAF7F2] hover:text-[#C9956A] transition-colors" style={D}
-                    initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.12 + i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
-                    {l.label}
-                  </motion.a>
-                ) : (
-                  <motion.button key={l.label} onClick={() => { setOpen(false); l.action?.(); }}
-                    className="text-sm tracking-[0.15em] uppercase text-[#FAF7F2] hover:text-[#C9956A] transition-colors text-left" style={D}
-                    initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.12 + i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
-                    {l.label}
-                  </motion.button>
-                )
-              ))}
+            <div className="flex-1 overflow-y-auto px-6 pt-8 pb-6 flex flex-col">
+              {/* Nav links */}
+              <div className="flex flex-col gap-1">
+                {links.map((l, i) => (
+                  l.href ? (
+                    <motion.a key={l.label} href={l.href} onClick={(e) => { e.preventDefault(); setOpen(false); navigate(l.href!); }}
+                      className="group flex items-center justify-between py-4 text-sm tracking-[0.15em] uppercase text-[#FAF7F2]/85 hover:text-[#C9956A] transition-colors" style={D}
+                      initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 + i * 0.055, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}>
+                      {l.label}
+                    </motion.a>
+                  ) : (
+                    <motion.button key={l.label} onClick={() => { setOpen(false); l.action?.(); }}
+                      className="group flex items-center justify-between py-4 w-full text-sm tracking-[0.15em] uppercase text-[#FAF7F2]/85 hover:text-[#C9956A] transition-colors text-left" style={D}
+                      initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 + i * 0.055, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}>
+                      {l.label}
+                    </motion.button>
+                  )
+                ))}
+              </div>
+
+              {/* Book Consultation CTA — after Stories */}
+              <motion.a
+                href="/book-consultation"
+                onClick={(e) => { e.preventDefault(); setOpen(false); navigate("/book-consultation"); }}
+                className="group mt-6 flex items-center justify-between w-full px-5 py-4 bg-[#C9956A] text-[#FAF7F2] hover:bg-[#d6a57c] active:bg-[#b8805c] transition-colors shadow-lg shadow-[#C9956A]/20"
+                initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + links.length * 0.055 + 0.05, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                style={B}
+              >
+                <span className="text-xs font-semibold tracking-[0.22em] uppercase">Book Consultation</span>
+                <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform shrink-0" />
+              </motion.a>
             </div>
 
             {/* Bottom Buttons inside Menu */}
