@@ -17,14 +17,14 @@ export function Hero({ ready }: { ready: boolean }) {
     <section ref={ref} className="relative min-h-screen overflow-hidden bg-[#2C1810] flex flex-col">
       <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.04]"
         style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
-      <motion.div className="absolute inset-0 z-0" style={{ y: imgY }}>
-        <img src="https://images.unsplash.com/photo-1636153279424-cb5d1e00f5a2?w=1600&h=2000&fit=crop&auto=format&crop=faces"
-          alt="The spirit of COSMO HOME" className="w-full h-full object-cover object-center scale-110" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2C1810]/88 via-[#2C1810]/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/80 via-transparent to-[#2C1810]/20" />
+      <motion.div className="absolute inset-0 z-0">
+        <img src="/hero/hero-bg.webp"
+          alt="The spirit of COSMO HOME" className="w-full h-full object-cover object-bottom hidden md:block" />
+        <img src="/hero/hero-bg-mob.webp"
+          alt="The spirit of COSMO HOME" className="w-full h-full object-cover object-bottom block md:hidden" />
       </motion.div>
 
-      <motion.div className="relative z-20 flex flex-col justify-end pb-16 md:pb-24 pt-32 px-6 md:px-16 lg:px-24 min-h-screen max-w-7xl mx-auto w-full"
+      <motion.div className="relative z-20 flex flex-col justify-end pb-32 md:pb-24 pt-24 px-6 md:px-16 lg:px-24 min-h-screen max-w-7xl mx-auto w-full"
         style={{ y: textY }}>
         <motion.p className="text-[#C9956A] text-xs tracking-[0.15em] uppercase mb-6" style={M}
           initial={{ opacity: 0, x: -16 }} animate={ready ? { opacity: 1, x: 0 } : {}}
@@ -63,7 +63,7 @@ export function Hero({ ready }: { ready: boolean }) {
           </motion.a>
         </motion.div>
 
-        <motion.div className="mt-10 pt-8 border-t border-[#FAF7F2]/15 flex flex-wrap gap-6 sm:gap-14"
+        <motion.div className="lg:mt-10 lg:pt-8 lg:border-t border-[#FAF7F2]/15 flex flex-wrap gap-6 sm:gap-14"
           initial={{ opacity: 0 }} animate={ready ? { opacity: 1 } : {}} transition={{ delay: d(1.4) }}>
           {[{ n: "20+", l: "Years of Care" }, { n: "3,800+", l: "Transformations" }, { n: "5 Doctors", l: "On Your Side" }].map(({ n, l }, i) => (
             <motion.div key={l} initial={{ opacity: 0, y: 12 }} animate={ready ? { opacity: 1, y: 0 } : {}}

@@ -62,7 +62,7 @@ export default function ServicePage() {
           </div>
 
           {/* Right — full image */}
-          <div className="relative min-h-[50vh] lg:min-h-full">
+          <div className="relative min-h-[50vh] lg:min-h-full hidden lg:block">
             <img src="https://images.unsplash.com/photo-1761718209794-e0588aafbcc4?w=1000&h=1400&fit=crop&auto=format"
               alt="Skin Renewal treatment" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#160A05] via-transparent to-transparent lg:from-transparent lg:via-transparent" />
@@ -460,7 +460,7 @@ export default function ServicePage() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <motion.a href="#invitation"
+                  <motion.a href="/book-consultation"
                     whileHover={{ scale: 1.05, boxShadow: "0 0 48px rgba(201,149,106,0.6)" }}
                     whileTap={{ scale: 0.97 }}
                     className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#C9956A] text-[#FAF7F2] text-sm tracking-[0.2em] uppercase rounded-2xl shadow-2xl shadow-[#C9956A]/35 font-medium group" style={B}>
