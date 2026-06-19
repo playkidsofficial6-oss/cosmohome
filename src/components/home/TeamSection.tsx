@@ -26,12 +26,12 @@ const OTHER_DOCTORS = [
 export function TeamSection() {
   return (
     <section
-      className="relative w-full min-h-screen pt-20 pb-10 px-6 md:px-16 lg:px-24 flex items-center justify-center overflow-hidden bg-[#F8EFE6]"
+      className="relative w-full min-h-screen pt-6 pb-6 px-6 md:px-16 lg:px-24 flex items-center justify-center overflow-hidden bg-[#F8EFE6]"
     >
       <div className="max-w-6xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-0">
 
         {/* LEFT TEXT CONTENT */}
-        <div className="flex flex-col justify-center pt-10 lg:pt-20 z-20">
+        <div className="flex flex-col justify-center pt-0 lg:pt-20 z-20">
           <FadeUp>
             <p className="text-[10px] tracking-[0.2em] uppercase text-[#C9956A] mb-4 font-bold" style={M}>
               Meet the team behind the standard 👨‍⚕️

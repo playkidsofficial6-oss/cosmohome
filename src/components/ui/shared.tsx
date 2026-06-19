@@ -137,7 +137,7 @@ export function CTAButtons({ light = false }: { light?: boolean }) {
   const base = light ? "text-[#2C1810]" : "text-[#FAF7F2]";
   return (
     <div className="flex flex-col sm:flex-row gap-3">
-      <motion.a href="#sp-book"
+      <motion.a href="/book-consultation"
         whileHover={{ scale: 1.04, boxShadow: "0 0 36px rgba(201,149,106,0.55)" }}
         whileTap={{ scale: 0.97 }}
         className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase whitespace-nowrap rounded-xl shadow-xl shadow-[#C9956A]/30 font-medium group" style={B}>

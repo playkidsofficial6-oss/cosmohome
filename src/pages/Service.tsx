@@ -7,8 +7,8 @@ import { ArrowRight, Menu, X, Instagram, Facebook, Home, MessageCircle, Clipboar
 import { D, M, B, GOLD, EASE, GRAIN, MACHINE_SPECS, WHO_NEEDS, SESSION_PLAN, TIMELINE, WA_PATH } from "../lib/constants";
 import { CTAButtons, FadeUp, Tag } from "../components/ui/shared";
 export default function ServicePage() {
-    const [activeSession, setActiveSession] = useState(0);
-    return (
+  const [activeSession, setActiveSession] = useState(0);
+  return (
     <AnimatePresence>
       <motion.div
         key="service-page"
@@ -57,7 +57,7 @@ export default function ServicePage() {
 
             <FadeUp delay={0.2}>
               <CTAButtons />
-              <p className="mt-4 text-xs text-[#FAF7F2]/40" style={B}>Consultation: £150 · Redeemable against treatment</p>
+
             </FadeUp>
           </div>
 
@@ -80,9 +80,9 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 2. WHAT IS THIS ══ */}
-        <section className="py-20 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
+        <section className="pt-6 pb-12 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-[1fr_1fr] gap-14 lg:gap-20 items-center">
+            <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-20 items-center">
               <FadeUp>
                 <Tag>What Is This?</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-6" style={D}>
@@ -96,7 +96,7 @@ export default function ServicePage() {
                 </p>
 
                 {/* Benefit grid */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                   {[
                     { icon: "🧬", b: "Clinically proven", d: "Peer-reviewed efficacy data" },
                     { icon: "🩺", b: "Doctor-prescribed", d: "Bespoke serum protocol" },
@@ -140,7 +140,7 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 3. MACHINE ══ */}
-        <section className="py-20 md:py-28 bg-[#1C0E08] relative overflow-hidden">
+        <section className="py-6 md:py-28 bg-[#1C0E08] relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
           <motion.div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(201,149,106,0.1) 0%, transparent 65%)" }}
@@ -157,12 +157,12 @@ export default function ServicePage() {
             </div>
 
             {/* Side-by-side machine showcase + comparison table */}
-            <div className="grid lg:grid-cols-[1fr_1fr] gap-8">
+            <div className="grid lg:grid-cols-[1fr_1fr] gap-10">
               {/* Machine card */}
               <FadeUp delay={0.05}>
-                <div className="relative rounded-3xl overflow-hidden h-full"
+                <div className="relative rounded-3xl overflow-hidden h-full flex flex-col"
                   style={{ background: "linear-gradient(145deg, rgba(44,24,16,0.9), rgba(22,10,5,0.95))", border: "1px solid rgba(201,149,106,0.25)" }}>
-                  <div className="absolute top-5 left-5 px-3 py-1 rounded-full text-xs text-[#C9956A] font-medium" style={{ background: "rgba(201,149,106,0.15)", border: "1px solid rgba(201,149,106,0.35)", ...M }}>
+                  <div className="absolute top-4 left-4 sm:top-5 sm:left-5 px-4 py-1.5 rounded-full text-xs text-[#C9956A] font-medium z-10" style={{ background: "rgba(22,10,5,0.85)", backdropFilter: "blur(8px)", border: "1px solid rgba(201,149,106,0.35)", ...M }}>
                     ✅ Our Device
                   </div>
                   <div className="aspect-[16/9] overflow-hidden">
@@ -188,21 +188,33 @@ export default function ServicePage() {
 
               {/* Comparison table */}
               <FadeUp delay={0.12}>
-                <div className="flex flex-col gap-3">
-                  <p className="text-xs tracking-[0.2em] uppercase text-[#FAF7F2]/65 mb-1" style={M}>COSMO HOME vs Standard Clinic</p>
+                <div className="flex flex-col gap-3 md:gap-4 mt-2 lg:mt-0">
+                  <p className="text-xs tracking-[0.2em] uppercase text-[#FAF7F2]/65 mb-1 md:mb-2" style={M}>COSMO HOME vs Standard Clinic</p>
                   {MACHINE_SPECS.map((row, i) => (
                     <motion.div key={row.label} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }} transition={{ delay: i * 0.07 }}
-                      className="grid grid-cols-[auto_1fr_1fr] gap-3 items-start rounded-xl p-4"
+                      className="flex flex-col md:grid md:grid-cols-[auto_1fr_1fr] gap-4 md:gap-3 items-start rounded-xl p-5 md:p-4"
                       style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(201,149,106,0.1)" }}>
-                      <p className="text-xs text-[#C9956A] pt-0.5 w-24 shrink-0" style={M}>{row.label}</p>
-                      <div className="flex gap-2 items-start">
-                        <span className="text-sm shrink-0">✅</span>
-                        <p className="text-xs text-[#FAF7F2]/88 leading-relaxed" style={B}>{row.ours}</p>
+                      <p className="text-sm md:text-xs text-[#C9956A] md:pt-0.5 md:w-24 shrink-0 border-b border-[#C9956A]/10 md:border-0 pb-2 md:pb-0 w-full" style={M}>{row.label}</p>
+
+                      <div className="flex flex-col gap-1.5 w-full">
+                        <div className="flex gap-3 md:gap-2 items-start">
+                          <span className="text-base md:text-sm shrink-0 mt-0.5 md:mt-0">✅</span>
+                          <div>
+                            <span className="text-[10px] uppercase tracking-wider text-[#FAF7F2]/40 md:hidden block mb-0.5" style={M}>Cosmo Home</span>
+                            <p className="text-sm md:text-xs text-[#FAF7F2]/88 leading-relaxed" style={B}>{row.ours}</p>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex gap-2 items-start">
-                        <span className="text-sm shrink-0">⚠️</span>
-                        <p className="text-xs text-[#FAF7F2]/50 leading-relaxed" style={B}>{row.standard}</p>
+
+                      <div className="flex flex-col gap-1.5 w-full mt-1 md:mt-0 pt-3 border-t border-white/5 md:border-0 md:pt-0">
+                        <div className="flex gap-3 md:gap-2 items-start">
+                          <span className="text-base md:text-sm shrink-0 mt-0.5 md:mt-0">⚠️</span>
+                          <div>
+                            <span className="text-[10px] uppercase tracking-wider text-[#FAF7F2]/40 md:hidden block mb-0.5" style={M}>Standard Clinic</span>
+                            <p className="text-sm md:text-xs text-[#FAF7F2]/50 leading-relaxed" style={B}>{row.standard}</p>
+                          </div>
+                        </div>
                       </div>
                     </motion.div>
                   ))}
@@ -213,9 +225,9 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 4. WHO NEEDS THIS ══ */}
-        <section className="py-20 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
+        <section className="py-6 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-[380px_1fr] gap-14 lg:gap-20 items-start">
+            <div className="grid lg:grid-cols-[380px_1fr] gap-6 lg:gap-20 items-start">
               <FadeUp>
                 <Tag>Is This For You?</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-5" style={D}>
@@ -253,10 +265,10 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 5. SESSION PLAN — interactive ══ */}
-        <section className="py-20 md:py-28 bg-[#2C1810] relative overflow-hidden">
+        <section className="py-6 md:py-28 bg-[#2C1810] relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
           <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-16 relative z-10">
-            <div className="grid lg:grid-cols-[1fr_1fr] gap-14 lg:gap-20 items-start">
+            <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-20 items-start">
               <FadeUp>
                 <Tag>Your Treatment Plan</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#FAF7F2] leading-[1.05] mt-3 mb-6" style={D}>
@@ -268,24 +280,61 @@ export default function ServicePage() {
                 {/* Session selector */}
                 <div className="flex flex-col gap-2">
                   {SESSION_PLAN.map((s, i) => (
-                    <motion.button key={s.n} onClick={() => setActiveSession(i)}
-                      whileHover={{ x: 4 }}
-                      className={`text-left px-5 py-4 rounded-xl transition-all duration-250 flex items-center justify-between gap-4 ${activeSession === i ? "bg-[#C9956A] text-[#FAF7F2]" : "text-[#FAF7F2]/65 hover:text-[#FAF7F2]"}`}
-                      style={{ background: activeSession === i ? "#C9956A" : "rgba(255,255,255,0.04)", border: `1px solid ${activeSession === i ? "#C9956A" : "rgba(201,149,106,0.15)"}` }}>
-                      <div className="flex items-center gap-4">
-                        <span className="text-sm w-10 shrink-0" style={M}>{s.n}</span>
-                        <div>
-                          <p className="text-sm font-medium" style={B}>{s.label}</p>
-                          <p className="text-xs opacity-70 mt-0.5" style={B}>{s.duration}</p>
+                    <div key={s.n} className="flex flex-col gap-2">
+                      <motion.button onClick={() => setActiveSession(i)}
+                        whileHover={{ x: 4 }}
+                        className={`text-left px-5 py-4 rounded-xl transition-all duration-250 flex items-center justify-between gap-4 ${activeSession === i ? "bg-[#C9956A] text-[#FAF7F2]" : "text-[#FAF7F2]/65 hover:text-[#FAF7F2]"}`}
+                        style={{ background: activeSession === i ? "#C9956A" : "rgba(255,255,255,0.04)", border: `1px solid ${activeSession === i ? "#C9956A" : "rgba(201,149,106,0.15)"}` }}>
+                        <div className="flex items-center gap-4">
+                          <span className="text-sm w-10 shrink-0" style={M}>{s.n}</span>
+                          <div>
+                            <p className="text-sm font-medium" style={B}>{s.label}</p>
+                            <p className="text-xs opacity-70 mt-0.5" style={B}>{s.duration}</p>
+                          </div>
                         </div>
-                      </div>
-                      <ArrowRight size={14} className={`shrink-0 transition-transform ${activeSession === i ? "translate-x-1" : ""}`} />
-                    </motion.button>
+                        <motion.div animate={{ rotate: activeSession === i ? 90 : 0 }} className="lg:hidden shrink-0 transition-transform">
+                          <ArrowRight size={14} />
+                        </motion.div>
+                        <ArrowRight size={14} className={`hidden lg:block shrink-0 transition-transform ${activeSession === i ? "translate-x-1" : ""}`} />
+                      </motion.button>
+
+                      {/* Mobile Accordion Content */}
+                      <AnimatePresence initial={false}>
+                        {activeSession === i && (
+                          <motion.div
+                            className="lg:hidden overflow-hidden"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.35, ease: EASE }}
+                          >
+                            <div className="pt-2 pb-4">
+                              <div className="relative p-6 rounded-2xl overflow-hidden"
+                                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(201,149,106,0.25)" }}>
+                                {/* Ghost number */}
+                                <span className="absolute -top-4 -right-2 text-[80px] font-bold leading-none select-none pointer-events-none"
+                                  style={{ ...D, color: "rgba(201,149,106,0.06)" }}>{activeSession + 1}</span>
+                                <p className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] mb-2" style={M}>
+                                  Session {SESSION_PLAN[activeSession].n} · {SESSION_PLAN[activeSession].duration}
+                                </p>
+                                <h3 className="text-xl text-[#FAF7F2] mb-3" style={{ ...D, fontStyle: "italic" }}>
+                                  {SESSION_PLAN[activeSession].label}
+                                </h3>
+                                <div className="h-px w-8 bg-[#C9956A]/50 mb-4" />
+                                <p className="text-sm text-[#FAF7F2]/90 leading-relaxed" style={B}>
+                                  {SESSION_PLAN[activeSession].detail}
+                                </p>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
                   ))}
                 </div>
               </FadeUp>
 
-              <div className="lg:pt-16">
+              <div className="hidden lg:block lg:pt-16">
                 <AnimatePresence mode="wait">
                   <motion.div key={activeSession} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.35, ease: EASE }}>
@@ -325,9 +374,9 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 6. RESULTS TIMELINE ══ */}
-        <section className="py-20 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
+        <section className="py-6 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-14 gap-6">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-6 gap-6">
               <FadeUp>
                 <Tag>What to Expect</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
@@ -371,7 +420,7 @@ export default function ServicePage() {
                 <FadeUp key={t.when} delay={i * 0.08}>
                   <div className="relative mb-8 last:mb-0">
                     <div className="absolute -left-9 top-1 w-5 h-5 rounded-full border-2 border-[#C9956A] bg-[#FAF7F2] flex items-center justify-center text-[10px]">
-                      {["✨","🌱","🌿","🌸","🏆"][i]}
+                      {["✨", "🌱", "🌿", "🌸", "🏆"][i]}
                     </div>
                     <p className="text-xs tracking-[0.22em] uppercase text-[#C9956A] mb-1" style={M}>{t.when}</p>
                     <p className="text-base text-[#2C1810] leading-loose" style={B}>{t.what}</p>
@@ -395,7 +444,7 @@ export default function ServicePage() {
             style={{ background: "radial-gradient(circle, rgba(201,149,106,0.15) 0%, transparent 70%)" }}
             animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }} transition={{ duration: 7, repeat: Infinity }} />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-10 md:px-16 py-24 md:py-36">
+          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-10 md:px-16 py-6 md:py-36">
             <div className="grid lg:grid-cols-[1fr_auto] gap-14 lg:gap-24 items-center">
               <FadeUp>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
@@ -411,7 +460,7 @@ export default function ServicePage() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <motion.a href="#invitation"
+                  <motion.a href="/book-consultation"
                     whileHover={{ scale: 1.05, boxShadow: "0 0 48px rgba(201,149,106,0.6)" }}
                     whileTap={{ scale: 0.97 }}
                     className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#C9956A] text-[#FAF7F2] text-sm tracking-[0.2em] uppercase rounded-2xl shadow-2xl shadow-[#C9956A]/35 font-medium group" style={B}>
@@ -421,14 +470,14 @@ export default function ServicePage() {
                   <motion.a href="https://wa.me/441234567890" target="_blank" rel="noopener noreferrer"
                     whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
                     className="inline-flex items-center justify-center gap-3 px-9 py-5 border-2 border-[#FAF7F2]/20 text-[#FAF7F2] text-sm tracking-[0.18em] uppercase rounded-2xl hover:border-[#C9956A] hover:text-[#C9956A] transition-all font-medium" style={B}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d={WA_PATH}/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d={WA_PATH} /></svg>
                     Ask Dr. Ruxana
                   </motion.a>
                 </div>
 
                 {/* Trust signals */}
                 <div className="flex flex-wrap gap-6">
-                  {["👩‍⚕️ Doctor-led only", "⏱️ Zero downtime", "💰 £150 redeemable", "🔒 Full confidentiality"].map(t => (
+                  {["👩‍⚕️ Doctor-led only", "⏱️ Zero downtime", "🔒 Full confidentiality"].map(t => (
                     <p key={t} className="text-sm text-[#FAF7F2]/65" style={B}>{t}</p>
                   ))}
                 </div>
@@ -463,8 +512,8 @@ export default function ServicePage() {
           </div>
         </section>
 
-        <div className="lg:hidden h-20" />
+        {/* <div className="lg:hidden h-20" /> */}
       </motion.div>
     </AnimatePresence>
-    );
+  );
 }

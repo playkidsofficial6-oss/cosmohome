@@ -60,7 +60,7 @@ export function Nav({ ready }: { ready: boolean }) {
             Book Consultation
           </motion.a>
           <button onClick={() => setOpen(!open)} className="lg:hidden p-2 text-[#2C1810]">
-            {open ? <X size={20} /> : <Menu size={20} />}
+            {open ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </motion.header>
@@ -142,7 +142,7 @@ export function Nav({ ready }: { ready: boolean }) {
 
 export function Footer() {
   return (
-    <footer className="bg-[#160A05] text-[#FAF7F2] py-14 px-6 md:px-16 lg:px-24">
+    <footer className="bg-[#160A05] text-[#FAF7F2] pb-14 pt-6 px-6 md:px-16 lg:pb-24 lg:pt-14">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[2fr_1fr_1fr] gap-10 mb-10 pb-10 border-b border-[#FAF7F2]/8">
           <div>
