@@ -834,17 +834,16 @@ export function Invitation() {
                         <AnimatePresence>
                           {dropOpen && (
                             <motion.ul
-                              initial={{ opacity: 0, y: -6, scaleY: 0.96 }}
-                              animate={{ opacity: 1, y: 0, scaleY: 1 }}
-                              exit={{ opacity: 0, y: -6, scaleY: 0.96 }}
+                              initial={{ opacity: 0, }}
+                              animate={{ opacity: 1, }}
                               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
                               className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-2xl border border-[#2C1810]/8 overflow-hidden z-50 origin-top"
                             >
                               {options.map((opt, i) => (
                                 <motion.li
                                   key={opt}
-                                  initial={{ opacity: 0, x: -8 }}
-                                  animate={{ opacity: 1, x: 0 }}
+                                  initial={{ opacity: 0, }}
+                                  animate={{ opacity: 1, }}
                                   transition={{ delay: i * 0.03, duration: 0.2 }}
                                   onClick={() => { setSelected(opt === "I am not sure yet" ? "" : opt); setDropOpen(false); }}
                                   className={`px-5 py-3 text-sm cursor-pointer transition-all duration-200 flex items-center gap-3 ${(selected === opt || (!selected && opt === "I am not sure yet"))
