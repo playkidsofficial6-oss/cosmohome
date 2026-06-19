@@ -221,7 +221,7 @@ export function DrRuxana() {
             />
 
             <motion.img
-              src="/ruxana/banner-mob.png"
+              src="/ruxana/banner-mob.webp"
               alt="Dr. Ruxana K (MBBS, DDVL)"
               className="w-full h-auto block lg:hidden"
             />
