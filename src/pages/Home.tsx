@@ -24,7 +24,7 @@ export function Hero({ ready }: { ready: boolean }) {
           alt="The spirit of COSMO HOME" className="w-full h-full object-cover object-bottom block md:hidden" />
       </motion.div>
 
-      <motion.div className="relative z-20 flex flex-col justify-end pb-24 md:pb-24 pt-24 px-6 md:px-16 lg:px-24 min-h-screen max-w-7xl mx-auto w-full"
+      <motion.div className="relative z-20 flex flex-col justify-end pb-32 md:pb-24 pt-24 px-6 md:px-16 lg:px-24 min-h-screen max-w-7xl mx-auto w-full"
         style={{ y: textY }}>
         <motion.p className="text-[#C9956A] text-xs tracking-[0.15em] uppercase mb-6" style={M}
           initial={{ opacity: 0, x: -16 }} animate={ready ? { opacity: 1, x: 0 } : {}}
@@ -63,7 +63,7 @@ export function Hero({ ready }: { ready: boolean }) {
           </motion.a>
         </motion.div>
 
-        <motion.div className="mt-10 pt-8 border-t border-[#FAF7F2]/15 flex flex-wrap gap-6 sm:gap-14"
+        <motion.div className="lg:mt-10 lg:pt-8 lg:border-t border-[#FAF7F2]/15 flex flex-wrap gap-6 sm:gap-14"
           initial={{ opacity: 0 }} animate={ready ? { opacity: 1 } : {}} transition={{ delay: d(1.4) }}>
           {[{ n: "20+", l: "Years of Care" }, { n: "3,800+", l: "Transformations" }, { n: "5 Doctors", l: "On Your Side" }].map(({ n, l }, i) => (
             <motion.div key={l} initial={{ opacity: 0, y: 12 }} animate={ready ? { opacity: 1, y: 0 } : {}}
