@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Heart, AlertTriangle, XCircle, ChevronRight } from "lucide-react";
+import { ArrowRight, Heart, AlertTriangle, XCircle, ChevronRight, ShieldCheck, Users, Star } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, GRAIN, STEPS, DOCTORS, STANDARDS, type Step } from "../lib/constants";
 import { FadeUp, SlideIn, Rule, Tag, InputField } from "../components/ui/shared";
@@ -24,7 +24,8 @@ export function Hero({ ready }: { ready: boolean }) {
           alt="The spirit of COSMO HOME" className="w-full h-full object-cover object-bottom block md:hidden" />
       </motion.div>
 
-      <motion.div className="relative z-20 flex flex-col justify-end pb-32 md:pb-24 pt-24 px-6 md:px-16 lg:px-24 min-h-screen max-w-7xl mx-auto w-full"
+      {/* --- DESKTOP CONTENT --- */}
+      <motion.div className="relative z-20 hidden md:flex flex-col justify-end pb-24 pt-24 px-16 lg:px-24 min-h-screen max-w-7xl mx-auto w-full"
         style={{ y: textY }}>
         <motion.p className="text-[#C9956A] text-xs tracking-[0.15em] uppercase mb-6" style={M}
           initial={{ opacity: 0, x: -16 }} animate={ready ? { opacity: 1, x: 0 } : {}}
@@ -32,7 +33,7 @@ export function Hero({ ready }: { ready: boolean }) {
           ✨ EXPERT-LED · SKIN · HAIR · AESTHETICS
         </motion.p>
 
-        <h1 className="text-[#FAF7F2] text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[0.95] mb-6 max-w-3xl" style={D}>
+        <h1 className="text-[#FAF7F2] text-5xl md:text-6xl lg:text-[5.5rem] leading-[0.95] mb-6 max-w-3xl" style={D}>
           {["Beauty", "Feels", "At Home."].map((word, i) => (
             <div key={word} className="overflow-hidden">
               <motion.span className={`block ${i === 1 ? "italic" : ""}`}
@@ -44,7 +45,7 @@ export function Hero({ ready }: { ready: boolean }) {
           ))}
         </h1>
 
-        <motion.p className="text-[#FAF7F2]/90 text-base md:text-lg max-w-lg leading-loose mb-8" style={B}
+        <motion.p className="text-[#FAF7F2]/90 text-lg max-w-lg leading-loose mb-8" style={B}
           initial={{ opacity: 0, y: 18 }} animate={ready ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: d(0.95) }}>
           Expert-led aesthetic medicine designed around confidence, care, and your most natural beauty.
@@ -63,16 +64,69 @@ export function Hero({ ready }: { ready: boolean }) {
           </motion.a>
         </motion.div>
 
-        <motion.div className="lg:mt-10 lg:pt-8 lg:border-t border-[#FAF7F2]/15 flex flex-wrap gap-6 sm:gap-14"
+        <motion.div className="lg:mt-10 lg:pt-8 lg:border-t border-[#FAF7F2]/15 flex flex-wrap gap-14"
           initial={{ opacity: 0 }} animate={ready ? { opacity: 1 } : {}} transition={{ delay: d(1.4) }}>
           {[{ n: "20+", l: "Years of Care" }, { n: "3,800+", l: "Transformations" }, { n: "5 Doctors", l: "On Your Side" }].map(({ n, l }, i) => (
             <motion.div key={l} initial={{ opacity: 0, y: 12 }} animate={ready ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: d(1.5 + i * 0.12) }}>
-              <p className="text-[#C9956A] text-2xl md:text-3xl" style={D}>{n}</p>
+              <p className="text-[#C9956A] text-3xl" style={D}>{n}</p>
               <p className="text-[#FAF7F2]/88 text-xs tracking-widest mt-1 uppercase" style={M}>{l}</p>
             </motion.div>
           ))}
         </motion.div>
+      </motion.div>
+
+      {/* --- MOBILE CONTENT --- */}
+      <motion.div className="relative z-20 flex md:hidden flex-col justify-between pt-28 pb-6 px-6 h-[100dvh] w-full">
+        <div className="flex flex-col">
+          <motion.p className="text-[#C9956A] text-[10px] tracking-[0.15em] uppercase mb-4" style={M}
+            initial={{ opacity: 0, x: -16 }} animate={ready ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: d(0.3) }}>
+            ✨ EXPERT-LED · SKIN · HAIR · AESTHETICS
+          </motion.p>
+
+          <h1 className="text-[#FAF7F2] text-5xl leading-[1.05] mb-5" style={D}>
+            {["Beauty", "Feels", "At Home."].map((word, i) => (
+              <div key={word} className="overflow-hidden">
+                <motion.span className={`block ${i === 1 ? "italic text-[#C9956A]" : ""}`}
+                  initial={{ y: "105%" }} animate={ready ? { y: 0 } : {}}
+                  transition={{ duration: 1.0, delay: d(0.45 + i * 0.15), ease: EASE }}>
+                  {word}
+                </motion.span>
+              </div>
+            ))}
+          </h1>
+
+          <motion.div className="w-8 h-px bg-[#C9956A] mb-5"
+            initial={{ scaleX: 0 }} animate={ready ? { scaleX: 1 } : {}} transition={{ delay: d(0.9), duration: 0.8 }} />
+
+          <motion.p className="text-[#FAF7F2]/90 text-sm leading-relaxed max-w-[200px]" style={B}
+            initial={{ opacity: 0, y: 18 }} animate={ready ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: d(0.95) }}>
+            Expert-led aesthetic medicine designed around confidence, care, and your most natural beauty.
+          </motion.p>
+        </div>
+
+        <div className="flex flex-col gap-4">
+          <motion.div className="bg-[#2B1610]/70 backdrop-blur-md rounded-2xl p-4 flex justify-between items-center"
+            initial={{ opacity: 0, y: 20 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: d(1.2), duration: 0.8 }}>
+            {[{ n: "20+", l: "Years of Care", icon: <ShieldCheck size={20} strokeWidth={1.5} className="text-[#C9956A] mb-2 mx-auto"/> }, 
+              { n: "3,800+", l: "Transformations", icon: <Users size={20} strokeWidth={1.5} className="text-[#C9956A] mb-2 mx-auto"/> }, 
+              { n: "5", l: "Doctors", icon: <Star size={20} strokeWidth={1.5} className="text-[#C9956A] mb-2 mx-auto"/> }].map(({ n, l, icon }, i) => (
+              <div key={l} className={`flex-1 text-center ${i !== 2 ? 'border-r border-[#FAF7F2]/10' : ''}`}>
+                {icon}
+                <p className="text-[#FAF7F2] text-[17px] font-medium" style={D}>{n}</p>
+                <p className="text-[#FAF7F2]/70 text-[9px] tracking-wider mt-0.5 uppercase" style={B}>{l}</p>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.a href="/#invitation" 
+            className="w-full py-4 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase rounded-xl flex items-center justify-center gap-2" style={B}
+            initial={{ opacity: 0, y: 20 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: d(1.3), duration: 0.8 }}>
+            Begin Your Journey <ArrowRight size={14} />
+          </motion.a>
+        </div>
       </motion.div>
     </section>
   );
