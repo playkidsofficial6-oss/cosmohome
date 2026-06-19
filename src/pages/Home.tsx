@@ -257,10 +257,10 @@ export function DrRuxana() {
             Meet Dr.<br /><em>Ruxana.</em>
           </h2>
 
-          <p className="text-[13px] md:text-sm text-[#2C1810]/80 leading-[1.85] mb-4 max-w-[450px]" style={B}>
+          <p className="text-base md:text-sm text-[#2C1810]/80 leading-[1.85] mb-4 max-w-[450px]" style={B}>
             Dr. Ruxana did not enter aesthetic medicine to sell treatments. She entered it because she witnessed, again and again, how much a woman's confidence shapes her entire life — her relationships, her ambitions, her sense of self.
           </p>
-          <p className="text-[13px] md:text-sm text-[#2C1810]/80 leading-[1.85] mb-8 max-w-[450px]" style={B}>
+          <p className="text-base md:text-sm text-[#2C1810]/80 leading-[1.85] mb-8 max-w-[450px]" style={B}>
             She trained for over a decade before founding COSMO HOME — not as a clinic, but as a philosophy. A belief that the most powerful aesthetic outcomes are gentle, natural, and deeply personal.
           </p>
 
@@ -269,7 +269,7 @@ export function DrRuxana() {
             viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
             className="border-l border-[#C9956A]/60 pl-5 max-w-[450px]"
           >
-            <p className="text-[13px] md:text-sm text-[#2C1810] leading-[1.75]" style={{ ...D, fontStyle: "italic" }}>
+            <p className="text-base md:text-sm text-[#2C1810] leading-[1.75]" style={{ ...D, fontStyle: "italic" }}>
               "I want every patient to leave feeling more like themselves — not different. More radiant. More free."
             </p>
             <div className="mt-3 text-base">🧡</div>
@@ -623,11 +623,12 @@ export function TeamAndStandards() {
 
           {/* Tab switcher */}
           <FadeUp>
-            <div className="flex flex-wrap gap-0 border border-[#FAF7F2]/15 w-fit mb-10">
-              {[{ id: "standards" as const, label: "🛡️ COSMO HOME Standards" }, { id: "danger" as const, label: "⚠️ The Dangers" }].map(({ id, label }) => (
+            <div className="flex w-full sm:w-fit border border-[#FAF7F2]/15 mb-10">
+              {[{ id: "standards" as const, icon: "🛡️", label: "COSMO HOME Standards" }, { id: "danger" as const, icon: "⚠️", label: "The Dangers" }].map(({ id, icon, label }) => (
                 <button key={id} onClick={() => setTab(id)} style={B}
-                  className={`px-5 py-3 text-xs tracking-[0.15em] uppercase transition-all duration-300 ${tab === id ? "bg-[#C9956A] text-[#FAF7F2]" : "text-[#FAF7F2]/65 hover:text-[#FAF7F2]/88"}`}>
-                  {label}
+                  className={`w-1/2 lg:w-auto flex items-center justify-center gap-1 px-5 py-3 text-xs tracking-[0.15em] uppercase transition-all duration-300 ${tab === id ? "bg-[#C9956A] text-[#FAF7F2]" : "text-[#FAF7F2]/65 hover:text-[#FAF7F2]/88"}`}>
+                  <span className="shrink-0">{icon}</span>
+                  <span>{label}</span>
                 </button>
               ))}
             </div>
@@ -833,17 +834,16 @@ export function Invitation() {
                         <AnimatePresence>
                           {dropOpen && (
                             <motion.ul
-                              initial={{ opacity: 0, y: -6, scaleY: 0.96 }}
-                              animate={{ opacity: 1, y: 0, scaleY: 1 }}
-                              exit={{ opacity: 0, y: -6, scaleY: 0.96 }}
+                              initial={{ opacity: 0, }}
+                              animate={{ opacity: 1, }}
                               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
                               className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-2xl border border-[#2C1810]/8 overflow-hidden z-50 origin-top"
                             >
                               {options.map((opt, i) => (
                                 <motion.li
                                   key={opt}
-                                  initial={{ opacity: 0, x: -8 }}
-                                  animate={{ opacity: 1, x: 0 }}
+                                  initial={{ opacity: 0, }}
+                                  animate={{ opacity: 1, }}
                                   transition={{ delay: i * 0.03, duration: 0.2 }}
                                   onClick={() => { setSelected(opt === "I am not sure yet" ? "" : opt); setDropOpen(false); }}
                                   className={`px-5 py-3 text-sm cursor-pointer transition-all duration-200 flex items-center gap-3 ${(selected === opt || (!selected && opt === "I am not sure yet"))
