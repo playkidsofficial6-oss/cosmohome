@@ -20,7 +20,7 @@ export function AppContent() {
     return (
     <div style={B} className="bg-background">
       <AnimatePresence>{!ready && <Preloader onDone={() => setReady(true)} />}</AnimatePresence>
-      <motion.div initial={{ opacity: 0 }} animate={ready ? { opacity: 1 } : {}} transition={{ duration: 0.6 }}>
+      <motion.div initial={false} animate={ready ? { opacity: 1 } : { opacity: 0 }} transition={{ duration: 0.6 }}>
         <Nav ready={ready} />
         <Routes>
           <Route path="/" element={<HomePage ready={ready} />} />
@@ -29,7 +29,7 @@ export function AppContent() {
         </Routes>
         <Footer />
       </motion.div>
-      <MobileBottomCTA />
+      {location.pathname !== "/book-consultation" && <MobileBottomCTA />}
     </div>
     );
 }

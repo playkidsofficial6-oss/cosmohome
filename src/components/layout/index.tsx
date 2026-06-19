@@ -28,7 +28,7 @@ export function Nav({ ready }: { ready: boolean }) {
   return (
     <>
       <motion.header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${hasBg ? "bg-[#FAF7F2]/95 backdrop-blur-md shadow-sm" : ""}`}
-        initial={{ y: -80, opacity: 0 }} animate={ready ? { y: 0, opacity: 1 } : {}}
+        initial={ready ? false : { y: -80, opacity: 0 }} animate={ready ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, delay: 0.3, ease: EASE }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16">
           <a href="/" onClick={(e) => { e.preventDefault(); navigate("/"); }} className="flex items-center gap-2 cursor-pointer">
