@@ -623,11 +623,12 @@ export function TeamAndStandards() {
 
           {/* Tab switcher */}
           <FadeUp>
-            <div className="flex flex-wrap gap-0 border border-[#FAF7F2]/15 w-fit mb-10">
-              {[{ id: "standards" as const, label: "🛡️ COSMO HOME Standards" }, { id: "danger" as const, label: "⚠️ The Dangers" }].map(({ id, label }) => (
+            <div className="flex w-full sm:w-fit border border-[#FAF7F2]/15 mb-10">
+              {[{ id: "standards" as const, icon: "🛡️", label: "COSMO HOME Standards" }, { id: "danger" as const, icon: "⚠️", label: "The Dangers" }].map(({ id, icon, label }) => (
                 <button key={id} onClick={() => setTab(id)} style={B}
-                  className={`px-5 py-3 text-xs tracking-[0.15em] uppercase transition-all duration-300 ${tab === id ? "bg-[#C9956A] text-[#FAF7F2]" : "text-[#FAF7F2]/65 hover:text-[#FAF7F2]/88"}`}>
-                  {label}
+                  className={`w-1/2 lg:w-auto flex items-center justify-center gap-1 px-5 py-3 text-xs tracking-[0.15em] uppercase transition-all duration-300 ${tab === id ? "bg-[#C9956A] text-[#FAF7F2]" : "text-[#FAF7F2]/65 hover:text-[#FAF7F2]/88"}`}>
+                  <span className="shrink-0">{icon}</span>
+                  <span>{label}</span>
                 </button>
               ))}
             </div>
