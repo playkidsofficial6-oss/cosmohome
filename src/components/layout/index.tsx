@@ -55,10 +55,10 @@ export function Nav({ ready }: { ready: boolean }) {
               )
             ))}
           </nav>
-          <motion.a href="/#invitation" style={B} whileHover={{ scale: 1.02 }}
+          <motion.button onClick={() => navigate("/book-consultation")} style={B} whileHover={{ scale: 1.02 }}
             className="hidden lg:inline-flex text-xs tracking-[0.2em] uppercase px-5 py-2.5 bg-[#C9956A] text-[#FAF7F2] hover:bg-[#2C1810] transition-all duration-300 shadow-md shadow-[#C9956A]/20">
             Book Consultation
-          </motion.a>
+          </motion.button>
           <button onClick={() => setOpen(!open)} className="lg:hidden p-2 text-[#2C1810]">
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
