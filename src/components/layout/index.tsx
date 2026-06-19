@@ -82,20 +82,20 @@ export function Nav({ ready }: { ready: boolean }) {
             </div>
 
             {/* Links */}
-            <div className="flex-1 overflow-y-auto px-6 pt-8 pb-6 flex flex-col">
+            <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col">
               {/* Nav links */}
               <div className="flex flex-col gap-1">
                 {links.map((l, i) => (
                   l.href ? (
                     <motion.a key={l.label} href={l.href} onClick={(e) => { e.preventDefault(); setOpen(false); navigate(l.href!); }}
-                      className="group flex items-center justify-between py-4 text-sm tracking-[0.15em] uppercase text-[#FAF7F2]/85 hover:text-[#C9956A] transition-colors" style={D}
+                      className="group flex items-center justify-between py-3 text-sm tracking-[0.15em] uppercase text-[#FAF7F2]/85 hover:text-[#C9956A] transition-colors" style={D}
                       initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.1 + i * 0.055, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}>
                       {l.label}
                     </motion.a>
                   ) : (
                     <motion.button key={l.label} onClick={() => { setOpen(false); l.action?.(); }}
-                      className="group flex items-center justify-between py-4 w-full text-sm tracking-[0.15em] uppercase text-[#FAF7F2]/85 hover:text-[#C9956A] transition-colors text-left" style={D}
+                      className="group flex items-center justify-between py-3 w-full text-sm tracking-[0.15em] uppercase text-[#FAF7F2]/85 hover:text-[#C9956A] transition-colors text-left" style={D}
                       initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.1 + i * 0.055, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}>
                       {l.label}

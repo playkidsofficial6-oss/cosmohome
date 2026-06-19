@@ -333,6 +333,10 @@ export default function BookConsultation() {
     notes: "",
   });
 
+  /* ── dropdown open state ── */
+  const [branchOpen, setBranchOpen] = useState(false);
+  const [treatmentOpen, setTreatmentOpen] = useState(false);
+
   /* ── mobile step wizard ── */
   const [mobileStep, setMobileStep] = useState(1); // 1-6
 
@@ -597,42 +601,78 @@ export default function BookConsultation() {
                     />
                   </div>
 
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-xs text-[#2C1810]" style={B}>
-                      Treatment / Concern
-                    </label>
-                    <select
-                      value={formData.treatment}
-                      onChange={(e) => handleInput("treatment", e.target.value)}
-                      className="px-4 py-3 border border-[#E5D5C5] rounded-lg text-sm focus:outline-none focus:border-[#986E4F] bg-white text-[#5C4A42] appearance-none"
-                      style={B}
+                  {/* Treatment / Concern custom dropdown */}
+                  <div className="flex flex-col gap-1.5 relative">
+                    <label className="text-xs text-[#2C1810]" style={B}>Treatment / Concern</label>
+                    <button
+                      type="button"
+                      onClick={() => { setTreatmentOpen(!treatmentOpen); setBranchOpen(false); }}
+                      className="w-full px-4 py-3 border rounded-lg text-sm text-left flex items-center justify-between gap-2 focus:outline-none transition-colors bg-white"
+                      style={{ borderColor: treatmentOpen ? "#986E4F" : "#E5D5C5", color: formData.treatment ? "#2C1810" : "#5C4A42", ...B }}
                     >
-                      <option value="" disabled>
-                        Select your concern
-                      </option>
-                      <option value="Acne Scar Treatment">
-                        Acne Scar Treatment
-                      </option>
-                      <option value="Skin Renewal">Skin Renewal</option>
-                      <option value="Pigmentation">Pigmentation</option>
-                      <option value="Anti-Aging">Anti-Aging</option>
-                      <option value="Hair Loss">Hair Loss</option>
-                      <option value="Other">Other</option>
-                    </select>
+                      <span>{formData.treatment || "Select your concern"}</span>
+                      <motion.svg animate={{ rotate: treatmentOpen ? 180 : 0 }} transition={{ duration: 0.25 }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9956A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                        <polyline points="6 9 12 15 18 9" />
+                      </motion.svg>
+                    </button>
+                    <AnimatePresence>
+                      {treatmentOpen && (
+                        <motion.ul
+                          initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                          transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                          className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-2xl border border-[#2C1810]/10 overflow-hidden z-50"
+                        >
+                          {["Acne Scar Treatment", "Skin Renewal", "Pigmentation", "Anti-Aging", "Hair Loss", "Other"].map((opt) => (
+                            <li
+                              key={opt}
+                              onClick={() => { handleInput("treatment", opt); setTreatmentOpen(false); }}
+                              className={`px-5 py-3 text-sm cursor-pointer transition-all duration-200 flex items-center gap-3 ${formData.treatment === opt ? "bg-[#C9956A]/10 text-[#C9956A]" : "text-[#2C1810] hover:bg-[#FAF7F2] hover:text-[#C9956A]"}`}
+                              style={B}
+                            >
+                              <span className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors ${formData.treatment === opt ? "bg-[#C9956A]" : "bg-[#2C1810]/15"}`} />
+                              {opt}
+                            </li>
+                          ))}
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
                   </div>
 
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-xs text-[#2C1810]" style={B}>
-                      Preferred branch
-                    </label>
-                    <select
-                      value={formData.branch}
-                      onChange={(e) => handleInput("branch", e.target.value)}
-                      className="px-4 py-3 border border-[#E5D5C5] rounded-lg text-sm focus:outline-none focus:border-[#986E4F] bg-white text-[#5C4A42] appearance-none"
-                      style={B}
+                  {/* Preferred branch custom dropdown */}
+                  <div className="flex flex-col gap-1.5 relative">
+                    <label className="text-xs text-[#2C1810]" style={B}>Preferred branch</label>
+                    <button
+                      type="button"
+                      onClick={() => { setBranchOpen(!branchOpen); setTreatmentOpen(false); }}
+                      className="w-full px-4 py-3 border rounded-lg text-sm text-left flex items-center justify-between gap-2 focus:outline-none transition-colors bg-white"
+                      style={{ borderColor: branchOpen ? "#986E4F" : "#E5D5C5", color: "#2C1810", ...B }}
                     >
-                      <option>Cosmo Home, Kochi</option>
-                    </select>
+                      <span>{formData.branch || "Select branch"}</span>
+                      <motion.svg animate={{ rotate: branchOpen ? 180 : 0 }} transition={{ duration: 0.25 }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9956A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                        <polyline points="6 9 12 15 18 9" />
+                      </motion.svg>
+                    </button>
+                    <AnimatePresence>
+                      {branchOpen && (
+                        <motion.ul
+                          initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                          transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                          className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-2xl border border-[#2C1810]/10 overflow-hidden z-50"
+                        >
+                          {["Cosmo Home, Kochi"].map((opt) => (
+                            <li
+                              key={opt}
+                              onClick={() => { handleInput("branch", opt); setBranchOpen(false); }}
+                              className={`px-5 py-3 text-sm cursor-pointer transition-all duration-200 flex items-center gap-3 ${formData.branch === opt ? "bg-[#C9956A]/10 text-[#C9956A]" : "text-[#2C1810] hover:bg-[#FAF7F2] hover:text-[#C9956A]"}`}
+                              style={B}
+                            >
+                              <span className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors ${formData.branch === opt ? "bg-[#C9956A]" : "bg-[#2C1810]/15"}`} />
+                              {opt}
+                            </li>
+                          ))}
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
                   </div>
 
                   <div className="flex flex-col gap-1.5">
@@ -1267,21 +1307,41 @@ export default function BookConsultation() {
                       </div>
                     </div>
 
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-xs text-[#2C1810]" style={B}>
-                        Preferred branch
-                      </label>
-                      <select
-                        value={formData.branch}
-                        onChange={(e) =>
-                          handleInput("branch", e.target.value)
-                        }
-                        className="px-4 py-3 border border-[#E5D5C5] rounded-lg text-sm focus:outline-none focus:border-[#986E4F] bg-transparent text-[#5C4A42]"
-                        style={B}
+                    {/* Preferred branch – custom animated dropdown */}
+                    <div className="flex flex-col gap-1.5 relative">
+                      <label className="text-xs text-[#2C1810]" style={B}>Preferred branch</label>
+                      <button
+                        type="button"
+                        onClick={() => { setBranchOpen(!branchOpen); setTreatmentOpen(false); }}
+                        className="w-full px-4 py-3 border rounded-lg text-sm text-left flex items-center justify-between gap-2 focus:outline-none transition-colors bg-transparent"
+                        style={{ borderColor: branchOpen ? "#986E4F" : "#E5D5C5", color: "#2C1810", ...B }}
                       >
-                        <option>Select branch</option>
-                        <option>Cosmo Home, Kochi</option>
-                      </select>
+                        <span>{formData.branch || "Select branch"}</span>
+                        <motion.svg animate={{ rotate: branchOpen ? 180 : 0 }} transition={{ duration: 0.25 }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9956A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                          <polyline points="6 9 12 15 18 9" />
+                        </motion.svg>
+                      </button>
+                      <AnimatePresence>
+                        {branchOpen && (
+                          <motion.ul
+                            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                            className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-2xl border border-[#2C1810]/10 overflow-hidden z-50"
+                          >
+                            {["Cosmo Home, Kochi"].map((opt) => (
+                              <li
+                                key={opt}
+                                onClick={() => { handleInput("branch", opt); setBranchOpen(false); }}
+                                className={`px-5 py-3 text-sm cursor-pointer transition-all duration-200 flex items-center gap-3 ${formData.branch === opt ? "bg-[#C9956A]/10 text-[#C9956A]" : "text-[#2C1810] hover:bg-[#FAF7F2] hover:text-[#C9956A]"}`}
+                                style={B}
+                              >
+                                <span className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors ${formData.branch === opt ? "bg-[#C9956A]" : "bg-[#2C1810]/15"}`} />
+                                {opt}
+                              </li>
+                            ))}
+                          </motion.ul>
+                        )}
+                      </AnimatePresence>
                     </div>
 
                     <div className="flex flex-col gap-1.5">
@@ -1300,30 +1360,41 @@ export default function BookConsultation() {
                       />
                     </div>
 
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-xs text-[#2C1810]" style={B}>
-                        Concern / Treatment
-                      </label>
-                      <select
-                        value={formData.treatment}
-                        onChange={(e) =>
-                          handleInput("treatment", e.target.value)
-                        }
-                        className="px-4 py-3 border border-[#E5D5C5] rounded-lg text-sm focus:outline-none focus:border-[#986E4F] bg-transparent text-[#5C4A42]"
-                        style={B}
+                    {/* Concern / Treatment – custom animated dropdown */}
+                    <div className="flex flex-col gap-1.5 relative">
+                      <label className="text-xs text-[#2C1810]" style={B}>Concern / Treatment</label>
+                      <button
+                        type="button"
+                        onClick={() => { setTreatmentOpen(!treatmentOpen); setBranchOpen(false); }}
+                        className="w-full px-4 py-3 border rounded-lg text-sm text-left flex items-center justify-between gap-2 focus:outline-none transition-colors bg-transparent"
+                        style={{ borderColor: treatmentOpen ? "#986E4F" : "#E5D5C5", color: formData.treatment ? "#2C1810" : "#5C4A42", ...B }}
                       >
-                        <option value="" disabled>
-                          Select your concern
-                        </option>
-                        <option value="Acne Scar Treatment">
-                          Acne Scar Treatment
-                        </option>
-                        <option value="Skin Renewal">Skin Renewal</option>
-                        <option value="Pigmentation">Pigmentation</option>
-                        <option value="Anti-Aging">Anti-Aging</option>
-                        <option value="Hair Loss">Hair Loss</option>
-                        <option value="Other">Other</option>
-                      </select>
+                        <span>{formData.treatment || "Select your concern"}</span>
+                        <motion.svg animate={{ rotate: treatmentOpen ? 180 : 0 }} transition={{ duration: 0.25 }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9956A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                          <polyline points="6 9 12 15 18 9" />
+                        </motion.svg>
+                      </button>
+                      <AnimatePresence>
+                        {treatmentOpen && (
+                          <motion.ul
+                            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                            className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-2xl border border-[#2C1810]/10 overflow-hidden z-50"
+                          >
+                            {["Acne Scar Treatment", "Skin Renewal", "Pigmentation", "Anti-Aging", "Hair Loss", "Other"].map((opt) => (
+                              <li
+                                key={opt}
+                                onClick={() => { handleInput("treatment", opt); setTreatmentOpen(false); }}
+                                className={`px-5 py-3 text-sm cursor-pointer transition-all duration-200 flex items-center gap-3 ${formData.treatment === opt ? "bg-[#C9956A]/10 text-[#C9956A]" : "text-[#2C1810] hover:bg-[#FAF7F2] hover:text-[#C9956A]"}`}
+                                style={B}
+                              >
+                                <span className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors ${formData.treatment === opt ? "bg-[#C9956A]" : "bg-[#2C1810]/15"}`} />
+                                {opt}
+                              </li>
+                            ))}
+                          </motion.ul>
+                        )}
+                      </AnimatePresence>
                     </div>
 
                     <div className="flex flex-col gap-1.5">
