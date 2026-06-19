@@ -257,10 +257,10 @@ export function DrRuxana() {
             Meet Dr.<br /><em>Ruxana.</em>
           </h2>
 
-          <p className="text-[13px] md:text-sm text-[#2C1810]/80 leading-[1.85] mb-4 max-w-[450px]" style={B}>
+          <p className="text-base md:text-sm text-[#2C1810]/80 leading-[1.85] mb-4 max-w-[450px]" style={B}>
             Dr. Ruxana did not enter aesthetic medicine to sell treatments. She entered it because she witnessed, again and again, how much a woman's confidence shapes her entire life — her relationships, her ambitions, her sense of self.
           </p>
-          <p className="text-[13px] md:text-sm text-[#2C1810]/80 leading-[1.85] mb-8 max-w-[450px]" style={B}>
+          <p className="text-base md:text-sm text-[#2C1810]/80 leading-[1.85] mb-8 max-w-[450px]" style={B}>
             She trained for over a decade before founding COSMO HOME — not as a clinic, but as a philosophy. A belief that the most powerful aesthetic outcomes are gentle, natural, and deeply personal.
           </p>
 
@@ -269,7 +269,7 @@ export function DrRuxana() {
             viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
             className="border-l border-[#C9956A]/60 pl-5 max-w-[450px]"
           >
-            <p className="text-[13px] md:text-sm text-[#2C1810] leading-[1.75]" style={{ ...D, fontStyle: "italic" }}>
+            <p className="text-base md:text-sm text-[#2C1810] leading-[1.75]" style={{ ...D, fontStyle: "italic" }}>
               "I want every patient to leave feeling more like themselves — not different. More radiant. More free."
             </p>
             <div className="mt-3 text-base">🧡</div>
