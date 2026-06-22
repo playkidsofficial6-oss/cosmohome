@@ -16,16 +16,16 @@ const OTHER_DOCTORS = [
     img: "/doctor/dr1.webp",
   },
   {
-    name: "Dr. SHIFA M",
+    name: "Dr. Shifa M",
     role: "Cosmetic Dermatologist",
     spec: "MBBS, MD, DVL",
     img: "/doctor/dr2.webp",
   },
 
   {
-    name: "Dr.",
+    name: "Dr. Ridha Padiyath",
     role: "Cosmetic Dermatologist",
-    spec: "MBBS, MD",
+    spec: "MBBS, MD, DVL",
     img: "/doctor/dr4.webp",
   },
 ];
