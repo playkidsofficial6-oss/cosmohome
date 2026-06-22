@@ -7,6 +7,7 @@ import { ArrowRight, Heart, AlertTriangle, XCircle, ChevronRight, ShieldCheck, U
 import { D, M, B, GOLD, EASE, GRAIN, STEPS, DOCTORS, STANDARDS, type Step } from "../lib/constants";
 import { FadeUp, SlideIn, Rule, Tag, InputField } from "../components/ui/shared";
 import { TeamSection } from "../components/home/TeamSection";
+import { Transformation } from "../components/home/Transformation";
 export function Hero({ ready }: { ready: boolean }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -338,44 +339,7 @@ export function DrRuxana() {
 }
 
 
-export function Transformation() {
-  const stories = [
-    { name: "Sofia, 38", tag: "Confidence Restored ✨", story: '"After two children and a decade of putting myself last, I forgot what it felt like to look in the mirror and feel proud. Dr. Ruxana gave me that back — quietly, naturally."', img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=1000&fit=crop&auto=format" },
-    { name: "Amara, 45", tag: "Natural Renewal 🌿", story: '"People kept asking if I had been on holiday. That was all I wanted — to look rested, not treated. Dr. Ruxana understood that without me having to explain it twice."', img: "https://images.unsplash.com/photo-1593351799227-75df2026356b?w=800&h=1000&fit=crop&auto=format" },
-    { name: "Elena, 31", tag: "New Chapter 🦋", story: '"Starting a business changes you. I needed to feel as capable on the outside as I felt within. COSMO HOME did not change me — it aligned how I look with who I have become."', img: "https://images.unsplash.com/photo-1544717304-a2db4a7b16ee?w=800&h=1000&fit=crop&auto=format" },
-  ];
-  return (
-    <section className="py-6 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-6 gap-6">
-          <FadeUp>
-            <Tag>Chapter 04 — Transformation</Tag>
-            <h2 className="text-4xl md:text-5xl leading-[1.05] text-[#2C1810] mt-3" style={D}>The art of<br /><em>becoming.</em></h2>
-          </FadeUp>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {stories.map((s, i) => (
-            <FadeUp key={s.name} delay={i * 0.1}>
-              <motion.div className="group flex flex-col h-full" whileHover="hover">
-                <div className="relative overflow-hidden aspect-[4/5] bg-[#EDE5D8] mb-5">
-                  <motion.img src={s.img} alt={s.name} className="w-full h-full object-cover object-top"
-                    variants={{ hover: { scale: 1.06 } }} transition={{ duration: 0.7, ease: EASE }} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/60 to-transparent" />
-                  <motion.div className="absolute inset-0 bg-[#C9956A]/8" variants={{ hover: { opacity: 1 } }} initial={{ opacity: 0 }} />
-                  <div className="absolute bottom-5 left-5">
-                    <p className="text-xs tracking-[0.25em] uppercase text-[#C9956A] mb-1" style={M}>{s.tag}</p>
-                    <p className="text-[#FAF7F2] text-lg" style={D}>{s.name}</p>
-                  </div>
-                </div>
-                <p className="text-base text-[#5C4A42] leading-loose flex-1" style={{ ...D, fontStyle: "italic" }}>{s.story}</p>
-              </motion.div>
-            </FadeUp>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+
 
 export function Experiences() {
   const [active, setActive] = useState(0);
