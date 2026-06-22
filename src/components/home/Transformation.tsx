@@ -15,7 +15,7 @@ export function Transformation() {
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <div className="border-l border-[#2C1810]/15 pl-6 md:pl-8 py-1">
+            <div className="border-l border-[#2C1810]/15 pl-6 md:pl-8 py-1 hidden lg:block">
               <p className="text-[#2C1810]/80 text-base leading-relaxed" style={B}>
                 Real stories.<br />
                 Real people.<br />
