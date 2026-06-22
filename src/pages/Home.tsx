@@ -118,7 +118,7 @@ export function Hero({ ready }: { ready: boolean }) {
         </div>
 
         <div className="flex flex-col gap-2">
-          <motion.div className="bg-[#2B1610]/70 backdrop-blur-md rounded-2xl p-4 flex justify-between items-center"
+          <motion.div className="bg-[#2B1610]/70 backdrop-blur-md rounded-2xl p-3 flex justify-between items-center"
             initial={{ opacity: 0, y: 20 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: d(1.2), duration: 0.8 }}>
             {[{ n: "20+", l: "Years of Care", icon: <ShieldCheck size={20} strokeWidth={1.5} className="text-[#C9956A] mb-2 mx-auto" /> },
             { n: "3,800+", l: "Transformations", icon: <Users size={20} strokeWidth={1.5} className="text-[#C9956A] mb-2 mx-auto" /> },
@@ -132,7 +132,7 @@ export function Hero({ ready }: { ready: boolean }) {
           </motion.div>
 
           <motion.a href="/#invitation"
-            className="w-full py-4 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase rounded-xl flex items-center justify-center gap-2" style={B}
+            className="w-full py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase rounded-xl flex items-center justify-center gap-2" style={B}
             initial={{ opacity: 0, y: 20 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: d(1.3), duration: 0.8 }}>
             Begin Your Journey <ArrowRight size={14} />
           </motion.a>
