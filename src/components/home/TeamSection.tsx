@@ -4,22 +4,29 @@ import { D, M, B } from "../../lib/constants";
 
 const OTHER_DOCTORS = [
   {
-    name: "Dr. Anas Abdulla",
+    name: "Dr. Marjan Abdul Nazeer",
     role: "Cosmetic Dermatologist",
-    spec: "DERMATOLOGY &\nVENEREOLOGY",
+    spec: "MBBS, MD, DVL, DNB",
+    img: "/doctor/dr3.webp",
+  },
+  {
+    name: "Dr. Anas P Abdullah",
+    role: "Cosmetic Dermatologist",
+    spec: "MBBS, MD(D&V), DNB",
     img: "/doctor/dr1.webp",
   },
   {
-    name: "Dr. Mohammed Navas M",
+    name: "Dr. SHIFA M",
     role: "Cosmetic Dermatologist",
-    spec: "DERMATOLOGY &\nVENEREOLOGY",
+    spec: "MBBS, MD, DVL",
     img: "/doctor/dr2.webp",
   },
+
   {
-    name: "Dr. Marjan\nAbdul Nazar",
-    role: "Cosmetic Dermatologist",
-    spec: "DERMATOLOGY &\nVENEREOLOGY",
-    img: "/doctor/dr3.webp",
+    name: "Dr. Name Pending",
+    role: "Role Pending",
+    spec: "SPECIALIZATION\nPENDING",
+    img: "/doctor/dr4.webp",
   },
 ];
 
@@ -89,17 +96,17 @@ export function TeamSection() {
         {/* BOTTOM DOCTORS ROW */}
         <div className="lg:col-span-2 mt-0 z-30 relative">
           <FadeUp delay={0.4}>
-            <div className="bg-[#FAF7F2]/95 backdrop-blur-md rounded-[24px] rounded-tr-none p-6 sm:p-8 shadow-2xl border border-white flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative z-10">
+            <div className="bg-[#FAF7F2]/95 backdrop-blur-md rounded-[24px] rounded-tr-none p-4 sm:p-6 lg:p-8 shadow-2xl border border-white flex flex-col md:flex-row items-start md:items-stretch justify-between gap-6 md:gap-4 overflow-hidden relative z-10">
               {OTHER_DOCTORS.map((doc, i) => (
-                <div key={i} className="flex flex-row items-center gap-4 sm:gap-4 w-full relative group">
-                  {i !== 0 && <div className="absolute left-[-12px] top-[15%] bottom-[15%] w-[1px] bg-[#2C1810]/10 hidden md:block transition-all group-hover:bg-[#C9956A]/40" />}
-                  <div className="w-32 h-40 md:w-44 md:h-52 lg:w-48 lg:h-56 shrink-0 flex items-end justify-center relative overflow-hidden rounded-xl">
-                    <img src={doc.img} alt={doc.name} className="w-full h-full object-contain object-bottom drop-shadow-sm transition-transform duration-500 group-hover:scale-105" />
+                <div key={i} className="flex flex-row md:flex-col xl:flex-row items-center md:items-start xl:items-center gap-4 w-full relative group">
+                  {i !== 0 && <div className="absolute left-[-12px] md:left-[-8px] xl:left-[-12px] top-[10%] bottom-[10%] w-[1px] bg-[#2C1810]/10 hidden md:block transition-all group-hover:bg-[#C9956A]/40" />}
+                  <div className="w-28 h-36 sm:w-32 sm:h-40 md:w-full md:h-44 lg:h-52 xl:w-32 xl:h-40 shrink-0 flex items-end justify-center relative overflow-hidden rounded-xl">
+                    <img src={doc.img} alt={doc.name} className="w-full h-full object-contain object-bottom drop-shadow-sm transition-transform duration-500" />
                   </div>
-                  <div className="flex flex-col justify-center text-left py-2">
-                    <p className="text-sm md:text-lg font-semibold text-[#2C1810] mb-1 whitespace-pre-wrap" style={D}>{doc.name}</p>
+                  <div className="flex flex-col justify-center text-left py-2 md:py-0 xl:py-2 md:w-full md:mt-2 xl:mt-0">
+                    <p className="text-sm md:text-base font-semibold text-[#2C1810] mb-1" style={D}>{doc.name}</p>
                     <p className="text-[10px] text-[#2C1810]/70 mb-2 font-medium" style={B}>{doc.role}</p>
-                    <p className="text-[9px] tracking-[0.15em] text-[#C9956A] uppercase leading-relaxed whitespace-pre-wrap font-bold" style={M}>{doc.spec}</p>
+                    <p className="text-[9px] tracking-[0.1em] xl:tracking-[0.15em] text-[#C9956A] uppercase leading-relaxed whitespace-pre-wrap font-bold" style={M}>{doc.spec}</p>
                   </div>
                 </div>
               ))}
