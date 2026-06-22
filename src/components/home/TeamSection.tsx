@@ -23,9 +23,9 @@ const OTHER_DOCTORS = [
   },
 
   {
-    name: "Dr. Name Pending",
-    role: "Role Pending",
-    spec: "SPECIALIZATION\nPENDING",
+    name: "Dr.",
+    role: "Cosmetic Dermatologist",
+    spec: "MBBS, MD",
     img: "/doctor/dr4.webp",
   },
 ];
