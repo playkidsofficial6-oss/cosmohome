@@ -78,7 +78,7 @@ export function Hero({ ready }: { ready: boolean }) {
       </motion.div>
 
       {/* --- MOBILE CONTENT --- */}
-      <motion.div className="relative z-20 flex md:hidden flex-col justify-between pt-28 pb-6 px-6 h-[100svh] w-full">
+      <motion.div className="relative z-20 flex md:hidden flex-col justify-between pt-20 pb-4 px-6 h-[100svh] w-full">
         <div className="flex flex-col">
           <motion.p className="text-[#C9956A] text-[10px] tracking-[0.15em] uppercase mb-4" style={M}
             initial={{ opacity: 0, x: -16 }} animate={ready ? { opacity: 1, x: 0 } : {}}
@@ -86,7 +86,7 @@ export function Hero({ ready }: { ready: boolean }) {
             ✨ EXPERT-LED · SKIN · HAIR · AESTHETICS
           </motion.p>
 
-          <h1 className="text-[#FAF7F2] text-5xl leading-[1.05] mb-5" style={D}>
+          <h1 className="text-[#FAF7F2] text-4xl lg:text-5xl leading-[1.05] mb-5" style={D}>
             {["Beauty", "Feels", "At Home."].map((word, i) => (
               <div key={word} className="overflow-hidden">
                 <motion.span className={`block ${i === 1 ? "italic text-[#C9956A]" : ""}`}
@@ -106,14 +106,23 @@ export function Hero({ ready }: { ready: boolean }) {
             transition={{ duration: 0.8, delay: d(0.95) }}>
             Expert-led aesthetic medicine designed around confidence, care, and your most natural beauty.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }} animate={ready ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: d(1.05) }}
+            className="mt-6 mb-2"
+          >
+            <img src="/hero/sign.webp" alt="Dr. Ruxana K" className="h-14 w-auto object-contain" />
+            <p className="text-[#FAF7F2]/80 text-[11px] tracking-[0.2em] uppercase mt-1" style={M}>Founder</p>
+          </motion.div>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
           <motion.div className="bg-[#2B1610]/70 backdrop-blur-md rounded-2xl p-4 flex justify-between items-center"
             initial={{ opacity: 0, y: 20 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: d(1.2), duration: 0.8 }}>
-            {[{ n: "20+", l: "Years of Care", icon: <ShieldCheck size={20} strokeWidth={1.5} className="text-[#C9956A] mb-2 mx-auto"/> }, 
-              { n: "3,800+", l: "Transformations", icon: <Users size={20} strokeWidth={1.5} className="text-[#C9956A] mb-2 mx-auto"/> }, 
-              { n: "5", l: "Doctors", icon: <Star size={20} strokeWidth={1.5} className="text-[#C9956A] mb-2 mx-auto"/> }].map(({ n, l, icon }, i) => (
+            {[{ n: "20+", l: "Years of Care", icon: <ShieldCheck size={20} strokeWidth={1.5} className="text-[#C9956A] mb-2 mx-auto" /> },
+            { n: "3,800+", l: "Transformations", icon: <Users size={20} strokeWidth={1.5} className="text-[#C9956A] mb-2 mx-auto" /> },
+            { n: "5", l: "Doctors", icon: <Star size={20} strokeWidth={1.5} className="text-[#C9956A] mb-2 mx-auto" /> }].map(({ n, l, icon }, i) => (
               <div key={l} className={`flex-1 text-center ${i !== 2 ? 'border-r border-[#FAF7F2]/10' : ''}`}>
                 {icon}
                 <p className="text-[#FAF7F2] text-[17px] font-medium" style={D}>{n}</p>
@@ -122,7 +131,7 @@ export function Hero({ ready }: { ready: boolean }) {
             ))}
           </motion.div>
 
-          <motion.a href="/#invitation" 
+          <motion.a href="/#invitation"
             className="w-full py-4 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase rounded-xl flex items-center justify-center gap-2" style={B}
             initial={{ opacity: 0, y: 20 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: d(1.3), duration: 0.8 }}>
             Begin Your Journey <ArrowRight size={14} />
