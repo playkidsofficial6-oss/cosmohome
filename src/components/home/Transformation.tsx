@@ -94,7 +94,7 @@ export function Transformation() {
                   <p className="text-[11px] tracking-[0.25em] uppercase text-[#C9956A] mb-3 flex items-center gap-2 font-medium" style={M}>
                     Story 🦋
                   </p>
-                  <h3 className="text-2xl text-[#2C1810] mb-4" style={D}>Elena, 31</h3>
+                  <h3 className="text-2xl text-[#2C1810] mb-4" style={D}>Elena</h3>
                   <p className="text-[#2C1810]/80 text-base leading-relaxed mb-6" style={{ ...D, fontStyle: "italic" }}>
                     "Starting a business changes you. I needed to feel as capable on the outside as I felt within. COSMO HOME did not change me — it aligned how I look with who I have become."
                   </p>
