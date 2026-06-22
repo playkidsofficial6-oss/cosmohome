@@ -43,7 +43,7 @@ export function Transformation() {
               {/* Text */}
               <div className="w-full md:w-1/2 bg-[#FAF7F2] flex flex-col justify-center p-6 md:p-10 lg:p-12">
                 <p className="text-[11px] tracking-[0.25em] uppercase text-[#C9956A] mb-4 font-medium" style={M}>Featured Story</p>
-                <h3 className="text-3xl md:text-4xl text-[#2C1810] mb-6" style={D}>Sofia, 38</h3>
+                <h3 className="text-3xl md:text-4xl text-[#2C1810] mb-6" style={D}>Zehera Samseer</h3>
                 <p className="text-[#2C1810]/80 text-base md:text-base leading-relaxed mb-10 max-w-lg" style={{ ...D, fontStyle: "italic" }}>
                   "After two children and a decade of putting myself last, I forgot what it felt like to look in the mirror and feel proud. Dr. Ruxana gave me that back — quietly, naturally."
                 </p>
@@ -70,7 +70,7 @@ export function Transformation() {
                   <p className="text-[11px] tracking-[0.25em] uppercase text-[#C9956A] mb-3 flex items-center gap-2 font-medium" style={M}>
                     Story 🌿
                   </p>
-                  <h3 className="text-2xl text-[#2C1810] mb-4" style={D}>Amara, 45</h3>
+                  <h3 className="text-2xl text-[#2C1810] mb-4" style={D}>Lintu Rony</h3>
                   <p className="text-[#2C1810]/80 text-base leading-relaxed mb-6" style={{ ...D, fontStyle: "italic" }}>
                     "People kept asking if I had been on holiday. That was all I wanted — to look rested, not treated. Dr. Ruxana understood that without me having to explain it twice."
                   </p>
