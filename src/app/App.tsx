@@ -25,6 +25,7 @@ export function AppContent() {
         <Routes>
           <Route path="/" element={<HomePage ready={ready} />} />
           <Route path="/service" element={<ServicePage />} />
+          <Route path="/service/:slug" element={<ServicePage />} />
           <Route path="/book-consultation" element={<BookConsultationPage />} />
         </Routes>
         <Footer />
