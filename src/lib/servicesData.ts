@@ -7,17 +7,24 @@ export interface ServiceData {
   heroRating: string;
   heroImage: string;
   stats: Array<{ n: string; l: string }>;
+  performedByLabel?: string;
+  performedByName?: string;
+  performedBySub?: string;
 
   // Section 2: What is this
+  whatIsThisTag?: string;
   whatIsThisTitle: string;
   whatIsThisEmphasized: string;
   whatIsThisDesc1: string;
   whatIsThisDesc2: string;
   benefits: Array<{ icon: string; b: string; d: string }>;
-  clinicalNote: string;
+  clinicalNote?: string;
+  clinicalNoteLabel?: string;
   sideImage: string;
 
   // Section 3: Machine / Technology
+  technologyTag?: string;
+  ourDeviceLabel?: string;
   machineTitle: string;
   machineEmphasized: string;
   deviceName: string;
@@ -25,18 +32,28 @@ export interface ServiceData {
   deviceDesc: string;
   deviceFeatures: string[];
   deviceImage: string;
+  comparisonTitle?: string;
   comparisonRows: Array<{ label: string; ours: string; standard: string }>;
 
   // Section 4: Who needs this
+  whoNeedsTag?: string;
+  whoNeedsTitle?: string;
+  whoNeedsTitleEmphasized?: string;
   whoNeedsDesc: string;
   notSuitable: string;
   whoNeedsItems: Array<{ tag: string; desc: string }>;
 
   // Section 5: Session plan
+  sessionPlanTag?: string;
+  sessionPlanTitle?: string;
+  sessionPlanTitleEmphasized?: string;
   sessionPlanDesc: string;
   sessionPlanSteps: Array<{ n: string; label: string; duration: string; detail: string }>;
 
   // Section 6: Results timeline
+  timelineTag?: string;
+  timelineTitle?: string;
+  timelineTitleEmphasized?: string;
   timelineDesc: string;
   timelineItems: Array<{ when: string; what: string }>;
 
@@ -47,6 +64,11 @@ export interface ServiceData {
   ctaEmphasized: string;
   ctaDesc: string;
   ctaQuickFacts: Array<{ label: string; val: string }>;
+  ctaButtonText?: string;
+  ctaButtonLink?: string;
+  ctaSecondaryButtonText?: string;
+  ctaSecondaryButtonLink?: string;
+  ctaTrustSignals?: string[];
   ctaImage: string;
 }
 
@@ -55,78 +77,80 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     id: "hifu",
     title: "Non-Surgical Lift",
     titleEmphasized: "HIFU.",
-    experienceNo: "Signature Experience No. 02",
+    experienceNo: "Signature Experience",
     description: "Lift, tighten, and redefine your facial contours with High-Intensity Focused Ultrasound (HIFU). This advanced treatment stimulates your body's natural collagen production for firmer, smoother, and younger-looking skin—without surgery or downtime.",
     heroRating: "4.8 · Rated by 190+ patients",
-    heroImage: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop",
+    heroImage: "/services/hifu/1.webp",
     stats: [
       { n: "1–2", l: "Sessions recommended" },
       { n: "0", l: "Days downtime" },
       { n: "3-6m", l: "Months Progressive Results" },
       { n: "100%", l: "Non-Surgical" }
     ],
+    whatIsThisTag: "What Is HIFU?",
     whatIsThisTitle: "This is not",
     whatIsThisEmphasized: "a superficial lift.",
-    whatIsThisDesc1: "HIFU (High-Intensity Focused Ultrasound) targets the <strong>SMAS layer</strong>—the deep muscle-wrapping tissue that surgeons pull during a traditional facelift. By delivering focused energy, it triggers micro-thermal changes beneath the skin.",
-    whatIsThisDesc2: "What makes it different: At Cosmo Home, we use medical-grade Ultraformer III technology. Dr. Ruxana adjusts the energy parameters, vectors, and depths in real-time, matching your unique bone structure and skin thickness for a natural, elegant lift.",
+    whatIsThisDesc1: "HIFU (High-Intensity Focused Ultrasound) works deep beneath the skin by delivering focused ultrasound energy to the SMAS layer—the same structural layer addressed during a surgical facelift. Rather than treating only the surface, it activates your body's natural collagen renewal process, gradually lifting, firming, and improving skin quality over the following months.",
+    whatIsThisDesc2: "With advanced ultrasound technology, every treatment is carefully customised to your facial anatomy and aesthetic goals, creating subtle, natural-looking rejuvenation without needles, incisions, or recovery time.",
     benefits: [
-      { icon: "🧬", b: "Deep SMAS targeting", d: "Reaches the structural foundation layer" },
-      { icon: "🩺", b: "Vector-aligned lifting", d: "Customized vector pathways for your face" },
-      { icon: "⚡", b: "No recovery time", d: "Return to work or social events immediately" },
-      { icon: "🔄", b: "Self-building lift", d: "Collagen increases steadily for 6 months" }
+      { icon: "🧬", b: "Deep Collagen Activation", d: "Stimulates collagen where structural support begins." },
+      { icon: "🩺", b: "Tightens & Lifts Over Time", d: "Gradual improvement with beautifully natural results." },
+      { icon: "⚡", b: "No Surgery or Downtime", d: "Return to normal activities immediately." },
+      { icon: "🔄", b: "Safe & Clinically Proven", d: "A non-invasive treatment trusted worldwide." }
     ],
-    clinicalNote: "Ultrasonic energy is delivered to precise depths of 1.5mm, 3.0mm, and 4.5mm to target multiple layers of skin tissue.",
-    sideImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
+    clinicalNote: "Treatment parameters are carefully customised to your skin condition, facial anatomy, and aesthetic goals for precise, natural-looking results.",
+    sideImage: "/services/hifu/2.webp",
     machineTitle: "Focused energy,",
     machineEmphasized: "calibrated for lifting.",
-    deviceName: "Ultraformer III HIFU",
-    deviceSub: "Medical-Grade · FDA Cleared · Lifting Standard",
-    deviceDesc: "The Ultraformer III utilizes micro- and macro-focused ultrasound (MMFU) technology to deliver precise energy to target depths, heating the tissue to stimulate collagen remodeling while sparing the surrounding skin.",
-    deviceFeatures: ["MMFU Technology", "Multi-depth cartridges", "Precision targeting", "Comfort control"],
-    deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
+    deviceName: "Advanced Treatment Platform",
+    deviceSub: "MEDICAL-GRADE • PRECISION • PERSONALISED CARE",
+    deviceDesc: "We use advanced, clinically proven aesthetic technologies designed to deliver precise, consistent, and comfortable treatments. Every procedure is tailored to your skin condition and treatment goals, ensuring safe care with natural-looking results.",
+    deviceFeatures: ["Medical-Grade Technology", "Precision Treatment", "Personalised Protocols", "Comfort Focused"],
+    deviceImage: "/services/hifu/3.webp",
+    comparisonTitle: "COSMO HOME vs Conventional Treatment",
     comparisonRows: [
-      { label: "Technology", ours: "Ultraformer III (MMFU) — medical grade", standard: "Unbranded single-depth ultrasound" },
-      { label: "Depth Options", ours: "Triple layer depth (1.5mm / 3.0mm / 4.5mm)", standard: "Single shallow depth only" },
-      { label: "Comfort", ours: "High-speed transducers for lower discomfort", standard: "Slow, painful heat build-up" },
-      { label: "Lifting Power", ours: "Reaches SMAS layer (surgical depth)", standard: "Superficial skin heating only" },
-      { label: "Operator", ours: "Performed by Dr. Ruxana or trained dermatologist", standard: "Beauty therapist operated" }
+      { label: "Technology", ours: "Medical-grade aesthetic devices", standard: "Standard equipment" },
+      { label: "Treatment Plan", ours: "Personalised after skin assessment", standard: "One-size-fits-all approach" },
+      { label: "Precision", ours: "Targeted treatment protocols", standard: "Limited customisation" },
+      { label: "Comfort", ours: "Designed for patient comfort", standard: "May vary by device" },
+      { label: "Safety", ours: "Doctor-supervised protocols", standard: "Varies by provider" }
     ],
     whoNeedsDesc: "Ideal for patients experiencing early to moderate skin laxity, softening jawlines, or loss of neck definition.",
     notSuitable: "Pregnancy, active skin infections, open wounds, metal implants in the treatment area.",
     whoNeedsItems: [
-      { tag: "Sagging jawline", desc: "Redefining jawlines and softening the appearance of jowls." },
-      { tag: "Loss of elasticity", desc: "Loose skin that has lost its youthful contour and bounce." },
-      { tag: "Double chin laxity", desc: "Submental skin tightening to define the under-chin area." },
-      { tag: "Brow drooping", desc: "Gentle non-invasive lifting of the brow line for an open gaze." },
-      { tag: "Neck lines & laxity", desc: "Smoothing horizontal neck bands and firming thin neck skin." },
-      { tag: "Surgical alternative", desc: "For those desiring lift without incisions or recovery downtime." }
+      { tag: "Sagging jawline", desc: "Improve jawline definition by tightening loose skin and restoring facial contours." },
+      { tag: "Loss of elasticity", desc: "Stimulate natural collagen production to improve skin firmness and resilience." },
+      { tag: "Fine Lines & Wrinkles", desc: "Smooth early signs of ageing for fresher, younger-looking skin." },
+      { tag: "Cheek & Neck Laxity", desc: "Lift and firm areas affected by collagen loss without surgery." },
+      { tag: "Preventive Anti-Ageing", desc: "Maintain youthful skin by boosting collagen before significant ageing occurs." },
+      { tag: "Non-Surgical Rejuvenation", desc: "Perfect for those seeking visible lifting and tightening without downtime." }
     ],
     sessionPlanDesc: "Most patients require only 1 or 2 sessions to achieve their desired lifting results, with annual maintenance.",
     sessionPlanSteps: [
-      { n: "01", label: "Assessment & Deep Mapping", duration: "75 min", detail: "Dr. Ruxana analyses facial symmetry, skin laxity, and maps the ultrasound energy vectors. The initial full treatment is completed." },
-      { n: "02", label: "Verification & Touch-up", duration: "60 min", detail: "Scheduled at 8-12 weeks. We assess the early lifting response, verify collagen remodeling, and apply targeted touch-ups if needed." },
-      { n: "03", label: "Maintenance", duration: "45 min", detail: "A single touch-up session recommended at 12 months to maintain the collagen lift and support long-term structure." }
+      { n: "01", label: "Assessment & Deep Mapping", duration: "75 min", detail: "Every HIFU journey begins with a comprehensive consultation. Your practitioner evaluates skin laxity, facial contours, and collagen quality before mapping the treatment areas to create a personalised lifting plan. The treatment is then performed using carefully selected ultrasound depths for precise, natural-looking rejuvenation." },
+      { n: "02", label: "Verification & Touch-up", duration: "60 min", detail: "Your skin's response and collagen activation are carefully reviewed. If needed, targeted touch-up treatment is performed to enhance lifting, refine contours, and ensure balanced, consistent results as collagen continues to rebuild naturally." },
+      { n: "03", label: "Maintenance", duration: "45 min", detail: "A maintenance session may be recommended based on your skin's ageing process and treatment goals. This helps preserve collagen production, maintain skin firmness, and prolong your naturally lifted appearance over time." }
     ],
-    timelineDesc: "Lifting and tightening effects build progressively as your body generates new, resilient collagen.",
+    timelineDesc: "HIFU stimulates your body's natural collagen renewal process, so improvements appear gradually. Results continue to develop over the following weeks, revealing firmer, smoother, and naturally lifted skin.",
     timelineItems: [
-      { when: "Immediately", what: "Minor tightening and plumpness. Transient mild redness." },
-      { when: "Day 3–5", what: "Skin feels firmer. Sub-dermal collagen activation is underway." },
-      { when: "Week 2–3", what: "Early lifting visible, particularly around the jawline and eyes." },
-      { when: "After 3 Months", what: "Primary results. The jawline is noticeably defined and structured." },
-      { when: "Month 6+", what: "Continued improvement as deep collagen fibers strengthen." }
+      { when: "Immediately", what: "Your skin may feel slightly firmer, with subtle tightening and a refreshed appearance. Mild redness or tenderness usually settles within a few hours." },
+      { when: "Day 3–7", what: "Collagen stimulation begins beneath the skin. While changes remain subtle, your skin starts feeling firmer and more resilient." },
+      { when: "Week 4–8", what: "Visible lifting becomes more noticeable as collagen production increases. Facial contours appear smoother, tighter, and better defined." },
+      { when: "After 3 Months", what: "Peak collagen remodelling delivers natural-looking lifting, improved skin elasticity, and enhanced facial definition." },
+      { when: "Month 6+", what: "Results continue to mature as collagen strengthens over time. With proper skincare and maintenance, improvements can be long-lasting." }
     ],
     ctaRating: "190+ patients lifted",
-    ctaTitle: "Ready to restore",
-    ctaTitle2: "your natural contour?",
+    ctaTitle: "Ready to reveal",
+    ctaTitle2: "your best skin?",
     ctaEmphasized: "Begin today.",
-    ctaDesc: "Your first session includes a full facial structural analysis with Dr. Ruxana and a customized vector mapping plan. Just professional, honest care.",
+    ctaDesc: "Your consultation includes a comprehensive skin assessment, personalised treatment planning, and expert guidance tailored to your aesthetic goals—designed to deliver safe, natural-looking results with confidence.",
     ctaQuickFacts: [
       { label: "Price from", val: "₹35,000 / session" },
       { label: "Duration", val: "60–90 minutes" },
       { label: "Recommended", val: "1–2 sessions" },
       { label: "Frequency", val: "Every 12 months" },
       { label: "Downtime", val: "None" },
-      { label: "Performed by", val: "Dr. Ruxana" }
+      { label: "Performed by", val: "Doctor-Supervised Care" }
     ],
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
   },
@@ -134,80 +158,82 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     id: "hydrafacial-medifacial",
     title: "Skin Renewal",
     titleEmphasized: "Experience.",
-    experienceNo: "Signature Experience No. 01",
-    description: "Medical-grade skin transformation by Dr. Ruxana — restoring clarity, luminosity, and texture with zero downtime.",
+    experienceNo: "Signature Experience ",
+    description: "Reveal cleaner, smoother, and deeply hydrated skin with our medical-grade Hydrafacial treatment. Designed to cleanse, exfoliate, extract impurities, and nourish the skin, it restores lasting radiance with no downtime.",
     heroRating: "4.9 · Rated by 380+ patients",
-    heroImage: "https://images.unsplash.com/photo-1761718209794-e0588aafbcc4?w=1000&h=1400&fit=crop&auto=format",
+    heroImage: "/services/hydrafacial-medifacial/1.webp",
     stats: [
-      { n: "3–6", l: "Sessions recommended" },
+      { n: "1", l: "Session shows visible glow" },
       { n: "0", l: "Days downtime" },
-      { n: "1st", l: "Session shows results" },
-      { n: "100%", l: "Doctor performed" }
+      { n: "30–45 Min", l: "Treatment duration" },
+      { n: "All Skin Types", l: "Safe & suitable" }
     ],
-    whatIsThisTitle: "This is not",
+    whatIsThisTag: "WHAT IS HYDRAFACIAL?",
+    whatIsThisTitle: "This is note",
     whatIsThisEmphasized: "a salon facial.",
-    whatIsThisDesc1: "The Skin Renewal Experience is a multi-step <strong>medical procedure</strong> — not a beauty treatment. Using our HydraFacial MD Elite system, it simultaneously cleanses, exfoliates, extracts, and infuses with doctor-prescribed serums in a single session.",
-    whatIsThisDesc2: "What makes it different: every protocol is designed by Dr. Ruxana specifically for your skin biology. The serum mix you receive exists nowhere else. It is yours.",
+    whatIsThisDesc1: "Hydrafacial is a medical-grade skin rejuvenation treatment that goes beyond traditional facials. Using advanced vortex technology, it deeply cleanses, gently exfoliates, removes impurities, and infuses the skin with nourishing serums—all in one relaxing treatment.",
+    whatIsThisDesc2: "Unlike conventional facials, every Hydrafacial is customised to your skin's unique needs, helping improve hydration, skin texture, clarity, and overall radiance without discomfort or downtime.",
     benefits: [
-      { icon: "🧬", b: "Clinically proven", d: "Peer-reviewed efficacy data" },
-      { icon: "🩺", b: "Doctor-prescribed", d: "Bespoke serum protocol" },
-      { icon: "⚡", b: "Immediate glow", d: "Visible after one session" },
-      { icon: "🔄", b: "Builds over time", d: "Cumulative collagen lift" }
+      { icon: "🧬", b: "Deep Cleansing", d: "Removes excess oil, debris, and impurities from congested pores." },
+      { icon: "🩺", b: "Intense Hydration", d: "Infuses antioxidant-rich serums for healthier, smoother skin." },
+      { icon: "⚡", b: "Instant Glow", d: "Leaves the skin visibly refreshed, brighter, and more radiant." },
+      { icon: "🔄", b: "Suitable for All Skin Types", d: "Gentle, non-invasive treatment with no downtime." }
     ],
-    clinicalNote: "Treatment parameters are adjusted in real-time by Dr. Ruxana — every session is different.",
-    sideImage: "https://images.unsplash.com/photo-1761819922656-d1b77eef49c0?w=800&h=1000&fit=crop&auto=format",
+    clinicalNote: "Every Hydrafacial treatment is customised according to your skin type, concerns, and hydration needs, ensuring safe, comfortable, and naturally radiant results.",
+    sideImage: "/services/hydrafacial-medifacial/2.webp",
     machineTitle: "The machine",
-    machineEmphasized: "behind your results.",
-    deviceName: "HydraFacial MD Elite",
-    deviceSub: "Medical-Grade · FDA Cleared · Hospital Standard",
-    deviceDesc: "The gold standard for medical skin resurfacing — used in leading dermatology hospitals worldwide. Delivers simultaneous multi-step treatment with doctor-prescribed serum infusion that no standard device can replicate.",
-    deviceFeatures: ["Vortex-Fusion® System", "Medical-grade suction", "AI skin analysis", "Custom serums"],
-    deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
+    machineEmphasized: "behind your glow.",
+    deviceName: "HydraFacial MD® Elite",
+    deviceSub: "MEDICAL-GRADE • ADVANCED HYDRATION • SKIN REJUVENATION",
+    deviceDesc: "HydraFacial MD® Elite combines deep cleansing, gentle exfoliation, painless extraction, and intensive serum infusion in one advanced treatment. Using patented Vortex-Fusion® technology, it removes impurities while delivering nourishing ingredients that instantly improve skin hydration, clarity, and radiance.",
+    deviceFeatures: ["Vortex-Fusion® Technology", "Medical-Grade Hydration", "Gentle Extraction", "Customised Serum Infusion"],
+    deviceImage: "/services/hydrafacial-medifacial/3.webp",
+    comparisonTitle: "COSMO HOME vs CONVENTIONAL FACIAL",
     comparisonRows: [
-      { label: "Technology", ours: "HydraFacial MD Elite — medical grade", standard: "Basic hydradermabrasion device" },
-      { label: "Serum delivery", ours: "Patented Vortex-Fusion® system", standard: "Manual application" },
-      { label: "Extraction", ours: "Automated vacuum spiral suction", standard: "Manual comedone extraction" },
-      { label: "Customisation", ours: "Doctor-prescribed booster serums", standard: "Fixed serum selection" },
-      { label: "Skin analysis", ours: "AI-assisted before & after imaging", standard: "Visual assessment only" },
-      { label: "Operator", ours: "Performed by qualified dermatologist", standard: "Beauty therapist" }
+      { label: "Technology", ours: "Medical-grade HydraFacial platform", standard: "Traditional facial equipment" },
+      { label: "Cleansing", ours: "Deep pore cleansing with vortex technology", standard: "Surface-level cleansing only" },
+      { label: "Extraction", ours: "Gentle vacuum extraction without squeezing", standard: "Manual comedone extraction" },
+      { label: "Hydration", ours: "Infuses customised antioxidant-rich serums", standard: "Basic moisturising products" },
+      { label: "Customisation", ours: "Personalised treatment protocols for every skin type", standard: "Limited treatment customisation" },
+      { label: "Recovery", ours: "No downtime with immediate glow", standard: "Temporary redness or irritation may occur" }
     ],
-    whoNeedsDesc: "Suitable for all skin tones and types. No recovery time. A brief clinical check is completed at your first consultation.",
-    notSuitable: "Active cold sores, open wounds, severe rosacea, or Roaccutane within 6 months.",
+    whoNeedsDesc: "Perfect for anyone looking to improve skin health, hydration, and overall radiance. Hydrafacial is suitable for most skin types and can be personalised to address your unique skin concerns.",
+    notSuitable: "Active skin infections, open wounds, severe rosacea flare-ups, or known allergies to treatment ingredients. A consultation will determine if Hydrafacial is right for you.",
     whoNeedsItems: [
-      { tag: "Dull or tired skin", desc: "Lifestyle stress, poor sleep, or seasonal changes that leave skin looking flat and lifeless." },
-      { tag: "Congested pores", desc: "Blackheads, whiteheads, and enlarged pores from sebum build-up." },
-      { tag: "Uneven tone", desc: "Post-acne marks, pigmentation, sun damage, or redness." },
-      { tag: "Dehydrated skin", desc: "Surface dryness and fine lines worsened by environmental exposure." },
-      { tag: "Pre-event glow", desc: "Immediate luminosity boost before a wedding, photoshoot, or important occasion." },
-      { tag: "Maintenance care", desc: "Ongoing skin health as part of a long-term aesthetic programme." }
+      { tag: "Dull or tired skin", desc: "Restore healthy radiance and revive skin that appears tired, stressed, or lacking vitality." },
+      { tag: "Congested pores", desc: "Deeply cleanse pores by removing excess oil, blackheads, and everyday impurities." },
+      { tag: "Uneven Skin Tone", desc: "Improve the appearance of pigmentation, post-acne marks, and uneven complexion." },
+      { tag: "Dry & Dehydrated Skin", desc: "Replenish moisture levels to leave skin soft, plump, and comfortably hydrated." },
+      { tag: "Fine Lines & Rough Texture", desc: "Smooth the skin's surface while improving texture and supporting a youthful glow." },
+      { tag: "Regular Skin Maintenance", desc: "An excellent monthly treatment to maintain healthy, refreshed, and radiant skin throughout the year." }
     ],
-    sessionPlanDesc: "Most patients see transformative results after just 3 sessions. Each session builds on the last — deeper, smarter, more targeted.",
+    sessionPlanDesc: "Your Hydrafacial journey is personalised to your skin's condition and goals. Each session builds on the previous one, helping restore healthier, clearer, and naturally radiant skin.",
     sessionPlanSteps: [
-      { n: "01", label: "Assessment Session", duration: "75 min", detail: "Dr. Ruxana analyses your skin type, concerns, and goals. A bespoke serum protocol is prescribed. Your first full Skin Renewal treatment is performed, and baseline photography documented." },
-      { n: "02", label: "Intensification", duration: "60 min", detail: "Results from session one are reviewed. Serum boosters are adjusted based on your skin's response. Deeper exfoliation is introduced if the skin has tolerated session one well." },
-      { n: "03", label: "Consolidation", duration: "60 min", detail: "The full Vortex-Fusion protocol is delivered at optimal parameters. Most patients report peak results after this session — clearer, brighter, and noticeably smoother skin." },
-      { n: "04–06", label: "Maintenance Programme", duration: "45 min", detail: "Optional ongoing sessions every 4–6 weeks to sustain results, adapt to seasonal skin changes, and introduce new targeted boosters as needed." }
+      { n: "01", label: "Skin Analysis & Deep Cleansing", duration: "", detail: "Your skin is professionally assessed before beginning a customised Hydrafacial. The treatment deeply cleanses, exfoliates, and removes impurities while preparing your skin for targeted serum infusion." },
+      { n: "02", label: "Extraction & Hydration", duration: "", detail: "Using advanced vortex technology, congested pores are gently cleared before antioxidant-rich serums are infused to replenish hydration and restore skin balance." },
+      { n: "03", label: "Nourishment & Skin Renewal", duration: "", detail: "Customised active ingredients are delivered deep into the skin to improve texture, brighten the complexion, and support long-term skin health and radiance." },
+      { n: "04", label: "Maintenance & Glow", duration: "", detail: "Regular maintenance treatments help preserve hydration, minimise congestion, and keep your skin consistently smooth, healthy, and naturally glowing throughout the year." }
     ],
-    timelineDesc: "Results begin immediately and compound with every session. This is what most patients experience.",
+    timelineDesc: "Hydrafacial delivers an instant glow while continuously improving skin health with regular treatments. Here's what you can expect after each session.",
     timelineItems: [
-      { when: "Immediately", what: "Visible brightness and hydration. Skin feels clean and plump." },
-      { when: "Day 3–5", what: "Pores appear refined. Tone begins to even. No downtime or peeling." },
-      { when: "Week 2–3", what: "Surface congestion cleared. Fine lines softer. Friends notice without knowing why." },
-      { when: "After 3 sessions", what: "Cumulative collagen stimulation visible. Skin texture measurably improved." },
-      { when: "Month 3+", what: "Long-term skin health maintained. Results hold and build with each session." }
+      { when: "Immediately", what: "Your skin feels deeply cleansed, hydrated, and noticeably smoother with an instant healthy glow." },
+      { when: "DAY 2–7", what: "Hydration levels improve, pores appear cleaner, and your complexion looks brighter and more refreshed." },
+      { when: "WEEK 2–4", what: "Skin texture becomes smoother, tone appears more even, and overall radiance continues to improve." },
+      { when: "AFTER 3 SESSIONS", what: "Consistent treatments help reduce congestion, refine pores, improve skin clarity, and support healthier-looking skin." },
+      { when: "MONTH 3+", what: "With regular maintenance, your skin remains hydrated, balanced, and naturally radiant while supporting long-term skin health." }
     ],
     ctaRating: "380+ patients transformed",
-    ctaTitle: "Ready for skin",
-    ctaTitle2: "you're proud of?",
+    ctaTitle: "Ready for healthier,",
+    ctaTitle2: "glowing skin?",
     ctaEmphasized: "Start today.",
-    ctaDesc: "Your first session includes a full skin analysis with Dr. Ruxana and a bespoke protocol designed for your skin alone. No generic treatments. No pressure. Just honest, expert care.",
+    ctaDesc: "Your consultation includes a comprehensive skin assessment and a personalised Hydrafacial treatment plan tailored to your skin's unique needs. Experience deep cleansing, lasting hydration, and naturally radiant skin with expert care.",
     ctaQuickFacts: [
       { label: "Price from", val: "₹15,000 / session" },
       { label: "Duration", val: "45–75 minutes" },
       { label: "Recommended", val: "3–6 sessions" },
       { label: "Frequency", val: "Every 4–6 weeks" },
       { label: "Downtime", val: "None" },
-      { label: "Performed by", val: "Dr. Ruxana" }
+      { label: "Performed by", val: "Medical Aesthetic Team" }
     ],
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
   },
@@ -215,10 +241,10 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     id: "mesopeels-carbon-peel",
     title: "Surface Polish",
     titleEmphasized: "Peels.",
-    experienceNo: "Signature Experience No. 03",
+    experienceNo: "Signature Experience ",
     description: "Medical-grade organic acid peeling and advanced carbon laser therapy to refine pores, clear congestion, and polish skin.",
     heroRating: "4.9 · Rated by 310+ patients",
-    heroImage: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop",
+    heroImage: "public/services/hifu/1.webp",
     stats: [
       { n: "4–6", l: "Sessions recommended" },
       { n: "0–2", l: "Days downtime" },
@@ -244,6 +270,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceDesc: "The Helios III Q-Switched laser targets carbon particles inside the pores, vaporizing them along with dead skin cells and oils. Combined with Mesoestetic's range of pharmaceutical-grade peels, it offers unparalleled skin renewal.",
     deviceFeatures: ["Q-Switched ND:YAG Laser", "Mesoestetic Pharmaceutical Peels", "Precision spot targeting", "Thermal pore contraction"],
     deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Exfoliation", ours: "Pharma-grade acids & carbon laser vaporization", standard: "Superficial cosmetic scrubs" },
       { label: "Pore Cleansing", ours: "Laser-assisted target extraction", standard: "Manual squeezing only" },
@@ -294,7 +321,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     id: "laser-pigment-reduction",
     title: "Tone Correction",
     titleEmphasized: "Laser.",
-    experienceNo: "Signature Experience No. 04",
+    experienceNo: "Signature Experience",
     description: "Targeted laser energy to fracture dark spots, melasma, and sun damage safely, revealing even-toned luminosity.",
     heroRating: "4.8 · Rated by 220+ patients",
     heroImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
@@ -323,6 +350,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceDesc: "The Helios III is a leading Q-switched ND:YAG laser that features fractional technology, allowing safe, high-energy treatments for deeper pigment anomalies with minimal risk of thermal damage to surrounding tissue.",
     deviceFeatures: ["Fractional Laser Mode", "Dual wavelengths (1064nm / 532nm)", "Thermal relaxation control", "Safe for darker skin tones"],
     deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Laser Technology", ours: "Helios III Q-switched ND:YAG (Fractional)", standard: "Superficial IPL or uncalibrated lasers" },
       { label: "Skin Safety", ours: "Fractional beams prevent epidermal burns", standard: "High heat causes hyperpigmentation" },
@@ -373,7 +401,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     id: "laser-scar-reduction",
     title: "Texture Resurfacing",
     titleEmphasized: "Laser.",
-    experienceNo: "Signature Experience No. 05",
+    experienceNo: "Signature Experience",
     description: "Fractional laser resurfacing to smooth acne scars, surgical scars, and skin texture, inducing healthy dermal remodeling.",
     heroRating: "4.9 · Rated by 180+ patients",
     heroImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
@@ -402,6 +430,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceDesc: "Our fractional laser system creates microscopic thermal treatment zones (MTZs) in the skin. The surrounding untreated tissue allows for rapid healing and collagen production, dramatically reducing downtime while maximizing scar remodelling.",
     deviceFeatures: ["Fractional ablation & coagulation", "Precision spot adjustment", "Smart-scan energy delivery", "Deep tissue thermal penetration"],
     deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Laser Source", ours: "CO2 / Er:YAG fractional medical lasers", standard: "Non-fractional lasers or simple dermabrasion" },
       { label: "Skin Healing", ours: "Micro-treatment zones preserve tissue bridges", standard: "Full surface damage causes long downtime" },
@@ -445,7 +474,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Recommended", val: "4–6 sessions" },
       { label: "Frequency", val: "Every 4–6 weeks" },
       { label: "Downtime", val: "2–4 days (redness/bronzing)" },
-      { label: "Performed by", val: "Dr. Ruxana" }
+      { label: "Performed by", val: "Medical Aesthetic Team" }
     ],
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
   },
@@ -453,7 +482,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     id: "phototherapy",
     title: "Light Rejuvenation",
     titleEmphasized: "Phototherapy.",
-    experienceNo: "Signature Experience No. 06",
+    experienceNo: "Signature Experience",
     description: "Medical-grade LED light therapy to heal acne, soothe inflammation, reduce redness, and charge skin cells.",
     heroRating: "4.9 · Rated by 150+ patients",
     heroImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
@@ -482,6 +511,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceDesc: "The Dermalux Tri-Wave MD is the global gold standard in LED phototherapy, delivering three clinically proven wavelengths simultaneously or individually at therapeutic power levels that home masks cannot match.",
     deviceFeatures: ["Simultaneous Tri-Wave technology", "High-power narrowband LEDs", "Pre-set clinical protocols", "Zero thermal damage"],
     deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Light Source", ours: "Narrowband medical-grade LEDs", standard: "Broadband low-power consumer LEDs" },
       { label: "Power Output", ours: "High intensity target dosage", standard: "Low battery home mask lights" },
@@ -532,7 +562,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     id: "excimer-laser",
     title: "Targeted UVB",
     titleEmphasized: "Excimer.",
-    experienceNo: "Signature Experience No. 07",
+    experienceNo: "Signature Experience",
     description: "Targeted monochromatic UVB light to treat vitiligo, psoriasis, and alopecia areata safely without exposing healthy skin.",
     heroRating: "4.8 · Rated by 120+ patients",
     heroImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
@@ -561,6 +591,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceDesc: "The 308nm Excimer laser represents a major advancement in the treatment of vitiligo and psoriasis. Its high-intensity spot handpiece allows high fluences to be delivered selectively to plaque or depigmented lesions, accelerating results.",
     deviceFeatures: ["Monochromatic 308nm wavelength", "Precise spot size adjustment", "High-fluence rapid treatment", "Minimal exposure to healthy skin"],
     deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Light Spectrum", ours: "Monochromatic 308nm UVB (targeted)", standard: "Broadband UV light chambers" },
       { label: "Healthy Skin Safety", ours: "No exposure to healthy surrounding tissue", standard: "Full-body exposure (UV damage risk)" },
@@ -610,7 +641,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     id: "laser-hair-reduction",
     title: "Smooth Skin",
     titleEmphasized: "Laser.",
-    experienceNo: "Signature Experience No. 08",
+    experienceNo: "Signature Experience",
     description: "Pain-free, medical-grade laser hair reduction for all skin and hair types using advanced triple-wavelength technology.",
     heroRating: "4.9 · Rated by 450+ patients",
     heroImage: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=800&auto=format&fit=crop",
@@ -639,6 +670,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceDesc: "The Soprano Titanium combines Alexandrite (755nm), Diode (810nm), and ND:YAG (1064nm) wavelengths in a single handpiece, targeting different hair depths while the ICE Plus™ cooling tip prevents surface burns and ensures absolute comfort.",
     deviceFeatures: ["Alexandrite, Diode & YAG wavelengths", "ICE Plus™ continuous cooling", "SHR™ in-motion technology", "Smart Clinic connectivity"],
     deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Wavelengths", ours: "Alexandrite (755nm) + Diode (810nm) + YAG (1064nm)", standard: "Single diode wavelength or IPL" },
       { label: "Pain Level", ours: "Completely pain-free sweeping motion", standard: "Painful, hot single-shot zaps" },
@@ -688,7 +720,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     id: "muscle-sculpting",
     title: "Body Definition",
     titleEmphasized: "Sculpting.",
-    experienceNo: "Signature Experience No. 09",
+    experienceNo: "Signature Experience",
     description: "High-intensity focused electromagnetic energy to tone muscles and reduce stubborn fat layers non-invasively.",
     heroRating: "4.8 · Rated by 160+ patients",
     heroImage: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
@@ -717,6 +749,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceDesc: "The HIFEM system penetrates deep into the subcutaneous tissue, inducing rapid muscle contractions. The metabolic reaction in the fat cells triggers lipolysis, causing fat cells to break down and flush out naturally over the following weeks.",
     deviceFeatures: ["HIFEM Technology", "Dual dual-paddle applicators", "Custom intensity programs", "Zero thermal energy"],
     deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Technology", ours: "High-Intensity Focused Electromagnetic (HIFEM)", standard: "Electrical Muscle Stimulation (EMS)" },
       { label: "Depth", ours: "Deep muscle penetration reaching structural cores", standard: "Superficial skin surface nerve twitching" },
@@ -767,7 +800,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     id: "exosomes-prp-gfc",
     title: "Bio-Regenerative",
     titleEmphasized: "PRP & GFC.",
-    experienceNo: "Signature Experience No. 10",
+    experienceNo: "Signature Experience",
     description: "Advanced cellular therapies and growth factor concentrate (GFC) to restore hair density and regenerate skin cells.",
     heroRating: "4.9 · Rated by 280+ patients",
     heroImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop",
@@ -796,6 +829,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceDesc: "We use advanced growth factor extraction kits that ensure plateletes are activated to release a high concentration of growth factors (GFC) in an acellular serum, minimizing inflammatory reactions and discomfort.",
     deviceFeatures: ["Medical centrifuge isolation", "Acellular growth factor concentrate", "Pure stem-cell derived exosomes", "Sterile lab prep"],
     deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Active Agent", ours: "Pure Acellular GFC & sterile exosomes", standard: "Basic PRP containing red/white blood cells" },
       { label: "Discomfort", ours: "Very low pain (no cell debris or acid activation)", standard: "Painful, inflammatory burning" },
@@ -838,7 +872,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Recommended", val: "3–4 sessions" },
       { label: "Frequency", val: "Every 4 weeks" },
       { label: "Downtime", val: "12–24 hours (swelling/bumps)" },
-      { label: "Performed by", val: "Dr. Ruxana" }
+      { label: "Performed by", val: "Medical Aesthetic Team" }
     ],
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
   }
