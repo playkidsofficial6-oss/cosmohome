@@ -58,7 +58,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Signature Experience No. 02",
     description: "Lift, tighten, and redefine your facial contours with High-Intensity Focused Ultrasound (HIFU). This advanced treatment stimulates your body's natural collagen production for firmer, smoother, and younger-looking skin—without surgery or downtime.",
     heroRating: "4.8 · Rated by 190+ patients",
-    heroImage: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop",
+    heroImage: "/services/hifu/1.webp",
     stats: [
       { n: "1–2", l: "Sessions recommended" },
       { n: "0", l: "Days downtime" },
