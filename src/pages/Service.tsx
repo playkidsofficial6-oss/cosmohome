@@ -137,9 +137,15 @@ export default function ServicePage() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}
               className="absolute bottom-6 right-6 p-5 rounded-2xl max-w-[220px]"
               style={{ background: "rgba(22,10,5,0.88)", backdropFilter: "blur(12px)", border: "1px solid rgba(201,149,106,0.25)" }}>
-              <p className="text-xs tracking-[0.18em] uppercase text-[#C9956A] mb-2" style={M}>👩‍⚕️ Performed by</p>
-              <p className="text-base text-[#FAF7F2]" style={{ ...D, fontStyle: "italic" }}>Dr. Ruxana</p>
-              <p className="text-xs text-[#FAF7F2]/65 mt-1" style={B}>MBBS · MRCS · Fellow BCAM</p>
+              <p className="text-xs tracking-[0.18em] uppercase text-[#C9956A] mb-2" style={M}>
+                {service.performedByLabel || "👩‍⚕️ Performed by"}
+              </p>
+              <p className="text-base text-[#FAF7F2]" style={{ ...D, fontStyle: "italic" }}>
+                {service.performedByName || "Doctor-Supervised Care"}
+              </p>
+              <p className="text-xs text-[#FAF7F2]/65 mt-1" style={B}>
+                {service.performedBySub || "Safe • Personalised • Professional"}
+              </p>
             </motion.div>
           </div>
         </section>
@@ -184,11 +190,15 @@ export default function ServicePage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/50 to-transparent" />
                   </div>
                   {/* Clinical note */}
-                  <motion.div whileHover={{ y: -3 }} className="absolute -bottom-5 -left-4 sm:-left-8 p-5 rounded-2xl max-w-[260px]"
-                    style={{ background: "#2C1810", boxShadow: "0 20px 60px rgba(44,24,16,0.25)" }}>
-                    <p className="text-xs tracking-[0.2em] uppercase text-[#C9956A] mb-1.5" style={M}>Clinical note</p>
-                    <p className="text-sm text-[#FAF7F2]/88 leading-relaxed" style={B}>{service.clinicalNote}</p>
-                  </motion.div>
+                  {service.clinicalNote && (
+                    <motion.div whileHover={{ y: -3 }} className="absolute -bottom-5 -left-4 sm:-left-8 p-5 rounded-2xl max-w-[260px]"
+                      style={{ background: "#2C1810", boxShadow: "0 20px 60px rgba(44,24,16,0.25)" }}>
+                      <p className="text-xs tracking-[0.2em] uppercase text-[#C9956A] mb-1.5" style={M}>
+                        {service.clinicalNoteLabel || "Clinical note"}
+                      </p>
+                      <p className="text-sm text-[#FAF7F2]/88 leading-relaxed" style={B}>{service.clinicalNote}</p>
+                    </motion.div>
+                  )}
                 </div>
               </FadeUp>
             </div>
@@ -205,7 +215,7 @@ export default function ServicePage() {
           <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-16 relative z-10">
             <div className="text-center mb-14">
               <FadeUp>
-                <Tag>🔬 The Technology</Tag>
+                <Tag>{service.technologyTag || "🔬 The Technology"}</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#FAF7F2] leading-[1.05] mt-3" style={D}>
                   {service.machineTitle}<br /><em>{service.machineEmphasized}</em>
                 </h2>
@@ -219,7 +229,7 @@ export default function ServicePage() {
                 <div className="relative rounded-3xl overflow-hidden h-full flex flex-col"
                   style={{ background: "linear-gradient(145deg, rgba(44,24,16,0.9), rgba(22,10,5,0.95))", border: "1px solid rgba(201,149,106,0.25)" }}>
                   <div className="absolute top-4 left-4 sm:top-5 sm:left-5 px-4 py-1.5 rounded-full text-xs text-[#C9956A] font-medium z-10" style={{ background: "rgba(22,10,5,0.85)", backdropFilter: "blur(8px)", border: "1px solid rgba(201,149,106,0.35)", ...M }}>
-                    ✅ Our Device
+                    {service.ourDeviceLabel || "✅ Our Technology"}
                   </div>
                   <div className="relative aspect-[16/9] overflow-hidden shrink-0">
                     <img src={service.deviceImage}
@@ -245,7 +255,9 @@ export default function ServicePage() {
               {/* Comparison table */}
               <FadeUp delay={0.12}>
                 <div className="flex flex-col gap-3 md:gap-4 mt-2 lg:mt-0">
-                  <p className="text-xs tracking-[0.2em] uppercase text-[#FAF7F2]/65 mb-1 md:mb-2" style={M}>COSMO HOME vs Standard Clinic</p>
+                  <p className="text-xs tracking-[0.2em] uppercase text-[#FAF7F2]/65 mb-1 md:mb-2" style={M}>
+                    {service.comparisonTitle || "COSMO HOME vs Conventional Treatment1"}
+                  </p>
                   {service.comparisonRows.map((row, i) => (
                     <motion.div key={row.label} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }} transition={{ delay: i * 0.07 }}
@@ -285,9 +297,9 @@ export default function ServicePage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-[380px_1fr] gap-6 lg:gap-20 items-start">
               <FadeUp>
-                <Tag>Is This For You?</Tag>
+                <Tag>{service.whoNeedsTag || "Is This For You?"}</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-5" style={D}>
-                  You need<br /><em>this if…</em>
+                  {service.whoNeedsTitle || "You need"}<br /><em>{service.whoNeedsTitleEmphasized || "this if…"}</em>
                 </h2>
                 <p className="text-base text-[#5C4A42] leading-loose mb-6" style={B}>
                   {service.whoNeedsDesc}
@@ -326,9 +338,9 @@ export default function ServicePage() {
           <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-16 relative z-10">
             <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-20 items-start">
               <FadeUp>
-                <Tag>Your Treatment Plan</Tag>
+                <Tag>{service.sessionPlanTag || "Your Treatment Plan"}</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#FAF7F2] leading-[1.05] mt-3 mb-6" style={D}>
-                  What happens<br /><em>in each session.</em>
+                  {service.sessionPlanTitle || "What happens"}<br /><em>{service.sessionPlanTitleEmphasized || "in each session."}</em>
                 </h2>
                 <p className="text-base text-[#FAF7F2]/88 leading-loose mb-8" style={B}>
                   {service.sessionPlanDesc}
@@ -345,7 +357,7 @@ export default function ServicePage() {
                           <span className="text-sm w-10 shrink-0" style={M}>{s.n}</span>
                           <div>
                             <p className="text-sm font-medium" style={B}>{s.label}</p>
-                            <p className="text-xs opacity-70 mt-0.5" style={B}>{s.duration}</p>
+                            {s.duration && <p className="text-xs opacity-70 mt-0.5" style={B}>{s.duration}</p>}
                           </div>
                         </div>
                         <motion.div animate={{ rotate: activeSession === i ? 90 : 0 }} className="lg:hidden shrink-0 transition-transform">
@@ -371,7 +383,7 @@ export default function ServicePage() {
                                 <span className="absolute -top-4 -right-2 text-[80px] font-bold leading-none select-none pointer-events-none"
                                   style={{ ...D, color: "rgba(201,149,106,0.06)" }}>{activeSession + 1}</span>
                                 <p className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] mb-2" style={M}>
-                                  Session {service.sessionPlanSteps[activeSession].n} · {service.sessionPlanSteps[activeSession].duration}
+                                  Session {service.sessionPlanSteps[activeSession].n}{service.sessionPlanSteps[activeSession].duration && ` · ${service.sessionPlanSteps[activeSession].duration}`}
                                 </p>
                                 <h3 className="text-xl text-[#FAF7F2] mb-3" style={{ ...D, fontStyle: "italic" }}>
                                   {service.sessionPlanSteps[activeSession].label}
@@ -400,7 +412,7 @@ export default function ServicePage() {
                       <span className="absolute -top-4 -right-2 text-[120px] font-bold leading-none select-none pointer-events-none"
                         style={{ ...D, color: "rgba(201,149,106,0.06)" }}>{activeSession + 1}</span>
                       <p className="text-xs tracking-[0.25em] uppercase text-[#C9956A] mb-3" style={M}>
-                        Session {service.sessionPlanSteps[activeSession].n} · {service.sessionPlanSteps[activeSession].duration}
+                        Session {service.sessionPlanSteps[activeSession].n}{service.sessionPlanSteps[activeSession].duration && ` · ${service.sessionPlanSteps[activeSession].duration}`}
                       </p>
                       <h3 className="text-2xl text-[#FAF7F2] mb-4" style={{ ...D, fontStyle: "italic" }}>
                         {service.sessionPlanSteps[activeSession].label}
@@ -434,9 +446,9 @@ export default function ServicePage() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-6 gap-6">
               <FadeUp>
-                <Tag>What to Expect</Tag>
+                <Tag>{service.timelineTag || "What to Expect"}</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
-                  Your skin, transformed<br /><em>step by step.</em>
+                  {service.timelineTitle || "Your skin, transformed"}<br /><em>{service.timelineTitleEmphasized || "step by step."}</em>
                 </h2>
               </FadeUp>
               <FadeUp delay={0.1}>
@@ -513,29 +525,25 @@ export default function ServicePage() {
                   {service.ctaTitle2 ? <>{service.ctaTitle2}<br /></> : null}
                   <em>{service.ctaEmphasized}</em>
                 </h2>
-                <p className="text-base text-[#FAF7F2]/82 leading-loose mb-10 max-w-lg" style={B}>
-                  {service.ctaDesc}
-                </p>
-
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <motion.a href="/book-consultation"
+                  <motion.a href={service.ctaButtonLink || "/book-consultation"}
                     whileHover={{ scale: 1.05, boxShadow: "0 0 48px rgba(201,149,106,0.6)" }}
                     whileTap={{ scale: 0.97 }}
                     className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#C9956A] text-[#FAF7F2] text-sm tracking-[0.2em] uppercase rounded-2xl shadow-2xl shadow-[#C9956A]/35 font-medium group" style={B}>
-                    Book My Consultation
+                    {service.ctaButtonText || "Book My Consultation"}
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </motion.a>
-                  <motion.a href="https://api.whatsapp.com/send?phone=919946336480" target="_blank" rel="noopener noreferrer"
+                  <motion.a href={service.ctaSecondaryButtonLink || "https://api.whatsapp.com/send?phone=919946336480"} target="_blank" rel="noopener noreferrer"
                     whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
                     className="inline-flex items-center justify-center gap-3 px-9 py-5 border-2 border-[#FAF7F2]/20 text-[#FAF7F2] text-sm tracking-[0.18em] uppercase rounded-2xl hover:border-[#C9956A] hover:text-[#C9956A] transition-all font-medium" style={B}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d={WA_PATH} /></svg>
-                    Ask Dr. Ruxana
+                    {service.ctaSecondaryButtonText || "Ask Dr. Ruxana"}
                   </motion.a>
                 </div>
 
                 {/* Trust signals */}
                 <div className="flex flex-wrap gap-6">
-                  {["👩‍⚕️ Doctor-led only", "⏱️ Zero downtime", "🔒 Full confidentiality"].map(t => (
+                  {(service.ctaTrustSignals || ["👩‍⚕️ Doctor Supervised", "⏱️ Minimal Downtime", "🔒 Private Consultation"]).map(t => (
                     <p key={t} className="text-sm text-[#FAF7F2]/65" style={B}>{t}</p>
                   ))}
                 </div>
@@ -572,7 +580,7 @@ export default function ServicePage() {
                           <DarkInputField label="First name" placeholder="First name" />
                           <DarkInputField label="Last name" placeholder="Last name" />
                         </div>
-                        
+
                         <DarkInputField label="Phone" type="tel" placeholder="+91 98765 43210" />
 
                         {/* Custom Dropdown */}
@@ -616,18 +624,16 @@ export default function ServicePage() {
                                       setSelected(opt === "I am not sure yet" ? "" : opt);
                                       setDropOpen(false);
                                     }}
-                                    className={`px-4 py-2.5 text-xs cursor-pointer transition-all duration-200 flex items-center gap-2.5 ${
-                                      selected === opt || (!selected && opt === "I am not sure yet")
-                                        ? "bg-[#C9956A]/20 text-[#C9956A]"
-                                        : "text-[#FAF7F2] hover:bg-[#FAF7F2]/5 hover:text-[#C9956A]"
-                                    }`}
+                                    className={`px-4 py-2.5 text-xs cursor-pointer transition-all duration-200 flex items-center gap-2.5 ${selected === opt || (!selected && opt === "I am not sure yet")
+                                      ? "bg-[#C9956A]/20 text-[#C9956A]"
+                                      : "text-[#FAF7F2] hover:bg-[#FAF7F2]/5 hover:text-[#C9956A]"
+                                      }`}
                                     style={B}
                                   >
-                                    <span className={`w-1 h-1 rounded-full shrink-0 transition-colors ${
-                                      selected === opt || (!selected && opt === "I am not sure yet")
-                                        ? "bg-[#C9956A]"
-                                        : "bg-[#FAF7F2]/15"
-                                    }`} />
+                                    <span className={`w-1 h-1 rounded-full shrink-0 transition-colors ${selected === opt || (!selected && opt === "I am not sure yet")
+                                      ? "bg-[#C9956A]"
+                                      : "bg-[#FAF7F2]/15"
+                                      }`} />
                                     {opt}
                                   </li>
                                 ))}
@@ -666,7 +672,7 @@ export default function ServicePage() {
                           Send My Request
                           <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                         </motion.button>
-                        
+
                         <p className="text-[10px] text-[#FAF7F2]/50 text-center" style={B}>
                           Dr. Ruxana personally reviews every request. 💛
                         </p>
