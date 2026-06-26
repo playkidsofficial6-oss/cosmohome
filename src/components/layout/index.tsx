@@ -9,35 +9,35 @@ import { D, M, B, GOLD, EASE, WA_PATH } from "../../lib/constants";
 const MEGA_MENU_CONTENT = {
   Face: {
     icon: Smile,
-    treatments: ["Botox", "Fillers", "Thread Lift", "Lip Enhancement", "Jawline Contouring", "Full Face Rejuvenation"],
+    treatments: ["HIFU", "Hydrafacial / Medifacial", "Mesopeels / Carbon Peel"],
     viewAll: "VIEW ALL FACE TREATMENTS",
     image: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop",
     desc: "Natural facial enhancement, designed around balance."
   },
   Skin: {
     icon: Sparkles,
-    treatments: ["Chemical Peels", "Microneedling", "Laser Resurfacing", "Acne Treatment", "Pigmentation", "Skin Tightening"],
+    treatments: ["Laser Pigment Reduction", "Laser Scar Reduction", "Phototherapy", "Excimer Laser"],
     viewAll: "VIEW ALL SKIN TREATMENTS",
     image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
     desc: "Rejuvenate and restore your natural glow."
   },
   Hair: {
     icon: Wind,
-    treatments: ["PRP Therapy", "Hair Transplant", "Scalp Micropigmentation", "Hair Loss Treatment", "Laser Hair Therapy"],
+    treatments: ["Laser Hair Reduction"],
     viewAll: "VIEW ALL HAIR TREATMENTS",
     image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=800&auto=format&fit=crop",
     desc: "Advanced solutions for hair restoration and health."
   },
   Body: {
     icon: User,
-    treatments: ["CoolSculpting", "Laser Hair Removal", "Body Contouring", "Cellulite Treatment", "Skin Tightening", "Fat Dissolving"],
+    treatments: ["Muscle Sculpting"],
     viewAll: "VIEW ALL BODY TREATMENTS",
     image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
     desc: "Sculpt and define your body with precision."
   },
   Injectables: {
     icon: Syringe,
-    treatments: ["Dermal Fillers", "Anti-Wrinkle Injections", "Profhilo", "Skin Boosters", "Fat Dissolving Injections"],
+    treatments: ["Exosomes / PRP / GFC"],
     viewAll: "VIEW ALL INJECTABLES",
     image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop",
     desc: "Targeted treatments for a refreshed appearance."
