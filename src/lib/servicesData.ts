@@ -55,7 +55,7 @@ export interface ServiceData {
   timelineTitle?: string;
   timelineTitleEmphasized?: string;
   timelineDesc: string;
-  timelineItems: Array<{ when: string; what: string }>;
+  timelineItems: Array<{ when: string; what: string; icon?: string }>;
 
   // Section 7: Final CTA
   ctaRating: string;
@@ -70,6 +70,18 @@ export interface ServiceData {
   ctaSecondaryButtonLink?: string;
   ctaTrustSignals?: string[];
   ctaImage: string;
+
+  // Custom Labels & Form overrides
+  standardClinicLabel?: string;
+  notSuitableLabel?: string;
+  ctaFormTitle?: string;
+  ctaFormDropdownLabel?: string;
+  ctaFormMessageLabel?: string;
+  ctaFormMessagePlaceholder?: string;
+  ctaFormButtonText?: string;
+  ctaFormFooter?: string;
+  ctaFormSuccessTitle?: string;
+  ctaFormSuccessDesc?: string;
 }
 
 export const SERVICES_DATA: Record<string, ServiceData> = {
@@ -81,6 +93,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     description: "Lift, tighten, and redefine your facial contours with High-Intensity Focused Ultrasound (HIFU). This advanced treatment stimulates your body's natural collagen production for firmer, smoother, and younger-looking skin—without surgery or downtime.",
     heroRating: "4.8 · Rated by 190+ patients",
     heroImage: "/services/hifu/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Doctor-Supervised Care",
+    performedBySub: "Safe • Personalised • Professional",
     stats: [
       { n: "1–2", l: "Sessions recommended" },
       { n: "0", l: "Days downtime" },
@@ -94,9 +109,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     whatIsThisDesc2: "With advanced ultrasound technology, every treatment is carefully customised to your facial anatomy and aesthetic goals, creating subtle, natural-looking rejuvenation without needles, incisions, or recovery time.",
     benefits: [
       { icon: "🧬", b: "Deep Collagen Activation", d: "Stimulates collagen where structural support begins." },
-      { icon: "🩺", b: "Tightens & Lifts Over Time", d: "Gradual improvement with beautifully natural results." },
-      { icon: "⚡", b: "No Surgery or Downtime", d: "Return to normal activities immediately." },
-      { icon: "🔄", b: "Safe & Clinically Proven", d: "A non-invasive treatment trusted worldwide." }
+      { icon: "📈", b: "Tightens & Lifts Over Time", d: "Gradual improvement with beautifully natural results." },
+      { icon: "✂️", b: "No Surgery or Downtime", d: "Return to normal activities immediately." },
+      { icon: "🛡️", b: "Safe & Clinically Proven", d: "A non-invasive treatment trusted worldwide." }
     ],
     clinicalNote: "Treatment parameters are carefully customised to your skin condition, facial anatomy, and aesthetic goals for precise, natural-looking results.",
     sideImage: "/services/hifu/2.webp",
@@ -162,6 +177,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     description: "Reveal cleaner, smoother, and deeply hydrated skin with our medical-grade Hydrafacial treatment. Designed to cleanse, exfoliate, extract impurities, and nourish the skin, it restores lasting radiance with no downtime.",
     heroRating: "4.9 · Rated by 380+ patients",
     heroImage: "/services/hydrafacial-medifacial/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Medical Aesthetic Team",
+    performedBySub: "Safe • Personalised • Professional",
     stats: [
       { n: "1", l: "Session shows visible glow" },
       { n: "0", l: "Days downtime" },
@@ -174,10 +192,10 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     whatIsThisDesc1: "Hydrafacial is a medical-grade skin rejuvenation treatment that goes beyond traditional facials. Using advanced vortex technology, it deeply cleanses, gently exfoliates, removes impurities, and infuses the skin with nourishing serums—all in one relaxing treatment.",
     whatIsThisDesc2: "Unlike conventional facials, every Hydrafacial is customised to your skin's unique needs, helping improve hydration, skin texture, clarity, and overall radiance without discomfort or downtime.",
     benefits: [
-      { icon: "🧬", b: "Deep Cleansing", d: "Removes excess oil, debris, and impurities from congested pores." },
-      { icon: "🩺", b: "Intense Hydration", d: "Infuses antioxidant-rich serums for healthier, smoother skin." },
-      { icon: "⚡", b: "Instant Glow", d: "Leaves the skin visibly refreshed, brighter, and more radiant." },
-      { icon: "🔄", b: "Suitable for All Skin Types", d: "Gentle, non-invasive treatment with no downtime." }
+      { icon: "🧼", b: "Deep Cleansing", d: "Removes excess oil, debris, and impurities from congested pores." },
+      { icon: "💧", b: "Intense Hydration", d: "Infuses antioxidant-rich serums for healthier, smoother skin." },
+      { icon: "✨", b: "Instant Glow", d: "Leaves the skin visibly refreshed, brighter, and more radiant." },
+      { icon: "🌿", b: "Suitable for All Skin Types", d: "Gentle, non-invasive treatment with no downtime." }
     ],
     clinicalNote: "Every Hydrafacial treatment is customised according to your skin type, concerns, and hydration needs, ensuring safe, comfortable, and naturally radiant results.",
     sideImage: "/services/hydrafacial-medifacial/2.webp",
@@ -245,6 +263,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     description: "Medical-grade organic acid peeling and advanced carbon laser therapy to refine pores, clear congestion, and polish skin.",
     heroRating: "4.9 · Rated by 310+ patients",
     heroImage: "public/services/hifu/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Dermatologist Supervised",
+    performedBySub: "Safe • Personalised • Professional",
     stats: [
       { n: "4–6", l: "Sessions recommended" },
       { n: "0–2", l: "Days downtime" },
@@ -325,6 +346,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     description: "Targeted laser energy to fracture dark spots, melasma, and sun damage safely, revealing even-toned luminosity.",
     heroRating: "4.8 · Rated by 220+ patients",
     heroImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Dermatologist Supervised",
+    performedBySub: "Safe • Personalised • Professional",
     stats: [
       { n: "3–6", l: "Sessions recommended" },
       { n: "1–3", l: "Days micro-flaking" },
@@ -405,6 +429,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     description: "Fractional laser resurfacing to smooth acne scars, surgical scars, and skin texture, inducing healthy dermal remodeling.",
     heroRating: "4.9 · Rated by 180+ patients",
     heroImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Medical Aesthetic Team",
+    performedBySub: "Safe • Personalised • Professional",
     stats: [
       { n: "4–6", l: "Sessions recommended" },
       { n: "2–4", l: "Days recovery redness" },
@@ -486,6 +513,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     description: "Medical-grade LED light therapy to heal acne, soothe inflammation, reduce redness, and charge skin cells.",
     heroRating: "4.9 · Rated by 150+ patients",
     heroImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Aesthetic Therapist",
+    performedBySub: "Safe • Personalised • Professional",
     stats: [
       { n: "6–10", l: "Sessions recommended" },
       { n: "0", l: "Days downtime" },
@@ -566,6 +596,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     description: "Targeted monochromatic UVB light to treat vitiligo, psoriasis, and alopecia areata safely without exposing healthy skin.",
     heroRating: "4.8 · Rated by 120+ patients",
     heroImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Dermatologist Supervised",
+    performedBySub: "Safe • Personalised • Professional",
     stats: [
       { n: "10–20", l: "Sessions recommended" },
       { n: "0", l: "Days downtime" },
@@ -645,6 +678,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     description: "Pain-free, medical-grade laser hair reduction for all skin and hair types using advanced triple-wavelength technology.",
     heroRating: "4.9 · Rated by 450+ patients",
     heroImage: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=800&auto=format&fit=crop",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Aesthetic Therapist",
+    performedBySub: "Safe • Personalised • Professional",
     stats: [
       { n: "6–8", l: "Sessions recommended" },
       { n: "0", l: "Days downtime" },
@@ -724,6 +760,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     description: "High-intensity focused electromagnetic energy to tone muscles and reduce stubborn fat layers non-invasively.",
     heroRating: "4.8 · Rated by 160+ patients",
     heroImage: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Aesthetic Therapist",
+    performedBySub: "Safe • Personalised • Professional",
     stats: [
       { n: "4–6", l: "Sessions recommended" },
       { n: "0", l: "Days downtime" },
@@ -804,6 +843,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     description: "Advanced cellular therapies and growth factor concentrate (GFC) to restore hair density and regenerate skin cells.",
     heroRating: "4.9 · Rated by 280+ patients",
     heroImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Medical Aesthetic Team",
+    performedBySub: "Safe • Personalised • Professional",
     stats: [
       { n: "3–4", l: "Sessions recommended" },
       { n: "12-24h", l: "Minor swelling" },
