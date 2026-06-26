@@ -149,7 +149,7 @@ export default function ServicePage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-20 items-center">
               <FadeUp>
-                <Tag>What Is This?</Tag>
+                <Tag>{service.whatIsThisTag || "What Is This?"}</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-6" style={D}>
                   {service.whatIsThisTitle}<br /><em>{service.whatIsThisEmphasized}</em>
                 </h2>

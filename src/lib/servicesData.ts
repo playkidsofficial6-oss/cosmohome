@@ -9,6 +9,7 @@ export interface ServiceData {
   stats: Array<{ n: string; l: string }>;
 
   // Section 2: What is this
+  whatIsThisTag?: string;
   whatIsThisTitle: string;
   whatIsThisEmphasized: string;
   whatIsThisDesc1: string;
@@ -65,6 +66,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { n: "3-6m", l: "Months Progressive Results" },
       { n: "100%", l: "Non-Surgical" }
     ],
+    whatIsThisTag: "What Is HIFU?",
     whatIsThisTitle: "This is not",
     whatIsThisEmphasized: "a superficial lift.",
     whatIsThisDesc1: "HIFU (High-Intensity Focused Ultrasound) targets the <strong>SMAS layer</strong>—the deep muscle-wrapping tissue that surgeons pull during a traditional facelift. By delivering focused energy, it triggers micro-thermal changes beneath the skin.",
