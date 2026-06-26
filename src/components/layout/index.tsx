@@ -9,40 +9,48 @@ import { D, M, B, GOLD, EASE, WA_PATH } from "../../lib/constants";
 const MEGA_MENU_CONTENT = {
   Face: {
     icon: Smile,
-    treatments: ["Botox", "Fillers", "Thread Lift", "Lip Enhancement", "Jawline Contouring", "Full Face Rejuvenation"],
+    treatments: ["HIFU", "Hydrafacial / Medifacial", "Mesopeels / Carbon Peel"],
     viewAll: "VIEW ALL FACE TREATMENTS",
     image: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop",
     desc: "Natural facial enhancement, designed around balance."
   },
   Skin: {
     icon: Sparkles,
-    treatments: ["Chemical Peels", "Microneedling", "Laser Resurfacing", "Acne Treatment", "Pigmentation", "Skin Tightening"],
+    treatments: ["Laser Pigment Reduction", "Laser Scar Reduction", "Phototherapy", "Excimer Laser"],
     viewAll: "VIEW ALL SKIN TREATMENTS",
     image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
     desc: "Rejuvenate and restore your natural glow."
   },
   Hair: {
     icon: Wind,
-    treatments: ["PRP Therapy", "Hair Transplant", "Scalp Micropigmentation", "Hair Loss Treatment", "Laser Hair Therapy"],
+    treatments: ["Laser Hair Reduction"],
     viewAll: "VIEW ALL HAIR TREATMENTS",
     image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=800&auto=format&fit=crop",
     desc: "Advanced solutions for hair restoration and health."
   },
   Body: {
     icon: User,
-    treatments: ["CoolSculpting", "Laser Hair Removal", "Body Contouring", "Cellulite Treatment", "Skin Tightening", "Fat Dissolving"],
+    treatments: ["Muscle Sculpting"],
     viewAll: "VIEW ALL BODY TREATMENTS",
     image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
     desc: "Sculpt and define your body with precision."
   },
   Injectables: {
     icon: Syringe,
-    treatments: ["Dermal Fillers", "Anti-Wrinkle Injections", "Profhilo", "Skin Boosters", "Fat Dissolving Injections"],
+    treatments: ["Exosomes / PRP / GFC"],
     viewAll: "VIEW ALL INJECTABLES",
     image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop",
     desc: "Targeted treatments for a refreshed appearance."
   }
 };
+
+const getTreatmentSlug = (name: string) => {
+  return name.toLowerCase()
+    .replace(/\s*\/\s*/g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+};
+
 
 export function Nav({ ready }: { ready: boolean }) {
   const [open, setOpen] = useState(false);
@@ -50,7 +58,13 @@ export function Nav({ ready }: { ready: boolean }) {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<keyof typeof MEGA_MENU_CONTENT>("Face");
   const [mobileExpanded, setMobileExpanded] = useState<Record<string, boolean>>({});
+  const [mobileCategoryExpanded, setMobileCategoryExpanded] = useState<Record<string, boolean>>({});
   const timeoutRef = useRef<null | number>(null);
+
+  const toggleMobileCategoryExpanded = (cat: string) => {
+    setMobileCategoryExpanded(prev => ({ ...prev, [cat]: !prev[cat] }));
+  };
+
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -171,12 +185,31 @@ export function Nav({ ready }: { ready: boolean }) {
                     <h3 style={B} className="text-[11px] font-medium tracking-[0.2em] uppercase text-[#C9956A] mb-7">{activeCategory}</h3>
                     <div className="flex flex-col gap-5 flex-1">
                       {MEGA_MENU_CONTENT[activeCategory].treatments.map((treatment) => (
-                        <a href="#" key={treatment} style={B} className="text-[14px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors">
+                        <a
+                          href={`/service/${getTreatmentSlug(treatment)}`}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setActiveMenu(null);
+                            navigate(`/service/${getTreatmentSlug(treatment)}`);
+                          }}
+                          key={treatment}
+                          style={B}
+                          className="text-[14px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors"
+                        >
                           {treatment}
                         </a>
                       ))}
                     </div>
-                    <a href="#" style={B} className="text-[10px] tracking-[0.15em] uppercase text-[#8A6D5C] font-semibold hover:text-[#2C1810] transition-colors flex items-center gap-2 mt-6 group">
+                    <a
+                      href={`/service/${getTreatmentSlug(MEGA_MENU_CONTENT[activeCategory].treatments[0])}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActiveMenu(null);
+                        navigate(`/service/${getTreatmentSlug(MEGA_MENU_CONTENT[activeCategory].treatments[0])}`);
+                      }}
+                      style={B}
+                      className="text-[10px] tracking-[0.15em] uppercase text-[#8A6D5C] font-semibold hover:text-[#2C1810] transition-colors flex items-center gap-2 mt-6 group"
+                    >
                       {MEGA_MENU_CONTENT[activeCategory].viewAll}
                       <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                     </a>
@@ -276,10 +309,42 @@ export function Nav({ ready }: { ready: boolean }) {
                         >
                           <div className="pl-12 pb-4 flex flex-col gap-4 mt-2">
                             {l.label === "Treatments" && Object.keys(MEGA_MENU_CONTENT).map(cat => (
-                              <button key={cat} onClick={() => { setOpen(false); navigate("/service"); }} className="text-left text-[14px] text-[#E8E1D7] py-1 flex items-center justify-between hover:text-[#C9956A] transition-colors" style={B}>
-                                {cat}
-                                <ChevronRight size={14} className="text-[#C9956A]/30 mr-2" />
-                              </button>
+                              <div key={cat} className="flex flex-col gap-2 pl-4 border-l border-[#FAF7F2]/10 mt-1">
+                                <button
+                                  onClick={() => toggleMobileCategoryExpanded(cat)}
+                                  className="text-left text-[14px] text-[#FAF7F2] py-2 flex items-center justify-between hover:text-[#C9956A] transition-colors"
+                                  style={B}
+                                >
+                                  <span className="flex items-center gap-3">
+                                    {cat}
+                                  </span>
+                                  {mobileCategoryExpanded[cat] ? <Minus size={14} className="text-[#C9956A] mr-2" /> : <Plus size={14} className="text-[#C9956A] mr-2" />}
+                                </button>
+                                <AnimatePresence initial={false}>
+                                  {mobileCategoryExpanded[cat] && (
+                                    <motion.div
+                                      initial={{ height: 0, opacity: 0 }}
+                                      animate={{ height: "auto", opacity: 1 }}
+                                      exit={{ height: 0, opacity: 0 }}
+                                      className="overflow-hidden pl-4 flex flex-col gap-2.5 pb-2"
+                                    >
+                                      {MEGA_MENU_CONTENT[cat as keyof typeof MEGA_MENU_CONTENT].treatments.map(treatment => (
+                                        <button
+                                          key={treatment}
+                                          onClick={() => {
+                                            setOpen(false);
+                                            navigate(`/service/${getTreatmentSlug(treatment)}`);
+                                          }}
+                                          className="text-left text-[13px] text-[#E8E1D7]/80 hover:text-[#C9956A] transition-colors py-1"
+                                          style={B}
+                                        >
+                                          • {treatment}
+                                        </button>
+                                      ))}
+                                    </motion.div>
+                                  )}
+                                </AnimatePresence>
+                              </div>
                             ))}
                             {l.label === "Journal" && (
                               <>
