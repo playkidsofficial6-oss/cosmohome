@@ -218,7 +218,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Signature Experience No. 03",
     description: "Medical-grade organic acid peeling and advanced carbon laser therapy to refine pores, clear congestion, and polish skin.",
     heroRating: "4.9 · Rated by 310+ patients",
-    heroImage: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop",
+    heroImage: "public/services/hifu/1.webp",
     stats: [
       { n: "4–6", l: "Sessions recommended" },
       { n: "0–2", l: "Days downtime" },

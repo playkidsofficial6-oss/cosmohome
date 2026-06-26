@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Menu, X, Instagram, Facebook, Youtube, Home, MessageCircle, ClipboardList, Sparkles, Heart, Award, Shield, AlertTriangle, CheckCircle, XCircle, Phone, BadgeCheck, Stethoscope, GraduationCap, Users, ChevronRight, Plus, Minus, Syringe, User, Droplet, Wind, Smile } from "lucide-react";
+import { ArrowRight, Menu, X, Instagram, Facebook, Youtube, Home, MessageCircle, ClipboardList, Sparkles, Heart, Award, Shield, AlertTriangle, CheckCircle, XCircle, Phone, BadgeCheck, Stethoscope, GraduationCap, Users, ChevronRight, Plus, Minus, Syringe, User, Droplet, Wind, Smile, Accessibility } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, WA_PATH } from "../../lib/constants";
 
@@ -29,7 +29,7 @@ const MEGA_MENU_CONTENT = {
     desc: "Advanced solutions for hair restoration and health."
   },
   Body: {
-    icon: User,
+    icon: Accessibility,
     treatments: ["Muscle Sculpting"],
     viewAll: "VIEW ALL BODY TREATMENTS",
     image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
