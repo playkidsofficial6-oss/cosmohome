@@ -7,7 +7,7 @@ export interface ServiceData {
   heroRating: string;
   heroImage: string;
   stats: Array<{ n: string; l: string }>;
-  
+
   // Section 2: What is this
   whatIsThisTitle: string;
   whatIsThisEmphasized: string;
@@ -16,7 +16,7 @@ export interface ServiceData {
   benefits: Array<{ icon: string; b: string; d: string }>;
   clinicalNote: string;
   sideImage: string;
-  
+
   // Section 3: Machine / Technology
   machineTitle: string;
   machineEmphasized: string;
@@ -26,20 +26,20 @@ export interface ServiceData {
   deviceFeatures: string[];
   deviceImage: string;
   comparisonRows: Array<{ label: string; ours: string; standard: string }>;
-  
+
   // Section 4: Who needs this
   whoNeedsDesc: string;
   notSuitable: string;
   whoNeedsItems: Array<{ tag: string; desc: string }>;
-  
+
   // Section 5: Session plan
   sessionPlanDesc: string;
   sessionPlanSteps: Array<{ n: string; label: string; duration: string; detail: string }>;
-  
+
   // Section 6: Results timeline
   timelineDesc: string;
   timelineItems: Array<{ when: string; what: string }>;
-  
+
   // Section 7: Final CTA
   ctaRating: string;
   ctaTitle: string;
@@ -56,14 +56,14 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     title: "Non-Surgical Lift",
     titleEmphasized: "HIFU.",
     experienceNo: "Signature Experience No. 02",
-    description: "High-intensity focused ultrasound designed by Dr. Ruxana to lift sagging tissue and stimulate deep structural collagen.",
+    description: "Lift, tighten, and redefine your facial contours with High-Intensity Focused Ultrasound (HIFU). This advanced treatment stimulates your body's natural collagen production for firmer, smoother, and younger-looking skin—without surgery or downtime.",
     heroRating: "4.8 · Rated by 190+ patients",
     heroImage: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop",
     stats: [
       { n: "1–2", l: "Sessions recommended" },
       { n: "0", l: "Days downtime" },
-      { n: "3-6m", l: "Peak results visible" },
-      { n: "100%", l: "Doctor performed" }
+      { n: "3-6m", l: "Months Progressive Results" },
+      { n: "100%", l: "Non-Surgical" }
     ],
     whatIsThisTitle: "This is not",
     whatIsThisEmphasized: "a superficial lift.",
