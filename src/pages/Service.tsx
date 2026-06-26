@@ -160,7 +160,7 @@ export default function ServicePage() {
                   {service.whatIsThisTitle}<br /><em>{service.whatIsThisEmphasized}</em>
                 </h2>
                 <p className="text-base text-[#2C1810] leading-loose mb-4" style={B} dangerouslySetInnerHTML={{ __html: service.whatIsThisDesc1 }} />
-                <p className="text-base text-[#5C4A42] leading-loose mb-8" style={B} dangerouslySetInnerHTML={{ __html: service.whatIsThisDesc2 }} />
+                <p className="text-base text-[#2C1810] leading-loose mb-8" style={B} dangerouslySetInnerHTML={{ __html: service.whatIsThisDesc2 }} />
 
                 {/* Benefit grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
@@ -279,7 +279,9 @@ export default function ServicePage() {
                         <div className="flex gap-3 md:gap-2 items-start">
                           <span className="text-base md:text-sm shrink-0 mt-0.5 md:mt-0">⚠️</span>
                           <div>
-                            <span className="text-[10px] uppercase tracking-wider text-[#FAF7F2]/40 md:hidden block mb-0.5" style={M}>Standard Clinic</span>
+                            <span className="text-[10px] uppercase tracking-wider text-[#FAF7F2]/40 md:hidden block mb-0.5" style={M}>
+                              {service.standardClinicLabel || "Standard Clinic"}
+                            </span>
                             <p className="text-sm md:text-xs text-[#FAF7F2]/50 leading-relaxed" style={B}>{row.standard}</p>
                           </div>
                         </div>
@@ -307,7 +309,9 @@ export default function ServicePage() {
                 {/* Contraindication */}
                 <div className="p-5 rounded-2xl border-l-4 border-[#C9956A] mb-8"
                   style={{ background: "rgba(201,149,106,0.07)" }}>
-                  <p className="text-xs tracking-[0.2em] uppercase text-[#C9956A] mb-2" style={M}>⚠️ Not suitable if</p>
+                  <p className="text-xs tracking-[0.2em] uppercase text-[#C9956A] mb-2" style={M}>
+                    {service.notSuitableLabel || "⚠️ Not suitable if"}
+                  </p>
                   <p className="text-sm text-[#5C4A42] leading-relaxed" style={B}>
                     {service.notSuitable}
                   </p>
@@ -466,7 +470,7 @@ export default function ServicePage() {
                     transition={{ type: "spring", stiffness: 240 }}
                     className={`relative p-5 rounded-2xl flex flex-col ${i % 2 === 1 ? "mt-8" : ""}`}
                     style={{ background: "#FFFFFF", border: "1px solid rgba(201,149,106,0.2)", boxShadow: "0 4px 20px rgba(44,24,16,0.05)" }}>
-                    <span className="text-2xl mb-3">{["✨", "🌱", "🌿", "🌸", "🏆"][i]}</span>
+                    <span className="text-2xl mb-3">{t.icon || ["✨", "🌱", "🌿", "🌸", "🏆"][i]}</span>
                     <p className="text-xs tracking-[0.22em] uppercase text-[#C9956A] mb-2" style={M}>{t.when}</p>
                     <p className="text-sm text-[#2C1810] leading-relaxed flex-1" style={B}>{t.what}</p>
                     {/* Fill bar */}
@@ -488,7 +492,7 @@ export default function ServicePage() {
                 <FadeUp key={t.when} delay={i * 0.08}>
                   <div className="relative mb-8 last:mb-0">
                     <div className="absolute -left-9 top-1 w-5 h-5 rounded-full border-2 border-[#C9956A] bg-[#FAF7F2] flex items-center justify-center text-[10px]">
-                      {["✨", "🌱", "🌿", "🌸", "🏆"][i]}
+                      {t.icon || ["✨", "🌱", "🌿", "🌸", "🏆"][i]}
                     </div>
                     <p className="text-xs tracking-[0.22em] uppercase text-[#C9956A] mb-1" style={M}>{t.when}</p>
                     <p className="text-base text-[#2C1810] leading-loose" style={B}>{t.what}</p>
@@ -573,7 +577,7 @@ export default function ServicePage() {
                         className="flex flex-col gap-5"
                       >
                         <p className="text-lg text-[#FAF7F2] mb-1 text-left" style={{ ...D, fontStyle: "italic" }}>
-                          Begin your story. 🌸
+                          {service.ctaFormTitle || "Begin your story. 🌸"}
                         </p>
 
                         <div className="grid grid-cols-2 gap-4">
@@ -586,7 +590,7 @@ export default function ServicePage() {
                         {/* Custom Dropdown */}
                         <div ref={dropRef} className="flex flex-col gap-1.5 relative text-left">
                           <label className="text-[10px] tracking-[0.25em] uppercase text-[#FAF7F2]/50" style={M}>
-                            Experience of interest
+                            {service.ctaFormDropdownLabel || "Experience of interest"}
                           </label>
                           <button
                             type="button"
@@ -645,12 +649,12 @@ export default function ServicePage() {
                         {/* Textarea */}
                         <div className="flex flex-col gap-1.5 text-left">
                           <label className="text-[10px] tracking-[0.25em] uppercase text-[#FAF7F2]/50" style={M}>
-                            Tell us a little
+                            {service.ctaFormMessageLabel || "Tell us a little"}
                           </label>
                           <div className={`transition-all duration-300 ${focusedInput === "msg" ? "shadow-[0_0_0_2px_rgba(201,149,106,0.35)] rounded-md" : ""}`}>
                             <textarea
                               rows={2}
-                              placeholder="What matters most to you right now?"
+                              placeholder={service.ctaFormMessagePlaceholder || "What matters most to you right now?"}
                               style={{
                                 borderBottomColor: focusedInput === "msg" ? GOLD : "rgba(255,255,255,0.1)",
                                 ...B
@@ -669,12 +673,12 @@ export default function ServicePage() {
                           whileTap={{ scale: 0.98 }}
                           className="mt-2 group flex items-center justify-between px-6 py-3.5 bg-[#FAF7F2] text-[#160A05] text-[10px] font-semibold tracking-[0.22em] uppercase transition-all duration-300 shadow-md cursor-pointer rounded-xl"
                         >
-                          Send My Request
+                          {service.ctaFormButtonText || "Send My Request"}
                           <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                         </motion.button>
 
                         <p className="text-[10px] text-[#FAF7F2]/50 text-center" style={B}>
-                          Dr. Ruxana personally reviews every request. 💛
+                          {service.ctaFormFooter || "Dr. Ruxana personally reviews every request. 💛"}
                         </p>
                       </motion.form>
                     ) : (
@@ -696,9 +700,11 @@ export default function ServicePage() {
                           </svg>
                         </motion.div>
                         <p className="text-3xl mb-3">🌸</p>
-                        <p className="text-xl text-[#FAF7F2] mb-3" style={{ ...D, fontStyle: "italic" }}>Thank you.</p>
+                        <p className="text-xl text-[#FAF7F2] mb-3" style={{ ...D, fontStyle: "italic" }}>
+                          {service.ctaFormSuccessTitle || "Thank you."}
+                        </p>
                         <p className="text-xs text-[#FAF7F2]/70 leading-loose max-w-[250px]" style={B}>
-                          Dr. Ruxana will personally review your request and be in touch within 24 hours. Your journey begins now.
+                          {service.ctaFormSuccessDesc || "Dr. Ruxana will personally review your request and be in touch within 24 hours. Your journey begins now."}
                         </p>
                       </motion.div>
                     )}

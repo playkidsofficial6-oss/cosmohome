@@ -138,7 +138,7 @@ export function Nav({ ready }: { ready: boolean }) {
 
           <div className="hidden lg:flex z-10">
             <motion.a href="/book-consultation" style={B} whileHover={{ scale: 1.02 }}
-              className={`text-[11px] font-semibold tracking-[0.15em] border border-[#C9956A] rounded-[4px] uppercase px-6 py-2.5 hover:bg-[#C9956A] hover:text-[#FAF7F2] transition-all duration-300 ${hasBg ? 'text-[#2C1810]' : 'text-[#C9956A]'}`}>
+              className="text-[11px] font-semibold tracking-[0.15em] bg-[#C9956A] text-[#FAF7F2] border border-[#C9956A] rounded-[4px] uppercase px-6 py-2.5 hover:bg-[#A0603A] hover:border-[#A0603A] transition-all duration-300">
               Book Consultation
             </motion.a>
           </div>
