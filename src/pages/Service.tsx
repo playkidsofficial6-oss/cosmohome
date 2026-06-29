@@ -28,6 +28,19 @@ function DarkInputField({ label, type = "text", placeholder, name }: { label: st
   );
 }
 
+const slugToOptionMap: Record<string, string> = {
+  "hifu": "HIFU",
+  "hydrafacial-medifacial": "Hydrafacial / Medifacial",
+  "mesopeels-carbon-peel": "Mesopeels / Carbon Peel",
+  "laser-pigment-reduction": "Laser Pigment Reduction",
+  "laser-scar-reduction": "Laser Scar Reduction",
+  "phototherapy": "Phototherapy",
+  "excimer-laser": "Excimer Laser",
+  "laser-hair-reduction": "Laser Hair Reduction",
+  "muscle-sculpting": "Muscle Sculpting",
+  "exosomes-prp-gfc": "Exosomes / PRP / GFC"
+};
+
 export default function ServicePage() {
   const { slug } = useParams<{ slug: string }>();
   const service = SERVICES_DATA[slug || "hydrafacial-medifacial"] || SERVICES_DATA["hydrafacial-medifacial"];
@@ -46,10 +59,13 @@ export default function ServicePage() {
   }, [slug]);
 
   useEffect(() => {
-    if (service) {
+    const currentSlug = slug || "hydrafacial-medifacial";
+    if (slugToOptionMap[currentSlug]) {
+      setSelected(slugToOptionMap[currentSlug]);
+    } else if (service) {
       setSelected(service.title + (service.titleEmphasized ? " " + service.titleEmphasized.replace(/\.$/, "") : ""));
     }
-  }, [service]);
+  }, [slug, service]);
 
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
