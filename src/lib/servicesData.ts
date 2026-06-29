@@ -92,7 +92,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Signature Experience",
     description: "Lift, tighten, and redefine your facial contours with High-Intensity Focused Ultrasound (HIFU). This advanced treatment stimulates your body's natural collagen production for firmer, smoother, and younger-looking skin—without surgery or downtime.",
     heroRating: "4.8 · Rated by 190+ patients",
-    heroImage: "/services/hifu/1 copy.webp",
+    heroImage: "/services/hifu/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Doctor-Supervised Care",
     performedBySub: "Safe • Personalised • Professional",
@@ -343,37 +343,37 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     title: "Tone Correction",
     titleEmphasized: "Laser.",
     experienceNo: "Signature Experience",
-    description: "Targeted laser energy to fracture dark spots, melasma, and sun damage safely, revealing even-toned luminosity.",
+    description: "Targeted laser technology safely reduces pigmentation, melasma, sun spots, and uneven skin tone by breaking down excess melanin, revealing a brighter, clearer, and more radiant complexion.",
     heroRating: "4.8 · Rated by 220+ patients",
-    heroImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
+    heroImage: "/services/laser-pigment-reduction/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
-    performedByName: "Dermatologist Supervised",
-    performedBySub: "Safe • Personalised • Professional",
+    performedByName: "Laser Specialist",
+    performedBySub: "Medical Grade • Safe • Precise",
     stats: [
       { n: "3–6", l: "Sessions recommended" },
       { n: "1–3", l: "Days micro-flaking" },
-      { n: "14d", l: "First fading visible" },
+      { n: "14d", l: "Visible fading begins" },
       { n: "100%", l: "Doctor supervised" }
     ],
     whatIsThisTitle: "This is not",
     whatIsThisEmphasized: "a bleaching cream.",
-    whatIsThisDesc1: "Laser Pigment Reduction uses advanced light energy to target and break down melanin deposits in the deeper layers of your skin without damaging the surrounding tissue. Melasma, freckles, age spots, and sun damage are treated using specific laser wavelengths that fracture the excess pigment into microscopic particles.",
-    whatIsThisDesc2: "At Cosmo Home, we use fractional laser technology. By delivering precise, short pulses of light, we break down pigment deposits while avoiding epidermal heating, making it safe for deeper skin tones and minimizing downtime.",
+    whatIsThisDesc1: "Laser Pigment Reduction uses advanced laser energy to target excess melanin beneath the skin's surface without harming surrounding tissue. Melasma, sun spots, freckles, and post-inflammatory pigmentation are gradually broken into microscopic particles that your body naturally clears away.",
+    whatIsThisDesc2: "Unlike topical creams that only lighten the surface, precision laser technology treats pigmentation at its source while encouraging a clearer, brighter, and more even complexion with minimal downtime.",
     benefits: [
-      { icon: "🧬", b: "Wavelength targeting", d: "Shatters melanin without affecting surrounding tissue" },
-      { icon: "🩺", b: "Melanocyte regulation", d: "Calms active pigment-producing cells" },
-      { icon: "⚡", b: "Immune sweep clearance", d: "Body sweeps shattered pigment naturally" },
-      { icon: "🔄", b: "Melasma management", d: "Controlled protocols designed for chronic pigment" }
+      { icon: "🧬", b: "Precision Pigment Targeting", d: "Breaks down excess melanin while protecting healthy skin." },
+      { icon: "🎯", b: "Even Skin Tone", d: "Reduces pigmentation for a brighter, more balanced complexion." },
+      { icon: "✨", b: "Natural Pigment Clearance", d: "Your body gradually removes fragmented pigment after treatment." },
+      { icon: "🛡️", b: "Safe for Indian Skin", d: "Doctor-calibrated settings minimise the risk of post-inflammatory pigmentation." }
     ],
     clinicalNote: "Laser parameters are calibrated to Fitzpatrick skin types to prevent post-inflammatory hyperpigmentation.",
-    sideImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
+    sideImage: "/services/laser-pigment-reduction/2.webp",
     machineTitle: "High-precision",
     machineEmphasized: "pigment shattering.",
     deviceName: "Helios III ND:YAG Laser System",
-    deviceSub: "FDA Cleared · Premium Pigment Laser · Multi-Wavelength System",
-    deviceDesc: "The Helios III is a leading Q-switched ND:YAG laser that features fractional technology, allowing safe, high-energy treatments for deeper pigment anomalies with minimal risk of thermal damage to surrounding tissue.",
-    deviceFeatures: ["Fractional Laser Mode", "Dual wavelengths (1064nm / 532nm)", "Thermal relaxation control", "Safe for darker skin tones"],
-    deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
+    deviceSub: "FDA CLEARED • FRACTIONAL ND:YAG • MEDICAL GRADE LASER",
+    deviceDesc: "The Helios III Q-Switched ND:YAG Laser precisely targets unwanted melanin beneath the skin without damaging surrounding tissue. Its dual-wavelength fractional technology safely treats melasma, freckles, sun spots, and post-inflammatory pigmentation while supporting smoother, brighter skin with minimal downtime.",
+    deviceFeatures: ["Fractional ND:YAG Technology", "Dual Wavelength (1064nm / 532nm)", "Precision Pigment Targeting", "Safe for Indian Skin"],
+    deviceImage: "/services/laser-pigment-reduction/3.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Laser Technology", ours: "Helios III Q-switched ND:YAG (Fractional)", standard: "Superficial IPL or uncalibrated lasers" },
@@ -394,9 +394,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     sessionPlanDesc: "Most patients require 3 to 6 sessions, spaced 4 weeks apart, to clear deeper pigment deposits.",
     sessionPlanSteps: [
-      { n: "01", label: "Wood's Lamp Mapping", duration: "45 min", detail: "Dr. Ruxana uses skin analysis to map pigment depth. A patch test is performed to establish safe threshold energy." },
+      { n: "01", label: "Wood's Lamp Mapping", duration: "45 min", detail: "A detailed skin assessment is performed to evaluate pigment depth. A patch test helps determine the safest and most effective laser settings." },
       { n: "02", label: "Fractional Laser Delivery", duration: "45 min", detail: "Precise laser sweeps over the pigment zones. Skin is cooled continuously for comfort." },
-      { n: "03", label: "Infusion & Sun Barrier", duration: "30 min", detail: "Soothing medical mask application, antioxidant serums, and high-factor physical sun block." }
+      { n: "03", label: "Recovery & Protection", duration: "30 min", detail: "A soothing recovery mask, antioxidant serums, and broad-spectrum SPF are applied to calm the skin and protect your results." }
     ],
     timelineDesc: "Pigment particles rise to the surface, flake off, and fade over a 4-week cycle.",
     timelineItems: [
@@ -426,37 +426,37 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     title: "Texture Resurfacing",
     titleEmphasized: "Laser.",
     experienceNo: "Signature Experience",
-    description: "Fractional laser resurfacing to smooth acne scars, surgical scars, and skin texture, inducing healthy dermal remodeling.",
+    description: "Advanced fractional laser resurfacing smooths acne scars, surgical scars, and uneven skin texture while stimulating natural collagen remodeling for healthier, smoother skin.",
     heroRating: "4.9 · Rated by 180+ patients",
-    heroImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
+    heroImage: "/services/laser-scar-reduction/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
-    performedByName: "Medical Aesthetic Team",
+    performedByName: "Dermatologist Supervised",
     performedBySub: "Safe • Personalised • Professional",
     stats: [
       { n: "4–6", l: "Sessions recommended" },
       { n: "2–4", l: "Days recovery redness" },
-      { n: "3-4w", l: "Collagen growth starts" },
+      { n: "3–4 Weeks", l: "Visible skin renewal" },
       { n: "100%", l: "Doctor performed" }
     ],
     whatIsThisTitle: "This is not",
     whatIsThisEmphasized: "a superficial skin peeling.",
     whatIsThisDesc1: "Laser Scar Reduction utilizes fractional laser resurfacing to create micro-channels of thermal energy in the scar tissue, triggering your body to replace old scarred fibers with fresh, smooth collagen.",
-    whatIsThisDesc2: "At Cosmo Home, we treat acne scars (boxcar, rolling, icepick), surgical scars, and stretch marks. By adjusting the laser depth and density, Dr. Ruxana targets the precise layer where scar tissue is anchored, flattening and blending it with surrounding healthy skin.",
+    whatIsThisDesc2: "At Cosmo Home, we treat acne scars (boxcar, rolling, icepick), surgical scars, and stretch marks. By adjusting the laser depth and density, each treatment is precisely customised to target scar tissue while preserving the surrounding healthy skin.",
     benefits: [
-      { icon: "🧬", b: "Dermal remodeling", d: "Replaces fibrotic scar tissue with fresh collagen" },
-      { icon: "🩺", b: "Customizable depth", d: "Calibrated to reach deep tethered scars" },
-      { icon: "⚡", b: "Fractional healing", d: "Surrounding healthy skin bridges speed recovery" },
-      { icon: "🔄", b: "Texture smoothing", d: "Rebuilds uniform skin reflectivity and depth" }
+      { icon: "🧬", b: "Dermal remodeling", d: "Stimulates healthy collagen remodeling" },
+      { icon: "🎯", b: "Precision Targeting", d: "Targets deep scar tissue with calibrated laser energy." },
+      { icon: "⚡", b: "Fractional healing", d: "Healthy surrounding skin supports faster healing" },
+      { icon: "✨", b: "Texture smoothing", d: "Improves uneven skin texture for a smoother appearance." }
     ],
-    clinicalNote: "Deep, tethered scars are combined with subcision or medical collagen-inducing agents to maximize lifting.",
-    sideImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
-    machineTitle: "Dermal remodeling",
-    machineEmphasized: "by micro-laser.",
+    clinicalNote: "Deep, tethered scars may benefit from combination treatments such as subcision or collagen-stimulating therapies for enhanced results.",
+    sideImage: "/services/laser-scar-reduction/2.webp",
+    machineTitle: "Fractional remodeling",
+    machineEmphasized: "for smoother skin.",
     deviceName: "CO2 Fractional / Er:YAG Laser System",
     deviceSub: "FDA Cleared · Medical Resurfacing · High-Precision Scar Targeting",
     deviceDesc: "Our fractional laser system creates microscopic thermal treatment zones (MTZs) in the skin. The surrounding untreated tissue allows for rapid healing and collagen production, dramatically reducing downtime while maximizing scar remodelling.",
     deviceFeatures: ["Fractional ablation & coagulation", "Precision spot adjustment", "Smart-scan energy delivery", "Deep tissue thermal penetration"],
-    deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
+    deviceImage: "/services/laser-scar-reduction/3.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Laser Source", ours: "CO2 / Er:YAG fractional medical lasers", standard: "Non-fractional lasers or simple dermabrasion" },
@@ -465,30 +465,30 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Improvement", ours: "50%–80% texture lift in 4–6 sessions", standard: "Superficial skin softening only" },
       { label: "Risk Control", ours: "Calibrated scan grids to prevent burns", standard: "High risk of post-treatment scabbing" }
     ],
-    whoNeedsDesc: "Designed for patients seeking to smooth out acne pits, surgical scars, accident marks, or uneven skin texture.",
+    whoNeedsDesc: "Ideal for patients with acne scars, surgical scars, injury scars, stretch marks, or uneven skin texture.",
     notSuitable: "Active cystic acne, history of keloids, pregnancy, active skin infection.",
     whoNeedsItems: [
       { tag: "Rolling acne scars", desc: "Lifting wavy, sloping scars tethered in the deep tissue." },
       { tag: "Boxcar scars", desc: "Smoothing sharp-edged crater-like acne scars." },
       { tag: "Icepick scars", desc: "Tightening deep, narrow pinprick scars." },
       { tag: "Surgical scars", desc: "Softening and flattening hard surgical incision lines." },
-      { tag: "Stretch marks", desc: "Restoring elasticity and color blending to stretch lines." },
-      { tag: "Large pore texture", desc: "Overall skin contraction to reduce open pore look." }
+      { tag: "Stretch marks", desc: "Improves the appearance of stretch marks by stimulating collagen remodeling." },
+      { tag: "Large pore texture", desc: "Improves enlarged pores and refines overall skin texture." }
     ],
     sessionPlanDesc: "A program of 4–6 sessions, spaced 4–6 weeks apart, yields significant texture improvement.",
     sessionPlanSteps: [
       { n: "01", label: "Structural Mapping & Numbing", duration: "60 min", detail: "Scars are mapped according to depth and density. Medical numbing cream is applied for comfort." },
-      { n: "02", label: "Fractional Resurfacing", duration: "45 min", detail: "Precise scan lines are applied to the scar zones. Cold air cooling is used to manage heat." },
-      { n: "03", label: "Growth Factor & Recovery", duration: "30 min", detail: "Application of growth factor serums, cooling gel sheets, and medical barrier repair creams." },
-      { n: "04", label: "Healing Review", duration: "15 min", detail: "Scheduled at 1 week to evaluate skin barrier recovery and adjust home care." }
+      { n: "02", label: "Fractional Resurfacing", duration: "45 min", detail: "Fractional laser micro-beams are delivered to scar tissue, creating controlled micro-channels that stimulate collagen remodeling while integrated cooling enhances comfort." },
+      { n: "03", label: "Growth Factor & Recovery", duration: "30 min", detail: "Medical recovery serums and barrier-repair creams are applied to soothe the skin, reduce redness, and support collagen regeneration." },
+      { n: "04", label: "Healing Review", duration: "15 min", detail: "Healing progress is reviewed, skin recovery is assessed, and aftercare recommendations are adjusted for the next session." }
     ],
     timelineDesc: "Scar tissue breaks down and is replaced by fresh collagen over a 3-month cycle.",
     timelineItems: [
-      { when: "Immediately", what: "Skin feels hot and looks sunburned with micro-treatment spots." },
-      { when: "Day 2–4", what: "Redness turns bronze, micro-crusts flake off. Skin feels tight." },
+      { when: "Immediately", what: "Mild redness and warmth are expected. Tiny micro-treatment dots may be visible." },
+      { when: "Day 2–4", what: "Tiny micro-crusts naturally shed as new skin begins to emerge. Mild tightness is normal." },
       { when: "Week 2", what: "The surface feels smoother. Early texture improvement." },
-      { when: "Month 1", what: "Dermal collagen growth begins to lift depressed scar pits." },
-      { when: "Month 3+", what: "Scar edges soften, crater depths lift, skin looks even." }
+      { when: "Month 1", what: "New collagen remodeling improves scar depth and skin texture." },
+      { when: "Month 3+", what: "Scar texture continues to soften, skin becomes smoother, and overall texture appears more even." }
     ],
     ctaRating: "180+ patients smoothed",
     ctaTitle: "Ready to smooth",
@@ -514,8 +514,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroRating: "4.9 · Rated by 150+ patients",
     heroImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
     performedByLabel: "👩‍⚕️ Performed by",
-    performedByName: "Aesthetic Therapist",
-    performedBySub: "Safe • Personalised • Professional",
+    performedByName: "Dermatologist Supervised",
+    performedBySub: "Safe • Gentle • Medical Grade",
     stats: [
       { n: "6–10", l: "Sessions recommended" },
       { n: "0", l: "Days downtime" },
@@ -525,12 +525,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     whatIsThisTitle: "This is not",
     whatIsThisEmphasized: "a cosmetic light mask.",
     whatIsThisDesc1: "Phototherapy utilizes high-density, medical-grade LED (Light Emitting Diode) wavelengths to stimulate cellular activity, reduce inflammation, and accelerate tissue repair.",
-    whatIsThisDesc2: "At Cosmo Home, we use the Dermalux Tri-Wave MD canopy. We deliver clinically validated wavelengths (415nm Blue, 633nm Red, and 830nm Near-Infrared) simultaneously or individually to target acne-causing bacteria, calm vascular redness, and charge cells with energy.",
+    whatIsThisDesc2: "At Cosmo Home, we use the Dermalux Tri-Wave MD canopy. We deliver clinically validated wavelengths (415nm Blue, 633nm Red, and 830nm Near-Infrared) simultaneously or individually to target acne-causing bacteria, calm vascular redness, and support cellular repair and promote natural healing.",
     benefits: [
-      { icon: "🧬", b: "Cellular activation", d: "Increases ATP production to trigger cellular repair" },
-      { icon: "🩺", b: "Anti-bacterial blue", d: "Destroys Propionibacterium acnes bacteria in pores" },
-      { icon: "⚡", b: "Anti-inflammatory red", d: "Reduces redness and calms sensitive skin" },
-      { icon: "🔄", b: "Deep tissue infrared", d: "Speeds up recovery and supports collagen structure" }
+      { icon: "🧬", b: "Cellular activation", d: "Increases ATP production to support cellular repair." },
+      { icon: "🛡️", b: "Acne Defense", d: "Helps eliminate acne-causing bacteria and reduces active breakouts." },
+      { icon: "⚡", b: "Redness Relief", d: "Calms inflammation, reduces redness, and soothes sensitive skin." },
+      { icon: "🌊", b: "Collagen Support", d: "Stimulates collagen production to strengthen and repair skin tissue." }
     ],
     clinicalNote: "Phototherapy is often used immediately after active procedures to reduce redness and speed healing by 50%.",
     sideImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
@@ -538,19 +538,19 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     machineEmphasized: "for cellular health.",
     deviceName: "Dermalux Tri-Wave MD",
     deviceSub: "FDA Cleared · Multi-Award LED System · Hospital Grade",
-    deviceDesc: "The Dermalux Tri-Wave MD is the global gold standard in LED phototherapy, delivering three clinically proven wavelengths simultaneously or individually at therapeutic power levels that home masks cannot match.",
-    deviceFeatures: ["Simultaneous Tri-Wave technology", "High-power narrowband LEDs", "Pre-set clinical protocols", "Zero thermal damage"],
+    deviceDesc: "Dermalux Tri-Wave MD delivers three clinically validated LED wavelengths to support skin repair, reduce inflammation, and improve overall skin health at therapeutic power levels.",
+    deviceFeatures: ["Simultaneous Tri-Wave Technology", "Medical-grade Narrowband LEDs", "Clinically Validated Protocols", "Non-thermal Light Therapy"],
     deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Light Source", ours: "Narrowband medical-grade LEDs", standard: "Broadband low-power consumer LEDs" },
-      { label: "Power Output", ours: "High intensity target dosage", standard: "Low battery home mask lights" },
-      { label: "Wavelengths", ours: "Simultaneous 415nm / 633nm / 830nm", standard: "Uncalibrated cosmetic light colors" },
-      { label: "Efficacy", ours: "Clinically certified for acne and psoriasis", standard: "Temporary cosmetic relaxation" },
-      { label: "Skin Health", ours: "Cold light energy with zero thermal risk", standard: "Heat build-up from low-quality bulbs" }
+      { label: "Therapeutic power output", ours: "High intensity target dosage", standard: "Low battery home mask lights" },
+      { label: "Wavelengths", ours: "Simultaneous 415nm Blue / 633nm Red / 830nm Near-Infrared", standard: "Uncalibrated cosmetic light colors" },
+      { label: "Efficacy", ours: "Clinically validated for acne and psoriasis", standard: "Temporary cosmetic relaxation" },
+      { label: "Skin Health", ours: "Non-thermal LED light with zero thermal risk", standard: "Heat build-up from low-quality bulbs" }
     ],
     whoNeedsDesc: "Excellent for active acne breakouts, rosacea, generalized redness, eczema, or post-procedure skin healing.",
-    notSuitable: "Photosensitising medications, epilepsy triggered by flashing light, active skin cancer.",
+    notSuitable: "Photosensitising medications, light-sensitive epilepsy, or active skin cancer.",
     whoNeedsItems: [
       { tag: "Inflammatory acne", desc: "Drying up blemishes and destroying acne-causing bacteria." },
       { tag: "Rosacea & redness", desc: "Soothing flushed facial skin and reinforcing capillary walls." },
@@ -562,16 +562,16 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     sessionPlanDesc: "A series of 6–10 sessions, twice weekly, delivers optimal results for acne and inflammatory conditions.",
     sessionPlanSteps: [
       { n: "01", label: "Skin Preparation", duration: "15 min", detail: "Skin is cleansed of sunscreens, oils, or makeup that can block or reflect light energy." },
-      { n: "02", label: "LED Light Therapy", duration: "30 min", detail: "The Dermalux canopy is positioned over your face while you rest under warm, soothing light waves." },
-      { n: "03", label: "Lock-in Hydration", duration: "15 min", detail: "Custom hydrating serums and physical sun block are applied to preserve the cellular glow." }
+      { n: "02", label: "LED Light Therapy", duration: "30 min", detail: "Medical-grade LED wavelengths are delivered to stimulate skin repair, reduce inflammation, and support cellular renewal." },
+      { n: "03", label: "Hydration & Protection", duration: "15 min", detail: "Hydrating skincare and SPF protection are applied to support recovery and maintain treatment results." }
     ],
     timelineDesc: "Redness decreases and radiance increases starting from your very first session.",
     timelineItems: [
-      { when: "Immediately", what: "Skin looks calm, plump, and hydrated. Flushed redness fades." },
-      { when: "Day 2–3", what: "Acne breakouts appear dried up and less painful." },
+      { when: "Immediately", what: "Skin feels calmer, hydrated, and more comfortable. Redness begins to reduce." },
+      { when: "Day 2–3", what: "Active breakouts begin to settle with reduced redness and inflammation." },
       { when: "Week 2", what: "Overall redness decreases; skin feels less sensitive." },
-      { when: "After 6 sessions", what: "Significant clearing of active acne spots. Skin looks balanced." },
-      { when: "Month 2+", what: "Long-term skin barrier strength and healthy cellular turnover." }
+      { when: "After 6 sessions", what: "Noticeable improvement in acne and overall skin clarity." },
+      { when: "Month 2+", what: "Long-term support for healthier skin, improved resilience, and lasting results." }
     ],
     ctaRating: "150+ patients calmed",
     ctaTitle: "Ready to calm",
@@ -590,10 +590,10 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
   },
   "excimer-laser": {
     id: "excimer-laser",
-    title: "Targeted UVB",
+    title: "Targeted 308nm UVB",
     titleEmphasized: "Excimer.",
     experienceNo: "Signature Experience",
-    description: "Targeted monochromatic UVB light to treat vitiligo, psoriasis, and alopecia areata safely without exposing healthy skin.",
+    description: "Targeted 308nm UVB light precisely treats vitiligo, psoriasis, and alopecia areata while minimizing exposure to surrounding healthy skin.",
     heroRating: "4.8 · Rated by 120+ patients",
     heroImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
     performedByLabel: "👩‍⚕️ Performed by",
@@ -602,58 +602,58 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     stats: [
       { n: "10–20", l: "Sessions recommended" },
       { n: "0", l: "Days downtime" },
-      { n: "4-6w", l: "Repigmentation starts" },
+      { n: "4–6 weeks", l: "Repigmentation may begin" },
       { n: "100%", l: "Doctor performed" }
     ],
     whatIsThisTitle: "This is not",
     whatIsThisEmphasized: "broadband UV exposure.",
     whatIsThisDesc1: "The Excimer Laser is a specialized medical laser that delivers a highly concentrated beam of <strong>308nm monochromatic UVB light</strong> directly to affected skin patches.",
-    whatIsThisDesc2: "It is the gold standard treatment for autoimmune skin conditions like vitiligo, psoriasis, and alopecia areata. By targeting only the affected areas, it avoids exposing healthy surrounding skin to ultraviolet light, stimulating melanocytes or calming hyperactive T-cells with unmatched safety.",
+    whatIsThisDesc2: "It is the gold standard treatment for autoimmune skin conditions like vitiligo, psoriasis, and alopecia areata. By targeting only the affected areas, it minimizes UV exposure to surrounding healthy skin, stimulating melanocytes or calming hyperactive T-cells with unmatched safety.",
     benefits: [
-      { icon: "🧬", b: "Monochromatic UVB", d: "Concentrated 308nm light targets only the lesion" },
-      { icon: "🩺", b: "Melanocyte stimulus", d: "Triggers pigment production in vitiligo spots" },
-      { icon: "⚡", b: "Local immune control", d: "Calms hyperactive T-cells causing skin plaques" },
-      { icon: "🔄", b: "Surrounding skin safety", d: "Prevents UV exposure to healthy skin areas" }
+      { icon: "🔬", b: "Monochromatic UVB", d: "Concentrated 308nm light targets only the lesion" },
+      { icon: "✨", b: "Melanocyte Activation", d: "Stimulates melanocyte activity to encourage repigmentation." },
+      { icon: "🛡️", b: "Local Immune Control", d: "Modulates overactive immune cells within affected skin." },
+      { icon: "🎯", b: "Precision Targeting", d: "Delivers UVB only to affected skin while protecting surrounding tissue." }
     ],
-    clinicalNote: "Dosing is calculated using minimal erythema dose (MED) testing to ensure optimal therapeutic energy with zero burning.",
+    clinicalNote: "Treatment dose is personalized using Minimal Erythema Dose (MED) testing to maximize effectiveness while minimizing the risk of irritation.",
     sideImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
     machineTitle: "Precise spot delivery",
     machineEmphasized: "of monochromatic UVB.",
     deviceName: "308nm Excimer Laser System",
     deviceSub: "FDA Cleared · Monochromatic UVB · Autoimmune Skin Solution",
-    deviceDesc: "The 308nm Excimer laser represents a major advancement in the treatment of vitiligo and psoriasis. Its high-intensity spot handpiece allows high fluences to be delivered selectively to plaque or depigmented lesions, accelerating results.",
-    deviceFeatures: ["Monochromatic 308nm wavelength", "Precise spot size adjustment", "High-fluence rapid treatment", "Minimal exposure to healthy skin"],
+    deviceDesc: "The 308nm Excimer Laser delivers high-intensity monochromatic UVB directly to vitiligo and psoriasis lesions, allowing targeted treatment while minimizing exposure to surrounding healthy skin.",
+    deviceFeatures: ["Monochromatic 308nm wavelength", "Precise spot size adjustment", "High-fluence targeted delivery", "Minimal exposure to healthy skin"],
     deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Light Spectrum", ours: "Monochromatic 308nm UVB (targeted)", standard: "Broadband UV light chambers" },
-      { label: "Healthy Skin Safety", ours: "No exposure to healthy surrounding tissue", standard: "Full-body exposure (UV damage risk)" },
-      { label: "Repigmentation", ours: "Rapid follicular melanin stimulation", standard: "Slow, uneven pigment response" },
-      { label: "Clearing Speed", ours: "Plaques clear in weeks, not months", standard: "Low intensity requiring months" },
+      { label: "Healthy Skin Safety", ours: "Minimized exposure to surrounding healthy skin", standard: "Full-body exposure (UV damage risk)" },
+      { label: "Repigmentation", ours: "Stimulates melanocyte activity for repigmentation", standard: "Slow, uneven pigment response" },
+      { label: "Clearing Speed", ours: "Visible improvement with consistent treatment", standard: "Low intensity requiring months" },
       { label: "Control", ours: "Calibrated spot dosing by dermatologist", standard: "Standard non-selective UV timers" }
     ],
     whoNeedsDesc: "Indicated for patients with localized vitiligo (loss of pigment), plaque psoriasis, eczema, or patchy hair loss (alopecia areata).",
-    notSuitable: "History of skin cancer, lupus, xeroderma pigmentosum, pregnancy.",
+    notSuitable: "History of skin cancer, xeroderma pigmentosum, photosensitivity disorders, or active lupus.",
     whoNeedsItems: [
       { tag: "Localized vitiligo", desc: "Restoring pigment to white patches on the face, hands, or body." },
       { tag: "Plaque psoriasis", desc: "Clearing thick, scaly skin plaques on elbows, knees, or scalp." },
       { tag: "Alopecia areata", desc: "Stimulating hair follicles in circular bald patches on the scalp." },
-      { tag: "Chronic eczema patches", desc: "Calming stubborn, itchy skin spots resistant to steroid creams." },
-      { tag: "Hypopigmented scars", desc: "Helping blend light scars back into the normal skin tone." }
+      { tag: "Localized eczema", desc: "Persistent localized eczema not responding to conventional treatment." },
+      { tag: "Localized dermatitis", desc: "Reducing inflammation in chronic localized dermatitis." }
     ],
     sessionPlanDesc: "Sessions are brief and performed 2 to 3 times a week. Significant results are usually seen in 10–20 sessions.",
     sessionPlanSteps: [
-      { n: "01", label: "Dose Calibration", duration: "15 min", detail: "Dr. Ruxana or our dermatologist evaluates the lesions and calibrates the exact UVB dose based on skin type." },
-      { n: "02", label: "Targeted Excimer Delivery", duration: "20 min", detail: "The laser handpiece is applied directly to the patches. The treatment is warm and completely pain-free." },
-      { n: "03", label: "Soothing Protection", duration: "5 min", detail: "Application of anti-inflammatory creams and mineral sunscreens." }
+      { n: "01", label: "Dose Calibration", duration: "15 min", detail: "The treatment area is assessed and the optimal 308nm UVB dose is determined using clinical evaluation and MED testing." },
+      { n: "02", label: "Targeted Excimer Delivery", duration: "20 min", detail: "The Excimer handpiece delivers targeted 308nm UVB directly to the affected skin. Most patients experience little to no discomfort." },
+      { n: "03", label: "Post-Treatment Care", duration: "5 min", detail: "Protective skincare is applied and post-treatment care instructions are provided to support recovery." }
     ],
-    timelineDesc: "Inflammation decreases and pigment islands begin to form within 4 to 6 weeks.",
+    timelineDesc: "Clinical improvement develops gradually over several weeks, depending on the treated condition and individual response.",
     timelineItems: [
-      { when: "Immediately", what: "No pain. Mild pinkness may appear 12–24 hours post-treatment." },
-      { when: "Week 2", what: "Psoriasis scaling decreases and plaque thickness softens." },
-      { when: "Week 4–6", what: "Follicular pigment islands (small brown spots) appear in vitiligo." },
-      { when: "After 15 sessions", what: "Moderate to significant clearance of patches. Regained skin tone." },
-      { when: "Month 3+", what: "Sustained clearing. Periodic checks are scheduled to monitor pigment." }
+      { when: "Immediately", what: "Most patients experience little to no discomfort. Mild pinkness may appear for 12–24 hours." },
+      { when: "Week 2", what: "Psoriasis scaling begins to reduce and plaques gradually soften." },
+      { when: "Week 4–6", what: "Visible improvement begins based on the treated condition, with early repigmentation often seen in vitiligo." },
+      { when: "After 15 sessions", what: "Noticeable improvement in treated lesions with continued clinical progress." },
+      { when: "Month 3+", what: "Treatment response is reviewed and maintenance sessions may be recommended when appropriate." }
     ],
     ctaRating: "120+ patients repigmented",
     ctaTitle: "Ready to treat",
