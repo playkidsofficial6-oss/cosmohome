@@ -207,8 +207,11 @@ export default function ServicePage() {
                   </div>
                   {/* Clinical note */}
                   {service.clinicalNote && (
-                    <motion.div whileHover={{ y: -3 }} className="absolute -bottom-5 -left-4 sm:-left-8 p-5 rounded-2xl max-w-[260px]"
-                      style={{ background: "#2C1810", boxShadow: "0 20px 60px rgba(44,24,16,0.25)" }}>
+                    <motion.div
+                      whileHover={{ y: -3 }}
+                      className="relative sm:absolute mt-6 sm:mt-0 bottom-auto left-auto sm:-bottom-5 sm:-left-8 p-5 rounded-2xl w-full sm:w-auto sm:max-w-[260px]"
+                      style={{ background: "#2C1810", boxShadow: "0 20px 60px rgba(44,24,16,0.25)" }}
+                    >
                       <p className="text-xs tracking-[0.2em] uppercase text-[#C9956A] mb-1.5" style={M}>
                         {service.clinicalNoteLabel || "Clinical note"}
                       </p>

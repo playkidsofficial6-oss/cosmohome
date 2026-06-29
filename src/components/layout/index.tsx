@@ -6,40 +6,61 @@ import { ArrowRight, Menu, X, Instagram, Facebook, Youtube, Home, MessageCircle,
 
 import { D, M, B, GOLD, EASE, WA_PATH } from "../../lib/constants";
 
+function BodyIcon({ size = 20, strokeWidth = 2, ...props }: React.SVGProps<SVGSVGElement> & { size?: number; strokeWidth?: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <circle cx="12" cy="4" r="1.5" />
+      <path d="M 8.5 7.5 C 9.5 8.5, 10.5 10.5, 10.5 12.5 C 10.5 14.5, 8.5 17.5, 8.5 19.5" />
+      <path d="M 15.5 7.5 C 14.5 8.5, 13.5 10.5, 13.5 12.5 C 13.5 14.5, 15.5 17.5, 15.5 19.5" />
+    </svg>
+  );
+}
+
 const MEGA_MENU_CONTENT = {
   Face: {
     icon: Smile,
     treatments: ["HIFU", "Hydrafacial / Medifacial", "Mesopeels / Carbon Peel"],
     viewAll: "VIEW ALL FACE TREATMENTS",
-    image: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=800&auto=format&fit=crop",
+    image: "/services/hifu/1.webp",
     desc: "Natural facial enhancement, designed around balance."
   },
   Skin: {
     icon: Sparkles,
     treatments: ["Laser Pigment Reduction", "Laser Scar Reduction", "Phototherapy", "Excimer Laser"],
     viewAll: "VIEW ALL SKIN TREATMENTS",
-    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop",
+    image: "/services/laser-pigment-reduction/1.webp",
     desc: "Rejuvenate and restore your natural glow."
   },
   Hair: {
     icon: Wind,
     treatments: ["Laser Hair Reduction"],
     viewAll: "VIEW ALL HAIR TREATMENTS",
-    image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=800&auto=format&fit=crop",
+    image: "/services/laser-hair-reduction/1.webp",
     desc: "Advanced solutions for hair restoration and health."
   },
   Body: {
-    icon: Accessibility,
+    icon: BodyIcon,
     treatments: ["Muscle Sculpting"],
     viewAll: "VIEW ALL BODY TREATMENTS",
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
+    image: "/services/muscle-sculpting/1.webp",
     desc: "Sculpt and define your body with precision."
   },
   Injectables: {
     icon: Syringe,
     treatments: ["Exosomes / PRP / GFC"],
     viewAll: "VIEW ALL INJECTABLES",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop",
+    image: "/services/exosomes-prp-gfc/1.webp",
     desc: "Targeted treatments for a refreshed appearance."
   }
 };
