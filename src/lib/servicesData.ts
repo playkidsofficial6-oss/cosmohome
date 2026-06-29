@@ -870,7 +870,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "Medical Centrifuge · Sterile Preparation · Premium Exosomes",
     deviceDesc: "Blood is processed using a medical-grade centrifuge to prepare highly concentrated PRP or purified Growth Factor Concentrate (GFC), delivering regenerative proteins while minimizing unwanted inflammatory components.",
     deviceFeatures: ["Medical-grade centrifuge", "High-concentration PRP/GFC", "Precision injection protocol", "Sterile preparation system"],
-    deviceImage: "https://images.unsplash.com/photo-1631217871099-88310a909a32?w=800&h=450&fit=crop&auto=format",
+    deviceImage: "/services/exosomes-prp-gfc/3.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Active Agent", ours: "Concentrated Growth Factors & Regenerative Signals", standard: "Basic PRP containing red/white blood cells" },
