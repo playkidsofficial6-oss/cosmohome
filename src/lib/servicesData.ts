@@ -842,7 +842,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Signature Experience",
     description: "Advanced regenerative therapies using PRP and Growth Factor Concentrate (GFC) to stimulate hair growth, improve skin quality, and support natural tissue repair.",
     heroRating: "4.9 · Rated by 280+ patients",
-    heroImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop",
+    heroImage: "/services/exosomes-prp-gfc/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Doctor Supervised",
     performedBySub: "Safe • Personalised • Professional",
@@ -863,7 +863,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🌱", b: "Hair Follicle Stimulation", d: "Helps reactivate dormant follicles to encourage healthier hair growth." }
     ],
     clinicalNote: "Blood is processed using a medical centrifuge to obtain a highly concentrated layer of growth factors and platelets.",
-    sideImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop",
+    sideImage: "/services/exosomes-prp-gfc/2.webp",
     machineTitle: "Precision Growth",
     machineEmphasized: "factor isolation.",
     deviceName: "Medical PRP & GFC Preparation System",

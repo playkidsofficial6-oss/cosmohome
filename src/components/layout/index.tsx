@@ -6,6 +6,27 @@ import { ArrowRight, Menu, X, Instagram, Facebook, Youtube, Home, MessageCircle,
 
 import { D, M, B, GOLD, EASE, WA_PATH } from "../../lib/constants";
 
+function BodyIcon({ size = 20, strokeWidth = 2, ...props }: React.SVGProps<SVGSVGElement> & { size?: number; strokeWidth?: number }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <circle cx="12" cy="4" r="1.5" />
+      <path d="M 8.5 7.5 C 9.5 8.5, 10.5 10.5, 10.5 12.5 C 10.5 14.5, 8.5 17.5, 8.5 19.5" />
+      <path d="M 15.5 7.5 C 14.5 8.5, 13.5 10.5, 13.5 12.5 C 13.5 14.5, 15.5 17.5, 15.5 19.5" />
+    </svg>
+  );
+}
+
 const MEGA_MENU_CONTENT = {
   Face: {
     icon: Smile,
@@ -29,7 +50,7 @@ const MEGA_MENU_CONTENT = {
     desc: "Advanced solutions for hair restoration and health."
   },
   Body: {
-    icon: Accessibility,
+    icon: BodyIcon,
     treatments: ["Muscle Sculpting"],
     viewAll: "VIEW ALL BODY TREATMENTS",
     image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
