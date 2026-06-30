@@ -187,7 +187,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { n: "All Skin Types", l: "Safe & suitable" }
     ],
     whatIsThisTag: "WHAT IS HYDRAFACIAL?",
-    whatIsThisTitle: "This is note",
+    whatIsThisTitle: "This is not",
     whatIsThisEmphasized: "a salon facial.",
     whatIsThisDesc1: "Hydrafacial is a medical-grade skin rejuvenation treatment that goes beyond traditional facials. Using advanced vortex technology, it deeply cleanses, gently exfoliates, removes impurities, and infuses the skin with nourishing serums—all in one relaxing treatment.",
     whatIsThisDesc2: "Unlike conventional facials, every Hydrafacial is customised to your skin's unique needs, helping improve hydration, skin texture, clarity, and overall radiance without discomfort or downtime.",

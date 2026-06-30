@@ -9,6 +9,7 @@ import { Preloader } from "../components/ui/shared";
 import { Nav, Footer, MobileBottomCTA } from "../components/layout";
 import HomePage from "../pages/Home";
 import ServicePage from "../pages/Service";
+import ServicesListPage from "../pages/ServicesList";
 import BookConsultationPage from "../pages/BookConsultation";
 export function AppContent() {
     const location = useLocation();
@@ -24,7 +25,7 @@ export function AppContent() {
         <Nav ready={ready} />
         <Routes>
           <Route path="/" element={<HomePage ready={ready} />} />
-          <Route path="/service" element={<ServicePage />} />
+          <Route path="/service" element={<ServicesListPage />} />
           <Route path="/service/:slug" element={<ServicePage />} />
           <Route path="/book-consultation" element={<BookConsultationPage />} />
         </Routes>
