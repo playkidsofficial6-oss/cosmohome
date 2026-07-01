@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Menu, X, Instagram, Facebook, Youtube, Home, MessageCircle, ClipboardList, Sparkles, Heart, Award, Shield, AlertTriangle, CheckCircle, XCircle, Phone, BadgeCheck, Stethoscope, GraduationCap, Users, ChevronRight, Plus, Minus, Syringe, User, Droplet, Wind, Smile, Accessibility } from "lucide-react";
+import { ArrowRight, Menu, X, Instagram, Facebook, Youtube, Home, MessageCircle, ClipboardList, Sparkles, Heart, Award, Shield, AlertTriangle, CheckCircle, XCircle, Phone, BadgeCheck, Stethoscope, GraduationCap, Users, ChevronRight, Plus, Minus, Syringe, User, Droplet, Wind, Smile, Accessibility, Calendar } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, WA_PATH } from "../../lib/constants";
 
@@ -159,7 +159,8 @@ export function Nav({ ready }: { ready: boolean }) {
 
           <div className="hidden lg:flex z-10">
             <motion.a href="/book-consultation" style={B} whileHover={{ scale: 1.02 }}
-              className="text-[11px] font-semibold tracking-[0.15em] bg-[#C9956A] text-[#FAF7F2] border border-[#C9956A] rounded-[4px] uppercase px-6 py-2.5 hover:bg-[#A0603A] hover:border-[#A0603A] transition-all duration-300">
+              className="text-[11px] font-semibold tracking-[0.15em] bg-[#8C5D47] text-[#FAF7F2] border border-[#8C5D47] rounded-[4px] uppercase px-6 py-2.5 hover:bg-[#734A37] hover:border-[#734A37] transition-all duration-300 flex items-center gap-2">
+              <Calendar size={13} className="shrink-0" />
               Book Consultation
             </motion.a>
           </div>
@@ -385,10 +386,13 @@ export function Nav({ ready }: { ready: boolean }) {
               {/* Book Consultation CTA */}
               <button
                 onClick={() => { setOpen(false); navigate("/book-consultation"); }}
-                className="w-full mt-2 py-5 px-6 bg-[#C9956A] text-[#FAF7F2] uppercase tracking-[0.15em] text-xs font-semibold flex justify-between items-center transition-colors hover:bg-[#d6a57c] shadow-[0_0_35px_rgba(201,149,106,0.4)]"
+                className="w-full mt-2 py-5 px-6 bg-[#8C5D47] text-[#FAF7F2] uppercase tracking-[0.15em] text-xs font-semibold flex justify-between items-center transition-colors hover:bg-[#734A37] shadow-[0_0_35px_rgba(140,93,71,0.2)]"
                 style={B}
               >
-                <span>Book Consultation</span>
+                <span className="flex items-center gap-2">
+                  <Calendar size={14} className="shrink-0" />
+                  Book Consultation
+                </span>
                 <ArrowRight size={16} className="text-[#FAF7F2]" />
               </button>
 

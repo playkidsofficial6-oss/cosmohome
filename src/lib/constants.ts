@@ -1,8 +1,8 @@
 import React from 'react';
 import { Home, MessageCircle, ClipboardList, Sparkles, Heart, Award, Shield, AlertTriangle, CheckCircle, XCircle, Phone, BadgeCheck, Stethoscope, GraduationCap, Users } from "lucide-react";
-export const D = { fontFamily: "'Fraunces', serif" };
-export const M = { fontFamily: "'DM Mono', monospace" };
-export const B = { fontFamily: "'DM Sans', sans-serif" };
+export const D = { fontFamily: "'Cormorant Garamond', serif" };
+export const M = { fontFamily: "'Inter', sans-serif" };
+export const B = { fontFamily: "'Inter', sans-serif" };
 export const GOLD = "#C9956A";
 export const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 export const EASE2: [number, number, number, number] = [0.76, 0, 0.24, 1];

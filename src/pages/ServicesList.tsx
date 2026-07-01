@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "motion/react";
 import {
@@ -43,11 +43,11 @@ const getServiceCategory = (id: string): string => {
 
 const getServiceQuickSpec = (service: ServiceData) => {
   const durationFact = service.ctaQuickFacts?.find((f) => f.label.toLowerCase().includes("duration"));
-  const duration = durationFact ? durationFact.val : "45–60 Mins";
+  const duration = durationFact ? durationFact.val : "45â€“60 Mins";
 
-  const downtimeFact = service.ctaQuickFacts?.find((f) => f.label.toLowerCase().includes("downtime"))
-    || service.stats?.find((s) => s.l.toLowerCase().includes("downtime"));
-  const downtime = downtimeFact ? (downtimeFact.val || `${downtimeFact.n} ${downtimeFact.l}`) : "None";
+  const downtimeFact = service.ctaQuickFacts?.find((f) => f.label.toLowerCase().includes("downtime"));
+  const downtimeStatFact = service.stats?.find((s) => s.l.toLowerCase().includes("downtime"));
+  const downtime = downtimeFact ? downtimeFact.val : downtimeStatFact ? `${downtimeStatFact.n} ${downtimeStatFact.l}` : "None";
 
   const suitableFor = service.whoNeedsDesc ? service.whoNeedsDesc.replace(/Ideal for patients experiencing\s+/i, "") : "Skin & hair health rejuvenation";
 
@@ -84,7 +84,7 @@ function AnimatedStat({ value, label }: { value: string; label: string }) {
       <p className="text-3xl md:text-4xl text-[#C9956A] mb-1 font-medium" style={D}>
         {numericValue ? `${count}${suffix}` : value}
       </p>
-      <p className="text-[10px] sm:text-xs text-[#FAF7F2]/80 uppercase tracking-widest font-normal" style={M}>
+      <p className="text-[10px] sm:text-xs text-[#5C4A42] uppercase tracking-widest font-normal" style={M}>
         {label}
       </p>
     </div>
@@ -173,7 +173,7 @@ function BeforeAfterSlider() {
         style={{ left: `${sliderPos}%` }}
       >
         <div className="w-10 h-10 rounded-full bg-white shadow-2xl border border-[#2C1810]/15 flex items-center justify-center text-[#C9956A] font-semibold text-xs pointer-events-auto transition-transform hover:scale-110 active:scale-95">
-          ↔
+          â†”
         </div>
       </div>
     </div>
@@ -252,17 +252,17 @@ export default function ServicesListPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
-      {/* ══ 1. CINEMATIC HERO SECTION ══ */}
-      <section className="relative min-h-[85vh] flex flex-col justify-center bg-[#160A05] pt-32 pb-20 overflow-hidden">
+      {/* â•â• 1. CINEMATIC HERO SECTION â•â• */}
+      <section className="relative min-h-[85vh] flex flex-col justify-center bg-[#FAF6F0] pt-32 pb-20 overflow-hidden">
         {/* Background visual with soft glow */}
-        <div className="absolute inset-0 z-0 opacity-40">
+        <div className="absolute inset-0 z-0 opacity-25">
           <img
             src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1920&h=1080&fit=crop&q=80"
             alt="Sanctuary of rejuvenation"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#160A05] via-[#160A05]/95 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#160A05] via-transparent to-[#160A05]/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF6F0] via-[#FAF6F0]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FAF6F0] via-transparent to-[#FAF6F0]/30" />
         </div>
 
         {/* Grain overlay */}
@@ -288,12 +288,12 @@ export default function ServicesListPage() {
               <span className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A]" style={M}>Clinical Excellence Directory</span>
             </motion.div>
 
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#FAF7F2] leading-[1.0] mb-8 font-light" style={D}>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#2C1810] leading-[1.0] mb-8 font-light" style={D}>
               Bespoke Treatments &<br />
               <em className="font-serif italic text-[#C9956A]">Clinical Artistry.</em>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-[#FAF7F2]/80 max-w-2xl leading-relaxed mb-12 font-normal" style={B}>
+            <p className="text-base sm:text-lg md:text-xl text-[#5C4A42] max-w-2xl leading-relaxed mb-12 font-normal" style={B}>
               Step into a sanctuary of premium aesthetics built on personalized treatments, advanced technology, and clinical excellence. Explore our signature protocols calibrated for natural-looking harmony and skin health.
             </p>
 
@@ -314,7 +314,7 @@ export default function ServicesListPage() {
                 onClick={handleExploreClick}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-2.5 px-9 py-4.5 border border-[#FAF7F2]/20 hover:border-[#C9956A] text-[#FAF7F2] hover:text-[#C9956A] text-xs tracking-[0.2em] uppercase rounded-xl font-medium transition-all"
+                className="inline-flex items-center justify-center gap-2.5 px-9 py-4.5 border border-[#2C1810]/20 hover:border-[#C9956A] text-[#2C1810] hover:text-[#C9956A] text-xs tracking-[0.2em] uppercase rounded-xl font-medium transition-all"
                 style={B}
               >
                 Explore Treatments
@@ -322,7 +322,7 @@ export default function ServicesListPage() {
             </div>
 
             {/* Stats section */}
-            <div className="border-t border-[#FAF7F2]/10 pt-10 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="border-t border-[#2C1810]/10 pt-10 grid grid-cols-2 md:grid-cols-4 gap-8">
               <AnimatedStat value="5000+" label="Verified Outcomes" />
               <AnimatedStat value="20+" label="Specialized Protocols" />
               <AnimatedStat value="100%" label="Clinically Supervised" />
@@ -332,7 +332,7 @@ export default function ServicesListPage() {
         </div>
       </section>
 
-      {/* ══ 2. STICKY CATEGORY NAVIGATION ══ */}
+      {/* â•â• 2. STICKY CATEGORY NAVIGATION â•â• */}
       <section
         id="treatment-filters"
         className="sticky top-16 z-30 bg-[#FAF7F2]/80 backdrop-blur-md border-b border-[#2C1810]/5 py-5 px-6 md:px-16"
@@ -358,7 +358,7 @@ export default function ServicesListPage() {
         </div>
       </section>
 
-      {/* ══ 3. SERVICES SECTION ══ */}
+      {/* â•â• 3. SERVICES SECTION â•â• */}
       <section className="py-20 px-6 md:px-16">
         <div className="max-w-7xl mx-auto">
           {filteredServiceKeys.length === 0 ? (
@@ -461,7 +461,7 @@ export default function ServicesListPage() {
         </div>
       </section>
 
-      {/* ══ 4. FEATURED TREATMENT INTERSTITIAL ══ */}
+      {/* â•â• 4. FEATURED TREATMENT INTERSTITIAL â•â• */}
       {featuredService && (
         <section className="bg-[#160A05] text-[#FAF7F2] py-24 px-6 md:px-16 overflow-hidden relative">
           <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
@@ -521,7 +521,7 @@ export default function ServicesListPage() {
         </section>
       )}
 
-      {/* ══ 5. WHY CHOOSE US ══ */}
+      {/* â•â• 5. WHY CHOOSE US â•â• */}
       <section className="py-24 px-6 md:px-16 bg-[#FAF7F2] border-t border-[#2C1810]/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -582,7 +582,7 @@ export default function ServicesListPage() {
         </div>
       </section>
 
-      {/* ══ 6. TREATMENT JOURNEY TIMELINE ══ */}
+      {/* â•â• 6. TREATMENT JOURNEY TIMELINE â•â• */}
       <section className="py-24 px-6 md:px-16 bg-[#160A05] text-[#FAF7F2] relative">
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
         <div className="max-w-7xl mx-auto relative z-10">
@@ -643,7 +643,7 @@ export default function ServicesListPage() {
         </div>
       </section>
 
-      {/* ══ 7. BEFORE & AFTER COMPARISON SLIDER ══ */}
+      {/* â•â• 7. BEFORE & AFTER COMPARISON SLIDER â•â• */}
       <section className="py-24 px-6 md:px-16 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -665,7 +665,7 @@ export default function ServicesListPage() {
                     ))}
                   </div>
                   <span className="text-xs text-[#2C1810] font-semibold" style={B}>Amara K.</span>
-                  <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— Tone Correction Laser</span>
+                  <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>â€” Tone Correction Laser</span>
                 </div>
               </div>
 
@@ -689,7 +689,7 @@ export default function ServicesListPage() {
         </div>
       </section>
 
-      {/* ══ 8. PREMIUM TESTIMONIALS ══ */}
+      {/* â•â• 8. PREMIUM TESTIMONIALS â•â• */}
       <section className="py-24 px-6 md:px-16 bg-[#FAF7F2] border-t border-[#2C1810]/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -744,7 +744,7 @@ export default function ServicesListPage() {
         </div>
       </section>
 
-      {/* ══ 9. MINIMAL ACCORDION FAQ ══ */}
+      {/* â•â• 9. MINIMAL ACCORDION FAQ â•â• */}
       <section className="py-24 px-6 md:px-16 bg-[#FAF7F2] border-t border-[#2C1810]/5">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
@@ -769,7 +769,7 @@ export default function ServicesListPage() {
               },
               {
                 q: "Is there downtime after the treatments?",
-                a: "Most of our signature treatments (HIFU, Hydrafacial, Phototherapy) have zero recovery downtime, allowing you to return to work immediately. Resurfacing lasers or PRP may exhibit slight redness for 12–24 hours."
+                a: "Most of our signature treatments (HIFU, Hydrafacial, Phototherapy) have zero recovery downtime, allowing you to return to work immediately. Resurfacing lasers or PRP may exhibit slight redness for 12â€“24 hours."
               },
               {
                 q: "How many sessions will I need to see results?",
@@ -788,7 +788,7 @@ export default function ServicesListPage() {
         </div>
       </section>
 
-      {/* ══ 10. FINAL CALL TO ACTION ══ */}
+      {/* â•â• 10. FINAL CALL TO ACTION â•â• */}
       <section className="relative overflow-hidden bg-[#160A05] py-24 md:py-32 text-center text-[#FAF7F2]">
         {/* Subtle glowing ring backgrounds */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none opacity-20"
