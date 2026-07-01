@@ -340,7 +340,7 @@ export function Philosophy() {
       <img
         src="/hero/main banner 2.webp"
         alt="Philosophy Background"
-        className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none z-0"
+        className="absolute inset-0 w-full h-full object-cover md:object-contain object-right-bottom md:object-center opacity-30 md:opacity-100 pointer-events-none select-none z-0"
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -381,12 +381,12 @@ export function Philosophy() {
             </FadeUp>
 
             <FadeUp delay={0.25}>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 w-full">
                 <motion.a
                   href="/book-consultation"
                   whileHover={{ scale: 1.03, backgroundColor: "#734A37" }}
                   whileTap={{ scale: 0.97 }}
-                  className="group inline-flex items-center gap-2.5 px-6 py-4 bg-[#8C5D47] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase font-semibold transition-all rounded-xl shadow-lg"
+                  className="group flex justify-center items-center gap-2.5 px-6 py-4 w-full sm:w-auto bg-[#8C5D47] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase font-semibold transition-all rounded-xl shadow-lg"
                   style={B}
                 >
                   <Calendar size={14} className="shrink-0" />
@@ -396,7 +396,7 @@ export function Philosophy() {
                   href="/service"
                   whileHover={{ scale: 1.02, borderColor: "#8C5D47", color: "#8C5D47" }}
                   whileTap={{ scale: 0.98 }}
-                  className="group inline-flex items-center gap-2.5 px-6 py-4 border border-[#2C1810]/20 text-[#2C1810] text-xs tracking-[0.2em] uppercase font-semibold transition-all rounded-xl hover:bg-white/50"
+                  className="group flex justify-center items-center gap-2.5 px-6 py-4 w-full sm:w-auto border border-[#2C1810]/20 text-[#2C1810] text-xs tracking-[0.2em] uppercase font-semibold transition-all rounded-xl hover:bg-[#2C1810]/5"
                   style={B}
                 >
                   Explore Treatments <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
