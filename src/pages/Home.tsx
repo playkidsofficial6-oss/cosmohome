@@ -191,6 +191,22 @@ export function Hero({ ready }: { ready: boolean }) {
           </motion.div>
         </div>
 
+        {/* Floating Glassmorphic Quote Card */}
+        <motion.div
+          className="absolute right-[32%] lg:right-[35%] xl:right-[38%] top-[24%] hidden lg:block max-w-[280px] xl:max-w-[310px] bg-white/75 backdrop-blur-md p-6 xl:p-8 rounded-[24px] shadow-[0_12px_40px_rgba(44,24,16,0.06)] border border-white/50 z-20"
+          initial={{ opacity: 0, x: 20 }}
+          animate={ready ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, delay: d(1.1) }}
+        >
+          <span className="text-[#C9956A] text-6xl font-serif leading-none block absolute -top-4 left-3 select-none opacity-20">“</span>
+          <p className="text-[#2C1810]/95 text-xs sm:text-sm leading-relaxed font-light mb-4 relative z-10" style={B}>
+            Beauty is not about changing who you are, it's about bringing out the best version of you.
+          </p>
+          <p className="text-2xl text-[#C9956A] font-signature text-right pr-2">
+            Dr. Ruxana K
+          </p>
+        </motion.div>
+
         {/* Bottom Section: Premium Stats Banner */}
         <motion.div
           className="relative overflow-hidden bg-white/60 backdrop-blur-md border border-[#2C1810]/10 rounded-[24px] p-5 md:p-7 w-full shadow-[0_8px_32px_rgba(44,24,16,0.04)]"
@@ -254,7 +270,7 @@ export function Philosophy() {
     <section id="philosophy" className="py-20 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2] relative overflow-hidden border-t border-[#2C1810]/5">
       {/* Background Image */}
       <img
-        src="/hero/session2.png"
+        src="/hero/main banner 2.webp"
         alt="Philosophy Background"
         className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none z-0"
       />
