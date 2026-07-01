@@ -47,8 +47,7 @@ export function Hero({ ready }: { ready: boolean }) {
         className="absolute inset-0 w-full h-full object-cover object-[80%_15%] md:object-[75%_18%] lg:object-[68%_20%] xl:object-[65%_22%] pointer-events-none select-none z-0"
       />
 
-      {/* Responsive Gradient Overlays: Clear doctor's face, readable text */}
-      {/* Desktop: Left-to-right fade (ends at 45% width) */}
+
       <div
         className="absolute inset-0 hidden lg:block pointer-events-none z-10"
         style={{ background: "linear-gradient(to right, #FAF6F0 0%, rgba(250,246,240,0.95) 20%, rgba(250,246,240,0.8) 30%, rgba(250,246,240,0) 45%)" }}
