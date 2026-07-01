@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "motion/react";
-import { 
+import {
   ArrowRight, Sparkles, Smile, Wind, Heart, Syringe,
-  Check, Calendar, Clock, ShieldCheck, Award, Stethoscope, 
+  Check, Calendar, Clock, ShieldCheck, Award, Stethoscope,
   Cpu, Activity, Lock, ChevronDown, Star
 } from "lucide-react";
 
@@ -45,7 +45,7 @@ const getServiceQuickSpec = (service: ServiceData) => {
   const durationFact = service.ctaQuickFacts?.find((f) => f.label.toLowerCase().includes("duration"));
   const duration = durationFact ? durationFact.val : "45–60 Mins";
 
-  const downtimeFact = service.ctaQuickFacts?.find((f) => f.label.toLowerCase().includes("downtime")) 
+  const downtimeFact = service.ctaQuickFacts?.find((f) => f.label.toLowerCase().includes("downtime"))
     || service.stats?.find((s) => s.l.toLowerCase().includes("downtime"));
   const downtime = downtimeFact ? (downtimeFact.val || `${downtimeFact.n} ${downtimeFact.l}`) : "None";
 
@@ -111,54 +111,70 @@ function BeforeAfterSlider() {
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
     if (e.touches.length === 0) return;
     handleMove(e.touches[0].clientX);
   };
 
   return (
-    <div 
+    <div
       ref={containerRef}
-      className="relative w-full aspect-[4/3] md:aspect-[16/10] rounded-[24px] overflow-hidden shadow-2xl select-none cursor-ew-resize border border-[#2C1810]/5"
+      className="relative w-full aspect-[4/3] md:aspect-[16/10] rounded-[24px] overflow-hidden shadow-2xl select-none cursor-ew-resize border border-[#2C1810]/5 bg-[#EDE5D8]"
       onMouseMove={handleMouseMove}
-      onMouseDown={() => setIsDragging(true)}
+      onMouseDown={(e) => {
+        setIsDragging(true);
+        handleMove(e.clientX);
+      }}
       onMouseUp={() => setIsDragging(false)}
       onMouseLeave={() => setIsDragging(false)}
       onTouchMove={handleTouchMove}
-      onTouchStart={() => setIsDragging(true)}
+      onTouchStart={(e) => {
+        setIsDragging(true);
+        handleMove(e.touches[0].clientX);
+      }}
       onTouchEnd={() => setIsDragging(false)}
     >
-      {/* Before Image */}
-      <img 
-        src="/transformation/1.webp" 
-        alt="Before Treatment" 
+      {/* Before Image (Left Side background) */}
+      <img
+        src="/transformation/before.webp"
+        alt="Before Treatment"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
       />
-      <div className="absolute top-5 left-5 bg-[#160A05]/80 backdrop-blur-md px-3.5 py-1.5 rounded-full text-[10px] tracking-widest uppercase text-white font-medium z-10" style={M}>
+      <div
+        className={`absolute top-5 left-5 bg-[#160A05]/80 backdrop-blur-md px-3.5 py-1.5 rounded-full text-[10px] tracking-widest uppercase text-white font-medium z-10 transition-opacity duration-300 ${
+          sliderPos < 15 ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+        style={M}
+      >
         Before
       </div>
 
-      {/* After Image (Clipped) */}
-      <div 
-        className="absolute inset-y-0 left-0 right-0 overflow-hidden pointer-events-none"
-        style={{ clipPath: `polygon(0 0, ${sliderPos}% 0, ${sliderPos}% 100%, 0 100%)` }}
+      {/* After Image (Right Side foreground clipped) */}
+      <div
+        className="absolute inset-0 overflow-hidden pointer-events-none"
+        style={{ clipPath: `polygon(${sliderPos}% 0, 100% 0, 100% 100%, ${sliderPos}% 100%)` }}
       >
-        <img 
-          src="/transformation/2.webp" 
-          alt="After Treatment" 
+        <img
+          src="/transformation/after.webp"
+          alt="After Treatment"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          style={{ width: containerRef.current?.getBoundingClientRect().width }}
         />
-        <div className="absolute top-5 right-5 bg-[#C9956A] px-3.5 py-1.5 rounded-full text-[10px] tracking-widest uppercase text-white font-medium z-10" style={M}>
-          After Treatment
+        <div
+          className={`absolute top-5 right-5 bg-[#C9956A] px-3.5 py-1.5 rounded-full text-[10px] tracking-widest uppercase text-white font-medium z-10 transition-opacity duration-300 ${
+            sliderPos > 85 ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
+          style={M}
+        >
+          After
         </div>
       </div>
 
       {/* Slider Line / Handle */}
-      <div 
-        className="absolute inset-y-0 w-1 bg-white cursor-ew-resize z-20 flex items-center justify-center pointer-events-none"
+      <div
+        className="absolute inset-y-0 w-0.5 bg-white/80 cursor-ew-resize z-20 flex items-center justify-center pointer-events-none"
         style={{ left: `${sliderPos}%` }}
       >
-        <div className="w-10 h-10 rounded-full bg-white shadow-2xl border-2 border-[#C9956A] flex items-center justify-center text-[#C9956A] font-semibold text-xs pointer-events-auto transition-transform hover:scale-110 active:scale-95">
+        <div className="w-10 h-10 rounded-full bg-white shadow-2xl border border-[#2C1810]/15 flex items-center justify-center text-[#C9956A] font-semibold text-xs pointer-events-auto transition-transform hover:scale-110 active:scale-95">
           ↔
         </div>
       </div>
@@ -170,13 +186,13 @@ function BeforeAfterSlider() {
 function FAQItem({ question, answer, isOpen, onToggle }: { question: string; answer: string; isOpen: boolean; onToggle: () => void }) {
   return (
     <div className="border-b border-[#2C1810]/10 py-5">
-      <button 
+      <button
         onClick={onToggle}
         className="w-full flex justify-between items-center text-left py-2 text-[#2C1810] hover:text-[#C9956A] transition-colors"
       >
         <span className="text-base md:text-lg font-medium" style={D}>{question}</span>
-        <motion.span 
-          animate={{ rotate: isOpen ? 180 : 0 }} 
+        <motion.span
+          animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3, ease: EASE }}
           className="text-[#C9956A]"
         >
@@ -242,9 +258,9 @@ export default function ServicesListPage() {
       <section className="relative min-h-[85vh] flex flex-col justify-center bg-[#160A05] pt-32 pb-20 overflow-hidden">
         {/* Background visual with soft glow */}
         <div className="absolute inset-0 z-0 opacity-40">
-          <img 
-            src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1920&h=1080&fit=crop&q=80" 
-            alt="Sanctuary of rejuvenation" 
+          <img
+            src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1920&h=1080&fit=crop&q=80"
+            alt="Sanctuary of rejuvenation"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#160A05] via-[#160A05]/95 to-transparent" />
@@ -255,16 +271,16 @@ export default function ServicesListPage() {
         <div className="absolute inset-0 opacity-[0.03] z-10 pointer-events-none" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
 
         {/* Floating gradient circles */}
-        <motion.div 
+        <motion.div
           className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full pointer-events-none z-10"
           style={{ background: "radial-gradient(circle, rgba(201,149,106,0.1) 0%, transparent 65%)" }}
-          animate={{ scale: [1, 1.15, 1], x: [0, 20, 0], y: [0, -20, 0] }} 
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }} 
+          animate={{ scale: [1, 1.15, 1], x: [0, 20, 0], y: [0, -20, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
 
         <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-16 w-full flex flex-col justify-center">
           <div className="max-w-4xl">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: EASE }}
@@ -319,7 +335,7 @@ export default function ServicesListPage() {
       </section>
 
       {/* ══ 2. STICKY CATEGORY NAVIGATION ══ */}
-      <section 
+      <section
         id="treatment-filters"
         className="sticky top-16 z-30 bg-[#FAF7F2]/80 backdrop-blur-md border-b border-[#2C1810]/5 py-5 px-6 md:px-16"
       >
@@ -330,11 +346,10 @@ export default function ServicesListPage() {
               <button
                 key={key}
                 onClick={() => setSelectedCategory(key)}
-                className={`relative flex items-center gap-2.5 px-6 py-3 rounded-full border text-[10px] tracking-widest uppercase transition-all duration-300 shrink-0 font-semibold ${
-                  isActive
-                    ? "bg-[#2C1810] border-[#2C1810] text-[#FAF7F2]"
-                    : "bg-[#FAF7F2] border-[#2C1810]/10 text-[#2C1810]/70 hover:border-[#C9956A] hover:text-[#C9956A]"
-                }`}
+                className={`relative flex items-center gap-2.5 px-6 py-3 rounded-full border text-[10px] tracking-widest uppercase transition-all duration-300 shrink-0 font-semibold ${isActive
+                  ? "bg-[#2C1810] border-[#2C1810] text-[#FAF7F2]"
+                  : "bg-[#FAF7F2] border-[#2C1810]/10 text-[#2C1810]/70 hover:border-[#C9956A] hover:text-[#C9956A]"
+                  }`}
                 style={M}
               >
                 <Icon size={12} className={isActive ? "text-[#C9956A]" : "text-current"} />
@@ -351,8 +366,8 @@ export default function ServicesListPage() {
           {filteredServiceKeys.length === 0 ? (
             <div className="text-center py-20">
               <p className="text-lg text-[#5C4A42]" style={B}>No treatments found in this category.</p>
-              <button 
-                onClick={() => setSelectedCategory("all")} 
+              <button
+                onClick={() => setSelectedCategory("all")}
                 className="mt-4 text-xs tracking-widest uppercase text-[#C9956A] border-b border-[#C9956A] pb-1 font-semibold"
                 style={M}
               >
@@ -440,7 +455,7 @@ export default function ServicesListPage() {
                       >
                         Book Consultation
                       </motion.a>
-                      
+
                       <button
                         onClick={() => navigate(`/service/${key}`)}
                         className="flex items-center justify-center gap-2 py-3.5 px-4 border border-[#2C1810]/10 hover:border-[#C9956A] rounded-xl text-[10px] tracking-widest uppercase text-[#2C1810] font-bold hover:bg-[#C9956A]/5 transition-all group/btn"
@@ -466,9 +481,9 @@ export default function ServicesListPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
               {/* Left Side: Cinematic Image */}
               <div className="lg:col-span-6 relative aspect-[4/3] md:aspect-[16/10] overflow-hidden rounded-[24px] bg-[#EDE5D8]">
-                <img 
-                  src={featuredService.heroImage} 
-                  alt={featuredService.title} 
+                <img
+                  src={featuredService.heroImage}
+                  alt={featuredService.title}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#160A05]/60 to-transparent" />
@@ -533,35 +548,35 @@ export default function ServicesListPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { 
-                icon: Stethoscope, 
-                title: "Experienced Clinicians", 
-                desc: "All clinical protocols are formulated and supervised by our experienced medical team holding advanced post-graduate qualifications." 
+              {
+                icon: Stethoscope,
+                title: "Experienced Clinicians",
+                desc: "All clinical protocols are formulated and supervised by our experienced medical team holding advanced post-graduate qualifications."
               },
-              { 
-                icon: ShieldCheck, 
-                title: "FDA Approved Technology", 
-                desc: "We exclusively run certified medical-grade platforms backed by verified peer-reviewed scientific studies." 
+              {
+                icon: ShieldCheck,
+                title: "FDA Approved Technology",
+                desc: "We exclusively run certified medical-grade platforms backed by verified peer-reviewed scientific studies."
               },
-              { 
-                icon: Sparkles, 
-                title: "Personalized Treatments", 
-                desc: "No general menus. We map your specific epidermis layers to customize wavelength depths and active doses." 
+              {
+                icon: Sparkles,
+                title: "Personalized Treatments",
+                desc: "No general menus. We map your specific epidermis layers to customize wavelength depths and active doses."
               },
-              { 
-                icon: Heart, 
-                title: "Luxury Experience", 
-                desc: "Relax in a quiet, design-forward oasis designed around sensory comfort, premium amenities, and pure privacy." 
+              {
+                icon: Heart,
+                title: "Luxury Experience",
+                desc: "Relax in a quiet, design-forward oasis designed around sensory comfort, premium amenities, and pure privacy."
               },
-              { 
-                icon: Lock, 
-                title: "Safe Procedures", 
-                desc: "Sterility, precise post-treatment follow-up, and clinical-grade emergency readiness guidelines protect your health." 
+              {
+                icon: Lock,
+                title: "Safe Procedures",
+                desc: "Sterility, precise post-treatment follow-up, and clinical-grade emergency readiness guidelines protect your health."
               },
-              { 
-                icon: Cpu, 
-                title: "Advanced Equipment", 
-                desc: "We deploy world-class platforms like Soprano Titanium and Dermalux Tri-Wave for optimum comfort and efficiency." 
+              {
+                icon: Cpu,
+                title: "Advanced Equipment",
+                desc: "We deploy world-class platforms like Soprano Titanium and Dermalux Tri-Wave for optimum comfort and efficiency."
               }
             ].map((card, cIndex) => {
               const IconComp = card.icon;
@@ -600,30 +615,30 @@ export default function ServicesListPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-6 relative z-10">
               {[
-                { 
-                  num: "01", 
-                  title: "Consultation", 
-                  desc: "A comprehensive initial dialogue to evaluate history, mapping your skincare goals with our experienced clinicians." 
+                {
+                  num: "01",
+                  title: "Consultation",
+                  desc: "A comprehensive initial dialogue to evaluate history, mapping your skincare goals with our experienced clinicians."
                 },
-                { 
-                  num: "02", 
-                  title: "Skin Analysis", 
-                  desc: "Deep diagnosis using clinical magnification to inspect sebum depth, sensitivity thresholds, and structure." 
+                {
+                  num: "02",
+                  title: "Skin Analysis",
+                  desc: "Deep diagnosis using clinical magnification to inspect sebum depth, sensitivity thresholds, and structure."
                 },
-                { 
-                  num: "03", 
-                  title: "Treatment", 
-                  desc: "Precise application of your doctor-supervised clinical protocol using advanced aesthetic machinery." 
+                {
+                  num: "03",
+                  title: "Treatment",
+                  desc: "Precise application of your doctor-supervised clinical protocol using advanced aesthetic machinery."
                 },
-                { 
-                  num: "04", 
-                  title: "Recovery", 
-                  desc: "Application of barrier-repair formulas under calming phototherapy to minimize redness and speed restoration." 
+                {
+                  num: "04",
+                  title: "Recovery",
+                  desc: "Application of barrier-repair formulas under calming phototherapy to minimize redness and speed restoration."
                 },
-                { 
-                  num: "05", 
-                  title: "Follow-Up", 
-                  desc: "A personal check-in call and follow-up mapping to measure results and optimize ongoing skincare density." 
+                {
+                  num: "05",
+                  title: "Follow-Up",
+                  desc: "A personal check-in call and follow-up mapping to measure results and optimize ongoing skincare density."
                 }
               ].map((step, sIndex) => (
                 <div key={sIndex} className="flex flex-col items-center text-center px-4 group">
@@ -650,7 +665,7 @@ export default function ServicesListPage() {
               <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] mt-4 mb-6 leading-tight font-light" style={D}>
                 Visible outcomes, <em className="serif italic text-[#C9956A]">naturally aligned.</em>
               </h2>
-              
+
               <div className="border-l-2 border-[#C9956A] pl-6 py-2 mb-8">
                 <p className="text-base sm:text-lg text-[#2C1810]/90 leading-relaxed font-light italic" style={D}>
                   "The tone correction laser completely dissolved my sun spots. My face feels clean, even, and refreshed. People keep telling me I look rested, but they can't tell I had a clinical treatment."
@@ -769,7 +784,7 @@ export default function ServicesListPage() {
                 a: "It depends on the protocol. Hydrafacials deliver an instant radiant glow, whereas collagen-stimulating HIFU or regenerative GFC show progressive skin density improvements over a 3 to 6-month timeline."
               }
             ].map((faq, fIndex) => (
-              <FAQItem 
+              <FAQItem
                 key={fIndex}
                 question={faq.q}
                 answer={faq.a}
