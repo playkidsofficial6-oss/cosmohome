@@ -15,7 +15,7 @@ export function Hero({ ready }: { ready: boolean }) {
   const d = (base: number) => ready ? base : 999;
 
   return (
-    <section ref={ref} className="relative h-screen bg-[#FAF6F0] flex flex-col justify-between overflow-hidden">
+    <section ref={ref} className="relative h-screen bg-[#2C1810] md:bg-[#FAF6F0] flex flex-col justify-between overflow-hidden">
       {/* Cursive Signature Font Import */}
       <style dangerouslySetInnerHTML={{
         __html: `
@@ -25,7 +25,8 @@ export function Hero({ ready }: { ready: boolean }) {
         }
       `}} />
 
-      {/* Leaf Shadow Overlay (Cast down from top-left) */}
+      {/* --- BACKGROUNDS & OVERLAYS --- */}
+      {/* Leaf Shadow Overlay (Desktop only) */}
       <svg className="absolute top-0 left-0 w-[400px] h-[400px] text-[#2C1810]/5 pointer-events-none z-10 select-none hidden md:block" viewBox="0 0 100 100" fill="currentColor">
         <defs>
           <filter id="leaf-blur">
@@ -40,32 +41,45 @@ export function Hero({ ready }: { ready: boolean }) {
         </g>
       </svg>
 
-      {/* Full-screen background image - Proportional Fit (No Zoom) */}
+      {/* Desktop Background Image ( ivory style ) */}
       <img
         src="/hero/main banner.webp"
         alt="Dr. Ruxana K"
-        className="absolute bottom-0 right-0 h-[92%] w-auto max-w-none object-contain pointer-events-none select-none z-0"
+        className="absolute bottom-0 right-0 h-[92%] w-auto max-w-none object-contain pointer-events-none select-none z-0 hidden md:block"
       />
 
-
+      {/* Desktop Gradients */}
       <div
         className="absolute inset-0 hidden lg:block pointer-events-none z-10"
         style={{ background: "linear-gradient(to right, #FAF6F0 0%, rgba(250,246,240,0.95) 20%, rgba(250,246,240,0.8) 30%, rgba(250,246,240,0) 45%)" }}
       />
-      {/* Mobile/Tablet: Bottom-to-top fade (ends at 70% height) */}
       <div
-        className="absolute inset-0 lg:hidden pointer-events-none z-10"
+        className="absolute inset-0 hidden md:block lg:hidden pointer-events-none z-10"
         style={{ background: "linear-gradient(to top, #FAF6F0 0%, rgba(250,246,240,0.95) 30%, rgba(250,246,240,0.7) 50%, rgba(250,246,240,0) 70%)" }}
       />
 
-      {/* Grain */}
+      {/* Mobile Background Image ( dark style ) */}
+      <img
+        src="/hero/hero-bg-mob.webp"
+        alt="The spirit of COSMO HOME"
+        className="absolute inset-0 w-full h-full object-cover object-bottom block md:hidden z-0 pointer-events-none select-none"
+      />
+
+      {/* Mobile Dark Gradient Overlays */}
+      <div
+        className="absolute inset-0 block md:hidden pointer-events-none z-10"
+        style={{ background: "linear-gradient(to top, rgba(44,24,16,0.95) 0%, rgba(44,24,16,0.5) 40%, rgba(44,24,16,0.2) 70%, rgba(44,24,16,0.95) 100%)" }}
+      />
+
+      {/* Grain Overlay */}
       <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.015]"
         style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
 
-      <div className="max-w-7xl mx-auto w-full relative z-20 flex-1 flex flex-col justify-between px-6 md:px-16 lg:px-24 pt-20 pb-6">
+
+      {/* --- DESKTOP CONTENT --- */}
+      <div className="max-w-7xl mx-auto w-full relative z-20 hidden md:flex flex-col justify-between px-6 md:px-16 lg:px-24 pt-20 pb-6 flex-1">
         {/* Single Left Column: Text & Features */}
         <div className="flex flex-col justify-center flex-1 max-w-2xl">
-
           {/* Gold Tag */}
           <motion.div
             className="flex items-center gap-1.5 text-[#C9956A] text-[10px] sm:text-xs tracking-[0.25em] font-semibold uppercase mb-4"
@@ -117,7 +131,7 @@ export function Hero({ ready }: { ready: boolean }) {
             and designed around you.
           </motion.p>
 
-          {/* 4 Feature Badges Row with Vertical Separators */}
+          {/* 4 Feature Badges Row */}
           <motion.div
             className="flex flex-wrap sm:flex-nowrap items-stretch justify-between w-full max-w-xl mb-6 pt-4 border-t border-[#2C1810]/5 gap-4 sm:gap-0"
             initial={{ opacity: 0, y: 14 }}
@@ -179,15 +193,6 @@ export function Hero({ ready }: { ready: boolean }) {
             >
               Begin Your Journey <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </motion.a>
-            {/* <motion.a
-                href="/#philosophy"
-                whileHover={{ scale: 1.02 }}
-                className="inline-flex items-center gap-3 text-[#2C1810]/80 hover:text-[#2C1810] text-xs tracking-[0.2em] uppercase transition-colors py-4 font-semibold group"
-                style={B}
-              >
-                <span className="w-8 h-8 rounded-full border border-[#2C1810]/20 flex items-center justify-center text-[#C9956A] group-hover:border-[#C9956A] transition-colors text-[10px]">▶</span>
-                Discover Our Philosophy
-              </motion.a> */}
           </motion.div>
         </div>
 
@@ -261,6 +266,69 @@ export function Hero({ ready }: { ready: boolean }) {
           </div>
         </motion.div>
       </div>
+
+
+      {/* --- MOBILE CONTENT (Restore original dark design) --- */}
+      <motion.div className="relative z-20 flex md:hidden flex-col justify-between pt-20 pb-4 px-6 h-[100svh] w-full flex-1">
+        <div className="flex flex-col">
+          <motion.p className="text-[#C9956A] text-[10px] tracking-[0.15em] uppercase mb-4 font-semibold" style={M}
+            initial={{ opacity: 0, x: -16 }} animate={ready ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: d(0.3) }}>
+            ✨ EXPERT-LED · SKIN · HAIR · AESTHETICS
+          </motion.p>
+
+          <h1 className="text-[#FAF7F2] text-4xl leading-[1.05] mb-5 font-light" style={D}>
+            {["Beauty", "Feels", "At Home."].map((word, i) => (
+              <div key={word} className="overflow-hidden">
+                <motion.span className={`block ${i === 1 ? "italic text-[#C9956A]" : ""}`}
+                  initial={{ y: "105%" }} animate={ready ? { y: 0 } : {}}
+                  transition={{ duration: 1.0, delay: d(0.45 + i * 0.15), ease: EASE }}>
+                  {word}
+                </motion.span>
+              </div>
+            ))}
+          </h1>
+
+          <motion.div className="w-8 h-px bg-[#C9956A] mb-5"
+            initial={{ scaleX: 0 }} animate={ready ? { scaleX: 1 } : {}} transition={{ delay: d(0.9), duration: 0.8 }} />
+
+          <motion.p className="text-[#FAF7F2]/90 text-sm leading-relaxed max-w-[240px] font-light" style={B}
+            initial={{ opacity: 0, y: 18 }} animate={ready ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: d(0.95) }}>
+            Expert-led aesthetic medicine designed around confidence, care, and your most natural beauty.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }} animate={ready ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: d(1.05) }}
+            className="mt-6 mb-2"
+          >
+            <img src="/hero/sign.webp" alt="Dr. Ruxana K" className="h-14 w-auto object-contain" />
+            <p className="text-[#FAF7F2]/80 text-[11px] tracking-[0.2em] uppercase mt-1 font-semibold" style={M}>Founder</p>
+          </motion.div>
+        </div>
+
+        <div className="flex flex-col gap-3 mt-4">
+          <motion.div className="bg-[#2B1610]/75 backdrop-blur-md rounded-2xl p-4 flex justify-between items-center border border-white/5"
+            initial={{ opacity: 0, y: 20 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: d(1.2), duration: 0.8 }}>
+            {[{ n: "20+", l: "Years of Care", icon: <ShieldCheck size={18} strokeWidth={1.5} className="text-[#C9956A] mb-1.5 mx-auto" /> },
+            { n: "3,800+", l: "Transformations", icon: <Users size={18} strokeWidth={1.5} className="text-[#C9956A] mb-1.5 mx-auto" /> },
+            { n: "5", l: "Doctors", icon: <Star size={18} strokeWidth={1.5} className="text-[#C9956A] mb-1.5 mx-auto" /> }].map(({ n, l, icon }, i) => (
+              <div key={l} className={`flex-1 text-center ${i !== 2 ? 'border-r border-[#FAF7F2]/10' : ''}`}>
+                {icon}
+                <p className="text-[#FAF7F2] text-[15px] font-medium" style={D}>{n}</p>
+                <p className="text-[#FAF7F2]/70 text-[9px] tracking-wider mt-0.5 uppercase" style={B}>{l}</p>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.a href="/book-consultation"
+            className="w-full py-4 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase rounded-xl flex items-center justify-center gap-2 font-semibold" style={B}
+            initial={{ opacity: 0, y: 20 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: d(1.3), duration: 0.8 }}>
+            Begin Your Journey <ArrowRight size={14} />
+          </motion.a>
+        </div>
+      </motion.div>
     </section>
   );
 }
