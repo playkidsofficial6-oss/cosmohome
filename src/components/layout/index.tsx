@@ -125,7 +125,7 @@ export function Nav({ ready }: { ready: boolean }) {
 
   return (
     <>
-      <motion.header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${hasBg ? "bg-[#FAF7F2]/95 backdrop-blur-md shadow-sm" : ""}`}
+      <motion.header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${hasBg ? "bg-[#FAF7F2]/95 backdrop-blur-md" : ""}`}
         initial={ready ? false : { y: -80, opacity: 0 }} animate={ready ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, delay: 0.3, ease: EASE }}>
         <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24 flex items-center justify-between h-16 relative">
@@ -423,9 +423,9 @@ export function Nav({ ready }: { ready: boolean }) {
 
 export function Footer() {
   return (
-    <footer className="bg-[#160A05] text-[#FAF7F2] pb-14 pt-6 px-6 md:px-16 lg:pb-24 lg:pt-14">
+    <footer className="bg-[#FAF6F0] text-[#2C1810] pb-14 pt-6 px-6 md:px-16 lg:pb-24 lg:pt-14 border-t border-[#2C1810]/5">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[2fr_1fr_1fr] gap-10 mb-10 pb-10 border-b border-[#FAF7F2]/8">
+        <div className="grid lg:grid-cols-[2fr_1fr_1fr] gap-10 mb-10 pb-10 border-b border-[#2C1810]/10">
           <div>
             <div className="flex items-center gap-3 mb-5">
               <img src="/icon.svg" alt="Cosmo Home Icon" className="h-10 md:h-12 w-auto" />
@@ -434,17 +434,17 @@ export function Footer() {
                 <p className="text-[10px] tracking-[0.3em] uppercase text-[#C9956A] mt-1" style={M}>Aesthetic Medicine</p>
               </div>
             </div>
-            <p className="text-sm text-[#FAF7F2]/65 leading-relaxed max-w-xs" style={B}>
+            <p className="text-sm text-[#5C4A42] leading-relaxed max-w-xs" style={B}>
               A luxury destination where beauty, confidence, expertise, and care come together.
             </p>
             <div className="flex gap-5 mt-7">
-              <motion.a href="https://www.instagram.com/cosmohomeskincare" target="_blank" rel="noreferrer" whileHover={{ y: -3 }} className="text-[#FAF7F2]/60 hover:text-[#C9956A] transition-colors">
+              <motion.a href="https://www.instagram.com/cosmohomeskincare" target="_blank" rel="noreferrer" whileHover={{ y: -3 }} className="text-[#5C4A42] hover:text-[#C9956A] transition-colors">
                 <Instagram size={16} />
               </motion.a>
-              <motion.a href="https://www.facebook.com/CosmoHomeSkincare/" target="_blank" rel="noreferrer" whileHover={{ y: -3 }} className="text-[#FAF7F2]/60 hover:text-[#C9956A] transition-colors">
+              <motion.a href="https://www.facebook.com/CosmoHomeSkincare/" target="_blank" rel="noreferrer" whileHover={{ y: -3 }} className="text-[#5C4A42] hover:text-[#C9956A] transition-colors">
                 <Facebook size={16} />
               </motion.a>
-              <motion.a href="https://www.youtube.com/@cosmohome5593" target="_blank" rel="noreferrer" whileHover={{ y: -3 }} className="text-[#FAF7F2]/60 hover:text-[#C9956A] transition-colors">
+              <motion.a href="https://www.youtube.com/@cosmohome5593" target="_blank" rel="noreferrer" whileHover={{ y: -3 }} className="text-[#5C4A42] hover:text-[#C9956A] transition-colors">
                 <Youtube size={16} />
               </motion.a>
             </div>
@@ -458,7 +458,7 @@ export function Footer() {
               <ul className="flex flex-col gap-3">
                 {links.map(l => (
                   <li key={l}>
-                    <motion.a href="#" whileHover={{ x: 3 }} className="text-sm text-[#FAF7F2]/65 hover:text-[#FAF7F2] transition-colors block" style={B}>{l}</motion.a>
+                    <motion.a href="#" whileHover={{ x: 3 }} className="text-sm text-[#5C4A42] hover:text-[#2C1810] transition-colors block" style={B}>{l}</motion.a>
                   </li>
                 ))}
               </ul>
@@ -466,8 +466,8 @@ export function Footer() {
           ))}
         </div>
         <div className="flex flex-col sm:flex-row justify-between gap-3">
-          <p className="text-xs text-[#FAF7F2]/55" style={B}>© {new Date().getFullYear()} COSMO HOME Ltd. All rights reserved.</p>
-          <p className="text-xs text-[#FAF7F2]/55" style={B}>Privacy · Terms · 🛡️ CQC Registered</p>
+          <p className="text-xs text-[#5C4A42]/80" style={B}>© {new Date().getFullYear()} COSMO HOME Ltd. All rights reserved.</p>
+          <p className="text-xs text-[#5C4A42]/80" style={B}>Privacy · Terms · 🛡️ CQC Registered</p>
         </div>
       </div>
     </footer>
