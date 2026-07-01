@@ -233,19 +233,19 @@ export function ExtraordinaryCare() {
               </FadeUp>
               <FadeUp delay={0.1}>
                 <p className="text-base text-[#FAF7F2]/90 leading-loose mb-5 max-w-2xl" style={B}>
-                  We have heard you. We know that sometimes, the wait feels long. And we want you to understand why — because the answer is <em>you</em>.
+                  We understand that waiting can be frustrating, and we sincerely appreciate your patience.
                 </p>
                 <p className="text-base text-[#FAF7F2]/90 leading-loose mb-5 max-w-2xl" style={B}>
-                  <strong className="text-[#FAF7F2]/90 font-medium">Every patient deserves to be heard, understood, and guided with complete attention.</strong> When the patient before you is with Dr. Ruxana, they are not being hurried. Their concerns are being listened to fully. Their questions are answered honestly..
+                  At our clinic, every patient is given the time and attention they deserve. When someone is with Dr. Ruxana, their concerns are being listened to carefully, their questions are being answered thoughtfully, and their care is never rushed.
                 </p>
-                <p className="text-base text-[#FAF7F2]/75 leading-relaxed max-w-2xl" style={B}>
-                  When it is your turn, you will receive exactly the same. We do not believe in 10-minute appointments. We believe in the time it takes to truly care.
+                <p className="text-base text-[#FAF7F2]/90 leading-loose mb-5 max-w-2xl" style={B}>
+                  This approach may sometimes mean longer waiting times, but it also ensures that when it is your turn, you will receive the same level of attention, compassion, and thorough care.
                 </p>
-              </FadeUp>
-              <FadeUp delay={0.3}>
-                <p className="mt-8 text-sm text-[#C9956A]/70 leading-relaxed border-l-2 border-[#C9956A]/30 pl-5" style={{ ...D, fontStyle: "italic" }}>
-                  "Thank you for your patience. It means everything — to us, and to every patient who walks through our door."
-                  <span className="block mt-2 text-xs not-italic text-[#C9956A]/50" style={M}>— Dr. Ruxana</span>
+                <p className="text-base text-[#FAF7F2]/90 leading-loose mb-5 max-w-2xl" style={B}>
+                  We do not measure consultations by the clock. We believe in giving each patient the time needed to feel heard, understood, and confident about their treatment.
+                </p>
+                <p className="text-base text-[#FAF7F2]/90 leading-loose max-w-2xl" style={B}>
+                  Thank you for your understanding and for trusting us with your care.
                 </p>
               </FadeUp>
             </div>
