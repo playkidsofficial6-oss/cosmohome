@@ -40,11 +40,11 @@ export function Hero({ ready }: { ready: boolean }) {
         </g>
       </svg>
 
-      {/* Full-screen background image - Optimized Cover Fit & Position */}
+      {/* Full-screen background image - Proportional Fit (No Zoom) */}
       <img
-        src="/doctor/hero-bg.png"
+        src="/doctor/hero-bgnew.png"
         alt="Dr. Ruxana K"
-        className="absolute inset-0 w-full h-full object-cover object-[80%_15%] md:object-[75%_18%] lg:object-[68%_20%] xl:object-[65%_22%] pointer-events-none select-none z-0"
+        className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-contain pointer-events-none select-none z-0"
       />
 
 
@@ -125,12 +125,9 @@ export function Hero({ ready }: { ready: boolean }) {
             transition={{ duration: 0.7, delay: d(1.0) }}
           >
             {/* Feature 1 */}
-            <div className="flex-1 flex flex-col items-center text-center px-1 sm:px-2">
-              <div className="text-[#8C5D47] mb-2.5 shrink-0">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  <path d="m9 11 2 2 4-4" />
-                </svg>
+            <div className="flex-1 flex flex-col items-start text-left">
+              <div className="mb-2.5 shrink-0">
+                <img src="/hero/icons/1.png" alt="Safe & Evidence Based" className="w-8 h-8 object-contain" />
               </div>
               <span className="text-[9px] sm:text-[10px] text-[#2C1810]/85 font-semibold leading-tight uppercase tracking-wider" style={M}>Safe &<br />Evidence Based</span>
             </div>
@@ -139,15 +136,8 @@ export function Hero({ ready }: { ready: boolean }) {
 
             {/* Feature 2 */}
             <div className="flex-1 flex flex-col items-center text-center px-1 sm:px-2">
-              <div className="text-[#8C5D47] mb-2.5 shrink-0">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
-                  {/* Face profile facing left */}
-                  <path d="M18 18.5c-1-1-1.3-2.5-1.3-4 0-2.2.8-3.5 1.7-4.5s.8-2.2.4-3.5c-.3-.8-1-1.3-1.8-1.3H16c-1.3 0-2.6.9-3 2.2L12.5 9c-.4 1.3-1.3 1.7-2.1 2.2C9 11.8 8 13 8 14.5c0 2.2 1.7 4 3.8 4" />
-                  {/* Hair outline */}
-                  <path d="M12.5 5.5C10.5 6 9.3 7.3 8.8 9.5c-.4 2.2.4 4.4.4 6.6" />
-                  {/* Sparkles on the right */}
-                  <path d="M19 8.5h2M20 7.5v2M21.5 11.5h1.5M22.25 10.75v1.5M17.5 13.5h1.5M18.25 12.75v1.5" />
-                </svg>
+              <div className="mb-2.5 shrink-0">
+                <img src="/hero/icons/2.png" alt="Natural Results" className="w-8 h-8 object-contain" />
               </div>
               <span className="text-[9px] sm:text-[10px] text-[#2C1810]/85 font-semibold leading-tight uppercase tracking-wider" style={M}>Natural<br />Results</span>
             </div>
@@ -156,15 +146,8 @@ export function Hero({ ready }: { ready: boolean }) {
 
             {/* Feature 3 */}
             <div className="flex-1 flex flex-col items-center text-center px-1 sm:px-2">
-              <div className="text-[#8C5D47] mb-2.5 shrink-0">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
-                  {/* Heart */}
-                  <path d="M12 13.5c-.5-.5-1.2-.8-1.8-.8-1 0-1.8.8-1.8 1.8 0 1.2 1.4 2.6 3.6 3.8 2.2-1.2 3.6-2.6 3.6-3.8 0-1-.8-1.8-1.8-1.8-.6 0-1.3.3-1.8.8z" />
-                  {/* Hands cradling */}
-                  <path d="M7 16a5 5 0 0 0 10 0" />
-                  <path d="M5.5 14a7 7 0 0 0 13 0" />
-                  <path d="M8.5 18a3 3 0 0 0 7 0" />
-                </svg>
+              <div className="mb-2.5 shrink-0">
+                <img src="/hero/icons/3.png" alt="Personalized Care" className="w-8 h-8 object-contain" />
               </div>
               <span className="text-[9px] sm:text-[10px] text-[#2C1810]/85 font-semibold leading-tight uppercase tracking-wider" style={M}>Personalized<br />Care</span>
             </div>
@@ -172,18 +155,9 @@ export function Hero({ ready }: { ready: boolean }) {
             <div className="hidden sm:block w-[1px] bg-[#2C1810]/10 shrink-0 self-stretch my-1" />
 
             {/* Feature 4 */}
-            <div className="flex-1 flex flex-col items-center text-center px-1 sm:px-2">
-              <div className="text-[#8C5D47] mb-2.5 shrink-0">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
-                  {/* Center petal */}
-                  <path d="M12 21C12 16.5 9.5 13 12 6.5C14.5 13 12 16.5 12 21Z" />
-                  {/* Left petals */}
-                  <path d="M12 21C9.8 17.5 5.8 15 9.3 10.5C11.5 13.5 12 17 12 21Z" />
-                  <path d="M12 21C7.6 18.8 3.2 18 6.8 14C9 16.5 11.2 18.8 12 21Z" />
-                  {/* Right petals */}
-                  <path d="M12 21C14.2 17.5 18.2 15 14.7 10.5C12.5 13.5 12 17 12 21Z" />
-                  <path d="M12 21C16.4 18.8 20.8 18 17.2 14C15 16.5 12.8 18.8 12 21Z" />
-                </svg>
+            <div className="flex-1 flex flex-col items-end text-right">
+              <div className="mb-2.5 shrink-0">
+                <img src="/hero/icons/4.png" alt="Holistic Approach" className="w-8 h-8 object-contain" />
               </div>
               <span className="text-[9px] sm:text-[10px] text-[#2C1810]/85 font-semibold leading-tight uppercase tracking-wider" style={M}>Holistic<br />Approach</span>
             </div>
