@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Heart, AlertTriangle, XCircle, ChevronRight, ShieldCheck, Users, Star } from "lucide-react";
+import { ArrowRight, Heart, AlertTriangle, XCircle, ChevronRight, ShieldCheck, Users, Star, Microscope, Leaf, Calendar } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, GRAIN, STEPS, DOCTORS, STANDARDS, type Step } from "../lib/constants";
 import { FadeUp, SlideIn, Rule, Tag, InputField } from "../components/ui/shared";
@@ -42,9 +42,9 @@ export function Hero({ ready }: { ready: boolean }) {
 
       {/* Full-screen background image - Proportional Fit (No Zoom) */}
       <img
-        src="/doctor/hero-bgnew.png"
+        src="/hero/main banner.webp"
         alt="Dr. Ruxana K"
-        className="absolute inset-y-0 right-0 h-full w-auto max-w-none object-contain pointer-events-none select-none z-0"
+        className="absolute bottom-0 right-0 h-[92%] w-auto max-w-none object-contain pointer-events-none select-none z-0"
       />
 
 
@@ -251,50 +251,128 @@ export function Hero({ ready }: { ready: boolean }) {
 
 export function Philosophy() {
   return (
-    <section id="philosophy" className="py-6 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
-      <div className="max-w-7xl mx-auto">
-        <FadeUp><Tag>Chapter 02 — The Philosophy</Tag></FadeUp>
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-24 items-start mt-10">
-          <div>
+    <section id="philosophy" className="py-20 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2] relative overflow-hidden border-t border-[#2C1810]/5">
+      {/* Background Image */}
+      <img
+        src="/hero/session2.png"
+        alt="Philosophy Background"
+        className="absolute inset-0 w-full h-full object-contain pointer-events-none select-none z-0"
+      />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <FadeUp>
+          <div className="flex flex-col items-start">
+            <Tag>CHAPTER 02 — OUR PHILOSOPHY</Tag>
+            <div className="h-px w-20 bg-[#8C5D47]/30 my-4" />
+          </div>
+        </FadeUp>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 items-center mt-6">
+          {/* Left Column */}
+          <div className="flex flex-col items-start text-left">
             <FadeUp delay={0.05}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-[#2C1810]" style={D}>
-                We do not change<br /><em>faces.</em>
+              <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.1] text-[#2C1810] mb-5 font-light" style={D}>
+                We don't<br />change <span className="italic text-[#8C5D47]">faces.</span>
               </h2>
             </FadeUp>
-            <Rule delay={0.2} />
+
             <FadeUp delay={0.1}>
-              <p className="text-base md:text-lg text-[#2C1810] leading-relaxed" style={B}>
-                We help you become the most radiant, confident version of yourself.
+              <div className="flex items-center gap-4 my-4 w-full max-w-sm">
+                <div className="h-[1px] bg-[#2C1810]/10 flex-1" />
+                <span className="text-[#8C5D47] text-xs">✦</span>
+                <div className="h-[1px] bg-[#2C1810]/10 flex-1" />
+              </div>
+            </FadeUp>
+
+            <FadeUp delay={0.15}>
+              <p className="text-xl sm:text-2xl text-[#2C1810] leading-snug mb-5 font-light" style={D}>
+                We help people feel<br />like <span className="italic text-[#8C5D47]">themselves</span> again.
               </p>
             </FadeUp>
+
+            <FadeUp delay={0.2}>
+              <p className="text-base text-[#5C4A42] leading-relaxed mb-8 max-w-md font-light" style={B}>
+                At Cosmo Home, aesthetic medicine begins with listening. Then comes science, safety, and care — always in that order.
+              </p>
+            </FadeUp>
+
             <FadeUp delay={0.25}>
-              <motion.div whileHover={{ y: -5 }} transition={{ type: "spring", stiffness: 200, damping: 18 }}
-                className="mt-10 p-8 bg-white/80 backdrop-blur-sm border border-[#2C1810]/10 rounded-[20px] shadow-[0_8px_32px_rgba(44,24,16,0.02)] relative overflow-hidden">
-                <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
-                <p className="relative text-lg md:text-xl text-[#2C1810] leading-snug" style={{ ...D, fontStyle: "italic" }}>
-                  "We do not change faces. We help people become the best version of themselves."
-                </p>
-                <p className="relative mt-4 text-xs tracking-[0.3em] uppercase text-[#C9956A]" style={M}>— Dr. Ruxana, Founder</p>
-              </motion.div>
+              <div className="flex flex-wrap gap-4">
+                <motion.a
+                  href="/book-consultation"
+                  whileHover={{ scale: 1.03, backgroundColor: "#734A37" }}
+                  whileTap={{ scale: 0.97 }}
+                  className="group inline-flex items-center gap-2.5 px-6 py-4 bg-[#8C5D47] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase font-semibold transition-all rounded-xl shadow-lg"
+                  style={B}
+                >
+                  <Calendar size={14} className="shrink-0" />
+                  Book Consultation <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </motion.a>
+                <motion.a
+                  href="/service"
+                  whileHover={{ scale: 1.02, borderColor: "#8C5D47", color: "#8C5D47" }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group inline-flex items-center gap-2.5 px-6 py-4 border border-[#2C1810]/20 text-[#2C1810] text-xs tracking-[0.2em] uppercase font-semibold transition-all rounded-xl hover:bg-white/50"
+                  style={B}
+                >
+                  Explore Treatments <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </motion.a>
+              </div>
             </FadeUp>
           </div>
-          <div className="flex flex-col gap-6 lg:pt-4">
-            {[
-              { n: "I", title: "Beauty should feel personal", body: "No two faces are alike. No two journeys are alike. COSMO HOME was built on the belief that aesthetic medicine must begin with listening — truly listening — before it begins with treating." },
-              { n: "II", title: "Expertise is an act of care", body: "The most beautiful outcomes come not from the newest technology, but from the deepest understanding of anatomy, proportion, and the subtlety of natural ageing." },
-              { n: "III", title: "You deserve to feel at home here", body: "Most clinics are transactional. We built COSMO HOME to be the opposite — a place where you feel safe, heard, and genuinely cared for. Not a number. A person." },
-            ].map((item, i) => (
-              <FadeUp key={item.n} delay={0.1 + i * 0.1}>
-                <motion.div whileHover={{ x: 6 }} transition={{ type: "spring", stiffness: 280, damping: 22 }}
-                  className="flex gap-5 group cursor-default">
-                  <span className="text-sm text-[#C9956A] mt-0.5 shrink-0 w-6 font-medium" style={M}>{item.n}</span>
-                  <div>
-                    <p className="text-base text-[#2C1810] mb-1.5" style={{ ...D, fontStyle: "italic" }}>{item.title}</p>
-                    <p className="text-base text-[#5C4A42] leading-loose" style={B}>{item.body}</p>
-                  </div>
-                </motion.div>
-              </FadeUp>
-            ))}
+
+          {/* Right Column */}
+          <div className="flex flex-col relative z-10 divide-y divide-[#2C1810]/10">
+            {/* Point 1 */}
+            <FadeUp delay={0.1}>
+              <div className="py-6 first:pt-0 flex gap-6 items-start">
+                <span className="text-3xl text-[#8C5D47] font-light leading-none w-10 shrink-0 mt-2" style={D}>01</span>
+                <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-[#2C1810]/5">
+                  <svg className="w-6 h-6 text-[#8C5D47]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 8a5 5 0 0 0-8 0v4c0 3 2.5 5 4 6 .5.3 1.2.3 1.7 0 2-1.2 3.5-3.5 3.5-6" />
+                    <path d="M12 9c-1-1-2.5-1-3.5 0-1 1-1 2.5 0 3.5l3.5 3.5 3.5-3.5c1-1 1-2.5 0-3.5-1-1-2.5-1-3.5 0z" />
+                  </svg>
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="text-lg text-[#2C1810] mb-2 font-medium" style={D}>Beauty begins with listening</p>
+                  <p className="text-sm sm:text-base text-[#5C4A42] leading-relaxed font-light" style={B}>
+                    No two faces are alike. No two journeys are alike. We take time to understand you — truly — before we suggest anything.
+                  </p>
+                </div>
+              </div>
+            </FadeUp>
+
+            {/* Point 2 */}
+            <FadeUp delay={0.2}>
+              <div className="py-6 flex gap-6 items-start">
+                <span className="text-3xl text-[#8C5D47] font-light leading-none w-10 shrink-0 mt-2" style={D}>02</span>
+                <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-[#2C1810]/5">
+                  <Microscope size={22} strokeWidth={1.2} className="text-[#8C5D47]" />
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="text-lg text-[#2C1810] mb-2 font-medium" style={D}>Science before trends</p>
+                  <p className="text-sm sm:text-base text-[#5C4A42] leading-relaxed font-light" style={B}>
+                    The most beautiful outcomes come not from the newest technology, but from the deepest understanding of anatomy and natural ageing.
+                  </p>
+                </div>
+              </div>
+            </FadeUp>
+
+            {/* Point 3 */}
+            <FadeUp delay={0.3}>
+              <div className="py-6 flex gap-6 items-start">
+                <span className="text-3xl text-[#8C5D47] font-light leading-none w-10 shrink-0 mt-2" style={D}>03</span>
+                <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-[#2C1810]/5">
+                  <Leaf size={22} strokeWidth={1.2} className="text-[#8C5D47]" />
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="text-lg text-[#2C1810] mb-2 font-medium" style={D}>Natural results, never forced</p>
+                  <p className="text-sm sm:text-base text-[#5C4A42] leading-relaxed font-light" style={B}>
+                    Our goal is subtle, natural and lasting enhancements that respect your unique features and your story.
+                  </p>
+                </div>
+              </div>
+            </FadeUp>
           </div>
         </div>
       </div>
