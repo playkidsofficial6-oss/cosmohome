@@ -146,7 +146,7 @@ export function Nav({ ready }: { ready: boolean }) {
                   </a>
                 ) : (
                   <button onClick={l.action} style={B}
-                    className={`relative text-sm transition-colors tracking-wide group ${activeMenu === l.label ? 'text-[#C9956A]' : hasBg ? 'text-[#5C4A42] hover:text-[#2C1810]' : 'text-[#C9956A] hover:text-[#FAF7F2]'}`}>
+                    className={`cursor-pointer relative text-sm transition-colors tracking-wide group ${activeMenu === l.label ? 'text-[#C9956A]' : hasBg ? 'text-[#5C4A42] hover:text-[#2C1810]' : 'text-[#C9956A] hover:text-[#FAF7F2]'}`}>
                     {l.label}
                   </button>
                 )}
