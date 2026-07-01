@@ -48,13 +48,13 @@ export function Hero({ ready }: { ready: boolean }) {
         initial={{ opacity: 0, scale: 1.05, y: 20 }}
         animate={ready ? { opacity: 1, scale: 1, y: 0 } : {}}
         transition={{ duration: 1.2, delay: d(0.2), ease: EASE }}
-        className="absolute bottom-0 right-[-35%] sm:right-[-10%] h-[75%] sm:h-[85%] md:h-[92%] w-auto max-w-none object-contain pointer-events-none select-none z-0"
+        className="absolute bottom-0 right-[-35%] sm:right-[-10%] lg:right-0 h-[75%] sm:h-[85%] md:h-[92%] w-auto max-w-none object-contain pointer-events-none select-none z-0"
       />
 
       {/* Gradients */}
       <div
         className="absolute inset-0 hidden lg:block pointer-events-none z-10"
-        style={{ background: "linear-gradient(to right, #FAF6F0 0%, rgba(250,246,240,0.95) 20%, rgba(250,246,240,0.8) 30%, rgba(250,246,240,0) 45%)" }}
+        style={{ background: "linear-gradient(to right, #FAF6F0 0%, #FAF6F0 25%, rgba(250,246,240,0.8) 40%, rgba(250,246,240,0) 55%)" }}
       />
       <div
         className="absolute inset-0 block lg:hidden pointer-events-none z-10"
@@ -194,7 +194,7 @@ export function Hero({ ready }: { ready: boolean }) {
 
         {/* Floating Glassmorphic Quote Card */}
         <motion.div
-          className="absolute right-[22%] lg:right-[25%] xl:right-[27%] top-[24%] hidden lg:block max-w-[280px] xl:max-w-[310px] bg-white/75 backdrop-blur-md p-6 xl:p-8 rounded-[24px] shadow-[0_12px_40px_rgba(44,24,16,0.06)] border border-white/50 z-20"
+          className="absolute right-[22%] lg:right-[25%] xl:right-[28%] top-[28%] hidden lg:block max-w-[280px] xl:max-w-[310px] bg-white/75 backdrop-blur-md p-6 xl:p-8 rounded-[24px] shadow-[0_12px_40px_rgba(44,24,16,0.06)] border border-white/50 z-20"
           initial={{ opacity: 0, x: 20 }}
           animate={ready ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: d(1.1) }}
@@ -339,7 +339,7 @@ export function Philosophy() {
       <img
         src="/hero/main banner 2.webp"
         alt="Philosophy Background"
-        className="absolute inset-0 w-full h-full object-cover md:object-contain object-right-bottom md:object-center opacity-30 md:opacity-100 pointer-events-none select-none z-0"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-30 md:opacity-100 pointer-events-none select-none z-0 md:scale-[1.15] md:-translate-x-[6%]"
       />
       {/* Top Seam Blender Gradient */}
       <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#FAF6F0] via-[#FAF6F0]/80 to-transparent pointer-events-none z-10" />
@@ -856,7 +856,7 @@ export function Journey() {
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 md:mb-16 gap-5">
           <FadeUp>
-            <Tag>Chapter 06 — The COSMO HOME Journey 🗺️</Tag>
+            <Tag>Chapter 06 — The COSMO HOME Journey </Tag>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#2C1810] leading-[1.0] mt-3" style={D}>
               Imagine yourself<br /><em>here.</em>
             </h2>
