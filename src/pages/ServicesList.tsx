@@ -141,9 +141,8 @@ function BeforeAfterSlider() {
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
       />
       <div
-        className={`absolute top-5 left-5 bg-[#160A05]/80 backdrop-blur-md px-3.5 py-1.5 rounded-full text-[10px] tracking-widest uppercase text-white font-medium z-10 transition-opacity duration-300 ${
-          sliderPos < 15 ? "opacity-0 pointer-events-none" : "opacity-100"
-        }`}
+        className={`absolute top-5 left-5 bg-[#160A05]/80 backdrop-blur-md px-3.5 py-1.5 rounded-full text-[10px] tracking-widest uppercase text-white font-medium z-10 transition-opacity duration-300 ${sliderPos < 15 ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
         style={M}
       >
         Before
@@ -160,9 +159,8 @@ function BeforeAfterSlider() {
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         />
         <div
-          className={`absolute top-5 right-5 bg-[#C9956A] px-3.5 py-1.5 rounded-full text-[10px] tracking-widest uppercase text-white font-medium z-10 transition-opacity duration-300 ${
-            sliderPos > 85 ? "opacity-0 pointer-events-none" : "opacity-100"
-          }`}
+          className={`absolute top-5 right-5 bg-[#C9956A] px-3.5 py-1.5 rounded-full text-[10px] tracking-widest uppercase text-white font-medium z-10 transition-opacity duration-300 ${sliderPos > 85 ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
           style={M}
         >
           After
@@ -379,7 +377,6 @@ export default function ServicesListPage() {
               {filteredServiceKeys.map((key) => {
                 const service = SERVICES_DATA[key];
                 const category = getServiceCategory(key);
-                const { duration, downtime, suitableFor } = getServiceQuickSpec(service);
 
                 return (
                   <motion.div
@@ -420,15 +417,6 @@ export default function ServicesListPage() {
                       <p className="text-sm text-[#5C4A42] leading-relaxed line-clamp-3 font-normal" style={B}>
                         {service.description}
                       </p>
-                    </div>
-
-                    {/* Service Details (Duration • Downtime • Suitable For) */}
-                    <div className="flex items-center justify-between gap-1 border-t border-b border-[#2C1810]/5 py-3 mb-5 text-[10px] sm:text-[11px] tracking-wider uppercase font-semibold text-[#5C4A42] shrink-0" style={M}>
-                      <span className="flex items-center gap-1.5"><Clock size={12} className="text-[#C9956A] shrink-0" /> {duration}</span>
-                      <span className="text-[#2C1810]/20">•</span>
-                      <span className="flex items-center gap-1.5"><Calendar size={12} className="text-[#C9956A] shrink-0" /> {downtime}</span>
-                      <span className="text-[#2C1810]/20">•</span>
-                      <span className="flex items-center gap-1.5 max-w-[110px] truncate" title={suitableFor}><Smile size={12} className="text-[#C9956A] shrink-0" /> <span className="truncate">{suitableFor}</span></span>
                     </div>
 
                     {/* Key clinical benefits */}
@@ -581,13 +569,13 @@ export default function ServicesListPage() {
             ].map((card, cIndex) => {
               const IconComp = card.icon;
               return (
-                <FadeUp key={cIndex} delay={cIndex * 0.1} className="bg-white p-8 rounded-[20px] shadow-[0_4px_30px_rgba(44,24,16,0.02)] border border-[#2C1810]/5 flex flex-col items-start hover:shadow-[0_12px_40px_rgba(44,24,16,0.04)] transition-all duration-300">
+                <div key={cIndex} className="bg-white p-8 rounded-[20px] shadow-[0_4px_30px_rgba(44,24,16,0.02)] border border-[#2C1810]/5 flex flex-col items-start hover:shadow-[0_12px_40px_rgba(44,24,16,0.04)] transition-all duration-300">
                   <div className="p-3.5 bg-[#C9956A]/10 rounded-xl mb-6 text-[#C9956A]">
                     <IconComp size={24} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg font-semibold text-[#2C1810] mb-3" style={D}>{card.title}</h3>
                   <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed font-normal" style={B}>{card.desc}</p>
-                </FadeUp>
+                </div>
               );
             })}
           </div>
@@ -690,7 +678,11 @@ export default function ServicesListPage() {
             </div>
 
             {/* Right side: Interactive Slider */}
-            <div className="lg:col-span-7 flex justify-center">
+            <div className="lg:col-span-7 flex flex-col w-full">
+              <div className="flex items-center justify-between mb-4 px-2">
+                <span className="text-[10px] sm:text-xs text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>Clinical Case Study</span>
+                <span className="text-[10px] sm:text-xs text-[#C9956A] uppercase tracking-widest font-bold" style={M}>Laser Pigmentation Reduction</span>
+              </div>
               <BeforeAfterSlider />
             </div>
           </div>
