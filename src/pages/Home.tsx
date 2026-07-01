@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Heart, AlertTriangle, XCircle, ChevronRight, ShieldCheck, Users, Star } from "lucide-react";
+import { ArrowRight, Heart, AlertTriangle, XCircle, ChevronRight, ShieldCheck, Users, Star, Microscope, Leaf, Calendar } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, GRAIN, STEPS, DOCTORS, STANDARDS, type Step } from "../lib/constants";
 import { FadeUp, SlideIn, Rule, Tag, InputField } from "../components/ui/shared";
@@ -15,7 +15,7 @@ export function Hero({ ready }: { ready: boolean }) {
   const d = (base: number) => ready ? base : 999;
 
   return (
-    <section ref={ref} className="relative h-screen bg-[#FAF6F0] flex flex-col justify-between overflow-hidden">
+    <section ref={ref} className="relative h-screen bg-[#2C1810] md:bg-[#FAF6F0] flex flex-col justify-between overflow-hidden">
       {/* Cursive Signature Font Import */}
       <style dangerouslySetInnerHTML={{
         __html: `
@@ -25,7 +25,8 @@ export function Hero({ ready }: { ready: boolean }) {
         }
       `}} />
 
-      {/* Leaf Shadow Overlay (Cast down from top-left) */}
+      {/* --- BACKGROUNDS & OVERLAYS --- */}
+      {/* Leaf Shadow Overlay (Desktop only) */}
       <svg className="absolute top-0 left-0 w-[400px] h-[400px] text-[#2C1810]/5 pointer-events-none z-10 select-none hidden md:block" viewBox="0 0 100 100" fill="currentColor">
         <defs>
           <filter id="leaf-blur">
@@ -40,32 +41,51 @@ export function Hero({ ready }: { ready: boolean }) {
         </g>
       </svg>
 
-      {/* Full-screen background image - Optimized Cover Fit & Position */}
+      {/* Desktop Background Image ( ivory style ) */}
       <img
-        src="/doctor/hero-bg.png"
+        src="/hero/main banner.webp"
         alt="Dr. Ruxana K"
-        className="absolute inset-0 w-full h-full object-cover object-[80%_15%] md:object-[75%_18%] lg:object-[68%_20%] xl:object-[65%_22%] pointer-events-none select-none z-0"
+        className="absolute bottom-0 right-0 h-[92%] w-auto max-w-none object-contain pointer-events-none select-none z-0 hidden md:block"
       />
 
-
+      {/* Desktop Gradients */}
       <div
         className="absolute inset-0 hidden lg:block pointer-events-none z-10"
         style={{ background: "linear-gradient(to right, #FAF6F0 0%, rgba(250,246,240,0.95) 20%, rgba(250,246,240,0.8) 30%, rgba(250,246,240,0) 45%)" }}
       />
-      {/* Mobile/Tablet: Bottom-to-top fade (ends at 70% height) */}
       <div
-        className="absolute inset-0 lg:hidden pointer-events-none z-10"
+        className="absolute inset-0 hidden md:block lg:hidden pointer-events-none z-10"
         style={{ background: "linear-gradient(to top, #FAF6F0 0%, rgba(250,246,240,0.95) 30%, rgba(250,246,240,0.7) 50%, rgba(250,246,240,0) 70%)" }}
       />
 
-      {/* Grain */}
+      {/* Bottom Blender Gradient (Fades the bottom desk edge of the main banner into page background) */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-28 hidden md:block pointer-events-none z-10"
+        style={{ background: "linear-gradient(to top, #FAF6F0 0%, rgba(250,246,240,0.9) 30%, rgba(250,246,240,0) 100%)" }}
+      />
+
+      {/* Mobile Background Image ( dark style ) */}
+      <img
+        src="/hero/hero-bg-mob.webp"
+        alt="The spirit of COSMO HOME"
+        className="absolute inset-0 w-full h-full object-cover object-bottom block md:hidden z-0 pointer-events-none select-none"
+      />
+
+      {/* Mobile Dark Gradient Overlays */}
+      <div
+        className="absolute inset-0 block md:hidden pointer-events-none z-10"
+        style={{ background: "linear-gradient(to top, rgba(44,24,16,0.95) 0%, rgba(44,24,16,0.5) 40%, rgba(44,24,16,0.2) 70%, rgba(44,24,16,0.95) 100%)" }}
+      />
+
+      {/* Grain Overlay */}
       <div className="absolute inset-0 z-10 pointer-events-none opacity-[0.015]"
         style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
 
-      <div className="max-w-7xl mx-auto w-full relative z-20 flex-1 flex flex-col justify-between px-6 md:px-16 lg:px-24 pt-20 pb-6">
+
+      {/* --- DESKTOP CONTENT --- */}
+      <div className="max-w-7xl mx-auto w-full relative z-20 hidden md:flex flex-col justify-between px-6 md:px-16 lg:px-24 pt-20 pb-6 flex-1">
         {/* Single Left Column: Text & Features */}
         <div className="flex flex-col justify-center flex-1 max-w-2xl">
-
           {/* Gold Tag */}
           <motion.div
             className="flex items-center gap-1.5 text-[#C9956A] text-[10px] sm:text-xs tracking-[0.25em] font-semibold uppercase mb-4"
@@ -117,7 +137,7 @@ export function Hero({ ready }: { ready: boolean }) {
             and designed around you.
           </motion.p>
 
-          {/* 4 Feature Badges Row with Vertical Separators */}
+          {/* 4 Feature Badges Row */}
           <motion.div
             className="flex flex-wrap sm:flex-nowrap items-stretch justify-between w-full max-w-xl mb-6 pt-4 border-t border-[#2C1810]/5 gap-4 sm:gap-0"
             initial={{ opacity: 0, y: 14 }}
@@ -125,12 +145,9 @@ export function Hero({ ready }: { ready: boolean }) {
             transition={{ duration: 0.7, delay: d(1.0) }}
           >
             {/* Feature 1 */}
-            <div className="flex-1 flex flex-col items-center text-center px-1 sm:px-2">
-              <div className="text-[#8C5D47] mb-2.5 shrink-0">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  <path d="m9 11 2 2 4-4" />
-                </svg>
+            <div className="flex-1 flex flex-col items-start text-left">
+              <div className="mb-2.5 shrink-0">
+                <img src="/hero/icons/1.png" alt="Safe & Evidence Based" className="w-8 h-8 object-contain" />
               </div>
               <span className="text-[9px] sm:text-[10px] text-[#2C1810]/85 font-semibold leading-tight uppercase tracking-wider" style={M}>Safe &<br />Evidence Based</span>
             </div>
@@ -139,15 +156,8 @@ export function Hero({ ready }: { ready: boolean }) {
 
             {/* Feature 2 */}
             <div className="flex-1 flex flex-col items-center text-center px-1 sm:px-2">
-              <div className="text-[#8C5D47] mb-2.5 shrink-0">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
-                  {/* Face profile facing left */}
-                  <path d="M18 18.5c-1-1-1.3-2.5-1.3-4 0-2.2.8-3.5 1.7-4.5s.8-2.2.4-3.5c-.3-.8-1-1.3-1.8-1.3H16c-1.3 0-2.6.9-3 2.2L12.5 9c-.4 1.3-1.3 1.7-2.1 2.2C9 11.8 8 13 8 14.5c0 2.2 1.7 4 3.8 4" />
-                  {/* Hair outline */}
-                  <path d="M12.5 5.5C10.5 6 9.3 7.3 8.8 9.5c-.4 2.2.4 4.4.4 6.6" />
-                  {/* Sparkles on the right */}
-                  <path d="M19 8.5h2M20 7.5v2M21.5 11.5h1.5M22.25 10.75v1.5M17.5 13.5h1.5M18.25 12.75v1.5" />
-                </svg>
+              <div className="mb-2.5 shrink-0">
+                <img src="/hero/icons/2.png" alt="Natural Results" className="w-8 h-8 object-contain" />
               </div>
               <span className="text-[9px] sm:text-[10px] text-[#2C1810]/85 font-semibold leading-tight uppercase tracking-wider" style={M}>Natural<br />Results</span>
             </div>
@@ -156,15 +166,8 @@ export function Hero({ ready }: { ready: boolean }) {
 
             {/* Feature 3 */}
             <div className="flex-1 flex flex-col items-center text-center px-1 sm:px-2">
-              <div className="text-[#8C5D47] mb-2.5 shrink-0">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
-                  {/* Heart */}
-                  <path d="M12 13.5c-.5-.5-1.2-.8-1.8-.8-1 0-1.8.8-1.8 1.8 0 1.2 1.4 2.6 3.6 3.8 2.2-1.2 3.6-2.6 3.6-3.8 0-1-.8-1.8-1.8-1.8-.6 0-1.3.3-1.8.8z" />
-                  {/* Hands cradling */}
-                  <path d="M7 16a5 5 0 0 0 10 0" />
-                  <path d="M5.5 14a7 7 0 0 0 13 0" />
-                  <path d="M8.5 18a3 3 0 0 0 7 0" />
-                </svg>
+              <div className="mb-2.5 shrink-0">
+                <img src="/hero/icons/3.png" alt="Personalized Care" className="w-8 h-8 object-contain" />
               </div>
               <span className="text-[9px] sm:text-[10px] text-[#2C1810]/85 font-semibold leading-tight uppercase tracking-wider" style={M}>Personalized<br />Care</span>
             </div>
@@ -172,18 +175,9 @@ export function Hero({ ready }: { ready: boolean }) {
             <div className="hidden sm:block w-[1px] bg-[#2C1810]/10 shrink-0 self-stretch my-1" />
 
             {/* Feature 4 */}
-            <div className="flex-1 flex flex-col items-center text-center px-1 sm:px-2">
-              <div className="text-[#8C5D47] mb-2.5 shrink-0">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
-                  {/* Center petal */}
-                  <path d="M12 21C12 16.5 9.5 13 12 6.5C14.5 13 12 16.5 12 21Z" />
-                  {/* Left petals */}
-                  <path d="M12 21C9.8 17.5 5.8 15 9.3 10.5C11.5 13.5 12 17 12 21Z" />
-                  <path d="M12 21C7.6 18.8 3.2 18 6.8 14C9 16.5 11.2 18.8 12 21Z" />
-                  {/* Right petals */}
-                  <path d="M12 21C14.2 17.5 18.2 15 14.7 10.5C12.5 13.5 12 17 12 21Z" />
-                  <path d="M12 21C16.4 18.8 20.8 18 17.2 14C15 16.5 12.8 18.8 12 21Z" />
-                </svg>
+            <div className="flex-1 flex flex-col items-end text-right">
+              <div className="mb-2.5 shrink-0">
+                <img src="/hero/icons/4.png" alt="Holistic Approach" className="w-8 h-8 object-contain" />
               </div>
               <span className="text-[9px] sm:text-[10px] text-[#2C1810]/85 font-semibold leading-tight uppercase tracking-wider" style={M}>Holistic<br />Approach</span>
             </div>
@@ -205,17 +199,24 @@ export function Hero({ ready }: { ready: boolean }) {
             >
               Begin Your Journey <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </motion.a>
-            {/* <motion.a
-                href="/#philosophy"
-                whileHover={{ scale: 1.02 }}
-                className="inline-flex items-center gap-3 text-[#2C1810]/80 hover:text-[#2C1810] text-xs tracking-[0.2em] uppercase transition-colors py-4 font-semibold group"
-                style={B}
-              >
-                <span className="w-8 h-8 rounded-full border border-[#2C1810]/20 flex items-center justify-center text-[#C9956A] group-hover:border-[#C9956A] transition-colors text-[10px]">▶</span>
-                Discover Our Philosophy
-              </motion.a> */}
           </motion.div>
         </div>
+
+        {/* Floating Glassmorphic Quote Card */}
+        <motion.div
+          className="absolute right-[22%] lg:right-[25%] xl:right-[27%] top-[24%] hidden lg:block max-w-[280px] xl:max-w-[310px] bg-white/75 backdrop-blur-md p-6 xl:p-8 rounded-[24px] shadow-[0_12px_40px_rgba(44,24,16,0.06)] border border-white/50 z-20"
+          initial={{ opacity: 0, x: 20 }}
+          animate={ready ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, delay: d(1.1) }}
+        >
+          <span className="text-[#C9956A] text-6xl font-serif leading-none block absolute -top-4 left-3 select-none opacity-20">“</span>
+          <p className="text-[#2C1810]/95 text-xs sm:text-sm leading-relaxed font-light mb-4 relative z-10" style={B}>
+            Beauty is not about changing who you are, it's about bringing out the best version of you.
+          </p>
+          <p className="text-2xl text-[#C9956A] font-signature text-right pr-2">
+            Dr. Ruxana K
+          </p>
+        </motion.div>
 
         {/* Bottom Section: Premium Stats Banner */}
         <motion.div
@@ -271,56 +272,199 @@ export function Hero({ ready }: { ready: boolean }) {
           </div>
         </motion.div>
       </div>
+
+
+      {/* --- MOBILE CONTENT (Restore original dark design) --- */}
+      <motion.div className="relative z-20 flex md:hidden flex-col justify-between pt-20 pb-4 px-6 h-[100svh] w-full flex-1">
+        <div className="flex flex-col">
+          <motion.p className="text-[#C9956A] text-[10px] tracking-[0.15em] uppercase mb-4 font-semibold" style={M}
+            initial={{ opacity: 0, x: -16 }} animate={ready ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: d(0.3) }}>
+            ✨ EXPERT-LED · SKIN · HAIR · AESTHETICS
+          </motion.p>
+
+          <h1 className="text-[#FAF7F2] text-4xl leading-[1.05] mb-5 font-light" style={D}>
+            {["Beauty", "Feels", "At Home."].map((word, i) => (
+              <div key={word} className="overflow-hidden">
+                <motion.span className={`block ${i === 1 ? "italic text-[#C9956A]" : ""}`}
+                  initial={{ y: "105%" }} animate={ready ? { y: 0 } : {}}
+                  transition={{ duration: 1.0, delay: d(0.45 + i * 0.15), ease: EASE }}>
+                  {word}
+                </motion.span>
+              </div>
+            ))}
+          </h1>
+
+          <motion.div className="w-8 h-px bg-[#C9956A] mb-5"
+            initial={{ scaleX: 0 }} animate={ready ? { scaleX: 1 } : {}} transition={{ delay: d(0.9), duration: 0.8 }} />
+
+          <motion.p className="text-[#FAF7F2]/90 text-sm leading-relaxed max-w-[240px] font-light" style={B}
+            initial={{ opacity: 0, y: 18 }} animate={ready ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: d(0.95) }}>
+            Expert-led aesthetic medicine designed around confidence, care, and your most natural beauty.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }} animate={ready ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: d(1.05) }}
+            className="mt-6 mb-2"
+          >
+            <img src="/hero/sign.webp" alt="Dr. Ruxana K" className="h-14 w-auto object-contain" />
+            <p className="text-[#FAF7F2]/80 text-[11px] tracking-[0.2em] uppercase mt-1 font-semibold" style={M}>Founder</p>
+          </motion.div>
+        </div>
+
+        <div className="flex flex-col gap-3 mt-4">
+          <motion.div className="bg-[#2B1610]/75 backdrop-blur-md rounded-2xl p-4 flex justify-between items-center border border-white/5"
+            initial={{ opacity: 0, y: 20 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: d(1.2), duration: 0.8 }}>
+            {[{ n: "20+", l: "Years of Care", icon: <ShieldCheck size={18} strokeWidth={1.5} className="text-[#C9956A] mb-1.5 mx-auto" /> },
+            { n: "3,800+", l: "Transformations", icon: <Users size={18} strokeWidth={1.5} className="text-[#C9956A] mb-1.5 mx-auto" /> },
+            { n: "5", l: "Doctors", icon: <Star size={18} strokeWidth={1.5} className="text-[#C9956A] mb-1.5 mx-auto" /> }].map(({ n, l, icon }, i) => (
+              <div key={l} className={`flex-1 text-center ${i !== 2 ? 'border-r border-[#FAF7F2]/10' : ''}`}>
+                {icon}
+                <p className="text-[#FAF7F2] text-[15px] font-medium" style={D}>{n}</p>
+                <p className="text-[#FAF7F2]/70 text-[9px] tracking-wider mt-0.5 uppercase" style={B}>{l}</p>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.a href="/book-consultation"
+            className="w-full py-4 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase rounded-xl flex items-center justify-center gap-2 font-semibold" style={B}
+            initial={{ opacity: 0, y: 20 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: d(1.3), duration: 0.8 }}>
+            Begin Your Journey <ArrowRight size={14} />
+          </motion.a>
+        </div>
+      </motion.div>
     </section>
   );
 }
 
 export function Philosophy() {
   return (
-    <section id="philosophy" className="py-6 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
-      <div className="max-w-7xl mx-auto">
-        <FadeUp><Tag>Chapter 02 — The Philosophy</Tag></FadeUp>
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-24 items-start mt-10">
-          <div>
+    <section id="philosophy" className="py-20 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF6F0] relative overflow-hidden">
+      {/* Background Image */}
+      <img
+        src="/hero/main banner 2.webp"
+        alt="Philosophy Background"
+        className="absolute inset-0 w-full h-full object-cover md:object-contain object-right-bottom md:object-center opacity-30 md:opacity-100 pointer-events-none select-none z-0"
+      />
+      {/* Top Seam Blender Gradient */}
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#FAF6F0] via-[#FAF6F0]/80 to-transparent pointer-events-none z-10" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <FadeUp>
+          <div className="flex flex-col items-start">
+            <Tag>CHAPTER 02 — OUR PHILOSOPHY</Tag>
+            <div className="h-px w-20 bg-[#8C5D47]/30 my-4" />
+          </div>
+        </FadeUp>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 items-center mt-6">
+          {/* Left Column */}
+          <div className="flex flex-col items-start text-left">
             <FadeUp delay={0.05}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-[#2C1810]" style={D}>
-                We do not change<br /><em>faces.</em>
+              <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.1] text-[#2C1810] mb-5 font-light" style={D}>
+                We don't<br />change <span className="italic text-[#8C5D47]">faces.</span>
               </h2>
             </FadeUp>
-            <Rule delay={0.2} />
+
             <FadeUp delay={0.1}>
-              <p className="text-base md:text-lg text-[#2C1810] leading-relaxed" style={B}>
-                We help you become the most radiant, confident version of yourself.
+              <div className="flex items-center gap-4 my-4 w-full max-w-sm">
+                <div className="h-[1px] bg-[#2C1810]/10 flex-1" />
+                <span className="text-[#8C5D47] text-xs">✦</span>
+                <div className="h-[1px] bg-[#2C1810]/10 flex-1" />
+              </div>
+            </FadeUp>
+
+            <FadeUp delay={0.15}>
+              <p className="text-xl sm:text-2xl text-[#2C1810] leading-snug mb-5 font-light" style={D}>
+                We help people feel<br />like <span className="italic text-[#8C5D47]">themselves</span> again.
               </p>
             </FadeUp>
+
+            <FadeUp delay={0.2}>
+              <p className="text-base text-[#5C4A42] leading-relaxed mb-8 max-w-md font-light" style={B}>
+                At Cosmo Home, aesthetic medicine begins with listening. Then comes science, safety, and care — always in that order.
+              </p>
+            </FadeUp>
+
             <FadeUp delay={0.25}>
-              <motion.div whileHover={{ y: -5 }} transition={{ type: "spring", stiffness: 200, damping: 18 }}
-                className="mt-10 p-8 bg-white/80 backdrop-blur-sm border border-[#2C1810]/10 rounded-[20px] shadow-[0_8px_32px_rgba(44,24,16,0.02)] relative overflow-hidden">
-                <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
-                <p className="relative text-lg md:text-xl text-[#2C1810] leading-snug" style={{ ...D, fontStyle: "italic" }}>
-                  "We do not change faces. We help people become the best version of themselves."
-                </p>
-                <p className="relative mt-4 text-xs tracking-[0.3em] uppercase text-[#C9956A]" style={M}>— Dr. Ruxana, Founder</p>
-              </motion.div>
+              <div className="flex flex-col sm:flex-row gap-4 w-full">
+                <motion.a
+                  href="/book-consultation"
+                  whileHover={{ scale: 1.03, backgroundColor: "#734A37" }}
+                  whileTap={{ scale: 0.97 }}
+                  className="group flex justify-center items-center gap-2.5 px-6 py-4 w-full sm:w-auto bg-[#8C5D47] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase font-semibold transition-all rounded-xl shadow-lg"
+                  style={B}
+                >
+                  <Calendar size={14} className="shrink-0" />
+                  Book Consultation <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </motion.a>
+                <motion.a
+                  href="/service"
+                  whileHover={{ scale: 1.02, borderColor: "#8C5D47", color: "#8C5D47" }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group flex justify-center items-center gap-2.5 px-6 py-4 w-full sm:w-auto border border-[#2C1810]/20 text-[#2C1810] text-xs tracking-[0.2em] uppercase font-semibold transition-all rounded-xl hover:bg-[#2C1810]/5"
+                  style={B}
+                >
+                  Explore Treatments <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </motion.a>
+              </div>
             </FadeUp>
           </div>
-          <div className="flex flex-col gap-6 lg:pt-4">
-            {[
-              { n: "I", title: "Beauty should feel personal", body: "No two faces are alike. No two journeys are alike. COSMO HOME was built on the belief that aesthetic medicine must begin with listening — truly listening — before it begins with treating." },
-              { n: "II", title: "Expertise is an act of care", body: "The most beautiful outcomes come not from the newest technology, but from the deepest understanding of anatomy, proportion, and the subtlety of natural ageing." },
-              { n: "III", title: "You deserve to feel at home here", body: "Most clinics are transactional. We built COSMO HOME to be the opposite — a place where you feel safe, heard, and genuinely cared for. Not a number. A person." },
-            ].map((item, i) => (
-              <FadeUp key={item.n} delay={0.1 + i * 0.1}>
-                <motion.div whileHover={{ x: 6 }} transition={{ type: "spring", stiffness: 280, damping: 22 }}
-                  className="flex gap-5 group cursor-default">
-                  <span className="text-sm text-[#C9956A] mt-0.5 shrink-0 w-6 font-medium" style={M}>{item.n}</span>
-                  <div>
-                    <p className="text-base text-[#2C1810] mb-1.5" style={{ ...D, fontStyle: "italic" }}>{item.title}</p>
-                    <p className="text-base text-[#5C4A42] leading-loose" style={B}>{item.body}</p>
-                  </div>
-                </motion.div>
-              </FadeUp>
-            ))}
+
+          {/* Right Column */}
+          <div className="flex flex-col relative z-10 divide-y divide-[#2C1810]/10">
+            {/* Point 1 */}
+            <FadeUp delay={0.1}>
+              <div className="py-6 first:pt-0 flex gap-6 items-start">
+                <span className="text-3xl text-[#8C5D47] font-light leading-none w-10 shrink-0 mt-2" style={D}>01</span>
+                <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-[#2C1810]/5">
+                  <svg className="w-6 h-6 text-[#8C5D47]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 8a5 5 0 0 0-8 0v4c0 3 2.5 5 4 6 .5.3 1.2.3 1.7 0 2-1.2 3.5-3.5 3.5-6" />
+                    <path d="M12 9c-1-1-2.5-1-3.5 0-1 1-1 2.5 0 3.5l3.5 3.5 3.5-3.5c1-1 1-2.5 0-3.5-1-1-2.5-1-3.5 0z" />
+                  </svg>
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="text-lg text-[#2C1810] mb-2 font-medium" style={D}>Beauty begins with listening</p>
+                  <p className="text-sm sm:text-base text-[#5C4A42] leading-relaxed font-light" style={B}>
+                    No two faces are alike. No two journeys are alike. We take time to understand you — truly — before we suggest anything.
+                  </p>
+                </div>
+              </div>
+            </FadeUp>
+
+            {/* Point 2 */}
+            <FadeUp delay={0.2}>
+              <div className="py-6 flex gap-6 items-start">
+                <span className="text-3xl text-[#8C5D47] font-light leading-none w-10 shrink-0 mt-2" style={D}>02</span>
+                <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-[#2C1810]/5">
+                  <Microscope size={22} strokeWidth={1.2} className="text-[#8C5D47]" />
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="text-lg text-[#2C1810] mb-2 font-medium" style={D}>Science before trends</p>
+                  <p className="text-sm sm:text-base text-[#5C4A42] leading-relaxed font-light" style={B}>
+                    The most beautiful outcomes come not from the newest technology, but from the deepest understanding of anatomy and natural ageing.
+                  </p>
+                </div>
+              </div>
+            </FadeUp>
+
+            {/* Point 3 */}
+            <FadeUp delay={0.3}>
+              <div className="py-6 flex gap-6 items-start">
+                <span className="text-3xl text-[#8C5D47] font-light leading-none w-10 shrink-0 mt-2" style={D}>03</span>
+                <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-[#2C1810]/5">
+                  <Leaf size={22} strokeWidth={1.2} className="text-[#8C5D47]" />
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="text-lg text-[#2C1810] mb-2 font-medium" style={D}>Natural results, never forced</p>
+                  <p className="text-sm sm:text-base text-[#5C4A42] leading-relaxed font-light" style={B}>
+                    Our goal is subtle, natural and lasting enhancements that respect your unique features and your story.
+                  </p>
+                </div>
+              </div>
+            </FadeUp>
           </div>
         </div>
       </div>
@@ -366,18 +510,21 @@ export function ExtraordinaryCare() {
               </FadeUp>
               <FadeUp delay={0.1}>
                 <p className="text-base text-[#5C4A42] leading-loose mb-5 max-w-2xl" style={B}>
-                  We have heard you. We know that sometimes, the wait feels long. And we want you to understand why — because the answer is <em>you</em>.
+                  We understand that waiting can be frustrating, and we sincerely appreciate your patience.
                 </p>
                 <p className="text-base text-[#5C4A42] leading-loose mb-5 max-w-2xl" style={B}>
-                  <strong className="text-[#2C1810] font-medium">Every patient deserves to be heard, understood, and guided with complete attention.</strong> When the patient before you is with Dr. Ruxana, they are not being hurried. Their concerns are being listened to fully. Their questions are answered honestly.
+                  <strong className="text-[#2C1810] font-medium">At our clinic, every patient is given the time and attention they deserve.</strong> When someone is with Dr. Ruxana, their concerns are being listened to carefully, their questions are being answered thoughtfully, and their care is never rushed.
                 </p>
-                <p className="text-base text-[#5C4A42]/80 leading-relaxed max-w-2xl" style={B}>
-                  When it is your turn, you will receive exactly the same. We do not believe in 10-minute appointments. We believe in the time it takes to truly care.
+                <p className="text-base text-[#5C4A42] leading-loose mb-5 max-w-2xl" style={B}>
+                  This approach may sometimes mean longer waiting times, but it also ensures that when it is your turn, you will receive the same level of attention, compassion, and thorough care.
+                </p>
+                <p className="text-base text-[#5C4A42] leading-loose max-w-2xl" style={B}>
+                  We do not measure consultations by the clock. We believe in giving each patient the time needed to feel heard, understood, and confident about their treatment.
                 </p>
               </FadeUp>
               <FadeUp delay={0.3}>
                 <p className="mt-8 text-sm text-[#8C5D47] leading-relaxed border-l-2 border-[#C9956A]/30 pl-5" style={{ ...D, fontStyle: "italic" }}>
-                  "Thank you for your patience. It means everything — to us, and to every patient who walks through our door."
+                  "Thank you for your understanding and for trusting us with your care."
                   <span className="block mt-2 text-xs not-italic text-[#C9956A]" style={M}>— Dr. Ruxana</span>
                 </p>
               </FadeUp>
@@ -544,7 +691,7 @@ export function Experiences() {
                               onClick={() => navigate("/service")}
                               whileTap={{ scale: 0.97 }}
                               style={B}
-                              className="inline-flex justify-center items-center gap-3 w-full py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-lg shadow-lg shadow-[#C9956A]/30 group"
+                              className="cursor-pointer inline-flex justify-center items-center gap-3 w-full py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-lg shadow-lg shadow-[#C9956A]/30 group"
                             >
                               View Full Service Details
                               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />

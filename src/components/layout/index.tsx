@@ -128,7 +128,7 @@ export function Nav({ ready }: { ready: boolean }) {
       <motion.header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${hasBg ? "bg-[#FAF7F2]/95 backdrop-blur-md shadow-sm" : ""}`}
         initial={ready ? false : { y: -80, opacity: 0 }} animate={ready ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, delay: 0.3, ease: EASE }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16 relative">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24 flex items-center justify-between h-16 relative">
           <a href="/" onClick={(e) => { e.preventDefault(); navigate("/"); }} className="flex items-center gap-2 cursor-pointer z-10">
             <img src="/icon.svg" alt="Cosmo Home Icon" className="h-8 md:h-10 w-auto" />
             <div className="flex flex-col leading-none">
@@ -146,7 +146,7 @@ export function Nav({ ready }: { ready: boolean }) {
                   </a>
                 ) : (
                   <button onClick={l.action} style={B}
-                    className={`relative text-sm transition-colors tracking-wide group ${activeMenu === l.label ? 'text-[#C9956A]' : hasBg ? 'text-[#5C4A42] hover:text-[#2C1810]' : 'text-[#C9956A] hover:text-[#FAF7F2]'}`}>
+                    className={`cursor-pointer relative text-sm transition-colors tracking-wide group ${activeMenu === l.label ? 'text-[#C9956A]' : hasBg ? 'text-[#5C4A42] hover:text-[#2C1810]' : 'text-[#C9956A] hover:text-[#FAF7F2]'}`}>
                     {l.label}
                   </button>
                 )}
