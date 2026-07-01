@@ -236,7 +236,7 @@ export function ExtraordinaryCare() {
                   We have heard you. We know that sometimes, the wait feels long. And we want you to understand why — because the answer is <em>you</em>.
                 </p>
                 <p className="text-base text-[#FAF7F2]/90 leading-loose mb-5 max-w-2xl" style={B}>
-                  <strong className="text-[#FAF7F2]/90 font-medium">Every patient deserves to be heard, understood, and guided with complete attention.</strong> When the patient before you is with Dr. Ruxana, they are not being hurried. Their concerns are being listened to fully. Their questions answered honestly.
+                  <strong className="text-[#FAF7F2]/90 font-medium">Every patient deserves to be heard, understood, and guided with complete attention.</strong> When the patient before you is with Dr. Ruxana, they are not being hurried. Their concerns are being listened to fully. Their questions are answered honestly..
                 </p>
                 <p className="text-base text-[#FAF7F2]/75 leading-relaxed max-w-2xl" style={B}>
                   When it is your turn, you will receive exactly the same. We do not believe in 10-minute appointments. We believe in the time it takes to truly care.
@@ -325,7 +325,7 @@ export function DrRuxana() {
             Dr. Ruxana did not enter aesthetic medicine to sell treatments. She entered it because she witnessed, again and again, how much a woman's confidence shapes her entire life — her relationships, her ambitions, her sense of self.
           </p>
           <p className="text-base md:text-sm text-[#2C1810]/80 leading-[1.85] mb-8 max-w-[450px]" style={B}>
-            She trained for over a decade before founding COSMO HOME — not as a clinic, but as a philosophy. A belief that the most powerful aesthetic outcomes are gentle, natural, and deeply personal.
+            She trained for over a decade before founding COSMO HOME — not as a clinic, but as a philosophy: a belief that the most powerful aesthetic outcomes are gentle, natural, and deeply personal.
           </p>
 
           <motion.div
@@ -356,8 +356,8 @@ export function Experiences() {
   const exps = [
     { name: "Skin Renewal Experience ✨", tagline: "Rediscover your glow", desc: "A deeply personalised skin journey combining medical-grade analysis, bespoke topical protocols, and precision regenerative treatments. Designed to restore luminosity and texture — naturally, gradually, lastingly.", duration: "From 3 sessions", suitedFor: "All skin types seeking radiance" },
     { name: "Age Gracefully Experience 🌸", tagline: "Confidence, not correction", desc: "A staged approach to natural facial rejuvenation. We work with the architecture of your face — not against it — using subtle volume restoration and refined contouring.", duration: "Ongoing, quarterly", suitedFor: "35–60 · natural longevity seekers" },
-    { name: "Confidence Restoration 🦋", tagline: "Return to yourself", desc: "For those at a turning point — post-pregnancy, post-illness, post-life-change — built around rebuilding your relationship with yourself and your reflection.", duration: "Bespoke programme", suitedFor: "Women navigating life transitions" },
-    { name: "Hair Revival Experience 🌿", tagline: "Strength from within", desc: "A clinical and holistic approach to hair thinning and scalp health. Addressing the root cause, not just the symptom, through advanced growth factor therapies.", duration: "6-month programme", suitedFor: "Hair thinning at any age" },
+    { name: "Confidence Restoration 🦋", tagline: "Return to yourself", desc: "For those at a turning point — post-pregnancy, post-illness, post-life-change — it is built around rebuilding your relationship with yourself and your reflection.", duration: "Bespoke programme", suitedFor: "Women navigating life transitions" },
+    { name: "Hair Revival Experience 🌿", tagline: "Strength from within", desc: "A clinical and holistic approach to hair thinning and scalp health. Addresses the root cause, not just the symptom, through advanced growth factor therapies.", duration: "6-month programme", suitedFor: "Hair thinning at any age" },
     { name: "Personalised Aesthetic Journey 💫", tagline: "Your vision. Our expertise.", desc: "A comprehensive long-term relationship with aesthetic care. Dr. Ruxana designs a multi-year plan aligned with your goals, lifestyle, and evolving beauty.", duration: "Annual programme", suitedFor: "Anyone committed to the long view" },
   ];
   return (
@@ -686,7 +686,7 @@ export function TeamAndStandards() {
                 <strong className="text-[#FAF7F2]/90 font-medium">The aesthetics industry has a problem.</strong> Anyone — with zero medical training — can legally inject your face. Thousands of people every year are harmed by unqualified practitioners operating out of beauty salons and pop-up clinics.
               </p>
               <p className="text-base text-[#FAF7F2]/85 leading-relaxed mb-6" style={B}>
-                Dr. Ruxana has been a vocal advocate against this — because she has seen the consequences. Patients arriving with occlusions, necrosis, and lasting trauma from treatments performed by people who had no right to perform them.
+                Dr. Ruxana has been a vocal advocate against this — because she has seen the consequences. Patients arrive with occlusions, necrosis, and lasting trauma from treatments performed by people who had no right to perform them.
               </p>
               <motion.blockquote initial={{ opacity: 0, x: -14 }} whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }} transition={{ duration: 0.7 }}
@@ -779,7 +779,7 @@ export function Stories() {
   const stories = [
     { author: "Isabelle W., 42", context: "Entrepreneur · Skin Renewal Experience", pull: "I had forgotten what my own confidence felt like. 💛", body: "Two years running a company, two years of putting everything else first. When I finally walked through COSMO HOME's door, I did not want a procedure. I wanted to feel like myself again. Six months in, my team keeps asking what I have changed. I tell them: my relationship with myself." },
     { author: "Nadia P., 35", context: "Creative Director · Age Gracefully Experience", pull: "She listened before she said a single word about treatment. 🌸", body: "I had been to two other clinics before COSMO HOME. Both had a menu ready before I finished a sentence. Dr. Ruxana asked me what I was feeling. A year later, I look the way I feel on my best days. That is all I ever wanted." },
-    { author: "Claudia M., 51", context: "Architect · Personalised Aesthetic Journey", pull: "Beauty should grow with you, not fight against you. ✨", body: "Dr. Ruxana designed a two-year plan for me. Not to look younger — to look like myself at my best. The most considered, thoughtful investment I have made in myself. I am more proud of how I look at 51 than I ever was at 35." },
+    { author: "Claudia M., 51", context: "Architect · Personalised Aesthetic Journey", pull: "Beauty should grow with you, not fight against you. ✨", body: "Dr. Ruxana designed a two-year plan for me. Not to look younger — to look like myself at my best. The most considered, thoughtful investment I have made in myself. I'm prouder of how I look at 51 than I ever was at 35." },
   ];
   return (
     <section id="stories" className="py-6 md:py-32 bg-[#FAF7F2]">

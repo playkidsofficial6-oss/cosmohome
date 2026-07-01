@@ -187,7 +187,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { n: "All Skin Types", l: "Safe & suitable" }
     ],
     whatIsThisTag: "WHAT IS HYDRAFACIAL?",
-    whatIsThisTitle: "This is note",
+    whatIsThisTitle: "This is not",
     whatIsThisEmphasized: "a salon facial.",
     whatIsThisDesc1: "Hydrafacial is a medical-grade skin rejuvenation treatment that goes beyond traditional facials. Using advanced vortex technology, it deeply cleanses, gently exfoliates, removes impurities, and infuses the skin with nourishing serums—all in one relaxing treatment.",
     whatIsThisDesc2: "Unlike conventional facials, every Hydrafacial is customised to your skin's unique needs, helping improve hydration, skin texture, clarity, and overall radiance without discomfort or downtime.",
@@ -510,7 +510,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     title: "Light Rejuvenation",
     titleEmphasized: "Phototherapy.",
     experienceNo: "Signature Experience",
-    description: "Medical-grade LED light therapy to heal acne, soothe inflammation, reduce redness, and charge skin cells.",
+    description: "This medical-grade LED light therapy heals active acne, soothes inflammation, reduces redness, and recharges skin cells for a healthier, revitalized complexion.",
     heroRating: "4.9 · Rated by 150+ patients",
     heroImage: "/services/phototherapy/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
@@ -675,7 +675,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     title: "Smooth Skin",
     titleEmphasized: "Lasting Confidence.",
     experienceNo: "Signature Experience",
-    description: "Comfort-focused, medical-grade laser hair reduction for a wide range of skin tones and hair types using advanced triple-wavelength technology.",
+    description: "Experience medical-grade, comfort-focused laser hair reduction utilizing advanced triple-wavelength technology suitable for a wide range of skin tones.",
     heroRating: "4.9 · Rated by 450+ patients",
     heroImage: "/services/laser-hair-reduction/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
@@ -757,7 +757,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     title: "Body Definition",
     titleEmphasized: "Sculpting.",
     experienceNo: "Signature Experience",
-    description: "High-intensity electromagnetic energy builds stronger muscles, improves body definition, and reduces stubborn fat—completely non-invasive with zero downtime.",
+    description: "Build muscle strength, improve body definition, and reduce stubborn fat with high-intensity electromagnetic technology that is completely non-invasive.",
     heroRating: "4.8 · Rated by 160+ patients",
     heroImage: "/services/muscle-sculpting/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
@@ -808,7 +808,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     sessionPlanDesc: "A complete course consists of 4 to 6 sessions scheduled 2 to 3 days apart (completed in 2 weeks).",
     sessionPlanSteps: [
-      { n: "01", label: "Abdominal/Gluteal Mapping", duration: "30 min", detail: "Dr. Ruxana measures target zones, outlines muscle boundaries, and sets energy levels." },
+      { n: "01", label: "Abdominal/Gluteal Mapping", duration: "30 min", detail: "Our clinical specialist measures target zones, outlines muscle boundaries, and sets energy levels." },
       { n: "02", label: "Focused HIFEM Session", duration: "30 min", detail: "Applicators are secured. Intensity is slowly stepped up to your comfort ceiling. Feels like powerful but comfortable muscle contractions similar to an intense workout." },
       { n: "03", label: "Recovery & Aftercare", duration: "10 min", detail: "Applicators are removed, the treated area is assessed, and aftercare guidance is provided. Patients can immediately return to normal daily activities." }
     ],
@@ -840,7 +840,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     title: "Advanced Regenerative",
     titleEmphasized: "PRP & GFC.",
     experienceNo: "Signature Experience",
-    description: "Advanced regenerative therapies using PRP and Growth Factor Concentrate (GFC) to stimulate hair growth, improve skin quality, and support natural tissue repair.",
+    description: "Restore hair density and improve skin structure with advanced regenerative therapies that utilize growth factors to stimulate natural cellular repair.",
     heroRating: "4.9 · Rated by 280+ patients",
     heroImage: "/services/exosomes-prp-gfc/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
@@ -855,7 +855,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     whatIsThisTitle: "This is not",
     whatIsThisEmphasized: "a temporary filler.",
     whatIsThisDesc1: "Exosomes, PRP (Platelet-Rich Plasma), and GFC (Growth Factor Concentrate) are advanced bio-regenerative treatments that use naturally occurring growth factors and cell-signaling molecules to repair damaged tissue and stimulate hair follicles.",
-    whatIsThisDesc2: "Instead of synthetic chemicals, these therapies harness your body's own natural growth factors (PRP/GFC) or laboratory-purified exosomes to stimulate collagen, repair scars, and reverse hair thinning. Every treatment is prepared in a sterile clinical laboratory and injected by Dr. Ruxana or our dermatologists.",
+    whatIsThisDesc2: "Instead of synthetic chemicals, these therapies harness your body's own natural growth factors (PRP/GFC) or laboratory-purified exosomes to stimulate collagen, repair scars, and reverse hair thinning. Every treatment is prepared in a sterile clinical laboratory and administered by our board-certified cosmetic dermatologists.",
     benefits: [
       { icon: "🧬", b: "Bio-regenerative healing", d: "Uses natural cell-signaling pathways for repair" },
       { icon: "🧪", b: "Purified Growth Factors", d: "Highly concentrated growth factors support tissue repair and regeneration." },
@@ -892,7 +892,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     sessionPlanDesc: "A typical treatment plan includes 3–4 sessions performed 4 weeks apart, followed by maintenance treatments as recommended by your dermatologist.",
     sessionPlanSteps: [
       { n: "01", label: "PRP/GFC Preparation", duration: "30 min", detail: "A small blood sample is collected and processed using a medical centrifuge to prepare concentrated PRP or GFC. Exosomes are prepared under sterile clinical conditions when included in the treatment." },
-      { n: "02", label: "Micro-Droplet Delivery", duration: "30 min", detail: "Once the numbing cream is removed, Dr. Ruxana performs precise micro-droplet injections into the targeted skin or scalp." },
+      { n: "02", label: "Micro-Droplet Delivery", duration: "30 min", detail: "Once the numbing cream is removed, our cosmetic dermatologist performs precise micro-droplet injections into the targeted skin or scalp." },
       { n: "03", label: "LED Red Light Recovery", duration: "15 min", detail: "LED red light therapy helps reduce post-treatment redness, supports skin recovery, and improves patient comfort." }
     ],
     timelineDesc: "Hair follicles and collagen remodeling continue to improve gradually over the following 3–6 months.",
