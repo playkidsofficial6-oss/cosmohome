@@ -510,18 +510,21 @@ export function ExtraordinaryCare() {
               </FadeUp>
               <FadeUp delay={0.1}>
                 <p className="text-base text-[#5C4A42] leading-loose mb-5 max-w-2xl" style={B}>
-                  We have heard you. We know that sometimes, the wait feels long. And we want you to understand why — because the answer is <em>you</em>.
+                  We understand that waiting can be frustrating, and we sincerely appreciate your patience.
                 </p>
                 <p className="text-base text-[#5C4A42] leading-loose mb-5 max-w-2xl" style={B}>
-                  <strong className="text-[#2C1810] font-medium">Every patient deserves to be heard, understood, and guided with complete attention.</strong> When the patient before you is with Dr. Ruxana, they are not being hurried. Their concerns are being listened to fully. Their questions are answered honestly.
+                  <strong className="text-[#2C1810] font-medium">At our clinic, every patient is given the time and attention they deserve.</strong> When someone is with Dr. Ruxana, their concerns are being listened to carefully, their questions are being answered thoughtfully, and their care is never rushed.
                 </p>
-                <p className="text-base text-[#5C4A42]/80 leading-relaxed max-w-2xl" style={B}>
-                  When it is your turn, you will receive exactly the same. We do not believe in 10-minute appointments. We believe in the time it takes to truly care.
+                <p className="text-base text-[#5C4A42] leading-loose mb-5 max-w-2xl" style={B}>
+                  This approach may sometimes mean longer waiting times, but it also ensures that when it is your turn, you will receive the same level of attention, compassion, and thorough care.
+                </p>
+                <p className="text-base text-[#5C4A42] leading-loose max-w-2xl" style={B}>
+                  We do not measure consultations by the clock. We believe in giving each patient the time needed to feel heard, understood, and confident about their treatment.
                 </p>
               </FadeUp>
               <FadeUp delay={0.3}>
                 <p className="mt-8 text-sm text-[#8C5D47] leading-relaxed border-l-2 border-[#C9956A]/30 pl-5" style={{ ...D, fontStyle: "italic" }}>
-                  "Thank you for your patience. It means everything — to us, and to every patient who walks through our door."
+                  "Thank you for your understanding and for trusting us with your care."
                   <span className="block mt-2 text-xs not-italic text-[#C9956A]" style={M}>— Dr. Ruxana</span>
                 </p>
               </FadeUp>
@@ -688,7 +691,7 @@ export function Experiences() {
                               onClick={() => navigate("/service")}
                               whileTap={{ scale: 0.97 }}
                               style={B}
-                              className="inline-flex justify-center items-center gap-3 w-full py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-lg shadow-lg shadow-[#C9956A]/30 group"
+                              className="cursor-pointer inline-flex justify-center items-center gap-3 w-full py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-lg shadow-lg shadow-[#C9956A]/30 group"
                             >
                               View Full Service Details
                               <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
