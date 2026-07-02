@@ -918,8 +918,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
     ,
     beforeAfter: {
-      beforeImage: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=800&h=1000&fit=crop&q=80",
-      afterImage: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&h=1000&fit=crop&q=80",
+      beforeImage: "/services/before&after/Muscle Sculpting/before.webp",
+      afterImage: "/services/before&after/Muscle Sculpting/after.webp",
       treatmentName: "HIFEM Abdominal Definition",
       testimonialText: "Even with regular exercise, I couldn't get my core definition back after pregnancy. Four sessions of muscle sculpting completely firmed up my abdominal wall.",
       patientName: "Sarah L., 36",
