@@ -346,7 +346,7 @@ export function Hero({ ready }: { ready: boolean }) {
 
 export function Philosophy() {
   return (
-    <section id="philosophy" className="pt-12 pb-6 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF6F0] relative overflow-hidden">
+    <section id="philosophy" className="pt-12 pb-6 md:pt-32 md:pb-12 px-6 md:px-16 lg:px-24 bg-[#FAF6F0] relative overflow-hidden">
       {/* Background Image */}
       <img
         src="/hero/main banner 2.webp"
@@ -858,7 +858,7 @@ export function Journey() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
-    <section id="journey" ref={ref} className="relative py-6 md:py-32 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
+    <section id="journey" ref={ref} className="relative py-6 md:pt-32 md:pb-12 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
       {/* Ambient glows */}
       <motion.div className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(201,149,106,0.06) 0%, transparent 70%)" }}
@@ -960,7 +960,7 @@ export function TeamAndStandards() {
           style={{ background: "radial-gradient(circle, rgba(201,149,106,0.06) 0%, transparent 65%)" }}
           animate={{ scale: [1, 1.15, 1] }} transition={{ duration: 9, repeat: Infinity }} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-16 lg:px-24 py-6 md:py-28">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-16 lg:px-24 py-6 md:pt-12 md:pb-28">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 mb-6">
             <SlideIn from="left">
               <Tag>🛡️ Our Standards — Anti-Quackery</Tag>
@@ -1071,7 +1071,7 @@ export function Stories() {
     { author: "Claudia M., 51", context: "Architect · Personalised Aesthetic Journey", pull: "Beauty should grow with you, not fight against you. ✨", body: "Dr. Ruxana designed a two-year plan for me. Not to look younger — to look like myself at my best. The most considered, thoughtful investment I have made in myself. I'm prouder of how I look at 51 than I ever was at 35." },
   ];
   return (
-    <section id="stories" className="py-6 md:py-32 bg-[#FAF7F2]">
+    <section id="stories" className="py-6 md:pt-12 md:pb-12 bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
         <FadeUp>
           <Tag>Chapter 07 — Real Stories 💬</Tag>
@@ -1118,7 +1118,7 @@ export function Invitation() {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
   return (
-    <section id="invitation" className="relative py-6 md:py-32 overflow-hidden bg-[#FAF6F0]">
+    <section id="invitation" className="relative py-6 md:pt-12 md:pb-32 overflow-hidden bg-[#FAF6F0]">
       <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
       <motion.div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(201,149,106,0.15) 0%, transparent 70%)" }}

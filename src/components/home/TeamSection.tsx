@@ -33,7 +33,7 @@ const OTHER_DOCTORS = [
 export function TeamSection() {
   return (
     <section
-      className="relative w-full min-h-screen pt-6 pb-6 px-6 md:px-16 lg:px-24 flex items-center justify-center overflow-hidden bg-[#F8EFE6]"
+      className="relative w-full pt-12 pb-16 md:pt-20 md:pb-16 px-6 md:px-16 lg:px-24 overflow-hidden bg-[#F8EFE6]"
     >
       <div className="max-w-6xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-0">
 
