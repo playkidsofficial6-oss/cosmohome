@@ -118,10 +118,10 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     whatIsThisDesc1: "HIFU (High-Intensity Focused Ultrasound) works deep beneath the skin by delivering focused ultrasound energy to the SMAS layerâ€”the same structural layer addressed during a surgical facelift. Rather than treating only the surface, it activates your body's natural collagen renewal process, gradually lifting, firming, and improving skin quality over the following months.",
     whatIsThisDesc2: "With advanced ultrasound technology, every treatment is carefully customised to your facial anatomy and aesthetic goals, creating subtle, natural-looking rejuvenation without needles, incisions, or recovery time.",
     benefits: [
-      { icon: "ðŸ§¬", b: "Deep Collagen Activation", d: "Stimulates collagen where structural support begins." },
-      { icon: "ðŸ“ˆ", b: "Tightens & Lifts Over Time", d: "Gradual improvement with beautifully natural results." },
-      { icon: "âœ‚ï¸", b: "No Surgery or Downtime", d: "Return to normal activities immediately." },
-      { icon: "ðŸ›¡ï¸", b: "Safe & Clinically Proven", d: "A non-invasive treatment trusted worldwide." }
+      { icon: "🧬", b: "Deep Collagen Activation", d: "Stimulates collagen where structural support begins." },
+      { icon: "📈", b: "Tightens & Lifts Over Time", d: "Gradual improvement with beautifully natural results." },
+      { icon: "✂️", b: "No Surgery or Downtime", d: "Return to normal activities immediately." },
+      { icon: "🛡️", b: "Safe & Clinically Proven", d: "A non-invasive treatment trusted worldwide." }
     ],
     clinicalNote: "Treatment parameters are carefully customised to your skin condition, facial anatomy, and aesthetic goals for precise, natural-looking results.",
     sideImage: "/services/hifu/2.webp",
@@ -177,15 +177,16 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "None" },
       { label: "Performed by", val: "Doctor-Supervised Care" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ,
     beforeAfter: {
-          beforeImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=1000&fit=crop&q=80",
-          afterImage: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&h=1000&fit=crop&q=80",
-          treatmentName: "HIFU Non-Surgical Facial Lift",
-          testimonialText: "The sagging skin around my jawline and cheeks was keeping me from looking rested. After one session of HIFU, my face feels lifted and the contours are beautifully defined.",
-          patientName: "Nadia P., 42",
-          subtitle: "Facial lifting and jawline tightening case study"
-        },
+      beforeImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=1000&fit=crop&q=80",
+      afterImage: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&h=1000&fit=crop&q=80",
+      treatmentName: "HIFU Non-Surgical Facial Lift",
+      testimonialText: "The sagging skin around my jawline and cheeks was keeping me from looking rested. After one session of HIFU, my face feels lifted and the contours are beautifully defined.",
+      patientName: "Nadia P., 42",
+      subtitle: "Facial lifting and jawline tightening case study"
+    },
   },
   "hydrafacial-medifacial": {
     id: "hydrafacial-medifacial",
@@ -271,15 +272,16 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "None" },
       { label: "Performed by", val: "Medical Aesthetic Team" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ,
     beforeAfter: {
-          beforeImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=1000&fit=crop&q=80",
-          afterImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=1000&fit=crop&q=80",
-          treatmentName: "Hydrafacial Deep Skin Renewal",
-          testimonialText: "My skin was congested and dry from travel. The Hydrafacial completely cleared out my pores and restored a soft, plump radiance that lasted for weeks.",
-          patientName: "Rhea S., 29",
-          subtitle: "Deep pore extraction and skin plumping"
-        },
+      beforeImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=1000&fit=crop&q=80",
+      afterImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=1000&fit=crop&q=80",
+      treatmentName: "Hydrafacial Deep Skin Renewal",
+      testimonialText: "My skin was congested and dry from travel. The Hydrafacial completely cleared out my pores and restored a soft, plump radiance that lasted for weeks.",
+      patientName: "Rhea S., 29",
+      subtitle: "Deep pore extraction and skin plumping"
+    },
   },
   "mesopeels-carbon-peel": {
     id: "mesopeels-carbon-peel",
@@ -362,15 +364,16 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "None to minimal" },
       { label: "Performed by", val: "Dermatologist" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ,
     beforeAfter: {
-          beforeImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop&q=80",
-          afterImage: "https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=800&h=1000&fit=crop&q=80",
-          treatmentName: "Skin Resurfacing Mesopeel",
-          testimonialText: "I was struggling with skin roughness and active acne. The combination of carbon peeling and mesopeels completely polished my skin texture and cleared up breakouts.",
-          patientName: "Tara M., 31",
-          subtitle: "Chemical resurfacing for texture and oil control"
-        },
+      beforeImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop&q=80",
+      afterImage: "https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=800&h=1000&fit=crop&q=80",
+      treatmentName: "Skin Resurfacing Mesopeel",
+      testimonialText: "I was struggling with skin roughness and active acne. The combination of carbon peeling and mesopeels completely polished my skin texture and cleared up breakouts.",
+      patientName: "Tara M., 31",
+      subtitle: "Chemical resurfacing for texture and oil control"
+    },
   },
   "laser-pigment-reduction": {
     id: "laser-pigment-reduction",
@@ -453,15 +456,16 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "1â€“3 days micro-flaking" },
       { label: "Performed by", val: "Dermatologist" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ,
     beforeAfter: {
-          beforeImage: "/transformation/before.webp",
-          afterImage: "/transformation/after.webp",
-          treatmentName: "Tone Correction Laser",
-          testimonialText: "The tone correction laser completely dissolved my sun spots. My face feels clean, even, and refreshed. People keep telling me I look rested, but they can't tell I had a clinical treatment.",
-          patientName: "Amara K., 38",
-          subtitle: "Targeted melanin reduction for melasma and sun spots"
-        },
+      beforeImage: "/transformation/before.webp",
+      afterImage: "/transformation/after.webp",
+      treatmentName: "Tone Correction Laser",
+      testimonialText: "The tone correction laser completely dissolved my sun spots. My face feels clean, even, and refreshed. People keep telling me I look rested, but they can't tell I had a clinical treatment.",
+      patientName: "Amara K., 38",
+      subtitle: "Targeted melanin reduction for melasma and sun spots"
+    },
   },
   "laser-scar-reduction": {
     id: "laser-scar-reduction",
@@ -545,15 +549,16 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "2â€“4 days (redness/bronzing)" },
       { label: "Performed by", val: "Medical Aesthetic Team" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ,
     beforeAfter: {
-          beforeImage: "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=800&h=1000&fit=crop&q=80",
-          afterImage: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&h=1000&fit=crop&q=80",
-          treatmentName: "Fractional Laser Scar Resurfacing",
-          testimonialText: "Acne scars used to be my biggest insecurity. After four sessions of fractional laser resurfacing, my skin texture is smooth, and the rolling scars are barely visible.",
-          patientName: "Kabir D., 27",
-          subtitle: "Fractional skin resurfacing for acne and rolling scars"
-        },
+      beforeImage: "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=800&h=1000&fit=crop&q=80",
+      afterImage: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&h=1000&fit=crop&q=80",
+      treatmentName: "Fractional Laser Scar Resurfacing",
+      testimonialText: "Acne scars used to be my biggest insecurity. After four sessions of fractional laser resurfacing, my skin texture is smooth, and the rolling scars are barely visible.",
+      patientName: "Kabir D., 27",
+      subtitle: "Fractional skin resurfacing for acne and rolling scars"
+    },
   },
   "phototherapy": {
     id: "phototherapy",
@@ -636,15 +641,16 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "None" },
       { label: "Performed by", val: "Aesthetic Therapist" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ,
     beforeAfter: {
-          beforeImage: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&h=1000&fit=crop&q=80",
-          afterImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=1000&fit=crop&q=80",
-          treatmentName: "LED Red & Blue Light Therapy",
-          testimonialText: "I had severe facial redness and persistent inflammation. The LED light therapy sessions completely calmed my skin barrier and sped up healing after my peeling session.",
-          patientName: "Aditi V., 25",
-          subtitle: "Medical-grade LED phototherapy for healing and anti-redness"
-        },
+      beforeImage: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&h=1000&fit=crop&q=80",
+      afterImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=1000&fit=crop&q=80",
+      treatmentName: "LED Red & Blue Light Therapy",
+      testimonialText: "I had severe facial redness and persistent inflammation. The LED light therapy sessions completely calmed my skin barrier and sped up healing after my peeling session.",
+      patientName: "Aditi V., 25",
+      subtitle: "Medical-grade LED phototherapy for healing and anti-redness"
+    },
   },
   "excimer-laser": {
     id: "excimer-laser",
@@ -726,15 +732,16 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "None" },
       { label: "Performed by", val: "Dermatologist" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ,
     beforeAfter: {
-          beforeImage: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=800&h=1000&fit=crop&q=80",
-          afterImage: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=800&h=1000&fit=crop&q=80",
-          treatmentName: "308nm UVB Target Repigmentation",
-          testimonialText: "My vitiligo patches had not responded to topical creams for months. The Excimer laser started repigmenting the spots within just six sessions. Truly grateful.",
-          patientName: "Manoj R., 34",
-          subtitle: "Targeted UVB phototherapy for vitiligo and psoriasis patches"
-        },
+      beforeImage: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=800&h=1000&fit=crop&q=80",
+      afterImage: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=800&h=1000&fit=crop&q=80",
+      treatmentName: "308nm UVB Target Repigmentation",
+      testimonialText: "My vitiligo patches had not responded to topical creams for months. The Excimer laser started repigmenting the spots within just six sessions. Truly grateful.",
+      patientName: "Manoj R., 34",
+      subtitle: "Targeted UVB phototherapy for vitiligo and psoriasis patches"
+    },
   },
   "laser-hair-reduction": {
     id: "laser-hair-reduction",
@@ -816,15 +823,16 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "None" },
       { label: "Performed by", val: "Aesthetic Therapist" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ,
     beforeAfter: {
-          beforeImage: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=1000&fit=crop&q=80",
-          afterImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=1000&fit=crop&q=80",
-          treatmentName: "Smooth Skin Hair Reduction",
-          testimonialText: "Daily shaving used to irritate my skin. The triple-wavelength laser hair reduction has completely cleared the stubble and left my skin smooth with zero bumps.",
-          patientName: "Pooja K., 30",
-          subtitle: "Triple-wavelength permanent hair reduction"
-        },
+      beforeImage: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=1000&fit=crop&q=80",
+      afterImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=1000&fit=crop&q=80",
+      treatmentName: "Smooth Skin Hair Reduction",
+      testimonialText: "Daily shaving used to irritate my skin. The triple-wavelength laser hair reduction has completely cleared the stubble and left my skin smooth with zero bumps.",
+      patientName: "Pooja K., 30",
+      subtitle: "Triple-wavelength permanent hair reduction"
+    },
   },
   "muscle-sculpting": {
     id: "muscle-sculpting",
@@ -907,15 +915,16 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "None" },
       { label: "Performed by", val: "Aesthetic Therapist" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ,
     beforeAfter: {
-          beforeImage: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=800&h=1000&fit=crop&q=80",
-          afterImage: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&h=1000&fit=crop&q=80",
-          treatmentName: "HIFEM Abdominal Definition",
-          testimonialText: "Even with regular exercise, I couldn't get my core definition back after pregnancy. Four sessions of muscle sculpting completely firmed up my abdominal wall.",
-          patientName: "Sarah L., 36",
-          subtitle: "High-intensity electromagnetic body definition"
-        },
+      beforeImage: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=800&h=1000&fit=crop&q=80",
+      afterImage: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&h=1000&fit=crop&q=80",
+      treatmentName: "HIFEM Abdominal Definition",
+      testimonialText: "Even with regular exercise, I couldn't get my core definition back after pregnancy. Four sessions of muscle sculpting completely firmed up my abdominal wall.",
+      patientName: "Sarah L., 36",
+      subtitle: "High-intensity electromagnetic body definition"
+    },
   },
   "exosomes-prp-gfc": {
     id: "exosomes-prp-gfc",
@@ -998,14 +1007,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "12â€“24 hours (swelling/bumps)" },
       { label: "Performed by", val: "Medical Aesthetic Team" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ,
     beforeAfter: {
-          beforeImage: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=800&h=1000&fit=crop&q=80",
-          afterImage: "https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?w=800&h=1000&fit=crop&q=80",
-          treatmentName: "GFC Hair Growth Therapy",
-          testimonialText: "My hair was thinning rapidly on the crown. After three sessions of Growth Factor Concentrate (GFC), my shedding has stopped completely and new thick hair has filled in.",
-          patientName: "Nikhil P., 29",
-          subtitle: "Autologous growth factor concentrate for hair density"
-        },
+      beforeImage: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=800&h=1000&fit=crop&q=80",
+      afterImage: "https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?w=800&h=1000&fit=crop&q=80",
+      treatmentName: "GFC Hair Growth Therapy",
+      testimonialText: "My hair was thinning rapidly on the crown. After three sessions of Growth Factor Concentrate (GFC), my shedding has stopped completely and new thick hair has filled in.",
+      patientName: "Nikhil P., 29",
+      subtitle: "Autologous growth factor concentrate for hair density"
+    },
   }
 };

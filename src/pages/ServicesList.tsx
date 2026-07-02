@@ -1,10 +1,10 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "motion/react";
 import {
   ArrowRight, Sparkles, Smile, Wind, Heart, Syringe,
   Check, Calendar, Clock, ShieldCheck, Award, Stethoscope,
-  Cpu, Activity, Lock, ChevronDown, Star
+  Cpu, Activity, Lock, ChevronDown, ChevronLeft, ChevronRight, Star, Users
 } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, EASE2, GRAIN, WA_PATH } from "../lib/constants";
@@ -55,36 +55,46 @@ const getServiceQuickSpec = (service: ServiceData) => {
 };
 
 // Animated statistic hook-based component
-function AnimatedStat({ value, label }: { value: string; label: string }) {
+function AnimatedStat({ value, label, icon: Icon }: { value: string; label: string; icon: React.FC<{ size?: number; className?: string }> }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const numericValue = parseInt(value.replace(/\D/g, ""), 10);
+  const hasNumber = !isNaN(numericValue);
   const suffix = value.replace(/\d/g, "");
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (isInView) {
-      let start = 0;
-      const duration = 1500;
-      const stepTime = Math.abs(Math.floor(duration / numericValue));
+    if (isInView && hasNumber) {
+      const duration = 1200; // 1.2 seconds
+      const frames = 48; // number of steps
+      const stepTime = duration / frames;
+      const step = Math.ceil(numericValue / frames);
+      let current = 0;
+
       const timer = setInterval(() => {
-        start += 1;
-        setCount(start);
-        if (start >= numericValue) {
-          clearInterval(timer);
+        current += step;
+        if (current >= numericValue) {
           setCount(numericValue);
+          clearInterval(timer);
+        } else {
+          setCount(current);
         }
-      }, Math.max(stepTime, 15));
+      }, stepTime);
       return () => clearInterval(timer);
     }
-  }, [isInView, numericValue]);
+  }, [isInView, numericValue, hasNumber]);
 
   return (
-    <div ref={ref} className="text-center md:text-left">
-      <p className="text-3xl md:text-4xl text-[#C9956A] mb-1 font-medium" style={D}>
-        {numericValue ? `${count}${suffix}` : value}
-      </p>
-      <p className="text-[10px] sm:text-xs text-[#5C4A42] uppercase tracking-widest font-normal" style={M}>
+    <div ref={ref} className="group relative bg-[#FAF6F0]/65 backdrop-blur-md border border-[#2C1810]/5 rounded-[20px] p-6 transition-all duration-300 hover:scale-[1.02] hover:bg-white hover:shadow-[0_15px_40px_rgba(44,24,16,0.06)] flex flex-col justify-between h-full">
+      <div className="flex justify-between items-start mb-4">
+        <span className="text-3xl md:text-4xl text-[#C9956A] font-medium leading-none tracking-tight" style={D}>
+          {hasNumber ? `${count}${suffix}` : value}
+        </span>
+        <div className="text-[#C9956A]/60 group-hover:text-[#C9956A] transition-colors">
+          <Icon size={20} />
+        </div>
+      </div>
+      <p className="text-[10px] sm:text-xs text-[#5C4A42] uppercase tracking-widest font-normal leading-relaxed" style={M}>
         {label}
       </p>
     </div>
@@ -172,8 +182,9 @@ function BeforeAfterSlider() {
         className="absolute inset-y-0 w-0.5 bg-white/80 cursor-ew-resize z-20 flex items-center justify-center pointer-events-none"
         style={{ left: `${sliderPos}%` }}
       >
-        <div className="w-10 h-10 rounded-full bg-white shadow-2xl border border-[#2C1810]/15 flex items-center justify-center text-[#C9956A] font-semibold text-xs pointer-events-auto transition-transform hover:scale-110 active:scale-95">
-          â†”
+        <div className="w-10 h-10 rounded-full bg-white shadow-2xl border border-[#2C1810]/15 flex items-center justify-center gap-0.5 text-[#C9956A] pointer-events-auto transition-transform hover:scale-110 active:scale-95 select-none">
+          <ChevronLeft size={14} strokeWidth={2.5} className="shrink-0" />
+          <ChevronRight size={14} strokeWidth={2.5} className="shrink-0" />
         </div>
       </div>
     </div>
@@ -252,17 +263,17 @@ export default function ServicesListPage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
-      {/* â•â• 1. CINEMATIC HERO SECTION â•â• */}
-      <section className="relative min-h-[85vh] flex flex-col justify-center bg-[#FAF6F0] pt-32 pb-20 overflow-hidden">
+      {/* ═╦═ 1. CINEMATIC HERO SECTION ═╦═ */}
+      <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center bg-[#FAF6F0] pt-36 pb-20 overflow-hidden">
         {/* Background visual with soft glow */}
-        <div className="absolute inset-0 z-0 opacity-25">
+        <div className="absolute inset-0 z-0 opacity-[0.12]">
           <img
             src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1920&h=1080&fit=crop&q=80"
             alt="Sanctuary of rejuvenation"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF6F0] via-[#FAF6F0]/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#FAF6F0] via-transparent to-[#FAF6F0]/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF6F0] via-[#FAF6F0]/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FAF6F0] via-transparent to-[#FAF6F0]/40" />
         </div>
 
         {/* Grain overlay */}
@@ -271,68 +282,142 @@ export default function ServicesListPage() {
         {/* Floating gradient circles */}
         <motion.div
           className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full pointer-events-none z-10"
-          style={{ background: "radial-gradient(circle, rgba(201,149,106,0.1) 0%, transparent 65%)" }}
-          animate={{ scale: [1, 1.15, 1], x: [0, 20, 0], y: [0, -20, 0] }}
+          style={{ background: "radial-gradient(circle, rgba(201,149,106,0.12) 0%, transparent 65%)" }}
+          animate={{ scale: [1, 1.1, 1], x: [0, 15, 0], y: [0, -15, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
+        <motion.div
+          className="absolute top-1/3 -right-20 w-[500px] h-[500px] rounded-full pointer-events-none z-10"
+          style={{ background: "radial-gradient(circle, rgba(201,149,106,0.08) 0%, transparent 65%)" }}
+          animate={{ scale: [1, 1.15, 1], x: [0, -20, 0], y: [0, 20, 0] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        />
 
-        <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-16 w-full flex flex-col justify-center">
-          <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: EASE }}
-              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-8 border border-[#C9956A]/30 bg-[#C9956A]/10"
-            >
-              <Sparkles size={12} className="text-[#C9956A]" />
-              <span className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A]" style={M}>Clinical Excellence Directory</span>
-            </motion.div>
+        <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-16 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* Left Content Column */}
+            <div className="lg:col-span-7 flex flex-col justify-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: EASE }}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full mb-6 border border-[#C9956A]/20 bg-[#C9956A]/5 self-start"
+              >
+                <Sparkles size={11} className="text-[#C9956A] animate-pulse" />
+                <span className="text-[9px] tracking-[0.25em] uppercase text-[#C9956A] font-semibold" style={M}>Clinical Excellence Directory</span>
+              </motion.div>
 
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#2C1810] leading-[1.0] mb-8 font-light" style={D}>
-              Bespoke Treatments &<br />
-              <em className="font-serif italic text-[#C9956A]">Clinical Artistry.</em>
-            </h1>
+              <motion.h1 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
+                className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] text-[#2C1810] leading-[1.05] mb-8 font-light tracking-tight" 
+                style={D}
+              >
+                Bespoke Treatments &<br />
+                <span className="relative inline-block">
+                  <em className="font-serif italic text-[#C9956A]">Clinical Artistry.</em>
+                  <span className="absolute bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#C9956A]/40 to-transparent" />
+                </span>
+              </motion.h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-[#5C4A42] max-w-2xl leading-relaxed mb-12 font-normal" style={B}>
-              Step into a sanctuary of premium aesthetics built on personalized treatments, advanced technology, and clinical excellence. Explore our signature protocols calibrated for natural-looking harmony and skin health.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-16">
-              <motion.a
-                href="/book-consultation"
-                whileHover={{ scale: 1.03, boxShadow: "0 0 32px rgba(201,149,106,0.4)" }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center justify-center gap-3 px-9 py-4.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase rounded-xl font-medium shadow-lg shadow-[#C9956A]/20 transition-all"
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: EASE }}
+                className="text-base sm:text-lg text-[#5C4A42] max-w-xl leading-relaxed mb-10 font-normal" 
                 style={B}
               >
-                Book Consultation
-                <ArrowRight size={14} />
-              </motion.a>
+                Step into a sanctuary of premium aesthetics built on personalized treatments, advanced technology, and clinical excellence. Explore our signature protocols calibrated for natural-looking harmony and skin health.
+              </motion.p>
 
-              <motion.button
-                onClick={handleExploreClick}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-2.5 px-9 py-4.5 border border-[#2C1810]/20 hover:border-[#C9956A] text-[#2C1810] hover:text-[#C9956A] text-xs tracking-[0.2em] uppercase rounded-xl font-medium transition-all"
-                style={B}
+              {/* CTAs */}
+              <motion.div 
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: EASE }}
+                className="flex flex-col sm:flex-row gap-4 mb-4"
               >
-                Explore Treatments
-              </motion.button>
+                <motion.a
+                  href="/book-consultation"
+                  whileHover={{ scale: 1.02, boxShadow: "0 10px 30px rgba(201,149,106,0.3)" }}
+                  whileTap={{ scale: 0.98 }}
+                  className="relative overflow-hidden inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase rounded-xl font-semibold shadow-lg shadow-[#C9956A]/20 transition-all group"
+                  style={B}
+                >
+                  {/* Glint effect */}
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
+                  Book Consultation
+                  <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                </motion.a>
+
+                <motion.button
+                  onClick={handleExploreClick}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 border border-[#2C1810]/15 hover:border-[#C9956A] text-[#2C1810] hover:text-[#C9956A] text-xs tracking-[0.2em] uppercase rounded-xl font-semibold transition-all hover:bg-[#C9956A]/5"
+                  style={B}
+                >
+                  Explore Treatments
+                </motion.button>
+              </motion.div>
             </div>
 
-            {/* Stats section */}
-            <div className="border-t border-[#2C1810]/10 pt-10 grid grid-cols-2 md:grid-cols-4 gap-8">
-              <AnimatedStat value="5000+" label="Verified Outcomes" />
-              <AnimatedStat value="20+" label="Specialized Protocols" />
-              <AnimatedStat value="100%" label="Clinically Supervised" />
-              <AnimatedStat value="Medical Grade" label="Technology" />
+            {/* Right Visual Column */}
+            <div className="lg:col-span-5 relative w-full h-full flex items-center justify-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, x: 20 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                transition={{ duration: 1.0, delay: 0.2, ease: EASE }}
+                className="relative w-full max-w-[450px] aspect-[4/5] rounded-[32px] overflow-hidden shadow-2xl border-4 border-white/60 bg-white"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&fit=crop&q=80"
+                  alt="Premium skincare treatment at Cosmo Home"
+                  className="w-full h-full object-cover animate-image-reveal"
+                />
+                
+                {/* Overlay Vignette */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+
+                {/* Floating luxury glass badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.6 }}
+                  className="absolute bottom-6 left-6 right-6 p-5 bg-white/15 backdrop-blur-xl border border-white/25 rounded-2xl shadow-xl flex items-center gap-4 text-white"
+                >
+                  <div className="w-10 h-10 rounded-full bg-[#C9956A] flex items-center justify-center text-white shrink-0 shadow-inner">
+                    <ShieldCheck size={18} />
+                  </div>
+                  <div>
+                    <h4 className="text-xs uppercase tracking-widest font-semibold text-white/95" style={M}>Clinical Guarantee</h4>
+                    <p className="text-[11px] text-white/80 mt-0.5 leading-normal font-normal" style={B}>Doctor-supervised premium medical grade skincare protocols.</p>
+                  </div>
+                </motion.div>
+              </motion.div>
             </div>
+
           </div>
+
+          {/* Stats section - Modern Cards */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: EASE }}
+            className="border-t border-[#2C1810]/10 mt-16 pt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+          >
+            <AnimatedStat value="5000+" label="Verified Outcomes" icon={Users} />
+            <AnimatedStat value="20+" label="Specialized Protocols" icon={Sparkles} />
+            <AnimatedStat value="100%" label="Clinically Supervised" icon={Stethoscope} />
+            <AnimatedStat value="Medical Grade" label="Technology" icon={Cpu} />
+          </motion.div>
+
         </div>
       </section>
 
-      {/* â•â• 2. STICKY CATEGORY NAVIGATION â•â• */}
+      {/* ═╦═ 2. STICKY CATEGORY NAVIGATION ═╦═ */}
       <section
         id="treatment-filters"
         className="sticky top-16 z-30 bg-[#FAF7F2]/80 backdrop-blur-md border-b border-[#2C1810]/5 py-5 px-6 md:px-16"
