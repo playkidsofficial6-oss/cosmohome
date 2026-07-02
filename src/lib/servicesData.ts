@@ -459,12 +459,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
     ,
     beforeAfter: {
-      beforeImage: "/transformation/before.webp",
-      afterImage: "/transformation/after.webp",
-      treatmentName: "Tone Correction Laser",
-      testimonialText: "The tone correction laser completely dissolved my sun spots. My face feels clean, even, and refreshed. People keep telling me I look rested, but they can't tell I had a clinical treatment.",
-      patientName: "Amara K., 38",
-      subtitle: "Targeted melanin reduction for melasma and sun spots"
+      beforeImage: "/services/before&after/Laser Pigment Reduction/before.webp",
+      afterImage: "/services/before&after/Laser Pigment Reduction/after.webp",
+      treatmentName: "Laser Pigment Reduction",
+      testimonialText: "I struggled with stubborn melasma patches on my cheeks for years. After three sessions of the Helios III laser, the pigmentation has faded dramatically and my skin tone is finally even and bright.",
+      patientName: "Meera R., 34",
+      subtitle: "Targeted melanin shatter for hormonal melasma and sun spots"
     },
   },
   "laser-scar-reduction": {
@@ -552,8 +552,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
     ,
     beforeAfter: {
-      beforeImage: "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=800&h=1000&fit=crop&q=80",
-      afterImage: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&h=1000&fit=crop&q=80",
+      beforeImage: "/services/before&after/Laser Scar Reduction/before.webp",
+      afterImage: "/services/before&after/Laser Scar Reduction/after.webp",
       treatmentName: "Fractional Laser Scar Resurfacing",
       testimonialText: "Acne scars used to be my biggest insecurity. After four sessions of fractional laser resurfacing, my skin texture is smooth, and the rolling scars are barely visible.",
       patientName: "Kabir D., 27",
@@ -644,8 +644,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
     ,
     beforeAfter: {
-      beforeImage: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&h=1000&fit=crop&q=80",
-      afterImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=1000&fit=crop&q=80",
+      beforeImage: "/services/before&after/Phototherapy/before.webp",
+      afterImage: "/services/before&after/Phototherapy/after.webp",
       treatmentName: "LED Red & Blue Light Therapy",
       testimonialText: "I had severe facial redness and persistent inflammation. The LED light therapy sessions completely calmed my skin barrier and sped up healing after my peeling session.",
       patientName: "Aditi V., 25",
@@ -735,8 +735,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
     ,
     beforeAfter: {
-      beforeImage: "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=800&h=1000&fit=crop&q=80",
-      afterImage: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=800&h=1000&fit=crop&q=80",
+      beforeImage: "/services/before&after/Excimer Laser/before.webp",
+      afterImage: "/services/before&after/Excimer Laser/after.webp",
       treatmentName: "308nm UVB Target Repigmentation",
       testimonialText: "My vitiligo patches had not responded to topical creams for months. The Excimer laser started repigmenting the spots within just six sessions. Truly grateful.",
       patientName: "Manoj R., 34",
@@ -826,8 +826,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
     ,
     beforeAfter: {
-      beforeImage: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=1000&fit=crop&q=80",
-      afterImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=1000&fit=crop&q=80",
+      beforeImage: "/services/before&after/Laser Hair Reduction/before.webp",
+      afterImage: "/services/before&after/Laser Hair Reduction/after.webp",
       treatmentName: "Smooth Skin Hair Reduction",
       testimonialText: "Daily shaving used to irritate my skin. The triple-wavelength laser hair reduction has completely cleared the stubble and left my skin smooth with zero bumps.",
       patientName: "Pooja K., 30",
