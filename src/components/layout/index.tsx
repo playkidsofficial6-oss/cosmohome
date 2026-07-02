@@ -425,7 +425,7 @@ export function Footer() {
   return (
     <footer className="bg-[#FAF6F0] text-[#2C1810] pb-6 pt-6 px-6 md:px-16 lg:pb-8 lg:pt-8 border-t border-[#2C1810]/5">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[2fr_1fr_1fr] gap-10 mb-10 pb-10 border-b border-[#2C1810]/10">
+        <div className="grid lg:grid-cols-[2fr_1fr_1fr] gap-10 mb-5 pb-5 border-b border-[#2C1810]/10">
           <div>
             <div className="flex items-center gap-3 mb-5">
               <img src="/icon.svg" alt="Cosmo Home Icon" className="h-10 md:h-12 w-auto" />
