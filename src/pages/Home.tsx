@@ -492,7 +492,7 @@ export function ExtraordinaryCare() {
         <motion.div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(201,149,106,0.1) 0%, transparent 70%)" }}
           animate={{ opacity: [0.1, 0.2, 0.1] }} transition={{ duration: 7, repeat: Infinity }} />
-        <div className="relative z-10 px-5 sm:px-8 md:px-16 lg:px-24 pt-4 pb-6 md:py-24 max-w-6xl mx-auto">
+        <div className="relative z-10 px-5 sm:px-8 md:px-16 lg:px-24 pt-4 pb-6 md:pt-16 md:pb-10 max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-[140px_1fr] gap-8 lg:gap-16 items-start">
             {/* Clock */}
             <FadeUp className="flex flex-col items-center lg:items-start gap-4 lg:pt-2">
@@ -551,7 +551,7 @@ export function DrRuxana() {
     <section id="dr-ruxana" className="bg-[#E8DDD1] overflow-hidden">
 
       {/* Chapter tag — inside padded container */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-5 md:pt-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-4 md:pt-6">
         <FadeUp>
           <div className="relative mb-8 pl-5 pt-4">
             <div className="absolute left-0 top-0 w-20 h-px bg-[#C9956A]/55" />
@@ -663,7 +663,7 @@ export function Experiences() {
     { name: "Personalised Aesthetic Journey 💫", tagline: "Your vision. Our expertise.", desc: "A comprehensive long-term relationship with aesthetic care. Dr. Ruxana designs a multi-year plan aligned with your goals, lifestyle, and evolving beauty.", duration: "Annual programme", suitedFor: "Anyone committed to the long view" },
   ];
   return (
-    <section id="experiences" className="pt-6 pb-12 md:pt-12 md:pb-24 bg-[#FAF7F2] border-t border-[#2C1810]/5">
+    <section id="experiences" className="pt-6 pb-12 md:pt-12 md:pb-12 bg-[#FAF7F2] border-t border-[#2C1810]/5">
       <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
         <FadeUp>
           <Tag>Chapter 05 — Signature Experiences</Tag>
@@ -858,7 +858,7 @@ export function Journey() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
-    <section id="journey" ref={ref} className="relative py-6 md:pt-32 md:pb-12 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
+    <section id="journey" ref={ref} className="relative py-6 md:pt-14 md:pb-6 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
       {/* Ambient glows */}
       <motion.div className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(201,149,106,0.06) 0%, transparent 70%)" }}
@@ -932,7 +932,7 @@ export function Journey() {
 
         {/* CTA */}
         <FadeUp delay={0.4}>
-          <div className="mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-5 pt-10 border-t border-[#2C1810]/10">
+          <div className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-5 pt-6 border-t border-[#2C1810]/10">
             <p className="text-sm text-[#5C4A42] text-center" style={B}>
               Every journey begins with a single conversation. 🌸
             </p>
@@ -960,7 +960,7 @@ export function TeamAndStandards() {
           style={{ background: "radial-gradient(circle, rgba(201,149,106,0.06) 0%, transparent 65%)" }}
           animate={{ scale: [1, 1.15, 1] }} transition={{ duration: 9, repeat: Infinity }} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-16 lg:px-24 py-6 md:pt-12 md:pb-28">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-16 lg:px-24 py-6 md:pt-8 md:pb-12">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 mb-6">
             <SlideIn from="left">
               <Tag>🛡️ Our Standards — Anti-Quackery</Tag>
@@ -1118,7 +1118,7 @@ export function Invitation() {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
   return (
-    <section id="invitation" className="relative py-6 md:pt-12 md:pb-32 overflow-hidden bg-[#FAF6F0]">
+    <section id="invitation" className="relative py-6 md:pt-12 md:pb-14 overflow-hidden bg-[#FAF6F0]">
       <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
       <motion.div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(201,149,106,0.15) 0%, transparent 70%)" }}
