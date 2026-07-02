@@ -373,7 +373,7 @@ export default function ServicesListPage() {
                 className="relative w-full max-w-[450px] aspect-[4/5] rounded-[32px] overflow-hidden shadow-2xl border-4 border-white/60 bg-white"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&fit=crop&q=80"
+                  src="/services/hero-service.png"
                   alt="Premium skincare treatment at Cosmo Home"
                   className="w-full h-full object-cover animate-image-reveal"
                 />
