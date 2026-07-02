@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "motion/react";
 import {
@@ -264,7 +264,7 @@ export default function ServicesListPage() {
       transition={{ duration: 0.6 }}
     >
       {/* ═╦═ 1. CINEMATIC HERO SECTION ═╦═ */}
-      <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center bg-[#FAF6F0] pt-36 pb-20 overflow-hidden">
+      <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center bg-[#FAF6F0] pt-24 md:pt-36 pb-6 md:pb-10 overflow-hidden">
         {/* Background visual with soft glow */}
         <div className="absolute inset-0 z-0 opacity-[0.12]">
           <img
@@ -406,7 +406,7 @@ export default function ServicesListPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: EASE }}
-            className="border-t border-[#2C1810]/10 mt-16 pt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+            className="border-t border-[#2C1810]/10 mt-8 pt-8 md:mt-16 md:pt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
           >
             <AnimatedStat value="5000+" label="Verified Outcomes" icon={Users} />
             <AnimatedStat value="20+" label="Specialized Protocols" icon={Sparkles} />
@@ -417,19 +417,103 @@ export default function ServicesListPage() {
         </div>
       </section>
 
+      {/* Desktop-only Before & After (Second Section) */}
+      <section className="hidden md:block pt-12 pb-12 px-6 md:px-16 bg-[#FAF7F2]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left side: Editorial Review */}
+            <div className="lg:col-span-5 flex flex-col justify-center">
+              <Tag>Verified Transformation</Tag>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] mt-4 mb-6 leading-tight font-light" style={D}>
+                Visible outcomes, <em className="serif italic text-[#C9956A]">naturally aligned.</em>
+              </h2>
+
+              <div className="border-l-2 border-[#C9956A] pl-6 py-2 mb-8">
+                <p className="text-base sm:text-lg text-[#2C1810]/90 leading-relaxed font-light italic" style={D}>
+                  "The tone correction laser completely dissolved my sun spots. My face feels clean, even, and refreshed. People keep telling me I look rested, but they can't tell I had a clinical treatment."
+                </p>
+                <div className="mt-4 flex items-center gap-3">
+                  <div className="flex gap-0.5 text-amber-500">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={14} className="fill-current" />
+                    ))}
+                  </div>
+                  <span className="text-xs text-[#2C1810] font-semibold" style={B}>Amara K.</span>
+                  <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— Tone Correction Laser</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-[#C9956A]/10 rounded-lg text-[#C9956A]">
+                  <ShieldCheck size={18} />
+                </div>
+                <span className="text-xs tracking-wider text-[#5C4A42] uppercase font-semibold" style={M}>Verified Clinical Results</span>
+              </div>
+            </div>
+
+            {/* Right side: Interactive Slider */}
+            <div className="lg:col-span-7 flex flex-col w-full">
+              <div className="flex items-center justify-between mb-4 px-2">
+                <span className="text-[10px] sm:text-xs text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>Clinical Case Study</span>
+                <span className="text-[10px] sm:text-xs text-[#C9956A] uppercase tracking-widest font-bold" style={M}>Laser Pigmentation Reduction</span>
+              </div>
+              <BeforeAfterSlider />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile-only Before & After (Second Section) */}
+      <section className="block md:hidden pt-8 pb-8 px-6 bg-[#FAF7F2]">
+        <div className="max-w-7xl mx-auto">
+          {/* Heading */}
+          <div className="mb-4">
+            <Tag>Verified Transformation</Tag>
+            <h3 className="text-2xl text-[#2C1810] mt-2 mb-1 leading-tight font-light" style={D}>
+              Visible outcomes, <em className="serif italic text-[#C9956A]">naturally aligned.</em>
+            </h3>
+          </div>
+
+          {/* Slider */}
+          <div className="flex flex-col w-full mb-4">
+            <div className="flex items-center justify-between mb-2 px-1">
+              <span className="text-[9px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>Clinical Case Study</span>
+              <span className="text-[9px] text-[#C9956A] uppercase tracking-widest font-bold" style={M}>Laser Pigmentation Reduction</span>
+            </div>
+            <BeforeAfterSlider />
+          </div>
+
+          {/* Rating / Testimonial */}
+          <div className="border-l-2 border-[#C9956A] pl-4 py-1.5 mb-4 bg-white/40 rounded-r-xl p-3">
+            <p className="text-xs text-[#2C1810]/90 leading-relaxed font-light italic" style={D}>
+              "The tone correction laser completely dissolved my sun spots. My face feels clean, even, and refreshed. People keep telling me I look rested, but they can't tell I had a clinical treatment."
+            </p>
+            <div className="mt-2.5 flex items-center gap-2">
+              <div className="flex gap-0.5 text-amber-500">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={11} className="fill-current" />
+                ))}
+              </div>
+              <span className="text-[10px] text-[#2C1810] font-semibold" style={B}>Amara K.</span>
+              <span className="text-[9px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— Tone Correction Laser</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ═╦═ 2. STICKY CATEGORY NAVIGATION ═╦═ */}
       <section
         id="treatment-filters"
-        className="sticky top-16 z-30 bg-[#FAF7F2]/80 backdrop-blur-md border-b border-[#2C1810]/5 py-5 px-6 md:px-16"
+        className="sticky top-[63px] z-30 bg-[#FAF7F2]/80 backdrop-blur-md border-b border-[#2C1810]/5 py-2 md:py-5 px-4 sm:px-6 md:px-16 transform-gpu will-change-transform"
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-start md:justify-center overflow-x-auto gap-3 no-scrollbar py-1">
+        <div className="max-w-7xl mx-auto flex items-center justify-start md:justify-center overflow-x-auto gap-2.5 no-scrollbar py-1">
           {CATEGORIES.map(({ key, label, icon: Icon }) => {
             const isActive = selectedCategory === key;
             return (
               <button
                 key={key}
                 onClick={() => setSelectedCategory(key)}
-                className={`relative flex items-center gap-2.5 px-6 py-3 rounded-full border text-[10px] tracking-widest uppercase transition-all duration-300 shrink-0 font-semibold ${isActive
+                className={`relative flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 rounded-full border text-[10px] tracking-widest uppercase transition-all duration-300 shrink-0 font-semibold ${isActive
                   ? "bg-[#2C1810] border-[#2C1810] text-[#FAF7F2]"
                   : "bg-[#FAF7F2] border-[#2C1810]/10 text-[#2C1810]/70 hover:border-[#C9956A] hover:text-[#C9956A]"
                   }`}
@@ -444,7 +528,7 @@ export default function ServicesListPage() {
       </section>
 
       {/* â•â• 3. SERVICES SECTION â•â• */}
-      <section className="py-20 px-6 md:px-16">
+      <section className="pt-3 pb-4 md:py-20 px-6 md:px-16">
         <div className="max-w-7xl mx-auto">
           {filteredServiceKeys.length === 0 ? (
             <div className="text-center py-20">
@@ -548,7 +632,7 @@ export default function ServicesListPage() {
 
       {/* â•â• 4. FEATURED TREATMENT INTERSTITIAL â•â• */}
       {featuredService && (
-        <section className="bg-[#160A05] text-[#FAF7F2] py-24 px-6 md:px-16 overflow-hidden relative">
+        <section className="bg-[#160A05] text-[#FAF7F2] pt-6 pb-12 md:py-24 px-6 md:px-16 overflow-hidden relative">
           <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
@@ -607,9 +691,9 @@ export default function ServicesListPage() {
       )}
 
       {/* â•â• 5. WHY CHOOSE US â•â• */}
-      <section className="py-24 px-6 md:px-16 bg-[#FAF7F2] border-t border-[#2C1810]/5">
+      <section className="py-12 md:py-24 px-6 md:px-16 bg-[#FAF7F2] border-t border-[#2C1810]/5">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-8 md:mb-16">
             <Tag>Philosophy of Care</Tag>
             <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] mt-4 mb-6 leading-tight font-light" style={D}>
               Uncompromising standards for <em className="serif italic text-[#C9956A]">your skin.</em>
@@ -668,10 +752,10 @@ export default function ServicesListPage() {
       </section>
 
       {/* â•â• 6. TREATMENT JOURNEY TIMELINE â•â• */}
-      <section className="py-24 px-6 md:px-16 bg-[#160A05] text-[#FAF7F2] relative">
+      <section className="py-12 md:py-24 px-6 md:px-16 bg-[#160A05] text-[#FAF7F2] relative">
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-10 md:mb-20">
             <Tag>The Cosmo Home Standard</Tag>
             <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#FAF7F2] mt-4 mb-6 leading-tight font-light" style={D}>
               Your treatment <em className="serif italic text-[#C9956A]">timeline.</em>
@@ -728,56 +812,10 @@ export default function ServicesListPage() {
         </div>
       </section>
 
-      {/* â•â• 7. BEFORE & AFTER COMPARISON SLIDER â•â• */}
-      <section className="py-24 px-6 md:px-16 bg-[#FAF7F2]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left side: Editorial Review */}
-            <div className="lg:col-span-5 flex flex-col justify-center">
-              <Tag>Verified Transformation</Tag>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] mt-4 mb-6 leading-tight font-light" style={D}>
-                Visible outcomes, <em className="serif italic text-[#C9956A]">naturally aligned.</em>
-              </h2>
-
-              <div className="border-l-2 border-[#C9956A] pl-6 py-2 mb-8">
-                <p className="text-base sm:text-lg text-[#2C1810]/90 leading-relaxed font-light italic" style={D}>
-                  "The tone correction laser completely dissolved my sun spots. My face feels clean, even, and refreshed. People keep telling me I look rested, but they can't tell I had a clinical treatment."
-                </p>
-                <div className="mt-4 flex items-center gap-3">
-                  <div className="flex gap-0.5 text-amber-500">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={14} className="fill-current" />
-                    ))}
-                  </div>
-                  <span className="text-xs text-[#2C1810] font-semibold" style={B}>Amara K.</span>
-                  <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— Tone Correction Laser</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-[#C9956A]/10 rounded-lg text-[#C9956A]">
-                  <ShieldCheck size={18} />
-                </div>
-                <span className="text-xs tracking-wider text-[#5C4A42] uppercase font-semibold" style={M}>Verified Clinical Results</span>
-              </div>
-            </div>
-
-            {/* Right side: Interactive Slider */}
-            <div className="lg:col-span-7 flex flex-col w-full">
-              <div className="flex items-center justify-between mb-4 px-2">
-                <span className="text-[10px] sm:text-xs text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>Clinical Case Study</span>
-                <span className="text-[10px] sm:text-xs text-[#C9956A] uppercase tracking-widest font-bold" style={M}>Laser Pigmentation Reduction</span>
-              </div>
-              <BeforeAfterSlider />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* â•â• 8. PREMIUM TESTIMONIALS â•â• */}
-      <section className="py-24 px-6 md:px-16 bg-[#FAF7F2] border-t border-[#2C1810]/5">
+      <section className="pt-6 pb-6 md:py-24 px-6 md:px-16 bg-[#FAF7F2] border-t border-[#2C1810]/5">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-8 md:mb-16">
             <Tag>Patient Stories</Tag>
             <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] mt-4 mb-6 leading-tight font-light" style={D}>
               Carried with <em className="serif italic text-[#C9956A]">confidence.</em>
@@ -830,9 +868,9 @@ export default function ServicesListPage() {
       </section>
 
       {/* â•â• 9. MINIMAL ACCORDION FAQ â•â• */}
-      <section className="py-24 px-6 md:px-16 bg-[#FAF7F2] border-t border-[#2C1810]/5">
+      <section className="pt-6 pb-6 md:py-24 px-6 md:px-16 bg-[#FAF7F2] border-t border-[#2C1810]/5">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <Tag>Support & Guidance</Tag>
             <h2 className="text-3xl sm:text-4xl text-[#2C1810] mt-4 mb-4 font-light" style={D}>
               Frequently asked <em className="serif italic text-[#C9956A]">questions.</em>
@@ -874,7 +912,7 @@ export default function ServicesListPage() {
       </section>
 
       {/* â•â• 10. FINAL CALL TO ACTION â•â• */}
-      <section className="relative overflow-hidden bg-[#160A05] py-24 md:py-32 text-center text-[#FAF7F2]">
+      <section className="relative overflow-hidden bg-[#160A05] pt-8 pb-16 md:py-32 text-center text-[#FAF7F2]">
         {/* Subtle glowing ring backgrounds */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none opacity-20"
           style={{ background: "radial-gradient(circle, #C9956A 0%, transparent 65%)" }} />

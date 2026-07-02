@@ -41,6 +41,16 @@ export function Hero({ ready }: { ready: boolean }) {
         </g>
       </svg>
 
+      {/* Mobile Background Image */}
+      <motion.img
+        src="/hero/main banner mob8.webp"
+        alt="Dr. Ruxana K"
+        initial={{ opacity: 0, scale: 1.05, y: 20 }}
+        animate={ready ? { opacity: 1, scale: 1, y: 0 } : {}}
+        transition={{ duration: 1.2, delay: d(0.2), ease: EASE }}
+        className="absolute inset-0 w-full h-full object-cover object-[68%_42%] pointer-events-none select-none z-0 block md:hidden"
+      />
+
       {/* Background Image ( ivory style ) */}
       <motion.img
         src="/hero/main banner.webp"
@@ -48,7 +58,7 @@ export function Hero({ ready }: { ready: boolean }) {
         initial={{ opacity: 0, scale: 1.05, y: 20 }}
         animate={ready ? { opacity: 1, scale: 1, y: 0 } : {}}
         transition={{ duration: 1.2, delay: d(0.2), ease: EASE }}
-        className="absolute bottom-0 right-[-35%] sm:right-[-10%] lg:right-0 h-[75%] sm:h-[85%] md:h-[92%] w-auto max-w-none object-contain pointer-events-none select-none z-0"
+        className="absolute bottom-0 right-[-35%] sm:right-[-10%] lg:right-0 h-[75%] sm:h-[85%] md:h-[92%] w-auto max-w-none object-contain pointer-events-none select-none z-0 hidden md:block"
       />
 
       {/* Gradients */}
@@ -60,6 +70,8 @@ export function Hero({ ready }: { ready: boolean }) {
         className="absolute inset-0 block lg:hidden pointer-events-none z-10"
         style={{ background: "linear-gradient(to right, #FAF6F0 0%, rgba(250,246,240,0.6) 15%, rgba(250,246,240,0) 35%)" }}
       />
+
+
 
       {/* Bottom Blender Gradient */}
       <div
@@ -241,7 +253,7 @@ export function Hero({ ready }: { ready: boolean }) {
             {/* Stat 2 */}
             <div className="flex items-center gap-5 pt-6 pb-6 md:py-0 md:px-8">
               <div className="w-16 h-16 rounded-full border border-[#2C1810]/15 flex items-center justify-center text-[#2C1810] shrink-0 text-lg font-medium font-serif bg-white/40 shadow-sm" style={D}>
-                3,800+
+                5,000+
               </div>
               <div className="flex flex-col text-left">
                 <span className="text-[10px] tracking-[0.2em] text-[#C9956A] uppercase font-bold" style={M}>Transformations</span>
@@ -265,16 +277,16 @@ export function Hero({ ready }: { ready: boolean }) {
 
 
       {/* --- MOBILE CONTENT --- */}
-      <motion.div className="relative z-20 flex md:hidden flex-col justify-between pt-20 pb-5 px-6 h-[100svh] w-full flex-1">
+      <motion.div className="relative z-20 flex md:hidden flex-col justify-between pt-26 pb-5 px-6 h-[100svh] w-full flex-1">
         <div className="flex flex-col relative z-20">
-          <motion.p className="text-[#C9956A] text-[10px] tracking-[0.15em] uppercase mb-4 font-semibold" style={M}
+          <motion.p className="text-[#C9956A] text-[10px] tracking-[0.15em] uppercase mb-2 font-semibold" style={M}
             initial={{ opacity: 0, x: -16 }} animate={ready ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: d(0.3) }}>
-            ✦ Expert-Led • Ethical • Personalized
+            ✦ Expert-Led • Skin • Hair • Aesthetics
           </motion.p>
 
-          <h1 className="text-[#2C1810] text-[2.75rem] leading-[1.08] mb-5 font-light" style={D}>
-            {["Where Science", "Enhances You."].map((word, i) => (
+          <h1 className="text-[#2C1810] text-[2.75rem] leading-[1.08] mb-3.5 font-light" style={D}>
+            {["Beauty", "Feels", "At Home."].map((word, i) => (
               <div key={word} className="overflow-hidden">
                 <motion.span className={`block ${i === 1 ? "serif italic text-[#C9956A]" : ""}`}
                   initial={{ y: "105%" }} animate={ready ? { y: 0 } : {}}
@@ -285,13 +297,13 @@ export function Hero({ ready }: { ready: boolean }) {
             ))}
           </h1>
 
-          <motion.div className="w-8 h-px bg-[#2C1810]/20 mb-5"
+          <motion.div className="w-8 h-px bg-[#2C1810]/20 mb-3.5"
             initial={{ scaleX: 0 }} animate={ready ? { scaleX: 1 } : {}} transition={{ delay: d(0.9), duration: 0.8 }} />
 
-          <motion.p className="text-[#5C4A42] text-sm leading-relaxed max-w-[240px] font-light" style={B}
+          <motion.p className="text-[#5C4A42] text-sm leading-relaxed max-w-[280px] font-light" style={B}
             initial={{ opacity: 0, y: 18 }} animate={ready ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: d(0.95) }}>
-            Cosmetic care that's honest, safe, and designed around you.
+            Expert-led aesthetic medicine designed around confidence, care, and your most natural beauty.
           </motion.p>
 
           <motion.div
@@ -309,7 +321,7 @@ export function Hero({ ready }: { ready: boolean }) {
             initial={{ opacity: 0, y: 30 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: d(1.2), duration: 0.8 }}>
             <div className="absolute inset-0 bg-gradient-to-tr from-white/40 to-transparent pointer-events-none" />
             {[{ n: "20+", l: "Years of Care", icon: <ShieldCheck size={20} strokeWidth={1.2} className="text-[#C9956A] mb-2 mx-auto" /> },
-            { n: "3,800+", l: "Transformations", icon: <Users size={20} strokeWidth={1.2} className="text-[#C9956A] mb-2 mx-auto" /> },
+            { n: "5,000+", l: "Transformations", icon: <Users size={20} strokeWidth={1.2} className="text-[#C9956A] mb-2 mx-auto" /> },
             { n: "5", l: "Doctors", icon: <Star size={20} strokeWidth={1.2} className="text-[#C9956A] mb-2 mx-auto" /> }].map(({ n, l, icon }, i) => (
               <div key={l} className={`flex-1 text-center ${i !== 2 ? 'border-r border-[#2C1810]/5' : ''} relative z-10`}>
                 {icon}
@@ -334,35 +346,39 @@ export function Hero({ ready }: { ready: boolean }) {
 
 export function Philosophy() {
   return (
-    <section id="philosophy" className="py-20 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF6F0] relative overflow-hidden">
+    <section id="philosophy" className="pt-12 pb-6 md:pt-32 md:pb-12 px-6 md:px-16 lg:px-24 bg-[#FAF6F0] relative overflow-hidden">
       {/* Background Image */}
       <img
         src="/hero/main banner 2.webp"
         alt="Philosophy Background"
-        className="absolute inset-0 w-full h-full object-cover object-center opacity-30 md:opacity-100 pointer-events-none select-none z-0 md:scale-[1.15] md:-translate-x-[6%]"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-30 md:opacity-100 pointer-events-none select-none z-0 md:scale-[1.15] md:-translate-x-[6%] hidden md:block"
       />
       {/* Top Seam Blender Gradient */}
-      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#FAF6F0] via-[#FAF6F0]/80 to-transparent pointer-events-none z-10" />
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#FAF6F0] via-[#FAF6F0]/80 to-transparent pointer-events-none z-10 hidden md:block" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <FadeUp>
           <div className="flex flex-col items-start">
             <Tag>CHAPTER 02 — OUR PHILOSOPHY</Tag>
-            <div className="h-px w-20 bg-[#8C5D47]/30 my-4" />
+            <div className="h-px w-20 bg-[#8C5D47]/30 my-3 md:my-4" />
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 items-center mt-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-14 lg:gap-24 items-center mt-4 md:mt-6">
           {/* Left Column */}
           <div className="flex flex-col items-start text-left">
             <FadeUp delay={0.05}>
-              <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.1] text-[#2C1810] mb-5 font-light" style={D}>
-                We don't<br />change <span className="italic text-[#8C5D47]">faces.</span>
-              </h2>
+              <div className="relative inline-block mb-3.5 md:mb-5">
+                <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.1] text-[#2C1810] font-light" style={D}>
+                  We don't<br />change <span className="italic text-[#8C5D47]">faces.</span>
+                </h2>
+                {/* Small modern underline for mobile only */}
+                <div className="h-[2px] w-12 bg-[#8C5D47] rounded-full mt-3 block md:hidden" />
+              </div>
             </FadeUp>
 
             <FadeUp delay={0.1}>
-              <div className="flex items-center gap-4 my-4 w-full max-w-sm">
+              <div className="hidden md:flex items-center gap-4 my-4 w-full max-w-sm">
                 <div className="h-[1px] bg-[#2C1810]/10 flex-1" />
                 <span className="text-[#8C5D47] text-xs">✦</span>
                 <div className="h-[1px] bg-[#2C1810]/10 flex-1" />
@@ -370,19 +386,19 @@ export function Philosophy() {
             </FadeUp>
 
             <FadeUp delay={0.15}>
-              <p className="text-xl sm:text-2xl text-[#2C1810] leading-snug mb-5 font-light" style={D}>
+              <p className="text-xl sm:text-2xl text-[#2C1810] leading-snug mb-3 md:mb-5 font-light" style={D}>
                 We help people feel<br />like <span className="italic text-[#8C5D47]">themselves</span> again.
               </p>
             </FadeUp>
 
             <FadeUp delay={0.2}>
-              <p className="text-base text-[#5C4A42] leading-relaxed mb-8 max-w-md font-light" style={B}>
+              <p className="text-base text-[#5C4A42] leading-relaxed mb-6 md:mb-8 max-w-md font-light" style={B}>
                 At Cosmo Home, aesthetic medicine begins with listening. Then comes science, safety, and care — always in that order.
               </p>
             </FadeUp>
 
             <FadeUp delay={0.25}>
-              <div className="flex flex-col sm:flex-row gap-4 w-full">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full">
                 <motion.a
                   href="/book-consultation"
                   whileHover={{ scale: 1.03, backgroundColor: "#734A37" }}
@@ -410,7 +426,7 @@ export function Philosophy() {
           <div className="flex flex-col relative z-10 divide-y divide-[#2C1810]/10">
             {/* Point 1 */}
             <FadeUp delay={0.1}>
-              <div className="py-6 first:pt-0 flex gap-6 items-start">
+              <div className="py-5 md:py-6 first:pt-0 flex gap-4 md:gap-6 items-start">
                 <span className="text-3xl text-[#8C5D47] font-light leading-none w-10 shrink-0 mt-2" style={D}>01</span>
                 <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-[#2C1810]/5">
                   <svg className="w-6 h-6 text-[#8C5D47]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -429,7 +445,7 @@ export function Philosophy() {
 
             {/* Point 2 */}
             <FadeUp delay={0.2}>
-              <div className="py-6 flex gap-6 items-start">
+              <div className="py-5 md:py-6 flex gap-4 md:gap-6 items-start">
                 <span className="text-3xl text-[#8C5D47] font-light leading-none w-10 shrink-0 mt-2" style={D}>02</span>
                 <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-[#2C1810]/5">
                   <Microscope size={22} strokeWidth={1.2} className="text-[#8C5D47]" />
@@ -445,7 +461,7 @@ export function Philosophy() {
 
             {/* Point 3 */}
             <FadeUp delay={0.3}>
-              <div className="py-6 flex gap-6 items-start">
+              <div className="py-5 md:py-6 flex gap-4 md:gap-6 items-start">
                 <span className="text-3xl text-[#8C5D47] font-light leading-none w-10 shrink-0 mt-2" style={D}>03</span>
                 <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-[#2C1810]/5">
                   <Leaf size={22} strokeWidth={1.2} className="text-[#8C5D47]" />
@@ -470,13 +486,13 @@ export function ExtraordinaryCare() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const scl = useTransform(scrollYProgress, [0, 0.5, 1], [0.97, 1, 0.97]);
   return (
-    <section ref={ref} className="relative bg-[#FAF7F2] py-4">
+    <section ref={ref} className="relative bg-[#FAF7F2] py-0 md:py-4">
       <motion.div style={{ scale: scl }} className="bg-[#FAF6F0] border border-[#2C1810]/5 mx-0 md:mx-10 lg:mx-16 rounded-[32px] shadow-[0_12px_40px_rgba(44,24,16,0.02)] relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
         <motion.div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(201,149,106,0.1) 0%, transparent 70%)" }}
           animate={{ opacity: [0.1, 0.2, 0.1] }} transition={{ duration: 7, repeat: Infinity }} />
-        <div className="relative z-10 px-5 sm:px-8 md:px-16 lg:px-24 py-6 md:py-24 max-w-6xl mx-auto">
+        <div className="relative z-10 px-5 sm:px-8 md:px-16 lg:px-24 pt-4 pb-6 md:pt-16 md:pb-10 max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-[140px_1fr] gap-8 lg:gap-16 items-start">
             {/* Clock */}
             <FadeUp className="flex flex-col items-center lg:items-start gap-4 lg:pt-2">
@@ -535,7 +551,7 @@ export function DrRuxana() {
     <section id="dr-ruxana" className="bg-[#E8DDD1] overflow-hidden">
 
       {/* Chapter tag — inside padded container */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-5 md:pt-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-4 md:pt-6">
         <FadeUp>
           <div className="relative mb-8 pl-5 pt-4">
             <div className="absolute left-0 top-0 w-20 h-px bg-[#C9956A]/55" />
@@ -647,7 +663,7 @@ export function Experiences() {
     { name: "Personalised Aesthetic Journey 💫", tagline: "Your vision. Our expertise.", desc: "A comprehensive long-term relationship with aesthetic care. Dr. Ruxana designs a multi-year plan aligned with your goals, lifestyle, and evolving beauty.", duration: "Annual programme", suitedFor: "Anyone committed to the long view" },
   ];
   return (
-    <section id="experiences" className="py-6 md:py-32 bg-[#FAF7F2] border-t border-[#2C1810]/5">
+    <section id="experiences" className="pt-6 pb-12 md:pt-12 md:pb-12 bg-[#FAF7F2] border-t border-[#2C1810]/5">
       <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
         <FadeUp>
           <Tag>Chapter 05 — Signature Experiences</Tag>
@@ -658,65 +674,52 @@ export function Experiences() {
             {exps.map((e, i) => (
               <div key={e.name} className="flex flex-col border-b border-[#2C1810]/10">
                 <motion.button onClick={() => setActive(i)} whileHover={{ x: 5 }}
-                  className={`text-left py-6 transition-all duration-300 ${active === i ? "opacity-100" : "opacity-40 hover:opacity-70"}`}>
+                  className={`text-left py-6 transition-all duration-300 w-full ${active === i ? "opacity-100" : "opacity-100 lg:opacity-40 lg:hover:opacity-70"}`}>
                   <div className="flex items-center justify-between gap-4">
                     <div>
                       <p className="text-lg md:text-xl text-[#2C1810]" style={D}>{e.name}</p>
                       <p className="text-xs tracking-[0.18em] text-[#C9956A] mt-1 uppercase" style={M}>{e.tagline}</p>
                     </div>
-                    <motion.div animate={{ rotate: active === i ? 90 : 0 }} className="lg:hidden shrink-0 text-[#C9956A] transition-transform">
-                      <ChevronRight size={16} />
-                    </motion.div>
                     <motion.div animate={{ x: active === i ? 5 : 0 }} className="hidden lg:block shrink-0 text-[#C9956A] transition-transform">
                       <ChevronRight size={16} />
                     </motion.div>
                   </div>
                 </motion.button>
 
-                {/* Mobile Accordion Content */}
-                <AnimatePresence initial={false}>
-                  {active === i && (
-                    <motion.div
-                      className="lg:hidden overflow-hidden"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: EASE }}
-                    >
-                      <div className="pb-8 pt-2">
-                        <p className="text-sm text-[#5C4A42] leading-loose mb-5" style={B}>{exps[active].desc}</p>
-                        {[{ label: "Duration", val: exps[active].duration }, { label: "Suited for", val: exps[active].suitedFor }].map(({ label, val }) => (
-                          <div key={label} className="flex gap-4 mb-2">
-                            <span className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] w-20 shrink-0 pt-0.5" style={M}>{label}</span>
-                            <span className="text-xs text-[#2C1810]/85" style={B}>{val}</span>
-                          </div>
-                        ))}
-                        <div className="mt-6 flex flex-col gap-3">
-                          {active === 0 && (
-                            <motion.button
-                              onClick={() => navigate("/service")}
-                              whileTap={{ scale: 0.97 }}
-                              style={B}
-                              className="cursor-pointer inline-flex justify-center items-center gap-3 w-full py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-lg shadow-lg shadow-[#C9956A]/30 group"
-                            >
-                              View Full Service Details
-                              <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
-                            </motion.button>
-                          )}
-                          <motion.a
-                            href="/#invitation"
-                            whileTap={{ scale: 0.97 }}
-                            style={B}
-                            className="inline-flex justify-center items-center gap-3 w-full py-3.5 border border-[#C9956A]/40 text-[#C9956A] text-xs tracking-[0.22em] uppercase rounded-lg hover:bg-[#C9956A]/10 transition-colors group"
-                          >
-                            Enquire
-                            <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
-                          </motion.a>
-                        </div>
+                {/* Mobile Content (Always Expanded) */}
+                <div className="block lg:hidden overflow-hidden">
+                  <div className="pb-8 pt-2">
+                    <p className="text-sm text-[#5C4A42] leading-loose mb-5" style={B}>{e.desc}</p>
+                    {[{ label: "Duration", val: e.duration }, { label: "Suited for", val: e.suitedFor }].map(({ label, val }) => (
+                      <div key={label} className="flex gap-4 mb-2">
+                        <span className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] w-20 shrink-0 pt-0.5" style={M}>{label}</span>
+                        <span className="text-xs text-[#2C1810]/85" style={B}>{val}</span>
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                    ))}
+                    <div className="mt-6 flex flex-col gap-3">
+                      {i === 0 && (
+                        <motion.button
+                          onClick={() => navigate("/service")}
+                          whileTap={{ scale: 0.97 }}
+                          style={B}
+                          className="cursor-pointer inline-flex justify-center items-center gap-3 w-full py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-lg shadow-lg shadow-[#C9956A]/30 group"
+                        >
+                          View Full Service Details
+                          <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                        </motion.button>
+                      )}
+                      <motion.a
+                        href="/#invitation"
+                        whileTap={{ scale: 0.97 }}
+                        style={B}
+                        className="inline-flex justify-center items-center gap-3 w-full py-3.5 border border-[#C9956A]/40 text-[#C9956A] text-xs tracking-[0.22em] uppercase rounded-lg hover:bg-[#C9956A]/10 transition-colors group"
+                      >
+                        Enquire
+                        <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                      </motion.a>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -855,7 +858,7 @@ export function Journey() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
-    <section id="journey" ref={ref} className="relative py-6 md:py-32 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
+    <section id="journey" ref={ref} className="relative py-6 md:pt-14 md:pb-6 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
       {/* Ambient glows */}
       <motion.div className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(201,149,106,0.06) 0%, transparent 70%)" }}
@@ -929,7 +932,7 @@ export function Journey() {
 
         {/* CTA */}
         <FadeUp delay={0.4}>
-          <div className="mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-5 pt-10 border-t border-[#2C1810]/10">
+          <div className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-5 pt-6 border-t border-[#2C1810]/10">
             <p className="text-sm text-[#5C4A42] text-center" style={B}>
               Every journey begins with a single conversation. 🌸
             </p>
@@ -957,7 +960,7 @@ export function TeamAndStandards() {
           style={{ background: "radial-gradient(circle, rgba(201,149,106,0.06) 0%, transparent 65%)" }}
           animate={{ scale: [1, 1.15, 1] }} transition={{ duration: 9, repeat: Infinity }} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-16 lg:px-24 py-6 md:py-28">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-16 lg:px-24 py-6 md:pt-8 md:pb-12">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 mb-6">
             <SlideIn from="left">
               <Tag>🛡️ Our Standards — Anti-Quackery</Tag>
@@ -1068,7 +1071,7 @@ export function Stories() {
     { author: "Claudia M., 51", context: "Architect · Personalised Aesthetic Journey", pull: "Beauty should grow with you, not fight against you. ✨", body: "Dr. Ruxana designed a two-year plan for me. Not to look younger — to look like myself at my best. The most considered, thoughtful investment I have made in myself. I'm prouder of how I look at 51 than I ever was at 35." },
   ];
   return (
-    <section id="stories" className="py-6 md:py-32 bg-[#FAF7F2]">
+    <section id="stories" className="py-6 md:pt-12 md:pb-12 bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
         <FadeUp>
           <Tag>Chapter 07 — Real Stories 💬</Tag>
@@ -1115,7 +1118,7 @@ export function Invitation() {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
   return (
-    <section id="invitation" className="relative py-6 md:py-32 overflow-hidden bg-[#FAF6F0]">
+    <section id="invitation" className="relative py-6 md:pt-12 md:pb-14 overflow-hidden bg-[#FAF6F0]">
       <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
       <motion.div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(201,149,106,0.15) 0%, transparent 70%)" }}

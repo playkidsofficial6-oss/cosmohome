@@ -60,7 +60,7 @@ export default function ExperiencePage() {
         className="pt-16 bg-[#FAF7F2] min-h-screen text-[#2C1810] overflow-x-hidden"
       >
         {/* ══ 1. HERO SECTION ══ */}
-        <section className="relative py-20 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF6F0] overflow-hidden border-b border-[#2C1810]/5">
+        <section className="relative pt-6 pb-16 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF6F0] overflow-hidden border-b border-[#2C1810]/5">
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
           <motion.div
             className="absolute top-0 right-1/4 w-[600px] h-[600px] rounded-full pointer-events-none"

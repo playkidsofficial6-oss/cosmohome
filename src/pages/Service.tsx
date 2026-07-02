@@ -211,7 +211,7 @@ export default function ServicePage() {
         {/* ══ 1. CINEMATIC HERO ══ */}
         <section className="relative min-h-screen lg:h-screen flex flex-col lg:grid lg:grid-cols-2 bg-[#FAF6F0] pt-16 overflow-hidden">
           {/* Left — content */}
-          <div className="relative z-10 flex flex-col justify-center px-5 sm:px-10 md:px-16 py-20 lg:py-0">
+          <div className="relative z-10 flex flex-col justify-center px-5 sm:px-10 md:px-16 pt-6 pb-12 md:py-20 lg:py-0">
             <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
               {/* Social proof badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
@@ -243,6 +243,47 @@ export default function ServicePage() {
               </div>
             </FadeUp>
 
+            {/* Mobile-only Before & After section in the requested format */}
+            {service.beforeAfter && (
+              <div className="block md:hidden mb-8 w-full">
+                {/* Heading */}
+                <div className="mb-4">
+                  <Tag>Verified Transformation</Tag>
+                  <h3 className="text-2xl text-[#2C1810] mt-2 mb-1 leading-tight font-light" style={D}>
+                    Visible outcomes, <em className="serif italic text-[#C9956A]">naturally aligned.</em>
+                  </h3>
+                </div>
+
+                {/* Slider */}
+                <div className="flex flex-col w-full mb-4">
+                  <div className="flex items-center justify-between mb-2 px-1">
+                    <span className="text-[9px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>Clinical Case Study</span>
+                    <span className="text-[9px] text-[#C9956A] uppercase tracking-widest font-bold" style={M}>{service.beforeAfter.treatmentName}</span>
+                  </div>
+                  <BeforeAfterSlider
+                    beforeImage={service.beforeAfter.beforeImage}
+                    afterImage={service.beforeAfter.afterImage}
+                  />
+                </div>
+
+                {/* Rating / Testimonial */}
+                <div className="border-l-2 border-[#C9956A] pl-4 py-1.5 mb-4 bg-white/40 rounded-r-xl p-3">
+                  <p className="text-xs text-[#2C1810]/90 leading-relaxed font-light italic" style={D}>
+                    "{service.beforeAfter.testimonialText}"
+                  </p>
+                  <div className="mt-2.5 flex items-center gap-2">
+                    <div className="flex gap-0.5 text-amber-500">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={11} className="fill-current" />
+                      ))}
+                    </div>
+                    <span className="text-[10px] text-[#2C1810] font-semibold" style={B}>{service.beforeAfter.patientName}</span>
+                    <span className="text-[9px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— {service.beforeAfter.treatmentName}</span>
+                  </div>
+                </div>
+              </div>
+            )}
+
             <FadeUp delay={0.2}>
               <CTAButtons />
             </FadeUp>
@@ -272,8 +313,59 @@ export default function ServicePage() {
           </div>
         </section>
 
+        {/* Desktop-only Before & After (Second Section) */}
+        {service.beforeAfter && (
+          <section className="hidden md:block pt-24 pb-10 px-6 md:px-16 bg-[#FAF7F2]">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                {/* Left side: Editorial Review */}
+                <div className="lg:col-span-5 flex flex-col justify-center">
+                  <Tag>Verified Transformation</Tag>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] mt-4 mb-6 leading-tight font-light" style={D}>
+                    Visible outcomes, <em className="serif italic text-[#C9956A]">naturally aligned.</em>
+                  </h2>
+
+                  <div className="border-l-2 border-[#C9956A] pl-6 py-2 mb-8">
+                    <p className="text-base sm:text-lg text-[#2C1810]/90 leading-relaxed font-light italic" style={D}>
+                      "{service.beforeAfter.testimonialText}"
+                    </p>
+                    <div className="mt-4 flex items-center gap-3">
+                      <div className="flex gap-0.5 text-amber-500">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} size={14} className="fill-current" />
+                        ))}
+                      </div>
+                      <span className="text-xs text-[#2C1810] font-semibold" style={B}>{service.beforeAfter.patientName}</span>
+                      <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— {service.beforeAfter.treatmentName}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-[#C9956A]/10 rounded-lg text-[#C9956A]">
+                      <ShieldCheck size={18} />
+                    </div>
+                    <span className="text-xs tracking-wider text-[#5C4A42] uppercase font-semibold" style={M}>Verified Clinical Results</span>
+                  </div>
+                </div>
+
+                {/* Right side: Interactive Slider */}
+                <div className="lg:col-span-7 flex flex-col w-full">
+                  <div className="flex items-center justify-between mb-4 px-2">
+                    <span className="text-[10px] sm:text-xs text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>Clinical Case Study</span>
+                    <span className="text-[10px] sm:text-xs text-[#C9956A] uppercase tracking-widest font-bold" style={M}>{service.beforeAfter.treatmentName}</span>
+                  </div>
+                  <BeforeAfterSlider
+                    beforeImage={service.beforeAfter.beforeImage}
+                    afterImage={service.beforeAfter.afterImage}
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* ══ 2. WHAT IS THIS ══ */}
-        <section className="pt-6 pb-12 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
+        <section className="pt-6 pb-12 md:pt-12 md:pb-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-20 items-center">
               <FadeUp>
@@ -628,56 +720,7 @@ export default function ServicePage() {
           </div>
         </section>
 
-        {/* ══ BEFORE & AFTER COMPARISON SLIDER ══ */}
-        {service.beforeAfter && (
-          <section className="py-24 px-5 sm:px-10 md:px-16 bg-[#FAF7F2] border-t border-[#2C1810]/5">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                {/* Left side: Editorial Review */}
-                <div className="lg:col-span-5 flex flex-col justify-center">
-                  <Tag>Verified Transformation</Tag>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] mt-4 mb-6 leading-tight font-light" style={D}>
-                    Visible outcomes, <em className="serif italic text-[#C9956A]">naturally aligned.</em>
-                  </h2>
 
-                  <div className="border-l-2 border-[#C9956A] pl-6 py-2 mb-8">
-                    <p className="text-base sm:text-lg text-[#2C1810]/90 leading-relaxed font-light italic" style={D}>
-                      "{service.beforeAfter.testimonialText}"
-                    </p>
-                    <div className="mt-4 flex items-center gap-3">
-                      <div className="flex gap-0.5 text-amber-500">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} size={14} className="fill-current" />
-                        ))}
-                      </div>
-                      <span className="text-xs text-[#2C1810] font-semibold" style={B}>{service.beforeAfter.patientName}</span>
-                      <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— {service.beforeAfter.treatmentName}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-[#C9956A]/10 rounded-lg text-[#C9956A]">
-                      <ShieldCheck size={18} />
-                    </div>
-                    <span className="text-xs tracking-wider text-[#5C4A42] uppercase font-semibold" style={M}>Verified Clinical Results</span>
-                  </div>
-                </div>
-
-                {/* Right side: Interactive Slider */}
-                <div className="lg:col-span-7 flex flex-col w-full">
-                  <div className="flex items-center justify-between mb-4 px-2">
-                    <span className="text-[10px] sm:text-xs text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>Clinical Case Study</span>
-                    <span className="text-[10px] sm:text-xs text-[#C9956A] uppercase tracking-widest font-bold" style={M}>{service.beforeAfter.treatmentName}</span>
-                  </div>
-                  <BeforeAfterSlider
-                    beforeImage={service.beforeAfter.beforeImage}
-                    afterImage={service.beforeAfter.afterImage}
-                  />
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* ══ 7. FINAL CTA ══ */}
         <section id="sp-book" className="relative overflow-hidden bg-[#FAF6F0]">

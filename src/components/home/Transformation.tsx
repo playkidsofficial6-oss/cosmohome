@@ -26,7 +26,7 @@ export function Transformation() {
         </div>
 
         {/* The Grid Container with white gaps */}
-        <div className="lg:p-2 md:p-0 flex flex-col gap-2 md:gap-1 w-full shadow-sm">
+        <div className="lg:p-2 md:p-0 flex flex-col gap-2 md:gap-1 w-full">
           {/* Top Row: Sofia */}
           <FadeUp delay={0.2} className="w-full">
             <div className="flex flex-col md:flex-row w-full gap-2 md:gap-0">
@@ -108,7 +108,7 @@ export function Transformation() {
         {/* Footer text */}
         <FadeUp delay={0.5}>
           <div className="mt-6 flex justify-center px-4 sm:px-6 md:px-16 lg:px-24">
-            <p className="text-[11px] tracking-[0.2em] md:tracking-[0.3em] uppercase text-[#C9956A] font-medium" style={M}>3,800+ Transformations and Counting</p>
+            <p className="text-[11px] tracking-[0.2em] md:tracking-[0.3em] uppercase text-[#C9956A] font-medium" style={M}>5,000+ Transformations and Counting</p>
           </div>
         </FadeUp>
 

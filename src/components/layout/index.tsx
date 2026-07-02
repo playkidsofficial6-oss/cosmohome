@@ -125,14 +125,14 @@ export function Nav({ ready }: { ready: boolean }) {
 
   return (
     <>
-      <motion.header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${hasBg ? "bg-[#FAF7F2]/95 backdrop-blur-md" : ""}`}
+      <motion.header className={`fixed top-0 inset-x-0 z-50 transition-colors duration-500 ${hasBg ? "bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#2C1810]/5" : "bg-[#FAF6F0] md:bg-transparent md:backdrop-blur-none backdrop-blur-md border-b border-[#2C1810]/5 md:border-b-0"}`}
         initial={ready ? false : { y: -80, opacity: 0 }} animate={ready ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, delay: 0.3, ease: EASE }}>
         <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24 flex items-center justify-between h-16 relative">
           <a href="/" onClick={(e) => { e.preventDefault(); navigate("/"); }} className="flex items-center gap-2 cursor-pointer z-10">
             <img src="/icon.svg" alt="Cosmo Home Icon" className="h-8 md:h-10 w-auto" />
             <div className="flex flex-col leading-none">
-              <span className={`text-xl tracking-[0.12em] uppercase transition-colors ${hasBg ? 'text-[#2C1810]' : 'text-[#C9956A]'}`} style={D}>Cosmo Home</span>
+              <span className={`text-xl tracking-[0.12em] uppercase transition-colors ${hasBg ? 'text-[#2C1810]' : 'text-[#2C1810] md:text-[#C9956A]'}`} style={D}>Cosmo Home</span>
               <span className="text-[9px] tracking-[0.3em] uppercase text-[#C9956A] mt-0.5" style={M}>Aesthetic Medicine</span>
             </div>
           </a>
@@ -164,7 +164,7 @@ export function Nav({ ready }: { ready: boolean }) {
               Book Consultation
             </motion.a>
           </div>
-          <button onClick={() => setOpen(true)} className={`lg:hidden p-2 transition-colors ${hasBg ? 'text-[#2C1810]' : 'text-[#C9956A]'}`}>
+          <button onClick={() => setOpen(true)} className={`lg:hidden p-2 transition-colors ${hasBg ? 'text-[#2C1810]' : 'text-[#2C1810] md:text-[#C9956A]'}`}>
             <Menu size={26} />
           </button>
 
@@ -269,20 +269,20 @@ export function Nav({ ready }: { ready: boolean }) {
 
       <AnimatePresence>
         {open && (
-          <motion.div className="fixed inset-0 z-[60] bg-[#332B23] flex flex-col"
+          <motion.div className="fixed inset-0 z-[60] bg-[#FAF7F2] flex flex-col"
             initial={{ opacity: 0, x: "100%" }} animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
 
             {/* Top Bar inside Menu */}
-            <div className="flex items-center justify-between px-6 h-[72px] border-b border-[#E8E1D7]/10 shrink-0">
-              <button onClick={() => setOpen(false)} className="p-2 -ml-2 text-[#FAF7F2] hover:text-[#C9956A] transition-colors">
+            <div className="flex items-center justify-between px-6 h-[72px] border-b border-[#2C1810]/10 shrink-0">
+              <button onClick={() => setOpen(false)} className="p-2 -ml-2 text-[#2C1810] hover:text-[#C9956A] transition-colors">
                 <X size={24} strokeWidth={1.5} />
               </button>
               <a href="/" className="flex flex-col items-center leading-none cursor-pointer absolute left-1/2 -translate-x-1/2" onClick={(e) => { e.preventDefault(); setOpen(false); navigate("/"); }}>
                 <div className="flex items-center gap-2">
-                  <img src="/icon.svg" alt="Cosmo Home Icon" className="h-7 w-auto brightness-0 invert" />
+                  <img src="/icon.svg" alt="Cosmo Home Icon" className="h-7 w-auto brightness-0" />
                   <div className="flex flex-col">
-                    <span className="text-sm tracking-[0.12em] uppercase text-[#FAF7F2]" style={D}>Cosmo Home</span>
+                    <span className="text-sm tracking-[0.12em] uppercase text-[#2C1810]" style={D}>Cosmo Home</span>
                     <span className="text-[6px] tracking-[0.3em] uppercase text-[#C9956A] mt-0.5" style={M}>Aesthetic Medicine</span>
                   </div>
                 </div>
@@ -297,13 +297,13 @@ export function Nav({ ready }: { ready: boolean }) {
               {/* Nav links */}
               <div className="flex flex-col">
                 {links.map((l, i) => (
-                  <div key={l.label} className="border-b border-[#E8E1D7]/10 last:border-0">
+                  <div key={l.label} className="border-b border-[#2C1810]/10 last:border-0">
                     <button
                       onClick={() => {
                         if (l.hasDropdown) toggleMobileExpanded(l.label);
                         else { setOpen(false); l.action ? l.action() : navigate(l.href!); }
                       }}
-                      className="w-full flex items-center justify-between py-4 text-[#FAF7F2] transition-colors group"
+                      className="w-full flex items-center justify-between py-4 text-[#2C1810] transition-colors group"
                     >
                       <div className="flex items-center gap-4">
                         {l.label === "Philosophy" && <motion.div whileTap={{ scale: 0.9 }}><Heart size={20} className="text-[#C9956A]" strokeWidth={1.5} /></motion.div>}
@@ -331,10 +331,10 @@ export function Nav({ ready }: { ready: boolean }) {
                         >
                           <div className="pl-12 pb-4 flex flex-col gap-4 mt-2">
                             {l.label === "Treatments" && Object.keys(MEGA_MENU_CONTENT).map(cat => (
-                              <div key={cat} className="flex flex-col gap-2 pl-4 border-l border-[#FAF7F2]/10 mt-1">
+                              <div key={cat} className="flex flex-col gap-2 pl-4 border-l border-[#2C1810]/10 mt-1">
                                 <button
                                   onClick={() => toggleMobileCategoryExpanded(cat)}
-                                  className="text-left text-[14px] text-[#FAF7F2] py-2 flex items-center justify-between hover:text-[#C9956A] transition-colors"
+                                  className="text-left text-[14px] text-[#2C1810] py-2 flex items-center justify-between hover:text-[#C9956A] transition-colors"
                                   style={B}
                                 >
                                   <span className="flex items-center gap-3">
@@ -357,7 +357,7 @@ export function Nav({ ready }: { ready: boolean }) {
                                             setOpen(false);
                                             navigate(`/service/${getTreatmentSlug(treatment)}`);
                                           }}
-                                          className="text-left text-[13px] text-[#E8E1D7]/80 hover:text-[#C9956A] transition-colors py-1"
+                                          className="text-left text-[13px] text-[#5C4A42]/90 hover:text-[#C9956A] transition-colors py-1"
                                           style={B}
                                         >
                                           • {treatment}
@@ -370,9 +370,9 @@ export function Nav({ ready }: { ready: boolean }) {
                             ))}
                             {l.label === "Journal" && (
                               <>
-                                <button className="text-left text-[14px] text-[#E8E1D7] py-1 hover:text-[#C9956A] transition-colors" style={B}>Latest Articles</button>
-                                <button className="text-left text-[14px] text-[#E8E1D7] py-1 hover:text-[#C9956A] transition-colors" style={B}>Skincare Tips</button>
-                                <button className="text-left text-[14px] text-[#E8E1D7] py-1 hover:text-[#C9956A] transition-colors" style={B}>News</button>
+                                <button className="text-left text-[14px] text-[#5C4A42]/90 py-1 hover:text-[#C9956A] transition-colors" style={B}>Latest Articles</button>
+                                <button className="text-left text-[14px] text-[#5C4A42]/90 py-1 hover:text-[#C9956A] transition-colors" style={B}>Skincare Tips</button>
+                                <button className="text-left text-[14px] text-[#5C4A42]/90 py-1 hover:text-[#C9956A] transition-colors" style={B}>News</button>
                               </>
                             )}
                           </div>
@@ -399,13 +399,13 @@ export function Nav({ ready }: { ready: boolean }) {
               {/* Bottom Contact Buttons */}
               <div className="pt-8 pb-8 flex flex-col gap-4">
                 <a href="tel:09946336480"
-                  className="flex items-center justify-center gap-3 w-full py-5 bg-[#0A0502] border border-[#2C1810] text-[#FAF7F2] transition-colors"
+                  className="flex items-center justify-center gap-3 w-full py-5 bg-white border border-[#2C1810]/15 text-[#2C1810] hover:bg-[#2C1810]/5 transition-colors"
                 >
                   <Phone size={16} className="text-[#C9956A]" />
                   <span className="text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase" style={B}>Call 099463 36480</span>
                 </a>
                 <a href="https://api.whatsapp.com/send?phone=919946336480" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-3 w-full py-5 bg-[#C9956A] text-[#160A05] transition-colors"
+                  className="flex items-center justify-center gap-3 w-full py-5 bg-[#C9956A] text-[#FAF7F2] transition-colors"
                 >
                   <MessageCircle size={16} className="fill-current" />
                   <span className="text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase" style={B}>WhatsApp Us</span>
@@ -423,9 +423,9 @@ export function Nav({ ready }: { ready: boolean }) {
 
 export function Footer() {
   return (
-    <footer className="bg-[#FAF6F0] text-[#2C1810] pb-14 pt-6 px-6 md:px-16 lg:pb-24 lg:pt-14 border-t border-[#2C1810]/5">
+    <footer className="bg-[#FAF6F0] text-[#2C1810] pb-6 pt-6 px-6 md:px-16 lg:pb-8 lg:pt-8 border-t border-[#2C1810]/5">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[2fr_1fr_1fr] gap-10 mb-10 pb-10 border-b border-[#2C1810]/10">
+        <div className="grid lg:grid-cols-[2fr_1fr_1fr] gap-10 mb-5 pb-5 border-b border-[#2C1810]/10">
           <div>
             <div className="flex items-center gap-3 mb-5">
               <img src="/icon.svg" alt="Cosmo Home Icon" className="h-10 md:h-12 w-auto" />
