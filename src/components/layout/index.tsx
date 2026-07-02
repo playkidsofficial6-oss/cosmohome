@@ -125,7 +125,7 @@ export function Nav({ ready }: { ready: boolean }) {
 
   return (
     <>
-      <motion.header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${hasBg ? "bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#2C1810]/5" : "bg-[#FAF6F0] md:bg-transparent md:backdrop-blur-none backdrop-blur-md border-b border-[#2C1810]/5 md:border-b-0"}`}
+      <motion.header className={`fixed top-0 inset-x-0 z-50 transition-colors duration-500 ${hasBg ? "bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#2C1810]/5" : "bg-[#FAF6F0] md:bg-transparent md:backdrop-blur-none backdrop-blur-md border-b border-[#2C1810]/5 md:border-b-0"}`}
         initial={ready ? false : { y: -80, opacity: 0 }} animate={ready ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, delay: 0.3, ease: EASE }}>
         <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24 flex items-center justify-between h-16 relative">

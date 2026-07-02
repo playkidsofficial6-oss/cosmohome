@@ -504,7 +504,7 @@ export default function ServicesListPage() {
       {/* ═╦═ 2. STICKY CATEGORY NAVIGATION ═╦═ */}
       <section
         id="treatment-filters"
-        className="sticky top-16 z-30 bg-[#FAF7F2]/80 backdrop-blur-md border-b border-[#2C1810]/5 py-2 md:py-5 px-4 sm:px-6 md:px-16"
+        className="sticky top-[63px] z-30 bg-[#FAF7F2]/80 backdrop-blur-md border-b border-[#2C1810]/5 py-2 md:py-5 px-4 sm:px-6 md:px-16 transform-gpu will-change-transform"
       >
         <div className="max-w-7xl mx-auto flex items-center justify-start md:justify-center overflow-x-auto gap-2.5 no-scrollbar py-1">
           {CATEGORIES.map(({ key, label, icon: Icon }) => {
