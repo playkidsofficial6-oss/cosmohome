@@ -1,7 +1,7 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Star, ShieldCheck } from "lucide-react";
+import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Stethoscope, Lock, Clock, Check } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, GRAIN, WA_PATH } from "../lib/constants";
 import { CTAButtons, FadeUp, Tag } from "../components/ui/shared";
@@ -87,8 +87,9 @@ function BeforeAfterSlider({ beforeImage, afterImage }: { beforeImage: string; a
         className="absolute inset-y-0 w-0.5 bg-white/80 cursor-ew-resize z-20 flex items-center justify-center pointer-events-none"
         style={{ left: `${sliderPos}%` }}
       >
-        <div className="w-10 h-10 rounded-full bg-white shadow-2xl border border-[#2C1810]/15 flex items-center justify-center text-[#C9956A] font-semibold text-xs pointer-events-auto transition-transform hover:scale-110 active:scale-95">
-          â†”
+        <div className="w-10 h-10 rounded-full bg-white shadow-2xl border border-[#2C1810]/15 flex items-center justify-center gap-0.5 text-[#C9956A] pointer-events-auto transition-transform hover:scale-110 active:scale-95 select-none">
+          <ChevronLeft size={14} strokeWidth={2.5} className="shrink-0" />
+          <ChevronRight size={14} strokeWidth={2.5} className="shrink-0" />
         </div>
       </div>
     </div>
@@ -127,6 +128,23 @@ const slugToOptionMap: Record<string, string> = {
   "laser-hair-reduction": "Laser Hair Reduction",
   "muscle-sculpting": "Muscle Sculpting",
   "exosomes-prp-gfc": "Exosomes / PRP / GFC"
+};
+
+const getTrustIcon = (text: string) => {
+  const clean = text.toLowerCase();
+  if (clean.includes("doctor") || clean.includes("supervised") || clean.includes("physician") || clean.includes("medical")) {
+    return Stethoscope;
+  }
+  if (clean.includes("private") || clean.includes("secure") || clean.includes("consultation")) {
+    return Lock;
+  }
+  if (clean.includes("time") || clean.includes("downtime") || clean.includes("minimal")) {
+    return Clock;
+  }
+  if (clean.includes("safe") || clean.includes("clinical")) {
+    return ShieldCheck;
+  }
+  return Check;
 };
 
 export default function ServicePage() {
@@ -190,15 +208,15 @@ export default function ServicePage() {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
-        {/* â•â• 1. CINEMATIC HERO â•â• */}
+        {/* ══ 1. CINEMATIC HERO ══ */}
         <section className="relative min-h-screen lg:h-screen flex flex-col lg:grid lg:grid-cols-2 bg-[#FAF6F0] pt-16 overflow-hidden">
-          {/* Left â€” content */}
+          {/* Left — content */}
           <div className="relative z-10 flex flex-col justify-center px-5 sm:px-10 md:px-16 py-20 lg:py-0">
             <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
               {/* Social proof badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                 style={{ background: "rgba(201,149,106,0.12)", borderColor: "rgba(201,149,106,0.3)" }}>
-                <span className="text-yellow-400 text-sm">â˜…â˜…â˜…â˜…â˜…</span>
+                <span className="text-yellow-400 text-sm">★★★★★</span>
                 <span className="text-xs text-[#2C1810]/80" style={B}>{service.heroRating}</span>
               </div>
             </motion.div>
@@ -230,7 +248,7 @@ export default function ServicePage() {
             </FadeUp>
           </div>
 
-          {/* Right â€” full image */}
+          {/* Right — full image */}
           <div className="relative min-h-[50vh] lg:min-h-full hidden lg:block">
             <img src={service.heroImage}
               alt={service.title} className="absolute inset-0 w-full h-full object-cover" />
@@ -242,19 +260,19 @@ export default function ServicePage() {
               className="absolute bottom-6 right-6 p-5 rounded-2xl max-w-[220px]"
               style={{ background: "rgba(250,247,242,0.92)", backdropFilter: "blur(12px)", border: "1px solid rgba(201,149,106,0.3)", boxShadow: "0 8px 32px rgba(44,24,16,0.1)" }}>
               <p className="text-xs tracking-[0.18em] uppercase text-[#C9956A] mb-2" style={M}>
-                {service.performedByLabel || "ðŸ‘©â€âš•ï¸ Performed by"}
+                {service.performedByLabel || "👩‍⚕️ Performed by"}
               </p>
               <p className="text-base text-[#2C1810]" style={{ ...D, fontStyle: "italic" }}>
                 {service.performedByName || "Doctor-Supervised Care"}
               </p>
               <p className="text-xs text-[#5C4A42] mt-1" style={B}>
-                {service.performedBySub || "Safe â€¢ Personalised â€¢ Professional"}
+                {service.performedBySub || "Safe • Personalised • Professional"}
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* â•â• 2. WHAT IS THIS â•â• */}
+        {/* ══ 2. WHAT IS THIS ══ */}
         <section className="pt-6 pb-12 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-20 items-center">
@@ -303,7 +321,7 @@ export default function ServicePage() {
                       <p className="text-xs tracking-[0.2em] uppercase text-[#C9956A] mb-1.5" style={M}>
                         {service.clinicalNoteLabel || "Clinical note"}
                       </p>
-                      <p className="text-sm text-[#5C4A42] leading-relaxed" style={B}>{service.clinicalNote}</p>
+                      <p className="text-sm text-[#FAF7F2]/90 leading-relaxed font-normal" style={B}>{service.clinicalNote}</p>
                     </motion.div>
                   )}
                 </div>
@@ -312,7 +330,7 @@ export default function ServicePage() {
           </div>
         </section>
 
-        {/* â•â• 3. MACHINE â•â• */}
+        {/* ══ 3. MACHINE ══ */}
         <section className="py-6 md:py-28 bg-[#FAF6F0] relative overflow-hidden border-t border-[#2C1810]/5">
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
           <motion.div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
@@ -322,7 +340,7 @@ export default function ServicePage() {
           <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-16 relative z-10">
             <div className="text-center mb-14">
               <FadeUp>
-                <Tag>{service.technologyTag || "ðŸ”¬ The Technology"}</Tag>
+                <Tag>{service.technologyTag || "🔬 The Technology"}</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
                   {service.machineTitle}<br /><em>{service.machineEmphasized}</em>
                 </h2>
@@ -336,7 +354,7 @@ export default function ServicePage() {
                 <div className="relative rounded-3xl overflow-hidden h-full flex flex-col"
                   style={{ background: "linear-gradient(145deg, #FFFFFF, #FAF7F2)", border: "1px solid rgba(201,149,106,0.25)", boxShadow: "0 8px 32px rgba(44,24,16,0.06)" }}>
                   <div className="absolute top-4 left-4 sm:top-5 sm:left-5 px-4 py-1.5 rounded-full text-xs text-[#C9956A] font-medium z-10" style={{ background: "rgba(250,247,242,0.92)", backdropFilter: "blur(8px)", border: "1px solid rgba(201,149,106,0.35)", ...M }}>
-                    {service.ourDeviceLabel || "âœ… Our Technology"}
+                    {service.ourDeviceLabel || "✅ Our Technology"}
                   </div>
                   <div className="relative aspect-[16/9] overflow-hidden shrink-0">
                     <img src={service.deviceImage}
@@ -374,7 +392,7 @@ export default function ServicePage() {
 
                       <div className="flex flex-col gap-1.5 w-full">
                         <div className="flex gap-3 md:gap-2 items-start">
-                          <span className="text-base md:text-sm shrink-0 mt-0.5 md:mt-0">âœ…</span>
+                          <span className="text-base md:text-sm shrink-0 mt-0.5 md:mt-0">✅</span>
                           <div>
                             <span className="text-[10px] uppercase tracking-wider text-[#5C4A42]/60 md:hidden block mb-0.5" style={M}>Cosmo Home</span>
                             <p className="text-sm md:text-xs text-[#2C1810] leading-relaxed" style={B}>{row.ours}</p>
@@ -384,7 +402,7 @@ export default function ServicePage() {
 
                       <div className="flex flex-col gap-1.5 w-full mt-1 md:mt-0 pt-3 border-t border-white/5 md:border-0 md:pt-0">
                         <div className="flex gap-3 md:gap-2 items-start">
-                          <span className="text-base md:text-sm shrink-0 mt-0.5 md:mt-0">âš ï¸</span>
+                          <span className="text-base md:text-sm shrink-0 mt-0.5 md:mt-0">⚠️</span>
                           <div>
                             <span className="text-[10px] uppercase tracking-wider text-[#5C4A42]/60 md:hidden block mb-0.5" style={M}>
                               {service.standardClinicLabel || "Standard Clinic"}
@@ -401,14 +419,14 @@ export default function ServicePage() {
           </div>
         </section>
 
-        {/* â•â• 4. WHO NEEDS THIS â•â• */}
+        {/* ══ 4. WHO NEEDS THIS ══ */}
         <section className="py-6 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-[380px_1fr] gap-6 lg:gap-20 items-start">
               <FadeUp>
                 <Tag>{service.whoNeedsTag || "Is This For You?"}</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-5" style={D}>
-                  {service.whoNeedsTitle || "You need"}<br /><em>{service.whoNeedsTitleEmphasized || "this ifâ€¦"}</em>
+                  {service.whoNeedsTitle || "You need"}<br /><em>{service.whoNeedsTitleEmphasized || "this if…"}</em>
                 </h2>
                 <p className="text-base text-[#5C4A42] leading-loose mb-6" style={B}>
                   {service.whoNeedsDesc}
@@ -417,7 +435,7 @@ export default function ServicePage() {
                 <div className="p-5 rounded-2xl border-l-4 border-[#C9956A] mb-8"
                   style={{ background: "rgba(201,149,106,0.07)" }}>
                   <p className="text-xs tracking-[0.2em] uppercase text-[#C9956A] mb-2" style={M}>
-                    {service.notSuitableLabel || "âš ï¸ Not suitable if"}
+                    {service.notSuitableLabel || "⚠️ Not suitable if"}
                   </p>
                   <p className="text-sm text-[#5C4A42] leading-relaxed" style={B}>
                     {service.notSuitable}
@@ -433,7 +451,7 @@ export default function ServicePage() {
                       transition={{ type: "spring", stiffness: 260 }}
                       className="p-5 rounded-2xl h-full flex flex-col gap-2"
                       style={{ background: "#FFFFFF", border: "1px solid rgba(44,24,16,0.08)", boxShadow: "0 2px 16px rgba(44,24,16,0.04)" }}>
-                      <p className="text-sm font-medium text-[#2C1810]" style={B}>âœ“ {item.tag}</p>
+                      <p className="text-sm font-medium text-[#2C1810]" style={B}>✓ {item.tag}</p>
                       <p className="text-sm text-[#5C4A42] leading-relaxed" style={B}>{item.desc}</p>
                     </motion.div>
                   </FadeUp>
@@ -443,7 +461,7 @@ export default function ServicePage() {
           </div>
         </section>
 
-        {/* â•â• 5. SESSION PLAN â€” interactive â•â• */}
+        {/* ══ 5. SESSION PLAN — interactive ══ */}
         <section className="py-6 md:py-28 bg-[#FAF6F0] relative overflow-hidden border-t border-[#2C1810]/5">
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
           <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-16 relative z-10">
@@ -494,7 +512,7 @@ export default function ServicePage() {
                                 <span className="absolute -top-4 -right-2 text-[80px] font-bold leading-none select-none pointer-events-none"
                                   style={{ ...D, color: "rgba(201,149,106,0.06)" }}>{activeSession + 1}</span>
                                 <p className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] mb-2" style={M}>
-                                  Session {service.sessionPlanSteps[activeSession].n}{service.sessionPlanSteps[activeSession].duration && ` Â· ${service.sessionPlanSteps[activeSession].duration}`}
+                                  Session {service.sessionPlanSteps[activeSession].n}{service.sessionPlanSteps[activeSession].duration && ` · ${service.sessionPlanSteps[activeSession].duration}`}
                                 </p>
                                 <h3 className="text-xl text-[#2C1810] mb-3" style={{ ...D, fontStyle: "italic" }}>
                                   {service.sessionPlanSteps[activeSession].label}
@@ -523,7 +541,7 @@ export default function ServicePage() {
                       <span className="absolute -top-4 -right-2 text-[120px] font-bold leading-none select-none pointer-events-none"
                         style={{ ...D, color: "rgba(201,149,106,0.06)" }}>{activeSession + 1}</span>
                       <p className="text-xs tracking-[0.25em] uppercase text-[#C9956A] mb-3" style={M}>
-                        Session {service.sessionPlanSteps[activeSession].n}{service.sessionPlanSteps[activeSession].duration && ` Â· ${service.sessionPlanSteps[activeSession].duration}`}
+                        Session {service.sessionPlanSteps[activeSession].n}{service.sessionPlanSteps[activeSession].duration && ` · ${service.sessionPlanSteps[activeSession].duration}`}
                       </p>
                       <h3 className="text-2xl text-[#2C1810] mb-4" style={{ ...D, fontStyle: "italic" }}>
                         {service.sessionPlanSteps[activeSession].label}
@@ -552,7 +570,7 @@ export default function ServicePage() {
           </div>
         </section>
 
-        {/* â•â• 6. RESULTS TIMELINE â•â• */}
+        {/* ══ 6. RESULTS TIMELINE ══ */}
         <section className="py-6 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-6 gap-6">
@@ -577,7 +595,7 @@ export default function ServicePage() {
                     transition={{ type: "spring", stiffness: 240 }}
                     className={`relative p-5 rounded-2xl flex flex-col ${i % 2 === 1 ? "mt-8" : ""}`}
                     style={{ background: "#FFFFFF", border: "1px solid rgba(201,149,106,0.2)", boxShadow: "0 4px 20px rgba(44,24,16,0.05)" }}>
-                    <span className="text-2xl mb-3">{t.icon || ["âœ¨", "ðŸŒ±", "ðŸŒ¿", "ðŸŒ¸", "ðŸ†"][i]}</span>
+                    <span className="text-2xl mb-3">{t.icon || ["✨", "🌱", "🌿", "🌸", "🏆"][i]}</span>
                     <p className="text-xs tracking-[0.22em] uppercase text-[#C9956A] mb-2" style={M}>{t.when}</p>
                     <p className="text-sm text-[#2C1810] leading-relaxed flex-1" style={B}>{t.what}</p>
                     {/* Fill bar */}
@@ -599,7 +617,7 @@ export default function ServicePage() {
                 <FadeUp key={t.when} delay={i * 0.08}>
                   <div className="relative mb-8 last:mb-0">
                     <div className="absolute -left-9 top-1 w-5 h-5 rounded-full border-2 border-[#C9956A] bg-[#FAF7F2] flex items-center justify-center text-[10px]">
-                      {t.icon || ["âœ¨", "ðŸŒ±", "ðŸŒ¿", "ðŸŒ¸", "ðŸ†"][i]}
+                      {t.icon || ["✨", "🌱", "🌿", "🌸", "🏆"][i]}
                     </div>
                     <p className="text-xs tracking-[0.22em] uppercase text-[#C9956A] mb-1" style={M}>{t.when}</p>
                     <p className="text-base text-[#2C1810] leading-loose" style={B}>{t.what}</p>
@@ -610,7 +628,7 @@ export default function ServicePage() {
           </div>
         </section>
 
-        {/* â•â• BEFORE & AFTER COMPARISON SLIDER â•â• */}
+        {/* ══ BEFORE & AFTER COMPARISON SLIDER ══ */}
         {service.beforeAfter && (
           <section className="py-24 px-5 sm:px-10 md:px-16 bg-[#FAF7F2] border-t border-[#2C1810]/5">
             <div className="max-w-7xl mx-auto">
@@ -633,7 +651,7 @@ export default function ServicePage() {
                         ))}
                       </div>
                       <span className="text-xs text-[#2C1810] font-semibold" style={B}>{service.beforeAfter.patientName}</span>
-                      <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>â€” {service.beforeAfter.treatmentName}</span>
+                      <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— {service.beforeAfter.treatmentName}</span>
                     </div>
                   </div>
 
@@ -661,7 +679,7 @@ export default function ServicePage() {
           </section>
         )}
 
-        {/* â•â• 7. FINAL CTA â•â• */}
+        {/* ══ 7. FINAL CTA ══ */}
         <section id="sp-book" className="relative overflow-hidden bg-[#FAF6F0]">
           {/* Full bleed background */}
           <div className="absolute inset-0">
@@ -679,7 +697,7 @@ export default function ServicePage() {
               <FadeUp>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
                   style={{ background: "rgba(201,149,106,0.12)", borderColor: "rgba(201,149,106,0.35)" }}>
-                  <span className="text-yellow-400 text-sm">â˜…â˜…â˜…â˜…â˜…</span>
+                  <span className="text-yellow-400 text-sm">★★★★★</span>
                   <span className="text-xs text-[#2C1810]/80" style={B}>{service.ctaRating}</span>
                 </div>
                 <h2 className="text-4xl sm:text-5xl md:text-6xl text-[#2C1810] leading-[1.0] mb-5" style={D}>
@@ -687,27 +705,40 @@ export default function ServicePage() {
                   {service.ctaTitle2 ? <>{service.ctaTitle2}<br /></> : null}
                   <em>{service.ctaEmphasized}</em>
                 </h2>
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <div className="flex flex-col sm:flex-row gap-3.5 mb-8">
                   <motion.a href={service.ctaButtonLink || "/book-consultation"}
-                    whileHover={{ scale: 1.05, boxShadow: "0 0 48px rgba(201,149,106,0.6)" }}
-                    whileTap={{ scale: 0.97 }}
-                    className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#C9956A] text-[#FAF7F2] text-sm tracking-[0.2em] uppercase rounded-2xl shadow-2xl shadow-[#C9956A]/35 font-medium group" style={B}>
+                    whileHover={{ scale: 1.03, y: -2, boxShadow: "0 12px 30px rgba(201,149,106,0.35)" }}
+                    whileTap={{ scale: 0.98 }}
+                    className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.18em] uppercase rounded-xl shadow-lg shadow-[#C9956A]/20 font-semibold group transition-all" style={B}>
                     {service.ctaButtonText || "Book My Consultation"}
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform shrink-0" />
                   </motion.a>
                   <motion.a href={service.ctaSecondaryButtonLink || "https://api.whatsapp.com/send?phone=919946336480"} target="_blank" rel="noopener noreferrer"
-                    whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-                    className="inline-flex items-center justify-center gap-3 px-9 py-5 border-2 border-[#2C1810]/20 text-[#2C1810] text-sm tracking-[0.18em] uppercase rounded-2xl hover:border-[#C9956A] hover:text-[#C9956A] transition-all font-medium" style={B}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d={WA_PATH} /></svg>
+                    whileHover={{ scale: 1.02, y: -2, borderColor: "#C9956A", color: "#C9956A", backgroundColor: "rgba(201,149,106,0.03)" }} whileTap={{ scale: 0.98 }}
+                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 border border-[#2C1810]/15 text-[#2C1810] text-xs tracking-[0.15em] uppercase rounded-xl transition-all font-semibold" style={B}>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" className="shrink-0"><path d={WA_PATH} /></svg>
                     {service.ctaSecondaryButtonText || "Ask Dr. Ruxana"}
                   </motion.a>
                 </div>
 
                 {/* Trust signals */}
-                <div className="flex flex-wrap gap-6">
-                  {(service.ctaTrustSignals || ["ðŸ‘©â€âš•ï¸ Doctor Supervised", "â±ï¸ Minimal Downtime", "ðŸ”’ Private Consultation"]).map(t => (
-                    <p key={t} className="text-sm text-[#5C4A42]" style={B}>{t}</p>
-                  ))}
+                <div className="flex flex-wrap gap-2.5">
+                  {(service.ctaTrustSignals || ["👩‍⚕️ Doctor Supervised", "⏱️ Minimal Downtime", "🔒 Private Consultation"]).map((t, idx) => {
+                    // strip emoji
+                    const cleanText = t.replace(/[\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF]/g, '').trim();
+                    const Icon = getTrustIcon(cleanText);
+                    return (
+                      <div
+                        key={idx}
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#2C1810]/8 shadow-[0_2px_6px_rgba(44,24,16,0.02)]"
+                      >
+                        <Icon size={12} className="text-[#C9956A]" />
+                        <span className="text-[11px] font-medium text-[#5C4A42] tracking-wide" style={B}>
+                          {cleanText}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               </FadeUp>
 
@@ -735,7 +766,7 @@ export default function ServicePage() {
                         className="flex flex-col gap-5"
                       >
                         <p className="text-lg text-[#2C1810] mb-1 text-left" style={{ ...D, fontStyle: "italic" }}>
-                          {service.ctaFormTitle || "Begin your story. ðŸŒ¸"}
+                          {service.ctaFormTitle || "Begin your story. 🌸"}
                         </p>
 
                         <div className="grid grid-cols-2 gap-4">
@@ -755,8 +786,8 @@ export default function ServicePage() {
                             onClick={() => setDropOpen(!dropOpen)}
                             className="w-full border-b bg-transparent pb-2 pt-1 text-sm text-left flex items-center justify-between gap-2 focus:outline-none transition-colors"
                             style={{
-                              borderBottomColor: dropOpen ? GOLD : "rgba(255,255,255,0.1)",
-                              color: selected ? "#FAF7F2" : "#FAF7F2/50",
+                              borderBottomColor: dropOpen ? GOLD : "rgba(44,24,16,0.2)",
+                              color: selected ? "#2C1810" : "rgba(44,24,16,0.4)",
                               ...B
                             }}
                           >
@@ -788,13 +819,13 @@ export default function ServicePage() {
                                     }}
                                     className={`px-4 py-2.5 text-xs cursor-pointer transition-all duration-200 flex items-center gap-2.5 ${selected === opt || (!selected && opt === "I am not sure yet")
                                       ? "bg-[#C9956A]/20 text-[#C9956A]"
-                                      : "text-[#FAF7F2] hover:bg-[#FAF7F2]/5 hover:text-[#C9956A]"
+                                      : "text-[#5C4A42] hover:bg-[#C9956A]/5 hover:text-[#C9956A]"
                                       }`}
                                     style={B}
                                   >
                                     <span className={`w-1 h-1 rounded-full shrink-0 transition-colors ${selected === opt || (!selected && opt === "I am not sure yet")
                                       ? "bg-[#C9956A]"
-                                      : "bg-[#FAF7F2]/15"
+                                      : "bg-[#5C4A42]/20"
                                       }`} />
                                     {opt}
                                   </li>
@@ -836,7 +867,7 @@ export default function ServicePage() {
                         </motion.button>
 
                         <p className="text-[10px] text-[#5C4A42]/70 text-center" style={B}>
-                          {service.ctaFormFooter || "Dr. Ruxana personally reviews every request. ðŸ’›"}
+                          {service.ctaFormFooter || "Dr. Ruxana personally reviews every request. 💛"}
                         </p>
                       </motion.form>
                     ) : (
@@ -857,7 +888,7 @@ export default function ServicePage() {
                             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                           </svg>
                         </motion.div>
-                        <p className="text-3xl mb-3">ðŸŒ¸</p>
+                        <p className="text-3xl mb-3">🌸</p>
                         <p className="text-xl text-[#2C1810] mb-3" style={{ ...D, fontStyle: "italic" }}>
                           {service.ctaFormSuccessTitle || "Thank you."}
                         </p>

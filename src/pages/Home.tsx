@@ -1,6 +1,6 @@
 
 import { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
 import { ArrowRight, Heart, AlertTriangle, XCircle, ChevronRight, ShieldCheck, Users, Star, Microscope, Leaf, Calendar } from "lucide-react";
 
@@ -624,8 +624,21 @@ export function DrRuxana() {
 
 
 export function Experiences() {
-  const [active, setActive] = useState(0);
   const navigate = useNavigate();
+  const location = useLocation();
+  const [active, setActive] = useState(() => {
+    const params = new URLSearchParams(location.search);
+    const expParam = params.get("exp");
+    return expParam ? parseInt(expParam, 10) : 0;
+  });
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const expParam = params.get("exp");
+    if (expParam !== null) {
+      setActive(parseInt(expParam, 10));
+    }
+  }, [location.search]);
   const exps = [
     { name: "Skin Renewal Experience ✨", tagline: "Rediscover your glow", desc: "A deeply personalised skin journey combining medical-grade analysis, bespoke topical protocols, and precision regenerative treatments. Designed to restore luminosity and texture — naturally, gradually, lastingly.", duration: "From 3 sessions", suitedFor: "All skin types seeking radiance" },
     { name: "Age Gracefully Experience 🌸", tagline: "Confidence, not correction", desc: "A staged approach to natural facial rejuvenation. We work with the architecture of your face — not against it — using subtle volume restoration and refined contouring.", duration: "Ongoing, quarterly", suitedFor: "35–60 · natural longevity seekers" },
@@ -936,7 +949,7 @@ export function Journey() {
 export function TeamAndStandards() {
   const [tab, setTab] = useState<"danger" | "standards">("standards");
   return (
-    <section id="our-team" className="bg-[#FAF7F2]">
+    <section className="bg-[#FAF7F2]">
       {/* ── ANTI-QUACKERY first ── */}
       <div id="our-standards" className="bg-[#FAF6F0] border-y border-[#2C1810]/5 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
@@ -1041,7 +1054,9 @@ export function TeamAndStandards() {
       </div>
 
       {/* ── TEAM — completely new composed design ── */}
-      <TeamSection />
+      <div id="our-team">
+        <TeamSection />
+      </div>
     </section>
   );
 }

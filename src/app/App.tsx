@@ -11,13 +11,24 @@ import HomePage from "../pages/Home";
 import ServicePage from "../pages/Service";
 import ServicesListPage from "../pages/ServicesList";
 import BookConsultationPage from "../pages/BookConsultation";
+import ExperiencePage from "../pages/Experience";
 export function AppContent() {
     const location = useLocation();
     const [ready, setReady] = useState(() => location.pathname !== "/");
     useEffect(() => {
       if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-      window.scrollTo(0, 0);
-    }, [location.pathname]);
+      if (location.hash) {
+        const timer = setTimeout(() => {
+          const el = document.getElementById(location.hash.slice(1));
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 150);
+        return () => clearTimeout(timer);
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }, [location.pathname, location.hash]);
     return (
     <div style={B} className="bg-background">
       <AnimatePresence>{!ready && <Preloader onDone={() => setReady(true)} />}</AnimatePresence>
@@ -27,6 +38,7 @@ export function AppContent() {
           <Route path="/" element={<HomePage ready={ready} />} />
           <Route path="/service" element={<ServicesListPage />} />
           <Route path="/service/:slug" element={<ServicePage />} />
+          <Route path="/experience/:slug" element={<ExperiencePage />} />
           <Route path="/book-consultation" element={<BookConsultationPage />} />
         </Routes>
         <Footer />
