@@ -450,15 +450,33 @@ export function Footer() {
             </div>
           </div>
           {[
-            { heading: "Experiences", links: ["Skin Renewal", "Age Gracefully", "Confidence Restoration", "Hair Revival", "Personalised Journey"] },
-            { heading: "COSMO HOME", links: ["Our Philosophy", "Dr. Ruxana", "Our Team", "Our Standards", "Begin Your Story"] },
+            {
+              heading: "Experiences",
+              links: [
+                { label: "Skin Renewal", href: "/experience/skin-renewal" },
+                { label: "Age Gracefully", href: "/experience/age-gracefully" },
+                { label: "Confidence Restoration", href: "/experience/confidence-restoration" },
+                { label: "Hair Revival", href: "/experience/hair-revival" },
+                { label: "Personalised Journey", href: "/experience/personalised-journey" }
+              ]
+            },
+            {
+              heading: "COSMO HOME",
+              links: [
+                { label: "Our Philosophy", href: "/#philosophy" },
+                { label: "Dr. Ruxana", href: "/#dr-ruxana" },
+                { label: "Our Team", href: "/#our-team" },
+                { label: "Our Standards", href: "/#our-standards" },
+                { label: "Begin Your Story", href: "/book-consultation" }
+              ]
+            },
           ].map(({ heading, links }) => (
             <div key={heading}>
               <p className="text-xs tracking-[0.28em] uppercase text-[#C9956A] mb-5" style={M}>{heading}</p>
               <ul className="flex flex-col gap-3">
-                {links.map(l => (
-                  <li key={l}>
-                    <motion.a href="#" whileHover={{ x: 3 }} className="text-sm text-[#5C4A42] hover:text-[#2C1810] transition-colors block" style={B}>{l}</motion.a>
+                {links.map(link => (
+                  <li key={link.label}>
+                    <motion.a href={link.href} whileHover={{ x: 3 }} className="text-sm text-[#5C4A42] hover:text-[#2C1810] transition-colors block" style={B}>{link.label}</motion.a>
                   </li>
                 ))}
               </ul>

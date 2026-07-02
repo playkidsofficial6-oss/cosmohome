@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "motion/react";
 import {
@@ -891,19 +891,19 @@ export default function ServicesListPage() {
               Schedule a private consultation with our experienced medical team to discover your personalized treatment protocol.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3.5 justify-center items-center">
               {/* Glowing Book Button */}
               <motion.a
                 href="/book-consultation"
-                whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(201,149,106,0.6)" }}
-                whileTap={{ scale: 0.97 }}
-                className="relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase rounded-xl font-bold overflow-hidden group shadow-lg shadow-[#C9956A]/20"
+                whileHover={{ scale: 1.03, y: -2, boxShadow: "0 12px 30px rgba(201,149,106,0.35)" }}
+                whileTap={{ scale: 0.98 }}
+                className="relative inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.18em] uppercase rounded-xl font-semibold overflow-hidden group shadow-lg shadow-[#C9956A]/20 transition-all"
                 style={B}
               >
                 {/* Glowing glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
                 Schedule Your Consultation
-                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform shrink-0" />
               </motion.a>
 
               {/* WhatsApp consultation */}
@@ -911,12 +911,12 @@ export default function ServicesListPage() {
                 href="https://api.whatsapp.com/send?phone=919946336480"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center justify-center gap-3 px-9 py-5 border-2 border-[#FAF7F2]/10 hover:border-[#C9956A] text-[#FAF7F2] hover:text-[#C9956A] text-xs tracking-[0.2em] uppercase rounded-xl font-bold transition-all"
+                whileHover={{ scale: 1.02, y: -2, borderColor: "#C9956A", color: "#C9956A", backgroundColor: "rgba(201,149,106,0.05)" }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 border border-[#FAF7F2]/15 hover:border-[#C9956A] text-[#FAF7F2] hover:text-[#C9956A] text-xs tracking-[0.15em] uppercase rounded-xl font-semibold transition-all"
                 style={B}
               >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366"><path d={WA_PATH} /></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" className="shrink-0"><path d={WA_PATH} /></svg>
                 Speak With Our Team
               </motion.a>
             </div>

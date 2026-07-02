@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Stethoscope, Lock, Clock, Check } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, GRAIN, WA_PATH } from "../lib/constants";
 import { CTAButtons, FadeUp, Tag } from "../components/ui/shared";
@@ -128,6 +128,23 @@ const slugToOptionMap: Record<string, string> = {
   "laser-hair-reduction": "Laser Hair Reduction",
   "muscle-sculpting": "Muscle Sculpting",
   "exosomes-prp-gfc": "Exosomes / PRP / GFC"
+};
+
+const getTrustIcon = (text: string) => {
+  const clean = text.toLowerCase();
+  if (clean.includes("doctor") || clean.includes("supervised") || clean.includes("physician") || clean.includes("medical")) {
+    return Stethoscope;
+  }
+  if (clean.includes("private") || clean.includes("secure") || clean.includes("consultation")) {
+    return Lock;
+  }
+  if (clean.includes("time") || clean.includes("downtime") || clean.includes("minimal")) {
+    return Clock;
+  }
+  if (clean.includes("safe") || clean.includes("clinical")) {
+    return ShieldCheck;
+  }
+  return Check;
 };
 
 export default function ServicePage() {
@@ -688,27 +705,40 @@ export default function ServicePage() {
                   {service.ctaTitle2 ? <>{service.ctaTitle2}<br /></> : null}
                   <em>{service.ctaEmphasized}</em>
                 </h2>
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <div className="flex flex-col sm:flex-row gap-3.5 mb-8">
                   <motion.a href={service.ctaButtonLink || "/book-consultation"}
-                    whileHover={{ scale: 1.05, boxShadow: "0 0 48px rgba(201,149,106,0.6)" }}
-                    whileTap={{ scale: 0.97 }}
-                    className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#C9956A] text-[#FAF7F2] text-sm tracking-[0.2em] uppercase rounded-2xl shadow-2xl shadow-[#C9956A]/35 font-medium group" style={B}>
+                    whileHover={{ scale: 1.03, y: -2, boxShadow: "0 12px 30px rgba(201,149,106,0.35)" }}
+                    whileTap={{ scale: 0.98 }}
+                    className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.18em] uppercase rounded-xl shadow-lg shadow-[#C9956A]/20 font-semibold group transition-all" style={B}>
                     {service.ctaButtonText || "Book My Consultation"}
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform shrink-0" />
                   </motion.a>
                   <motion.a href={service.ctaSecondaryButtonLink || "https://api.whatsapp.com/send?phone=919946336480"} target="_blank" rel="noopener noreferrer"
-                    whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-                    className="inline-flex items-center justify-center gap-3 px-9 py-5 border-2 border-[#2C1810]/20 text-[#2C1810] text-sm tracking-[0.18em] uppercase rounded-2xl hover:border-[#C9956A] hover:text-[#C9956A] transition-all font-medium" style={B}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d={WA_PATH} /></svg>
+                    whileHover={{ scale: 1.02, y: -2, borderColor: "#C9956A", color: "#C9956A", backgroundColor: "rgba(201,149,106,0.03)" }} whileTap={{ scale: 0.98 }}
+                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 border border-[#2C1810]/15 text-[#2C1810] text-xs tracking-[0.15em] uppercase rounded-xl transition-all font-semibold" style={B}>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" className="shrink-0"><path d={WA_PATH} /></svg>
                     {service.ctaSecondaryButtonText || "Ask Dr. Ruxana"}
                   </motion.a>
                 </div>
 
                 {/* Trust signals */}
-                <div className="flex flex-wrap gap-6">
-                  {(service.ctaTrustSignals || ["👩‍⚕️ Doctor Supervised", "⏱️ Minimal Downtime", "🔒 Private Consultation"]).map(t => (
-                    <p key={t} className="text-sm text-[#5C4A42]" style={B}>{t}</p>
-                  ))}
+                <div className="flex flex-wrap gap-2.5">
+                  {(service.ctaTrustSignals || ["👩‍⚕️ Doctor Supervised", "⏱️ Minimal Downtime", "🔒 Private Consultation"]).map((t, idx) => {
+                    // strip emoji
+                    const cleanText = t.replace(/[\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF]/g, '').trim();
+                    const Icon = getTrustIcon(cleanText);
+                    return (
+                      <div
+                        key={idx}
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#2C1810]/8 shadow-[0_2px_6px_rgba(44,24,16,0.02)]"
+                      >
+                        <Icon size={12} className="text-[#C9956A]" />
+                        <span className="text-[11px] font-medium text-[#5C4A42] tracking-wide" style={B}>
+                          {cleanText}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               </FadeUp>
 
