@@ -282,11 +282,11 @@ export function Hero({ ready }: { ready: boolean }) {
           <motion.p className="text-[#C9956A] text-[10px] tracking-[0.15em] uppercase mb-4 font-semibold" style={M}
             initial={{ opacity: 0, x: -16 }} animate={ready ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: d(0.3) }}>
-            ✦ Expert-Led • Ethical • Personalized
+            ✦ Expert-Led • Skin • Hair • Aesthetics
           </motion.p>
 
           <h1 className="text-[#2C1810] text-[2.75rem] leading-[1.08] mb-5 font-light" style={D}>
-            {["Where Science", "Enhances You."].map((word, i) => (
+            {["Beauty", "Feels", "At Home."].map((word, i) => (
               <div key={word} className="overflow-hidden">
                 <motion.span className={`block ${i === 1 ? "serif italic text-[#C9956A]" : ""}`}
                   initial={{ y: "105%" }} animate={ready ? { y: 0 } : {}}
@@ -300,10 +300,10 @@ export function Hero({ ready }: { ready: boolean }) {
           <motion.div className="w-8 h-px bg-[#2C1810]/20 mb-5"
             initial={{ scaleX: 0 }} animate={ready ? { scaleX: 1 } : {}} transition={{ delay: d(0.9), duration: 0.8 }} />
 
-          <motion.p className="text-[#5C4A42] text-sm leading-relaxed max-w-[240px] font-light" style={B}
+          <motion.p className="text-[#5C4A42] text-sm leading-relaxed max-w-[280px] font-light" style={B}
             initial={{ opacity: 0, y: 18 }} animate={ready ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: d(0.95) }}>
-            Cosmetic care that's honest, safe, and designed around you.
+            Expert-led aesthetic medicine designed around confidence, care, and your most natural beauty.
           </motion.p>
 
           <motion.div
