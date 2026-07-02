@@ -304,7 +304,7 @@ export default function ServicePage() {
                       <p className="text-xs tracking-[0.2em] uppercase text-[#C9956A] mb-1.5" style={M}>
                         {service.clinicalNoteLabel || "Clinical note"}
                       </p>
-                      <p className="text-sm text-[#5C4A42] leading-relaxed" style={B}>{service.clinicalNote}</p>
+                      <p className="text-sm text-[#FAF7F2]/90 leading-relaxed font-normal" style={B}>{service.clinicalNote}</p>
                     </motion.div>
                   )}
                 </div>
