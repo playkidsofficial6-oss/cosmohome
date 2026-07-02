@@ -241,7 +241,7 @@ export function Hero({ ready }: { ready: boolean }) {
             {/* Stat 2 */}
             <div className="flex items-center gap-5 pt-6 pb-6 md:py-0 md:px-8">
               <div className="w-16 h-16 rounded-full border border-[#2C1810]/15 flex items-center justify-center text-[#2C1810] shrink-0 text-lg font-medium font-serif bg-white/40 shadow-sm" style={D}>
-                3,800+
+                5,000+
               </div>
               <div className="flex flex-col text-left">
                 <span className="text-[10px] tracking-[0.2em] text-[#C9956A] uppercase font-bold" style={M}>Transformations</span>
@@ -309,7 +309,7 @@ export function Hero({ ready }: { ready: boolean }) {
             initial={{ opacity: 0, y: 30 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: d(1.2), duration: 0.8 }}>
             <div className="absolute inset-0 bg-gradient-to-tr from-white/40 to-transparent pointer-events-none" />
             {[{ n: "20+", l: "Years of Care", icon: <ShieldCheck size={20} strokeWidth={1.2} className="text-[#C9956A] mb-2 mx-auto" /> },
-            { n: "3,800+", l: "Transformations", icon: <Users size={20} strokeWidth={1.2} className="text-[#C9956A] mb-2 mx-auto" /> },
+            { n: "5,000+", l: "Transformations", icon: <Users size={20} strokeWidth={1.2} className="text-[#C9956A] mb-2 mx-auto" /> },
             { n: "5", l: "Doctors", icon: <Star size={20} strokeWidth={1.2} className="text-[#C9956A] mb-2 mx-auto" /> }].map(({ n, l, icon }, i) => (
               <div key={l} className={`flex-1 text-center ${i !== 2 ? 'border-r border-[#2C1810]/5' : ''} relative z-10`}>
                 {icon}
