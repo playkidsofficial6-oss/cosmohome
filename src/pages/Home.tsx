@@ -41,6 +41,16 @@ export function Hero({ ready }: { ready: boolean }) {
         </g>
       </svg>
 
+      {/* Mobile Background Image */}
+      <motion.img
+        src="/hero/main banner mob5.webp"
+        alt="Dr. Ruxana K"
+        initial={{ opacity: 0, scale: 1.05, y: 20 }}
+        animate={ready ? { opacity: 1, scale: 1, y: 0 } : {}}
+        transition={{ duration: 1.2, delay: d(0.2), ease: EASE }}
+        className="absolute inset-0 w-full h-full object-cover object-[68%_42%] pointer-events-none select-none z-0 block md:hidden"
+      />
+
       {/* Background Image ( ivory style ) */}
       <motion.img
         src="/hero/main banner.webp"
@@ -48,7 +58,7 @@ export function Hero({ ready }: { ready: boolean }) {
         initial={{ opacity: 0, scale: 1.05, y: 20 }}
         animate={ready ? { opacity: 1, scale: 1, y: 0 } : {}}
         transition={{ duration: 1.2, delay: d(0.2), ease: EASE }}
-        className="absolute bottom-0 right-[-35%] sm:right-[-10%] lg:right-0 h-[75%] sm:h-[85%] md:h-[92%] w-auto max-w-none object-contain pointer-events-none select-none z-0"
+        className="absolute bottom-0 right-[-35%] sm:right-[-10%] lg:right-0 h-[75%] sm:h-[85%] md:h-[92%] w-auto max-w-none object-contain pointer-events-none select-none z-0 hidden md:block"
       />
 
       {/* Gradients */}
@@ -60,6 +70,8 @@ export function Hero({ ready }: { ready: boolean }) {
         className="absolute inset-0 block lg:hidden pointer-events-none z-10"
         style={{ background: "linear-gradient(to right, #FAF6F0 0%, rgba(250,246,240,0.6) 15%, rgba(250,246,240,0) 35%)" }}
       />
+
+
 
       {/* Bottom Blender Gradient */}
       <div
@@ -651,7 +663,7 @@ export function Experiences() {
     { name: "Personalised Aesthetic Journey 💫", tagline: "Your vision. Our expertise.", desc: "A comprehensive long-term relationship with aesthetic care. Dr. Ruxana designs a multi-year plan aligned with your goals, lifestyle, and evolving beauty.", duration: "Annual programme", suitedFor: "Anyone committed to the long view" },
   ];
   return (
-    <section id="experiences" className="py-6 md:py-32 bg-[#FAF7F2] border-t border-[#2C1810]/5">
+    <section id="experiences" className="pt-6 pb-12 md:pt-12 md:pb-24 bg-[#FAF7F2] border-t border-[#2C1810]/5">
       <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
         <FadeUp>
           <Tag>Chapter 05 — Signature Experiences</Tag>
@@ -662,65 +674,52 @@ export function Experiences() {
             {exps.map((e, i) => (
               <div key={e.name} className="flex flex-col border-b border-[#2C1810]/10">
                 <motion.button onClick={() => setActive(i)} whileHover={{ x: 5 }}
-                  className={`text-left py-6 transition-all duration-300 ${active === i ? "opacity-100" : "opacity-40 hover:opacity-70"}`}>
+                  className={`text-left py-6 transition-all duration-300 w-full ${active === i ? "opacity-100" : "opacity-100 lg:opacity-40 lg:hover:opacity-70"}`}>
                   <div className="flex items-center justify-between gap-4">
                     <div>
                       <p className="text-lg md:text-xl text-[#2C1810]" style={D}>{e.name}</p>
                       <p className="text-xs tracking-[0.18em] text-[#C9956A] mt-1 uppercase" style={M}>{e.tagline}</p>
                     </div>
-                    <motion.div animate={{ rotate: active === i ? 90 : 0 }} className="lg:hidden shrink-0 text-[#C9956A] transition-transform">
-                      <ChevronRight size={16} />
-                    </motion.div>
                     <motion.div animate={{ x: active === i ? 5 : 0 }} className="hidden lg:block shrink-0 text-[#C9956A] transition-transform">
                       <ChevronRight size={16} />
                     </motion.div>
                   </div>
                 </motion.button>
 
-                {/* Mobile Accordion Content */}
-                <AnimatePresence initial={false}>
-                  {active === i && (
-                    <motion.div
-                      className="lg:hidden overflow-hidden"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: EASE }}
-                    >
-                      <div className="pb-8 pt-2">
-                        <p className="text-sm text-[#5C4A42] leading-loose mb-5" style={B}>{exps[active].desc}</p>
-                        {[{ label: "Duration", val: exps[active].duration }, { label: "Suited for", val: exps[active].suitedFor }].map(({ label, val }) => (
-                          <div key={label} className="flex gap-4 mb-2">
-                            <span className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] w-20 shrink-0 pt-0.5" style={M}>{label}</span>
-                            <span className="text-xs text-[#2C1810]/85" style={B}>{val}</span>
-                          </div>
-                        ))}
-                        <div className="mt-6 flex flex-col gap-3">
-                          {active === 0 && (
-                            <motion.button
-                              onClick={() => navigate("/service")}
-                              whileTap={{ scale: 0.97 }}
-                              style={B}
-                              className="cursor-pointer inline-flex justify-center items-center gap-3 w-full py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-lg shadow-lg shadow-[#C9956A]/30 group"
-                            >
-                              View Full Service Details
-                              <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
-                            </motion.button>
-                          )}
-                          <motion.a
-                            href="/#invitation"
-                            whileTap={{ scale: 0.97 }}
-                            style={B}
-                            className="inline-flex justify-center items-center gap-3 w-full py-3.5 border border-[#C9956A]/40 text-[#C9956A] text-xs tracking-[0.22em] uppercase rounded-lg hover:bg-[#C9956A]/10 transition-colors group"
-                          >
-                            Enquire
-                            <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
-                          </motion.a>
-                        </div>
+                {/* Mobile Content (Always Expanded) */}
+                <div className="block lg:hidden overflow-hidden">
+                  <div className="pb-8 pt-2">
+                    <p className="text-sm text-[#5C4A42] leading-loose mb-5" style={B}>{e.desc}</p>
+                    {[{ label: "Duration", val: e.duration }, { label: "Suited for", val: e.suitedFor }].map(({ label, val }) => (
+                      <div key={label} className="flex gap-4 mb-2">
+                        <span className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] w-20 shrink-0 pt-0.5" style={M}>{label}</span>
+                        <span className="text-xs text-[#2C1810]/85" style={B}>{val}</span>
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                    ))}
+                    <div className="mt-6 flex flex-col gap-3">
+                      {i === 0 && (
+                        <motion.button
+                          onClick={() => navigate("/service")}
+                          whileTap={{ scale: 0.97 }}
+                          style={B}
+                          className="cursor-pointer inline-flex justify-center items-center gap-3 w-full py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-lg shadow-lg shadow-[#C9956A]/30 group"
+                        >
+                          View Full Service Details
+                          <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                        </motion.button>
+                      )}
+                      <motion.a
+                        href="/#invitation"
+                        whileTap={{ scale: 0.97 }}
+                        style={B}
+                        className="inline-flex justify-center items-center gap-3 w-full py-3.5 border border-[#C9956A]/40 text-[#C9956A] text-xs tracking-[0.22em] uppercase rounded-lg hover:bg-[#C9956A]/10 transition-colors group"
+                      >
+                        Enquire
+                        <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                      </motion.a>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
