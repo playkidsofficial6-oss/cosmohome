@@ -264,7 +264,7 @@ export default function ServicesListPage() {
       transition={{ duration: 0.6 }}
     >
       {/* ═╦═ 1. CINEMATIC HERO SECTION ═╦═ */}
-      <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center bg-[#FAF6F0] pt-24 md:pt-36 pb-6 md:pb-20 overflow-hidden">
+      <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-center bg-[#FAF6F0] pt-24 md:pt-36 pb-6 md:pb-10 overflow-hidden">
         {/* Background visual with soft glow */}
         <div className="absolute inset-0 z-0 opacity-[0.12]">
           <img
@@ -414,6 +414,52 @@ export default function ServicesListPage() {
             <AnimatedStat value="Medical Grade" label="Technology" icon={Cpu} />
           </motion.div>
 
+        </div>
+      </section>
+
+      {/* Desktop-only Before & After (Second Section) */}
+      <section className="hidden md:block pt-12 pb-12 px-6 md:px-16 bg-[#FAF7F2]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left side: Editorial Review */}
+            <div className="lg:col-span-5 flex flex-col justify-center">
+              <Tag>Verified Transformation</Tag>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] mt-4 mb-6 leading-tight font-light" style={D}>
+                Visible outcomes, <em className="serif italic text-[#C9956A]">naturally aligned.</em>
+              </h2>
+
+              <div className="border-l-2 border-[#C9956A] pl-6 py-2 mb-8">
+                <p className="text-base sm:text-lg text-[#2C1810]/90 leading-relaxed font-light italic" style={D}>
+                  "The tone correction laser completely dissolved my sun spots. My face feels clean, even, and refreshed. People keep telling me I look rested, but they can't tell I had a clinical treatment."
+                </p>
+                <div className="mt-4 flex items-center gap-3">
+                  <div className="flex gap-0.5 text-amber-500">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={14} className="fill-current" />
+                    ))}
+                  </div>
+                  <span className="text-xs text-[#2C1810] font-semibold" style={B}>Amara K.</span>
+                  <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— Tone Correction Laser</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-[#C9956A]/10 rounded-lg text-[#C9956A]">
+                  <ShieldCheck size={18} />
+                </div>
+                <span className="text-xs tracking-wider text-[#5C4A42] uppercase font-semibold" style={M}>Verified Clinical Results</span>
+              </div>
+            </div>
+
+            {/* Right side: Interactive Slider */}
+            <div className="lg:col-span-7 flex flex-col w-full">
+              <div className="flex items-center justify-between mb-4 px-2">
+                <span className="text-[10px] sm:text-xs text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>Clinical Case Study</span>
+                <span className="text-[10px] sm:text-xs text-[#C9956A] uppercase tracking-widest font-bold" style={M}>Laser Pigmentation Reduction</span>
+              </div>
+              <BeforeAfterSlider />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -729,7 +775,7 @@ export default function ServicesListPage() {
       </section>
 
       {/* â•â• 7. BEFORE & AFTER COMPARISON SLIDER â•â• */}
-      <section className="pt-12 pb-6 md:py-24 px-6 md:px-16 bg-[#FAF7F2]">
+      <section className="block md:hidden pt-12 pb-6 px-6 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left side: Editorial Review */}
