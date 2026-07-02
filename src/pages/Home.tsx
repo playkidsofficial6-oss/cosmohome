@@ -334,35 +334,39 @@ export function Hero({ ready }: { ready: boolean }) {
 
 export function Philosophy() {
   return (
-    <section id="philosophy" className="py-20 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF6F0] relative overflow-hidden">
+    <section id="philosophy" className="pt-12 pb-6 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF6F0] relative overflow-hidden">
       {/* Background Image */}
       <img
         src="/hero/main banner 2.webp"
         alt="Philosophy Background"
-        className="absolute inset-0 w-full h-full object-cover object-center opacity-30 md:opacity-100 pointer-events-none select-none z-0 md:scale-[1.15] md:-translate-x-[6%]"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-30 md:opacity-100 pointer-events-none select-none z-0 md:scale-[1.15] md:-translate-x-[6%] hidden md:block"
       />
       {/* Top Seam Blender Gradient */}
-      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#FAF6F0] via-[#FAF6F0]/80 to-transparent pointer-events-none z-10" />
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#FAF6F0] via-[#FAF6F0]/80 to-transparent pointer-events-none z-10 hidden md:block" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <FadeUp>
           <div className="flex flex-col items-start">
             <Tag>CHAPTER 02 — OUR PHILOSOPHY</Tag>
-            <div className="h-px w-20 bg-[#8C5D47]/30 my-4" />
+            <div className="h-px w-20 bg-[#8C5D47]/30 my-3 md:my-4" />
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 items-center mt-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-14 lg:gap-24 items-center mt-4 md:mt-6">
           {/* Left Column */}
           <div className="flex flex-col items-start text-left">
             <FadeUp delay={0.05}>
-              <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.1] text-[#2C1810] mb-5 font-light" style={D}>
-                We don't<br />change <span className="italic text-[#8C5D47]">faces.</span>
-              </h2>
+              <div className="relative inline-block mb-3.5 md:mb-5">
+                <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.1] text-[#2C1810] font-light" style={D}>
+                  We don't<br />change <span className="italic text-[#8C5D47]">faces.</span>
+                </h2>
+                {/* Small modern underline for mobile only */}
+                <div className="h-[2px] w-12 bg-[#8C5D47] rounded-full mt-3 block md:hidden" />
+              </div>
             </FadeUp>
 
             <FadeUp delay={0.1}>
-              <div className="flex items-center gap-4 my-4 w-full max-w-sm">
+              <div className="hidden md:flex items-center gap-4 my-4 w-full max-w-sm">
                 <div className="h-[1px] bg-[#2C1810]/10 flex-1" />
                 <span className="text-[#8C5D47] text-xs">✦</span>
                 <div className="h-[1px] bg-[#2C1810]/10 flex-1" />
@@ -370,19 +374,19 @@ export function Philosophy() {
             </FadeUp>
 
             <FadeUp delay={0.15}>
-              <p className="text-xl sm:text-2xl text-[#2C1810] leading-snug mb-5 font-light" style={D}>
+              <p className="text-xl sm:text-2xl text-[#2C1810] leading-snug mb-3 md:mb-5 font-light" style={D}>
                 We help people feel<br />like <span className="italic text-[#8C5D47]">themselves</span> again.
               </p>
             </FadeUp>
 
             <FadeUp delay={0.2}>
-              <p className="text-base text-[#5C4A42] leading-relaxed mb-8 max-w-md font-light" style={B}>
+              <p className="text-base text-[#5C4A42] leading-relaxed mb-6 md:mb-8 max-w-md font-light" style={B}>
                 At Cosmo Home, aesthetic medicine begins with listening. Then comes science, safety, and care — always in that order.
               </p>
             </FadeUp>
 
             <FadeUp delay={0.25}>
-              <div className="flex flex-col sm:flex-row gap-4 w-full">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full">
                 <motion.a
                   href="/book-consultation"
                   whileHover={{ scale: 1.03, backgroundColor: "#734A37" }}
@@ -410,7 +414,7 @@ export function Philosophy() {
           <div className="flex flex-col relative z-10 divide-y divide-[#2C1810]/10">
             {/* Point 1 */}
             <FadeUp delay={0.1}>
-              <div className="py-6 first:pt-0 flex gap-6 items-start">
+              <div className="py-5 md:py-6 first:pt-0 flex gap-4 md:gap-6 items-start">
                 <span className="text-3xl text-[#8C5D47] font-light leading-none w-10 shrink-0 mt-2" style={D}>01</span>
                 <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-[#2C1810]/5">
                   <svg className="w-6 h-6 text-[#8C5D47]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -429,7 +433,7 @@ export function Philosophy() {
 
             {/* Point 2 */}
             <FadeUp delay={0.2}>
-              <div className="py-6 flex gap-6 items-start">
+              <div className="py-5 md:py-6 flex gap-4 md:gap-6 items-start">
                 <span className="text-3xl text-[#8C5D47] font-light leading-none w-10 shrink-0 mt-2" style={D}>02</span>
                 <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-[#2C1810]/5">
                   <Microscope size={22} strokeWidth={1.2} className="text-[#8C5D47]" />
@@ -445,7 +449,7 @@ export function Philosophy() {
 
             {/* Point 3 */}
             <FadeUp delay={0.3}>
-              <div className="py-6 flex gap-6 items-start">
+              <div className="py-5 md:py-6 flex gap-4 md:gap-6 items-start">
                 <span className="text-3xl text-[#8C5D47] font-light leading-none w-10 shrink-0 mt-2" style={D}>03</span>
                 <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0 border border-[#2C1810]/5">
                   <Leaf size={22} strokeWidth={1.2} className="text-[#8C5D47]" />
@@ -470,13 +474,13 @@ export function ExtraordinaryCare() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const scl = useTransform(scrollYProgress, [0, 0.5, 1], [0.97, 1, 0.97]);
   return (
-    <section ref={ref} className="relative bg-[#FAF7F2] py-4">
+    <section ref={ref} className="relative bg-[#FAF7F2] py-0 md:py-4">
       <motion.div style={{ scale: scl }} className="bg-[#FAF6F0] border border-[#2C1810]/5 mx-0 md:mx-10 lg:mx-16 rounded-[32px] shadow-[0_12px_40px_rgba(44,24,16,0.02)] relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
         <motion.div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(201,149,106,0.1) 0%, transparent 70%)" }}
           animate={{ opacity: [0.1, 0.2, 0.1] }} transition={{ duration: 7, repeat: Infinity }} />
-        <div className="relative z-10 px-5 sm:px-8 md:px-16 lg:px-24 py-6 md:py-24 max-w-6xl mx-auto">
+        <div className="relative z-10 px-5 sm:px-8 md:px-16 lg:px-24 pt-4 pb-6 md:py-24 max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-[140px_1fr] gap-8 lg:gap-16 items-start">
             {/* Clock */}
             <FadeUp className="flex flex-col items-center lg:items-start gap-4 lg:pt-2">
