@@ -180,8 +180,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
     ,
     beforeAfter: {
-      beforeImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=1000&fit=crop&q=80",
-      afterImage: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&h=1000&fit=crop&q=80",
+      beforeImage: "/services/before&after/hifu/before.webp",
+      afterImage: "/services/before&after/hifu/after.webp",
       treatmentName: "HIFU Non-Surgical Facial Lift",
       testimonialText: "The sagging skin around my jawline and cheeks was keeping me from looking rested. After one session of HIFU, my face feels lifted and the contours are beautifully defined.",
       patientName: "Nadia P., 42",
@@ -275,8 +275,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
     ,
     beforeAfter: {
-      beforeImage: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=1000&fit=crop&q=80",
-      afterImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=1000&fit=crop&q=80",
+      beforeImage: "/services/before&after/hydra facial/before.webp",
+      afterImage: "/services/before&after/hydra facial/after.webp",
       treatmentName: "Hydrafacial Deep Skin Renewal",
       testimonialText: "My skin was congested and dry from travel. The Hydrafacial completely cleared out my pores and restored a soft, plump radiance that lasted for weeks.",
       patientName: "Rhea S., 29",
