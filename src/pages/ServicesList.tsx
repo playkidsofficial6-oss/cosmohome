@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "motion/react";
 import {
@@ -295,7 +295,7 @@ export default function ServicesListPage() {
 
         <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-16 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
+
             {/* Left Content Column */}
             <div className="lg:col-span-7 flex flex-col justify-center">
               <motion.div
@@ -308,11 +308,11 @@ export default function ServicesListPage() {
                 <span className="text-[9px] tracking-[0.25em] uppercase text-[#C9956A] font-semibold" style={M}>Clinical Excellence Directory</span>
               </motion.div>
 
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
-                className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] text-[#2C1810] leading-[1.05] mb-8 font-light tracking-tight" 
+                className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] text-[#2C1810] leading-[1.05] mb-8 font-light tracking-tight"
                 style={D}
               >
                 Bespoke Treatments &<br />
@@ -322,18 +322,18 @@ export default function ServicesListPage() {
                 </span>
               </motion.h1>
 
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: EASE }}
-                className="text-base sm:text-lg text-[#5C4A42] max-w-xl leading-relaxed mb-10 font-normal" 
+                className="text-base sm:text-lg text-[#5C4A42] max-w-xl leading-relaxed mb-10 font-normal"
                 style={B}
               >
                 Step into a sanctuary of premium aesthetics built on personalized treatments, advanced technology, and clinical excellence. Explore our signature protocols calibrated for natural-looking harmony and skin health.
               </motion.p>
 
               {/* CTAs */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: EASE }}
@@ -377,7 +377,7 @@ export default function ServicesListPage() {
                   alt="Premium skincare treatment at Cosmo Home"
                   className="w-full h-full object-cover animate-image-reveal"
                 />
-                
+
                 {/* Overlay Vignette */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
 
@@ -402,7 +402,7 @@ export default function ServicesListPage() {
           </div>
 
           {/* Stats section - Modern Cards */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: EASE }}
@@ -750,7 +750,7 @@ export default function ServicesListPage() {
                     ))}
                   </div>
                   <span className="text-xs text-[#2C1810] font-semibold" style={B}>Amara K.</span>
-                  <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>â€” Tone Correction Laser</span>
+                  <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— Tone Correction Laser</span>
                 </div>
               </div>
 

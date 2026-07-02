@@ -367,8 +367,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
     ,
     beforeAfter: {
-      beforeImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop&q=80",
-      afterImage: "https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=800&h=1000&fit=crop&q=80",
+      beforeImage: "/services/before&after/carbon feel/before.webp",
+      afterImage: "/services/before&after/carbon feel/after.webp",
       treatmentName: "Skin Resurfacing Mesopeel",
       testimonialText: "I was struggling with skin roughness and active acne. The combination of carbon peeling and mesopeels completely polished my skin texture and cleared up breakouts.",
       patientName: "Tara M., 31",
