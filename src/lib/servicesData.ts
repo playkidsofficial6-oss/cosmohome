@@ -1010,8 +1010,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
     ,
     beforeAfter: {
-      beforeImage: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=800&h=1000&fit=crop&q=80",
-      afterImage: "https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?w=800&h=1000&fit=crop&q=80",
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
       treatmentName: "GFC Hair Growth Therapy",
       testimonialText: "My hair was thinning rapidly on the crown. After three sessions of Growth Factor Concentrate (GFC), my shedding has stopped completely and new thick hair has filled in.",
       patientName: "Nikhil P., 29",

@@ -756,8 +756,8 @@ export default function ServicePage() {
                             onClick={() => setDropOpen(!dropOpen)}
                             className="w-full border-b bg-transparent pb-2 pt-1 text-sm text-left flex items-center justify-between gap-2 focus:outline-none transition-colors"
                             style={{
-                              borderBottomColor: dropOpen ? GOLD : "rgba(255,255,255,0.1)",
-                              color: selected ? "#FAF7F2" : "#FAF7F2/50",
+                              borderBottomColor: dropOpen ? GOLD : "rgba(44,24,16,0.2)",
+                              color: selected ? "#2C1810" : "rgba(44,24,16,0.4)",
                               ...B
                             }}
                           >
@@ -789,13 +789,13 @@ export default function ServicePage() {
                                     }}
                                     className={`px-4 py-2.5 text-xs cursor-pointer transition-all duration-200 flex items-center gap-2.5 ${selected === opt || (!selected && opt === "I am not sure yet")
                                       ? "bg-[#C9956A]/20 text-[#C9956A]"
-                                      : "text-[#FAF7F2] hover:bg-[#FAF7F2]/5 hover:text-[#C9956A]"
+                                      : "text-[#5C4A42] hover:bg-[#C9956A]/5 hover:text-[#C9956A]"
                                       }`}
                                     style={B}
                                   >
                                     <span className={`w-1 h-1 rounded-full shrink-0 transition-colors ${selected === opt || (!selected && opt === "I am not sure yet")
                                       ? "bg-[#C9956A]"
-                                      : "bg-[#FAF7F2]/15"
+                                      : "bg-[#5C4A42]/20"
                                       }`} />
                                     {opt}
                                   </li>
