@@ -43,7 +43,7 @@ export function Hero({ ready }: { ready: boolean }) {
 
       {/* Mobile Background Image */}
       <motion.img
-        src="/hero/main banner mob5.webp"
+        src="/hero/main banner mob8.webp"
         alt="Dr. Ruxana K"
         initial={{ opacity: 0, scale: 1.05, y: 20 }}
         animate={ready ? { opacity: 1, scale: 1, y: 0 } : {}}
@@ -277,15 +277,15 @@ export function Hero({ ready }: { ready: boolean }) {
 
 
       {/* --- MOBILE CONTENT --- */}
-      <motion.div className="relative z-20 flex md:hidden flex-col justify-between pt-20 pb-5 px-6 h-[100svh] w-full flex-1">
+      <motion.div className="relative z-20 flex md:hidden flex-col justify-between pt-26 pb-5 px-6 h-[100svh] w-full flex-1">
         <div className="flex flex-col relative z-20">
-          <motion.p className="text-[#C9956A] text-[10px] tracking-[0.15em] uppercase mb-4 font-semibold" style={M}
+          <motion.p className="text-[#C9956A] text-[10px] tracking-[0.15em] uppercase mb-2 font-semibold" style={M}
             initial={{ opacity: 0, x: -16 }} animate={ready ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: d(0.3) }}>
             ✦ Expert-Led • Skin • Hair • Aesthetics
           </motion.p>
 
-          <h1 className="text-[#2C1810] text-[2.75rem] leading-[1.08] mb-5 font-light" style={D}>
+          <h1 className="text-[#2C1810] text-[2.75rem] leading-[1.08] mb-3.5 font-light" style={D}>
             {["Beauty", "Feels", "At Home."].map((word, i) => (
               <div key={word} className="overflow-hidden">
                 <motion.span className={`block ${i === 1 ? "serif italic text-[#C9956A]" : ""}`}
@@ -297,7 +297,7 @@ export function Hero({ ready }: { ready: boolean }) {
             ))}
           </h1>
 
-          <motion.div className="w-8 h-px bg-[#2C1810]/20 mb-5"
+          <motion.div className="w-8 h-px bg-[#2C1810]/20 mb-3.5"
             initial={{ scaleX: 0 }} animate={ready ? { scaleX: 1 } : {}} transition={{ delay: d(0.9), duration: 0.8 }} />
 
           <motion.p className="text-[#5C4A42] text-sm leading-relaxed max-w-[280px] font-light" style={B}
