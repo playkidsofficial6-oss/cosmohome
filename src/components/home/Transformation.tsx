@@ -11,7 +11,7 @@ export function Transformation() {
           <FadeUp>
             <Tag>Chapter 04 — Transformation</Tag>
             <h2 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-[#2C1810] mt-4" style={D}>
-              The art of<br /><em>becoming.</em>
+              The art of<br />becoming.
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>

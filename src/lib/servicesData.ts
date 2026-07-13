@@ -1074,7 +1074,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     sessionPlanDesc: "Treatments are scheduled every 3 to 6 months depending on individual muscle metabolism and lines.",
     sessionPlanSteps: [
-      { n: "01", label: "Muscle Mapping", duration: "15 min", detail: "Dr. Ruxana evaluates your facial movements, muscle strength, and anatomy to mark precise injection points." },
+      { n: "01", label: "Muscle Mapping", duration: "15 min", detail: "Our dermatologist evaluates your facial movements, muscle strength, and anatomy to mark precise injection points." },
       { n: "02", label: "Micro-Injection", duration: "10 min", detail: "Using ultra-fine needles, the formulation is placed into target muscle bands with minimal discomfort." },
       { n: "03", label: "Review Call", duration: "5 min", detail: "A follow-up review is completed at 10-14 days to evaluate onset symmetry and perform touch-ups if needed." }
     ],
@@ -1153,7 +1153,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     sessionPlanDesc: "Sessions are planned with staged volume increases over time to allow natural gel settling.",
     sessionPlanSteps: [
-      { n: "01", label: "Anatomical Assessment", duration: "20 min", detail: "Dr. Ruxana evaluates facial symmetry, skin laxity, and fat pad structure to establish a balanced placement roadmap." },
+      { n: "01", label: "Anatomical Assessment", duration: "20 min", detail: "Our dermatologist evaluates facial symmetry, skin laxity, and fat pad structure to establish a balanced placement roadmap." },
       { n: "02", label: "Volume Placement", duration: "30 min", detail: "The target regions are sanitized and fillers are placed using precision needles or blunt microcannulas for safety." },
       { n: "03", label: "Settling Review", duration: "10 min", detail: "The placement is reviewed and soft molding is done. Standard post-care guide is reviewed." }
     ],
@@ -1311,7 +1311,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     sessionPlanDesc: "A single session provides results that last for 12 to 18 months, with touch-ups as needed.",
     sessionPlanSteps: [
-      { n: "01", label: "Vector Mapping", duration: "15 min", detail: "Dr. Ruxana maps your face in an upright position, marking the lift vectors and entry points." },
+      { n: "01", label: "Vector Mapping", duration: "15 min", detail: "Our dermatologist maps your face in an upright position, marking the lift vectors and entry points." },
       { n: "02", label: "Local Anesthesia", duration: "15 min", detail: "Local numbing is placed at entry points to ensure a comfortable procedure." },
       { n: "03", label: "Thread Placement", duration: "30 min", detail: "Cannulas containing the threads are placed along the vectors. The threads are secured and trimmed." }
     ],
@@ -1390,7 +1390,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     sessionPlanDesc: "Depending on the hydrator, we recommend 1 to 2 sessions followed by maintenance every 6 months.",
     sessionPlanSteps: [
-      { n: "01", label: "Skin Assessment", duration: "15 min", detail: "Dr. Ruxana evaluates skin hydration, elasticity, and texture to map the injection zones." },
+      { n: "01", label: "Skin Assessment", duration: "15 min", detail: "Our dermatologist evaluates skin hydration, elasticity, and texture to map the injection zones." },
       { n: "02", label: "Micro-Droplet Infusion", duration: "25 min", detail: "Micro-injections are placed into the skin layers using ultra-fine needles for comfort." },
       { n: "03", label: "Calming Recovery", duration: "10 min", detail: "A soothing barrier repair cream is applied to reduce injection bumps." }
     ],
@@ -1706,7 +1706,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     sessionPlanDesc: "We recommend a course of 3 to 4 sessions, spaced 4 weeks apart, followed by seasonal maintenance.",
     sessionPlanSteps: [
-      { n: "01", label: "Scalp Mapping", duration: "15 min", detail: "Dr. Ruxana evaluates scalp health and follicle density to identify target zones." },
+      { n: "01", label: "Scalp Mapping", duration: "15 min", detail: "Our dermatologist evaluates scalp health and follicle density to identify target zones." },
       { n: "02", label: "Exosome Injection", duration: "30 min", detail: "Purified exosomes are delivered to target areas using precision micro-needles for comfort." },
       { n: "03", label: "Calming Phototherapy", duration: "15 min", detail: "LED phototherapy is applied to soothe the scalp and reduce redness." }
     ],
@@ -1943,7 +1943,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     sessionPlanDesc: "We recommend a course of 3 to 4 sessions, spaced 4 weeks apart, followed by seasonal maintenance.",
     sessionPlanSteps: [
-      { n: "01", label: "Skin Assessment", duration: "15 min", detail: "Dr. Ruxana evaluates skin thickness and texture to map target areas." },
+      { n: "01", label: "Skin Assessment", duration: "15 min", detail: "Our dermatologist evaluates skin thickness and texture to map target areas." },
       { n: "02", label: "Exosome Injection", duration: "25 min", detail: "Exosomes are delivered to skin layers using precision micro-needles for comfort." },
       { n: "03", label: "Barrier Soothing", duration: "15 min", detail: "Soothing barrier repair creams are applied to minimize redness." }
     ],
@@ -2022,7 +2022,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     sessionPlanDesc: "We recommend a course of 4 to 6 sessions, spaced 2 to 3 weeks apart, for optimal brightening.",
     sessionPlanSteps: [
-      { n: "01", label: "Skin Assessment", duration: "15 min", detail: "Dr. Ruxana maps pigmentation depth using clinical magnification." },
+      { n: "01", label: "Skin Assessment", duration: "15 min", detail: "Our dermatologist maps pigmentation depth using clinical magnification." },
       { n: "02", label: "Laser Toning", duration: "20 min", detail: "Low-fluence laser sweeps are performed across target zones for comfort." },
       { n: "03", label: "Soothing & SPF", duration: "10 min", detail: "Soothing barrier serums and SPF are applied to protect target skin." }
     ],
@@ -2284,5 +2284,1127 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaDesc: "Book a clinical scar assessment to design a customized MNRF + GFC plan.",
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
   }
-};
+  ,
 
+  "mesopeels": {
+    id: "mesopeels",
+    title: "Advanced Exfoliation",
+    titleEmphasized: "Mesopeels.",
+    experienceNo: "Acne & Renewal Experience",
+    description: "Gently resurface the skin, clear congestion, and target dark spots with medical-grade, botanical-infused chemical peels customized for your skin type.",
+    heroRating: "4.8 · Rated by 190+ patients",
+    heroImage: "/services/hydrafacial-medifacial/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Clinical Aesthetic Expert",
+    performedBySub: "Safe • Botanical Peels • Resurfacing",
+    stats: [
+      { n: "4–6", l: "Sessions recommended" },
+      { n: "1–3", l: "Days mild flaking" },
+      { n: "48h", l: "Texture smoothing" },
+      { n: "100%", l: "Medical-grade acids" }
+    ],
+    whatIsThisTag: "What is a Mesopeel?",
+    whatIsThisTitle: "This is",
+    whatIsThisEmphasized: "controlled skin renewal.",
+    whatIsThisDesc1: "Mesopeels are professional-grade chemical peels formulated with active fruit acids, salicylic acid, lactic acid, and glycolic acid to gently dissolve the bonds holding dead skin cells together.",
+    whatIsThisDesc2: "This treatment accelerates cellular turnover, purges deep congestion, fades hyperpigmentation, and reveals a smoother, more radiant complexion underneath with minimal irritation.",
+    benefits: [
+      { icon: "🧪", b: "Custom Acid Blends", d: "Formulated specifically for acne, pigmentation, or anti-aging." },
+      { icon: "✨", b: "Purges Congestion", d: "Dissolves sebum and debris to clear blackheads and breakout blockages." },
+      { icon: "🎯", b: "Fades Dark Spots", d: "Targets melanocytes to lift stubborn post-acne marks." },
+      { icon: "⚡", b: "Gentle Recovery", d: "Progressive peeling that avoids aggressive raw skin shedding." }
+    ],
+    clinicalNote: "Acid selection is customized based on your skin sensitivity and Fitzpatrick classification.",
+    sideImage: "/services/hydrafacial-medifacial/2.webp",
+    machineTitle: "Botanical acid infusions",
+    machineEmphasized: "for dermal clarity.",
+    deviceName: "Calibrated Mesopeel Serums",
+    deviceSub: "CLINICAL EXFOLIATOR • GLYCOLIC / SALICYLIC • BALANCED PH",
+    deviceDesc: "We select the precise combination of AHA/BHA acids at a controlled pH level to resurface your skin safely and effectively.",
+    deviceFeatures: ["Custom pH Balances", "AHA & BHA Blends", "Brightening Serums", "Dermatologist-formulated"],
+    deviceImage: "/services/hydrafacial-medifacial/Hydrafacial  Medifacial.webp",
+    comparisonTitle: "COSMO HOME vs Home Peels",
+    comparisonRows: [
+      { label: "Acid Potency", ours: "Medical-grade active concentrations", standard: "Weak over-the-counter exfoliants" },
+      { label: "pH Calibration", ours: "Buffers prevent acid burn risks", standard: "Unbuffered acidic home products" },
+      { label: "Targeting", ours: "Dermatologist-calibrated layering", standard: "Uniform superficial rubbing only" },
+      { label: "Extraction Combo", ours: "Includes clinical extraction checks", standard: "Pores left clogged after peeling" }
+    ],
+    whoNeedsDesc: "Perfect for anyone struggling with active acne, blackheads, post-acne dark spots, dullness, or rough skin texture.",
+    notSuitable: "Active sunburn, open wounds in treatment area, use of oral retinoids within past 6 months.",
+    whoNeedsItems: [
+      { tag: "Active acne breakouts", desc: "Salicylic formulations calm inflammation and clear pore blockages." },
+      { tag: "Stubborn dark spots", desc: "Glycolic and lactic blends lift superficial melanin layers." },
+      { tag: "Enlarged clogged pores", desc: "Exfoliation helps shrink pore size and clear debris." },
+      { tag: "Dull uneven skin", desc: "Resurfacing reveals fresh skin cells for natural radiance." }
+    ],
+    sessionPlanDesc: "Mesopeels are performed as a progressive course of 4 to 6 sessions, spaced 2 to 3 weeks apart.",
+    sessionPlanSteps: [
+      { n: "01", label: "Skin Preparation", duration: "10 min", detail: "Skin is deep cleansed and degreased to ensure even absorption of the peel." },
+      { n: "02", label: "Peel Application", duration: "15 min", detail: "The customized chemical peel is layered onto the skin and timed under strict observation." },
+      { n: "03", label: "Neutralization & Soothing", duration: "15 min", detail: "The peel is deactivated with a neutralizing solution, followed by a calming clinical mask." }
+    ],
+    timelineDesc: "Flaking starts in 2 days and skin looks bright and smooth by day 5.",
+    timelineItems: [
+      { when: "Immediately", what: "Skin feels tight and may show mild temporary pinkness." },
+      { when: "Day 2–3", what: "Mild, superficial flaking begins around the mouth and nose." },
+      { when: "Day 5", what: "Flaking completes, revealing fresh, bright, and soft skin." },
+      { when: "Week 2", what: "Breakouts are noticeably reduced and texture feels smoother." },
+      { when: "Month 2+", what: "Acne scars fade and overall skin tone becomes more even." }
+    ],
+    ctaRating: "190+ clear skin stories",
+    ctaTitle: "Ready to resurface",
+    ctaTitle2: "and clear your skin?",
+    ctaEmphasized: "Start today.",
+    ctaDesc: "Book a skin evaluation to identify the ideal Mesopeel formula for your goals.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹3,500 / session" },
+      { label: "Duration", val: "40 minutes" },
+      { label: "Recommended", val: "4–6 sessions" },
+      { label: "Frequency", val: "Every 2–3 weeks" },
+      { label: "Downtime", val: "1–3 days mild flaking" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1600&h=900&fit=crop&auto=format"
+  },
+  "carbon-peel": {
+    id: "carbon-peel",
+    title: "Laser Pore Cleansing",
+    titleEmphasized: "Carbon Peel.",
+    experienceNo: "Acne & Glow Experience",
+    description: "Deeply cleanse, reduce pores, and brighten your skin with the famous Q-switched Carbon Laser Peel treatment.",
+    heroRating: "4.9 · Rated by 210+ patients",
+    heroImage: "/services/laser-pigment-reduction/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Laser Aesthetic Therapist",
+    performedBySub: "Safe • Q-Switched Nd:YAG • Deep Cleansing",
+    stats: [
+      { n: "4–6", l: "Sessions recommended" },
+      { n: "0", l: "Days downtime" },
+      { n: "Immediate", l: "Refined pores & glow" },
+      { n: "100%", l: "Non-invasive laser" }
+    ],
+    whatIsThisTag: "What is a Carbon Peel?",
+    whatIsThisTitle: "This is",
+    whatIsThisEmphasized: "deep laser purification.",
+    whatIsThisDesc1: "The Carbon Laser Peel involves applying a layer of liquid carbon paste to the face, which penetrates deep into the pores, binding to oil, dead skin, and impurities.",
+    whatIsThisDesc2: "A Q-switched laser is then passed over the skin. The laser light is highly attracted to the carbon particles, vaporizing them instantly and carrying away the impurities from deep within the pores.",
+    benefits: [
+      { icon: "⚫", b: "Carbon Absorption", d: "Pulls oil, dirt, and cellular debris out of deep pore chambers." },
+      { icon: "💥", b: "Laser Vaporization", d: "Instantly breaks up carbon to clear skin and exfoliate." },
+      { icon: "✨", b: "Instant Radiance", d: "Leaves skin looking immediately bright and refreshed." },
+      { icon: "🛡️", b: "Pore Shrinkage", d: "Thermal stimulation tightens loose pore structures." }
+    ],
+    clinicalNote: "A gentle carbon lotion layer is applied for 10 minutes prior to laser sweeps to ensure deep penetration.",
+    sideImage: "/services/laser-pigment-reduction/2.webp",
+    machineTitle: "Q-switched Nd:YAG",
+    machineEmphasized: "for instant glow.",
+    deviceName: "Acro Q-Switched Laser System",
+    deviceSub: "1064nm LASER • CARBON LOTION • THERMAL RESURFACING",
+    deviceDesc: "Our high-precision Q-switched Nd:YAG laser target-blasts the carbon layer to exfoliate and shrink pores without outer skin injury.",
+    deviceFeatures: ["1064nm Nd:YAG Laser", "Carbon Paste Attractor", "Instant Exfoliation", "Pore Refiner"],
+    deviceImage: "/services/laser-pigment-reduction/Laser Pigment Reduction.webp",
+    comparisonTitle: "COSMO HOME vs Standard Facials",
+    comparisonRows: [
+      { label: "Cleansing Depth", ours: "Laser-blasted deep carbon exfoliation", standard: "Surface steam and scrub rubs only" },
+      { label: "Pore Action", ours: "Thermal stimulation shrinks pore size", standard: "Pores left stretched after extraction" },
+      { label: "Oil Control", ours: "Laser energy reduces sebaceous glands", standard: "Short-lived superficial oil removal" },
+      { label: "Downtime", ours: "Zero redness, walk-out glowing", standard: "Redness from painful hand extractions" }
+    ],
+    whoNeedsDesc: "Ideal for patients with oily skin, blackheads, enlarged pores, acne, or dull skin looking for an instant refresh.",
+    notSuitable: "Active skin infection, sunburn, severe dry eczema.",
+    whoNeedsItems: [
+      { tag: "Enlarged open pores", desc: "Laser energy targets pore walls to contract and tighten them." },
+      { tag: "Excessive skin oil", desc: "Helps regulate sebaceous activity to keep skin matte longer." },
+      { tag: "Blackheads & whiteheads", desc: "Carbon bonding pulls stubborn impactions out of pores." },
+      { tag: "Dull, textured skin", desc: "Immediate exfoliation reveals smooth, glowing skin." }
+    ],
+    sessionPlanDesc: "Performed as a course of 4 to 6 sessions, spaced 2 to 3 weeks apart for maximum cumulative results.",
+    sessionPlanSteps: [
+      { n: "01", label: "Carbon Application", duration: "15 min", detail: "A layer of premium carbon paste is applied to the face and allowed to dry and sink into the pores." },
+      { n: "02", label: "Laser Sweeps", duration: "20 min", detail: "The Q-switched laser is passed over the face, blasting away the carbon paste along with dead skin and oils." },
+      { n: "03", label: "Calming Infusion", duration: "10 min", detail: "Skin is cleansed of residual carbon, followed by hydrating and soothing serum application." }
+    ],
+    timelineDesc: "Enjoy an immediate pore tightening and skin brightening right after the session.",
+    timelineItems: [
+      { when: "Immediately", what: "Skin looks instantly brighter, smoother, and pores appear smaller." },
+      { when: "Day 1", what: "Skin oiliness is noticeably reduced and texture feels softer." },
+      { when: "Week 2", what: "Acne breakouts show drying and rapid healing." },
+      { when: "Month 1", what: "Pore size is visibly refined and skin tone is more even." },
+      { when: "Month 3+", what: "With repeated sessions, skin remains clearer and less oily." }
+    ],
+    ctaRating: "210+ carbon glow stories",
+    ctaTitle: "Ready for immediate",
+    ctaTitle2: "pore clearance and glow?",
+    ctaEmphasized: "Book today.",
+    ctaDesc: "Experience the Hollywood-favorite carbon laser peel for skin purification.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹5,000 / session" },
+      { label: "Duration", val: "45 minutes" },
+      { label: "Recommended", val: "4–6 sessions" },
+      { label: "Frequency", val: "Every 2–3 weeks" },
+      { label: "Downtime", val: "None" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1600&h=900&fit=crop&auto=format"
+  },
+  "led-therapy": {
+    id: "led-therapy",
+    title: "Cellular Phototherapy",
+    titleEmphasized: "LED Therapy.",
+    experienceNo: "Soothe & Heal Experience",
+    description: "Soothe inflammation, target acne-causing bacteria, and accelerate healing with therapeutic wavelengths of medical-grade light.",
+    heroRating: "4.8 · Rated by 150+ patients",
+    heroImage: "/services/hydrafacial-medifacial/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Clinical Therapist",
+    performedBySub: "Safe • Medical LED Wavelengths • Healing",
+    stats: [
+      { n: "6–8", l: "Sessions recommended" },
+      { n: "0", l: "Days downtime" },
+      { n: "24h", l: "Inflammation soothing" },
+      { n: "100%", l: "Non-thermal light" }
+    ],
+    whatIsThisTag: "What is LED Therapy?",
+    whatIsThisTitle: "This is",
+    whatIsThisEmphasized: "cellular photobiomodulation.",
+    whatIsThisDesc1: "LED Therapy utilizes specific, calibrated wavelengths of light (Blue light for acne, Red light for repair, Yellow light for soothing) to stimulate cellular activity without thermal damage.",
+    whatIsThisDesc2: "Blue light targets and destroys Propionibacterium acnes bacteria within the pores, while Red light stimulates collagen, reduces redness, and speeds up the healing of skin tissue.",
+    benefits: [
+      { icon: "💡", b: "Calibrating Wavelengths", d: "Uses specific colors to target distinct layers and concerns." },
+      { icon: "🔵", b: "Blue Light (415nm)", d: "Destroys acne-causing bacteria and regulates oil production." },
+      { icon: "🔴", b: "Red Light (633nm)", d: "Stimulates ATP production to speed up tissue healing." },
+      { icon: "🛡️", b: "Zero Discomfort", d: "A soothing, warm, and relaxing light exposure experience." }
+    ],
+    clinicalNote: "Can be performed as a standalone service or as an upgrade following chemical peels and micro-needling.",
+    sideImage: "/services/hydrafacial-medifacial/2.webp",
+    machineTitle: "Medical LED canopy",
+    machineEmphasized: "for targeted healing.",
+    deviceName: "Omnilux Medical LED Platform",
+    deviceSub: "NARROW-BAND LED • BLUE / RED / INFRARED • HEALING LIGHT",
+    deviceDesc: "Our medical-grade LED canopy delivers highly concentrated, narrow-band wavelengths to optimize cell activation and tissue recovery.",
+    deviceFeatures: ["Narrow-band LEDs", "Acne Bacteria Clearing", "Tissue Repair Acceleration", "Calming Warmth"],
+    deviceImage: "/services/hydrafacial-medifacial/Hydrafacial  Medifacial.webp",
+    comparisonTitle: "COSMO HOME vs Home Masks",
+    comparisonRows: [
+      { label: "Light Intensity", ours: "Medical-grade clinical panel output", standard: "Weak battery-powered home masks" },
+      { label: "Wavelength Purity", ours: "Narrow-band calibrated wavelengths", standard: "Broad-spectrum colored bulbs" },
+      { label: "Coverage", ours: "Full face panel with consistent distance", standard: "Uneven mask contact on contours" },
+      { label: "Medical Safety", ours: "Protective eyewear and therapist-guided", standard: "Unguided direct eye exposure risk" }
+    ],
+    whoNeedsDesc: "Ideal for patients with active acne, inflamed sensitive skin, rosacea, or following invasive treatments to speed up recovery.",
+    notSuitable: "Photosensitive epilepsy, use of photosensitizing medications (e.g. Roaccutane) currently, pregnancy.",
+    whoNeedsItems: [
+      { tag: "Inflamed acne", desc: "Blue light kills bacteria while Red light calms sore bumps." },
+      { tag: "Post-treatment redness", desc: "Accelerates healing of skin following lasers or peels." },
+      { tag: "Sensitive skin barrier", desc: "Yellow and Red light help build barrier strength." },
+      { tag: "Rosacea & flushing", desc: "Calms dilated blood vessels to reduce redness." }
+    ],
+    sessionPlanDesc: "Usually performed in a series of 6 to 8 sessions, scheduled twice a week for optimal bacterial clearance.",
+    sessionPlanSteps: [
+      { n: "01", label: "Skin Cleansing", duration: "10 min", detail: "Skin is cleansed and sunscreen or makeup is removed to allow light penetration." },
+      { n: "02", label: "LED Exposure", duration: "20 min", detail: "Protective goggles are placed and you rest under the warm LED light canopy." },
+      { n: "03", label: "Barrier Repair", duration: "10 min", detail: "Soothing clinical moisturizers and SPF are applied to protect the skin." }
+    ],
+    timelineDesc: "Redness and soreness show visible improvement within 24 hours of exposure.",
+    timelineItems: [
+      { when: "Immediately", what: "Skin feels warm and looks calm and less inflamed." },
+      { when: "Day 1", what: "Active cystic acne feels less painful and redness is reduced." },
+      { when: "Week 2", what: "New breakout activity slows down as bacteria levels drop." },
+      { when: "Week 4", what: "Skin looks calmer, stronger, and more resilient." },
+      { when: "Month 2+", what: "Breakouts are significantly controlled with healthier skin texture." }
+    ],
+    ctaRating: "150+ soothing reviews",
+    ctaTitle: "Ready to calm",
+    ctaTitle2: "and heal your skin?",
+    ctaEmphasized: "Inquire today.",
+    ctaDesc: "Add LED phototherapy to your next service for rapid healing.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹2,000 / session" },
+      { label: "Duration", val: "30 minutes" },
+      { label: "Recommended", val: "6–8 sessions" },
+      { label: "Frequency", val: "Twice a week" },
+      { label: "Downtime", val: "None" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=1600&h=900&fit=crop&auto=format"
+  },
+  "skin-mnrf": {
+    id: "skin-mnrf",
+    title: "Stretch Mark MNRF",
+    titleEmphasized: "MNRF.",
+    experienceNo: "Body Restoration Experience",
+    description: "Target stretch marks and loose skin by delivering thermal energy deep into the dermis, stimulating intense collagen remodeling and resurfacing.",
+    heroRating: "4.9 · Rated by 130+ patients",
+    heroImage: "/services/laser-scar-reduction/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Clinical Expert",
+    performedBySub: "Safe • Gold-plated Needles • Deep Remodeling",
+    stats: [
+      { n: "4–6", l: "Sessions recommended" },
+      { n: "2–3", l: "Days grid redness" },
+      { n: "3 Weeks", l: "Collagen start" },
+      { n: "100%", l: "Dermal targeting" }
+    ],
+    whatIsThisTag: "What is MNRF for Stretch Marks?",
+    whatIsThisTitle: "This is",
+    whatIsThisEmphasized: "structural skin repair.",
+    whatIsThisDesc1: "Microneedling Radiofrequency (MNRF) uses fine gold-plated needles to penetrate deep into the dermis, delivering fractional RF thermal energy directly to the targeted layers.",
+    whatIsThisDesc2: "This thermal energy breaks up the damaged elastic fibers that cause stretch marks, stimulating the body to build new, thick collagen fibers, smoothing and narrowing the stretch marks.",
+    benefits: [
+      { icon: "🎯", b: "Dermal Targeting", d: "Delivers thermal energy directly to deep stretch mark lines." },
+      { icon: "🧬", b: "Collagen Remodeling", d: "Rebuilds elastic skin matrix to narrow stretch mark width." },
+      { icon: "✨", b: "Texture Smoothing", d: "Improves loose, papery skin overlying stretch mark lines." },
+      { icon: "🛡️", b: "Epidermal Safety", d: "Saves outer skin layer to minimize pigmentation risks." }
+    ],
+    clinicalNote: "Medical numbing cream is applied for 45 minutes prior to the procedure to ensure comfort.",
+    sideImage: "/services/laser-scar-reduction/2.webp",
+    machineTitle: "Gold-plated RF tips",
+    machineEmphasized: "for dermal remodeling.",
+    deviceName: "Fractional MNRF System",
+    deviceSub: "RF NEEDLING • COLLAGEN INDUCTION • TEXTURE REBUILD",
+    deviceDesc: "Our specialized body MNRF handpiece uses gold-plated insulated needles to treat deep dermal tear lines safely.",
+    deviceFeatures: ["Gold-insulated Needles", "Fractional RF Energy", "Adjustable Needle Depth", "Body Resurfacing Tip"],
+    deviceImage: "/services/laser-scar-reduction/Laser Scar Reduction.webp",
+    comparisonTitle: "COSMO HOME vs Topical Creams",
+    comparisonRows: [
+      { label: "Dermal Reach", ours: "Needles deliver energy 1.0 - 3.5mm deep", standard: "Creams sit on superficial epidermis only" },
+      { label: "Collagen Impact", ours: "Thermal stimulation rebuilds fiber tears", standard: "Temporary hydration only" },
+      { label: "Efficacy", ours: "Visible narrowing and fading of marks", standard: "No structural improvement in tears" },
+      { label: "Treatment Safety", ours: "Insulated needles protect dark skin types", standard: "Peeling creams risk skin discoloration" }
+    ],
+    whoNeedsDesc: "Perfect for patients looking to fade and smooth stretch marks on the abdomen, thighs, hips, or breasts.",
+    notSuitable: "Pregnancy, active skin infections, keloid scarring history.",
+    whoNeedsItems: [
+      { tag: "Red & purple stretch marks", desc: "Early vascular stretch marks respond rapidly to RF healing." },
+      { tag: "White silvery stretch marks", desc: "Older, mature tears require deeper thermal remodeling to blend." },
+      { tag: "Loose, crepey skin", desc: "Thermal energy contracts skin fibers to tighten laxity." },
+      { tag: "Post-pregnancy skin stretch", desc: "Helps rebuild abdominal wall skin elasticity." }
+    ],
+    sessionPlanDesc: "Usually performed in a series of 4 to 6 sessions, spaced 4 to 6 weeks apart.",
+    sessionPlanSteps: [
+      { n: "01", label: "Numbing Application", duration: "45 min", detail: "A strong topical anesthetic is applied to the treatment area to ensure comfort." },
+      { n: "02", label: "MNRF Sweeps", duration: "30 min", detail: "The RF needles are applied systematically across the stretch mark lines at calibrated depths." },
+      { n: "03", label: "Post-RF Care", duration: "15 min", detail: "Soothe and protect creams are applied to calm heat and redness." }
+    ],
+    timelineDesc: "Redness settles in 2 days, with structural skin smoothing showing in 3 weeks.",
+    timelineItems: [
+      { when: "Immediately", what: "Skin looks red and feels hot. Minor needle point grid marks are normal." },
+      { when: "Day 3", what: "Redness settles and minor scabbing/grid lines begin to flake off." },
+      { when: "Week 3", what: "Collagen rebuilding begins, and skin feels firmer." },
+      { when: "Month 2", what: "Stretch marks show narrowing and blend better with surrounding skin." },
+      { when: "Month 6+", what: "Cumulative remodeling significantly smooths deep silver tears." }
+    ],
+    ctaRating: "130+ body stories",
+    ctaTitle: "Ready to smooth",
+    ctaTitle2: "and tighten stretch marks?",
+    ctaEmphasized: "Begin today.",
+    ctaDesc: "Book a clinical consultation to design your personalized MNRF stretch mark plan.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹12,000 / session" },
+      { label: "Duration", val: "60 minutes" },
+      { label: "Recommended", val: "4–6 sessions" },
+      { label: "Frequency", val: "Every 4–6 weeks" },
+      { label: "Downtime", val: "2–3 days grid redness" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1600&h=900&fit=crop&auto=format"
+  },
+  "skin-dermapen": {
+    id: "skin-dermapen",
+    title: "Stretch Mark Microneedling",
+    titleEmphasized: "Dermapen.",
+    experienceNo: "Body Restoration Experience",
+    description: "Create thousands of precise micro-channels in the skin to activate your body's natural healing response and smooth stretch marks.",
+    heroRating: "4.8 · Rated by 115+ patients",
+    heroImage: "/services/laser-scar-reduction/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Aesthetic Expert",
+    performedBySub: "Safe • Vertical Needle Penetration • Collagen induction",
+    stats: [
+      { n: "4–6", l: "Sessions recommended" },
+      { n: "1–2", l: "Days mild pinkness" },
+      { n: "4 Weeks", l: "Interval between sessions" },
+      { n: "100%", l: "Natural collagen" }
+    ],
+    whatIsThisTag: "What is Dermapen for Stretch Marks?",
+    whatIsThisTitle: "This is",
+    whatIsThisEmphasized: "fractional collagen induction.",
+    whatIsThisDesc1: "Dermapen utilizes a motorized tip of micro-needles that slide vertically over the skin, creating thousands of microscopic channels in the stretch mark tissues.",
+    whatIsThisDesc2: "This triggers your body's natural wound-healing cascade, stimulating the production of fresh collagen and elastin to rebuild the dermal structure and blend stretch marks.",
+    benefits: [
+      { icon: "🖋️", b: "Vertical Needling", d: "Minimizes pain and tearing compared to traditional rollers." },
+      { icon: "🧬", b: "Collagen Induction", d: "Fills in silvers and tears with fresh structural proteins." },
+      { icon: "💧", b: "Infusion Channels", d: "Maximizes penetration of nourishing clinical serums." },
+      { icon: "⚡", b: "Rapid Healing", d: "Channels close quickly with minimal skin barrier disruption." }
+    ],
+    clinicalNote: "Skin hydration and healing serums are infused concurrently during needle sweeps.",
+    sideImage: "/services/laser-scar-reduction/2.webp",
+    machineTitle: "Vertical micro-needles",
+    machineEmphasized: "for natural skin repair.",
+    deviceName: "Dermapen 4 Platform",
+    deviceSub: "DIGITAL NEEDLING • AUTO-CALIBRATED SPEED • MULTI-DEPTH",
+    deviceDesc: "The Dermapen 4 delivers rapid vertical needle sweeps to target stretch marks precisely at deep dermal layer tiers.",
+    deviceFeatures: ["Automated Vertical Needling", "Adjustable Needle Depth", "Disposable Sterile Tips", "Concomitant Serum Infusion"],
+    deviceImage: "/services/laser-scar-reduction/Laser Scar Reduction.webp",
+    comparisonTitle: "COSMO HOME vs Dermarollers",
+    comparisonRows: [
+      { label: "Needle Entry", ours: "Strictly vertical 90-degree puncture", standard: "Angled entry tears and grazes skin" },
+      { label: "Safety", ours: "Disposable sterile needle cartridges", standard: "Reusable rollers risk infection" },
+      { label: "Penetration", ours: "Auto-calibrated depth up to 2.5mm", standard: "Manual pressure lacks depth control" },
+      { label: "Redness", ours: "Quick healing, resolves in 24 hours", standard: "Scratches require days to heal" }
+    ],
+    whoNeedsDesc: "Perfect for patients with mild to moderate stretch marks seeking a laser-free, natural skin remodeling treatment.",
+    notSuitable: "Active skin infection in area, history of keloid scars, pregnancy.",
+    whoNeedsItems: [
+      { tag: "Mild stretch marks", desc: "Helps contract silvers and improve local texture." },
+      { tag: "silvery mature tears", desc: "Triggers remodeling to narrow silvers." },
+      { tag: "Crepey body skin", desc: "Collagen stimulation restores elasticity." },
+      { tag: "Follicle roughness", desc: "Improves overall surrounding skin softness." }
+    ],
+    sessionPlanDesc: "Dermapen sessions are performed in a series of 4 to 6 sessions, spaced 4 weeks apart.",
+    sessionPlanSteps: [
+      { n: "01", label: "Skin Cleansing", duration: "10 min", detail: "Area is deep cleaned and prepped with topical sanitizers." },
+      { n: "02", label: "Dermapen Sweeps", duration: "25 min", detail: "The Dermapen handpiece glides over target stretch marks with customized active serum infusing." },
+      { n: "03", label: "Cooling Application", duration: "10 min", detail: "A hydrating barrier recovery cream is massaged to soothe the area." }
+    ],
+    timelineDesc: "Pinkness resolves in 1–2 days, with collagen remodeling showing from week 4.",
+    timelineItems: [
+      { when: "Immediately", what: "Skin looks pinkish, similar to mild sunburn, and feels tight." },
+      { when: "Day 2", what: "Pinkness fades completely and skin barrier closes." },
+      { when: "Week 2", what: "Skin texture begins to feel softer and more hydrated." },
+      { when: "Week 4", what: "Visible improvement in stretch mark depth and tightness is noted." },
+      { when: "Month 4+", what: "Silvery stretch marks appear narrower and blend better." }
+    ],
+    ctaRating: "115+ dermapen reviews",
+    ctaTitle: "Ready to smooth",
+    ctaTitle2: "stretch marks naturally?",
+    ctaEmphasized: "Begin today.",
+    ctaDesc: "Book a consultation to map out a customized Dermapen plan.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹7,500 / session" },
+      { label: "Duration", val: "45 minutes" },
+      { label: "Recommended", val: "4–6 sessions" },
+      { label: "Frequency", val: "Every 4 weeks" },
+      { label: "Downtime", val: "1–2 days mild pinkness" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1600&h=900&fit=crop&auto=format"
+  },
+  "skin-co2-laser": {
+    id: "skin-co2-laser",
+    title: "Stretch Mark CO2 Laser",
+    titleEmphasized: "CO2 Laser.",
+    experienceNo: "Body Restoration Experience",
+    description: "A powerful skin resurfacing treatment that vaporizes columns of damaged tissue to smooth out deep stretch marks and tighten the skin.",
+    heroRating: "4.9 · Rated by 140+ patients",
+    heroImage: "/services/laser-pigment-reduction/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Laser Specialist",
+    performedBySub: "Safe • Fractional CO2 • Intense Resurfacing",
+    stats: [
+      { n: "3–4", l: "Sessions recommended" },
+      { n: "5–7", l: "Days social downtime" },
+      { n: "4 Weeks", l: "Skin resurfacing onset" },
+      { n: "100%", l: "Medical fractional laser" }
+    ],
+    whatIsThisTag: "What is CO2 Laser for Stretch Marks?",
+    whatIsThisTitle: "This is",
+    whatIsThisEmphasized: "fractional laser resurfacing.",
+    whatIsThisDesc1: "The Fractional CO2 Laser delivers precise micro-beams of laser energy into the skin, vaporizing columns of damaged stretch mark tissues while leaving surrounding skin intact.",
+    whatIsThisDesc2: "This triggers an intense wound-healing response, forcing the skin to produce high amounts of new collagen to rebuild the epidermal and dermal layers, smoothing deep silver scars.",
+    benefits: [
+      { icon: "⚡", b: "Micro-beam Fractional", d: "Vaporizes tiny columns of skin to trigger complete remodeling." },
+      { icon: "🧬", b: "Intense Collagen", d: "Forces maximum fiber reconstruction in torn skin layers." },
+      { icon: "✨", b: "Surrounding Repair", d: "Intact surrounding cells accelerate healing of treated columns." },
+      { icon: "🛡️", b: "Deep Resurfacing", d: "Smooths the texture difference of deep stretch mark channels." }
+    ],
+    clinicalNote: "A protective recovery ointment must be applied continuously for 5 days post-procedure.",
+    sideImage: "/services/laser-pigment-reduction/2.webp",
+    machineTitle: "Fractional carbon dioxide laser",
+    machineEmphasized: "for deep resurfacing.",
+    deviceName: "Fractional CO2 Laser Platform",
+    deviceSub: "10600nm CO2 • PRECISION FRACTIONAL SCANNER • TEXTURE RESET",
+    deviceDesc: "Our advanced CO2 laser delivers fractional micro-beams to vaporize scar tissues and contract skin collagen matrix.",
+    deviceFeatures: ["10600nm Carbon Dioxide Laser", "Adjustable Fractional Scan Patterns", "Deep Penetration Scanner", "Laser Specialist Calibrated"],
+    deviceImage: "/services/laser-pigment-reduction/Laser Pigment Reduction.webp",
+    comparisonTitle: "COSMO HOME vs Standard Lasers",
+    comparisonRows: [
+      { label: "Energy Delivery", ours: "Precision micro-beams reduce burn risk", standard: "Broad continuous beams damage healthy skin" },
+      { label: "Collagen Trigger", ours: "Intense vaporization resets skin matrix", standard: "Superficial heating only" },
+      { label: "Healing Time", ours: "5-7 days with post-care protocols", standard: "Redness can persist for weeks" },
+      { label: "Results Depth", ours: "Lifts and smooths deep silver stretch marks", standard: "Very mild skin softening only" }
+    ],
+    whoNeedsDesc: "Perfect for patients with mature, deep silvery stretch marks on the abdomen or thighs seeking aggressive texturing.",
+    notSuitable: "Pregnancy, active tan or recent sun exposure, darker Fitzpatrick skin types V-VI (requires custom care).",
+    whoNeedsItems: [
+      { tag: "Deep silvery stretch marks", desc: "Vaporization narrows and flattens deep tears." },
+      { tag: "Post-pregnancy abdominal laxity", desc: "Helps tighten loose skin overlying abdominal stretch marks." },
+      { tag: "Wide body stretch lines", desc: "Remodeling narrows wide silvers." },
+      { tag: "Uneven textured scars", desc: "Provides full resurfacing of rough tissue layers." }
+    ],
+    sessionPlanDesc: "CO2 laser sessions are performed in a series of 3 to 4 sessions, spaced 6 to 8 weeks apart.",
+    sessionPlanSteps: [
+      { n: "01", label: "Deep Numbing", duration: "60 min", detail: "A thick layer of prescription numbing gel is applied to ensure full comfort." },
+      { n: "02", label: "Laser Treatment", duration: "25 min", detail: "The fractional CO2 scanner is swept across the target stretch marks." },
+      { n: "03", label: "Barrier Ointment", duration: "10 min", detail: "Cooling compresses are applied, followed by a sterile recovery ointment." }
+    ],
+    timelineDesc: "Laser grid scabs form in 2 days and flake off by day 7, revealing smooth skin.",
+    timelineItems: [
+      { when: "Immediately", what: "Skin feels hot like sunburn, and looks red and swollen." },
+      { when: "Day 3", what: "Swelling drops and tiny brown grid dots form across the treated skin." },
+      { when: "Day 7", what: "Grid scabs flake off, revealing pink, fresh, and smooth skin." },
+      { when: "Week 4", what: "Pinkness fades to normal skin color, and stretch marks look smoother." },
+      { when: "Month 3+", what: "Dermal remodeling continues, showing dramatic narrowing of silvers." }
+    ],
+    ctaRating: "140+ CO2 laser stories",
+    ctaTitle: "Ready for deep",
+    ctaTitle2: "stretch mark resurfacing?",
+    ctaEmphasized: "Consult today.",
+    ctaDesc: "Book a clinical evaluation to see if CO2 laser is the best path for your skin type.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹15,000 / session" },
+      { label: "Duration", val: "45 minutes" },
+      { label: "Recommended", val: "3–4 sessions" },
+      { label: "Frequency", val: "Every 6–8 weeks" },
+      { label: "Downtime", val: "5–7 days grid scabbing" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1600&h=900&fit=crop&auto=format"
+  },
+  "skin-prp": {
+    id: "skin-prp",
+    title: "Platelet-Rich Plasma",
+    titleEmphasized: "Skin PRP.",
+    experienceNo: "Natural Repair Experience",
+    description: "Harness your own blood platelets to release growth factors, boosting tissue repair and blending stretch marks back into the surrounding skin.",
+    heroRating: "4.8 · Rated by 120+ patients",
+    heroImage: "/services/hydrafacial-medifacial/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Clinical Expert",
+    performedBySub: "Safe • Autologous Platelets • Regenerative",
+    stats: [
+      { n: "4–6", l: "Sessions recommended" },
+      { n: "1–2", l: "Days mild swelling" },
+      { n: "4 Weeks", l: "Interval" },
+      { n: "100%", l: "Autologous active" }
+    ],
+    whatIsThisTag: "What is Skin PRP?",
+    whatIsThisTitle: "This is",
+    whatIsThisEmphasized: "natural growth healing.",
+    whatIsThisDesc1: "Platelet-Rich Plasma (PRP) involves drawing a small blood sample and spinning it in a centrifuge to separate and concentrate the platelets, which are rich in growth factors.",
+    whatIsThisDesc2: "This plasma is injected directly into the stretch mark tears, activating rapid cell division, collagen production, and tissue repair to smooth and blend skin.",
+    benefits: [
+      { icon: "🩸", b: "Autologous Plasma", d: "Uses your own blood plasma, avoiding synthetic chemical side effects." },
+      { icon: "🧬", b: "Active Growth Factors", d: "Platelets release PDGF, TGF-b, and VEGF to signal tissue repair." },
+      { icon: "✨", b: "Dermal Repair", d: "Heals structural tears from within the stretch mark bed." },
+      { icon: "🛡️", b: "Natural Rebuilding", d: "Stimulates organic collagen remodeling for gradual skin blending." }
+    ],
+    clinicalNote: "Typically combined with Microneedling (Dermapen) to maximize tissue absorption.",
+    sideImage: "/services/hydrafacial-medifacial/2.webp",
+    machineTitle: "Centrifuge separation",
+    machineEmphasized: "for pure platelets.",
+    deviceName: "Calibrated Centrifuge System",
+    deviceSub: "AUTOLOGOUS PLATELETS • GEL SEPARATION • PURE CONCENTRATE",
+    deviceDesc: "We spin blood in specialized gel-tubes to isolate the platelet-rich buffy coat layer cleanly and safely.",
+    deviceFeatures: ["Aesthetic Centrifuge", "Gel Barrier Separation Tubes", "Sterile Preparation Kit", "Precise Micro-needle Delivery"],
+    deviceImage: "/services/hydrafacial-medifacial/Hydrafacial  Medifacial.webp",
+    comparisonTitle: "COSMO HOME vs Standard PRP",
+    comparisonRows: [
+      { label: "Tube Quality", ours: "Gel-separation tubes yield higher platelet counts", standard: "Standard lab tubes yield poor platelet yield" },
+      { label: "Safety", ours: "Double-spun sterile isolation kit", standard: "Open syringe transfers risk contamination" },
+      { label: "Delivery", ours: "Precision dermal micro-needling combo", standard: "Superficial skin wiping only" },
+      { label: "Comfort", ours: "Topical numbing reduces injection pinch", standard: "Injections done without numbing" }
+    ],
+    whoNeedsDesc: "Ideal for patients seeking a natural, autologous treatment to improve stretch mark texture and color.",
+    notSuitable: "Pregnancy, bleeding disorders, low platelet counts, active infection in treatment area.",
+    whoNeedsItems: [
+      { tag: "Silvery mature stretch marks", desc: "Triggers tissue repair to blend tears." },
+      { tag: "Post-pregnancy abdomen lines", desc: "Supports local skin recovery and tissue repair." },
+      { tag: "Crepey skin texture", desc: "Growth factors rebuild dermal thickness." },
+      { tag: "Sun-damaged body skin", desc: "Regenerative factors brighten and smooth skin." }
+    ],
+    sessionPlanDesc: "Performed as a course of 4 to 6 sessions, scheduled 4 weeks apart.",
+    sessionPlanSteps: [
+      { n: "01", label: "Blood Draw & Spin", duration: "25 min", detail: "A blood sample is drawn from the arm and spun in our centrifuge to isolate the PRP." },
+      { n: "02", label: "Topical Numbing", duration: "35 min", detail: "Topical numbing is applied to the treatment area to ensure comfort." },
+      { n: "03", label: "PRP Infusion", duration: "30 min", detail: "The PRP is infused into stretch marks using precision microneedling or micro-injections." }
+    ],
+    timelineDesc: "Mild swelling settles in 24 hours, with texture softeness starting in 2 weeks.",
+    timelineItems: [
+      { when: "Immediately", what: "Skin shows mild swelling and small injection bumps." },
+      { when: "Day 2", what: "Swelling and needle bumps settle completely." },
+      { when: "Week 2", what: "Skin texture begins to feel softer and more hydrated." },
+      { when: "Week 4", what: "Visible improvement in stretch mark depth becomes noticeable." },
+      { when: "Month 4+", what: "Dermal thickness shows improvement, blending stretch marks cleanly." }
+    ],
+    ctaRating: "120+ skin PRP stories",
+    ctaTitle: "Ready to regenerate",
+    ctaTitle2: "your skin naturally?",
+    ctaEmphasized: "Inquire today.",
+    ctaDesc: "Book a skin evaluation to prepare your autologous PRP protocol.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹10,000 / session" },
+      { label: "Duration", val: "90 minutes" },
+      { label: "Recommended", val: "4–6 sessions" },
+      { label: "Frequency", val: "Every 4 weeks" },
+      { label: "Downtime", val: "1–2 days mild swelling" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1579684389782-64d84b5e901d?w=1600&h=900&fit=crop&auto=format"
+  },
+  "skin-gfc": {
+    id: "skin-gfc",
+    title: "Growth Factor Concentrate",
+    titleEmphasized: "Skin GFC.",
+    experienceNo: "Natural Repair Experience",
+    description: "A pure, cell-free formulation of highly concentrated growth factors derived from your own platelets to rapidly repair and rebuild damaged skin tissues.",
+    heroRating: "4.9 · Rated by 125+ patients",
+    heroImage: "/services/laser-scar-reduction/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Aesthetic Expert",
+    performedBySub: "Safe • Pure Growth Factors • Advanced Repair",
+    stats: [
+      { n: "3–4", l: "Sessions recommended" },
+      { n: "1", l: "Day downtime redness" },
+      { n: "3 Weeks", l: "Visible skin smoothing" },
+      { n: "100%", l: "Cell-free concentrate" }
+    ],
+    whatIsThisTag: "What is Skin GFC?",
+    whatIsThisTitle: "This is",
+    whatIsThisEmphasized: "purified cellular repair.",
+    whatIsThisDesc1: "Growth Factor Concentrate (GFC) is an advanced next-generation therapy prepared by activating your own platelets in specialized tubes to release all growth factors directly into the serum.",
+    whatIsThisDesc2: "The plasma is then filtered to remove all red and white blood cells, leaving a pure, cell-free concentrate of active growth factors (PDGF, EGF, VEGF, IGF-1) for maximum skin repair.",
+    benefits: [
+      { icon: "🧬", b: "Cell-Free GFC", d: "Pure growth factor concentrate without blood cell debris, reducing irritation." },
+      { icon: "✨", b: "Max Active Signal", d: "Platelets are fully activated in vitro, releasing maximum growth factor yield." },
+      { icon: "🎯", b: "Rebuilds Dermis", d: "Triggers rapid collagen and elastin synthesis in stretch marks." },
+      { icon: "⚡", b: "Minimal Downtime", d: "Highly purified serum integrates cleanly with minimal soreness." }
+    ],
+    clinicalNote: "GFC tubes are incubated for 30 minutes to ensure full platelet activation before centrifugation.",
+    sideImage: "/services/laser-scar-reduction/2.webp",
+    machineTitle: "Incubation activation",
+    machineEmphasized: "for pure GFC.",
+    deviceName: "Calibrated Incubation System",
+    deviceSub: "PLATELET ACTIVATION TUBE • ACCELERATED DRY CENTRIFUGE",
+    deviceDesc: "We use specialized GFC tubes containing platelet activators to trigger maximum growth factor release prior to spinning.",
+    deviceFeatures: ["Platelet Activation Incubator", "Dry Centrifuge Separator", "Filter Cartridges", "Micro-needle Delivery System"],
+    deviceImage: "/services/laser-scar-reduction/Laser Scar Reduction.webp",
+    comparisonTitle: "COSMO HOME vs Standard PRP",
+    comparisonRows: [
+      { label: "Purity", ours: "Cell-free concentrate prevents cell debris pain", standard: "Red/white blood cells cause pain and swelling" },
+      { label: "Active Yield", ours: "Incubation releases up to 10x growth factors", standard: "Standard spin yields unactivated platelets" },
+      { label: "Pain Level", ours: "Extremely comfortable with pure serum", standard: "Burning sensation from blood cell acidity" },
+      { label: "Redness", ours: "Settles in under 24 hours", standard: "Redness and swelling persist for days" }
+    ],
+    whoNeedsDesc: "Ideal for patients seeking advanced growth factor therapy to repair stretch marks and loose skin.",
+    notSuitable: "Pregnancy, bleeding disorders, severe liver disease, active local skin infection.",
+    whoNeedsItems: [
+      { tag: "Deep stretch mark silvers", desc: "High growth factor concentration repairs dermal tears." },
+      { tag: "Post-pregnancy skin stretch", desc: "Stimulates collagen to firm abdominal skin laxity." },
+      { tag: "Uneven skin texture", desc: "Accelerates cell renewal to smooth out scars." },
+      { tag: "Thinning skin barrier", desc: "Thickens the dermal layer for resilient skin." }
+    ],
+    sessionPlanDesc: "We recommend a course of 3 to 4 sessions, spaced 4 weeks apart.",
+    sessionPlanSteps: [
+      { n: "01", label: "Blood Draw & Incubation", duration: "40 min", detail: "Blood is collected in GFC tubes, incubated to trigger growth factors, and spun." },
+      { n: "02", label: "Topical Numbing", duration: "35 min", detail: "Topical numbing gel is applied to target skin zones." },
+      { n: "03", label: "GFC Delivery", duration: "25 min", detail: "The purified growth factor serum is infused into stretch marks using precision microneedling." }
+    ],
+    timelineDesc: "Redness fades in 24 hours, with texture softening visible by week 3.",
+    timelineItems: [
+      { when: "Immediately", what: "Skin looks slightly pink and feels warm. Minimal swelling is normal." },
+      { when: "Day 1", what: "Redness and heat fade completely, leaving skin comfortable." },
+      { when: "Week 2", what: "Skin feels smoother, softer, and more hydrated." },
+      { when: "Week 4", what: "Stretch marks show initial tightening and narrowing." },
+      { when: "Month 3+", what: "New collagen fiber synthesis visibly smooths silvery stretch lines." }
+    ],
+    ctaRating: "125+ skin GFC stories",
+    ctaTitle: "Ready for advanced",
+    ctaTitle2: "growth factor skin repair?",
+    ctaEmphasized: "Start today.",
+    ctaDesc: "Book a GFC consultation to design your personalized repair protocol.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹14,000 / session" },
+      { label: "Duration", val: "90 minutes" },
+      { label: "Recommended", val: "3–4 sessions" },
+      { label: "Frequency", val: "Every 4 weeks" },
+      { label: "Downtime", val: "1 day mild redness" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=1600&h=900&fit=crop&auto=format"
+  },
+  "skin-exosomes": {
+    id: "skin-exosomes",
+    title: "Stretch Mark Exosomes",
+    titleEmphasized: "Exosomes.",
+    experienceNo: "Cellular Rebuilding Experience",
+    description: "Infuse billions of premium, biotech-purified cellular vesicles directly into stretch mark areas to trigger rapid dermal rebuilding.",
+    heroRating: "4.9 · Rated by 105+ patients",
+    heroImage: "/services/hydrafacial-medifacial/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Aesthetic Expert",
+    performedBySub: "Safe • Pure Exosomes • Cellular Repair",
+    stats: [
+      { n: "3-4", l: "Sessions recommended" },
+      { n: "12-24h", l: "Downtime bumps" },
+      { n: "7 Days", l: "Texture improvement" },
+      { n: "100%", l: "Biotech pure yield" }
+    ],
+    whatIsThisTag: "What are Exosomes for Stretch Marks?",
+    whatIsThisTitle: "This is",
+    whatIsThisEmphasized: "cellular skin repair.",
+    whatIsThisDesc1: "Exosomes are tiny extracellular vesicles that carry growth factors, peptides, and genetic signaling molecules. When applied, they instruct cells to speed up repair.",
+    whatIsThisDesc2: "This treatment delivers cellular repair signals directly into stretch mark scars, stimulating intense fibroblasts to produce new collagen and restore skin structure.",
+    benefits: [
+      { icon: "🧬", b: "Cellular Signaling", d: "Triggers fibroblasts to synthesize collagen and repair tears." },
+      { icon: "✨", b: "Thickens Skin Matrix", d: "Rebuilds dermal thickness inside thin silvery stretch mark lines." },
+      { icon: "🎯", b: "Accelerated Healing", d: "Reduces post-treatment recovery and skin redness rapidly." },
+      { icon: "⚡", b: "Biotech Pure Yield", d: "Ultra-pure vesicles maximize cellular response and healing." }
+    ],
+    clinicalNote: "Exosomes are stored in a deep-freeze environment and reconstituted immediately before treatment.",
+    sideImage: "/services/hydrafacial-medifacial/2.webp",
+    machineTitle: "Biotech cellular signals",
+    machineEmphasized: "for stretch mark repair.",
+    deviceName: "Premium Dermal Exosomes",
+    deviceSub: "CELLULAR VESICLES • STERILE PREPARATION • TEXTURE REBUILD",
+    deviceDesc: "We use biotech-isolated exosome signals to stimulate deep tissue repair in compromised skin layers.",
+    deviceFeatures: ["Cellular Signaling", "Biotech Quality", "Micro-needling delivery", "Dermatologist-formulated"],
+    deviceImage: "/services/hydrafacial-medifacial/Hydrafacial  Medifacial.webp",
+    comparisonTitle: "COSMO HOME vs Standard Care",
+    comparisonRows: [
+      { label: "Active Agent", ours: "Billions of exosome cellular signals", standard: "Basic peptide or vitamin serums" },
+      { label: "Delivery", ours: "Precision microneedling delivery", standard: "Superficial skin wiping only" },
+      { label: "Efficacy", ours: "Rebuilds torn dermal fibers", standard: "Temporary hydration only" },
+      { label: "Safety", ours: "Sterile medical-grade preparation", standard: "Budget homecare creams" }
+    ],
+    whoNeedsDesc: "Ideal for patients with wide, deep, or mature stretch marks seeking advanced cellular repair.",
+    notSuitable: "Pregnancy, active skin infections, bleeding disorders.",
+    whoNeedsItems: [
+      { tag: "Wide silver stretch marks", desc: "Exosomes signal rapid collagen remodeling to narrow silvers." },
+      { tag: "Crepey stretched skin", desc: "Restores elasticity and skin density." },
+      { tag: "Post-pregnancy skin damage", desc: "Speeds up tissue repair and abdominal wall healing." },
+      { tag: "Thin skin stretch lines", desc: "Thickens thin, papery skin overlying stretch mark lines." }
+    ],
+    sessionPlanDesc: "We recommend a course of 3 to 4 sessions, spaced 4 weeks apart.",
+    sessionPlanSteps: [
+      { n: "01", label: "Skin Assessment", duration: "15 min", detail: "Dermal thickness is assessed and target stretch mark zones mapped." },
+      { n: "02", label: "Exosome Infusion", duration: "25 min", detail: "Exosomes are delivered to skin layers using precision microneedling." },
+      { n: "03", label: "Barrier Soothing", duration: "15 min", detail: "Calming barrier repair creams are applied to soothe the area." }
+    ],
+    timelineDesc: "Skin feels softer in days, with maximum texture results visible at 4 weeks.",
+    timelineItems: [
+      { when: "Immediately", what: "Skin feels tight and shows mild pinkness." },
+      { when: "Day 2", what: "Pinkness and heat settle completely." },
+      { when: "Week 2", what: "Treated skin feels softer and texture begins to smooth." },
+      { when: "Week 4", what: "Silvery stretch marks look tighter and less deep." },
+      { when: "Month 3+", what: "Peak cellular collagen remodeling narrows stretch mark lines." }
+    ],
+    ctaRating: "105+ exosome stories",
+    ctaTitle: "Ready for advanced",
+    ctaTitle2: "cellular stretch mark repair?",
+    ctaEmphasized: "Start today.",
+    ctaDesc: "Book a consultation to map out a customized exosome plan.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹18,000 / session" },
+      { label: "Duration", val: "60 minutes" },
+      { label: "Recommended", val: "3–4 sessions" },
+      { label: "Frequency", val: "Every 4 weeks" },
+      { label: "Downtime", val: "12-24 hours" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+  },
+  "hair-prp": {
+    id: "hair-prp",
+    title: "Platelet-Rich Plasma",
+    titleEmphasized: "Hair PRP.",
+    experienceNo: "Hair Restoration Experience",
+    description: "Stimulate dormant hair follicles, increase blood circulation to the scalp, and naturally thicken hair using growth factors from your own blood.",
+    heroRating: "4.8 · Rated by 320+ patients",
+    heroImage: "/services/laser-hair-reduction/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Hair Expert",
+    performedBySub: "Safe • Autologous Platelets • Hair Regrowth",
+    stats: [
+      { n: "4–6", l: "Sessions recommended" },
+      { n: "0", l: "Days downtime" },
+      { n: "Every 4 weeks", l: "Frequency" },
+      { n: "100%", l: "Autologous active" }
+    ],
+    whatIsThisTag: "What is Hair PRP?",
+    whatIsThisTitle: "This is",
+    whatIsThisEmphasized: "natural follicle stimulation.",
+    whatIsThisDesc1: "Platelet-Rich Plasma (PRP) for hair restoration involves extracting your own blood platelets, which contain growth factors, and injecting them into the scalp.",
+    whatIsThisDesc2: "These growth factors act as cell activators, signaling dormant hair follicles to enter the active growth phase, increasing local blood supply, and thickening hair shafts.",
+    benefits: [
+      { icon: "🩸", b: "Autologous Platelets", d: "Uses your own blood plasma, avoiding synthetic chemical side effects." },
+      { icon: "🧬", b: "Follicle Reactivation", d: "Wakes up dormant follicles to promote new hair growth." },
+      { icon: "🌱", b: "Thickens Hair Shaft", d: "Extends active growth phase to prevent premature shedding." },
+      { icon: "🛡️", b: "Natural Restoration", d: "Improves hair density and scalp health organically." }
+    ],
+    clinicalNote: "A clean scalp mapping is performed to identify target thinning areas before injections.",
+    sideImage: "/services/laser-hair-reduction/2.webp",
+    machineTitle: "Centrifuge separation",
+    machineEmphasized: "for pure platelets.",
+    deviceName: "Calibrated Centrifuge System",
+    deviceSub: "AUTOLOGOUS PLATELETS • GEL SEPARATION • SCALP DELIVERY",
+    deviceDesc: "We spin and separate blood to isolate active platelets cleanly and deliver them to hair roots.",
+    deviceFeatures: ["Aesthetic Centrifuge", "Gel Separation Tubes", "Scale Mapping Grid", "Precision Micro-injections"],
+    deviceImage: "/services/laser-hair-reduction/Laser Pigment Reduction.webp",
+    comparisonTitle: "COSMO HOME vs Home Serums",
+    comparisonRows: [
+      { label: "Active Agent", ours: "Autologous active platelets and growth factors", standard: "Over-the-counter topical hair oils" },
+      { label: "Follicle Depth", ours: "Delivered 1.5 - 2.5mm deep to hair roots", standard: "Serums sit on superficial scalp surface" },
+      { label: "Efficacy", ours: "Clinically proven follicle reactivation", standard: "Temporary hydration of hair shafts only" },
+      { label: "Scalp Safety", ours: "Sterile clinical preparation", standard: "Home oils can clog follicles and cause dandruff" }
+    ],
+    whoNeedsDesc: "Perfect for patients experiencing early-stage hair thinning, pattern baldness, or excessive shedding.",
+    notSuitable: "Pregnancy, bleeding disorders, advanced scar alopecia, active scalp infection.",
+    whoNeedsItems: [
+      { tag: "Early hair thinning", desc: "Helps thicken fine hairs to increase volume." },
+      { tag: "Pattern hair loss", desc: "Reactivates follicles in crown and parting areas." },
+      { tag: "Excessive hair shedding", desc: "Extends growth phase to reduce shedding rate." },
+      { tag: "Post-transplant support", desc: "Nourishes scalp to support new hair grafts." }
+    ],
+    sessionPlanDesc: "Hair PRP is performed in a course of 4 to 6 sessions, spaced 4 weeks apart.",
+    sessionPlanSteps: [
+      { n: "01", label: "Blood Draw & Spin", duration: "25 min", detail: "A blood sample is drawn and centrifuged to isolate the platelet-rich plasma." },
+      { n: "02", label: "Scalp Cleansing", duration: "10 min", detail: "Scalp is prepared with medical sanitizers and mapped into target grids." },
+      { n: "03", label: "Micro-injections", duration: "25 min", detail: "The PRP is injected into the mapped areas using micro-needles for comfort." }
+    ],
+    timelineDesc: "Shedding slows down in weeks, with new baby hair growth starting in 3 months.",
+    timelineItems: [
+      { when: "Immediately", what: "Scalp feels slightly tight or heavy. Bumps resolve in a few hours." },
+      { when: "Week 4", what: "Hair fall slows down down." },
+      { when: "Month 3", what: "Fine baby hair growth becomes visible in treated areas." },
+      { when: "Month 6", what: "Hair density increases and hair shafts feel thicker." },
+      { when: "Month 12+", what: "Sustained hair thickness with seasonal maintenance." }
+    ],
+    ctaRating: "320+ hair PRP stories",
+    ctaTitle: "Ready to combat thinning",
+    ctaTitle2: "and restore your hair?",
+    ctaEmphasized: "Inquire today.",
+    ctaDesc: "Book a scalp evaluation to prepare your autologous PRP protocol.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹8,000 / session" },
+      { label: "Duration", val: "60 minutes" },
+      { label: "Recommended", val: "4–6 sessions" },
+      { label: "Frequency", val: "Every 4 weeks" },
+      { label: "Downtime", val: "None" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=1600&h=900&fit=crop&auto=format"
+  },
+  "hair-gfc": {
+    id: "hair-gfc",
+    title: "Growth Factor Concentrate",
+    titleEmphasized: "Hair GFC.",
+    experienceNo: "Hair Restoration Experience",
+    description: "Deliver a cell-free, highly purified concentration of growth factors directly to the hair roots to combat thinning and accelerate growth.",
+    heroRating: "4.9 · Rated by 380+ patients",
+    heroImage: "/services/laser-hair-reduction/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Hair Expert",
+    performedBySub: "Safe • Pure Growth Factors • Scalp Therapy",
+    stats: [
+      { n: "3–4", l: "Sessions recommended" },
+      { n: "0", l: "Days downtime" },
+      { n: "Every 4 weeks", l: "Frequency" },
+      { n: "100%", l: "Cell-free purity" }
+    ],
+    whatIsThisTag: "What is Hair GFC?",
+    whatIsThisTitle: "This is",
+    whatIsThisEmphasized: "next-generation growth therapy.",
+    whatIsThisDesc1: "Growth Factor Concentrate (GFC) is prepared by incubating your blood platelets in specialized tubes to release all growth factors (PDGF, VEGF, EGF, IGF-1) into the serum.",
+    whatIsThisDesc2: "The plasma is then spun and filtered to remove red and white blood cells, delivering a highly concentrated, cell-free serum directly to hair roots with minimal pain.",
+    benefits: [
+      { icon: "🧬", b: "Incubated Activation", d: "Platelets are fully activated to release maximum growth factors." },
+      { icon: "✨", b: "Cell-Free Purity", d: "No red or white blood cells, reducing scalp inflammation and pain." },
+      { icon: "🌱", b: "Follicle Nourishment", d: "Feeds hair roots directly to accelerate growth and stop shedding." },
+      { icon: "🛡️", b: "Consistent Results", d: "Highly standardized growth factor yield per session." }
+    ],
+    clinicalNote: "GFC tubes are incubated for 30 minutes to activate platelets before dry centrifugation.",
+    sideImage: "/services/laser-hair-reduction/2.webp",
+    machineTitle: "Incubation activation",
+    machineEmphasized: "for hair growth.",
+    deviceName: "Calibrated Incubation System",
+    deviceSub: "PLATELET ACTIVATION TUBE • DRY CENTRIFUGE • HAIR DELIVERY",
+    deviceDesc: "We use GFC tube technology to trigger maximum growth factor release, delivering pure active proteins to hair roots.",
+    deviceFeatures: ["Platelet Activation Incubator", "Dry Centrifuge Separator", "Scalp Mapping Grid", "Precision Micro-injections"],
+    deviceImage: "/services/laser-hair-reduction/Laser Pigment Reduction.webp",
+    comparisonTitle: "COSMO HOME vs Standard PRP",
+    comparisonRows: [
+      { label: "Purity", ours: "Cell-free serum avoids cell debris pain", standard: "Red/white blood cells cause scalp soreness" },
+      { label: "Active Yield", ours: "Incubation releases up to 10x growth factors", standard: "Standard spin yields unactivated platelets" },
+      { label: "Pain Level", ours: "Extremely comfortable scalp injections", standard: "Acidity of blood cells causes burning" },
+      { label: "Shedding Stop", ours: "Noticeable results in 2 sessions", standard: "Takes 4+ sessions to see changes" }
+    ],
+    whoNeedsDesc: "Ideal for patients with progressive hair thinning, male/female pattern baldness, or telogen effluvium.",
+    notSuitable: "Pregnancy, bleeding disorders, advanced scar alopecia, active scalp infection.",
+    whoNeedsItems: [
+      { tag: "Pattern hair loss", desc: "Nourishes miniaturized follicles to regrow thicker hair." },
+      { tag: "Sudden hair shedding", desc: "Calms follicle inflammation to stop shedding." },
+      { tag: "Thin, weak hair", desc: "Increases hair shaft thickness and tensile strength." },
+      { tag: "Receding hairline", desc: "Supports dormant hair roots in hairline zones." }
+    ],
+    sessionPlanDesc: "We recommend a course of 3 to 4 sessions, spaced 4 weeks apart.",
+    sessionPlanSteps: [
+      { n: "01", label: "Blood Draw & Incubation", duration: "40 min", detail: "Blood is collected in GFC tubes, incubated to trigger growth factors, and spun." },
+      { n: "02", label: "Scalp Preparation", duration: "10 min", detail: "Scalp is cleaned and mapped into injection zones." },
+      { n: "03", label: "GFC Injection", duration: "25 min", detail: "The purified growth factor serum is micro-injected into hair roots." }
+    ],
+    timelineDesc: "Hair shedding slows in 4 weeks, with density improvements in 3 months.",
+    timelineItems: [
+      { when: "Immediately", what: "Scalp feels comfortable with minimal soreness." },
+      { when: "Week 4", what: "Hair fall slows down and hair feels stronger." },
+      { when: "Month 3", what: "Baby hair growth and improved scalp coverage become visible." },
+      { when: "Month 6", what: "Hair density increases and parting line appears narrower." },
+      { when: "Month 12+", what: "Sustained hair density with seasonal GFC boosters." }
+    ],
+    ctaRating: "380+ hair GFC stories",
+    ctaTitle: "Ready for advanced",
+    ctaTitle2: "growth factor hair restoration?",
+    ctaEmphasized: "Start today.",
+    ctaDesc: "Book a scalp GFC consultation to design your personalized restoration protocol.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹12,000 / session" },
+      { label: "Duration", val: "60 minutes" },
+      { label: "Recommended", val: "3–4 sessions" },
+      { label: "Frequency", val: "Every 4 weeks" },
+      { label: "Downtime", val: "None" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=1600&h=900&fit=crop&auto=format"
+  },
+  "hair-exosome": {
+    id: "hair-exosome",
+    title: "Cellular Hair Therapy",
+    titleEmphasized: "Hair Exosomes.",
+    experienceNo: "Hair Restoration Experience",
+    description: "Infuse billions of highly concentrated exosome vesicles to signal immediate cellular regeneration and hair follicle reactivation.",
+    heroRating: "4.9 · Rated by 110+ patients",
+    heroImage: "/services/laser-hair-reduction/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Hair Specialist",
+    performedBySub: "Safe • Pure Exosomes • Cellular Regeneration",
+    stats: [
+      { n: "3-4", l: "Sessions recommended" },
+      { n: "0", l: "Days downtime" },
+      { n: "Every 4 weeks", l: "Frequency" },
+      { n: "100%", l: "Biotech pure yield" }
+    ],
+    whatIsThisTag: "What are Hair Exosomes?",
+    whatIsThisTitle: "This is",
+    whatIsThisEmphasized: "cellular follicle restoration.",
+    whatIsThisDesc1: "Hair Exosomes are biotech-isolated extracellular vesicles loaded with growth factors, coenzymes, proteins, and signaling molecules.",
+    whatIsThisDesc2: "When micro-injected into the scalp, they transfer direct signaling instructions to hair follicle stem cells, waking up dormant roots and stimulating robust hair growth.",
+    benefits: [
+      { icon: "🧬", b: "Cellular Signaling", d: "Directly instructs hair follicle stem cells to start growing hair." },
+      { icon: "✨", b: "Reactivates Follicles", d: "Wakes up dormant roots in thinning parting and crown areas." },
+      { icon: "🌱", b: "Reduces Inflammation", d: "Calms scalp inflammation that causes premature hair loss." },
+      { icon: "⚡", b: "Biotech Purity", d: "Highly concentrated vesicles for rapid follicle activation." }
+    ],
+    clinicalNote: "Exosomes are prepared in a sterile room and injected immediately to protect cell signaling active states.",
+    sideImage: "/services/laser-hair-reduction/2.webp",
+    machineTitle: "Biotech cellular signals",
+    machineEmphasized: "for hair regrowth.",
+    deviceName: "Premium Scalp Exosomes",
+    deviceSub: "CELLULAR VESICLES • STERILE SCALP INJECTIONS • DEEP FOLLICLE FEED",
+    deviceDesc: "We use premium exosome formulations prepared under biotechnology standards to ensure maximum follicle stimulation.",
+    deviceFeatures: ["Cellular Signaling", "Biotech Quality", "Micro-needle Scalp Delivery", "Scalp Mapping Grid"],
+    deviceImage: "/services/laser-hair-reduction/Laser Pigment Reduction.webp",
+    comparisonTitle: "COSMO HOME vs Standard Care",
+    comparisonRows: [
+      { label: "Active Agent", ours: "Billions of exosome cellular signals", standard: "Basic peptide hair tonics" },
+      { label: "Delivery", ours: "Micro-injections directly to hair roots", standard: "Surface rubbing on hair strands" },
+      { label: "Efficacy", ours: "Wakes up dormant hair follicle stem cells", standard: "Temporary hydration of hair only" },
+      { label: "Purity", ours: "Sterile medical-grade exosome preparation", standard: "Over-the-counter cosmetic serums" }
+    ],
+    whoNeedsDesc: "Ideal for patients with progressive hair thinning, androgenetic alopecia, or thinning crown areas seeking advanced therapy.",
+    notSuitable: "Pregnancy, bleeding disorders, advanced scar alopecia, active scalp infection.",
+    whoNeedsItems: [
+      { tag: "Progressive thinning", desc: "Signals miniaturized follicles to regrow thicker hair." },
+      { tag: "Widening parting line", desc: "Supports density restoration in thinning areas." },
+      { tag: "Dormant hair roots", desc: "Wakes up roots to promote new hair growth." },
+      { tag: "Chronic hair shedding", desc: "Calms inflammatory signals to prevent shedding." }
+    ],
+    sessionPlanDesc: "We recommend a course of 3 to 4 sessions, spaced 4 weeks apart.",
+    sessionPlanSteps: [
+      { n: "01", label: "Scalp Assessment", duration: "15 min", detail: "Scalp health is evaluated and target hair thinning areas mapped." },
+      { n: "02", label: "Exosome Injection", duration: "25 min", detail: "Exosomes are micro-injected into hair roots using fine needles for comfort." },
+      { n: "03", label: "Post-injection care", duration: "10 min", detail: "Scalp is cleaned and soothing peptide serums are applied." }
+    ],
+    timelineDesc: "Shedding slows in weeks, with new baby hair growth starting in 3 months.",
+    timelineItems: [
+      { when: "Immediately", what: "Scalp feels comfortable with minimal soreness." },
+      { when: "Week 4", what: "Hair fall slows down and hair feels stronger." },
+      { when: "Month 3", what: "Baby hair growth and improved scalp coverage become visible." },
+      { when: "Month 6", what: "Hair density increases and parting line appears narrower." },
+      { when: "Month 12+", what: "Sustained hair density with seasonal exosome boosters." }
+    ],
+    ctaRating: "110+ hair exosome stories",
+    ctaTitle: "Ready for advanced",
+    ctaTitle2: "cellular follicle restoration?",
+    ctaEmphasized: "Start today.",
+    ctaDesc: "Book a scalp consultation to design your personalized exosome plan.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹20,000 / session" },
+      { label: "Duration", val: "60 minutes" },
+      { label: "Recommended", val: "3–4 sessions" },
+      { label: "Frequency", val: "Every 4 weeks" },
+      { label: "Downtime", val: "None" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1600&h=900&fit=crop&auto=format"
+  },
+  "hair-dutexome": {
+    id: "hair-dutexome",
+    title: "Hormonal & Cellular Shield",
+    titleEmphasized: "Dutexome.",
+    experienceNo: "Hair Restoration Experience",
+    description: "A powerful combination of DHT blockers (Dutasteride) and exosome therapy to target androgenetic alopecia and promote robust hair regrowth.",
+    heroRating: "4.9 · Rated by 90+ patients",
+    heroImage: "/services/laser-hair-reduction/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Hair Specialist",
+    performedBySub: "Safe • DHT Blockers • Exosomes",
+    stats: [
+      { n: "4–6", l: "Sessions recommended" },
+      { n: "0", l: "Days downtime" },
+      { n: "Every 4 weeks", l: "Frequency" },
+      { n: "100%", l: "Targeted DHT shield" }
+    ],
+    whatIsThisTag: "What is Dutexome?",
+    whatIsThisTitle: "This is",
+    whatIsThisEmphasized: "targeted DHT block & growth.",
+    whatIsThisDesc1: "Dutexome is an advanced combination therapy that delivers Dutasteride (a powerful 5-alpha reductase inhibitor that blocks DHT hormones) alongside pure exosome vesicles.",
+    whatIsThisDesc2: "This dual-action treatment blocks the hormones that cause follicle miniaturization while supplying billions of cellular signals to activate new hair growth.",
+    benefits: [
+      { icon: "🛡️", b: "DHT Hormone Block", d: "Dutasteride blocks the hormones responsible for male/female pattern hair loss." },
+      { icon: "🧬", b: "Exosome Growth", d: "Vesicles signal stem cells to start growing thicker hair shafts." },
+      { icon: "🌱", b: "Reverses Thinning", d: "Rebuilds hair thickness and follicle volume in crown areas." },
+      { icon: "⚡", b: "No Oral Side Effects", d: "Local scalp delivery avoids the systemic side effects of oral pills." }
+    ],
+    clinicalNote: "Scalp numbing or cooling is applied to ensure full comfort during injections.",
+    sideImage: "/services/laser-hair-reduction/2.webp",
+    machineTitle: "Hormonal block & growth",
+    machineEmphasized: "for hair roots.",
+    deviceName: "Dutexome Delivery Platform",
+    deviceSub: "DUTASTERIDE INFUSION • EXOSOME VESICLES • SCALP INJECTIONS",
+    deviceDesc: "We combine medical-grade DHT blockers with exosome growth signals for direct scalp micro-injections.",
+    deviceFeatures: ["Dutasteride DHT Block", "Cellular Exosomes", "Scalp Mapping Grid", "Precision Micro-needles"],
+    deviceImage: "/services/laser-hair-reduction/Laser Pigment Reduction.webp",
+    comparisonTitle: "COSMO HOME vs Oral Finasteride",
+    comparisonRows: [
+      { label: "Side Effect Risk", ours: "Local scalp action avoids systemic side effects", standard: "Oral pills carry risk of hormonal side effects" },
+      { label: "Follicle Target", ours: "Injected directly to the root bulb layer", standard: "Pills distribute throughout the whole body" },
+      { label: "Growth Boost", ours: "Exosome signals active follicle stem cells", standard: "Pills only block DHT, no growth signal" },
+      { label: "Consistency", ours: "Standardized clinical sessions every 4 weeks", standard: "Requires taking daily pills continuously" }
+    ],
+    whoNeedsDesc: "Perfect for patients with progressive pattern hair loss (androgenetic alopecia) seeking a highly effective therapy.",
+    notSuitable: "Pregnancy, active scalp infection, bleeding disorders, advanced scar alopecia.",
+    whoNeedsItems: [
+      { tag: "Pattern hair loss (AGA)", desc: "Directly targets hormonal hair loss in crown and parting." },
+      { tag: "Miniaturized hair roots", desc: "Helps thicken fine hairs before follicles shrink fully." },
+      { tag: "Receding hair line", desc: "Blocks DHT at the frontal hairline to support growth." },
+      { tag: "Post-transplant thinning", desc: "Supports surrounding native hairs to prevent loss." }
+    ],
+    sessionPlanDesc: "Dutexome is performed as a course of 4 to 6 sessions, spaced 4 weeks apart.",
+    sessionPlanSteps: [
+      { n: "01", label: "Scalp Mapping", duration: "15 min", detail: "Scalp health is evaluated and pattern hair loss zones mapped." },
+      { n: "02", label: "Dutexome Injection", duration: "25 min", detail: "The Dutexome formula is micro-injected into target scalp zones." },
+      { n: "03", label: "Post-care soothing", duration: "10 min", detail: "Scalp is cleaned and soothing clinical serums applied." }
+    ],
+    timelineDesc: "Shedding slows down in weeks, with hair density improving in 3 months.",
+    timelineItems: [
+      { when: "Immediately", what: "Scalp feels comfortable with minor temporary soreness." },
+      { when: "Week 4", what: "Hair fall slows down significantly as DHT is blocked." },
+      { when: "Month 3", what: "Fine baby hair regrowth becomes visible in parting zones." },
+      { when: "Month 6", what: "Hair density increases and hair shafts feel thicker." },
+      { when: "Month 12+", what: "Long-term hair density with seasonal maintenance boosters." }
+    ],
+    ctaRating: "90+ Dutexome stories",
+    ctaTitle: "Ready to shield",
+    ctaTitle2: "and restore your hair density?",
+    ctaEmphasized: "Start today.",
+    ctaDesc: "Book a scalp consultation to see if Dutexome is the best match for your hair goals.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹15,000 / session" },
+      { label: "Duration", val: "60 minutes" },
+      { label: "Recommended", val: "4–6 sessions" },
+      { label: "Frequency", val: "Every 4 weeks" },
+      { label: "Downtime", val: "None" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=1600&h=900&fit=crop&auto=format"
+  },
+  "hair-monothreads": {
+    id: "hair-monothreads",
+    title: "Thread Lift Anchor",
+    titleEmphasized: "Scalp Monothreads.",
+    experienceNo: "Hair Restoration Experience",
+    description: "Place ultra-fine polydioxanone (PDO) monothreads in the scalp to stimulate local blood flow and anchor thinning hair follicles.",
+    heroRating: "4.8 · Rated by 80+ patients",
+    heroImage: "/services/laser-hair-reduction/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Hair Expert",
+    performedBySub: "Safe • Medical PDO Threads • Follicle Anchor",
+    stats: [
+      { n: "1–2", l: "Sessions recommended" },
+      { n: "1–2", l: "Days mild scalp tightness" },
+      { n: "4 Weeks", l: "Interval" },
+      { n: "100%", l: "Absorbable PDO threads" }
+    ],
+    whatIsThisTag: "What are Scalp Monothreads?",
+    whatIsThisTitle: "This is",
+    whatIsThisEmphasized: "structural scalp anchoring.",
+    whatIsThisDesc1: "Scalp Monothreads involve inserting ultra-fine polydioxanone (PDO) threads into the dermal layer of the scalp using micro-needles.",
+    whatIsThisDesc2: "The threads dissolve slowly over 6 months, stimulating blood circulation, collagen production, and anchoring the hair follicles, preventing premature loss.",
+    benefits: [
+      { icon: "🧵", b: "Medical PDO Threads", d: "Uses safe absorbable threads that dissolve cleanly in 6 months." },
+      { icon: "📡", b: "Follicle Anchoring", d: "Collagen surrounding the thread grips hair roots securely." },
+      { icon: "🌱", b: "Vascular Synthesis", d: "Promotes new blood vessel growth to increase root nutrition." },
+      { icon: "🛡️", b: "Long-lasting Action", d: "Maintains active collagen induction for up to 12 months." }
+    ],
+    clinicalNote: "Topical numbing gel is applied for 45 minutes to ensure full comfort during insertion.",
+    sideImage: "/services/laser-hair-reduction/2.webp",
+    machineTitle: "Absorbable threads",
+    machineEmphasized: "for scalp collagen.",
+    deviceName: "PDO Monothread Needles",
+    deviceSub: "ABSORBABLE THREADS • STERILE NEEDLES • INDUCTION SHEATH",
+    deviceDesc: "We insert sterile, ultra-fine PDO threads into the scalp dermal layers to trigger sustained collagen production.",
+    deviceFeatures: ["Absorbable PDO Threads", "Ultra-fine Insertion Needles", "Sterile Packaging", "Hair Expert Calibrated"],
+    deviceImage: "/services/laser-hair-reduction/Laser Pigment Reduction.webp",
+    comparisonTitle: "COSMO HOME vs Standard Care",
+    comparisonRows: [
+      { label: "Collagen Lifespan", ours: "Threads stimulate collagen continuously for 6+ months", standard: "Serums stimulate scalp for hours only" },
+      { label: "Follicle Grip", ours: "Collagen matrix anchors follicle bulbs physically", standard: "No physical anchoring of roots" },
+      { label: "Blood Supply", ours: "Vascular synthesis increases oxygen to roots", standard: "Temporary circulation increase from massage" },
+      { label: "Sessions", ours: "Requires only 1-2 sessions per year", standard: "Requires daily home care applications" }
+    ],
+    whoNeedsDesc: "Ideal for patients with persistent hair thinning at the hairline or crown, looking for long-term follicle support.",
+    notSuitable: "Pregnancy, bleeding disorders, local scalp infections, keloid scarring history.",
+    whoNeedsItems: [
+      { tag: "Frontal hairline thinning", desc: "Anchors hair roots in high-tension areas." },
+      { tag: "Crown hair thinning", desc: "Stimulates collagen to increase hair density." },
+      { tag: "Miniaturized hair roots", desc: "Helps thicken fine hairs to prevent loss." },
+      { tag: "Persistent shedding", desc: "Anchors roots physically to reduce shedding rate." }
+    ],
+    sessionPlanDesc: "Scalp Monothreads are performed in a series of 1 to 2 sessions, spaced 6 months apart.",
+    sessionPlanSteps: [
+      { n: "01", label: "Numbing Application", duration: "45 min", detail: "A strong topical anesthetic gel is applied to the scalp grids." },
+      { n: "02", label: "Thread Insertion", duration: "30 min", detail: "PDO threads are inserted into mapped scalp zones using micro-needles." },
+      { n: "03", label: "Scalp Cleaning", duration: "10 min", detail: "Scalp is cleaned and antiseptic protective sprays are applied." }
+    ],
+    timelineDesc: "Tightness settles in 2 days, with density improvements starting in 3 months.",
+    timelineItems: [
+      { when: "Immediately", what: "Scalp feels tight and slightly sore. Minor swelling is normal." },
+      { when: "Day 3", what: "Scalp tightness and soreness settle completely." },
+      { when: "Week 4", what: "Collagen synthesis begins, and scalp circulation improves." },
+      { when: "Month 3", what: "Baby hair growth and increased hair shaft thickness are noted." },
+      { when: "Month 6", what: "Maximal anchoring effect with visible parting line narrowing." }
+    ],
+    ctaRating: "80+ monothread reviews",
+    ctaTitle: "Ready to anchor",
+    ctaTitle2: "and support your hair roots?",
+    ctaEmphasized: "Inquire today.",
+    ctaDesc: "Book a scalp consultation to see if Monothreads are the best fit for your hair.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹18,000 / session" },
+      { label: "Duration", val: "90 minutes" },
+      { label: "Recommended", val: "1–2 sessions" },
+      { label: "Frequency", val: "Every 6 months" },
+      { label: "Downtime", val: "1–2 days mild tightness" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1600&h=900&fit=crop&auto=format"
+  }
+
+};

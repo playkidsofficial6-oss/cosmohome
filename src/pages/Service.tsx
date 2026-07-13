@@ -760,7 +760,7 @@ export default function ServicePage() {
                     whileHover={{ scale: 1.02, y: -2, borderColor: "#C9956A", color: "#C9956A", backgroundColor: "rgba(201,149,106,0.03)" }} whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 border border-[#2C1810]/15 text-[#2C1810] text-xs tracking-[0.15em] uppercase rounded-xl transition-all font-semibold" style={B}>
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" className="shrink-0"><path d={WA_PATH} /></svg>
-                    {service.ctaSecondaryButtonText || "Ask Dr. Ruxana"}
+                    {service.ctaSecondaryButtonText || "Ask Our Expert"}
                   </motion.a>
                 </div>
 

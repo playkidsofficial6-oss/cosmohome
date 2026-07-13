@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "motion/react";
 import {
@@ -317,7 +317,7 @@ export default function ServicesListPage() {
               >
                 Bespoke Treatments &<br />
                 <span className="relative inline-block">
-                  <em className="font-serif italic text-[#C9956A]">Clinical Artistry.</em>
+                  <span className="font-serif  text-[#C9956A]">Clinical Artistry.</span>
                   <span className="absolute bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#C9956A]/40 to-transparent" />
                 </span>
               </motion.h1>

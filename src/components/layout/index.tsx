@@ -71,11 +71,16 @@ const MEGA_MENU_CONTENT = {
   }
 };
 
-const getTreatmentSlug = (name: string) => {
-  return name.toLowerCase()
+const getTreatmentSlug = (name: string, category?: string) => {
+  const base = name.toLowerCase()
     .replace(/\s*\/\s*/g, '-')
     .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '');
+    .replace(/[^a-z0-9-]/g, '')
+    .replace(/-+/g, '-');
+  if (category && (category === "Skin" || category === "Hair")) {
+    return `${category.toLowerCase()}-${base}`;
+  }
+  return base;
 };
 
 
@@ -236,11 +241,11 @@ export function Nav({ ready }: { ready: boolean }) {
                                         <div className="flex flex-col gap-4">
                                           {subcategories[subName].map((treatment) => (
                                             <a
-                                              href={`/service/${getTreatmentSlug(treatment)}`}
+                                              href={`/service/${getTreatmentSlug(treatment, activeCategory)}`}
                                               onClick={(e) => {
                                                 e.preventDefault();
                                                 setActiveMenu(null);
-                                                navigate(`/service/${getTreatmentSlug(treatment)}`);
+                                                navigate(`/service/${getTreatmentSlug(treatment, activeCategory)}`);
                                               }}
                                               key={treatment}
                                               style={B}
@@ -268,11 +273,11 @@ export function Nav({ ready }: { ready: boolean }) {
                                 <div className="flex flex-col gap-5">
                                   {catData.treatments.map((treatment: string) => (
                                     <a
-                                      href={`/service/${getTreatmentSlug(treatment)}`}
+                                      href={`/service/${getTreatmentSlug(treatment, activeCategory)}`}
                                       onClick={(e) => {
                                         e.preventDefault();
                                         setActiveMenu(null);
-                                        navigate(`/service/${getTreatmentSlug(treatment)}`);
+                                        navigate(`/service/${getTreatmentSlug(treatment, activeCategory)}`);
                                       }}
                                       key={treatment}
                                       style={B}
@@ -289,11 +294,11 @@ export function Nav({ ready }: { ready: boolean }) {
                           {/* View All link at the bottom of treatments area */}
                           <div className="pt-6 mt-auto">
                             <a
-                              href={`/service/${getTreatmentSlug(hasSubs ? Object.values(catData.subcategories as Record<string, string[]>)[0][0] : catData.treatments[0])}`}
+                              href={`/service/${getTreatmentSlug(hasSubs ? Object.values(catData.subcategories as Record<string, string[]>)[0][0] : catData.treatments[0], activeCategory)}`}
                               onClick={(e) => {
                                 e.preventDefault();
                                 setActiveMenu(null);
-                                const firstSlug = getTreatmentSlug(hasSubs ? Object.values(catData.subcategories as Record<string, string[]>)[0][0] : catData.treatments[0]);
+                                const firstSlug = getTreatmentSlug(hasSubs ? Object.values(catData.subcategories as Record<string, string[]>)[0][0] : catData.treatments[0], activeCategory);
                                 navigate(`/service/${firstSlug}`);
                               }}
                               style={B}
@@ -428,7 +433,7 @@ export function Nav({ ready }: { ready: boolean }) {
                                                     key={treatment}
                                                     onClick={() => {
                                                       setOpen(false);
-                                                      navigate(`/service/${getTreatmentSlug(treatment)}`);
+                                                      navigate(`/service/${getTreatmentSlug(treatment, cat)}`);
                                                     }}
                                                     className="text-left text-[13px] text-[#5C4A42]/90 hover:text-[#C9956A] transition-colors py-1"
                                                     style={B}
@@ -446,7 +451,7 @@ export function Nav({ ready }: { ready: boolean }) {
                                               key={treatment}
                                               onClick={() => {
                                                 setOpen(false);
-                                                navigate(`/service/${getTreatmentSlug(treatment)}`);
+                                                navigate(`/service/${getTreatmentSlug(treatment, cat)}`);
                                               }}
                                               className="text-left text-[13px] text-[#5C4A42]/90 hover:text-[#C9956A] transition-colors py-1"
                                               style={B}
