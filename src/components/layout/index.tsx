@@ -30,21 +30,31 @@ function BodyIcon({ size = 20, strokeWidth = 2, ...props }: React.SVGProps<SVGSV
 const MEGA_MENU_CONTENT = {
   Face: {
     icon: Smile,
-    treatments: ["HIFU", "Hydrafacial / Medifacial", "Mesopeels / Carbon Peel"],
+    subcategories: {
+      "Anti Ageing": ["HIFU", "Botox", "Fillers", "Vampire Lift", "Thread Lift", "Skin Boosters"],
+      "Acne": ["Mesopeels", "Carbon Peel", "LED Therapy", "MNRF", "CO2 Laser", "Skin Boosters"],
+      "Face Rejuvenation": ["Mesopeels", "Exosomes", "Laser Toning", "Skin Boosters", "MNRF + GFC"]
+    },
     viewAll: "VIEW ALL FACE TREATMENTS",
     image: "/services/hifu/1.webp",
     desc: "Natural facial enhancement, designed around balance."
   },
   Skin: {
     icon: Sparkles,
-    treatments: ["Laser Pigment Reduction", "Laser Scar Reduction", "Phototherapy", "Excimer Laser"],
+    subcategories: {
+      "Skin Concerns": ["Laser Pigment Reduction", "Laser Scar Reduction", "Phototherapy", "Excimer Laser"],
+      "Stretch Marks": ["MNRF", "Dermapen", "CO2 Laser", "PRP", "GFC", "Exosomes"]
+    },
     viewAll: "VIEW ALL SKIN TREATMENTS",
     image: "/services/laser-pigment-reduction/1.webp",
     desc: "Rejuvenate and restore your natural glow."
   },
   Hair: {
     icon: Wind,
-    treatments: ["Laser Hair Reduction"],
+    subcategories: {
+      "Hair Restoration": ["PRP", "GFC", "Exosome", "Dutexome", "Hair Mesotherapy", "Monothreads"],
+      "Hair Reduction": ["Laser Hair Reduction"]
+    },
     viewAll: "VIEW ALL HAIR TREATMENTS",
     image: "/services/laser-hair-reduction/1.webp",
     desc: "Advanced solutions for hair restoration and health."
@@ -178,11 +188,11 @@ export function Nav({ ready }: { ready: boolean }) {
                 transition={{ duration: 0.3, ease: EASE }}
                 onMouseEnter={() => handleMouseEnter("Treatments")}
                 onMouseLeave={handleMouseLeave}
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[900px] bg-[#FAF7F2] shadow-2xl rounded-xl border border-[#E8E1D7] overflow-hidden z-[5]"
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[960px] bg-[#FAF7F2] shadow-2xl rounded-xl border border-[#E8E1D7] overflow-hidden z-[5]"
               >
                 <div className="flex h-[400px]">
                   {/* Left Column: Categories */}
-                  <div className="w-[28%] border-r border-[#E8E1D7]/50 p-6 flex flex-col gap-1 overflow-y-auto custom-scrollbar">
+                  <div className="w-[24%] border-r border-[#E8E1D7]/50 p-6 flex flex-col gap-1 overflow-y-auto custom-scrollbar">
                     {(Object.keys(MEGA_MENU_CONTENT) as Array<keyof typeof MEGA_MENU_CONTENT>).map((cat) => {
                       const Icon = MEGA_MENU_CONTENT[cat].icon;
                       const isActive = activeCategory === cat;
@@ -202,64 +212,126 @@ export function Nav({ ready }: { ready: boolean }) {
                     })}
                   </div>
 
-                  {/* Middle Column: Treatments */}
-                  <div className="w-[32%] p-8 flex flex-col border-r border-[#E8E1D7]/50">
-                    <h3 style={B} className="text-[11px] font-medium tracking-[0.2em] uppercase text-[#C9956A] mb-7">{activeCategory}</h3>
-                    <div className="flex flex-col gap-5 flex-1">
-                      {MEGA_MENU_CONTENT[activeCategory].treatments.map((treatment) => (
-                        <a
-                          href={`/service/${getTreatmentSlug(treatment)}`}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setActiveMenu(null);
-                            navigate(`/service/${getTreatmentSlug(treatment)}`);
-                          }}
-                          key={treatment}
-                          style={B}
-                          className="text-[14px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors"
-                        >
-                          {treatment}
-                        </a>
-                      ))}
-                    </div>
-                    <a
-                      href={`/service/${getTreatmentSlug(MEGA_MENU_CONTENT[activeCategory].treatments[0])}`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setActiveMenu(null);
-                        navigate(`/service/${getTreatmentSlug(MEGA_MENU_CONTENT[activeCategory].treatments[0])}`);
-                      }}
-                      style={B}
-                      className="text-[10px] tracking-[0.15em] uppercase text-[#8A6D5C] font-semibold hover:text-[#2C1810] transition-colors flex items-center gap-2 mt-6 group"
-                    >
-                      {MEGA_MENU_CONTENT[activeCategory].viewAll}
-                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  </div>
-
-                  {/* Right Column: Image */}
-                  <div className="w-[40%] p-6">
-                    <div className="w-full h-full rounded-lg bg-[#FAF7F2] flex flex-col shadow-md border border-[#E8E1D7]/80">
-                      <div className="relative flex-1 w-full shrink-0 p-2 pb-0">
-                        <div className="w-full h-full relative rounded-[4px] overflow-hidden">
-                          <img
-                            src={MEGA_MENU_CONTENT[activeCategory].image}
-                            alt={activeCategory}
-                            className="absolute inset-0 w-full h-full object-cover"
-                          />
+                  {/* Dynamic Content Panel (Middle + Right) */}
+                  {(() => {
+                    const catData = MEGA_MENU_CONTENT[activeCategory] as any;
+                    const hasSubs = !!catData.subcategories;
+                    
+                    if (hasSubs) {
+                      const subcategories = catData.subcategories as Record<string, string[]>;
+                      const subKeys = Object.keys(subcategories);
+                      const isThreeColumns = subKeys.length === 3;
+                      
+                      return (
+                        <div className="w-[76%] p-8 flex gap-8 overflow-y-auto custom-scrollbar">
+                          {/* Subcategory columns */}
+                          <div className={`flex-1 grid ${isThreeColumns ? 'grid-cols-3' : 'grid-cols-2'} gap-6`}>
+                            {subKeys.map((subName) => (
+                              <div key={subName} className="flex flex-col">
+                                <h4 style={B} className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#C9956A] mb-5">{subName}</h4>
+                                <div className="flex flex-col gap-4">
+                                  {subcategories[subName].map((treatment) => (
+                                    <a
+                                      href={`/service/${getTreatmentSlug(treatment)}`}
+                                      onClick={(e) => {
+                                        e.preventDefault();
+                                        setActiveMenu(null);
+                                        navigate(`/service/${getTreatmentSlug(treatment)}`);
+                                      }}
+                                      key={treatment}
+                                      style={B}
+                                      className="text-[14px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors leading-tight"
+                                    >
+                                      {treatment}
+                                    </a>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                          
+                          {/* Image card if only 2 subcategories */}
+                          {!isThreeColumns && (
+                            <div className="w-[35%] shrink-0">
+                              <div className="w-full h-full rounded-lg bg-[#FAF7F2] flex flex-col shadow-md border border-[#E8E1D7]/80 p-2">
+                                <div className="relative flex-1 w-full rounded-[4px] overflow-hidden">
+                                  <img
+                                    src={catData.image}
+                                    alt={activeCategory}
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                  />
+                                </div>
+                                <div className="px-3 py-3 border-t border-[#E8E1D7]/80 mt-2">
+                                  <p style={D} className="text-[13px] text-[#2C1810] leading-relaxed">
+                                    {catData.desc}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          )}
                         </div>
-                      </div>
-                      <div className="px-5 py-5 mt-3 border-t border-[#E8E1D7]/80 shrink-0 flex items-center">
-                        <p style={D} className="text-[16px] text-[#2C1810] leading-relaxed tracking-wide">
-                          {MEGA_MENU_CONTENT[activeCategory].desc.split(', ').map((part, i, arr) => (
-                            <span key={i} className={i > 0 ? "italic text-[#5C4A42] block mt-1" : "block"}>
-                              {part}{i === 0 ? "," : ""}
-                            </span>
-                          ))}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                      );
+                    } else {
+                      // Original flat category view (Body, Injectables)
+                      const treatments = catData.treatments as string[];
+                      return (
+                        <div className="w-[76%] p-8 flex gap-8">
+                          {/* Treatments list column */}
+                          <div className="flex-1 flex flex-col">
+                            <h3 style={B} className="text-[11px] font-medium tracking-[0.2em] uppercase text-[#C9956A] mb-7">{activeCategory}</h3>
+                            <div className="flex flex-col gap-5 flex-1">
+                              {treatments.map((treatment) => (
+                                <a
+                                  href={`/service/${getTreatmentSlug(treatment)}`}
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    setActiveMenu(null);
+                                    navigate(`/service/${getTreatmentSlug(treatment)}`);
+                                  }}
+                                  key={treatment}
+                                  style={B}
+                                  className="text-[14px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors"
+                                >
+                                  {treatment}
+                                </a>
+                              ))}
+                            </div>
+                            <a
+                              href={`/service/${getTreatmentSlug(treatments[0])}`}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                setActiveMenu(null);
+                                navigate(`/service/${getTreatmentSlug(treatments[0])}`);
+                              }}
+                              style={B}
+                              className="text-[10px] tracking-[0.15em] uppercase text-[#8A6D5C] font-semibold hover:text-[#2C1810] transition-colors flex items-center gap-2 mt-6 group"
+                            >
+                              {catData.viewAll}
+                              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                            </a>
+                          </div>
+                          
+                          {/* Image card */}
+                          <div className="w-[45%] shrink-0">
+                            <div className="w-full h-full rounded-lg bg-[#FAF7F2] flex flex-col shadow-md border border-[#E8E1D7]/80 p-2">
+                              <div className="relative flex-1 w-full rounded-[4px] overflow-hidden">
+                                <img
+                                  src={catData.image}
+                                  alt={activeCategory}
+                                  className="absolute inset-0 w-full h-full object-cover"
+                                />
+                              </div>
+                              <div className="px-3 py-3 border-t border-[#E8E1D7]/80 mt-2">
+                                <p style={D} className="text-[13px] text-[#2C1810] leading-relaxed">
+                                  {catData.desc}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    }
+                  })()}
                 </div>
               </motion.div>
             )}
@@ -348,21 +420,49 @@ export function Nav({ ready }: { ready: boolean }) {
                                       initial={{ height: 0, opacity: 0 }}
                                       animate={{ height: "auto", opacity: 1 }}
                                       exit={{ height: 0, opacity: 0 }}
-                                      className="overflow-hidden pl-4 flex flex-col gap-2.5 pb-2"
+                                      className="overflow-hidden pl-4 flex flex-col gap-3 pb-2"
                                     >
-                                      {MEGA_MENU_CONTENT[cat as keyof typeof MEGA_MENU_CONTENT].treatments.map(treatment => (
-                                        <button
-                                          key={treatment}
-                                          onClick={() => {
-                                            setOpen(false);
-                                            navigate(`/service/${getTreatmentSlug(treatment)}`);
-                                          }}
-                                          className="text-left text-[13px] text-[#5C4A42]/90 hover:text-[#C9956A] transition-colors py-1"
-                                          style={B}
-                                        >
-                                          • {treatment}
-                                        </button>
-                                      ))}
+                                      {(() => {
+                                        const catData = MEGA_MENU_CONTENT[cat as keyof typeof MEGA_MENU_CONTENT] as any;
+                                        if (catData.subcategories) {
+                                          const subcategories = catData.subcategories as Record<string, string[]>;
+                                          return Object.entries(subcategories).map(([subName, treatments]) => (
+                                            <div key={subName} className="flex flex-col gap-1.5 mt-2">
+                                              <p style={M} className="text-[10px] tracking-[0.15em] uppercase text-[#C9956A] font-semibold">{subName}</p>
+                                              <div className="flex flex-col gap-1 pl-2 border-l border-[#2C1810]/5">
+                                                {treatments.map((treatment) => (
+                                                  <button
+                                                    key={treatment}
+                                                    onClick={() => {
+                                                      setOpen(false);
+                                                      navigate(`/service/${getTreatmentSlug(treatment)}`);
+                                                    }}
+                                                    className="text-left text-[13px] text-[#5C4A42]/90 hover:text-[#C9956A] transition-colors py-1"
+                                                    style={B}
+                                                  >
+                                                    • {treatment}
+                                                  </button>
+                                                ))}
+                                              </div>
+                                            </div>
+                                          ));
+                                        } else {
+                                          const treatments = catData.treatments as string[];
+                                          return treatments.map((treatment) => (
+                                            <button
+                                              key={treatment}
+                                              onClick={() => {
+                                                setOpen(false);
+                                                navigate(`/service/${getTreatmentSlug(treatment)}`);
+                                              }}
+                                              className="text-left text-[13px] text-[#5C4A42]/90 hover:text-[#C9956A] transition-colors py-1"
+                                              style={B}
+                                            >
+                                              • {treatment}
+                                            </button>
+                                          ));
+                                        }
+                                      })()}
                                     </motion.div>
                                   )}
                                 </AnimatePresence>
