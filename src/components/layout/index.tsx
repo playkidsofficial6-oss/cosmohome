@@ -109,13 +109,19 @@ export function Nav({ ready }: { ready: boolean }) {
 
   const handleMouseEnter = (menu: string) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setActiveMenu(menu);
+    if (menu === '') {
+      timeoutRef.current = setTimeout(() => {
+        setActiveMenu(null);
+      }, 200);
+    } else {
+      setActiveMenu(menu);
+    }
   };
 
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setActiveMenu(null);
-    }, 150);
+    }, 200);
   };
 
   const isHome = location.pathname === "/";
@@ -193,24 +199,38 @@ export function Nav({ ready }: { ready: boolean }) {
               >
                 <div className="flex h-[410px]">
                   {/* Left Column: Categories */}
-                  <div className="w-[22%] border-r border-[#E8E1D7]/50 p-6 flex flex-col gap-1 overflow-y-auto custom-scrollbar">
-                    {(Object.keys(MEGA_MENU_CONTENT) as Array<keyof typeof MEGA_MENU_CONTENT>).map((cat) => {
-                      const Icon = MEGA_MENU_CONTENT[cat].icon;
-                      const isActive = activeCategory === cat;
-                      return (
-                        <button
-                          key={cat}
-                          onMouseEnter={() => setActiveCategory(cat)}
-                          className={`flex items-center justify-between p-4 rounded-xl transition-colors ${isActive ? 'text-[#C9956A]' : 'text-[#5C4A42] hover:text-[#2C1810]'}`}
-                        >
-                          <div className="flex items-center gap-4">
-                            <Icon size={20} className={isActive ? 'text-[#C9956A]' : 'text-[#8A6D5C]'} strokeWidth={1.5} />
-                            <span style={B} className="text-[15px] font-normal tracking-wide">{cat}</span>
-                          </div>
-                          <ChevronRight size={16} className={isActive ? 'text-[#C9956A]' : 'text-[#8A6D5C]/30'} strokeWidth={1.5} />
-                        </button>
-                      );
-                    })}
+                  <div className="w-[22%] border-r border-[#E8E1D7]/50 p-6 flex flex-col justify-between h-full">
+                    <div className="flex flex-col gap-1 overflow-y-auto custom-scrollbar flex-1 pr-1">
+                      {(Object.keys(MEGA_MENU_CONTENT) as Array<keyof typeof MEGA_MENU_CONTENT>).map((cat) => {
+                        const Icon = MEGA_MENU_CONTENT[cat].icon;
+                        const isActive = activeCategory === cat;
+                        return (
+                          <button
+                            key={cat}
+                            onMouseEnter={() => setActiveCategory(cat)}
+                            onClick={() => setActiveCategory(cat)}
+                            className={`flex items-center justify-between p-4 rounded-xl transition-colors text-left ${isActive ? 'text-[#C9956A] bg-[#C9956A]/5' : 'text-[#5C4A42] hover:text-[#2C1810]'}`}
+                          >
+                            <div className="flex items-center gap-4">
+                              <Icon size={20} className={isActive ? 'text-[#C9956A]' : 'text-[#8A6D5C]'} strokeWidth={1.5} />
+                              <span style={B} className="text-[15px] font-normal tracking-wide">{cat}</span>
+                            </div>
+                            <ChevronRight size={16} className={isActive ? 'text-[#C9956A]' : 'text-[#8A6D5C]/30'} strokeWidth={1.5} />
+                          </button>
+                        );
+                      })}
+                    </div>
+                    {/* The circled footer: EXPERT-LED • ETHICAL • PERSONAL */}
+                    <div className="pt-6 mt-6 border-t border-[#E8E1D7]/40 flex flex-col items-center justify-center shrink-0">
+                      <div className="flex items-center gap-1.5 justify-center">
+                        <div className="h-[1px] bg-[#2C1810]/10 w-8" />
+                        <span className="text-[#C9956A] text-[9px] leading-none shrink-0 font-normal select-none">✦</span>
+                        <div className="h-[1px] bg-[#2C1810]/10 w-8" />
+                      </div>
+                      <p style={M} className="text-[9px] tracking-[0.2em] text-[#C9956A]/75 font-semibold mt-2.5 text-center uppercase">
+                        Expert-Led • Ethical • Personal
+                      </p>
+                    </div>
                   </div>
 
                   {/* Dynamic Content Panel (Middle + Right) */}
@@ -222,70 +242,106 @@ export function Nav({ ready }: { ready: boolean }) {
                       <div className="w-[78%] p-8 flex gap-8 overflow-y-auto custom-scrollbar">
                         {/* Treatments Area (Left Part: 68% width) */}
                         <div className="w-[68%] flex flex-col justify-between h-full">
-                          <div className="flex-1">
-                            {hasSubs ? (
-                              (() => {
-                                const subcategories = catData.subcategories as Record<string, string[]>;
-                                const subKeys = Object.keys(subcategories);
-                                return (
-                                  <div className={`grid ${subKeys.length === 3 ? 'grid-cols-3' : subKeys.length === 2 ? 'grid-cols-2' : 'grid-cols-1'} gap-6`}>
-                                    {subKeys.map((subName) => (
-                                      <div key={subName} className="flex flex-col">
-                                        <h4 style={B} className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#C9956A] mb-1.5">{subName}</h4>
-                                        {/* Signature Divider Underline (✦ Symbol + Custom Width) */}
-                                        <div className={`flex items-center gap-1.5 mb-4.5 ${subName.length > 12 ? "w-[125px]" : (subName.length > 8 ? "w-[95px]" : "w-[42px]")}`}>
-                                          <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
-                                          <span className="text-[#C9956A] text-[9px] leading-none shrink-0 font-normal select-none">✦</span>
-                                          <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
+                          <div className="flex-1 flex gap-8 items-start">
+                            <div className="flex-grow min-w-0">
+                              {hasSubs ? (
+                                (() => {
+                                  const subcategories = catData.subcategories as Record<string, string[]>;
+                                  const subKeys = Object.keys(subcategories);
+                                  return (
+                                    <div className={`grid ${subKeys.length === 3 ? 'grid-cols-3' : subKeys.length === 2 ? 'grid-cols-2' : 'grid-cols-1'} gap-6`}>
+                                      {subKeys.map((subName) => (
+                                        <div key={subName} className="flex flex-col">
+                                          <h4 style={B} className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#C9956A] mb-1.5">{subName}</h4>
+                                          {/* Signature Divider Underline (✦ Symbol + Custom Width) */}
+                                          <div className={`flex items-center gap-1.5 mb-4.5 ${subName.length > 12 ? "w-[125px]" : (subName.length > 8 ? "w-[95px]" : "w-[42px]")}`}>
+                                            <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
+                                            <span className="text-[#C9956A] text-[9px] leading-none shrink-0 font-normal select-none">✦</span>
+                                            <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
+                                          </div>
+                                          <div className="flex flex-col gap-4">
+                                            {subcategories[subName].map((treatment) => (
+                                              <a
+                                                href={`/service/${getTreatmentSlug(treatment, activeCategory)}`}
+                                                onClick={(e) => {
+                                                  e.preventDefault();
+                                                  setActiveMenu(null);
+                                                  navigate(`/service/${getTreatmentSlug(treatment, activeCategory)}`);
+                                                }}
+                                                key={treatment}
+                                                style={B}
+                                                className="text-[13px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors leading-tight"
+                                              >
+                                                {treatment}
+                                              </a>
+                                            ))}
+                                          </div>
                                         </div>
-                                        <div className="flex flex-col gap-4">
-                                          {subcategories[subName].map((treatment) => (
-                                            <a
-                                              href={`/service/${getTreatmentSlug(treatment, activeCategory)}`}
-                                              onClick={(e) => {
-                                                e.preventDefault();
-                                                setActiveMenu(null);
-                                                navigate(`/service/${getTreatmentSlug(treatment, activeCategory)}`);
-                                              }}
-                                              key={treatment}
-                                              style={B}
-                                              className="text-[13px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors leading-tight"
-                                            >
-                                              {treatment}
-                                            </a>
-                                          ))}
-                                        </div>
-                                      </div>
+                                      ))}
+                                    </div>
+                                  );
+                                })()
+                              ) : (
+                                // Flat view for categories without subcategories
+                                <div className="flex flex-col">
+                                  <h3 style={B} className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#C9956A] mb-1.5">{activeCategory}</h3>
+                                  {/* Signature Divider Underline (✦ Symbol + Custom Width) */}
+                                  <div className={`flex items-center gap-1.5 mb-5 ${activeCategory.length > 8 ? "w-[95px]" : "w-[42px]"}`}>
+                                    <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
+                                    <span className="text-[#C9956A] text-[9px] leading-none shrink-0 font-normal select-none">✦</span>
+                                    <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
+                                  </div>
+                                  <div className="flex flex-col gap-5">
+                                    {catData.treatments.map((treatment: string) => (
+                                      <a
+                                        href={`/service/${getTreatmentSlug(treatment, activeCategory)}`}
+                                        onClick={(e) => {
+                                          e.preventDefault();
+                                          setActiveMenu(null);
+                                          navigate(`/service/${getTreatmentSlug(treatment, activeCategory)}`);
+                                        }}
+                                        key={treatment}
+                                        style={B}
+                                        className="text-[14px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors leading-tight"
+                                      >
+                                        {treatment}
+                                      </a>
                                     ))}
                                   </div>
-                                );
-                              })()
-                            ) : (
-                              // Flat view for categories without subcategories
-                              <div className="flex flex-col">
-                                <h3 style={B} className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#C9956A] mb-1.5">{activeCategory}</h3>
-                                {/* Signature Divider Underline (✦ Symbol + Custom Width) */}
-                                <div className={`flex items-center gap-1.5 mb-5 ${activeCategory.length > 8 ? "w-[95px]" : "w-[42px]"}`}>
-                                  <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
-                                  <span className="text-[#C9956A] text-[9px] leading-none shrink-0 font-normal select-none">✦</span>
-                                  <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
                                 </div>
-                                <div className="flex flex-col gap-5">
-                                  {catData.treatments.map((treatment: string) => (
-                                    <a
-                                      href={`/service/${getTreatmentSlug(treatment, activeCategory)}`}
-                                      onClick={(e) => {
-                                        e.preventDefault();
-                                        setActiveMenu(null);
-                                        navigate(`/service/${getTreatmentSlug(treatment, activeCategory)}`);
-                                      }}
-                                      key={treatment}
-                                      style={B}
-                                      className="text-[14px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors leading-tight"
-                                    >
-                                      {treatment}
-                                    </a>
-                                  ))}
+                              )}
+                            </div>
+
+                            {activeCategory !== "Face" && (
+                              <div className="w-[260px] shrink-0 border border-[#C9956A]/15 bg-[#C9956A]/[0.02] rounded-2xl p-5 flex flex-col justify-between select-none">
+                                <div>
+                                  <span className="inline-block px-2.5 py-0.5 bg-[#C9956A]/10 text-[#C9956A] text-[8px] font-semibold tracking-[0.2em] uppercase rounded-full mb-3" style={M}>
+                                    {activeCategory === "Skin" ? "Dermal Science" :
+                                     activeCategory === "Hair" ? "Follicle Science" :
+                                     activeCategory === "Body" ? "Body Sculpting" : "Cellular Healing"}
+                                  </span>
+                                  <h4 style={D} className="text-[14px] font-medium text-[#2C1810] mb-2 leading-snug">
+                                    {activeCategory === "Skin" ? "Healthy Skin Barrier" :
+                                     activeCategory === "Hair" ? "Follicle Nourishment" :
+                                     activeCategory === "Body" ? "Precision Contouring" : "Regenerative Purity"}
+                                  </h4>
+                                  <p style={B} className="text-[11px] text-[#5C4A42] leading-relaxed font-light">
+                                    {activeCategory === "Skin" ? "We target deeper skin layers to rebuild collagen fibers and fade stretch marks organically." :
+                                     activeCategory === "Hair" ? "Advanced growth therapies to awaken dormant hair roots and improve overall density." :
+                                     activeCategory === "Body" ? "Custom body shaping protocols leveraging advanced high-intensity platforms." :
+                                     activeCategory === "Injectables" ? "High-purity micro-injections of autologous growth factors and signaling vesicles." : ""}
+                                  </p>
+                                </div>
+                                <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-[#C9956A]/10">
+                                  {(activeCategory === "Skin" ? ["Collagen Rebuilding", "Safe Resurfacing", "Zero Downtime"] :
+                                    activeCategory === "Hair" ? ["Root Stimulation", "Zero Hair Shedding", "Sustained Density"] :
+                                    activeCategory === "Body" ? ["Targeted Definition", "Muscle Sculpting", "Non-Invasive"] :
+                                    activeCategory === "Injectables" ? ["Autologous Purity", "Rapid Regeneration", "Natural Results"] : []).map(f => (
+                                      <div key={f} className="flex items-center gap-2 text-[9px] text-[#8A6D5C] font-semibold uppercase tracking-wider" style={M}>
+                                        <span className="text-[#C9956A] text-[7px]">✦</span>
+                                        <span>{f}</span>
+                                      </div>
+                                    ))}
                                 </div>
                               </div>
                             )}
