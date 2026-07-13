@@ -131,7 +131,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "MEDICAL-GRADE • PRECISION • PERSONALISED CARE",
     deviceDesc: "We use advanced, clinically proven aesthetic technologies designed to deliver precise, consistent, and comfortable treatments. Every procedure is tailored to your skin condition and treatment goals, ensuring safe care with natural-looking results.",
     deviceFeatures: ["Medical-Grade Technology", "Precision Treatment", "Personalised Protocols", "Comfort Focused"],
-    deviceImage: "/services/hifu/3.webp",
+    deviceImage: "/services/hifu/hifu.webp",
     comparisonTitle: "COSMO HOME vs Conventional Treatment",
     comparisonRows: [
       { label: "Technology", ours: "Medical-grade aesthetic devices", standard: "Standard equipment" },
@@ -224,7 +224,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "MEDICAL-GRADE • ADVANCED HYDRATION • SKIN REJUVENATION",
     deviceDesc: "HydraFacial MD® Elite combines deep cleansing, gentle exfoliation, painless extraction, and intensive serum infusion in one advanced treatment. Using patented Vortex-Fusion® technology, it removes impurities while delivering nourishing ingredients that instantly improve skin hydration, clarity, and radiance.",
     deviceFeatures: ["Vortex-Fusion® Technology", "Medical-Grade Hydration", "Gentle Extraction", "Customised Serum Infusion"],
-    deviceImage: "/services/hydrafacial-medifacial/3.webp",
+    deviceImage: "/services/hydrafacial-medifacial/Hydrafacial  Medifacial.webp",
     comparisonTitle: "COSMO HOME vs CONVENTIONAL FACIAL",
     comparisonRows: [
       { label: "Technology", ours: "Medical-grade HydraFacial platform", standard: "Traditional facial equipment" },
@@ -410,7 +410,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA CLEARED • FRACTIONAL ND:YAG • MEDICAL GRADE LASER",
     deviceDesc: "The Helios III Q-Switched ND:YAG Laser precisely targets unwanted melanin beneath the skin without damaging surrounding tissue. Its dual-wavelength fractional technology safely treats melasma, freckles, sun spots, and post-inflammatory pigmentation while supporting smoother, brighter skin with minimal downtime.",
     deviceFeatures: ["Fractional ND:YAG Technology", "Dual Wavelength (1064nm / 532nm)", "Precision Pigment Targeting", "Safe for Indian Skin"],
-    deviceImage: "/services/laser-pigment-reduction/3.webp",
+    deviceImage: "/services/laser-pigment-reduction/Laser Pigment Reduction.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Laser Technology", ours: "Helios III Q-switched ND:YAG (Fractional)", standard: "Superficial IPL or uncalibrated lasers" },
@@ -502,7 +502,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA Cleared · Medical Resurfacing · High-Precision Scar Targeting",
     deviceDesc: "Our fractional laser system creates microscopic thermal treatment zones (MTZs) in the skin. The surrounding untreated tissue allows for rapid healing and collagen production, dramatically reducing downtime while maximizing scar remodelling.",
     deviceFeatures: ["Fractional ablation & coagulation", "Precision spot adjustment", "Smart-scan energy delivery", "Deep tissue thermal penetration"],
-    deviceImage: "/services/laser-scar-reduction/3.webp",
+    deviceImage: "/services/laser-scar-reduction/Laser Scar Reduction.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Laser Source", ours: "CO2 / Er:YAG fractional medical lasers", standard: "Non-fractional lasers or simple dermabrasion" },
