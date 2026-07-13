@@ -595,7 +595,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA Cleared · Multi-Award LED System · Hospital Grade",
     deviceDesc: "Dermalux Tri-Wave MD delivers three clinically validated LED wavelengths to support skin repair, reduce inflammation, and improve overall skin health at therapeutic power levels.",
     deviceFeatures: ["Simultaneous Tri-Wave Technology", "Medical-grade Narrowband LEDs", "Clinically Validated Protocols", "Non-thermal Light Therapy"],
-    deviceImage: "/services/phototherapy/3.webp",
+    deviceImage: "/services/phototherapy/Phototherapy.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Light Source", ours: "Narrowband medical-grade LEDs", standard: "Broadband low-power consumer LEDs" },
@@ -778,7 +778,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA Cleared · Award-Winning SHR™ Technology · Sapphire Cooling",
     deviceDesc: "The Soprano Titanium combines Alexandrite (755nm), Diode (810nm), and Nd:YAG (1064nm) wavelengths in a single handpiece. Its ICE Plus™ sapphire cooling technology helps maximize comfort while delivering effective hair reduction across a wide range of skin tones.",
     deviceFeatures: ["755nm • 810nm • 1064nm", "ICE Plus™ Sapphire Cooling", "SHR™ In-Motion Technology", "Suitable for Multiple Skin Types"],
-    deviceImage: "/services/laser-hair-reduction/3.webp",
+    deviceImage: "/services/laser-hair-reduction/Laser Pigment Reduction.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Wavelengths", ours: "Alexandrite (755nm) + Diode (810nm) + YAG (1064nm)", standard: "Single diode wavelength or IPL" },
