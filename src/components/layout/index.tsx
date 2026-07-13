@@ -33,7 +33,7 @@ const MEGA_MENU_CONTENT = {
     subcategories: {
       "Anti Ageing": ["HIFU", "Botox", "Fillers", "Vampire Lift", "Thread Lift", "Skin Boosters"],
       "Acne": ["Mesopeels", "Carbon Peel", "LED Therapy", "MNRF", "CO2 Laser", "Skin Boosters"],
-      "Face Rejuvenation": ["Mesopeels", "Exosomes", "Laser Toning", "Skin Boosters", "MNRF + GFC"]
+      "Skin Renewal": ["Mesopeels", "Exosomes", "Laser Toning", "Skin Boosters", "MNRF + GFC"]
     },
     viewAll: "VIEW ALL FACE TREATMENTS",
     image: "/services/hifu/1.webp",
@@ -42,7 +42,6 @@ const MEGA_MENU_CONTENT = {
   Skin: {
     icon: Sparkles,
     subcategories: {
-      "Skin Concerns": ["Laser Pigment Reduction", "Laser Scar Reduction", "Phototherapy", "Excimer Laser"],
       "Stretch Marks": ["MNRF", "Dermapen", "CO2 Laser", "PRP", "GFC", "Exosomes"]
     },
     viewAll: "VIEW ALL SKIN TREATMENTS",
@@ -51,10 +50,7 @@ const MEGA_MENU_CONTENT = {
   },
   Hair: {
     icon: Wind,
-    subcategories: {
-      "Hair Restoration": ["PRP", "GFC", "Exosome", "Dutexome", "Hair Mesotherapy", "Monothreads"],
-      "Hair Reduction": ["Laser Hair Reduction"]
-    },
+    treatments: ["PRP", "GFC", "Exosome", "Dutexome", "Hair Mesotherapy", "Monothreads"],
     viewAll: "VIEW ALL HAIR TREATMENTS",
     image: "/services/laser-hair-reduction/1.webp",
     desc: "Advanced solutions for hair restoration and health."
@@ -188,11 +184,11 @@ export function Nav({ ready }: { ready: boolean }) {
                 transition={{ duration: 0.3, ease: EASE }}
                 onMouseEnter={() => handleMouseEnter("Treatments")}
                 onMouseLeave={handleMouseLeave}
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[960px] bg-[#FAF7F2] shadow-2xl rounded-xl border border-[#E8E1D7] overflow-hidden z-[5]"
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[1000px] bg-[#FAF7F2] shadow-2xl rounded-xl border border-[#E8E1D7] overflow-hidden z-[5]"
               >
-                <div className="flex h-[400px]">
+                <div className="flex h-[410px]">
                   {/* Left Column: Categories */}
-                  <div className="w-[24%] border-r border-[#E8E1D7]/50 p-6 flex flex-col gap-1 overflow-y-auto custom-scrollbar">
+                  <div className="w-[22%] border-r border-[#E8E1D7]/50 p-6 flex flex-col gap-1 overflow-y-auto custom-scrollbar">
                     {(Object.keys(MEGA_MENU_CONTENT) as Array<keyof typeof MEGA_MENU_CONTENT>).map((cat) => {
                       const Icon = MEGA_MENU_CONTENT[cat].icon;
                       const isActive = activeCategory === cat;
@@ -216,21 +212,61 @@ export function Nav({ ready }: { ready: boolean }) {
                   {(() => {
                     const catData = MEGA_MENU_CONTENT[activeCategory] as any;
                     const hasSubs = !!catData.subcategories;
-                    
-                    if (hasSubs) {
-                      const subcategories = catData.subcategories as Record<string, string[]>;
-                      const subKeys = Object.keys(subcategories);
-                      const isThreeColumns = subKeys.length === 3;
-                      
-                      return (
-                        <div className="w-[76%] p-8 flex gap-8 overflow-y-auto custom-scrollbar">
-                          {/* Subcategory columns */}
-                          <div className={`flex-1 grid ${isThreeColumns ? 'grid-cols-3' : 'grid-cols-2'} gap-6`}>
-                            {subKeys.map((subName) => (
-                              <div key={subName} className="flex flex-col">
-                                <h4 style={B} className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#C9956A] mb-5">{subName}</h4>
-                                <div className="flex flex-col gap-4">
-                                  {subcategories[subName].map((treatment) => (
+
+                    return (
+                      <div className="w-[78%] p-8 flex gap-8 overflow-y-auto custom-scrollbar">
+                        {/* Treatments Area (Left Part: 68% width) */}
+                        <div className="w-[68%] flex flex-col justify-between h-full">
+                          <div className="flex-1">
+                            {hasSubs ? (
+                              (() => {
+                                const subcategories = catData.subcategories as Record<string, string[]>;
+                                const subKeys = Object.keys(subcategories);
+                                return (
+                                  <div className={`grid ${subKeys.length === 3 ? 'grid-cols-3' : subKeys.length === 2 ? 'grid-cols-2' : 'grid-cols-1'} gap-6`}>
+                                    {subKeys.map((subName) => (
+                                      <div key={subName} className="flex flex-col">
+                                        <h4 style={B} className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#C9956A] mb-1.5">{subName}</h4>
+                                        {/* Signature Divider Underline (✦ Symbol + Custom Width) */}
+                                        <div className={`flex items-center gap-1.5 mb-4.5 ${subName.length > 12 ? "w-[125px]" : (subName.length > 8 ? "w-[95px]" : "w-[42px]")}`}>
+                                          <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
+                                          <span className="text-[#C9956A] text-[9px] leading-none shrink-0 font-normal select-none">✦</span>
+                                          <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
+                                        </div>
+                                        <div className="flex flex-col gap-4">
+                                          {subcategories[subName].map((treatment) => (
+                                            <a
+                                              href={`/service/${getTreatmentSlug(treatment)}`}
+                                              onClick={(e) => {
+                                                e.preventDefault();
+                                                setActiveMenu(null);
+                                                navigate(`/service/${getTreatmentSlug(treatment)}`);
+                                              }}
+                                              key={treatment}
+                                              style={B}
+                                              className="text-[13px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors leading-tight"
+                                            >
+                                              {treatment}
+                                            </a>
+                                          ))}
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </div>
+                                );
+                              })()
+                            ) : (
+                              // Flat view for categories without subcategories
+                              <div className="flex flex-col">
+                                <h3 style={B} className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#C9956A] mb-1.5">{activeCategory}</h3>
+                                {/* Signature Divider Underline (✦ Symbol + Custom Width) */}
+                                <div className={`flex items-center gap-1.5 mb-5 ${activeCategory.length > 8 ? "w-[95px]" : "w-[42px]"}`}>
+                                  <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
+                                  <span className="text-[#C9956A] text-[9px] leading-none shrink-0 font-normal select-none">✦</span>
+                                  <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
+                                </div>
+                                <div className="flex flex-col gap-5">
+                                  {catData.treatments.map((treatment: string) => (
                                     <a
                                       href={`/service/${getTreatmentSlug(treatment)}`}
                                       onClick={(e) => {
@@ -247,90 +283,47 @@ export function Nav({ ready }: { ready: boolean }) {
                                   ))}
                                 </div>
                               </div>
-                            ))}
+                            )}
                           </div>
-                          
-                          {/* Image card if only 2 subcategories */}
-                          {!isThreeColumns && (
-                            <div className="w-[35%] shrink-0">
-                              <div className="w-full h-full rounded-lg bg-[#FAF7F2] flex flex-col shadow-md border border-[#E8E1D7]/80 p-2">
-                                <div className="relative flex-1 w-full rounded-[4px] overflow-hidden">
-                                  <img
-                                    src={catData.image}
-                                    alt={activeCategory}
-                                    className="absolute inset-0 w-full h-full object-cover"
-                                  />
-                                </div>
-                                <div className="px-3 py-3 border-t border-[#E8E1D7]/80 mt-2">
-                                  <p style={D} className="text-[13px] text-[#2C1810] leading-relaxed">
-                                    {catData.desc}
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      );
-                    } else {
-                      // Original flat category view (Body, Injectables)
-                      const treatments = catData.treatments as string[];
-                      return (
-                        <div className="w-[76%] p-8 flex gap-8">
-                          {/* Treatments list column */}
-                          <div className="flex-1 flex flex-col">
-                            <h3 style={B} className="text-[11px] font-medium tracking-[0.2em] uppercase text-[#C9956A] mb-7">{activeCategory}</h3>
-                            <div className="flex flex-col gap-5 flex-1">
-                              {treatments.map((treatment) => (
-                                <a
-                                  href={`/service/${getTreatmentSlug(treatment)}`}
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                    setActiveMenu(null);
-                                    navigate(`/service/${getTreatmentSlug(treatment)}`);
-                                  }}
-                                  key={treatment}
-                                  style={B}
-                                  className="text-[14px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors"
-                                >
-                                  {treatment}
-                                </a>
-                              ))}
-                            </div>
+
+                          {/* View All link at the bottom of treatments area */}
+                          <div className="pt-6 mt-auto">
                             <a
-                              href={`/service/${getTreatmentSlug(treatments[0])}`}
+                              href={`/service/${getTreatmentSlug(hasSubs ? Object.values(catData.subcategories as Record<string, string[]>)[0][0] : catData.treatments[0])}`}
                               onClick={(e) => {
                                 e.preventDefault();
                                 setActiveMenu(null);
-                                navigate(`/service/${getTreatmentSlug(treatments[0])}`);
+                                const firstSlug = getTreatmentSlug(hasSubs ? Object.values(catData.subcategories as Record<string, string[]>)[0][0] : catData.treatments[0]);
+                                navigate(`/service/${firstSlug}`);
                               }}
                               style={B}
-                              className="text-[10px] tracking-[0.15em] uppercase text-[#8A6D5C] font-semibold hover:text-[#2C1810] transition-colors flex items-center gap-2 mt-6 group"
+                              className="text-[10px] tracking-[0.15em] uppercase text-[#8A6D5C] font-semibold hover:text-[#2C1810] transition-colors flex items-center gap-2 group"
                             >
                               {catData.viewAll}
                               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                             </a>
                           </div>
-                          
-                          {/* Image card */}
-                          <div className="w-[45%] shrink-0">
-                            <div className="w-full h-full rounded-lg bg-[#FAF7F2] flex flex-col shadow-md border border-[#E8E1D7]/80 p-2">
-                              <div className="relative flex-1 w-full rounded-[4px] overflow-hidden">
-                                <img
-                                  src={catData.image}
-                                  alt={activeCategory}
-                                  className="absolute inset-0 w-full h-full object-cover"
-                                />
-                              </div>
-                              <div className="px-3 py-3 border-t border-[#E8E1D7]/80 mt-2">
-                                <p style={D} className="text-[13px] text-[#2C1810] leading-relaxed">
-                                  {catData.desc}
-                                </p>
-                              </div>
+                        </div>
+
+                        {/* Image Card (Right Part: 32% width) - Always visible! */}
+                        <div className="w-[32%] shrink-0">
+                          <div className="w-full h-full rounded-lg bg-[#FAF7F2] flex flex-col shadow-md border border-[#E8E1D7]/80 p-2">
+                            <div className="relative flex-1 w-full rounded-[4px] overflow-hidden">
+                              <img
+                                src={catData.image}
+                                alt={activeCategory}
+                                className="absolute inset-0 w-full h-full object-cover"
+                              />
+                            </div>
+                            <div className="px-3 py-3 border-t border-[#E8E1D7]/80 mt-2">
+                              <p style={D} className="text-[13px] text-[#2C1810] leading-relaxed">
+                                {catData.desc}
+                              </p>
                             </div>
                           </div>
                         </div>
-                      );
-                    }
+                      </div>
+                    );
                   })()}
                 </div>
               </motion.div>
