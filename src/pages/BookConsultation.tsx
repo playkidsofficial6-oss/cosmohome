@@ -579,7 +579,7 @@ export default function BookConsultation() {
                   style={D}
                 >
                   Book your <br />
-                  <span className="italic text-[#C9956A]">appointment</span>
+                  <span className="text-[#C9956A]">appointment</span>
                 </h1>
                 <p className="text-sm text-[#5C4A42] mb-6 leading-relaxed" style={B}>
                   Choose your preferred doctor to get started.
@@ -615,7 +615,7 @@ export default function BookConsultation() {
                             {doc.name}
                           </p>
                           <p
-                            className="text-[#C9956A] italic text-sm"
+                            className="text-[#C9956A] text-sm"
                             style={D}
                           >
                             {doc.shortSpec}
@@ -647,7 +647,7 @@ export default function BookConsultation() {
                   className="text-3xl text-[#2C1810] mt-4 mb-1 leading-tight"
                   style={D}
                 >
-                  Choose <span className="italic text-[#C9956A]">date</span>
+                  Choose <span className="text-[#C9956A]">date</span>
                 </h1>
                 <p className="text-sm text-[#5C4A42] mb-6 leading-relaxed" style={B}>
                   Select a date and available time slot.
@@ -723,7 +723,7 @@ export default function BookConsultation() {
                   className="text-3xl text-[#2C1810] mt-4 mb-1 leading-tight"
                   style={D}
                 >
-                  Your <span className="italic text-[#C9956A]">details</span>
+                  Your <span className="text-[#C9956A]">details</span>
                 </h1>
                 <p className="text-sm text-[#5C4A42] mb-6 leading-relaxed" style={B}>
                   Please provide your details to proceed.
@@ -911,7 +911,7 @@ export default function BookConsultation() {
                   style={D}
                 >
                   Appointment <br />
-                  <span className="italic text-[#C9956A]">summary</span>
+                  <span className="text-[#C9956A]">summary</span>
                 </h1>
                 <p className="text-sm text-[#5C4A42] mb-8 leading-relaxed" style={B}>
                   Please review your appointment details before confirming.
@@ -969,7 +969,7 @@ export default function BookConsultation() {
                         </p>
                         {item.sub && (
                           <p
-                            className="text-[#C9956A] italic text-xs"
+                            className="text-[#C9956A] text-xs"
                             style={D}
                           >
                             {item.sub}
@@ -1008,7 +1008,7 @@ export default function BookConsultation() {
 
                 <h1 className="text-3xl text-[#2C1810] mb-2" style={D}>
                   Appointment <br />
-                  <span className="italic text-[#C9956A]">confirmed!</span>
+                  <span className="text-[#C9956A]">confirmed!</span>
                 </h1>
                 <p
                   className="text-sm text-[#5C4A42] mb-8 leading-relaxed max-w-xs"
@@ -1024,7 +1024,7 @@ export default function BookConsultation() {
                       <p className="text-[#2C1810] text-sm" style={D}>
                         {selectedDoctor.name}
                       </p>
-                      <p className="text-[#C9956A] italic text-xs" style={D}>
+                      <p className="text-[#C9956A] text-xs" style={D}>
                         {selectedDoctor.shortSpec}
                       </p>
                     </div>
@@ -1107,7 +1107,7 @@ export default function BookConsultation() {
                             {selectedDoctor.name}
                           </p>
                           <p
-                            className="text-[#C9956A] italic text-xs"
+                            className="text-[#C9956A] text-xs"
                             style={D}
                           >
                             {selectedDoctor.shortSpec}
@@ -1239,7 +1239,7 @@ export default function BookConsultation() {
                 >
                   Book your
                   <br />
-                  <span className="italic text-[#C9956A]">appointment</span>
+                  <span className="text-[#C9956A]">appointment</span>
                 </h1>
                 <p
                   className="text-sm text-[#5C4A42] leading-relaxed mb-12 max-w-[240px]"
@@ -1355,7 +1355,7 @@ export default function BookConsultation() {
                               {doc.name}
                             </p>
                             <p
-                              className="text-[#C9956A] italic text-sm"
+                              className="text-[#C9956A] text-sm"
                               style={D}
                             >
                               {doc.shortSpec}

@@ -1037,7 +1037,7 @@ export function TeamAndStandards() {
                         <r.Icon size={18} color={GOLD} />
                       </div>
                       <div>
-                        <p className="text-base text-[#2C1810] mb-2" style={{ ...D, fontStyle: "italic" }}>{r.label}</p>
+                        <p className="text-base text-[#2C1810] mb-2" style={{ ...D }}>{r.label}</p>
                         <p className="text-base text-[#5C4A42] leading-loose" style={B}>{r.body}</p>
                       </div>
                     </motion.div>
@@ -1259,7 +1259,7 @@ export function Invitation() {
                     <Heart size={24} color={GOLD} />
                   </motion.div>
                   <p className="text-4xl mb-4">🌸</p>
-                  <p className="text-2xl text-[#2C1810] mb-4" style={{ ...D, fontStyle: "italic" }}>Thank you.</p>
+                  <p className="text-2xl text-[#2C1810] mb-4" style={{ ...D }}>Thank you.</p>
                   <p className="text-base text-[#5C4A42] leading-loose" style={B}>
                     Dr. Ruxana will personally review your request and be in touch within 24 hours. Your journey begins now.
                   </p>

@@ -224,7 +224,7 @@ export default function ServicePage() {
             <FadeUp>
               <p className="text-xs tracking-[0.35em] uppercase text-[#C9956A] mb-3" style={M}>{service.experienceNo}</p>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] xl:text-7xl text-[#2C1810] leading-[1.0] mb-6" style={D}>
-                {service.title}<br /><em>{service.titleEmphasized}</em>
+                {service.title}<br /><span>{service.titleEmphasized}</span>
               </h1>
               <p className="text-base md:text-lg text-[#5C4A42] max-w-md leading-loose mb-8" style={B}>
                 {service.description}
@@ -250,7 +250,7 @@ export default function ServicePage() {
                 <div className="mb-4">
                   <Tag>Verified Transformation</Tag>
                   <h3 className="text-2xl text-[#2C1810] mt-2 mb-1 leading-tight font-light" style={D}>
-                    Visible outcomes, <em className="serif italic text-[#C9956A]">naturally aligned.</em>
+                    Visible outcomes, <span className="serif text-[#C9956A]">naturally aligned.</span>
                   </h3>
                 </div>
 
@@ -303,7 +303,7 @@ export default function ServicePage() {
               <p className="text-xs tracking-[0.18em] uppercase text-[#C9956A] mb-2" style={M}>
                 {service.performedByLabel || "👩‍⚕️ Performed by"}
               </p>
-              <p className="text-base text-[#2C1810]" style={{ ...D, fontStyle: "italic" }}>
+              <p className="text-base text-[#2C1810]" style={{ ...D }}>
                 {service.performedByName || "Doctor-Supervised Care"}
               </p>
               <p className="text-xs text-[#5C4A42] mt-1" style={B}>
@@ -322,7 +322,7 @@ export default function ServicePage() {
                 <div className="lg:col-span-5 flex flex-col justify-center">
                   <Tag>Verified Transformation</Tag>
                   <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] mt-4 mb-6 leading-tight font-light" style={D}>
-                    Visible outcomes, <em className="serif italic text-[#C9956A]">naturally aligned.</em>
+                    Visible outcomes, <span className="serif text-[#C9956A]">naturally aligned.</span>
                   </h2>
 
                   <div className="border-l-2 border-[#C9956A] pl-6 py-2 mb-8">
@@ -371,7 +371,7 @@ export default function ServicePage() {
               <FadeUp>
                 <Tag>{service.whatIsThisTag || "What Is This?"}</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-6" style={D}>
-                  {service.whatIsThisTitle}<br /><em>{service.whatIsThisEmphasized}</em>
+                  {service.whatIsThisTitle}<br /><span>{service.whatIsThisEmphasized}</span>
                 </h2>
                 <p className="text-base text-[#2C1810] leading-loose mb-4" style={B} dangerouslySetInnerHTML={{ __html: service.whatIsThisDesc1 }} />
                 <p className="text-base text-[#2C1810] leading-loose mb-8" style={B} dangerouslySetInnerHTML={{ __html: service.whatIsThisDesc2 }} />
@@ -434,7 +434,7 @@ export default function ServicePage() {
               <FadeUp>
                 <Tag>{service.technologyTag || "🔬 The Technology"}</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
-                  {service.machineTitle}<br /><em>{service.machineEmphasized}</em>
+                  {service.machineTitle}<br /><span>{service.machineEmphasized}</span>
                 </h2>
               </FadeUp>
             </div>
@@ -454,7 +454,7 @@ export default function ServicePage() {
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#FAF7F2]/60" />
                   </div>
                   <div className="p-7 relative z-10">
-                    <h3 className="text-2xl text-[#2C1810] mb-1" style={{ ...D, fontStyle: "italic" }}>{service.deviceName}</h3>
+                    <h3 className="text-2xl text-[#2C1810] mb-1" style={{ ...D }}>{service.deviceName}</h3>
                     <p className="text-xs text-[#C9956A] tracking-widest uppercase mb-4" style={M}>{service.deviceSub}</p>
                     <p className="text-base text-[#5C4A42] leading-loose mb-5" style={B}>
                       {service.deviceDesc}
@@ -518,7 +518,7 @@ export default function ServicePage() {
               <FadeUp>
                 <Tag>{service.whoNeedsTag || "Is This For You?"}</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-5" style={D}>
-                  {service.whoNeedsTitle || "You need"}<br /><em>{service.whoNeedsTitleEmphasized || "this if…"}</em>
+                  {service.whoNeedsTitle || "You need"}<br /><span>{service.whoNeedsTitleEmphasized || "this if…"}</span>
                 </h2>
                 <p className="text-base text-[#5C4A42] leading-loose mb-6" style={B}>
                   {service.whoNeedsDesc}
@@ -561,7 +561,7 @@ export default function ServicePage() {
               <FadeUp>
                 <Tag>{service.sessionPlanTag || "Your Treatment Plan"}</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-6" style={D}>
-                  {service.sessionPlanTitle || "What happens"}<br /><em>{service.sessionPlanTitleEmphasized || "in each session."}</em>
+                  {service.sessionPlanTitle || "What happens"}<br /><span>{service.sessionPlanTitleEmphasized || "in each session."}</span>
                 </h2>
                 <p className="text-base text-[#5C4A42] leading-loose mb-8" style={B}>
                   {service.sessionPlanDesc}
@@ -606,7 +606,7 @@ export default function ServicePage() {
                                 <p className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] mb-2" style={M}>
                                   Session {service.sessionPlanSteps[activeSession].n}{service.sessionPlanSteps[activeSession].duration && ` · ${service.sessionPlanSteps[activeSession].duration}`}
                                 </p>
-                                <h3 className="text-xl text-[#2C1810] mb-3" style={{ ...D, fontStyle: "italic" }}>
+                                <h3 className="text-xl text-[#2C1810] mb-3" style={{ ...D }}>
                                   {service.sessionPlanSteps[activeSession].label}
                                 </h3>
                                 <div className="h-px w-8 bg-[#C9956A]/50 mb-4" />
@@ -635,7 +635,7 @@ export default function ServicePage() {
                       <p className="text-xs tracking-[0.25em] uppercase text-[#C9956A] mb-3" style={M}>
                         Session {service.sessionPlanSteps[activeSession].n}{service.sessionPlanSteps[activeSession].duration && ` · ${service.sessionPlanSteps[activeSession].duration}`}
                       </p>
-                      <h3 className="text-2xl text-[#2C1810] mb-4" style={{ ...D, fontStyle: "italic" }}>
+                      <h3 className="text-2xl text-[#2C1810] mb-4" style={{ ...D }}>
                         {service.sessionPlanSteps[activeSession].label}
                       </h3>
                       <div className="h-px w-12 bg-[#C9956A]/50 mb-5" />
@@ -669,7 +669,7 @@ export default function ServicePage() {
               <FadeUp>
                 <Tag>{service.timelineTag || "What to Expect"}</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
-                  {service.timelineTitle || "Your skin, transformed"}<br /><em>{service.timelineTitleEmphasized || "step by step."}</em>
+                  {service.timelineTitle || "Your skin, transformed"}<br /><span>{service.timelineTitleEmphasized || "step by step."}</span>
                 </h2>
               </FadeUp>
               <FadeUp delay={0.1}>
@@ -746,7 +746,7 @@ export default function ServicePage() {
                 <h2 className="text-4xl sm:text-5xl md:text-6xl text-[#2C1810] leading-[1.0] mb-5" style={D}>
                   {service.ctaTitle}<br />
                   {service.ctaTitle2 ? <>{service.ctaTitle2}<br /></> : null}
-                  <em>{service.ctaEmphasized}</em>
+                  <span>{service.ctaEmphasized}</span>
                 </h2>
                 <div className="flex flex-col sm:flex-row gap-3.5 mb-8">
                   <motion.a href={service.ctaButtonLink || "/book-consultation"}
@@ -808,7 +808,7 @@ export default function ServicePage() {
                         }}
                         className="flex flex-col gap-5"
                       >
-                        <p className="text-lg text-[#2C1810] mb-1 text-left" style={{ ...D, fontStyle: "italic" }}>
+                        <p className="text-lg text-[#2C1810] mb-1 text-left" style={{ ...D }}>
                           {service.ctaFormTitle || "Begin your story. 🌸"}
                         </p>
 
@@ -932,7 +932,7 @@ export default function ServicePage() {
                           </svg>
                         </motion.div>
                         <p className="text-3xl mb-3">🌸</p>
-                        <p className="text-xl text-[#2C1810] mb-3" style={{ ...D, fontStyle: "italic" }}>
+                        <p className="text-xl text-[#2C1810] mb-3" style={{ ...D }}>
                           {service.ctaFormSuccessTitle || "Thank you."}
                         </p>
                         <p className="text-xs text-[#5C4A42] leading-loose max-w-[250px]" style={B}>

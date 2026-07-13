@@ -105,7 +105,7 @@ export function Preloader({ onDone }: { onDone: () => void }) {
             <p className="w-full text-right text-[#7d5745] text-[10px] md:text-[13px] font-medium uppercase pr-1" style={M}>
               Skin Care Centre
             </p>
-            <motion.p className="text-[#a6906c] text-[15px] md:text-[18px] w-full text-center mt-3 pointer-events-none" style={{ ...D, fontStyle: "italic" }}
+            <motion.p className="text-[#a6906c] text-[15px] md:text-[18px] w-full text-center mt-3 pointer-events-none" style={{ ...D }}
               initial={{ opacity: 0, y: -10, textShadow: "0 0 0px rgba(166,144,108,0)" }}
               animate={{ opacity: 1, y: 0, textShadow: "0 0 15px rgba(166,144,108,0.5)" }}
               transition={{ delay: 1.6, duration: 1, ease: EASE }}>
