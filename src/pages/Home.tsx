@@ -104,7 +104,7 @@ export function Hero({ ready }: { ready: boolean }) {
             {["Where Science", "Enhances You."].map((word, i) => (
               <div key={word} className="overflow-hidden">
                 <motion.span
-                  className={`block ${i === 1 ? "serif italic text-[#C9956A]" : ""}`}
+                  className={`block ${i === 1 ? "serif  text-[#C9956A]" : ""}`}
                   initial={{ y: "105%" }}
                   animate={ready ? { y: 0 } : {}}
                   transition={{ duration: 1.0, delay: d(0.35 + i * 0.15), ease: EASE }}
@@ -288,7 +288,7 @@ export function Hero({ ready }: { ready: boolean }) {
           <h1 className="text-[#2C1810] text-[2.75rem] leading-[1.08] mb-3.5 font-light" style={D}>
             {["Beauty", "Feels", "At Home."].map((word, i) => (
               <div key={word} className="overflow-hidden">
-                <motion.span className={`block ${i === 1 ? "serif italic text-[#C9956A]" : ""}`}
+                <motion.span className={`block ${i === 1 ? "serif  text-[#C9956A]" : ""}`}
                   initial={{ y: "105%" }} animate={ready ? { y: 0 } : {}}
                   transition={{ duration: 1.0, delay: d(0.45 + i * 0.15), ease: EASE }}>
                   {word}
@@ -370,7 +370,7 @@ export function Philosophy() {
             <FadeUp delay={0.05}>
               <div className="relative inline-block mb-3.5 md:mb-5">
                 <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.1] text-[#2C1810] font-light" style={D}>
-                  We don't<br />change <span className="italic text-[#8C5D47]">faces.</span>
+                  We don't<br />change <span className=" text-[#8C5D47]">faces.</span>
                 </h2>
                 {/* Small modern underline for mobile only */}
                 <div className="h-[2px] w-12 bg-[#8C5D47] rounded-full mt-3 block md:hidden" />
@@ -387,7 +387,7 @@ export function Philosophy() {
 
             <FadeUp delay={0.15}>
               <p className="text-xl sm:text-2xl text-[#2C1810] leading-snug mb-3 md:mb-5 font-light" style={D}>
-                We help people feel<br />like <span className="italic text-[#8C5D47]">themselves</span> again.
+                We help people feel<br />like <span className=" text-[#8C5D47]">themselves</span> again.
               </p>
             </FadeUp>
 
@@ -514,7 +514,7 @@ export function ExtraordinaryCare() {
               <FadeUp>
                 <Tag>A message to our patients</Tag>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#2C1810] leading-[1.1] mt-4 mb-5" style={D}>
-                  Extraordinary care takes<br /><em>extraordinary time.</em> 🕊️
+                  Extraordinary care takes<br />extraordinary time. 🕊️
                 </h2>
               </FadeUp>
               <FadeUp delay={0.1}>
@@ -607,7 +607,7 @@ export function DrRuxana() {
         {/* ── Text Column — padded on left, spaced on right ── */}
         <FadeUp delay={0.15} className="order-1 lg:order-2 px-8 md:px-12 lg:pl-14 xl:pl-20 pr-4 md:pr-6 lg:pr-8 pb-6 lg:pb-0">
           <h2 className="text-[2.8rem] sm:text-5xl md:text-6xl lg:text-[3.8rem] xl:text-[4.5rem] leading-[1.0] text-[#2C1810] mb-6" style={D}>
-            Meet Dr.<br /><em>Ruxana.</em>
+            Meet Dr.<br />Ruxana.
           </h2>
 
           <p className="text-base md:text-sm text-[#2C1810]/80 leading-[1.85] mb-4 max-w-[450px]" style={B}>
@@ -667,7 +667,7 @@ export function Experiences() {
       <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
         <FadeUp>
           <Tag>Chapter 05 — Signature Experiences</Tag>
-          <h2 className="text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-6" style={D}>Not treatments.<br /><em>Experiences.</em></h2>
+          <h2 className="text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-6" style={D}>Not treatments.<br />Experiences.</h2>
         </FadeUp>
         <div className="grid lg:grid-cols-2 gap-0 border-t border-[#2C1810]/10">
           <div className="flex flex-col border-b lg:border-b-0 lg:border-r border-[#2C1810]/10">
@@ -727,7 +727,7 @@ export function Experiences() {
             <AnimatePresence mode="wait">
               <motion.div key={active} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.4, ease: EASE }}>
-                <h3 className="text-2xl md:text-3xl text-[#2C1810] mb-4" style={{ ...D, fontStyle: "italic" }}>{exps[active].name}</h3>
+                <h3 className="text-2xl md:text-3xl text-[#2C1810] mb-4" style={{ ...D }}>{exps[active].name}</h3>
                 <p className="text-base text-[#5C4A42] leading-loose mb-7" style={B}>{exps[active].desc}</p>
                 {[{ label: "Duration", val: exps[active].duration }, { label: "Suited for", val: exps[active].suitedFor }].map(({ label, val }) => (
                   <div key={label} className="flex gap-4 mb-3">
@@ -836,7 +836,7 @@ export function RoadmapStep({ step, index, sectionInView }: { step: Step; index:
           {/* Phase title */}
           <div>
             <span className="text-2xl">{step.emoji}</span>
-            <h3 className="text-xl text-[#2C1810] mt-1 leading-snug" style={{ ...D, fontStyle: "italic" }}>
+            <h3 className="text-xl text-[#2C1810] mt-1 leading-snug" style={{ ...D, }}>
               {step.phase}
             </h3>
           </div>
@@ -874,7 +874,7 @@ export function Journey() {
           <FadeUp>
             <Tag>Chapter 06 — The COSMO HOME Journey </Tag>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#2C1810] leading-[1.0] mt-3" style={D}>
-              Imagine yourself<br /><em>here.</em>
+              Imagine yourself<br />here.
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
@@ -965,7 +965,7 @@ export function TeamAndStandards() {
             <SlideIn from="left">
               <Tag>🛡️ Our Standards — Anti-Quackery</Tag>
               <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
-                Not everyone who<br />holds a needle<br /><em>should.</em>
+                Not everyone who<br />holds a needle<br />should.
               </h2>
             </SlideIn>
             <SlideIn from="right" delay={0.1}>
@@ -1012,7 +1012,7 @@ export function TeamAndStandards() {
                         whileHover={{ scale: 1.1 }}>
                         <s.Icon size={18} color={GOLD} />
                       </motion.div>
-                      <p className="text-base text-[#2C1810]" style={{ ...D, fontStyle: "italic" }}>{s.label}</p>
+                      <p className="text-base text-[#2C1810]" style={{ ...D }}>{s.label}</p>
                       <p className="text-base text-[#5C4A42] leading-loose" style={B}>{s.body}</p>
                     </motion.div>
                   ))}
@@ -1037,7 +1037,7 @@ export function TeamAndStandards() {
                         <r.Icon size={18} color={GOLD} />
                       </div>
                       <div>
-                        <p className="text-base text-[#2C1810] mb-2" style={{ ...D, fontStyle: "italic" }}>{r.label}</p>
+                        <p className="text-base text-[#2C1810] mb-2" style={{ ...D }}>{r.label}</p>
                         <p className="text-base text-[#5C4A42] leading-loose" style={B}>{r.body}</p>
                       </div>
                     </motion.div>
@@ -1076,7 +1076,7 @@ export function Stories() {
         <FadeUp>
           <Tag>Chapter 07 — Real Stories 💬</Tag>
           <h2 className="text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-14" style={D}>
-            People remember<br /><em>stories.</em>
+            People remember<br />stories.
           </h2>
         </FadeUp>
         <div className="flex flex-col gap-14">
@@ -1132,7 +1132,7 @@ export function Invitation() {
           <FadeUp>
             <Tag>Chapter 08 — The Invitation 🌸</Tag>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#2C1810] leading-[1.05] mt-3 mb-5" style={D}>
-              Your journey<br /><em>begins here.</em>
+              Your journey<br />begins here.
             </h2>
             <p className="text-base text-[#5C4A42] leading-relaxed mb-10 max-w-sm" style={B}>
               Book a private consultation with Dr. Ruxana and discover what truly personalised aesthetic care feels like. No pressure. No treatment menu. Just a conversation.
@@ -1160,7 +1160,7 @@ export function Invitation() {
                 <motion.form key="form" exit={{ opacity: 0, y: -16 }}
                   onSubmit={(e) => { e.preventDefault(); setSent(true); }}
                   className="bg-white/80 backdrop-blur-md border border-[#2C1810]/8 rounded-3xl shadow-[0_16px_48px_rgba(44,24,16,0.06)] p-5 sm:p-8 md:p-10 flex flex-col gap-5">
-                  <p className="text-xl text-[#2C1810] mb-1" style={{ ...D, fontStyle: "italic" }}>Begin your story. 🌸</p>
+                  <p className="text-xl text-[#2C1810] mb-1" style={{ ...D, }}>Begin your story. 🌸</p>
 
                   <div className="grid sm:grid-cols-2 gap-5">
                     <InputField label="First name" placeholder="First name" />
@@ -1259,7 +1259,7 @@ export function Invitation() {
                     <Heart size={24} color={GOLD} />
                   </motion.div>
                   <p className="text-4xl mb-4">🌸</p>
-                  <p className="text-2xl text-[#2C1810] mb-4" style={{ ...D, fontStyle: "italic" }}>Thank you.</p>
+                  <p className="text-2xl text-[#2C1810] mb-4" style={{ ...D }}>Thank you.</p>
                   <p className="text-base text-[#5C4A42] leading-loose" style={B}>
                     Dr. Ruxana will personally review your request and be in touch within 24 hours. Your journey begins now.
                   </p>

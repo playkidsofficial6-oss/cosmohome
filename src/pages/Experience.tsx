@@ -76,7 +76,7 @@ export default function ExperiencePage() {
                 <Tag>Signature Experience</Tag>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] mt-4 mb-6 font-light tracking-tight" style={D}>
                   {exp.title.split(" ").slice(0, -1).join(" ")}<br />
-                  <em className="serif italic text-[#C9956A]">{exp.title.split(" ").slice(-1)[0]}</em>
+                  <span className="serif text-[#C9956A]">{exp.title.split(" ").slice(-1)[0]}</span>
                 </h1>
                 <p className="text-lg md:text-xl text-[#C9956A] font-medium mb-6 uppercase tracking-wider" style={M}>
                   {exp.tagline}
@@ -129,7 +129,7 @@ export default function ExperiencePage() {
             <FadeUp>
               <Tag>The Philosophy</Tag>
               <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.1] mt-4 mb-6" style={D}>
-                Bespoke guidance, <em className="serif italic text-[#C9956A]">rooted in longevity.</em>
+                Bespoke guidance, <span className="serif text-[#C9956A]">rooted in longevity.</span>
               </h2>
               <p className="text-base sm:text-lg text-[#5C4A42] leading-loose" style={B}>
                 {exp.philosophy}
@@ -145,7 +145,7 @@ export default function ExperiencePage() {
               <FadeUp>
                 <Tag>The Roadmap</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.1] mt-4" style={D}>
-                  Your Journey, <em className="serif italic text-[#C9956A]">Stage by Stage</em>
+                  Your Journey, <span className="serif text-[#C9956A]">Stage by Stage</span>
                 </h2>
               </FadeUp>
             </div>
@@ -184,7 +184,7 @@ export default function ExperiencePage() {
               <FadeUp>
                 <Tag>Verified Benefits</Tag>
                 <h2 className="text-3xl sm:text-4xl text-[#2C1810] leading-[1.1] mt-4" style={D}>
-                  What to <em className="serif italic text-[#C9956A]">expect.</em>
+                  What to <span className="serif text-[#C9956A]">expect.</span>
                 </h2>
                 <p className="text-sm text-[#5C4A42] leading-relaxed mt-4" style={B}>
                   Signature experiences prioritize skin longevity, cell communication, and safety. Every stage yields cumulative, progressive results.
@@ -220,7 +220,7 @@ export default function ExperiencePage() {
                 </div>
                 <h2 className="text-4xl sm:text-5xl md:text-6xl text-[#2C1810] leading-[1.1] mb-5" style={D}>
                   Ready to begin your<br />
-                  <em>{exp.title}?</em>
+                  <span>{exp.title}?</span>
                 </h2>
                 <p className="text-base text-[#5C4A42] leading-relaxed max-w-xl mb-8" style={B}>
                   Book a clinical consultation. Dr. Ruxana will map your skin barrier, evaluate your aesthetic goals, and construct your personalised journey timeline.
@@ -276,7 +276,7 @@ export default function ExperiencePage() {
                         }}
                         className="flex flex-col gap-5"
                       >
-                        <p className="text-lg text-[#2C1810] mb-1 text-left" style={{ ...D, fontStyle: "italic" }}>
+                        <p className="text-lg text-[#2C1810] mb-1 text-left" style={{ ...D }}>
                           Request details for this experience. 🌸
                         </p>
 
@@ -342,7 +342,7 @@ export default function ExperiencePage() {
                           </svg>
                         </motion.div>
                         <p className="text-3xl mb-3">🌸</p>
-                        <p className="text-xl text-[#2C1810] mb-3" style={{ ...D, fontStyle: "italic" }}>
+                        <p className="text-xl text-[#2C1810] mb-3" style={{ ...D }}>
                           Thank you.
                         </p>
                         <p className="text-xs text-[#5C4A42] leading-loose max-w-[250px]" style={B}>

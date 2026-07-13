@@ -317,7 +317,7 @@ export default function ServicesListPage() {
               >
                 Bespoke Treatments &<br />
                 <span className="relative inline-block">
-                  <em className="font-serif italic text-[#C9956A]">Clinical Artistry.</em>
+                  <span className="font-serif  text-[#C9956A]">Clinical Artistry.</span>
                   <span className="absolute bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#C9956A]/40 to-transparent" />
                 </span>
               </motion.h1>
@@ -425,7 +425,7 @@ export default function ServicesListPage() {
             <div className="lg:col-span-5 flex flex-col justify-center">
               <Tag>Verified Transformation</Tag>
               <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] mt-4 mb-6 leading-tight font-light" style={D}>
-                Visible outcomes, <em className="serif italic text-[#C9956A]">naturally aligned.</em>
+                Visible outcomes, <span className="serif text-[#C9956A]">naturally aligned.</span>
               </h2>
 
               <div className="border-l-2 border-[#C9956A] pl-6 py-2 mb-8">
@@ -470,7 +470,7 @@ export default function ServicesListPage() {
           <div className="mb-4">
             <Tag>Verified Transformation</Tag>
             <h3 className="text-2xl text-[#2C1810] mt-2 mb-1 leading-tight font-light" style={D}>
-              Visible outcomes, <em className="serif italic text-[#C9956A]">naturally aligned.</em>
+              Visible outcomes, <span className="serif text-[#C9956A]">naturally aligned.</span>
             </h3>
           </div>
 
@@ -577,7 +577,7 @@ export default function ServicesListPage() {
                     {/* Service Title */}
                     <div className="h-16 flex items-center mb-3 shrink-0">
                       <h3 className="text-xl sm:text-2xl text-[#2C1810] leading-tight font-light" style={D}>
-                        {service.title} <em className="serif font-serif italic text-[#C9956A]">{service.titleEmphasized}</em>
+                        {service.title} <span className="serif font-serif text-[#C9956A]">{service.titleEmphasized}</span>
                       </h3>
                     </div>
 
@@ -653,7 +653,7 @@ export default function ServicesListPage() {
               <div className="lg:col-span-6 flex flex-col justify-center">
                 <Tag>Flagship Treatment</Tag>
                 <h2 className="text-3xl sm:text-5xl text-[#FAF7F2] leading-tight mt-4 mb-6 font-light" style={D}>
-                  {featuredService.title} <em className="serif italic text-[#C9956A]">{featuredService.titleEmphasized}</em>
+                  {featuredService.title} <span className="serif text-[#C9956A]">{featuredService.titleEmphasized}</span>
                 </h2>
                 <p className="text-sm sm:text-base text-[#FAF7F2]/80 leading-relaxed mb-8 font-normal" style={B}>
                   {featuredService.description}
@@ -696,7 +696,7 @@ export default function ServicesListPage() {
           <div className="text-center max-w-2xl mx-auto mb-8 md:mb-16">
             <Tag>Philosophy of Care</Tag>
             <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] mt-4 mb-6 leading-tight font-light" style={D}>
-              Uncompromising standards for <em className="serif italic text-[#C9956A]">your skin.</em>
+              Uncompromising standards for <span className="serif text-[#C9956A]">your skin.</span>
             </h2>
             <p className="text-sm md:text-base text-[#5C4A42] leading-relaxed font-normal" style={B}>
               We do not believe in standard shortcuts. Every protocol is custom-crafted, medical-grade, and overseen by our clinical specialists.
@@ -758,7 +758,7 @@ export default function ServicesListPage() {
           <div className="text-center max-w-2xl mx-auto mb-10 md:mb-20">
             <Tag>The Cosmo Home Standard</Tag>
             <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#FAF7F2] mt-4 mb-6 leading-tight font-light" style={D}>
-              Your treatment <em className="serif italic text-[#C9956A]">timeline.</em>
+              Your treatment <span className="serif text-[#C9956A]">timeline.</span>
             </h2>
             <p className="text-sm text-[#FAF7F2]/80 leading-relaxed font-normal" style={B}>
               From clinical intake through custom skin diagnostic, follow-up, and home recovery check-ins, we support your skin at every stage.
@@ -818,7 +818,7 @@ export default function ServicesListPage() {
           <div className="text-center max-w-2xl mx-auto mb-8 md:mb-16">
             <Tag>Patient Stories</Tag>
             <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] mt-4 mb-6 leading-tight font-light" style={D}>
-              Carried with <em className="serif italic text-[#C9956A]">confidence.</em>
+              Carried with <span className="serif text-[#C9956A]">confidence.</span>
             </h2>
             <p className="text-sm text-[#5C4A42] font-normal" style={B}>
               Hear from our community of professionals and entrepreneurs about their personalized treatment experiences.
@@ -873,7 +873,7 @@ export default function ServicesListPage() {
           <div className="text-center mb-8 md:mb-16">
             <Tag>Support & Guidance</Tag>
             <h2 className="text-3xl sm:text-4xl text-[#2C1810] mt-4 mb-4 font-light" style={D}>
-              Frequently asked <em className="serif italic text-[#C9956A]">questions.</em>
+              Frequently asked <span className="serif text-[#C9956A]">questions.</span>
             </h2>
             <p className="text-sm text-[#5C4A42] font-normal" style={B}>
               Clear answers to help you plan your clinical skincare journey with trust.
@@ -923,7 +923,7 @@ export default function ServicesListPage() {
             <Tag>Begin Your Skincare Story</Tag>
             <h2 className="text-4xl sm:text-6xl text-[#FAF7F2] leading-tight mt-5 mb-8 font-light" style={D}>
               Ready to transform<br />
-              <em className="font-serif italic text-[#C9956A]">your skin?</em>
+              <span className="font-serif text-[#C9956A]">your skin?</span>
             </h2>
             <p className="text-sm sm:text-base text-[#FAF7F2]/80 leading-relaxed mb-12 max-w-md mx-auto font-normal" style={B}>
               Schedule a private consultation with our experienced medical team to discover your personalized treatment protocol.
