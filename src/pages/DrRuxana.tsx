@@ -27,6 +27,10 @@ export default function DrRuxanaPage() {
   const featherX = useSpring(rawX, { stiffness: 60, damping: 20, mass: 0.5 });
   const featherRotate = useSpring(rawRotate, { stiffness: 60, damping: 20, mass: 0.5 });
 
+  // Portrait Parallax transform
+  const portraitY = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const portraitYSpring = useSpring(portraitY, { stiffness: 60, damping: 20, mass: 0.5 });
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -232,8 +236,11 @@ export default function DrRuxanaPage() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
             
-            {/* Left Column: Portrait of Dr. Ruxana (Roman Arch) */}
-            <div className="lg:col-span-5 xl:col-span-4 flex flex-col items-center">
+            {/* Left Column: Portrait of Dr. Ruxana (Roman Arch with Scroll Parallax) */}
+            <motion.div 
+              style={{ y: portraitYSpring }}
+              className="lg:col-span-5 xl:col-span-4 flex flex-col items-center"
+            >
               <div className="relative w-full max-w-[320px] aspect-[4/5] rounded-t-full rounded-b-[24px] overflow-hidden shadow-[0_15px_35px_rgba(44,24,16,0.06)] border border-[#E8E1D7] bg-[#FAF7F2]">
                 <img 
                   src="/doctor/ruxana.webp" 
@@ -247,7 +254,7 @@ export default function DrRuxanaPage() {
                 <p className="text-[9px] tracking-widest text-[#C9956A] uppercase font-bold mt-1" style={M}>Founder & Medical Director</p>
               </div>
 
-              {/* Accreditations & Key Highlights Box to fill empty space */}
+              {/* Accreditations & Key Highlights Box */}
               <div className="w-full max-w-[320px] bg-white/40 backdrop-blur-sm border border-[#C9956A]/15 rounded-3xl p-6 space-y-4 shadow-[0_10px_30px_rgba(44,24,16,0.01)] hover:border-[#C9956A]/30 transition-all duration-300">
                 <h5 className="text-[9px] tracking-[0.2em] text-[#C9956A] uppercase font-bold border-b border-[#C9956A]/10 pb-2.5" style={M}>
                   Accreditations
@@ -276,7 +283,7 @@ export default function DrRuxanaPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Column: Title + Vertical Row Stack */}
             <div className="lg:col-span-7 xl:col-span-8 space-y-12">
@@ -290,8 +297,8 @@ export default function DrRuxanaPage() {
                 </p>
               </div>
 
-              {/* Vertical Stack of Rows */}
-              <div className="border-t border-[#C9956A]/10">
+              {/* Vertical Stack of Advanced Glass Cards */}
+              <div className="space-y-5">
                 {[
                   {
                     num: "01",
@@ -310,11 +317,13 @@ export default function DrRuxanaPage() {
                   },
                 ].map((p) => {
                   return (
-                    <div 
+                    <motion.div 
                       key={p.title}
-                      className="border-b border-[#C9956A]/10 py-6 sm:py-8 flex flex-col sm:flex-row gap-4 sm:gap-8 items-start group hover:bg-[#FAF6F0] px-4 -mx-4 rounded-xl transition-all duration-300"
+                      whileHover={{ y: -4 }}
+                      transition={{ duration: 0.3 }}
+                      className="bg-white/35 backdrop-blur-md border border-[#C9956A]/15 p-6 sm:p-8 rounded-[24px] flex flex-col sm:flex-row gap-6 items-start hover:border-[#C9956A]/35 hover:bg-white/80 shadow-[0_10px_35px_rgba(44,24,16,0.01)] hover:shadow-[0_20px_50px_rgba(201,149,106,0.05)] transition-all duration-300 group"
                     >
-                      <span className="text-2xl font-light text-[#C9956A] font-serif italic select-none mt-0.5">
+                      <span className="text-2xl font-light text-[#C9956A] font-serif italic select-none mt-0.5 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                         {p.num}
                       </span>
                       <div className="space-y-1.5 flex-1">
@@ -325,7 +334,10 @@ export default function DrRuxanaPage() {
                           {p.desc}
                         </p>
                       </div>
-                    </div>
+                      <div className="text-xs text-[#C9956A] self-end sm:self-start opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 select-none">
+                        ✦
+                      </div>
+                    </motion.div>
                   );
                 })}
               </div>
