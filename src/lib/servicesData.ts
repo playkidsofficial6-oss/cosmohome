@@ -1422,7 +1422,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Signature Experience",
     description: "Combine microneedling with radiofrequency energy to remodel scar tissue, tighten loose skin, and smooth deep wrinkles safely.",
     heroRating: "4.8 · Rated by 190+ patients",
-    heroImage: "/services/laser-scar-reduction/1.webp",
+    heroImage: "/services/MNRF/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Board-Certified Dermatologist",
     performedBySub: "Safe • Calibrated RF • Scar Specialist",
@@ -1444,7 +1444,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🛡️", b: "Safe for Indian Skin", d: "Fractional RF energy minimizes pigmentation risks." }
     ],
     clinicalNote: "Needle depth and RF energy are calibrated to target scar thickness safely.",
-    sideImage: "/services/laser-scar-reduction/2.webp",
+    sideImage: "/services/MNRF/2.webp",
     machineTitle: "Focused RF energy",
     machineEmphasized: "for scar remodeling.",
     deviceName: "Medical-Grade MNRF Platform",
