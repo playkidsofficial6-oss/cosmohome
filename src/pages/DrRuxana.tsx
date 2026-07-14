@@ -223,53 +223,114 @@ export default function DrRuxanaPage() {
         </div>
       </section>
 
-      {/* ═╦═ 2. PHILOSOPHY OF CARE ═╦═ */}
-      <section className="py-12 md:py-20 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-            <Tag>Philosophy of Care</Tag>
-            <h2 className="text-3xl sm:text-5xl text-[#2C1810] mt-3 mb-6 font-light" style={D}>
-              A gentle, <span className="serif text-[#C9956A]">natural-first</span> approach.
-            </h2>
-            <p className="text-sm sm:text-base text-[#5C4A42] leading-relaxed font-normal">
-              Great aesthetics are not about changing who you are. It is about bringing out the best version of yourself, backed by medical science and surgical-grade precision.
-            </p>
-          </div>
+      {/* ═╦═ 2. PHILOSOPHY OF CARE (OPTIMIZED SPLIT-LAYOUT) ═╦═ */}
+      <section className="py-20 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2] relative overflow-hidden border-b border-[#2C1810]/5">
+        {/* Subtle decorative grid patterns */}
+        <div className="absolute inset-0 opacity-[0.02] z-0 pointer-events-none" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
+        <div className="absolute top-1/4 right-0 w-[450px] h-[450px] rounded-full pointer-events-none z-0 opacity-30" style={{ background: "radial-gradient(circle, rgba(201,149,106,0.08) 0%, transparent 70%)" }} />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Heart,
-                title: "Listening First",
-                desc: "We start with a 60-minute in-depth conversation. We learn about your lifestyle, concerns, and goals before drawing any treatment plan.",
-              },
-              {
-                icon: ShieldCheck,
-                title: "Safety & Integrity",
-                desc: "Every procedure is dermatologist-led or doctor-supervised. We maintain extreme standards of sterile protocols and clinical accountability.",
-              },
-              {
-                icon: Sparkles,
-                title: "Subtle Calibrations",
-                desc: "We focus on structural volume restoration and soft calibrations that preserve natural facial expressions and authentic proportions.",
-              },
-            ].map((p, i) => (
-              <motion.div
-                key={p.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                whileHover={{ y: -4 }}
-                className="bg-white p-8 rounded-3xl border border-[#2C1810]/5 shadow-[0_4px_30px_rgba(44,24,16,0.01)] hover:shadow-[0_12px_45px_rgba(44,24,16,0.04)] transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-[#C9956A]/10 flex items-center justify-center text-[#C9956A] mb-6">
-                  <p.icon size={22} strokeWidth={1.5} />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            
+            {/* Left Column: Portrait of Dr. Ruxana (Roman Arch) */}
+            <div className="lg:col-span-5 xl:col-span-4 flex flex-col items-center">
+              <div className="relative w-full max-w-[320px] aspect-[4/5] rounded-t-full rounded-b-[24px] overflow-hidden shadow-[0_15px_35px_rgba(44,24,16,0.06)] border border-[#E8E1D7] bg-[#FAF7F2]">
+                <img 
+                  src="/doctor/ruxana.webp" 
+                  alt="Dr. Ruxana K." 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/20 via-transparent to-transparent" />
+              </div>
+              <div className="mt-5 text-center mb-6">
+                <h4 className="text-base font-medium text-[#2C1810] font-serif" style={D}>Dr. Ruxana K.</h4>
+                <p className="text-[9px] tracking-widest text-[#C9956A] uppercase font-bold mt-1" style={M}>Founder & Medical Director</p>
+              </div>
+
+              {/* Accreditations & Key Highlights Box to fill empty space */}
+              <div className="w-full max-w-[320px] bg-white/40 backdrop-blur-sm border border-[#C9956A]/15 rounded-3xl p-6 space-y-4 shadow-[0_10px_30px_rgba(44,24,16,0.01)] hover:border-[#C9956A]/30 transition-all duration-300">
+                <h5 className="text-[9px] tracking-[0.2em] text-[#C9956A] uppercase font-bold border-b border-[#C9956A]/10 pb-2.5" style={M}>
+                  Accreditations
+                </h5>
+                <div className="space-y-3.5">
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-[#C9956A] text-xs mt-0.5">✦</span>
+                    <div>
+                      <h6 className="text-[10px] sm:text-[11px] font-semibold text-[#2C1810]" style={D}>BCAM Fellow Member</h6>
+                      <p className="text-[9px] text-[#5C4A42] font-light leading-normal">British College of Aesthetic Medicine</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-[#C9956A] text-xs mt-0.5">✦</span>
+                    <div>
+                      <h6 className="text-[10px] sm:text-[11px] font-semibold text-[#2C1810]" style={D}>MRCS (United Kingdom)</h6>
+                      <p className="text-[9px] text-[#5C4A42] font-light leading-normal">Member of the Royal College of Surgeons</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2.5">
+                    <span className="text-[#C9956A] text-xs mt-0.5">✦</span>
+                    <div>
+                      <h6 className="text-[10px] sm:text-[11px] font-semibold text-[#2C1810]" style={D}>Medical Graduate (MBBS)</h6>
+                      <p className="text-[9px] text-[#5C4A42] font-light leading-normal">Registered Medical Practitioner</p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-[#2C1810] mb-3" style={D}>{p.title}</h3>
-                <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed font-light">{p.desc}</p>
-              </motion.div>
-            ))}
+              </div>
+            </div>
+
+            {/* Right Column: Title + Vertical Row Stack */}
+            <div className="lg:col-span-7 xl:col-span-8 space-y-12">
+              <div className="text-left">
+                <Tag>Philosophy of Care</Tag>
+                <h2 className="text-4xl sm:text-5xl text-[#2C1810] leading-[1.1] mt-4 mb-5 font-light" style={D}>
+                  A gentle, <span className="serif text-[#C9956A]">natural-first</span> approach.
+                </h2>
+                <p className="text-sm sm:text-base text-[#5C4A42] leading-relaxed font-light max-w-2xl">
+                  Great aesthetics are not about changing who you are. It is about bringing out the best version of yourself, backed by medical science and surgical-grade precision.
+                </p>
+              </div>
+
+              {/* Vertical Stack of Rows */}
+              <div className="border-t border-[#C9956A]/10">
+                {[
+                  {
+                    num: "01",
+                    title: "Listening First",
+                    desc: "I begin each journey with an in-depth conversation. I learn about your lifestyle, concerns, and goals before drawing any plan.",
+                  },
+                  {
+                    num: "02",
+                    title: "Safety & Integrity",
+                    desc: "Every procedure follows rigorous medical protocols. I maintain extreme standards of sterile environments, patient safety, and clinical accountability.",
+                  },
+                  {
+                    num: "03",
+                    title: "Subtle Calibrations",
+                    desc: "I focus on structural volume restoration and soft calibrations that preserve your natural facial expressions and authentic proportions.",
+                  },
+                ].map((p) => {
+                  return (
+                    <div 
+                      key={p.title}
+                      className="border-b border-[#C9956A]/10 py-6 sm:py-8 flex flex-col sm:flex-row gap-4 sm:gap-8 items-start group hover:bg-[#FAF6F0] px-4 -mx-4 rounded-xl transition-all duration-300"
+                    >
+                      <span className="text-2xl font-light text-[#C9956A] font-serif italic select-none mt-0.5">
+                        {p.num}
+                      </span>
+                      <div className="space-y-1.5 flex-1">
+                        <h3 className="text-lg font-medium text-[#2C1810] font-serif group-hover:text-[#C9956A] transition-colors duration-300" style={D}>
+                          {p.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed font-light">
+                          {p.desc}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
