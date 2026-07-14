@@ -282,7 +282,7 @@ export default function DrRuxanaPage() {
           <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
             <Tag>The Professional Journey</Tag>
             <h2 className="text-3xl sm:text-5xl text-[#2C1810] mt-3 mb-6 font-light" style={D}>
-              Education & <span className="serif text-[#C9956A]">Credentials</span>.
+              Education & <span className="serif text-[#C9956A]">Credentials.</span>
             </h2>
             <p className="text-sm sm:text-base text-[#5C4A42] leading-relaxed font-normal">
               A decade of clinical training and surgical excellence before establishing Cosmo Home.
