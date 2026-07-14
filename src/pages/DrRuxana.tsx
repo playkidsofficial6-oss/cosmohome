@@ -264,7 +264,7 @@ export default function DrRuxanaPage() {
                   <img 
                     src="/doctor/ruxana.webp" 
                     alt="Dr. Ruxana K." 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover scale-x-[-1]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/20 via-transparent to-transparent" />
                 </div>
@@ -275,30 +275,30 @@ export default function DrRuxanaPage() {
               </div>
 
               {/* Accreditations & Key Highlights Box */}
-              <div className="w-full max-w-[320px] bg-white/40 backdrop-blur-sm border border-[#C9956A]/15 rounded-3xl p-6 space-y-4 shadow-[0_10px_30px_rgba(44,24,16,0.01)] hover:border-[#C9956A]/30 transition-all duration-300">
-                <h5 className="text-[9px] tracking-[0.2em] text-[#C9956A] uppercase font-bold border-b border-[#C9956A]/10 pb-2.5" style={M}>
+              <div className="w-full max-w-[320px] sm:max-w-[340px] bg-white/40 backdrop-blur-sm border border-[#C9956A]/15 rounded-3xl p-6 sm:p-7 space-y-5 shadow-[0_10px_30px_rgba(44,24,16,0.01)] hover:border-[#C9956A]/30 transition-all duration-300">
+                <h5 className="text-[10px] sm:text-[11px] tracking-[0.2em] text-[#C9956A] uppercase font-bold border-b border-[#C9956A]/10 pb-3" style={M}>
                   Accreditations
                 </h5>
-                <div className="space-y-3.5">
-                  <div className="flex items-start gap-2.5">
-                    <span className="text-[#C9956A] text-xs mt-0.5">✦</span>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#C9956A] text-sm mt-0.5">✦</span>
                     <div>
-                      <h6 className="text-[10px] sm:text-[11px] font-semibold text-[#2C1810]" style={D}>BCAM Fellow Member</h6>
-                      <p className="text-[9px] text-[#5C4A42] font-light leading-normal">British College of Aesthetic Medicine</p>
+                      <h6 className="text-xs sm:text-[13px] font-semibold text-[#2C1810]" style={D}>BCAM Fellow Member</h6>
+                      <p className="text-[10px] sm:text-[11px] text-[#5C4A42] font-light leading-relaxed">British College of Aesthetic Medicine</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-2.5">
-                    <span className="text-[#C9956A] text-xs mt-0.5">✦</span>
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#C9956A] text-sm mt-0.5">✦</span>
                     <div>
-                      <h6 className="text-[10px] sm:text-[11px] font-semibold text-[#2C1810]" style={D}>MRCS (United Kingdom)</h6>
-                      <p className="text-[9px] text-[#5C4A42] font-light leading-normal">Member of the Royal College of Surgeons</p>
+                      <h6 className="text-xs sm:text-[13px] font-semibold text-[#2C1810]" style={D}>MRCS (United Kingdom)</h6>
+                      <p className="text-[10px] sm:text-[11px] text-[#5C4A42] font-light leading-relaxed">Member of the Royal College of Surgeons</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-2.5">
-                    <span className="text-[#C9956A] text-xs mt-0.5">✦</span>
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#C9956A] text-sm mt-0.5">✦</span>
                     <div>
-                      <h6 className="text-[10px] sm:text-[11px] font-semibold text-[#2C1810]" style={D}>Medical Graduate (MBBS)</h6>
-                      <p className="text-[9px] text-[#5C4A42] font-light leading-normal">Registered Medical Practitioner</p>
+                      <h6 className="text-xs sm:text-[13px] font-semibold text-[#2C1810]" style={D}>Medical Graduate (MBBS)</h6>
+                      <p className="text-[10px] sm:text-[11px] text-[#5C4A42] font-light leading-relaxed">Registered Medical Practitioner</p>
                     </div>
                   </div>
                 </div>
