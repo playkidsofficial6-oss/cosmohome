@@ -179,19 +179,19 @@ export default function DrRuxanaPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                   whileHover={{ y: -5 }}
-                  className="absolute bottom-10 -right-6 z-20 bg-white/70 backdrop-blur-xl border border-white/80 text-[#2C1810] p-6 rounded-3xl shadow-[0_15px_40px_rgba(44,24,16,0.08)] max-w-[200px] flex flex-col gap-3 group cursor-default"
+                  className="absolute bottom-6 md:bottom-10 -right-3 md:-right-6 z-20 bg-white/70 backdrop-blur-xl border border-white/80 text-[#2C1810] p-3.5 md:p-6 rounded-2xl md:rounded-3xl shadow-[0_15px_40px_rgba(44,24,16,0.08)] max-w-[130px] md:max-w-[200px] flex flex-col gap-1.5 md:gap-3 group cursor-default"
                 >
-                  <div className="flex flex-col border-b border-[#2C1810]/5 pb-2.5">
-                    <span className="text-2xl font-light text-[#C9956A]" style={D}>10+ Yrs</span>
-                    <span className="text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Clinical Practice</span>
+                  <div className="flex flex-col border-b border-[#2C1810]/5 pb-1.5 md:pb-2.5">
+                    <span className="text-lg md:text-2xl font-light text-[#C9956A]" style={D}>10+ Yrs</span>
+                    <span className="text-[7px] md:text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Clinical Practice</span>
                   </div>
-                  <div className="flex flex-col border-b border-[#2C1810]/5 pb-2.5">
-                    <span className="text-2xl font-light text-[#C9956A]" style={D}>BCAM</span>
-                    <span className="text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Fellowship</span>
+                  <div className="flex flex-col border-b border-[#2C1810]/5 pb-1.5 md:pb-2.5">
+                    <span className="text-lg md:text-2xl font-light text-[#C9956A]" style={D}>BCAM</span>
+                    <span className="text-[7px] md:text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Fellowship</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-2xl font-light text-[#C9956A]" style={D}>MRCS</span>
-                    <span className="text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Surgical Board</span>
+                    <span className="text-lg md:text-2xl font-light text-[#C9956A]" style={D}>MRCS</span>
+                    <span className="text-[7px] md:text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Surgical Board</span>
                   </div>
                 </motion.div>
 
