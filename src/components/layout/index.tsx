@@ -131,8 +131,8 @@ export function Nav({ ready }: { ready: boolean }) {
     { label: "Philosophy", href: "/#philosophy" },
     { label: "Service", action: () => navigate("/service") },
     { label: "Treatments", action: () => navigate("/service"), hasDropdown: true },
-    { label: "Dr. Ruxana", href: "/#dr-ruxana" },
-    { label: "Results", href: "/#results" },
+    { label: "Dr. Ruxana", href: "/dr-ruxana" },
+    // { label: "Results", href: "/#results" },
     { label: "Journal", href: "/#journal", hasDropdown: true },
   ];
 
@@ -308,31 +308,31 @@ export function Nav({ ready }: { ready: boolean }) {
                                 <div>
                                   <span className="inline-block px-2.5 py-0.5 bg-[#C9956A]/10 text-[#C9956A] text-[9px] font-semibold tracking-[0.2em] uppercase rounded-full mb-3" style={M}>
                                     {activeCategory === "Skin" ? "Dermal Science" :
-                                     activeCategory === "Hair" ? "Follicle Science" :
-                                     activeCategory === "Body" ? "Body Sculpting" : "Cellular Healing"}
+                                      activeCategory === "Hair" ? "Follicle Science" :
+                                        activeCategory === "Body" ? "Body Sculpting" : "Cellular Healing"}
                                   </span>
                                   <h4 style={D} className="text-[15px] font-medium text-[#2C1810] mb-2 leading-snug">
                                     {activeCategory === "Skin" ? "Healthy Skin Barrier" :
-                                     activeCategory === "Hair" ? "Follicle Nourishment" :
-                                     activeCategory === "Body" ? "Precision Contouring" : "Regenerative Purity"}
+                                      activeCategory === "Hair" ? "Follicle Nourishment" :
+                                        activeCategory === "Body" ? "Precision Contouring" : "Regenerative Purity"}
                                   </h4>
                                   <p style={B} className="text-[12px] text-[#5C4A42] leading-relaxed font-light">
                                     {activeCategory === "Skin" ? "We target deeper skin layers to rebuild collagen fibers and fade stretch marks organically." :
-                                     activeCategory === "Hair" ? "Advanced growth therapies to awaken dormant hair roots and improve overall density." :
-                                     activeCategory === "Body" ? "Custom body shaping protocols leveraging advanced high-intensity platforms." :
-                                     activeCategory === "Injectables" ? "High-purity micro-injections of autologous growth factors and signaling vesicles." : ""}
+                                      activeCategory === "Hair" ? "Advanced growth therapies to awaken dormant hair roots and improve overall density." :
+                                        activeCategory === "Body" ? "Custom body shaping protocols leveraging advanced high-intensity platforms." :
+                                          activeCategory === "Injectables" ? "High-purity micro-injections of autologous growth factors and signaling vesicles." : ""}
                                   </p>
                                 </div>
                                 <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-[#C9956A]/10">
                                   {(activeCategory === "Skin" ? ["Collagen Rebuilding", "Safe Resurfacing", "Zero Downtime"] :
                                     activeCategory === "Hair" ? ["Root Stimulation", "Zero Hair Shedding", "Sustained Density"] :
-                                    activeCategory === "Body" ? ["Targeted Definition", "Muscle Sculpting", "Non-Invasive"] :
-                                    activeCategory === "Injectables" ? ["Autologous Purity", "Rapid Regeneration", "Natural Results"] : []).map(f => (
-                                      <div key={f} className="flex items-center gap-2 text-[10px] text-[#8A6D5C] font-semibold uppercase tracking-wider" style={M}>
-                                        <span className="text-[#C9956A] text-[7px]">✦</span>
-                                        <span>{f}</span>
-                                      </div>
-                                    ))}
+                                      activeCategory === "Body" ? ["Targeted Definition", "Muscle Sculpting", "Non-Invasive"] :
+                                        activeCategory === "Injectables" ? ["Autologous Purity", "Rapid Regeneration", "Natural Results"] : []).map(f => (
+                                          <div key={f} className="flex items-center gap-2 text-[10px] text-[#8A6D5C] font-semibold uppercase tracking-wider" style={M}>
+                                            <span className="text-[#C9956A] text-[7px]">✦</span>
+                                            <span>{f}</span>
+                                          </div>
+                                        ))}
                                 </div>
                               </div>
                             )}
@@ -618,7 +618,7 @@ export function Footer() {
               heading: "COSMO HOME",
               links: [
                 { label: "Our Philosophy", href: "/#philosophy" },
-                { label: "Dr. Ruxana", href: "/#dr-ruxana" },
+                { label: "Dr. Ruxana", href: "/dr-ruxana" },
                 { label: "Our Team", href: "/#our-team" },
                 { label: "Our Standards", href: "/#our-standards" },
                 { label: "Begin Your Story", href: "/book-consultation" }

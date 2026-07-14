@@ -12,6 +12,7 @@ import ServicePage from "../pages/Service";
 import ServicesListPage from "../pages/ServicesList";
 import BookConsultationPage from "../pages/BookConsultation";
 import ExperiencePage from "../pages/Experience";
+import DrRuxanaPage from "../pages/DrRuxana";
 export function AppContent() {
     const location = useLocation();
     const [ready, setReady] = useState(() => location.pathname !== "/");
@@ -40,6 +41,7 @@ export function AppContent() {
           <Route path="/service/:slug" element={<ServicePage />} />
           <Route path="/experience/:slug" element={<ExperiencePage />} />
           <Route path="/book-consultation" element={<BookConsultationPage />} />
+          <Route path="/dr-ruxana" element={<DrRuxanaPage />} />
         </Routes>
         <Footer />
       </motion.div>
