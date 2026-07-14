@@ -201,7 +201,7 @@ export default function DrRuxanaPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.7 }}
-                  className="absolute -top-6 -left-6 z-20 w-24 h-24 bg-[#2C1810] text-[#FAF7F2] rounded-full shadow-2xl flex items-center justify-center border border-[#C9956A]/30 overflow-hidden group cursor-pointer"
+                  className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 z-20 w-16 h-16 sm:w-24 sm:h-24 bg-[#2C1810] text-[#FAF7F2] rounded-full shadow-2xl flex items-center justify-center border border-[#C9956A]/30 overflow-hidden group cursor-pointer"
                 >
                   {/* Rotating circular text SVG */}
                   <motion.svg 
@@ -218,7 +218,7 @@ export default function DrRuxanaPage() {
                     </text>
                   </motion.svg>
                   {/* Small gold leaf logo in the absolute center */}
-                  <div className="absolute inset-0 flex items-center justify-center text-sm font-light text-[#FAF7F2] select-none">
+                  <div className="absolute inset-0 flex items-center justify-center text-xs sm:text-sm font-light text-[#FAF7F2] select-none">
                     ✨
                   </div>
                 </motion.div>
