@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform, useSpring } from "motion/react";
 import { ArrowRight, ShieldCheck, Heart, Award, Sparkles, Check, GraduationCap, BookOpen, Star, Calendar } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, GRAIN } from "../lib/constants";
@@ -8,6 +8,24 @@ import { CTAButtons, FadeUp, Tag } from "../components/ui/shared";
 
 export default function DrRuxanaPage() {
   const navigate = useNavigate();
+
+  const { scrollYProgress } = useScroll();
+
+  // The raw Y, X and Rotation transforms
+  const rawY = useTransform(scrollYProgress, [0, 1], [250, 3150]);
+  const rawX = useTransform(scrollYProgress,
+    [0, 0.2, 0.4, 0.6, 0.8, 1],
+    [0, 45, -45, 45, -45, 0]
+  );
+  const rawRotate = useTransform(scrollYProgress,
+    [0, 0.2, 0.4, 0.6, 0.8, 1],
+    [10, 35, -15, 35, -15, 10]
+  );
+
+  // Apply spring physics layer to make scroll movement buttery smooth with momentum
+  const featherY = useSpring(rawY, { stiffness: 60, damping: 20, mass: 0.5 });
+  const featherX = useSpring(rawX, { stiffness: 60, damping: 20, mass: 0.5 });
+  const featherRotate = useSpring(rawRotate, { stiffness: 60, damping: 20, mass: 0.5 });
 
   useEffect(() => {
     window.scrollTo(0, 0);
