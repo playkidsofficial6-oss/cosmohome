@@ -56,7 +56,7 @@ export default function DrRuxanaPage() {
       style={B}
     >
       {/* ═╦═ 1. ADVANCED MODERN HERO SECTION ═╦═ */}
-      <section className="relative min-h-[90vh] flex flex-col justify-center bg-[#FAF6F0] py-16 md:py-28 overflow-hidden border-b border-[#2C1810]/5">
+      <section className="relative min-h-[75vh] flex flex-col justify-center bg-[#FAF6F0] py-12 md:py-20 overflow-hidden border-b border-[#2C1810]/5">
         {/* Advanced Grid & Glow Backdrops */}
         <div className="absolute inset-0 opacity-[0.03] z-0 pointer-events-none" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
         
@@ -206,9 +206,9 @@ export default function DrRuxanaPage() {
       </section>
 
       {/* ═╦═ 2. PHILOSOPHY OF CARE ═╦═ */}
-      <section className="py-16 md:py-28 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
+      <section className="py-12 md:py-20 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
+          <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
             <Tag>Philosophy of Care</Tag>
             <h2 className="text-3xl sm:text-5xl text-[#2C1810] mt-3 mb-6 font-light" style={D}>
               A gentle, <span className="serif text-[#C9956A]">natural-first</span> approach.
@@ -257,11 +257,11 @@ export default function DrRuxanaPage() {
       </section>
 
       {/* ═╦═ 3. THE CLINICAL TIMELINE ═╦═ */}
-      <section className="py-16 md:py-28 px-6 md:px-16 lg:px-24 bg-[#E8DDD1]/35 border-y border-[#2C1810]/5 relative">
+      <section className="py-12 md:py-20 px-6 md:px-16 lg:px-24 bg-[#E8DDD1]/35 border-y border-[#2C1810]/5 relative">
         <div className="absolute inset-0 opacity-[0.02] z-0 pointer-events-none" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
         <div className="max-w-4xl mx-auto relative z-10">
 
-          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
+          <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
             <Tag>The Professional Journey</Tag>
             <h2 className="text-3xl sm:text-5xl text-[#2C1810] mt-3 mb-6 font-light" style={D}>
               Education & <span className="serif text-[#C9956A]">Credentials</span>.
@@ -272,9 +272,9 @@ export default function DrRuxanaPage() {
           </div>
 
           {/* Timeline Container */}
-          <div className="relative pl-6 md:pl-0">
+          <div className="relative pl-0">
             {/* Center connecting line */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[1px] bg-[#C9956A]/30 -translate-x-1/2" />
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-[1px] bg-[#C9956A]/30 -translate-x-1/2" />
 
             <div className="space-y-16">
               {milestones.map((m, i) => {
@@ -291,12 +291,12 @@ export default function DrRuxanaPage() {
                     className={`relative flex flex-col md:flex-row items-start ${isEven ? "md:flex-row-reverse" : ""}`}
                   >
                     {/* Circle Icon Badge */}
-                    <div className="absolute left-6 md:left-1/2 top-0 -translate-x-1/2 w-10 h-10 rounded-full bg-[#FAF7F2] border-2 border-[#C9956A] shadow-md z-10 flex items-center justify-center text-[#C9956A] shrink-0 transition-transform hover:scale-110">
+                    <div className="absolute left-8 md:left-1/2 top-0 -translate-x-1/2 w-10 h-10 rounded-full bg-[#FAF7F2] border-2 border-[#C9956A] shadow-md z-10 flex items-center justify-center text-[#C9956A] shrink-0 transition-transform hover:scale-110">
                       <Icon size={16} strokeWidth={2} />
                     </div>
 
                     {/* Content placement */}
-                    <div className={`w-full md:w-1/2 flex flex-col justify-center pl-14 pr-4 ${isEven ? "md:pl-12 md:pr-0" : "md:pl-0 md:pr-12"}`}>
+                    <div className={`w-full md:w-1/2 flex flex-col justify-center pl-20 pr-4 ${isEven ? "md:pl-12 md:pr-0" : "md:pl-0 md:pr-12"}`}>
                       <div className={`flex flex-col ${isEven ? "md:items-start" : "md:items-end"} text-left ${isEven ? "md:text-left" : "md:text-right"}`}>
                         <span className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] font-bold mb-1.5" style={M}>{m.year}</span>
                         <h4 className="text-lg font-semibold text-[#2C1810] mb-2" style={D}>{m.title}</h4>
@@ -315,7 +315,7 @@ export default function DrRuxanaPage() {
       </section>
 
       {/* ═╦═ 4. SIGNATURE CONSULTATION CTA ═╦═ */}
-      <section className="py-20 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2] text-[#2C1810] relative">
+      <section className="py-12 md:py-20 px-6 md:px-16 lg:px-24 bg-[#FAF7F2] text-[#2C1810] relative">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <Tag>Begin Your Journey</Tag>
 
