@@ -71,7 +71,7 @@ const CATEGORY_MAPPING: Record<string, string[]> = {
     "laser-toning",
     "carbon-peel"
   ],
-  Body: ["muscle-sculpting"],
+  Body: ["muscle-sculpting", "body-contouring", "fat-reduction", "body-tightening"],
   Injectables: [
     "exosomes-prp-gfc",
     "botox",
@@ -133,6 +133,9 @@ const SERVICE_TAG_MAPPING: Record<string, string> = {
 
   // Body treatments
   "muscle-sculpting": "Body : Sculpting",
+  "body-contouring": "Body : Contouring",
+  "fat-reduction": "Body : Fat Reduction",
+  "body-tightening": "Body : Tightening",
 
   // Injectables
   "exosomes-prp-gfc": "Injectables"

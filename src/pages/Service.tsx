@@ -127,6 +127,9 @@ const slugToOptionMap: Record<string, string> = {
   "excimer-laser": "Excimer Laser",
   "laser-hair-reduction": "Laser Hair Reduction",
   "muscle-sculpting": "Muscle Sculpting",
+  "body-contouring": "Body Contouring",
+  "fat-reduction": "Fat Reduction",
+  "body-tightening": "Body Tightening",
   "exosomes-prp-gfc": "Exosomes / PRP / GFC"
 };
 
@@ -194,6 +197,9 @@ export default function ServicePage() {
     "Excimer Laser",
     "Laser Hair Reduction",
     "Muscle Sculpting",
+    "Body Contouring",
+    "Fat Reduction",
+    "Body Tightening",
     "Exosomes / PRP / GFC"
   ];
 

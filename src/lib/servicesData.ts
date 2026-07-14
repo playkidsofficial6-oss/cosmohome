@@ -1,4 +1,4 @@
-﻿export interface ServiceData {
+export interface ServiceData {
   id: string;
   title: string;
   titleEmphasized: string;
@@ -924,6 +924,267 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       testimonialText: "Even with regular exercise, I couldn't get my core definition back after pregnancy. Four sessions of muscle sculpting completely firmed up my abdominal wall.",
       patientName: "Sarah L., 36",
       subtitle: "High-intensity electromagnetic body definition"
+    },
+  },
+  "body-contouring": {
+    id: "body-contouring",
+    title: "Precision Body",
+    titleEmphasized: "Contouring.",
+    experienceNo: "Signature Experience",
+    description: "Reshape and redefine your natural silhouette with advanced non-surgical body contouring protocols that target stubborn fat deposits and restore your body's natural curves.",
+    heroRating: "4.8 · Rated by 120+ patients",
+    heroImage: "/services/body-contouring/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Body Contouring Specialist",
+    performedBySub: "Safe • Personalised • Professional",
+    stats: [
+      { n: "4–6", l: "Sessions recommended" },
+      { n: "0", l: "Days downtime" },
+      { n: "100%", l: "Non-invasive" },
+      { n: "4.8★", l: "Patient satisfaction" }
+    ],
+    whatIsThisTitle: "This is not",
+    whatIsThisEmphasized: "a one-size-fits-all treatment.",
+    whatIsThisDesc1: "Body contouring at Cosmo Home is a personalised protocol that combines multiple advanced technologies to reshape specific zones—abdomen, flanks, thighs, and arms—without surgery or downtime.",
+    whatIsThisDesc2: "Our specialists map your body composition and design a targeted plan using the most appropriate energy-based devices for your tissue type and goals. The result is a sculpted, natural silhouette that aligns with your body, not a generic standard.",
+    benefits: [
+      { icon: "✦", b: "Targeted fat reduction", d: "Precisely treats stubborn deposits resistant to diet and exercise" },
+      { icon: "📐", b: "Natural silhouette shaping", d: "Restores your body's natural proportions and curves" },
+      { icon: "✨", b: "Zero surgery", d: "Non-invasive protocols with no incisions or scarring" },
+      { icon: "🔄", b: "Customised protocols", d: "Treatment plan tailored to your specific body zones and goals" }
+    ],
+    clinicalNote: "A body composition assessment is performed before treatment to identify target zones and select the most suitable contouring technology.",
+    sideImage: "/services/body-contouring/2.webp",
+    whoNeedsDesc: "Ideal for individuals looking to address localized fat deposits, improve body shape proportions, and contour specific regions such as thighs, hips, abdomen, and arms.",
+    notSuitable: "Active infections in the treatment area, pregnancy, severe circulatory disorders, severe liver or kidney disease.",
+    whoNeedsItems: [
+      { tag: "Silhouette reshaping", desc: "Redefining natural body curves and proportions." },
+      { tag: "Stubborn pockets", desc: "Reducing fat in areas resistant to diet and exercise." },
+      { tag: "Cellulite smoothing", desc: "Smoothing out skin dimples on thighs and buttocks." },
+      { tag: "Asymmetric contouring", desc: "Correcting contour irregularities for a balanced look." }
+    ],
+    machineTitle: "Advanced Body",
+    machineEmphasized: "Reshaping Technology.",
+    deviceName: "Multi-Modal Body Contouring System",
+    deviceSub: "Clinically Validated · Non-Invasive · Personalised",
+    deviceDesc: "Our body contouring system combines multiple energy modalities—radiofrequency, ultrasound, and electromagnetic—to target different tissue layers simultaneously. This multi-modal approach delivers superior results by addressing subcutaneous fat, skin laxity, and muscle tone in a single coordinated protocol.",
+    deviceFeatures: ["Multi-modal energy delivery", "Real-time temperature monitoring", "Comfort-optimised applicators", "Zero thermal damage risk"],
+    deviceImage: "/services/body-contouring/3.webp",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
+    comparisonRows: [
+      { label: "Approach", ours: "Personalised multi-modal protocol", standard: "Single device, fixed program" },
+      { label: "Assessment", ours: "Full body composition mapping", standard: "Visual assessment only" },
+      { label: "Technology", ours: "Latest FDA-cleared devices", standard: "Older generation equipment" },
+      { label: "Downtime", ours: "Zero", standard: "Variable" }
+    ],
+    sessionPlanDesc: "A standard contouring program consists of 4 to 6 sessions spaced 1 to 2 weeks apart, depending on target areas.",
+    sessionPlanSteps: [
+      { n: "01", label: "Consultation & Mapping", duration: "15 min", detail: "We evaluate skin laxity, fat thickness, and body symmetry to outline the optimal treatment grid." },
+      { n: "02", label: "Multi-Modal Treatment", duration: "45 min", detail: "Applicators deliver controlled radiofrequency and mechanical vacuum to heat fat layers and smooth tissue. Feels like a deep, warm massage." },
+      { n: "03", label: "Post-Treatment Soothing", duration: "10 min", detail: "Skin is cleansed and a specialized soothing, firming complex is applied." }
+    ],
+    timelineDesc: "Skin tightness improves gradually, with significant contour refinements visible over 4 to 8 weeks.",
+    timelineItems: [
+      { when: "Immediately", what: "Treated skin feels warm, firm, and slightly flushed." },
+      { when: "Week 2", what: "Local circulation increases, leading to a smoother skin texture." },
+      { when: "Week 4", what: "Contours appear more defined as localized fat layers begin to thin out." },
+      { when: "Month 2+", what: "Optimal silhouette contours and smoother skin texture are fully visible." }
+    ],
+    ctaRating: "120+ patients contoured",
+    ctaTitle: "Ready to reshape",
+    ctaTitle2: "your silhouette?",
+    ctaEmphasized: "Book today.",
+    ctaDesc: "A body composition assessment ensures we design the most targeted and effective contouring protocol for your specific goals.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹12,000 / session" },
+      { label: "Duration", val: "45–60 minutes" },
+      { label: "Recommended", val: "4–6 sessions" },
+      { label: "Frequency", val: "Weekly" },
+      { label: "Downtime", val: "None" },
+      { label: "Performed by", val: "Contouring Specialist" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Body Contouring/before.webp",
+      afterImage: "/services/before&after/Body Contouring/after.webp",
+      treatmentName: "Precision Body Contouring",
+      testimonialText: "I had stubborn fat around my waist that wouldn't budge despite dieting. After 5 body contouring sessions, my waistline is completely transformed.",
+      patientName: "Priya M., 34",
+      subtitle: "Advanced non-surgical body reshaping"
+    },
+  },
+  "fat-reduction": {
+    id: "fat-reduction",
+    title: "Advanced Fat",
+    titleEmphasized: "Reduction.",
+    experienceNo: "Signature Experience",
+    description: "Permanently eliminate stubborn fat cells with clinically proven non-invasive fat reduction technologies that target and destroy fat without surgery or recovery time.",
+    heroRating: "4.9 · Rated by 95+ patients",
+    heroImage: "/services/fat-reduction/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Body Specialist",
+    performedBySub: "Safe • Personalised • Professional",
+    stats: [
+      { n: "3–5", l: "Sessions recommended" },
+      { n: "0", l: "Days downtime" },
+      { n: "25%", l: "Fat layer reduction" },
+      { n: "100%", l: "Non-surgical" }
+    ],
+    whatIsThisTitle: "This is not",
+    whatIsThisEmphasized: "a temporary solution.",
+    whatIsThisDesc1: "Fat reduction at Cosmo Home uses FDA-cleared energy-based technologies to permanently destroy targeted fat cells. Unlike weight loss, which shrinks fat cells, our treatments eliminate them—so they cannot return.",
+    whatIsThisDesc2: "The destroyed fat cells are naturally processed and eliminated by the body's lymphatic system over 4–12 weeks. The result is a measurable, permanent reduction in fat layer thickness in the treated zone—without surgery, scars, or downtime.",
+    benefits: [
+      { icon: "🔥", b: "Permanent fat cell elimination", d: "Targeted cells are permanently destroyed and naturally eliminated" },
+      { icon: "📏", b: "Measurable fat reduction", d: "Up to 25% reduction in fat layer thickness per treatment course" },
+      { icon: "⚡", b: "No surgery required", d: "Completely non-invasive with no incisions or anaesthesia" },
+      { icon: "🌿", b: "Natural elimination", d: "Body processes destroyed fat cells through the lymphatic system" }
+    ],
+    clinicalNote: "Fat thickness is measured before and after treatment using clinical assessment tools to track and document reduction progress.",
+    sideImage: "/services/fat-reduction/2.webp",
+    whoNeedsDesc: "Designed for individuals looking to eliminate stubborn fat bulges in areas like the belly, love handles, back fat, or under the chin.",
+    notSuitable: "Cryoglobulinemia, cold urticaria, pregnancy, active hernia in the treatment zone.",
+    whoNeedsItems: [
+      { tag: "Love handles & flanks", desc: "Reducing stubborn fat pockets on the sides of the waist." },
+      { tag: "Under-chin fat", desc: "Defining the jawline by reducing submental fat." },
+      { tag: "Abdominal bulges", desc: "Eliminating localized fat in the upper and lower belly." },
+      { tag: "Thigh & back fat", desc: "Slimming down targeted bulges for a smoother fit in clothing." }
+    ],
+    machineTitle: "Clinical Fat",
+    machineEmphasized: "Elimination Technology.",
+    deviceName: "Advanced Fat Reduction System",
+    deviceSub: "FDA Cleared · Clinically Proven · Non-Invasive",
+    deviceDesc: "Our fat reduction system uses controlled energy delivery to selectively target and destroy subcutaneous fat cells while leaving surrounding tissue unharmed. The precise targeting ensures consistent, measurable results across all treatment zones.",
+    deviceFeatures: ["Selective fat cell targeting", "Surrounding tissue protection", "Real-time monitoring", "Comfortable treatment experience"],
+    deviceImage: "/services/fat-reduction/3.webp",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
+    comparisonRows: [
+      { label: "Technology", ours: "Latest-gen energy platforms", standard: "Older generation devices" },
+      { label: "Tracking", ours: "Pre/post fat thickness measurement", standard: "Visual assessment only" },
+      { label: "Protocol", ours: "Personalised zone targeting", standard: "Generic applicator placement" },
+      { label: "Results", ours: "Measurable, documented reduction", standard: "Variable outcomes" }
+    ],
+    sessionPlanDesc: "A course of 3 to 5 sessions spaced 4 weeks apart is typically recommended for optimal results.",
+    sessionPlanSteps: [
+      { n: "01", label: "Fat Thickness Analysis", duration: "15 min", detail: "We measure and mark fat deposits to position the applicators for maximum coverage and symmetry." },
+      { n: "02", label: "Cryo-Sculpting Session", duration: "45 min", detail: "Targeted fat is vacuum-drawn into the cooling panel. Cold sensation transitions to numbness within 5-10 minutes." },
+      { n: "03", label: "Active Massage", duration: "5 min", detail: "A vital manual massage breaks up frozen fat crystals to accelerate the cellular elimination process." }
+    ],
+    timelineDesc: "The body naturally processes and flushes out the destroyed fat cells over a 2 to 3 month period.",
+    timelineItems: [
+      { when: "Immediately", what: "The area feels cold, firm, and temporary numbness or redness is expected." },
+      { when: "Week 2", what: "Numbness fades, and the body's natural lymphatic clearance process begins." },
+      { when: "Week 6", what: "First visible reduction in fat layer thickness. Clothes start fitting looser." },
+      { when: "Month 3", what: "Maximum fat reduction (up to 25% of treated fat layer) is fully realized." }
+    ],
+    ctaRating: "95+ patients treated",
+    ctaTitle: "Ready to eliminate",
+    ctaTitle2: "stubborn fat permanently?",
+    ctaEmphasized: "Start now.",
+    ctaDesc: "A body assessment maps your target fat zones and designs the most effective reduction protocol for lasting results.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹18,000 / session" },
+      { label: "Duration", val: "45 minutes" },
+      { label: "Recommended", val: "3–5 sessions" },
+      { label: "Frequency", val: "Every 4 weeks" },
+      { label: "Downtime", val: "None" },
+      { label: "Performed by", val: "Body Specialist" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Fat Reduction/before.webp",
+      afterImage: "/services/before&after/Fat Reduction/after.webp",
+      treatmentName: "Advanced Fat Reduction",
+      testimonialText: "The fat on my abdomen that diet and exercise couldn't touch is now gone. Completely non-invasive and zero downtime.",
+      patientName: "Ananya R., 31",
+      subtitle: "Permanent non-surgical fat elimination"
+    },
+  },
+  "body-tightening": {
+    id: "body-tightening",
+    title: "Skin & Body",
+    titleEmphasized: "Tightening.",
+    experienceNo: "Signature Experience",
+    description: "Restore firmness and elasticity to loose, sagging skin with advanced radiofrequency and ultrasound body tightening treatments that stimulate deep collagen remodelling.",
+    heroRating: "4.8 · Rated by 110+ patients",
+    heroImage: "/services/body-tightening/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Aesthetic Specialist",
+    performedBySub: "Safe • Personalised • Professional",
+    stats: [
+      { n: "4–6", l: "Sessions recommended" },
+      { n: "0", l: "Days downtime" },
+      { n: "6 mo", l: "Progressive improvement" },
+      { n: "100%", l: "Non-invasive" }
+    ],
+    whatIsThisTitle: "This is not",
+    whatIsThisEmphasized: "a surface-level treatment.",
+    whatIsThisDesc1: "Body tightening at Cosmo Home uses radiofrequency and focused ultrasound energy to penetrate deep into the dermis and subcutaneous tissue, stimulating fibroblasts to produce new collagen and elastin fibres.",
+    whatIsThisDesc2: "Unlike topical creams or superficial treatments, our deep-tissue tightening protocols target the structural layers responsible for skin firmness. The result is a progressive, natural tightening effect that continues to improve over 3–6 months as new collagen matures.",
+    benefits: [
+      { icon: "🔬", b: "Deep collagen stimulation", d: "Energy penetrates to tissue layers that control skin structure" },
+      { icon: "📈", b: "Progressive improvement", d: "Results continue to improve over 3–6 months post-treatment" },
+      { icon: "✨", b: "Natural-looking results", d: "Gradual tightening looks natural, not surgical" },
+      { icon: "💧", b: "Skin quality improvement", d: "Improves texture, tone, and overall skin elasticity" }
+    ],
+    clinicalNote: "Skin elasticity and firmness are assessed before and after treatment. Radiofrequency temperature is monitored in real-time to ensure safe, effective collagen stimulation.",
+    sideImage: "/services/body-tightening/2.webp",
+    whoNeedsDesc: "Ideal for anyone experiencing mild to moderate skin laxity, crepey skin, or sagging after pregnancy or weight fluctuations.",
+    notSuitable: "Pacemakers, internal defibrillators, metal implants in the treatment zone, pregnancy.",
+    whoNeedsItems: [
+      { tag: "Post-pregnancy tightening", desc: "Restoring abdominal skin firmness and elasticity." },
+      { tag: "Upper arms laxity", desc: "Tightening sagging skin underneath the arms ('bat wings')." },
+      { tag: "Inner & outer thighs", desc: "Smoothing and firming loose skin around the thighs." },
+      { tag: "Crepey knee skin", desc: "Revitalizing skin structure and elasticity around the joints." }
+    ],
+    machineTitle: "Deep Collagen",
+    machineEmphasized: "Remodelling Technology.",
+    deviceName: "Radiofrequency Body Tightening System",
+    deviceSub: "FDA Cleared · Collagen Stimulating · Non-Invasive",
+    deviceDesc: "Our radiofrequency tightening system delivers controlled thermal energy to the deep dermis and subdermal tissue. The precise temperature targets activate fibroblasts—the cells responsible for collagen and elastin production—without damaging overlying skin.",
+    deviceFeatures: ["Deep dermis thermal targeting", "Real-time temperature control", "Multi-polar RF delivery", "Skin cooling protection"],
+    deviceImage: "/services/body-tightening/3.webp",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
+    comparisonRows: [
+      { label: "Depth", ours: "Deep dermis & subdermal layers", standard: "Surface level only" },
+      { label: "Monitoring", ours: "Real-time temperature tracking", standard: "Manual estimation" },
+      { label: "Protocol", ours: "Customised per skin zone", standard: "Generic applicator" },
+      { label: "Results timeline", ours: "Progressive over 6 months", standard: "Variable and short-lived" }
+    ],
+    sessionPlanDesc: "We recommend a sequence of 4 to 6 sessions scheduled 2 to 3 weeks apart to allow collagen remodeling.",
+    sessionPlanSteps: [
+      { n: "01", label: "Skin Assessment", duration: "15 min", detail: "We test skin elasticity, measure hydration, and map the treatment zones for precise energy depth." },
+      { n: "02", label: "Thermal Collagen Induction", duration: "45 min", detail: "Radiofrequency or focused ultrasound energy is delivered. Feels like pleasant, pulsing deep warmth." },
+      { n: "03", label: "Collagen Boost Infusion", duration: "10 min", detail: "A nourishing clinical serum rich in peptides and hyaluronic acid is massaged into the warm, receptive skin." }
+    ],
+    timelineDesc: "Initial tightening is visible from heat-induced collagen contraction, with progressive improvements as new collagen grows.",
+    timelineItems: [
+      { when: "Immediately", what: "Skin feels tighter and warmer. A temporary plumped, healthy glow is visible." },
+      { when: "Week 2", what: "Early collagen synthesis begins, resulting in smoother and more hydrated skin texture." },
+      { when: "Month 2", what: "Significant tightening is visible as new collagen fibers organize and strengthen." },
+      { when: "Month 6", what: "Optimal tightening and skin lift achieved. Skin feels firm, bouncy, and youthful." }
+    ],
+    ctaRating: "110+ patients tightened",
+    ctaTitle: "Ready to restore",
+    ctaTitle2: "your skin's firmness?",
+    ctaEmphasized: "Book now.",
+    ctaDesc: "A skin assessment ensures we target the correct tissue depth and select the most effective tightening protocol for your specific concern.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹10,000 / session" },
+      { label: "Duration", val: "45–60 minutes" },
+      { label: "Recommended", val: "4–6 sessions" },
+      { label: "Frequency", val: "Every 2–3 weeks" },
+      { label: "Downtime", val: "None" },
+      { label: "Performed by", val: "Aesthetic Specialist" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Body Tightening/before.webp",
+      afterImage: "/services/before&after/Body Tightening/after.webp",
+      treatmentName: "Body Skin Tightening",
+      testimonialText: "After losing weight, I had loose skin on my abdomen and arms. The body tightening sessions have noticeably firmed everything up without surgery.",
+      patientName: "Meena S., 42",
+      subtitle: "Deep radiofrequency collagen remodelling"
     },
   },
   "exosomes-prp-gfc": {
