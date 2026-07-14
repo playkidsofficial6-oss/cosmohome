@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "motion/react";
-import { ArrowRight, Menu, X, Instagram, Facebook, Youtube, Home, MessageCircle, ClipboardList, Sparkles, Heart, Award, Shield, AlertTriangle, CheckCircle, XCircle, Phone, BadgeCheck, Stethoscope, GraduationCap, Users, ChevronRight, Plus, Minus, Syringe, User, Droplet, Wind, Smile, Accessibility, Calendar } from "lucide-react";
+import { ArrowRight, Menu, X, Instagram, Facebook, Youtube, Home, MessageCircle, ClipboardList, Sparkles, Sparkle, Heart, Award, Shield, AlertTriangle, CheckCircle, XCircle, Phone, BadgeCheck, Stethoscope, GraduationCap, Users, ChevronRight, Plus, Minus, Syringe, User, Droplet, Wind, Smile, Accessibility, Calendar } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, WA_PATH } from "../../lib/constants";
 
@@ -158,12 +158,12 @@ export function Nav({ ready }: { ready: boolean }) {
               <div key={l.label} className="relative h-full flex items-center" onMouseEnter={() => l.hasDropdown ? handleMouseEnter(l.label) : handleMouseEnter('')}>
                 {l.href ? (
                   <a href={l.href} onClick={(e) => { e.preventDefault(); navigate(l.href!); }} style={B}
-                    className={`relative text-sm transition-colors tracking-wide group cursor-pointer ${activeMenu === l.label ? 'text-[#C9956A]' : hasBg ? 'text-[#5C4A42] hover:text-[#2C1810]' : 'text-[#C9956A] hover:text-[#2C1810]'}`}>
+                    className={`relative text-[15px] transition-colors tracking-wide group cursor-pointer ${activeMenu === l.label ? 'text-[#C9956A]' : hasBg ? 'text-[#5C4A42] hover:text-[#2C1810]' : 'text-[#C9956A] hover:text-[#2C1810]'}`}>
                     {l.label}
                   </a>
                 ) : (
                   <button onClick={l.action} style={B}
-                    className={`cursor-pointer relative text-sm transition-colors tracking-wide group ${activeMenu === l.label ? 'text-[#C9956A]' : hasBg ? 'text-[#5C4A42] hover:text-[#2C1810]' : 'text-[#C9956A] hover:text-[#2C1810]'}`}>
+                    className={`cursor-pointer relative text-[15px] transition-colors tracking-wide group ${activeMenu === l.label ? 'text-[#C9956A]' : hasBg ? 'text-[#5C4A42] hover:text-[#2C1810]' : 'text-[#C9956A] hover:text-[#2C1810]'}`}>
                     {l.label}
                   </button>
                 )}
@@ -195,12 +195,12 @@ export function Nav({ ready }: { ready: boolean }) {
                 transition={{ duration: 0.3, ease: EASE }}
                 onMouseEnter={() => handleMouseEnter("Treatments")}
                 onMouseLeave={handleMouseLeave}
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-[1000px] bg-[#FAF7F2] shadow-2xl rounded-xl border border-[#E8E1D7] overflow-hidden z-[5]"
+                className="absolute top-full inset-x-6 md:inset-x-16 lg:inset-x-24 mt-1 bg-[#FAF7F2] shadow-2xl rounded-xl border border-[#E8E1D7] overflow-hidden z-[5]"
               >
                 <div className="flex h-[410px]">
                   {/* Left Column: Categories */}
-                  <div className="w-[22%] border-r border-[#E8E1D7]/50 p-6 flex flex-col justify-between h-full">
-                    <div className="flex flex-col gap-1 overflow-y-auto custom-scrollbar flex-1 pr-1">
+                  <div className="w-[22%] border-r border-[#E8E1D7]/50 p-6 flex flex-col justify-start h-full">
+                    <div className="flex flex-col gap-1.5 w-full">
                       {(Object.keys(MEGA_MENU_CONTENT) as Array<keyof typeof MEGA_MENU_CONTENT>).map((cat) => {
                         const Icon = MEGA_MENU_CONTENT[cat].icon;
                         const isActive = activeCategory === cat;
@@ -220,17 +220,6 @@ export function Nav({ ready }: { ready: boolean }) {
                         );
                       })}
                     </div>
-                    {/* The circled footer: EXPERT-LED • ETHICAL • PERSONAL */}
-                    <div className="pt-6 mt-6 border-t border-[#E8E1D7]/40 flex flex-col items-center justify-center shrink-0">
-                      <div className="flex items-center gap-1.5 justify-center">
-                        <div className="h-[1px] bg-[#2C1810]/10 w-8" />
-                        <span className="text-[#C9956A] text-[9px] leading-none shrink-0 font-normal select-none">✦</span>
-                        <div className="h-[1px] bg-[#2C1810]/10 w-8" />
-                      </div>
-                      <p style={M} className="text-[9px] tracking-[0.2em] text-[#C9956A]/75 font-semibold mt-2.5 text-center uppercase">
-                        Expert-Led • Ethical • Personal
-                      </p>
-                    </div>
                   </div>
 
                   {/* Dynamic Content Panel (Middle + Right) */}
@@ -249,17 +238,17 @@ export function Nav({ ready }: { ready: boolean }) {
                                   const subcategories = catData.subcategories as Record<string, string[]>;
                                   const subKeys = Object.keys(subcategories);
                                   return (
-                                    <div className={`grid ${subKeys.length === 3 ? 'grid-cols-3' : subKeys.length === 2 ? 'grid-cols-2' : 'grid-cols-1'} gap-6`}>
+                                    <div className={`grid ${subKeys.length === 3 ? 'grid-cols-3' : subKeys.length === 2 ? 'grid-cols-2' : 'grid-cols-1'} gap-8`}>
                                       {subKeys.map((subName) => (
                                         <div key={subName} className="flex flex-col">
-                                          <h4 style={B} className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#C9956A] mb-1.5">{subName}</h4>
+                                          <h4 style={B} className="text-[12px] font-semibold tracking-[0.2em] uppercase text-[#C9956A] mb-1.5">{subName}</h4>
                                           {/* Signature Divider Underline (✦ Symbol + Custom Width) */}
-                                          <div className={`flex items-center gap-1.5 mb-4.5 ${subName.length > 12 ? "w-[125px]" : (subName.length > 8 ? "w-[95px]" : "w-[42px]")}`}>
+                                          <div className={`flex items-center gap-1.5 mb-4.5 ${subName.length > 12 ? "w-[135px]" : (subName.length > 8 ? "w-[105px]" : "w-[45px]")}`}>
                                             <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
                                             <span className="text-[#C9956A] text-[9px] leading-none shrink-0 font-normal select-none">✦</span>
                                             <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
                                           </div>
-                                          <div className="flex flex-col gap-4">
+                                          <div className={subKeys.length === 1 ? "grid grid-cols-2 gap-x-12 gap-y-4" : "flex flex-col gap-4"}>
                                             {subcategories[subName].map((treatment) => (
                                               <a
                                                 href={`/service/${getTreatmentSlug(treatment, activeCategory)}`}
@@ -270,9 +259,10 @@ export function Nav({ ready }: { ready: boolean }) {
                                                 }}
                                                 key={treatment}
                                                 style={B}
-                                                className="text-[13px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors leading-tight"
+                                                className="flex items-center gap-2.5 text-[15px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors leading-tight group/item"
                                               >
-                                                {treatment}
+                                                <Sparkle size={10} className="text-[#C9956A] fill-[#C9956A] shrink-0 transition-transform duration-300 group-hover/item:scale-110" />
+                                                <span>{treatment}</span>
                                               </a>
                                             ))}
                                           </div>
@@ -283,15 +273,15 @@ export function Nav({ ready }: { ready: boolean }) {
                                 })()
                               ) : (
                                 // Flat view for categories without subcategories
-                                <div className="flex flex-col">
-                                  <h3 style={B} className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#C9956A] mb-1.5">{activeCategory}</h3>
+                                <div className="flex flex-col w-full">
+                                  <h3 style={B} className="text-[12px] font-semibold tracking-[0.2em] uppercase text-[#C9956A] mb-1.5">{activeCategory}</h3>
                                   {/* Signature Divider Underline (✦ Symbol + Custom Width) */}
-                                  <div className={`flex items-center gap-1.5 mb-5 ${activeCategory.length > 8 ? "w-[95px]" : "w-[42px]"}`}>
+                                  <div className={`flex items-center gap-1.5 mb-5 ${activeCategory.length > 8 ? "w-[105px]" : "w-[45px]"}`}>
                                     <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
                                     <span className="text-[#C9956A] text-[9px] leading-none shrink-0 font-normal select-none">✦</span>
                                     <div className="h-[1px] bg-[#2C1810]/15 flex-1" />
                                   </div>
-                                  <div className="flex flex-col gap-5">
+                                  <div className={catData.treatments.length > 4 ? "grid grid-cols-2 gap-x-12 gap-y-4" : "flex flex-col gap-4"}>
                                     {catData.treatments.map((treatment: string) => (
                                       <a
                                         href={`/service/${getTreatmentSlug(treatment, activeCategory)}`}
@@ -302,9 +292,10 @@ export function Nav({ ready }: { ready: boolean }) {
                                         }}
                                         key={treatment}
                                         style={B}
-                                        className="text-[14px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors leading-tight"
+                                        className="flex items-center gap-2.5 text-[15px] font-normal text-[#2C1810] hover:text-[#C9956A] transition-colors leading-tight group/item"
                                       >
-                                        {treatment}
+                                        <Sparkle size={10} className="text-[#C9956A] fill-[#C9956A] shrink-0 transition-transform duration-300 group-hover/item:scale-110" />
+                                        <span>{treatment}</span>
                                       </a>
                                     ))}
                                   </div>
@@ -313,19 +304,19 @@ export function Nav({ ready }: { ready: boolean }) {
                             </div>
 
                             {activeCategory !== "Face" && (
-                              <div className="w-[260px] shrink-0 border border-[#C9956A]/15 bg-[#C9956A]/[0.02] rounded-2xl p-5 flex flex-col justify-between select-none">
+                              <div className="w-[280px] shrink-0 border border-[#C9956A]/15 bg-[#C9956A]/[0.02] rounded-2xl p-5 flex flex-col justify-between select-none">
                                 <div>
-                                  <span className="inline-block px-2.5 py-0.5 bg-[#C9956A]/10 text-[#C9956A] text-[8px] font-semibold tracking-[0.2em] uppercase rounded-full mb-3" style={M}>
+                                  <span className="inline-block px-2.5 py-0.5 bg-[#C9956A]/10 text-[#C9956A] text-[9px] font-semibold tracking-[0.2em] uppercase rounded-full mb-3" style={M}>
                                     {activeCategory === "Skin" ? "Dermal Science" :
                                      activeCategory === "Hair" ? "Follicle Science" :
                                      activeCategory === "Body" ? "Body Sculpting" : "Cellular Healing"}
                                   </span>
-                                  <h4 style={D} className="text-[14px] font-medium text-[#2C1810] mb-2 leading-snug">
+                                  <h4 style={D} className="text-[15px] font-medium text-[#2C1810] mb-2 leading-snug">
                                     {activeCategory === "Skin" ? "Healthy Skin Barrier" :
                                      activeCategory === "Hair" ? "Follicle Nourishment" :
                                      activeCategory === "Body" ? "Precision Contouring" : "Regenerative Purity"}
                                   </h4>
-                                  <p style={B} className="text-[11px] text-[#5C4A42] leading-relaxed font-light">
+                                  <p style={B} className="text-[12px] text-[#5C4A42] leading-relaxed font-light">
                                     {activeCategory === "Skin" ? "We target deeper skin layers to rebuild collagen fibers and fade stretch marks organically." :
                                      activeCategory === "Hair" ? "Advanced growth therapies to awaken dormant hair roots and improve overall density." :
                                      activeCategory === "Body" ? "Custom body shaping protocols leveraging advanced high-intensity platforms." :
@@ -337,7 +328,7 @@ export function Nav({ ready }: { ready: boolean }) {
                                     activeCategory === "Hair" ? ["Root Stimulation", "Zero Hair Shedding", "Sustained Density"] :
                                     activeCategory === "Body" ? ["Targeted Definition", "Muscle Sculpting", "Non-Invasive"] :
                                     activeCategory === "Injectables" ? ["Autologous Purity", "Rapid Regeneration", "Natural Results"] : []).map(f => (
-                                      <div key={f} className="flex items-center gap-2 text-[9px] text-[#8A6D5C] font-semibold uppercase tracking-wider" style={M}>
+                                      <div key={f} className="flex items-center gap-2 text-[10px] text-[#8A6D5C] font-semibold uppercase tracking-wider" style={M}>
                                         <span className="text-[#C9956A] text-[7px]">✦</span>
                                         <span>{f}</span>
                                       </div>
@@ -347,8 +338,8 @@ export function Nav({ ready }: { ready: boolean }) {
                             )}
                           </div>
 
-                          {/* View All link at the bottom of treatments area */}
-                          <div className="pt-6 mt-auto">
+                          {/* Bottom Area: View All link + EXPERT-LED Footer */}
+                          <div className="pt-6 mt-auto border-t border-[#E8E1D7]/40 flex items-center justify-between shrink-0">
                             <a
                               href={`/service/${getTreatmentSlug(hasSubs ? Object.values(catData.subcategories as Record<string, string[]>)[0][0] : catData.treatments[0], activeCategory)}`}
                               onClick={(e) => {
@@ -363,6 +354,15 @@ export function Nav({ ready }: { ready: boolean }) {
                               {catData.viewAll}
                               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                             </a>
+
+                            {/* Moved tag: EXPERT-LED • ETHICAL • PERSONAL */}
+                            <div className="flex items-center gap-2">
+                              <span className="text-[#C9956A] text-[9px] leading-none shrink-0 font-normal select-none">✦</span>
+                              <p style={M} className="text-[9px] tracking-[0.2em] text-[#C9956A]/75 font-semibold uppercase">
+                                Expert-Led • Ethical • Personal
+                              </p>
+                              <span className="text-[#C9956A] text-[9px] leading-none shrink-0 font-normal select-none">✦</span>
+                            </div>
                           </div>
                         </div>
 
@@ -377,7 +377,7 @@ export function Nav({ ready }: { ready: boolean }) {
                               />
                             </div>
                             <div className="px-3 py-3 border-t border-[#E8E1D7]/80 mt-2">
-                              <p style={D} className="text-[13px] text-[#2C1810] leading-relaxed">
+                              <p style={D} className="text-[14px] text-[#2C1810] leading-relaxed">
                                 {catData.desc}
                               </p>
                             </div>
