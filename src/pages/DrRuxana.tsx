@@ -332,7 +332,7 @@ export default function DrRuxanaPage() {
               href="/book-consultation"
               whileHover={{ scale: 1.04, boxShadow: "0 0 36px rgba(201,149,106,0.55)" }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-xl shadow-xl shadow-[#C9956A]/20 font-bold group"
+              className="w-full sm:w-auto max-w-[300px] sm:max-w-none inline-flex items-center justify-center gap-3 px-6 sm:px-10 py-5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-xl shadow-xl shadow-[#C9956A]/20 font-bold group whitespace-nowrap"
               style={B}
             >
               Book Consultation
@@ -343,7 +343,7 @@ export default function DrRuxanaPage() {
               href="/service"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center justify-center gap-2.5 px-9 py-5 rounded-xl border border-[#2C1810]/15 hover:border-[#C9956A] text-[#2C1810] hover:text-[#C9956A] text-xs tracking-[0.18em] uppercase transition-all duration-300 font-bold"
+              className="w-full sm:w-auto max-w-[300px] sm:max-w-none inline-flex items-center justify-center gap-2.5 px-6 sm:px-9 py-5 rounded-xl border border-[#2C1810]/15 hover:border-[#C9956A] text-[#2C1810] hover:text-[#C9956A] text-xs tracking-[0.18em] uppercase transition-all duration-300 font-bold whitespace-nowrap"
               style={B}
             >
               Explore Treatments
