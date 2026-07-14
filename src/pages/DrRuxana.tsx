@@ -55,85 +55,150 @@ export default function DrRuxanaPage() {
       className="min-h-screen bg-[#FAF7F2] text-[#2C1810] pt-16 overflow-x-hidden"
       style={B}
     >
-      {/* ═╦═ 1. CINEMATIC HERO SECTION ═╦═ */}
-      <section className="relative min-h-[85vh] flex flex-col justify-center bg-[#FAF6F0] py-16 md:py-28 overflow-hidden border-b border-[#2C1810]/5">
-        {/* Background Visuals */}
+      {/* ═╦═ 1. ADVANCED MODERN HERO SECTION ═╦═ */}
+      <section className="relative min-h-[90vh] flex flex-col justify-center bg-[#FAF6F0] py-16 md:py-28 overflow-hidden border-b border-[#2C1810]/5">
+        {/* Advanced Grid & Glow Backdrops */}
         <div className="absolute inset-0 opacity-[0.03] z-0 pointer-events-none" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
         
+        {/* Subtle grid backdrop for clinical precision */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(201,149,106,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(201,149,106,0.06)_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] opacity-40 z-0 pointer-events-none" />
+
         <motion.div
-          className="absolute top-10 right-10 w-[550px] h-[550px] rounded-full pointer-events-none z-0"
-          style={{ background: "radial-gradient(circle, rgba(201,149,106,0.12) 0%, transparent 65%)" }}
-          animate={{ scale: [1, 1.1, 1], x: [0, 10, 0], y: [0, -10, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-20 -right-20 w-[650px] h-[650px] rounded-full pointer-events-none z-0"
+          style={{ background: "radial-gradient(circle, rgba(201,149,106,0.15) 0%, transparent 70%)" }}
+          animate={{ scale: [1, 1.15, 1], x: [0, 20, 0], y: [0, -20, 0] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 lg:px-24 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             
             {/* Left Content Column */}
             <div className="lg:col-span-6 flex flex-col justify-center">
               <FadeUp>
-                <Tag>The Physician & Founder</Tag>
-                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[4.8rem] text-[#2C1810] leading-[1.05] mt-4 mb-6 font-light tracking-tight" style={D}>
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#C9956A]/10 text-[#C9956A] text-[9px] font-semibold tracking-[0.25em] uppercase rounded-full mb-6 w-fit" style={M}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C9956A] animate-pulse" />
+                  Medical Director & Founder
+                </div>
+                
+                <h1 className="text-5xl sm:text-7xl lg:text-[5.2rem] text-[#2C1810] leading-[1.0] mt-2 mb-6 font-light tracking-tight" style={D}>
                   Dr. Ruxana <span className="serif text-[#C9956A]">K.</span>
                 </h1>
                 
-                <p className="text-xs tracking-[0.25em] uppercase text-[#C9956A] font-semibold mb-6" style={M}>
-                  MBBS · MRCS · Dip. Aesthetic Med. · Fellow, BCAM
-                </p>
+                {/* Horizontal line divider with signature gold star */}
+                <div className="flex items-center gap-3 my-6 w-full max-w-lg">
+                  <div className="h-[1px] bg-[#C9956A]/25 flex-grow hidden sm:block" />
+                  <span className="text-[9px] sm:text-[10px] tracking-[0.18em] uppercase text-[#C9956A] font-bold text-center leading-relaxed" style={M}>
+                    MBBS · MRCS · Dip. Aesthetic Med. · Fellow, BCAM
+                  </span>
+                  <div className="h-[1px] bg-[#C9956A]/25 flex-grow hidden sm:block" />
+                </div>
 
-                <p className="text-base sm:text-lg text-[#5C4A42] leading-relaxed mb-8 max-w-lg font-normal">
+                <p className="text-base sm:text-[1.05rem] text-[#5C4A42] leading-[1.8] mb-8 max-w-xl font-light">
                   Dr. Ruxana did not enter aesthetic medicine to sell treatments. She entered it because she witnessed, again and again, how much a woman's confidence shapes her entire life—her relationships, her ambitions, her sense of self.
                 </p>
 
-                <div className="bg-[#E8DDD1]/40 border-l-2 border-[#C9956A] pl-5 py-2 mb-8 max-w-md">
-                  <p className="text-sm md:text-base text-[#2C1810] leading-relaxed italic" style={D}>
-                    "I want every patient to leave feeling more like themselves—not different. More radiant. More free."
+                {/* Glassmorphic Interactive Quote */}
+                <div className="relative bg-[#FAF7F2]/40 backdrop-blur-md border border-[#C9956A]/15 rounded-3xl p-6 mb-8 max-w-xl shadow-[0_10px_30px_rgba(44,24,16,0.02)] overflow-hidden">
+                  <div className="absolute top-0 left-0 w-2 h-full bg-[#C9956A]" />
+                  <p className="text-sm md:text-[0.95rem] text-[#2C1810] leading-relaxed italic pr-4" style={D}>
+                    "Aesthetic medicine is an art of restraint. I want every patient to leave feeling more like themselves—not different. More radiant. More free."
                   </p>
+                  <div className="mt-3 flex justify-between items-center">
+                    <p className="text-[9px] text-[#C9956A] tracking-[0.25em] uppercase font-bold" style={M}>— Personal Pledge</p>
+                    <span className="text-xs">💛</span>
+                  </div>
                 </div>
 
+                {/* Call To Actions */}
                 <div className="flex flex-wrap gap-4 items-center">
                   <CTAButtons />
                 </div>
               </FadeUp>
             </div>
 
-            {/* Right Image/Arch Column */}
-            <div className="lg:col-span-6 flex justify-center items-end relative h-[380px] sm:h-[480px] lg:h-[580px] w-full">
-              <div className="relative h-full w-[280px] sm:w-[360px] lg:w-[440px] flex justify-center items-end">
-                {/* Arch background */}
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1, ease: EASE }}
-                  className="absolute bottom-0 left-0 w-full h-[90%] bg-[#EBE0D3] rounded-t-[300px] z-0 shadow-inner" 
-                />
+            {/* Right Column: Advanced Overlapping Interactive Collage */}
+            <div className="lg:col-span-6 flex justify-center items-center relative">
+              <FadeUp delay={0.2} className="relative w-full max-w-sm sm:max-w-md lg:max-w-xl">
+                
+                {/* Decorative floating geometry */}
+                <div className="absolute -top-12 -left-12 w-24 h-24 bg-[#C9956A]/5 rounded-full blur-xl pointer-events-none" />
+                <div className="absolute -bottom-16 -right-12 w-36 h-36 bg-[#2C1810]/5 rounded-full blur-2xl pointer-events-none" />
 
-                <motion.img
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1.1, delay: 0.15, ease: EASE }}
-                  src="/doctor/ruxana.webp"
-                  alt="Dr. Ruxana K"
-                  className="h-[95%] w-auto object-contain object-bottom relative z-10 drop-shadow-2xl"
-                />
+                {/* Main Luxury Borderless Image Frame */}
+                <div className="relative z-10 w-full group">
+                  {/* Luxury offset gold border behind the image */}
+                  <div className="absolute inset-0 border border-[#C9956A]/35 rounded-[32px] translate-x-3.5 translate-y-3.5 pointer-events-none transition-transform duration-700 group-hover:translate-x-1.5 group-hover:translate-y-1.5" />
+                  
+                  {/* The Image Wrapper with a high-end drop shadow */}
+                  <div className="relative aspect-[3.8/4.5] w-full rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(44,24,16,0.12)] border border-[#E8E1D7]/80 bg-[#E8DDD1]">
+                    <img
+                      src="/hero/main banner.webp"
+                      alt="Dr. Ruxana K at Cosmo Home"
+                      className="w-full h-full object-cover object-right transition-transform duration-[1.8s] ease-out group-hover:scale-105"
+                    />
+                    {/* Linear high-tech glass reflex overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#2C1810]/40 via-transparent to-white/10 pointer-events-none" />
+                    
+                    {/* Floating organic label badge inside the image directly */}
+                    <div className="absolute bottom-5 left-6 bg-white/20 backdrop-blur-md border border-white/25 px-4 py-2 rounded-full text-[9px] text-[#FAF7F2] font-semibold uppercase tracking-[0.2em]" style={M}>
+                      ✦ Cosmo Home Clinic ✦
+                    </div>
+                  </div>
+                </div>
 
-                {/* Overlapping credentials plaque */}
+                {/* Floating Glassmorphic Stats Plate (Overlapping bottom right) */}
                 <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="absolute bottom-12 -right-4 sm:-right-8 bg-[#2C1810] text-[#FAF7F2] p-5 z-20 shadow-2xl rounded-l-none rounded-r-xl border-l border-[#C9956A]/40 min-w-[200px]"
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  whileHover={{ y: -5 }}
+                  className="absolute bottom-10 -right-6 z-20 bg-white/70 backdrop-blur-xl border border-white/80 text-[#2C1810] p-6 rounded-3xl shadow-[0_15px_40px_rgba(44,24,16,0.08)] max-w-[200px] flex flex-col gap-3 group cursor-default"
                 >
-                  <span className="text-[8px] tracking-[0.2em] uppercase text-[#C9956A] font-semibold block mb-2" style={M}>Clinical Registry</span>
-                  <div className="h-[1px] bg-[#FAF7F2]/10 mb-3" />
-                  <p className="text-[11px] leading-[1.8] text-[#FAF7F2]/80 font-normal">
-                    ✦ Medical Director<br />
-                    ✦ Board Certified Clinician<br />
-                    ✦ 10+ Years Experience
-                  </p>
+                  <div className="flex flex-col border-b border-[#2C1810]/5 pb-2.5">
+                    <span className="text-2xl font-light text-[#C9956A]" style={D}>10+ Yrs</span>
+                    <span className="text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Clinical Practice</span>
+                  </div>
+                  <div className="flex flex-col border-b border-[#2C1810]/5 pb-2.5">
+                    <span className="text-2xl font-light text-[#C9956A]" style={D}>BCAM</span>
+                    <span className="text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Fellowship</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-2xl font-light text-[#C9956A]" style={D}>MRCS</span>
+                    <span className="text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Surgical Board</span>
+                  </div>
                 </motion.div>
-              </div>
+
+                {/* Floating Circular High-Tech Badge (Overlapping top left) */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                  className="absolute -top-6 -left-6 z-20 w-24 h-24 bg-[#2C1810] text-[#FAF7F2] rounded-full shadow-2xl flex items-center justify-center border border-[#C9956A]/30 overflow-hidden group cursor-pointer"
+                >
+                  {/* Rotating circular text SVG */}
+                  <motion.svg 
+                    viewBox="0 0 100 100" 
+                    className="w-full h-full origin-center fill-current text-[#C9956A]"
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+                  >
+                    <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+                    <text fontFamily="monospace" fontSize="7.5" fontWeight="bold" letterSpacing="2.5">
+                      <textPath href="#circlePath">
+                        ✦ CLINICAL EXCELLENCE ✦ COSMO HOME
+                      </textPath>
+                    </text>
+                  </motion.svg>
+                  {/* Small gold leaf logo in the absolute center */}
+                  <div className="absolute inset-0 flex items-center justify-center text-sm font-light text-[#FAF7F2] select-none">
+                    ✨
+                  </div>
+                </motion.div>
+
+              </FadeUp>
             </div>
 
           </div>
@@ -195,7 +260,7 @@ export default function DrRuxanaPage() {
       <section className="py-16 md:py-28 px-6 md:px-16 lg:px-24 bg-[#E8DDD1]/35 border-y border-[#2C1810]/5 relative">
         <div className="absolute inset-0 opacity-[0.02] z-0 pointer-events-none" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
         <div className="max-w-4xl mx-auto relative z-10">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
             <Tag>The Professional Journey</Tag>
             <h2 className="text-3xl sm:text-5xl text-[#2C1810] mt-3 mb-6 font-light" style={D}>
@@ -253,7 +318,7 @@ export default function DrRuxanaPage() {
       <section className="py-20 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2] text-[#2C1810] relative">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <Tag>Begin Your Journey</Tag>
-          
+
           <h2 className="text-4xl sm:text-6xl text-[#2C1810] mt-4 mb-6 leading-tight font-light" style={D}>
             Schedule a private <span className="serif text-[#C9956A]">consultation</span><br />with Dr. Ruxana.
           </h2>
@@ -270,7 +335,7 @@ export default function DrRuxanaPage() {
               className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-xl shadow-xl shadow-[#C9956A]/20 font-bold group"
               style={B}
             >
-              Book Consultation 
+              Book Consultation
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform shrink-0" />
             </motion.a>
 
