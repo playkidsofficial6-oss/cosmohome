@@ -25,12 +25,117 @@ const CATEGORIES: Array<{ key: string; label: string; icon: IconType }> = [
 ];
 
 const CATEGORY_MAPPING: Record<string, string[]> = {
-  Face: ["hifu", "hydrafacial-medifacial", "mesopeels-carbon-peel"],
-  Skin: ["laser-pigment-reduction", "laser-scar-reduction", "phototherapy", "excimer-laser"],
-  Hair: ["laser-hair-reduction"],
-  Laser: ["laser-pigment-reduction", "laser-scar-reduction", "excimer-laser", "laser-hair-reduction", "mesopeels-carbon-peel"],
+  Face: [
+    "hifu",
+    "hydrafacial-medifacial",
+    "mesopeels-carbon-peel",
+    "botox",
+    "fillers",
+    "vampire-lift",
+    "thread-lift",
+    "skin-boosters",
+    "mesopeels",
+    "carbon-peel",
+    "led-therapy",
+    "mnrf",
+    "co2-laser",
+    "exosomes",
+    "laser-toning",
+    "mnrf-gfc"
+  ],
+  Skin: [
+    "skin-mnrf",
+    "skin-dermapen",
+    "skin-co2-laser",
+    "skin-prp",
+    "skin-gfc",
+    "skin-exosomes"
+  ],
+  Hair: [
+    "laser-hair-reduction",
+    "hair-prp",
+    "hair-gfc",
+    "hair-exosome",
+    "hair-dutexome",
+    "hair-mesotherapy",
+    "hair-monothreads"
+  ],
+  Laser: [
+    "laser-pigment-reduction",
+    "laser-scar-reduction",
+    "excimer-laser",
+    "laser-hair-reduction",
+    "mesopeels-carbon-peel",
+    "co2-laser",
+    "skin-co2-laser",
+    "laser-toning",
+    "carbon-peel"
+  ],
   Body: ["muscle-sculpting"],
-  Injectables: ["exosomes-prp-gfc"]
+  Injectables: [
+    "exosomes-prp-gfc",
+    "botox",
+    "fillers",
+    "vampire-lift",
+    "thread-lift",
+    "skin-boosters",
+    "exosomes",
+    "skin-prp",
+    "skin-gfc",
+    "skin-exosomes",
+    "hair-prp",
+    "hair-gfc",
+    "hair-exosome",
+    "hair-dutexome",
+    "hair-monothreads"
+  ]
+};
+
+const SERVICE_TAG_MAPPING: Record<string, string> = {
+  // Face treatments
+  "hifu": "Face : Anti Ageing",
+  "botox": "Face : Anti Ageing",
+  "fillers": "Face : Anti Ageing",
+  "vampire-lift": "Face : Anti Ageing",
+  "thread-lift": "Face : Anti Ageing",
+  "skin-boosters": "Face : Skin Renewal",
+  "mesopeels": "Face : Acne",
+  "carbon-peel": "Face : Acne",
+  "led-therapy": "Face : Acne",
+  "mnrf": "Face : Acne",
+  "co2-laser": "Face : Acne",
+  "exosomes": "Face : Skin Renewal",
+  "laser-toning": "Face : Skin Renewal",
+  "mnrf-gfc": "Face : Skin Renewal",
+  "hydrafacial-medifacial": "Face : Skin Renewal",
+  "mesopeels-carbon-peel": "Face : Acne",
+
+  // Skin treatments
+  "skin-mnrf": "Skin : Stretch Marks",
+  "skin-dermapen": "Skin : Stretch Marks",
+  "skin-co2-laser": "Skin : Stretch Marks",
+  "skin-prp": "Skin : Stretch Marks",
+  "skin-gfc": "Skin : Stretch Marks",
+  "skin-exosomes": "Skin : Stretch Marks",
+  "laser-pigment-reduction": "Skin : Laser",
+  "laser-scar-reduction": "Skin : Laser",
+  "phototherapy": "Skin : Laser",
+  "excimer-laser": "Skin : Laser",
+
+  // Hair treatments
+  "laser-hair-reduction": "Hair : Laser",
+  "hair-prp": "Hair : Scalp Therapy",
+  "hair-gfc": "Hair : Scalp Therapy",
+  "hair-exosome": "Hair : Scalp Therapy",
+  "hair-dutexome": "Hair : Scalp Therapy",
+  "hair-mesotherapy": "Hair : Scalp Therapy",
+  "hair-monothreads": "Hair : Scalp Therapy",
+
+  // Body treatments
+  "muscle-sculpting": "Body : Sculpting",
+
+  // Injectables
+  "exosomes-prp-gfc": "Injectables"
 };
 
 const getServiceCategory = (id: string): string => {
@@ -570,7 +675,7 @@ export default function ServicesListPage() {
                     {/* Category Badge */}
                     <div className="mb-3 shrink-0">
                       <span className="inline-block px-3 py-1 bg-[#C9956A]/10 border border-[#C9956A]/20 text-[#C9956A] text-[9px] tracking-widest uppercase rounded-full font-bold" style={M}>
-                        {category}
+                        {SERVICE_TAG_MAPPING[key] || category}
                       </span>
                     </div>
 
