@@ -158,12 +158,12 @@ export function Nav({ ready }: { ready: boolean }) {
               <div key={l.label} className="relative h-full flex items-center" onMouseEnter={() => l.hasDropdown ? handleMouseEnter(l.label) : handleMouseEnter('')}>
                 {l.href ? (
                   <a href={l.href} onClick={(e) => { e.preventDefault(); navigate(l.href!); }} style={B}
-                    className={`relative text-sm transition-colors tracking-wide group cursor-pointer ${activeMenu === l.label ? 'text-[#C9956A]' : hasBg ? 'text-[#5C4A42] hover:text-[#2C1810]' : 'text-[#C9956A] hover:text-[#FAF7F2]'}`}>
+                    className={`relative text-sm transition-colors tracking-wide group cursor-pointer ${activeMenu === l.label ? 'text-[#C9956A]' : hasBg ? 'text-[#5C4A42] hover:text-[#2C1810]' : 'text-[#C9956A] hover:text-[#2C1810]'}`}>
                     {l.label}
                   </a>
                 ) : (
                   <button onClick={l.action} style={B}
-                    className={`cursor-pointer relative text-sm transition-colors tracking-wide group ${activeMenu === l.label ? 'text-[#C9956A]' : hasBg ? 'text-[#5C4A42] hover:text-[#2C1810]' : 'text-[#C9956A] hover:text-[#FAF7F2]'}`}>
+                    className={`cursor-pointer relative text-sm transition-colors tracking-wide group ${activeMenu === l.label ? 'text-[#C9956A]' : hasBg ? 'text-[#5C4A42] hover:text-[#2C1810]' : 'text-[#C9956A] hover:text-[#2C1810]'}`}>
                     {l.label}
                   </button>
                 )}
