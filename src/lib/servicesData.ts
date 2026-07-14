@@ -2293,7 +2293,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Acne & Renewal Experience",
     description: "Gently resurface the skin, clear congestion, and target dark spots with medical-grade, botanical-infused chemical peels customized for your skin type.",
     heroRating: "4.8 · Rated by 190+ patients",
-    heroImage: "/services/hydrafacial-medifacial/1.webp",
+    heroImage: "/services/Mesophils/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Clinical Aesthetic Expert",
     performedBySub: "Safe • Botanical Peels • Resurfacing",
@@ -2315,7 +2315,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "⚡", b: "Gentle Recovery", d: "Progressive peeling that avoids aggressive raw skin shedding." }
     ],
     clinicalNote: "Acid selection is customized based on your skin sensitivity and Fitzpatrick classification.",
-    sideImage: "/services/hydrafacial-medifacial/2.webp",
+    sideImage: "/services/Mesophils/2.webp",
     machineTitle: "Botanical acid infusions",
     machineEmphasized: "for dermal clarity.",
     deviceName: "Calibrated Mesopeel Serums",
