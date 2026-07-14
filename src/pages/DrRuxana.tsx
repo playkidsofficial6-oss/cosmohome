@@ -228,7 +228,7 @@ export default function DrRuxanaPage() {
       </section>
 
       {/* ═╦═ 2. PHILOSOPHY OF CARE (OPTIMIZED SPLIT-LAYOUT) ═╦═ */}
-      <section className="py-20 md:py-32 px-6 md:px-16 lg:px-24 bg-[#FAF7F2] relative overflow-hidden border-b border-[#2C1810]/5">
+      <section className="py-12 md:py-16 px-6 md:px-16 lg:px-24 bg-[#FAF7F2] relative overflow-hidden border-b border-[#2C1810]/5">
         {/* Subtle decorative grid patterns */}
         <div className="absolute inset-0 opacity-[0.02] z-0 pointer-events-none" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
         <div className="absolute top-1/4 right-0 w-[450px] h-[450px] rounded-full pointer-events-none z-0 opacity-30" style={{ background: "radial-gradient(circle, rgba(201,149,106,0.08) 0%, transparent 70%)" }} />
