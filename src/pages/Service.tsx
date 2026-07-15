@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Stethoscope, Lock, Clock, Check } from "lucide-react";
@@ -186,7 +186,7 @@ export default function ServicePage() {
   const { slug } = useParams<{ slug: string }>();
   const service = SERVICES_DATA[slug || "hydrafacial-medifacial"] || SERVICES_DATA["hydrafacial-medifacial"];
   const serviceTitle = service.title + (service.titleEmphasized ? " " + service.titleEmphasized.replace(/\.$/, "") : "");
-  
+
   useSEO({
     title: `${serviceTitle} | Cosmo Home Aesthetic Medicine`,
     description: `${service.description} Learn about procedure details, benefits, pricing, and results timeline for ${serviceTitle} at Cosmo Home.`,

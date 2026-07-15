@@ -102,7 +102,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Signature Experience",
     description: "Rediscover the elegant architecture of your face. Our signature HIFU lift works deep within the SMAS layer—where structural definition begins—to gently sculpt, lift, and refine your contours. No surgeries, no downtime, just the quiet confidence of your natural beauty restored.",
     heroRating: "4.8 · Rated by 190+ patients",
-    heroImage: "/services/hifu/1.webp",
+    heroImage: "/services/hifu/hifu-new.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Doctor-Supervised Care",
     performedBySub: "Safe • Personalised • Professional",
@@ -131,7 +131,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "MEDICAL-GRADE • PRECISION • PERSONALISED CARE",
     deviceDesc: "We use advanced, clinically proven aesthetic technologies designed to deliver precise, consistent, and comfortable treatments. Every procedure is tailored to your skin condition and treatment goals, ensuring safe care with natural-looking results.",
     deviceFeatures: ["Medical-Grade Technology", "Precision Treatment", "Personalised Protocols", "Comfort Focused"],
-    deviceImage: "/services/hifu/hifu-cosmo.webp",
+    deviceImage: "/services/products-tech-images/ultraformer.webp",
     comparisonTitle: "COSMO HOME vs Conventional Treatment",
     comparisonRows: [
       { label: "Technology", ours: "Medical-grade aesthetic devices", standard: "Standard equipment" },
@@ -869,7 +869,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA Cleared · Medical-Grade HIFEM · Non-Invasive Toning",
     deviceDesc: "The HIFEM system penetrates deep into the subcutaneous tissue, inducing rapid muscle contractions. HIFEM technology delivers supramaximal muscle contractions that strengthen targeted muscles while stimulating natural fat metabolism—creating a firmer, more sculpted body without surgery or downtime.",
     deviceFeatures: ["HIFEM Technology", "Dual dual-paddle applicators", "Custom intensity programs", "Zero thermal energy"],
-    deviceImage: "/services/muscle-sculpting/3.webp",
+    deviceImage: "/services/products-tech-images/cm-slim.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Technology", ours: "High-Intensity Focused Electromagnetic (HIFEM)", standard: "Electrical Muscle Stimulation (EMS)" },
@@ -969,7 +969,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "Clinically Validated · Non-Invasive · Personalised",
     deviceDesc: "Our body contouring system combines multiple energy modalities—radiofrequency, ultrasound, and electromagnetic—to target different tissue layers simultaneously. This multi-modal approach delivers superior results by addressing subcutaneous fat, skin laxity, and muscle tone in a single coordinated protocol.",
     deviceFeatures: ["Multi-modal energy delivery", "Real-time temperature monitoring", "Comfort-optimised applicators", "Zero thermal damage risk"],
-    deviceImage: "/services/body-contouring/3.webp",
+    deviceImage: "/services/products-tech-images/cm-slim.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Approach", ours: "Personalised multi-modal protocol", standard: "Single device, fixed program" },
@@ -1056,7 +1056,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA Cleared · Clinically Proven · Non-Invasive",
     deviceDesc: "Our fat reduction system uses controlled energy delivery to selectively target and destroy subcutaneous fat cells while leaving surrounding tissue unharmed. The precise targeting ensures consistent, measurable results across all treatment zones.",
     deviceFeatures: ["Selective fat cell targeting", "Surrounding tissue protection", "Real-time monitoring", "Comfortable treatment experience"],
-    deviceImage: "/services/fat-reduction/3.webp",
+    deviceImage: "/services/products-tech-images/cm-slim.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Technology", ours: "Latest-gen energy platforms", standard: "Older generation devices" },
@@ -1143,7 +1143,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA Cleared · Collagen Stimulating · Non-Invasive",
     deviceDesc: "Our radiofrequency tightening system delivers controlled thermal energy to the deep dermis and subdermal tissue. The precise temperature targets activate fibroblasts—the cells responsible for collagen and elastin production—without damaging overlying skin.",
     deviceFeatures: ["Deep dermis thermal targeting", "Real-time temperature control", "Multi-polar RF delivery", "Skin cooling protection"],
-    deviceImage: "/services/body-tightening/3.webp",
+    deviceImage: "/services/products-tech-images/ultraformer.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Depth", ours: "Deep dermis & subdermal layers", standard: "Surface level only" },
@@ -1314,7 +1314,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "PREMIUM BRANDS • STERILE SYSTEM • PINPOINT PRECISION",
     deviceDesc: "We exclusively use original, FDA-approved botulinum toxin formulations to guarantee maximum safety and predictable, natural-looking results.",
     deviceFeatures: ["FDA-Approved", "Original Products", "Precise Dosing", "Comfort-Focused Needle"],
-    deviceImage: "/services/hifu/hifu.webp",
+    deviceImage: "/services/Botox/3.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Dosage", ours: "Calibrated micro-dosing for soft movement", standard: "Standardized high-dose frozen look" },
@@ -1355,7 +1355,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "None" },
       { label: "Performed by", val: "Dermatologist" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/Botox/before.webp",
+      afterImage: "/services/Botox/after.webp",
+      treatmentName: "Botox Wrinkle Relaxing",
+      testimonialText: "I wanted to soften my frown lines without looking frozen. The results are subtle, natural, and precisely what I hoped for.",
+      patientName: "Priyanka M., 34",
+      subtitle: "Dynamic wrinkle relaxation for expression lines"
+    },
   },
   "fillers": {
     id: "fillers",
@@ -1393,7 +1401,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA-APPROVED GELS • SEAMLESS INTEGRATION • EXPERT ANATOMICAL PLACEMENT",
     deviceDesc: "We select specific gel densities (from soft lip fillers to firm structural jaw fillers) using top-tier global brands to guarantee predictable lifting and safety.",
     deviceFeatures: ["FDA-Approved GELS", "Cohesive Technology", "Anatomical Precision", "Reversible Option"],
-    deviceImage: "/services/hifu/hifu.webp",
+    deviceImage: "/services/fillers/3.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Approach", ours: "Volume restoration based on bone support", standard: "Overfilling soft tissue (puffy look)" },
@@ -1434,7 +1442,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "1-2 days" },
       { label: "Performed by", val: "Dermatologist" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/fillers/before.webp",
+      afterImage: "/services/fillers/after.webp",
+      treatmentName: "Dermal Fillers Volume Restoration",
+      testimonialText: "My cheeks and jawline feel beautifully contoured and restored. The treatment was comfortable and the results look completely natural.",
+      patientName: "Shweta K., 38",
+      subtitle: "Hyaluronic acid dermal fillers for volume restoration"
+    },
   },
   "vampire-lift": {
     id: "vampire-lift",
@@ -1513,7 +1529,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4 weeks" },
       { label: "Downtime", val: "1-2 days" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Vampire Lift Regenerative Therapy",
+      testimonialText: "My acne scars have smoothed out significantly and my skin has a healthy, refreshed glow that I haven't seen in years.",
+      patientName: "Aman S., 28",
+      subtitle: "Platelet-rich plasma combined with microneedling"
+    },
   },
   "thread-lift": {
     id: "thread-lift",
@@ -1592,7 +1616,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "2-4 days" },
       { label: "Performed by", val: "Doctor" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Thread Lift Contour Sculpting",
+      testimonialText: "I noticed an immediate lift in my lower face and jawline. The recovery was quick and the contours look beautifully defined.",
+      patientName: "Renu G., 46",
+      subtitle: "Absorbable PDO thread lifting for facial contouring"
+    },
   },
   "skin-boosters": {
     id: "skin-boosters",
@@ -1671,7 +1703,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "12-24 hours" },
       { label: "Performed by", val: "Dermatologist" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Skin Boosters Deep Hydration",
+      testimonialText: "My dry skin has transformed completely. It feels hydrated, plump, and has a steady, natural glow every day.",
+      patientName: "Divya N., 31",
+      subtitle: "Micro-injections of hyaluronic acid for deep skin hydration"
+    },
   },
   "mnrf": {
     id: "mnrf",
@@ -1709,7 +1749,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA-APPROVED • GOLD-PLATED NEEDLES • PRECISION CONTROL",
     deviceDesc: "We use premium MNRF technology with insulated gold-plated needles, allowing precise depth control (0.5mm to 3.5mm) to protect the skin barrier.",
     deviceFeatures: ["FDA-Approved", "Insulated Needles", "Precision Depth Control", "Minimal Epidermal Heat"],
-    deviceImage: "/services/laser-scar-reduction/Laser Scar Reduction.webp",
+    deviceImage: "/services/MNRF/scarlet.webp",
     comparisonTitle: "COSMO HOME vs Standard MNRF",
     comparisonRows: [
       { label: "Needles", ours: "Insulated needles (protects outer skin)", standard: "Non-insulated needles (heats surface)" },
@@ -1750,7 +1790,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4 weeks" },
       { label: "Downtime", val: "1-2 days" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Laser Scar Reduction/before.webp",
+      afterImage: "/services/before&after/Laser Scar Reduction/after.webp",
+      treatmentName: "MNRF Skin Tightening",
+      testimonialText: "My skin feels firmer, tighter, and my open pores are much less visible. The improvement in texture is remarkable.",
+      patientName: "Vikram R., 35",
+      subtitle: "Microneedling Fractional Radiofrequency for skin tightening"
+    },
   },
   "dermapen": {
     id: "dermapen",
@@ -1829,7 +1877,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4 weeks" },
       { label: "Downtime", val: "1 day" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Laser Scar Reduction/before.webp",
+      afterImage: "/services/before&after/Laser Scar Reduction/after.webp",
+      treatmentName: "Dermapen Collagen Induction",
+      testimonialText: "A gentle but effective treatment. My acne marks have faded and my skin texture feels incredibly smooth.",
+      patientName: "Anjali P., 26",
+      subtitle: "Micro-needling therapy for texture and pigmentation"
+    },
   },
   "co2-laser": {
     id: "co2-laser",
@@ -1867,7 +1923,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA-APPROVED • PRECISION SCANNER • DEEP REMODELING",
     deviceDesc: "We use advanced fractional CO2 laser technology with a precision scanner, delivering micro-beams to target tissue layers safely.",
     deviceFeatures: ["FDA-Approved", "Precision Scanner", "Adjustable Pulse", "Comfort Cooling"],
-    deviceImage: "/services/laser-scar-reduction/Laser Scar Reduction.webp",
+    deviceImage: "/services/CO2 Laser/microcel.webp",
     comparisonTitle: "COSMO HOME vs Standard Laser",
     comparisonRows: [
       { label: "Fractional", ours: "Micro-beams preserve tissue bridges (fast healing)", standard: "Ablative beams damage entire surface (slow healing)" },
@@ -1908,7 +1964,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaTitle2: "deep scars and stretch marks?",
     ctaEmphasized: "Begin today.",
     ctaDesc: "Book a clinical skin assessment to design a customized CO2 laser plan.",
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Laser Scar Reduction/before.webp",
+      afterImage: "/services/before&after/Laser Scar Reduction/after.webp",
+      treatmentName: "CO2 Laser Resurfacing",
+      testimonialText: "The fractional CO2 laser worked wonders on my deep scars. The texture of my skin has improved dramatically.",
+      patientName: "Rohan J., 32",
+      subtitle: "Fractional CO2 laser resurfacing for deep skin remodelling"
+    },
   },
   "dutexome": {
     id: "dutexome",
@@ -1987,7 +2051,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4 weeks" },
       { label: "Downtime", val: "12-24 hours" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Dutexome Exosome Therapy",
+      testimonialText: "Combining exosome therapy with microneedling gave me rapid healing and an incredible boost in skin brightness and firmness.",
+      patientName: "Kavitha L., 40",
+      subtitle: "Premium dual-chamber exosome therapy for cellular regeneration"
+    },
   },
   "hair-mesotherapy": {
     id: "hair-mesotherapy",
@@ -2066,7 +2138,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 2-3 weeks" },
       { label: "Downtime", val: "None" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/Hair Mesotherapy/before.webp",
+      afterImage: "/services/Hair Mesotherapy/after.webp",
+      treatmentName: "Scalp Micro-Nutrient Mesotherapy",
+      testimonialText: "The results of my scalp micro-nutrient mesotherapy treatment exceeded my expectations. My hair feels stronger and healthier.",
+      patientName: "Rahul A., 30",
+      subtitle: "Scalp nutrient infusion for hair shedding and root health"
+    },
   },
   "monothreads": {
     id: "monothreads",
@@ -2145,7 +2225,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Downtime", val: "1-2 days" },
       { label: "Performed by", val: "Dermatologist" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Scalp PDO Monothreads",
+      testimonialText: "I had significant thinning around my crown. PDO monothreads have anchored my hair roots, reducing fall and improving density.",
+      patientName: "Karthik S., 36",
+      subtitle: "PDO thread grid vectoring for follicle anchoring and scalp support"
+    },
   },
   "exosomes": {
     id: "exosomes",
@@ -2224,7 +2312,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4 weeks" },
       { label: "Downtime", val: "12-24 hours" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Exosomes Regenerative Therapy",
+      testimonialText: "My skin texture is completely renewed. It healed so quickly and feels incredibly soft, hydrated, and youthful.",
+      patientName: "Sneha V., 33",
+      subtitle: "Exosome cellular therapy for skin rejuvenation"
+    },
   },
   "laser-toning": {
     id: "laser-toning",
@@ -2262,7 +2358,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA-APPROVED • LOW-FLUENCE ACCURACY • PIGMENT TONING",
     deviceDesc: "We use advanced Q-switched laser systems to target melanin pigment clusters safely, protecting surrounding healthy cells.",
     deviceFeatures: ["FDA-Approved", "Q-switched Nd:YAG", "Calibrated Fluence", "Comfort Cooling"],
-    deviceImage: "/services/laser-pigment-reduction/Laser Pigment Reduction.webp",
+    deviceImage: "/services/products-tech-images/q-laze.webp",
     comparisonTitle: "COSMO HOME vs Chemical Bleaches",
     comparisonRows: [
       { label: "Targeting", ours: "Laser energy targets melanin particles deep in skin", standard: "Chemicals dry out and strip skin surface" },
@@ -2303,7 +2399,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4-6 weeks" },
       { label: "Downtime", val: "None" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Laser Pigment Reduction/before.webp",
+      afterImage: "/services/before&after/Laser Pigment Reduction/after.webp",
+      treatmentName: "Laser Toning Brightening",
+      testimonialText: "My skin tone is much brighter and even. The dullness is gone, and there was zero downtime after the laser sessions.",
+      patientName: "Megha S., 29",
+      subtitle: "Q-Switched laser toning for skin brightening and pigmentation"
+    },
   },
   "prp": {
     id: "prp",
@@ -2521,7 +2625,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "GOLD-PLATED NEEDLES • CELL-FREE CONCENTRATE • SYNERGY",
     deviceDesc: "We perform calibrated MNRF sweeps and immediately infuse cell-free GFC growth factors to trigger rapid skin repair.",
     deviceFeatures: ["MNRF Technology", "Purified GFC", "Synergistic Action", "Dermatologist-led"],
-    deviceImage: "/services/laser-scar-reduction/Laser Scar Reduction.webp",
+    deviceImage: "/services/products-tech-images/scarlet.webp",
     comparisonTitle: "COSMO HOME vs Standard Care",
     comparisonRows: [
       { label: "Combination", ours: "MNRF immediately followed by activated GFC", standard: "MNRF with standard soothing gel" },
@@ -2562,7 +2666,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaTitle2: "scar remodeling and repair?",
     ctaEmphasized: "Begin today.",
     ctaDesc: "Book a clinical scar assessment to design a customized MNRF + GFC plan.",
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Laser Scar Reduction/before.webp",
+      afterImage: "/services/before&after/Laser Scar Reduction/after.webp",
+      treatmentName: "MNRF + GFC Combination Therapy",
+      testimonialText: "Combining MNRF with GFC was the best decision for my acne scars. The healing was faster and the results are amazing.",
+      patientName: "Aditya N., 31",
+      subtitle: "Combined microneedling radiofrequency and growth factors"
+    },
   }
   ,
 
@@ -2644,7 +2756,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 2–3 weeks" },
       { label: "Downtime", val: "1–3 days mild flaking" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/carbon feel/before.webp",
+      afterImage: "/services/before&after/carbon feel/after.webp",
+      treatmentName: "Mesopeels Skin Renewal",
+      testimonialText: "My active acne has reduced and the post-acne marks have faded. My skin looks cleaner and refreshed.",
+      patientName: "Pooja D., 25",
+      subtitle: "Medical-grade peel formulation for skin texture and clarity"
+    },
   },
   "carbon-peel": {
     id: "carbon-peel",
@@ -2682,7 +2802,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "1064nm LASER • CARBON LOTION • THERMAL RESURFACING",
     deviceDesc: "Our high-precision Q-switched Nd:YAG laser target-blasts the carbon layer to exfoliate and shrink pores without outer skin injury.",
     deviceFeatures: ["1064nm Nd:YAG Laser", "Carbon Paste Attractor", "Instant Exfoliation", "Pore Refiner"],
-    deviceImage: "/services/laser-pigment-reduction/Laser Pigment Reduction.webp",
+    deviceImage: "/services/Carbon Peel/3.webp",
     comparisonTitle: "COSMO HOME vs Standard Facials",
     comparisonRows: [
       { label: "Cleansing Depth", ours: "Laser-blasted deep carbon exfoliation", standard: "Surface steam and scrub rubs only" },
@@ -2724,7 +2844,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 2–3 weeks" },
       { label: "Downtime", val: "None" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/carbon feel/before.webp",
+      afterImage: "/services/before&after/carbon feel/after.webp",
+      treatmentName: "Carbon Laser Peel",
+      testimonialText: "I loved the immediate glow. The carbon peel cleared out my pores and left my skin feeling clean and refreshed.",
+      patientName: "Neha R., 28",
+      subtitle: "Carbon-assisted laser peel for pore purification and glow"
+    },
   },
   "led-therapy": {
     id: "led-therapy",
@@ -2804,7 +2932,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Twice a week" },
       { label: "Downtime", val: "None" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Phototherapy/before.webp",
+      afterImage: "/services/before&after/Phototherapy/after.webp",
+      treatmentName: "LED Phototherapy",
+      testimonialText: "It's a very relaxing treatment. The red and blue light therapy calmed my skin redness and cleared my breakouts.",
+      patientName: "Varun K., 24",
+      subtitle: "Narrowband LED light therapy for healing and acne defense"
+    },
   },
   "skin-mnrf": {
     id: "skin-mnrf",
@@ -2842,7 +2978,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "RF NEEDLING • COLLAGEN INDUCTION • TEXTURE REBUILD",
     deviceDesc: "Our specialized body MNRF handpiece uses gold-plated insulated needles to treat deep dermal tear lines safely.",
     deviceFeatures: ["Gold-insulated Needles", "Fractional RF Energy", "Adjustable Needle Depth", "Body Resurfacing Tip"],
-    deviceImage: "/services/laser-scar-reduction/Laser Scar Reduction.webp",
+    deviceImage: "/services/products-tech-images/scarlet.webp",
     comparisonTitle: "COSMO HOME vs Topical Creams",
     comparisonRows: [
       { label: "Dermal Reach", ours: "Needles deliver energy 1.0 - 3.5mm deep", standard: "Creams sit on superficial epidermis only" },
@@ -2884,7 +3020,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4–6 weeks" },
       { label: "Downtime", val: "2–3 days grid redness" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Laser Scar Reduction/before.webp",
+      afterImage: "/services/before&after/Laser Scar Reduction/after.webp",
+      treatmentName: "Skin MNRF Tightening",
+      testimonialText: "My skin elasticity has improved significantly. It feels firmer, smoother, and younger.",
+      patientName: "Latha M., 42",
+      subtitle: "Microneedling fractional radiofrequency for face and neck tightening"
+    },
   },
   "skin-dermapen": {
     id: "skin-dermapen",
@@ -2964,7 +3108,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4 weeks" },
       { label: "Downtime", val: "1–2 days mild pinkness" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Laser Scar Reduction/before.webp",
+      afterImage: "/services/before&after/Laser Scar Reduction/after.webp",
+      treatmentName: "Skin Dermapen Resurfacing",
+      testimonialText: "I notice a huge difference in my skin texture. Dermapen made my skin look smoother and brighter.",
+      patientName: "Nisha T., 27",
+      subtitle: "Collagen induction therapy for skin texture and marks"
+    },
   },
   "skin-co2-laser": {
     id: "skin-co2-laser",
@@ -3002,7 +3154,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "10600nm CO2 • PRECISION FRACTIONAL SCANNER • TEXTURE RESET",
     deviceDesc: "Our advanced CO2 laser delivers fractional micro-beams to vaporize scar tissues and contract skin collagen matrix.",
     deviceFeatures: ["10600nm Carbon Dioxide Laser", "Adjustable Fractional Scan Patterns", "Deep Penetration Scanner", "Laser Specialist Calibrated"],
-    deviceImage: "/services/laser-pigment-reduction/Laser Pigment Reduction.webp",
+    deviceImage: "/services/CO2 Laser/microcel.webp",
     comparisonTitle: "COSMO HOME vs Standard Lasers",
     comparisonRows: [
       { label: "Energy Delivery", ours: "Precision micro-beams reduce burn risk", standard: "Broad continuous beams damage healthy skin" },
@@ -3044,7 +3196,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 6–8 weeks" },
       { label: "Downtime", val: "5–7 days grid scabbing" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Laser Scar Reduction/before.webp",
+      afterImage: "/services/before&after/Laser Scar Reduction/after.webp",
+      treatmentName: "Skin CO2 Laser Resurfacing",
+      testimonialText: "The laser treatment smoothed my uneven skin. The texture has improved and scars are barely noticeable.",
+      patientName: "Gaurav B., 34",
+      subtitle: "Fractional CO2 laser resurfacing for skin texture improvement"
+    },
   },
   "skin-prp": {
     id: "skin-prp",
@@ -3124,7 +3284,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4 weeks" },
       { label: "Downtime", val: "1–2 days mild swelling" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1579684389782-64d84b5e901d?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1579684389782-64d84b5e901d?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Skin PRP Rejuvenation",
+      testimonialText: "My skin has a natural, healthy glow. The texture feels plump and rejuvenated.",
+      patientName: "Deepika R., 33",
+      subtitle: "Autologous Platelet-Rich Plasma for facial rejuvenation"
+    },
   },
   "skin-gfc": {
     id: "skin-gfc",
@@ -3204,7 +3372,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4 weeks" },
       { label: "Downtime", val: "1 day mild redness" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1551244072-5d12893278ab?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Skin GFC Therapy",
+      testimonialText: "Growth factors really helped my skin. The dullness has completely disappeared and my skin looks radiant.",
+      patientName: "Aiswarya J., 30",
+      subtitle: "Growth Factor Concentrate for facial brightening and tone"
+    },
   },
   "skin-exosomes": {
     id: "skin-exosomes",
@@ -3284,7 +3460,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4 weeks" },
       { label: "Downtime", val: "12-24 hours" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Skin Exosome Rejuvenation",
+      testimonialText: "This exosome treatment did wonders for my fine lines. My skin looks so refreshed and glowing.",
+      patientName: "Malini V., 45",
+      subtitle: "Advanced exosome therapy for anti-ageing and cell renewal"
+    },
   },
   "hair-prp": {
     id: "hair-prp",
@@ -3293,7 +3477,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Hair Restoration Experience",
     description: "Activate natural follicle renewal. Our signature Hair PRP therapy concentrates the regenerative growth factors from your own blood platelets, delivering them directly to the hair roots to stimulate thinning areas and naturally increase density.",
     heroRating: "4.8 · Rated by 320+ patients",
-    heroImage: "/services/laser-hair-reduction/1.webp",
+    heroImage: "/services/PRP/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Hair Expert",
     performedBySub: "Safe • Autologous Platelets • Hair Regrowth",
@@ -3315,7 +3499,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🛡️", b: "Natural Restoration", d: "Improves hair density and scalp health organically." }
     ],
     clinicalNote: "A clean scalp mapping is performed to identify target thinning areas before injections.",
-    sideImage: "/services/laser-hair-reduction/2.webp",
+    sideImage: "/services/PRP/2.webp",
     machineTitle: "Centrifuge separation",
     machineEmphasized: "for pure platelets.",
     deviceName: "Calibrated Centrifuge System",
@@ -3364,7 +3548,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4 weeks" },
       { label: "Downtime", val: "None" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/PRP/before.webp",
+      afterImage: "/services/PRP/after.webp",
+      treatmentName: "Hair PRP Restoration",
+      testimonialText: "My hair shedding has reduced substantially, and my hair feels thicker and healthier.",
+      patientName: "Siddharth K., 31",
+      subtitle: "Platelet-Rich Plasma therapy for hair restoration and growth"
+    },
   },
   "hair-gfc": {
     id: "hair-gfc",
@@ -3444,7 +3636,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4 weeks" },
       { label: "Downtime", val: "None" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Hair GFC Therapy",
+      testimonialText: "After 3 sessions of GFC, the density of my hair has improved and the shedding has stopped completely.",
+      patientName: "Nikhil P., 29",
+      subtitle: "Growth Factor Concentrate therapy for hair density and health"
+    },
   },
   "hair-exosome": {
     id: "hair-exosome",
@@ -3524,7 +3724,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4 weeks" },
       { label: "Downtime", val: "None" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Hair Exosome Therapy",
+      testimonialText: "Exosomes gave my hair the ultimate boost. The thinning has reversed and my scalp feels healthier.",
+      patientName: "Meera D., 35",
+      subtitle: "Regenerative exosome therapy for advanced hair thinning"
+    },
   },
   "hair-dutexome": {
     id: "hair-dutexome",
@@ -3604,7 +3812,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 4 weeks" },
       { label: "Downtime", val: "None" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Hair Dutexome Therapy",
+      testimonialText: "Dutexome was highly effective for my hair loss. New hair growth is clearly visible and stronger.",
+      patientName: "Abhilash S., 33",
+      subtitle: "Dual-action exosome therapy for robust hair growth"
+    },
   },
   "hair-monothreads": {
     id: "hair-monothreads",
@@ -3684,7 +3900,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Frequency", val: "Every 6 months" },
       { label: "Downtime", val: "1–2 days mild tightness" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Hair Monothreads Anchoring",
+      testimonialText: "PDO threads helped anchor my thinning hair. The crown density has improved and hair fall is minimized.",
+      patientName: "Hari Prasad, 37",
+      subtitle: "PDO monothreads grid vectors for scalp structural support"
+    },
   }
 
 };
