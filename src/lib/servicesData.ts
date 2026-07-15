@@ -90,7 +90,7 @@ export interface ServiceData {
     treatmentName: string;
     testimonialText: string;
     patientName: string;
-    subtitle: string;
+    subtitle?: string;
   };
 }
 
@@ -1276,6 +1276,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       treatmentName: "GFC Hair Growth Therapy",
       testimonialText: "My hair was thinning rapidly on the crown. After three sessions of Growth Factor Concentrate (GFC), my shedding has stopped completely and new thick hair has filled in.",
       patientName: "Nikhil P., 29",
+      subtitle: "Growth Factor Concentrate for hair density",
     },
   },
   "botox": {
@@ -3151,7 +3152,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "NARROW-BAND LED • BLUE / RED / INFRARED • HEALING LIGHT",
     deviceDesc: "Our medical-grade LED canopy delivers highly concentrated, narrow-band wavelengths to optimize cell activation and tissue recovery.",
     deviceFeatures: ["Narrow-band LEDs", "Acne Bacteria Clearing", "Tissue Repair Acceleration", "Calming Warmth"],
-    deviceImage: "/services/hydrafacial-medifacial/Hydrafacial  Medifacial.webp",
+    deviceImage: "/services/LED Theraphy/3.webp",
     comparisonTitle: "COSMO HOME vs Home Masks",
     comparisonRows: [
       { label: "Light Intensity", ours: "Medical-grade clinical panel output", standard: "Weak battery-powered home masks" },
@@ -3195,8 +3196,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/Phototherapy/before.webp",
-      afterImage: "/services/before&after/Phototherapy/after.webp",
+      beforeImage: "/services/LED Theraphy/before.webp",
+      afterImage: "/services/LED Theraphy/after.webp",
       treatmentName: "LED Phototherapy",
       testimonialText: "It's a very relaxing treatment. The red and blue light therapy calmed my skin redness and cleared my breakouts.",
       patientName: "Varun K., 24",
