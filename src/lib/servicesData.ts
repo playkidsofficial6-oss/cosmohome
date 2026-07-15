@@ -131,7 +131,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "MEDICAL-GRADE • PRECISION • PERSONALISED CARE",
     deviceDesc: "We use advanced, clinically proven aesthetic technologies designed to deliver precise, consistent, and comfortable treatments. Every procedure is tailored to your skin condition and treatment goals, ensuring safe care with natural-looking results.",
     deviceFeatures: ["Medical-Grade Technology", "Precision Treatment", "Personalised Protocols", "Comfort Focused"],
-    deviceImage: "/services/hifu/tech-hifu.webp",
+    deviceImage: "/services/hifu/hifu-cosmo.webp",
     comparisonTitle: "COSMO HOME vs Conventional Treatment",
     comparisonRows: [
       { label: "Technology", ours: "Medical-grade aesthetic devices", standard: "Standard equipment" },
