@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Stethoscope, Lock, Clock, Check } from "lucide-react";
@@ -457,7 +457,7 @@ export default function ServicePage() {
                   <div className="relative aspect-[16/9] overflow-hidden shrink-0">
                     <img src={service.deviceImage}
                       alt={service.deviceName} className="w-full h-full object-cover opacity-75" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#FAF7F2]/60" />
+                    {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#FAF7F2]/60" /> */}
                   </div>
                   <div className="p-7 relative z-10">
                     <h3 className="text-2xl text-[#2C1810] mb-1" style={{ ...D }}>{service.deviceName}</h3>
