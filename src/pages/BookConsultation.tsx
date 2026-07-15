@@ -491,8 +491,15 @@ const DESKTOP_STEPS = [
 /* ════════════════════════════════════════════════════════════════
    MAIN COMPONENT
    ════════════════════════════════════════════════════════════════ */
+import { useSEO } from "../lib/useSEO";
+
 export default function BookConsultation() {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "Book a Private Consultation | Cosmo Home",
+    description: "Schedule a personalized clinical consultation with Dr. Ruxana or our specialists at Cosmo Home. Begin your journey toward natural beauty and skin rejuvenation in a luxurious environment.",
+  });
 
   /* ── shared state ── */
   const [selectedDoctor, setSelectedDoctor] = useState(BOOKING_DOCTORS[0]);

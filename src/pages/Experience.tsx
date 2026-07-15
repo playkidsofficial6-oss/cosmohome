@@ -32,10 +32,17 @@ function DarkInputField({ label, type = "text", placeholder, name }: { label: st
   );
 }
 
+import { useSEO } from "../lib/useSEO";
+
 export default function ExperiencePage() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const exp = slug ? EXPERIENCES_DATA[slug] : null;
+
+  useSEO({
+    title: exp ? `${exp.title} | Cosmo Home Signature Experience` : "Signature Experience | Cosmo Home",
+    description: exp ? `${exp.description} Designed for ${exp.suitedFor} Ideal duration: ${exp.duration}.` : "Cosmo Home signature experiences for skin, aging, confidence, and hair restoration.",
+  });
 
   const [formSent, setFormSent] = useState(false);
   const [focusedInput, setFocusedInput] = useState<string | null>(null);

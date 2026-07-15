@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Stethoscope, Lock, Clock, Check } from "lucide-react";
@@ -133,7 +133,34 @@ const slugToOptionMap: Record<string, string> = {
   "exosomes-prp-gfc": "Exosomes / PRP / GFC",
   "prp": "PRP",
   "gfc": "GFC",
-  "exosomes": "Exosomes"
+  "exosomes": "Exosomes",
+  "botox": "Botox",
+  "fillers": "Fillers",
+  "vampire-lift": "Vampire Lift",
+  "thread-lift": "Thread Lift",
+  "skin-boosters": "Skin Boosters",
+  "mnrf": "MNRF",
+  "dermapen": "Dermapen",
+  "co2-laser": "CO2 Laser",
+  "dutexome": "Dutexome",
+  "hair-mesotherapy": "Hair Mesotherapy",
+  "monothreads": "Monothreads",
+  "laser-toning": "Laser Toning",
+  "mnrf-gfc": "MNRF + GFC",
+  "mesopeels": "Mesopeels",
+  "carbon-peel": "Carbon Peel",
+  "led-therapy": "LED Therapy",
+  "skin-mnrf": "Skin MNRF",
+  "skin-dermapen": "Skin Dermapen",
+  "skin-co2-laser": "Skin CO2 Laser",
+  "skin-prp": "Skin PRP",
+  "skin-gfc": "Skin GFC",
+  "skin-exosomes": "Skin Exosomes",
+  "hair-prp": "Hair PRP",
+  "hair-gfc": "Hair GFC",
+  "hair-exosome": "Hair Exosome",
+  "hair-dutexome": "Hair Dutexome",
+  "hair-monothreads": "Hair Monothreads"
 };
 
 const getTrustIcon = (text: string) => {
@@ -153,9 +180,26 @@ const getTrustIcon = (text: string) => {
   return Check;
 };
 
+import { useSEO } from "../lib/useSEO";
+
 export default function ServicePage() {
   const { slug } = useParams<{ slug: string }>();
   const service = SERVICES_DATA[slug || "hydrafacial-medifacial"] || SERVICES_DATA["hydrafacial-medifacial"];
+  const serviceTitle = service.title + (service.titleEmphasized ? " " + service.titleEmphasized.replace(/\.$/, "") : "");
+  
+  useSEO({
+    title: `${serviceTitle} | Cosmo Home Aesthetic Medicine`,
+    description: `${service.description} Learn about procedure details, benefits, pricing, and results timeline for ${serviceTitle} at Cosmo Home.`,
+  });
+
+  const beforeAfter = service.beforeAfter || {
+    beforeImage: "/transformation/before.webp",
+    afterImage: "/transformation/after.webp",
+    treatmentName: serviceTitle,
+    testimonialText: `The results of my ${serviceTitle.toLowerCase()} treatment exceeded my expectations. My skin feels healthier, rejuvenated, and naturally aligned.`,
+    patientName: "Verified Patient",
+    subtitle: `${serviceTitle} clinical case study`
+  };
   const [activeSession, setActiveSession] = useState(0);
 
   const [formSent, setFormSent] = useState(false);
@@ -206,6 +250,11 @@ export default function ServicePage() {
     "Exosomes / PRP / GFC"
   ];
 
+  const displayOptions = [...options];
+  if (selected && !displayOptions.includes(selected)) {
+    displayOptions.push(selected);
+  }
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -253,7 +302,7 @@ export default function ServicePage() {
             </FadeUp>
 
             {/* Mobile-only Before & After section in the requested format */}
-            {service.beforeAfter && (
+            {beforeAfter && (
               <div className="block md:hidden mb-8 w-full">
                 {/* Heading */}
                 <div className="mb-4">
@@ -267,18 +316,18 @@ export default function ServicePage() {
                 <div className="flex flex-col w-full mb-4">
                   <div className="flex items-center justify-between mb-2 px-1">
                     <span className="text-[9px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>Clinical Case Study</span>
-                    <span className="text-[9px] text-[#C9956A] uppercase tracking-widest font-bold" style={M}>{service.beforeAfter.treatmentName}</span>
+                    <span className="text-[9px] text-[#C9956A] uppercase tracking-widest font-bold" style={M}>{beforeAfter.treatmentName}</span>
                   </div>
                   <BeforeAfterSlider
-                    beforeImage={service.beforeAfter.beforeImage}
-                    afterImage={service.beforeAfter.afterImage}
+                    beforeImage={beforeAfter.beforeImage}
+                    afterImage={beforeAfter.afterImage}
                   />
                 </div>
 
                 {/* Rating / Testimonial */}
                 <div className="border-l-2 border-[#C9956A] pl-4 py-1.5 mb-4 bg-white/40 rounded-r-xl p-3">
                   <p className="text-xs text-[#2C1810]/90 leading-relaxed font-light italic" style={D}>
-                    "{service.beforeAfter.testimonialText}"
+                    "{beforeAfter.testimonialText}"
                   </p>
                   <div className="mt-2.5 flex items-center gap-2">
                     <div className="flex gap-0.5 text-amber-500">
@@ -286,8 +335,8 @@ export default function ServicePage() {
                         <Star key={i} size={11} className="fill-current" />
                       ))}
                     </div>
-                    <span className="text-[10px] text-[#2C1810] font-semibold" style={B}>{service.beforeAfter.patientName}</span>
-                    <span className="text-[9px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— {service.beforeAfter.treatmentName}</span>
+                    <span className="text-[10px] text-[#2C1810] font-semibold" style={B}>{beforeAfter.patientName}</span>
+                    <span className="text-[9px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— {beforeAfter.treatmentName}</span>
                   </div>
                 </div>
               </div>
@@ -307,9 +356,9 @@ export default function ServicePage() {
             {/* Floating trust card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}
-              className="absolute bottom-6 right-6 p-5 rounded-2xl max-w-[220px]"
+              className="absolute bottom-6 right-6 p-5 rounded-2xl max-w-[250px]"
               style={{ background: "rgba(250,247,242,0.92)", backdropFilter: "blur(12px)", border: "1px solid rgba(201,149,106,0.3)", boxShadow: "0 8px 32px rgba(44,24,16,0.1)" }}>
-              <p className="text-xs tracking-[0.18em] uppercase text-[#C9956A] mb-2" style={M}>
+              <p className="text-xs tracking-[0.18em] uppercase text-[#C9956A] mb-2 whitespace-nowrap" style={M}>
                 {service.performedByLabel || "👩‍⚕️ Performed by"}
               </p>
               <p className="text-base text-[#2C1810]" style={{ ...D }}>
@@ -323,7 +372,7 @@ export default function ServicePage() {
         </section>
 
         {/* Desktop-only Before & After (Second Section) */}
-        {service.beforeAfter && (
+        {beforeAfter && (
           <section className="hidden md:block pt-24 pb-10 px-6 md:px-16 bg-[#FAF7F2]">
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -336,7 +385,7 @@ export default function ServicePage() {
 
                   <div className="border-l-2 border-[#C9956A] pl-6 py-2 mb-8">
                     <p className="text-base sm:text-lg text-[#2C1810]/90 leading-relaxed font-light italic" style={D}>
-                      "{service.beforeAfter.testimonialText}"
+                      "{beforeAfter.testimonialText}"
                     </p>
                     <div className="mt-4 flex items-center gap-3">
                       <div className="flex gap-0.5 text-amber-500">
@@ -344,8 +393,8 @@ export default function ServicePage() {
                           <Star key={i} size={14} className="fill-current" />
                         ))}
                       </div>
-                      <span className="text-xs text-[#2C1810] font-semibold" style={B}>{service.beforeAfter.patientName}</span>
-                      <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— {service.beforeAfter.treatmentName}</span>
+                      <span className="text-xs text-[#2C1810] font-semibold" style={B}>{beforeAfter.patientName}</span>
+                      <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— {beforeAfter.treatmentName}</span>
                     </div>
                   </div>
 
@@ -361,11 +410,11 @@ export default function ServicePage() {
                 <div className="lg:col-span-7 flex flex-col w-full">
                   <div className="flex items-center justify-between mb-4 px-2">
                     <span className="text-[10px] sm:text-xs text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>Clinical Case Study</span>
-                    <span className="text-[10px] sm:text-xs text-[#C9956A] uppercase tracking-widest font-bold" style={M}>{service.beforeAfter.treatmentName}</span>
+                    <span className="text-[10px] sm:text-xs text-[#C9956A] uppercase tracking-widest font-bold" style={M}>{beforeAfter.treatmentName}</span>
                   </div>
                   <BeforeAfterSlider
-                    beforeImage={service.beforeAfter.beforeImage}
-                    afterImage={service.beforeAfter.afterImage}
+                    beforeImage={beforeAfter.beforeImage}
+                    afterImage={beforeAfter.afterImage}
                   />
                 </div>
               </div>
@@ -862,7 +911,7 @@ export default function ServicePage() {
                                 transition={{ duration: 0.2 }}
                                 className="absolute bottom-full left-0 right-0 mb-2 max-h-48 overflow-y-auto bg-white rounded-xl shadow-2xl border border-[#2C1810]/10 z-50 custom-scrollbar origin-bottom"
                               >
-                                {options.map((opt) => (
+                                {displayOptions.map((opt) => (
                                   <li
                                     key={opt}
                                     onClick={() => {

@@ -342,12 +342,19 @@ function FAQItem({ question, answer, isOpen, onToggle }: { question: string; ans
   );
 }
 
+import { useSEO } from "../lib/useSEO";
+
 export default function ServicesListPage() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const categoryParam = searchParams.get("category");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(null);
+
+  useSEO({
+    title: "Advanced Aesthetic Treatments & Experiences | Cosmo Home",
+    description: "Explore our range of expert-led, non-surgical aesthetic treatments for face, skin, hair, and body at Cosmo Home. Find your custom-designed clinical journey today.",
+  });
 
   // Reset scroll on mount
   useEffect(() => {
