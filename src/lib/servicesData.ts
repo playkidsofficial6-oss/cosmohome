@@ -1709,7 +1709,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA-APPROVED • GOLD-PLATED NEEDLES • PRECISION CONTROL",
     deviceDesc: "We use premium MNRF technology with insulated gold-plated needles, allowing precise depth control (0.5mm to 3.5mm) to protect the skin barrier.",
     deviceFeatures: ["FDA-Approved", "Insulated Needles", "Precision Depth Control", "Minimal Epidermal Heat"],
-    deviceImage: "/services/laser-scar-reduction/Laser Scar Reduction.webp",
+    deviceImage: "/services/MNRF/scarlet.webp",
     comparisonTitle: "COSMO HOME vs Standard MNRF",
     comparisonRows: [
       { label: "Needles", ours: "Insulated needles (protects outer skin)", standard: "Non-insulated needles (heats surface)" },
@@ -1867,7 +1867,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA-APPROVED • PRECISION SCANNER • DEEP REMODELING",
     deviceDesc: "We use advanced fractional CO2 laser technology with a precision scanner, delivering micro-beams to target tissue layers safely.",
     deviceFeatures: ["FDA-Approved", "Precision Scanner", "Adjustable Pulse", "Comfort Cooling"],
-    deviceImage: "/services/laser-scar-reduction/Laser Scar Reduction.webp",
+    deviceImage: "/services/CO2 Laser/microcel.webp",
     comparisonTitle: "COSMO HOME vs Standard Laser",
     comparisonRows: [
       { label: "Fractional", ours: "Micro-beams preserve tissue bridges (fast healing)", standard: "Ablative beams damage entire surface (slow healing)" },
@@ -2682,7 +2682,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "1064nm LASER • CARBON LOTION • THERMAL RESURFACING",
     deviceDesc: "Our high-precision Q-switched Nd:YAG laser target-blasts the carbon layer to exfoliate and shrink pores without outer skin injury.",
     deviceFeatures: ["1064nm Nd:YAG Laser", "Carbon Paste Attractor", "Instant Exfoliation", "Pore Refiner"],
-    deviceImage: "/services/laser-pigment-reduction/Laser Pigment Reduction.webp",
+    deviceImage: "/services/Carbon Peel/3.webp",
     comparisonTitle: "COSMO HOME vs Standard Facials",
     comparisonRows: [
       { label: "Cleansing Depth", ours: "Laser-blasted deep carbon exfoliation", standard: "Surface steam and scrub rubs only" },
@@ -3002,7 +3002,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "10600nm CO2 • PRECISION FRACTIONAL SCANNER • TEXTURE RESET",
     deviceDesc: "Our advanced CO2 laser delivers fractional micro-beams to vaporize scar tissues and contract skin collagen matrix.",
     deviceFeatures: ["10600nm Carbon Dioxide Laser", "Adjustable Fractional Scan Patterns", "Deep Penetration Scanner", "Laser Specialist Calibrated"],
-    deviceImage: "/services/laser-pigment-reduction/Laser Pigment Reduction.webp",
+    deviceImage: "/services/CO2 Laser/microcel.webp",
     comparisonTitle: "COSMO HOME vs Standard Lasers",
     comparisonRows: [
       { label: "Energy Delivery", ours: "Precision micro-beams reduce burn risk", standard: "Broad continuous beams damage healthy skin" },
