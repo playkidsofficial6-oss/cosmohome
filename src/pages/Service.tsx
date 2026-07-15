@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Stethoscope, Lock, Clock, Check } from "lucide-react";
@@ -156,6 +156,15 @@ const getTrustIcon = (text: string) => {
 export default function ServicePage() {
   const { slug } = useParams<{ slug: string }>();
   const service = SERVICES_DATA[slug || "hydrafacial-medifacial"] || SERVICES_DATA["hydrafacial-medifacial"];
+  const serviceTitle = service.title + (service.titleEmphasized ? " " + service.titleEmphasized.replace(/\.$/, "") : "");
+  const beforeAfter = service.beforeAfter || {
+    beforeImage: "/transformation/before.webp",
+    afterImage: "/transformation/after.webp",
+    treatmentName: serviceTitle,
+    testimonialText: `The results of my ${serviceTitle.toLowerCase()} treatment exceeded my expectations. My skin feels healthier, rejuvenated, and naturally aligned.`,
+    patientName: "Verified Patient",
+    subtitle: `${serviceTitle} clinical case study`
+  };
   const [activeSession, setActiveSession] = useState(0);
 
   const [formSent, setFormSent] = useState(false);
@@ -253,7 +262,7 @@ export default function ServicePage() {
             </FadeUp>
 
             {/* Mobile-only Before & After section in the requested format */}
-            {service.beforeAfter && (
+            {beforeAfter && (
               <div className="block md:hidden mb-8 w-full">
                 {/* Heading */}
                 <div className="mb-4">
@@ -267,18 +276,18 @@ export default function ServicePage() {
                 <div className="flex flex-col w-full mb-4">
                   <div className="flex items-center justify-between mb-2 px-1">
                     <span className="text-[9px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>Clinical Case Study</span>
-                    <span className="text-[9px] text-[#C9956A] uppercase tracking-widest font-bold" style={M}>{service.beforeAfter.treatmentName}</span>
+                    <span className="text-[9px] text-[#C9956A] uppercase tracking-widest font-bold" style={M}>{beforeAfter.treatmentName}</span>
                   </div>
                   <BeforeAfterSlider
-                    beforeImage={service.beforeAfter.beforeImage}
-                    afterImage={service.beforeAfter.afterImage}
+                    beforeImage={beforeAfter.beforeImage}
+                    afterImage={beforeAfter.afterImage}
                   />
                 </div>
 
                 {/* Rating / Testimonial */}
                 <div className="border-l-2 border-[#C9956A] pl-4 py-1.5 mb-4 bg-white/40 rounded-r-xl p-3">
                   <p className="text-xs text-[#2C1810]/90 leading-relaxed font-light italic" style={D}>
-                    "{service.beforeAfter.testimonialText}"
+                    "{beforeAfter.testimonialText}"
                   </p>
                   <div className="mt-2.5 flex items-center gap-2">
                     <div className="flex gap-0.5 text-amber-500">
@@ -286,8 +295,8 @@ export default function ServicePage() {
                         <Star key={i} size={11} className="fill-current" />
                       ))}
                     </div>
-                    <span className="text-[10px] text-[#2C1810] font-semibold" style={B}>{service.beforeAfter.patientName}</span>
-                    <span className="text-[9px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— {service.beforeAfter.treatmentName}</span>
+                    <span className="text-[10px] text-[#2C1810] font-semibold" style={B}>{beforeAfter.patientName}</span>
+                    <span className="text-[9px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— {beforeAfter.treatmentName}</span>
                   </div>
                 </div>
               </div>
@@ -323,7 +332,7 @@ export default function ServicePage() {
         </section>
 
         {/* Desktop-only Before & After (Second Section) */}
-        {service.beforeAfter && (
+        {beforeAfter && (
           <section className="hidden md:block pt-24 pb-10 px-6 md:px-16 bg-[#FAF7F2]">
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -336,7 +345,7 @@ export default function ServicePage() {
 
                   <div className="border-l-2 border-[#C9956A] pl-6 py-2 mb-8">
                     <p className="text-base sm:text-lg text-[#2C1810]/90 leading-relaxed font-light italic" style={D}>
-                      "{service.beforeAfter.testimonialText}"
+                      "{beforeAfter.testimonialText}"
                     </p>
                     <div className="mt-4 flex items-center gap-3">
                       <div className="flex gap-0.5 text-amber-500">
@@ -344,8 +353,8 @@ export default function ServicePage() {
                           <Star key={i} size={14} className="fill-current" />
                         ))}
                       </div>
-                      <span className="text-xs text-[#2C1810] font-semibold" style={B}>{service.beforeAfter.patientName}</span>
-                      <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— {service.beforeAfter.treatmentName}</span>
+                      <span className="text-xs text-[#2C1810] font-semibold" style={B}>{beforeAfter.patientName}</span>
+                      <span className="text-[10px] text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>— {beforeAfter.treatmentName}</span>
                     </div>
                   </div>
 
@@ -361,11 +370,11 @@ export default function ServicePage() {
                 <div className="lg:col-span-7 flex flex-col w-full">
                   <div className="flex items-center justify-between mb-4 px-2">
                     <span className="text-[10px] sm:text-xs text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>Clinical Case Study</span>
-                    <span className="text-[10px] sm:text-xs text-[#C9956A] uppercase tracking-widest font-bold" style={M}>{service.beforeAfter.treatmentName}</span>
+                    <span className="text-[10px] sm:text-xs text-[#C9956A] uppercase tracking-widest font-bold" style={M}>{beforeAfter.treatmentName}</span>
                   </div>
                   <BeforeAfterSlider
-                    beforeImage={service.beforeAfter.beforeImage}
-                    afterImage={service.beforeAfter.afterImage}
+                    beforeImage={beforeAfter.beforeImage}
+                    afterImage={beforeAfter.afterImage}
                   />
                 </div>
               </div>
