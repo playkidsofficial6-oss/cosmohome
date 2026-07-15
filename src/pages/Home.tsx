@@ -1273,7 +1273,14 @@ export function Invitation() {
   );
 }
 
+import { useSEO } from "../lib/useSEO";
+
 export default function HomePage({ ready }: { ready: boolean }) {
+  useSEO({
+    title: "Cosmo Home | Expert-Led Aesthetic Medicine & Luxury Skincare",
+    description: "Welcome to Cosmo Home, an exclusive aesthetic medicine clinic founded by Dr. Ruxana. Experience safe, honest, and natural cosmetic treatments for skin, hair, and body in a warm, welcoming home ambience.",
+  });
+
   return (
     <>
       <Hero ready={ready} />

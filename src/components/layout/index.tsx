@@ -78,7 +78,11 @@ const getTreatmentSlug = (name: string, category?: string) => {
     .replace(/[^a-z0-9-]/g, '')
     .replace(/-+/g, '-');
   if (category && (category === "Skin" || category === "Hair")) {
-    return `${category.toLowerCase()}-${base}`;
+    const prefix = `${category.toLowerCase()}-`;
+    if (base.startsWith(prefix)) {
+      return base;
+    }
+    return `${prefix}${base}`;
   }
   return base;
 };

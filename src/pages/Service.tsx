@@ -133,7 +133,34 @@ const slugToOptionMap: Record<string, string> = {
   "exosomes-prp-gfc": "Exosomes / PRP / GFC",
   "prp": "PRP",
   "gfc": "GFC",
-  "exosomes": "Exosomes"
+  "exosomes": "Exosomes",
+  "botox": "Botox",
+  "fillers": "Fillers",
+  "vampire-lift": "Vampire Lift",
+  "thread-lift": "Thread Lift",
+  "skin-boosters": "Skin Boosters",
+  "mnrf": "MNRF",
+  "dermapen": "Dermapen",
+  "co2-laser": "CO2 Laser",
+  "dutexome": "Dutexome",
+  "hair-mesotherapy": "Hair Mesotherapy",
+  "monothreads": "Monothreads",
+  "laser-toning": "Laser Toning",
+  "mnrf-gfc": "MNRF + GFC",
+  "mesopeels": "Mesopeels",
+  "carbon-peel": "Carbon Peel",
+  "led-therapy": "LED Therapy",
+  "skin-mnrf": "Skin MNRF",
+  "skin-dermapen": "Skin Dermapen",
+  "skin-co2-laser": "Skin CO2 Laser",
+  "skin-prp": "Skin PRP",
+  "skin-gfc": "Skin GFC",
+  "skin-exosomes": "Skin Exosomes",
+  "hair-prp": "Hair PRP",
+  "hair-gfc": "Hair GFC",
+  "hair-exosome": "Hair Exosome",
+  "hair-dutexome": "Hair Dutexome",
+  "hair-monothreads": "Hair Monothreads"
 };
 
 const getTrustIcon = (text: string) => {
@@ -153,10 +180,18 @@ const getTrustIcon = (text: string) => {
   return Check;
 };
 
+import { useSEO } from "../lib/useSEO";
+
 export default function ServicePage() {
   const { slug } = useParams<{ slug: string }>();
   const service = SERVICES_DATA[slug || "hydrafacial-medifacial"] || SERVICES_DATA["hydrafacial-medifacial"];
   const serviceTitle = service.title + (service.titleEmphasized ? " " + service.titleEmphasized.replace(/\.$/, "") : "");
+  
+  useSEO({
+    title: `${serviceTitle} | Cosmo Home Aesthetic Medicine`,
+    description: `${service.description} Learn about procedure details, benefits, pricing, and results timeline for ${serviceTitle} at Cosmo Home.`,
+  });
+
   const beforeAfter = service.beforeAfter || {
     beforeImage: "/transformation/before.webp",
     afterImage: "/transformation/after.webp",
@@ -214,6 +249,11 @@ export default function ServicePage() {
     "Body Tightening",
     "Exosomes / PRP / GFC"
   ];
+
+  const displayOptions = [...options];
+  if (selected && !displayOptions.includes(selected)) {
+    displayOptions.push(selected);
+  }
 
   return (
     <AnimatePresence mode="wait">
@@ -871,7 +911,7 @@ export default function ServicePage() {
                                 transition={{ duration: 0.2 }}
                                 className="absolute bottom-full left-0 right-0 mb-2 max-h-48 overflow-y-auto bg-white rounded-xl shadow-2xl border border-[#2C1810]/10 z-50 custom-scrollbar origin-bottom"
                               >
-                                {options.map((opt) => (
+                                {displayOptions.map((opt) => (
                                   <li
                                     key={opt}
                                     onClick={() => {

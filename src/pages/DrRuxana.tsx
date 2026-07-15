@@ -6,11 +6,18 @@ import { ArrowRight, ShieldCheck, Heart, Award, Sparkles, Check, GraduationCap, 
 import { D, M, B, GOLD, EASE, GRAIN } from "../lib/constants";
 import { CTAButtons, FadeUp, Tag } from "../components/ui/shared";
 
+import { useSEO } from "../lib/useSEO";
+
 export default function DrRuxanaPage() {
   const navigate = useNavigate();
   const [selectedDate, setSelectedDate] = useState(0);
   const [selectedTime, setSelectedTime] = useState(0);
   const [selectedMode, setSelectedMode] = useState("clinic");
+
+  useSEO({
+    title: "Dr. Ruxana K | Founder & Lead Aesthetic Physician | Cosmo Home",
+    description: "Meet Dr. Ruxana K, lead aesthetic physician and founder of Cosmo Home. Learn about her MRCS clinical background, BCAM fellowship, and custom skincare philosophy.",
+  });
 
   const { scrollYProgress } = useScroll();
 
