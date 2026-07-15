@@ -1575,7 +1575,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "BIO-COMPATIBLE SUTURES • STERILE THEATRE • ANATOMICAL MAPPING",
     deviceDesc: "We use premium, high-strength PDO cog threads designed to hold facial tissue securely and stimulate collagen safely.",
     deviceFeatures: ["PDO/PLLA Material", "Surgical-Grade Quality", "Precision Cannulas", "Completely Absorbable"],
-    deviceImage: "/services/hifu/hifu.webp",
+    deviceImage: "/services/thread lift/3.webp",
     comparisonTitle: "COSMO HOME vs Surgical Facelift",
     comparisonRows: [
       { label: "Invasiveness", ours: "Minimally invasive with local anesthesia", standard: "Major surgery under general anesthesia" },
@@ -1618,8 +1618,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/injections/before.webp",
-      afterImage: "/services/before&after/injections/after.webp",
+      beforeImage: "/services/thread lift/before.webp",
+      afterImage: "/services/thread lift/after.webp",
       treatmentName: "Thread Lift Contour Sculpting",
       testimonialText: "I noticed an immediate lift in my lower face and jawline. The recovery was quick and the contours look beautifully defined.",
       patientName: "Renu G., 46",
