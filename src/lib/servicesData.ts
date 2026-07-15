@@ -1488,7 +1488,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "HIGH-SPEED SEPARATION • DERMAPEN PRECISION • STERILE SYSTEM",
     deviceDesc: "Your blood is processed in a closed sterile kit to isolate active platelets, which are then infused into the skin during automated microneedling.",
     deviceFeatures: ["Closed Sterile Kits", "High Platelet Yield", "Calibrated Microneedles", "LED Recovery Support"],
-    deviceImage: "/services/exosomes-prp-gfc/3.webp",
+    deviceImage: "/services/Vampire Lift/3.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Preparation", ours: "Double-spin medical centrifuge for high yield", standard: "Single-spin lab devices with low yield" },
@@ -1531,8 +1531,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/injections/before.webp",
-      afterImage: "/services/before&after/injections/after.webp",
+      beforeImage: "/services/Vampire Lift/before.webp",
+      afterImage: "/services/Vampire Lift/after.webp",
       treatmentName: "Vampire Lift Regenerative Therapy",
       testimonialText: "My acne scars have smoothed out significantly and my skin has a healthy, refreshed glow that I haven't seen in years.",
       patientName: "Aman S., 28",
