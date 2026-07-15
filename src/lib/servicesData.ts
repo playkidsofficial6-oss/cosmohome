@@ -3477,7 +3477,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Hair Restoration Experience",
     description: "Activate natural follicle renewal. Our signature Hair PRP therapy concentrates the regenerative growth factors from your own blood platelets, delivering them directly to the hair roots to stimulate thinning areas and naturally increase density.",
     heroRating: "4.8 · Rated by 320+ patients",
-    heroImage: "/services/laser-hair-reduction/1.webp",
+    heroImage: "/services/PRP/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Hair Expert",
     performedBySub: "Safe • Autologous Platelets • Hair Regrowth",
@@ -3499,7 +3499,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🛡️", b: "Natural Restoration", d: "Improves hair density and scalp health organically." }
     ],
     clinicalNote: "A clean scalp mapping is performed to identify target thinning areas before injections.",
-    sideImage: "/services/laser-hair-reduction/2.webp",
+    sideImage: "/services/PRP/2.webp",
     machineTitle: "Centrifuge separation",
     machineEmphasized: "for pure platelets.",
     deviceName: "Calibrated Centrifuge System",
@@ -3550,8 +3550,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/injections/before.webp",
-      afterImage: "/services/before&after/injections/after.webp",
+      beforeImage: "/services/PRP/before.webp",
+      afterImage: "/services/PRP/after.webp",
       treatmentName: "Hair PRP Restoration",
       testimonialText: "My hair shedding has reduced substantially, and my hair feels thicker and healthier.",
       patientName: "Siddharth K., 31",
