@@ -316,9 +316,9 @@ export default function ServicePage() {
             {/* Floating trust card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}
-              className="absolute bottom-6 right-6 p-5 rounded-2xl max-w-[220px]"
+              className="absolute bottom-6 right-6 p-5 rounded-2xl max-w-[250px]"
               style={{ background: "rgba(250,247,242,0.92)", backdropFilter: "blur(12px)", border: "1px solid rgba(201,149,106,0.3)", boxShadow: "0 8px 32px rgba(44,24,16,0.1)" }}>
-              <p className="text-xs tracking-[0.18em] uppercase text-[#C9956A] mb-2" style={M}>
+              <p className="text-xs tracking-[0.18em] uppercase text-[#C9956A] mb-2 whitespace-nowrap" style={M}>
                 {service.performedByLabel || "👩‍⚕️ Performed by"}
               </p>
               <p className="text-base text-[#2C1810]" style={{ ...D }}>
