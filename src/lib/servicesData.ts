@@ -1713,6 +1713,267 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       subtitle: "Micro-injections of hyaluronic acid for deep skin hydration"
     },
   },
+  "skin-boosters-anti-ageing": {
+    id: "skin-boosters-anti-ageing",
+    title: "Anti-Ageing",
+    titleEmphasized: "Skin Boosters.",
+    experienceNo: "Signature Experience",
+    description: "Rejuvenate and restore skin volume. Our Anti-Ageing Skin Boosters restore youthful plumpness, smooth fine lines, and rebuild structural hydration from within. Experience a natural, lifted, and refreshed glow.",
+    heroRating: "4.9 · Rated by 120+ patients",
+    heroImage: "/services/Skin Boosters/1.webp",
+    performedByLabel: "👩‍⚕️ Administered by",
+    performedByName: "Board-Certified Dermatologist",
+    performedBySub: "Safe • Deep Hydration • Lift & Firm Effect",
+    stats: [
+      { n: "30 Min", l: "Procedure time" },
+      { n: "12-24h", l: "Downtime bumps" },
+      { n: "7 Days", l: "Dewy glow onset" },
+      { n: "6-9 Mo", l: "Results duration" }
+    ],
+    whatIsThisTag: "What are Skin Boosters?",
+    whatIsThisTitle: "Volume restored",
+    whatIsThisEmphasized: "from the deep dermis.",
+    whatIsThisDesc1: "With age, the skin's natural hyaluronic acid content decreases, leading to fine lines and loss of elasticity. Our Anti-Ageing Skin Boosters deliver water-binding hyaluronic acid molecules directly into the dermis layers to replenish and lift.",
+    whatIsThisDesc2: "This treatment restores skin density, softens crepey skin on the cheeks and neck, and stimulates healthy collagen production. You leave with a firmer, smoother, and youthful-looking complexion.",
+    benefits: [
+      { icon: "🧬", b: "Restores Elasticity", d: "Stimulates collagen synthesis to firm up sagging skin." },
+      { icon: "💧", b: "Intense Hydration", d: "Pulls moisture deep into the skin to restore lost volume." },
+      { icon: "🌿", b: "Smooths Fine Lines", d: "Plumps superficial wrinkles and crepey neck texture." },
+      { icon: "✨", b: "Youthful Radiance", d: "Delivers a natural, refreshed, and hydrated appearance." }
+    ],
+    clinicalNote: "Treatment parameters are customized to target specific aging zones like cheeks, neck, and hands.",
+    sideImage: "/services/Skin Boosters/2.webp",
+    machineTitle: "Micro-injection",
+    machineEmphasized: "collagen stimulation.",
+    deviceName: "Premium Skin Hydrators",
+    deviceSub: "HA HYDRATORS • MICRO-DROPLET INJECTIONS • DEEP WATER BINDING",
+    deviceDesc: "We use premium dermal hydrators (like Profhilo or Restylane Vital) based on your aging pattern and skin texture.",
+    deviceFeatures: ["Pure Hyaluronic Acid", "Micro-needles", "Intense Water Retention", "Elasticity Support"],
+    deviceImage: "/services/Skin Boosters/3.webp",
+    comparisonTitle: "COSMO HOME vs Topical Serums",
+    comparisonRows: [
+      { label: "Penetration", ours: "Delivered directly into the dermis layers", standard: "Stays on the dead outer skin layer" },
+      { label: "Duration", ours: "Deep hydration lasting 6 to 9 months", standard: "Washes away or fades within hours" },
+      { label: "Plumping", ours: "Plumps dynamic fine lines from within", standard: "Temporary skin softening only" },
+      { label: "Efficacy", ours: "Clinically proven to boost skin elasticity", standard: "Superficial cosmetic improvement" }
+    ],
+    whoNeedsDesc: "Excellent for patients looking to address dry, crepey, or thinning skin, fine lines, or loss of facial volume.",
+    notSuitable: "Pregnancy, active skin infections, known allergy to treatment ingredients.",
+    whoNeedsItems: [
+      { tag: "Loss of volume", desc: "Restore youthful plumpness to aging facial contours." },
+      { tag: "Crepey skin", desc: "Firm up thin, papery skin on cheeks or neck." },
+      { tag: "Fine surface lines", desc: "Plump wrinkles caused by collagen loss and dehydration." },
+      { tag: "Dull skin", desc: "Bring back a healthy, natural, youthful glow." }
+    ],
+    sessionPlanDesc: "Depending on the hydrator, we recommend 1 to 2 sessions followed by maintenance every 6 months.",
+    sessionPlanSteps: [
+      { n: "01", label: "Skin Assessment", duration: "15 min", detail: "Our dermatologist evaluates skin aging patterns and texture to map the injection zones." },
+      { n: "02", label: "Micro-Droplet Infusion", duration: "25 min", detail: "Micro-injections are placed into the skin layers using ultra-fine needles for comfort." },
+      { n: "03", label: "Calming Recovery", duration: "10 min", detail: "A soothing barrier repair cream is applied to reduce injection bumps." }
+    ],
+    timelineDesc: "Hydration starts showing in a few days, with maximum dewy glow at 2 weeks.",
+    timelineItems: [
+      { when: "Immediately", what: "Tiny injection bumps are visible, resolving within 12-24 hours." },
+      { when: "Day 3–5", what: "Skin starts feeling softer, smoother, and more hydrated." },
+      { when: "Day 7–14", what: "Peak dewy glass-skin appearance becomes visible." },
+      { when: "Month 6+", what: "Hyaluronic acid slowly degrades, signaling the time for maintenance." }
+    ],
+    ctaRating: "120+ dewy glass skin cases",
+    ctaTitle: "Ready for deep",
+    ctaTitle2: "youthful, dewy glow?",
+    ctaEmphasized: "Begin today.",
+    ctaDesc: "Book a clinical hydration assessment to design a custom booster plan.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹18,000 / session" },
+      { label: "Duration", val: "30-45 minutes" },
+      { label: "Onset", val: "7 days" },
+      { label: "Downtime", val: "12-24 hours" },
+      { label: "Performed by", val: "Dermatologist" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/Skin Boosters/before.webp",
+      afterImage: "/services/Skin Boosters/after.webp",
+      treatmentName: "Anti-Ageing Skin Boosters",
+      testimonialText: "My fine lines are much softer, and my skin has a steady, plump radiance that makes me look and feel refreshed.",
+      patientName: "Mini V., 45",
+      subtitle: "Micro-injections of hyaluronic acid for deep skin hydration and volume"
+    },
+  },
+  "skin-boosters-acne": {
+    id: "skin-boosters-acne",
+    title: "Acne & Texture",
+    titleEmphasized: "Skin Boosters.",
+    experienceNo: "Signature Experience",
+    description: "Balance and refine your complexion. Our specialized Skin Boosters for acne-prone skin improve hydration without clogging pores, smoothing post-acne texture and calming inflammation.",
+    heroRating: "4.8 · Rated by 90+ patients",
+    heroImage: "/services/Skin Boosters/1.webp",
+    performedByLabel: "👩‍⚕️ Administered by",
+    performedByName: "Board-Certified Dermatologist",
+    performedBySub: "Safe • Non-Comedogenic Hydration • Texture Refinement",
+    stats: [
+      { n: "30 Min", l: "Procedure time" },
+      { n: "12-24h", l: "Downtime bumps" },
+      { n: "7 Days", l: "Texture smoothing onset" },
+      { n: "6-9 Mo", l: "Results duration" }
+    ],
+    whatIsThisTag: "What are Skin Boosters?",
+    whatIsThisTitle: "Balanced hydration",
+    whatIsThisEmphasized: "for post-acne skin.",
+    whatIsThisDesc1: "Acne-prone skin is often dry beneath the surface due to harsh topical acne treatments. Our specialized skin boosters deliver deep hydration using non-comedogenic hyaluronic acid formulations to soothe and restore balance.",
+    whatIsThisDesc2: "This treatment refines uneven skin texture, minimizes the appearance of minor post-acne scarring, and calms redness. The result is a smooth, balanced, and healthy-looking complexion.",
+    benefits: [
+      { icon: "💧", b: "Non-Comedogenic", d: "Deeply hydrates the skin without blocking or clogging pores." },
+      { icon: "✨", b: "Refines Texture", d: "Smooths out minor post-acne scarring and rough patches." },
+      { icon: "🌿", b: "Calms Redness", d: "Soothes inflammation and irritation caused by acne treatments." },
+      { icon: "🧬", b: "Supports Healing", d: "Promotes healthy cell regeneration and skin barrier repair." }
+    ],
+    clinicalNote: "Formulated specifically to ensure deep hydration without triggering active acne breakouts.",
+    sideImage: "/services/Skin Boosters/2.webp",
+    machineTitle: "Micro-injection",
+    machineEmphasized: "pore refinement.",
+    deviceName: "Non-Comedogenic Skin Hydrators",
+    deviceSub: "HYALURONIC ACID • BARRIER REPAIR • TEXTURE RESURFACING",
+    deviceDesc: "We select specialized, light-textured dermal hydrators (like Juvederm Volite or Restylane) that deliver maximum hydration without oiliness.",
+    deviceFeatures: ["Non-Comedogenic HA", "Micro-needles", "Texture Smoothing", "Skin Barrier Support"],
+    deviceImage: "/services/hydrafacial-medifacial/Hydrafacial  Medifacial.webp",
+    comparisonTitle: "COSMO HOME vs Standard Moisturizers",
+    comparisonRows: [
+      { label: "Pore Clogging", ours: "Oil-free deep hydration, zero clogged pores", standard: "Thick creams can trap sebum and cause breakouts" },
+      { label: "Penetration", ours: "Delivered to target layers under the surface", standard: "Sits on the surface, leaving skin greasy" },
+      { label: "Texture Smoothing", ours: "Improves minor scarring from within", standard: "Temporary softening of surface skin" },
+      { label: "Redness Control", ours: "Calms inflammation from the dermis level", standard: "Provides only brief cooling relief" }
+    ],
+    whoNeedsDesc: "Ideal for patients recovering from acne, with uneven post-acne skin texture, dryness from acne medications, or minor scarring.",
+    notSuitable: "Active, severe cystic acne flare-ups in the immediate injection sites, pregnancy.",
+    whoNeedsItems: [
+      { tag: "Post-acne dryness", desc: "Restore hydration after drying topical acne treatments." },
+      { tag: "Uneven texture", desc: "Smooth minor superficial scarring and rough skin." },
+      { tag: "Inflamed skin", desc: "Calm lingering redness and support skin barrier repair." },
+      { tag: "Dull complexion", desc: "Bring back a healthy, natural, oil-free glow." }
+    ],
+    sessionPlanDesc: "We recommend 1 to 2 sessions followed by maintenance every 6 months depending on skin healing progress.",
+    sessionPlanSteps: [
+      { n: "01", label: "Skin Assessment", duration: "15 min", detail: "Our dermatologist evaluates acne history and skin texture to select the safest hydrator." },
+      { n: "02", label: "Micro-Droplet Infusion", duration: "25 min", detail: "Micro-injections are precisely placed in targeted zones using fine needles." },
+      { n: "03", label: "Barrier Soothing", duration: "10 min", detail: "A cooling, anti-inflammatory treatment is applied to soothe the skin." }
+    ],
+    timelineDesc: "Hydration starts showing in a few days, with maximum texture improvement at 2 weeks.",
+    timelineItems: [
+      { when: "Immediately", what: "Injection bumps and mild pinkness resolve within 12-24 hours." },
+      { when: "Day 3–5", what: "Skin feels calmer, smoother, and deeply hydrated." },
+      { when: "Day 7–14", what: "Visible improvement in skin texture and tone." },
+      { when: "Month 6+", what: "Hyaluronic acid slowly degrades, signaling the time for maintenance." }
+    ],
+    ctaRating: "90+ texture refinement cases",
+    ctaTitle: "Ready for clearer,",
+    ctaTitle2: "hydrated skin?",
+    ctaEmphasized: "Begin today.",
+    ctaDesc: "Book a clinical hydration assessment to design a custom booster plan.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹18,000 / session" },
+      { label: "Duration", val: "30-45 minutes" },
+      { label: "Onset", val: "7 days" },
+      { label: "Downtime", val: "12-24 hours" },
+      { label: "Performed by", val: "Dermatologist" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Skin Boosters for Acne & Texture",
+      testimonialText: "My skin was dry and peeling from acne meds. This booster hydrated my skin completely without causing any new breakouts.",
+      patientName: "Arun K., 28",
+      subtitle: "Micro-injections of hyaluronic acid for post-acne skin repair"
+    },
+  },
+  "skin-boosters-skin-renewal": {
+    id: "skin-boosters-skin-renewal",
+    title: "Skin Renewal",
+    titleEmphasized: "Skin Boosters.",
+    experienceNo: "Signature Experience",
+    description: "The ultimate skin renewal and hydration ritual. Skin Boosters infuse the deeper layers of your skin with micro-droplets of pure, non-crosslinked hyaluronic acid and essential nutrients. Experience the true glass-skin effect—elastic, plump, and deeply hydrated from within.",
+    heroRating: "4.9 · Rated by 260+ patients",
+    heroImage: "/services/Skin Boosters/1.webp",
+    performedByLabel: "👩‍⚕️ Administered by",
+    performedByName: "Board-Certified Dermatologist",
+    performedBySub: "Safe • Deep Hydration • Glass Skin Effect",
+    stats: [
+      { n: "30 Min", l: "Procedure time" },
+      { n: "12-24h", l: "Downtime bumps" },
+      { n: "7 Days", l: "Dewy glow onset" },
+      { n: "6-9 Mo", l: "Results duration" }
+    ],
+    whatIsThisTag: "What are Skin Boosters?",
+    whatIsThisTitle: "Moisture unlocked",
+    whatIsThisEmphasized: "from the deep dermis.",
+    whatIsThisDesc1: "No amount of topical moisturizer can mimic the radiance of deep dermal hydration. Skin Boosters work by delivering pure, water-binding hyaluronic acid molecules directly into the dermis, creating a moisture reservoir beneath the surface.",
+    whatIsThisDesc2: "This treatment restores elasticity, plumps superficial dryness lines, and refines texture across the face and neck. The result is a natural, dewy, lit-from-within glow that looks healthy and youthful.",
+    benefits: [
+      { icon: "💧", b: "Intense Hydration", d: "Pulls moisture deep into the skin for a plump look." },
+      { icon: "✨", b: "Dewy Glass Skin", d: "Restores a healthy, natural glow that creams cannot reach." },
+      { icon: "🧬", b: "Improves Elasticity", d: "Stimulates collagen to firm up crepey skin." },
+      { icon: "🌿", b: "Smooths Fine Lines", d: "Plumps superficial dryness lines on cheeks and neck." }
+    ],
+    clinicalNote: "Micro-injections are distributed evenly to maximize moisture and glow across target zones.",
+    sideImage: "/services/Skin Boosters/2.webp",
+    machineTitle: "Micro-injection",
+    machineEmphasized: "moisture delivery.",
+    deviceName: "Premium Skin Hydrators",
+    deviceSub: "HA HYDRATORS • MICRO-DROPLET INJECTIONS • DEEP WATER BINDING",
+    deviceDesc: "We use premium dermal hydrators (like Profhilo, Restylane Vital, or Juvederm Volite) based on your hydration needs and skin texture.",
+    deviceFeatures: ["Pure Hyaluronic Acid", "Micro-needles", "Intense Water Retention", "Elasticity Support"],
+    deviceImage: "/services/hydrafacial-medifacial/Hydrafacial  Medifacial.webp",
+    comparisonTitle: "COSMO HOME vs Topical Serums",
+    comparisonRows: [
+      { label: "Penetration", ours: "Delivered directly into the dermis layers", standard: "Stays on the dead outer skin layer" },
+      { label: "Duration", ours: "Deep hydration lasting 6 to 9 months", standard: "Washes away or fades within hours" },
+      { label: "Plumping", ours: "Plumps dynamic fine lines from within", standard: "Temporary skin softening only" },
+      { label: "Efficacy", ours: "Clinically proven to boost skin elasticity", standard: "Superficial cosmetic improvement" }
+    ],
+    whoNeedsDesc: "Excellent for patients with dry, crepey, dull, or dehydrated skin, early fine lines, or rough skin texture.",
+    notSuitable: "Pregnancy, active skin infections, known allergy to treatment ingredients.",
+    whoNeedsItems: [
+      { tag: "Dehydrated skin", desc: "Restore moisture to skin that looks flat or dry." },
+      { tag: "Crepey texture", desc: "Firm up thin, papery skin on cheeks or neck." },
+      { tag: "Dull complexion", desc: "Bring back a fresh, youthful, natural glow." },
+      { tag: "Fine surface lines", desc: "Plump superficial lines caused by dryness." }
+    ],
+    sessionPlanDesc: "Depending on the hydrator, we recommend 1 to 2 sessions followed by maintenance every 6 months.",
+    sessionPlanSteps: [
+      { n: "01", label: "Skin Assessment", duration: "15 min", detail: "Our dermatologist evaluates skin hydration, elasticity, and texture to map the injection zones." },
+      { n: "02", label: "Micro-Droplet Infusion", duration: "25 min", detail: "Micro-injections are placed into the skin layers using ultra-fine needles for comfort." },
+      { n: "03", label: "Calming Recovery", duration: "10 min", detail: "A soothing barrier repair cream is applied to reduce injection bumps." }
+    ],
+    timelineDesc: "Hydration starts showing in a few days, with maximum dewy glow at 2 weeks.",
+    timelineItems: [
+      { when: "Immediately", what: "Tiny injection bumps are visible, resolving within 12-24 hours." },
+      { when: "Day 3–5", what: "Skin starts feeling softer, smoother, and more hydrated." },
+      { when: "Day 7–14", what: "Peak dewy glass-skin appearance becomes visible." },
+      { when: "Month 6+", what: "Hyaluronic acid slowly degrades, signaling the time for maintenance." }
+    ],
+    ctaRating: "260+ dewy glass skin cases",
+    ctaTitle: "Ready for deep",
+    ctaTitle2: "dewy glass-skin glow?",
+    ctaEmphasized: "Begin today.",
+    ctaDesc: "Book a clinical hydration assessment to design a custom booster plan.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹18,000 / session" },
+      { label: "Duration", val: "30-45 minutes" },
+      { label: "Onset", val: "7 days" },
+      { label: "Downtime", val: "12-24 hours" },
+      { label: "Performed by", val: "Dermatologist" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Skin Boosters Deep Hydration",
+      testimonialText: "My dry skin has transformed completely. It feels hydrated, plump, and has a steady, natural glow every day.",
+      patientName: "Divya N., 31",
+      subtitle: "Micro-injections of hyaluronic acid for deep skin hydration"
+    },
+  },
   "mnrf": {
     id: "mnrf",
     title: "Deep Rebuilding",
