@@ -102,7 +102,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Signature Experience",
     description: "Rediscover the elegant architecture of your face. Our signature HIFU lift works deep within the SMAS layer—where structural definition begins—to gently sculpt, lift, and refine your contours. No surgeries, no downtime, just the quiet confidence of your natural beauty restored.",
     heroRating: "4.8 · Rated by 190+ patients",
-    heroImage: "/services/hifu/1.webp",
+    heroImage: "/services/hifu/hifu-new.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Doctor-Supervised Care",
     performedBySub: "Safe • Personalised • Professional",
@@ -131,7 +131,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "MEDICAL-GRADE • PRECISION • PERSONALISED CARE",
     deviceDesc: "We use advanced, clinically proven aesthetic technologies designed to deliver precise, consistent, and comfortable treatments. Every procedure is tailored to your skin condition and treatment goals, ensuring safe care with natural-looking results.",
     deviceFeatures: ["Medical-Grade Technology", "Precision Treatment", "Personalised Protocols", "Comfort Focused"],
-    deviceImage: "/services/hifu/hifu-cosmo.webp",
+    deviceImage: "/services/products-tech-images/ultraformer.webp",
     comparisonTitle: "COSMO HOME vs Conventional Treatment",
     comparisonRows: [
       { label: "Technology", ours: "Medical-grade aesthetic devices", standard: "Standard equipment" },
@@ -869,7 +869,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA Cleared · Medical-Grade HIFEM · Non-Invasive Toning",
     deviceDesc: "The HIFEM system penetrates deep into the subcutaneous tissue, inducing rapid muscle contractions. HIFEM technology delivers supramaximal muscle contractions that strengthen targeted muscles while stimulating natural fat metabolism—creating a firmer, more sculpted body without surgery or downtime.",
     deviceFeatures: ["HIFEM Technology", "Dual dual-paddle applicators", "Custom intensity programs", "Zero thermal energy"],
-    deviceImage: "/services/muscle-sculpting/3.webp",
+    deviceImage: "/services/products-tech-images/cm-slim.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Technology", ours: "High-Intensity Focused Electromagnetic (HIFEM)", standard: "Electrical Muscle Stimulation (EMS)" },
@@ -969,7 +969,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "Clinically Validated · Non-Invasive · Personalised",
     deviceDesc: "Our body contouring system combines multiple energy modalities—radiofrequency, ultrasound, and electromagnetic—to target different tissue layers simultaneously. This multi-modal approach delivers superior results by addressing subcutaneous fat, skin laxity, and muscle tone in a single coordinated protocol.",
     deviceFeatures: ["Multi-modal energy delivery", "Real-time temperature monitoring", "Comfort-optimised applicators", "Zero thermal damage risk"],
-    deviceImage: "/services/body-contouring/3.webp",
+    deviceImage: "/services/products-tech-images/cm-slim.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Approach", ours: "Personalised multi-modal protocol", standard: "Single device, fixed program" },
@@ -1056,7 +1056,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA Cleared · Clinically Proven · Non-Invasive",
     deviceDesc: "Our fat reduction system uses controlled energy delivery to selectively target and destroy subcutaneous fat cells while leaving surrounding tissue unharmed. The precise targeting ensures consistent, measurable results across all treatment zones.",
     deviceFeatures: ["Selective fat cell targeting", "Surrounding tissue protection", "Real-time monitoring", "Comfortable treatment experience"],
-    deviceImage: "/services/fat-reduction/3.webp",
+    deviceImage: "/services/products-tech-images/cm-slim.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Technology", ours: "Latest-gen energy platforms", standard: "Older generation devices" },
@@ -1143,7 +1143,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA Cleared · Collagen Stimulating · Non-Invasive",
     deviceDesc: "Our radiofrequency tightening system delivers controlled thermal energy to the deep dermis and subdermal tissue. The precise temperature targets activate fibroblasts—the cells responsible for collagen and elastin production—without damaging overlying skin.",
     deviceFeatures: ["Deep dermis thermal targeting", "Real-time temperature control", "Multi-polar RF delivery", "Skin cooling protection"],
-    deviceImage: "/services/body-tightening/3.webp",
+    deviceImage: "/services/products-tech-images/ultraformer.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Depth", ours: "Deep dermis & subdermal layers", standard: "Surface level only" },
@@ -2262,7 +2262,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA-APPROVED • LOW-FLUENCE ACCURACY • PIGMENT TONING",
     deviceDesc: "We use advanced Q-switched laser systems to target melanin pigment clusters safely, protecting surrounding healthy cells.",
     deviceFeatures: ["FDA-Approved", "Q-switched Nd:YAG", "Calibrated Fluence", "Comfort Cooling"],
-    deviceImage: "/services/laser-pigment-reduction/Laser Pigment Reduction.webp",
+    deviceImage: "/services/products-tech-images/q-laze.webp",
     comparisonTitle: "COSMO HOME vs Chemical Bleaches",
     comparisonRows: [
       { label: "Targeting", ours: "Laser energy targets melanin particles deep in skin", standard: "Chemicals dry out and strip skin surface" },
@@ -2521,7 +2521,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "GOLD-PLATED NEEDLES • CELL-FREE CONCENTRATE • SYNERGY",
     deviceDesc: "We perform calibrated MNRF sweeps and immediately infuse cell-free GFC growth factors to trigger rapid skin repair.",
     deviceFeatures: ["MNRF Technology", "Purified GFC", "Synergistic Action", "Dermatologist-led"],
-    deviceImage: "/services/laser-scar-reduction/Laser Scar Reduction.webp",
+    deviceImage: "/services/products-tech-images/scarlet.webp",
     comparisonTitle: "COSMO HOME vs Standard Care",
     comparisonRows: [
       { label: "Combination", ours: "MNRF immediately followed by activated GFC", standard: "MNRF with standard soothing gel" },
@@ -2842,7 +2842,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "RF NEEDLING • COLLAGEN INDUCTION • TEXTURE REBUILD",
     deviceDesc: "Our specialized body MNRF handpiece uses gold-plated insulated needles to treat deep dermal tear lines safely.",
     deviceFeatures: ["Gold-insulated Needles", "Fractional RF Energy", "Adjustable Needle Depth", "Body Resurfacing Tip"],
-    deviceImage: "/services/laser-scar-reduction/Laser Scar Reduction.webp",
+    deviceImage: "/services/products-tech-images/scarlet.webp",
     comparisonTitle: "COSMO HOME vs Topical Creams",
     comparisonRows: [
       { label: "Dermal Reach", ours: "Needles deliver energy 1.0 - 3.5mm deep", standard: "Creams sit on superficial epidermis only" },
