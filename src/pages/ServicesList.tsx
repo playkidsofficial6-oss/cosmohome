@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { motion, AnimatePresence, useInView } from "motion/react";
 import {
   ArrowRight, Sparkles, Smile, Wind, Heart, Syringe,
@@ -19,7 +19,6 @@ const CATEGORIES: Array<{ key: string; label: string; icon: IconType }> = [
   { key: "Face", label: "Face", icon: Smile as IconType },
   { key: "Skin", label: "Skin", icon: Sparkles as IconType },
   { key: "Hair", label: "Hair", icon: Wind as IconType },
-  { key: "Laser", label: "Laser", icon: Cpu as IconType },
   { key: "Body", label: "Body", icon: Heart as IconType },
   { key: "Injectables", label: "Injectables", icon: Syringe as IconType },
 ];
@@ -52,7 +51,6 @@ const CATEGORY_MAPPING: Record<string, string[]> = {
     "skin-exosomes"
   ],
   Hair: [
-    "laser-hair-reduction",
     "hair-prp",
     "hair-gfc",
     "hair-exosome",
@@ -71,23 +69,11 @@ const CATEGORY_MAPPING: Record<string, string[]> = {
     "laser-toning",
     "carbon-peel"
   ],
-  Body: ["muscle-sculpting"],
+  Body: ["muscle-sculpting", "body-contouring", "fat-reduction", "body-tightening"],
   Injectables: [
-    "exosomes-prp-gfc",
-    "botox",
-    "fillers",
-    "vampire-lift",
-    "thread-lift",
-    "skin-boosters",
-    "exosomes",
-    "skin-prp",
-    "skin-gfc",
-    "skin-exosomes",
-    "hair-prp",
-    "hair-gfc",
-    "hair-exosome",
-    "hair-dutexome",
-    "hair-monothreads"
+    "prp",
+    "gfc",
+    "exosomes"
   ]
 };
 
@@ -104,7 +90,7 @@ const SERVICE_TAG_MAPPING: Record<string, string> = {
   "led-therapy": "Face : Acne",
   "mnrf": "Face : Acne",
   "co2-laser": "Face : Acne",
-  "exosomes": "Face : Skin Renewal",
+  "exosomes": "Face & Injectables",
   "laser-toning": "Face : Skin Renewal",
   "mnrf-gfc": "Face : Skin Renewal",
   "hydrafacial-medifacial": "Face : Skin Renewal",
@@ -133,9 +119,13 @@ const SERVICE_TAG_MAPPING: Record<string, string> = {
 
   // Body treatments
   "muscle-sculpting": "Body : Sculpting",
+  "body-contouring": "Body : Contouring",
+  "fat-reduction": "Body : Fat Reduction",
+  "body-tightening": "Body : Tightening",
 
   // Injectables
-  "exosomes-prp-gfc": "Injectables"
+  "prp": "Injectables",
+  "gfc": "Injectables"
 };
 
 const getServiceCategory = (id: string): string => {
@@ -144,6 +134,26 @@ const getServiceCategory = (id: string): string => {
     if (ids.includes(id)) return cat;
   }
   return "Skin"; // Fallback
+};
+
+const getServiceTag = (key: string, selectedCategory: string): string => {
+  const defaultTag = SERVICE_TAG_MAPPING[key] || getServiceCategory(key);
+  if (selectedCategory === "all") {
+    return defaultTag;
+  }
+  const activeCategoryObj = CATEGORIES.find((c) => c.key === selectedCategory);
+  const activeLabel = activeCategoryObj ? activeCategoryObj.label : selectedCategory;
+  if (defaultTag.includes(" : ")) {
+    const parts = defaultTag.split(" : ");
+    return `${activeLabel} : ${parts[1]}`;
+  }
+  if (defaultTag.includes(" & ")) {
+    return activeLabel;
+  }
+  if (defaultTag === "Injectables" && activeLabel !== "Injectables") {
+    return activeLabel;
+  }
+  return defaultTag;
 };
 
 const getServiceQuickSpec = (service: ServiceData) => {
@@ -334,6 +344,8 @@ function FAQItem({ question, answer, isOpen, onToggle }: { question: string; ans
 
 export default function ServicesListPage() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const categoryParam = searchParams.get("category");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(null);
 
@@ -341,6 +353,15 @@ export default function ServicesListPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Synchronize category state with query parameter
+  useEffect(() => {
+    if (categoryParam && ["Face", "Skin", "Hair", "Body", "Injectables"].includes(categoryParam)) {
+      setSelectedCategory(categoryParam);
+    } else if (!categoryParam) {
+      setSelectedCategory("all");
+    }
+  }, [categoryParam]);
 
   // Filter services based on category selection
   const filteredServiceKeys = Object.keys(SERVICES_DATA).filter((key) => {
@@ -675,7 +696,7 @@ export default function ServicesListPage() {
                     {/* Category Badge */}
                     <div className="mb-3 shrink-0">
                       <span className="inline-block px-3 py-1 bg-[#C9956A]/10 border border-[#C9956A]/20 text-[#C9956A] text-[9px] tracking-widest uppercase rounded-full font-bold" style={M}>
-                        {SERVICE_TAG_MAPPING[key] || category}
+                        {getServiceTag(key, selectedCategory)}
                       </span>
                     </div>
 

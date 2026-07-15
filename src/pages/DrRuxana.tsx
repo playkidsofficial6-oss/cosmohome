@@ -8,6 +8,9 @@ import { CTAButtons, FadeUp, Tag } from "../components/ui/shared";
 
 export default function DrRuxanaPage() {
   const navigate = useNavigate();
+  const [selectedDate, setSelectedDate] = useState(0);
+  const [selectedTime, setSelectedTime] = useState(0);
+  const [selectedMode, setSelectedMode] = useState("clinic");
 
   const { scrollYProgress } = useScroll();
 
@@ -26,6 +29,10 @@ export default function DrRuxanaPage() {
   const featherY = useSpring(rawY, { stiffness: 60, damping: 20, mass: 0.5 });
   const featherX = useSpring(rawX, { stiffness: 60, damping: 20, mass: 0.5 });
   const featherRotate = useSpring(rawRotate, { stiffness: 60, damping: 20, mass: 0.5 });
+
+  // Portrait Parallax transform
+  const portraitY = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const portraitYSpring = useSpring(portraitY, { stiffness: 60, damping: 20, mass: 0.5 });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -172,19 +179,19 @@ export default function DrRuxanaPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                   whileHover={{ y: -5 }}
-                  className="absolute bottom-10 -right-6 z-20 bg-white/70 backdrop-blur-xl border border-white/80 text-[#2C1810] p-6 rounded-3xl shadow-[0_15px_40px_rgba(44,24,16,0.08)] max-w-[200px] flex flex-col gap-3 group cursor-default"
+                  className="absolute bottom-6 md:bottom-10 -right-3 md:-right-6 z-20 bg-white/70 backdrop-blur-xl border border-white/80 text-[#2C1810] p-3.5 md:p-6 rounded-2xl md:rounded-3xl shadow-[0_15px_40px_rgba(44,24,16,0.08)] max-w-[130px] md:max-w-[200px] flex flex-col gap-1.5 md:gap-3 group cursor-default"
                 >
-                  <div className="flex flex-col border-b border-[#2C1810]/5 pb-2.5">
-                    <span className="text-2xl font-light text-[#C9956A]" style={D}>10+ Yrs</span>
-                    <span className="text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Clinical Practice</span>
+                  <div className="flex flex-col border-b border-[#2C1810]/5 pb-1.5 md:pb-2.5">
+                    <span className="text-lg md:text-2xl font-light text-[#C9956A]" style={D}>10+ Yrs</span>
+                    <span className="text-[7px] md:text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Clinical Practice</span>
                   </div>
-                  <div className="flex flex-col border-b border-[#2C1810]/5 pb-2.5">
-                    <span className="text-2xl font-light text-[#C9956A]" style={D}>BCAM</span>
-                    <span className="text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Fellowship</span>
+                  <div className="flex flex-col border-b border-[#2C1810]/5 pb-1.5 md:pb-2.5">
+                    <span className="text-lg md:text-2xl font-light text-[#C9956A]" style={D}>BCAM</span>
+                    <span className="text-[7px] md:text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Fellowship</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-2xl font-light text-[#C9956A]" style={D}>MRCS</span>
-                    <span className="text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Surgical Board</span>
+                    <span className="text-lg md:text-2xl font-light text-[#C9956A]" style={D}>MRCS</span>
+                    <span className="text-[7px] md:text-[8px] tracking-widest text-[#5C4A42] uppercase font-bold mt-0.5" style={M}>Surgical Board</span>
                   </div>
                 </motion.div>
 
@@ -194,7 +201,7 @@ export default function DrRuxanaPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.7 }}
-                  className="absolute -top-6 -left-6 z-20 w-24 h-24 bg-[#2C1810] text-[#FAF7F2] rounded-full shadow-2xl flex items-center justify-center border border-[#C9956A]/30 overflow-hidden group cursor-pointer"
+                  className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 z-20 w-16 h-16 sm:w-24 sm:h-24 bg-[#2C1810] text-[#FAF7F2] rounded-full shadow-2xl flex items-center justify-center border border-[#C9956A]/30 overflow-hidden group cursor-pointer"
                 >
                   {/* Rotating circular text SVG */}
                   <motion.svg 
@@ -211,7 +218,7 @@ export default function DrRuxanaPage() {
                     </text>
                   </motion.svg>
                   {/* Small gold leaf logo in the absolute center */}
-                  <div className="absolute inset-0 flex items-center justify-center text-sm font-light text-[#FAF7F2] select-none">
+                  <div className="absolute inset-0 flex items-center justify-center text-xs sm:text-sm font-light text-[#FAF7F2] select-none">
                     ✨
                   </div>
                 </motion.div>
@@ -223,53 +230,139 @@ export default function DrRuxanaPage() {
         </div>
       </section>
 
-      {/* ═╦═ 2. PHILOSOPHY OF CARE ═╦═ */}
-      <section className="py-12 md:py-20 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-            <Tag>Philosophy of Care</Tag>
-            <h2 className="text-3xl sm:text-5xl text-[#2C1810] mt-3 mb-6 font-light" style={D}>
-              A gentle, <span className="serif text-[#C9956A]">natural-first</span> approach.
-            </h2>
-            <p className="text-sm sm:text-base text-[#5C4A42] leading-relaxed font-normal">
-              Great aesthetics are not about changing who you are. It is about bringing out the best version of yourself, backed by medical science and surgical-grade precision.
-            </p>
-          </div>
+      {/* ═╦═ 2. PHILOSOPHY OF CARE (OPTIMIZED SPLIT-LAYOUT) ═╦═ */}
+      <section className="py-12 md:py-16 px-6 md:px-16 lg:px-24 bg-[#FAF7F2] relative overflow-hidden border-b border-[#2C1810]/5">
+        {/* Subtle decorative grid patterns & watermarks */}
+        <div className="absolute inset-0 opacity-[0.02] z-0 pointer-events-none" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
+        
+        {/* Glowing backdrops */}
+        <div className="absolute top-1/4 right-0 w-[450px] h-[450px] rounded-full pointer-events-none z-0 opacity-30" style={{ background: "radial-gradient(circle, rgba(201,149,106,0.08) 0%, transparent 70%)" }} />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none z-0 opacity-20" style={{ background: "radial-gradient(circle, rgba(44,24,16,0.04) 0%, transparent 70%)" }} />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Heart,
-                title: "Listening First",
-                desc: "We start with a 60-minute in-depth conversation. We learn about your lifestyle, concerns, and goals before drawing any treatment plan.",
-              },
-              {
-                icon: ShieldCheck,
-                title: "Safety & Integrity",
-                desc: "Every procedure is dermatologist-led or doctor-supervised. We maintain extreme standards of sterile protocols and clinical accountability.",
-              },
-              {
-                icon: Sparkles,
-                title: "Subtle Calibrations",
-                desc: "We focus on structural volume restoration and soft calibrations that preserve natural facial expressions and authentic proportions.",
-              },
-            ].map((p, i) => (
-              <motion.div
-                key={p.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                whileHover={{ y: -4 }}
-                className="bg-white p-8 rounded-3xl border border-[#2C1810]/5 shadow-[0_4px_30px_rgba(44,24,16,0.01)] hover:shadow-[0_12px_45px_rgba(44,24,16,0.04)] transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-[#C9956A]/10 flex items-center justify-center text-[#C9956A] mb-6">
-                  <p.icon size={22} strokeWidth={1.5} />
+        {/* Large Luxury Text Watermark */}
+        <div className="absolute left-[3%] top-1/2 -translate-y-1/2 text-[10vw] font-serif uppercase tracking-[0.25em] text-[#C9956A]/[0.015] select-none pointer-events-none z-0 font-extralight hidden xl:block pointer-events-none">
+          Harmony
+        </div>
+
+        {/* Floating Delicate Sparkles */}
+        <Sparkles size={48} strokeWidth={0.75} className="absolute top-12 left-16 text-[#C9956A]/15 pointer-events-none z-0 animate-pulse" />
+        <Sparkles size={72} strokeWidth={0.5} className="absolute bottom-20 right-20 text-[#C9956A]/10 pointer-events-none z-0" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            
+            {/* Left Column: Portrait of Dr. Ruxana (Roman Arch with Scroll Parallax) */}
+            <motion.div 
+              style={{ y: portraitYSpring }}
+              className="lg:col-span-5 xl:col-span-4 flex flex-col items-center"
+            >
+              <div className="relative w-full max-w-[320px] aspect-[4/5] z-10">
+                {/* Luxury architectural outer arch outline */}
+                <div className="absolute -inset-4 border border-[#C9956A]/20 rounded-t-full rounded-b-[28px] pointer-events-none z-0 hidden lg:block" />
+                
+                <div className="relative w-full h-full rounded-t-full rounded-b-[24px] overflow-hidden shadow-[0_15px_35px_rgba(44,24,16,0.06)] border border-[#E8E1D7] bg-[#FAF7F2] z-10">
+                  <img 
+                    src="/doctor/ruxana.webp" 
+                    alt="Dr. Ruxana K." 
+                    className="w-full h-full object-cover scale-x-[-1]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/20 via-transparent to-transparent" />
                 </div>
-                <h3 className="text-lg font-semibold text-[#2C1810] mb-3" style={D}>{p.title}</h3>
-                <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed font-light">{p.desc}</p>
-              </motion.div>
-            ))}
+              </div>
+              <div className="mt-5 text-center mb-6">
+                <h4 className="text-base font-medium text-[#2C1810] font-serif" style={D}>Dr. Ruxana K.</h4>
+                <p className="text-[9px] tracking-widest text-[#C9956A] uppercase font-bold mt-1" style={M}>Founder & Medical Director</p>
+              </div>
+
+              {/* Accreditations & Key Highlights Box */}
+              <div className="w-full max-w-[320px] sm:max-w-[340px] bg-white/40 backdrop-blur-sm border border-[#C9956A]/15 rounded-3xl p-6 sm:p-7 space-y-5 shadow-[0_10px_30px_rgba(44,24,16,0.01)] hover:border-[#C9956A]/30 transition-all duration-300">
+                <h5 className="text-[10px] sm:text-[11px] tracking-[0.2em] text-[#C9956A] uppercase font-bold border-b border-[#C9956A]/10 pb-3" style={M}>
+                  Accreditations
+                </h5>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#C9956A] text-sm mt-0.5">✦</span>
+                    <div>
+                      <h6 className="text-xs sm:text-[13px] font-semibold text-[#2C1810]" style={D}>BCAM Fellow Member</h6>
+                      <p className="text-[10px] sm:text-[11px] text-[#5C4A42] font-light leading-relaxed">British College of Aesthetic Medicine</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#C9956A] text-sm mt-0.5">✦</span>
+                    <div>
+                      <h6 className="text-xs sm:text-[13px] font-semibold text-[#2C1810]" style={D}>MRCS (United Kingdom)</h6>
+                      <p className="text-[10px] sm:text-[11px] text-[#5C4A42] font-light leading-relaxed">Member of the Royal College of Surgeons</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#C9956A] text-sm mt-0.5">✦</span>
+                    <div>
+                      <h6 className="text-xs sm:text-[13px] font-semibold text-[#2C1810]" style={D}>Medical Graduate (MBBS)</h6>
+                      <p className="text-[10px] sm:text-[11px] text-[#5C4A42] font-light leading-relaxed">Registered Medical Practitioner</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Column: Title + Vertical Row Stack */}
+            <div className="lg:col-span-7 xl:col-span-8 space-y-12">
+              <div className="text-left">
+                <Tag>Philosophy of Care</Tag>
+                <h2 className="text-4xl sm:text-5xl text-[#2C1810] leading-[1.1] mt-4 mb-5 font-light" style={D}>
+                  A gentle, <span className="serif text-[#C9956A]">natural-first</span> approach.
+                </h2>
+                <p className="text-sm sm:text-base text-[#5C4A42] leading-relaxed font-light max-w-2xl">
+                  Great aesthetics are not about changing who you are. It is about bringing out the best version of yourself, backed by medical science and surgical-grade precision.
+                </p>
+              </div>
+
+              {/* Vertical Stack of Advanced Glass Cards */}
+              <div className="space-y-5">
+                {[
+                  {
+                    num: "01",
+                    title: "Listening First",
+                    desc: "I begin each journey with an in-depth conversation. I learn about your lifestyle, concerns, and goals before drawing any plan.",
+                  },
+                  {
+                    num: "02",
+                    title: "Safety & Integrity",
+                    desc: "Every procedure follows rigorous medical protocols. I maintain extreme standards of sterile environments, patient safety, and clinical accountability.",
+                  },
+                  {
+                    num: "03",
+                    title: "Subtle Calibrations",
+                    desc: "I focus on structural volume restoration and soft calibrations that preserve your natural facial expressions and authentic proportions.",
+                  },
+                ].map((p) => {
+                  return (
+                    <motion.div 
+                      key={p.title}
+                      whileHover={{ y: -4 }}
+                      transition={{ duration: 0.3 }}
+                      className="bg-white/35 backdrop-blur-md border border-[#C9956A]/15 p-6 sm:p-8 rounded-[24px] flex flex-col sm:flex-row gap-6 items-start hover:border-[#C9956A]/35 hover:bg-white/80 shadow-[0_10px_35px_rgba(44,24,16,0.01)] hover:shadow-[0_20px_50px_rgba(201,149,106,0.05)] transition-all duration-300 group"
+                    >
+                      <span className="text-2xl font-light text-[#C9956A] font-serif italic select-none mt-0.5 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                        {p.num}
+                      </span>
+                      <div className="space-y-1.5 flex-1">
+                        <h3 className="text-lg font-medium text-[#2C1810] font-serif group-hover:text-[#C9956A] transition-colors duration-300" style={D}>
+                          {p.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed font-light">
+                          {p.desc}
+                        </p>
+                      </div>
+                      <div className="text-xs text-[#C9956A] self-end sm:self-start opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 select-none">
+                        ✦
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -332,48 +425,78 @@ export default function DrRuxanaPage() {
         </div>
       </section>
 
-      {/* ═╦═ 4. SIGNATURE CONSULTATION CTA ═╦═ */}
-      <section className="py-12 md:py-20 px-6 md:px-16 lg:px-24 bg-[#FAF7F2] text-[#2C1810] relative">
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <Tag>Begin Your Journey</Tag>
+      {/* ═╦═ 4. SIGNATURE CONSULTATION CTA (MODERN SPLIT DESIGN) ═╦═ */}
+      <section className="py-20 md:py-28 px-6 md:px-16 lg:px-24 bg-[#FAF7F2] relative overflow-hidden border-t border-[#2C1810]/5">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-[0.02] z-0 pointer-events-none" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full pointer-events-none z-0 opacity-20" style={{ background: "radial-gradient(circle, rgba(201,149,106,0.1) 0%, transparent 70%)" }} />
 
-          <h2 className="text-4xl sm:text-6xl text-[#2C1810] mt-4 mb-6 leading-tight font-light" style={D}>
-            Schedule a private <span className="serif text-[#C9956A]">consultation</span><br />with Dr. Ruxana.
-          </h2>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+            
+            {/* Left Side: Elegant Personal Quote (Replaced Widget) */}
+            <div className="lg:col-span-5 flex flex-col justify-center relative py-8 lg:py-0">
+              <span className="text-8xl text-[#C9956A]/15 font-serif absolute -top-12 -left-4 select-none">“</span>
+              <p className="text-xl sm:text-2xl text-[#2C1810]/80 font-serif italic leading-relaxed pl-6 relative z-10">
+                Aesthetics is not about changing who you are. It is about bringing out the best version of yourself with absolute restraint.
+              </p>
+              <div className="mt-5 pl-6 flex items-center gap-3">
+                <div className="w-8 h-[1px] bg-[#C9956A]/60" />
+                <span className="text-[9px] tracking-widest text-[#C9956A] uppercase font-bold" style={M}>Dr. Ruxana K.</span>
+              </div>
+            </div>
 
-          <p className="text-base sm:text-lg text-[#5C4A42] max-w-xl mx-auto leading-relaxed mb-10 font-light" style={B}>
-            No sales pitches. No treatment menu templates. Just an honest, 60-minute medical conversation about your skin, anatomy, and how we can support your confidence.
-          </p>
+            {/* Right Side: Typographic Content */}
+            <div className="lg:col-span-7 flex flex-col justify-center text-left">
+              <span className="w-fit inline-flex items-center gap-2 px-3 py-1 bg-[#C9956A]/10 text-[#C9956A] text-[9px] font-bold tracking-[0.25em] uppercase rounded-full mb-6" style={M}>
+                Begin Your Journey
+              </span>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.a
-              href="/book-consultation"
-              whileHover={{ scale: 1.04, boxShadow: "0 0 36px rgba(201,149,106,0.55)" }}
-              whileTap={{ scale: 0.97 }}
-              className="w-full sm:w-auto max-w-[300px] sm:max-w-none inline-flex items-center justify-center gap-3 px-6 sm:px-10 py-5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-xl shadow-xl shadow-[#C9956A]/20 font-bold group whitespace-nowrap"
-              style={B}
-            >
-              Book Consultation
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform shrink-0" />
-            </motion.a>
+              <h2 className="text-4xl sm:text-5xl lg:text-[3.25rem] text-[#2C1810] leading-[1.1] mb-6 font-light tracking-tight" style={D}>
+                Schedule a private <span className="serif text-[#C9956A]">consultation</span><br className="hidden sm:inline" /> with Dr. Ruxana.
+              </h2>
 
-            <motion.a
-              href="/service"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full sm:w-auto max-w-[300px] sm:max-w-none inline-flex items-center justify-center gap-2.5 px-6 sm:px-9 py-5 rounded-xl border border-[#2C1810]/15 hover:border-[#C9956A] text-[#2C1810] hover:text-[#C9956A] text-xs tracking-[0.18em] uppercase transition-all duration-300 font-bold whitespace-nowrap"
-              style={B}
-            >
-              Explore Treatments
-            </motion.a>
-          </div>
+              <p className="text-sm sm:text-base text-[#5C4A42] max-w-xl leading-relaxed mb-8 font-light">
+                No sales pitches. No treatment menu templates. Just an honest, 60-minute medical conversation about your skin, anatomy, and how we can support your confidence.
+              </p>
 
-          <div className="mt-12 flex justify-center items-center gap-1.5 select-none">
-            <span className="text-[#C9956A] text-[9px] leading-none shrink-0 font-normal">✦</span>
-            <p className="text-[10px] tracking-[0.2em] text-[#C9956A]/85 uppercase font-semibold" style={M}>
-              Dermatologist-Supervised Care
-            </p>
-            <span className="text-[#C9956A] text-[9px] leading-none shrink-0 font-normal">✦</span>
+              {/* Minimal Trust Features list */}
+              <div className="space-y-3.5 mb-8 max-w-md">
+                <div className="flex items-center gap-3 text-xs text-[#2C1810] font-medium" style={D}>
+                  <span className="text-[#C9956A] text-sm">✦</span> 1-on-1 Comprehensive Assessment
+                </div>
+                <div className="flex items-center gap-3 text-xs text-[#2C1810] font-medium" style={D}>
+                  <span className="text-[#C9956A] text-sm">✦</span> Precise Facial Anatomy Analysis
+                </div>
+                <div className="flex items-center gap-3 text-xs text-[#2C1810] font-medium" style={D}>
+                  <span className="text-[#C9956A] text-sm">✦</span> Strictly Dermatologist-Supervised Care
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap gap-4 items-center">
+                <motion.a
+                  href="/book-consultation"
+                  whileHover={{ scale: 1.04, boxShadow: "0 10px 30px rgba(201,149,106,0.3)" }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-8 sm:px-10 py-5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-xl font-bold transition-all duration-300 shadow-md shadow-[#C9956A]/10 text-center"
+                  style={B}
+                >
+                  Book Consultation
+                </motion.a>
+
+                <motion.a
+                  href="/service"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-7 py-5 rounded-xl border border-[#2C1810]/15 hover:border-[#C9956A] text-[#2C1810] hover:text-[#C9956A] text-xs tracking-[0.18em] uppercase transition-all duration-300 font-bold text-center bg-white/30 backdrop-blur-sm"
+                  style={B}
+                >
+                  Explore Treatments
+                </motion.a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

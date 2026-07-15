@@ -1,4 +1,4 @@
-﻿export interface ServiceData {
+export interface ServiceData {
   id: string;
   title: string;
   titleEmphasized: string;
@@ -131,7 +131,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "MEDICAL-GRADE • PRECISION • PERSONALISED CARE",
     deviceDesc: "We use advanced, clinically proven aesthetic technologies designed to deliver precise, consistent, and comfortable treatments. Every procedure is tailored to your skin condition and treatment goals, ensuring safe care with natural-looking results.",
     deviceFeatures: ["Medical-Grade Technology", "Precision Treatment", "Personalised Protocols", "Comfort Focused"],
-    deviceImage: "/services/hifu/hifu.webp",
+    deviceImage: "/services/hifu/tech-hifu.webp",
     comparisonTitle: "COSMO HOME vs Conventional Treatment",
     comparisonRows: [
       { label: "Technology", ours: "Medical-grade aesthetic devices", standard: "Standard equipment" },
@@ -926,6 +926,267 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       subtitle: "High-intensity electromagnetic body definition"
     },
   },
+  "body-contouring": {
+    id: "body-contouring",
+    title: "Precision Body",
+    titleEmphasized: "Contouring.",
+    experienceNo: "Signature Experience",
+    description: "Reshape and redefine your natural silhouette with advanced non-surgical body contouring protocols that target stubborn fat deposits and restore your body's natural curves.",
+    heroRating: "4.8 · Rated by 120+ patients",
+    heroImage: "/services/body-contouring/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Body Contouring Specialist",
+    performedBySub: "Safe • Personalised • Professional",
+    stats: [
+      { n: "4–6", l: "Sessions recommended" },
+      { n: "0", l: "Days downtime" },
+      { n: "100%", l: "Non-invasive" },
+      { n: "4.8★", l: "Patient satisfaction" }
+    ],
+    whatIsThisTitle: "This is not",
+    whatIsThisEmphasized: "a one-size-fits-all treatment.",
+    whatIsThisDesc1: "Body contouring at Cosmo Home is a personalised protocol that combines multiple advanced technologies to reshape specific zones—abdomen, flanks, thighs, and arms—without surgery or downtime.",
+    whatIsThisDesc2: "Our specialists map your body composition and design a targeted plan using the most appropriate energy-based devices for your tissue type and goals. The result is a sculpted, natural silhouette that aligns with your body, not a generic standard.",
+    benefits: [
+      { icon: "✦", b: "Targeted fat reduction", d: "Precisely treats stubborn deposits resistant to diet and exercise" },
+      { icon: "📐", b: "Natural silhouette shaping", d: "Restores your body's natural proportions and curves" },
+      { icon: "✨", b: "Zero surgery", d: "Non-invasive protocols with no incisions or scarring" },
+      { icon: "🔄", b: "Customised protocols", d: "Treatment plan tailored to your specific body zones and goals" }
+    ],
+    clinicalNote: "A body composition assessment is performed before treatment to identify target zones and select the most suitable contouring technology.",
+    sideImage: "/services/body-contouring/2.webp",
+    whoNeedsDesc: "Ideal for individuals looking to address localized fat deposits, improve body shape proportions, and contour specific regions such as thighs, hips, abdomen, and arms.",
+    notSuitable: "Active infections in the treatment area, pregnancy, severe circulatory disorders, severe liver or kidney disease.",
+    whoNeedsItems: [
+      { tag: "Silhouette reshaping", desc: "Redefining natural body curves and proportions." },
+      { tag: "Stubborn pockets", desc: "Reducing fat in areas resistant to diet and exercise." },
+      { tag: "Cellulite smoothing", desc: "Smoothing out skin dimples on thighs and buttocks." },
+      { tag: "Asymmetric contouring", desc: "Correcting contour irregularities for a balanced look." }
+    ],
+    machineTitle: "Advanced Body",
+    machineEmphasized: "Reshaping Technology.",
+    deviceName: "Multi-Modal Body Contouring System",
+    deviceSub: "Clinically Validated · Non-Invasive · Personalised",
+    deviceDesc: "Our body contouring system combines multiple energy modalities—radiofrequency, ultrasound, and electromagnetic—to target different tissue layers simultaneously. This multi-modal approach delivers superior results by addressing subcutaneous fat, skin laxity, and muscle tone in a single coordinated protocol.",
+    deviceFeatures: ["Multi-modal energy delivery", "Real-time temperature monitoring", "Comfort-optimised applicators", "Zero thermal damage risk"],
+    deviceImage: "/services/body-contouring/3.webp",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
+    comparisonRows: [
+      { label: "Approach", ours: "Personalised multi-modal protocol", standard: "Single device, fixed program" },
+      { label: "Assessment", ours: "Full body composition mapping", standard: "Visual assessment only" },
+      { label: "Technology", ours: "Latest FDA-cleared devices", standard: "Older generation equipment" },
+      { label: "Downtime", ours: "Zero", standard: "Variable" }
+    ],
+    sessionPlanDesc: "A standard contouring program consists of 4 to 6 sessions spaced 1 to 2 weeks apart, depending on target areas.",
+    sessionPlanSteps: [
+      { n: "01", label: "Consultation & Mapping", duration: "15 min", detail: "We evaluate skin laxity, fat thickness, and body symmetry to outline the optimal treatment grid." },
+      { n: "02", label: "Multi-Modal Treatment", duration: "45 min", detail: "Applicators deliver controlled radiofrequency and mechanical vacuum to heat fat layers and smooth tissue. Feels like a deep, warm massage." },
+      { n: "03", label: "Post-Treatment Soothing", duration: "10 min", detail: "Skin is cleansed and a specialized soothing, firming complex is applied." }
+    ],
+    timelineDesc: "Skin tightness improves gradually, with significant contour refinements visible over 4 to 8 weeks.",
+    timelineItems: [
+      { when: "Immediately", what: "Treated skin feels warm, firm, and slightly flushed." },
+      { when: "Week 2", what: "Local circulation increases, leading to a smoother skin texture." },
+      { when: "Week 4", what: "Contours appear more defined as localized fat layers begin to thin out." },
+      { when: "Month 2+", what: "Optimal silhouette contours and smoother skin texture are fully visible." }
+    ],
+    ctaRating: "120+ patients contoured",
+    ctaTitle: "Ready to reshape",
+    ctaTitle2: "your silhouette?",
+    ctaEmphasized: "Book today.",
+    ctaDesc: "A body composition assessment ensures we design the most targeted and effective contouring protocol for your specific goals.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹12,000 / session" },
+      { label: "Duration", val: "45–60 minutes" },
+      { label: "Recommended", val: "4–6 sessions" },
+      { label: "Frequency", val: "Weekly" },
+      { label: "Downtime", val: "None" },
+      { label: "Performed by", val: "Contouring Specialist" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Body Contouring/before.webp",
+      afterImage: "/services/before&after/Body Contouring/after.webp",
+      treatmentName: "Precision Body Contouring",
+      testimonialText: "I had stubborn fat around my waist that wouldn't budge despite dieting. After 5 body contouring sessions, my waistline is completely transformed.",
+      patientName: "Priya M., 34",
+      subtitle: "Advanced non-surgical body reshaping"
+    },
+  },
+  "fat-reduction": {
+    id: "fat-reduction",
+    title: "Advanced Fat",
+    titleEmphasized: "Reduction.",
+    experienceNo: "Signature Experience",
+    description: "Permanently eliminate stubborn fat cells with clinically proven non-invasive fat reduction technologies that target and destroy fat without surgery or recovery time.",
+    heroRating: "4.9 · Rated by 95+ patients",
+    heroImage: "/services/fat-reduction/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Body Specialist",
+    performedBySub: "Safe • Personalised • Professional",
+    stats: [
+      { n: "3–5", l: "Sessions recommended" },
+      { n: "0", l: "Days downtime" },
+      { n: "25%", l: "Fat layer reduction" },
+      { n: "100%", l: "Non-surgical" }
+    ],
+    whatIsThisTitle: "This is not",
+    whatIsThisEmphasized: "a temporary solution.",
+    whatIsThisDesc1: "Fat reduction at Cosmo Home uses FDA-cleared energy-based technologies to permanently destroy targeted fat cells. Unlike weight loss, which shrinks fat cells, our treatments eliminate them—so they cannot return.",
+    whatIsThisDesc2: "The destroyed fat cells are naturally processed and eliminated by the body's lymphatic system over 4–12 weeks. The result is a measurable, permanent reduction in fat layer thickness in the treated zone—without surgery, scars, or downtime.",
+    benefits: [
+      { icon: "🔥", b: "Permanent fat cell elimination", d: "Targeted cells are permanently destroyed and naturally eliminated" },
+      { icon: "📏", b: "Measurable fat reduction", d: "Up to 25% reduction in fat layer thickness per treatment course" },
+      { icon: "⚡", b: "No surgery required", d: "Completely non-invasive with no incisions or anaesthesia" },
+      { icon: "🌿", b: "Natural elimination", d: "Body processes destroyed fat cells through the lymphatic system" }
+    ],
+    clinicalNote: "Fat thickness is measured before and after treatment using clinical assessment tools to track and document reduction progress.",
+    sideImage: "/services/fat-reduction/2.webp",
+    whoNeedsDesc: "Designed for individuals looking to eliminate stubborn fat bulges in areas like the belly, love handles, back fat, or under the chin.",
+    notSuitable: "Cryoglobulinemia, cold urticaria, pregnancy, active hernia in the treatment zone.",
+    whoNeedsItems: [
+      { tag: "Love handles & flanks", desc: "Reducing stubborn fat pockets on the sides of the waist." },
+      { tag: "Under-chin fat", desc: "Defining the jawline by reducing submental fat." },
+      { tag: "Abdominal bulges", desc: "Eliminating localized fat in the upper and lower belly." },
+      { tag: "Thigh & back fat", desc: "Slimming down targeted bulges for a smoother fit in clothing." }
+    ],
+    machineTitle: "Clinical Fat",
+    machineEmphasized: "Elimination Technology.",
+    deviceName: "Advanced Fat Reduction System",
+    deviceSub: "FDA Cleared · Clinically Proven · Non-Invasive",
+    deviceDesc: "Our fat reduction system uses controlled energy delivery to selectively target and destroy subcutaneous fat cells while leaving surrounding tissue unharmed. The precise targeting ensures consistent, measurable results across all treatment zones.",
+    deviceFeatures: ["Selective fat cell targeting", "Surrounding tissue protection", "Real-time monitoring", "Comfortable treatment experience"],
+    deviceImage: "/services/fat-reduction/3.webp",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
+    comparisonRows: [
+      { label: "Technology", ours: "Latest-gen energy platforms", standard: "Older generation devices" },
+      { label: "Tracking", ours: "Pre/post fat thickness measurement", standard: "Visual assessment only" },
+      { label: "Protocol", ours: "Personalised zone targeting", standard: "Generic applicator placement" },
+      { label: "Results", ours: "Measurable, documented reduction", standard: "Variable outcomes" }
+    ],
+    sessionPlanDesc: "A course of 3 to 5 sessions spaced 4 weeks apart is typically recommended for optimal results.",
+    sessionPlanSteps: [
+      { n: "01", label: "Fat Thickness Analysis", duration: "15 min", detail: "We measure and mark fat deposits to position the applicators for maximum coverage and symmetry." },
+      { n: "02", label: "Cryo-Sculpting Session", duration: "45 min", detail: "Targeted fat is vacuum-drawn into the cooling panel. Cold sensation transitions to numbness within 5-10 minutes." },
+      { n: "03", label: "Active Massage", duration: "5 min", detail: "A vital manual massage breaks up frozen fat crystals to accelerate the cellular elimination process." }
+    ],
+    timelineDesc: "The body naturally processes and flushes out the destroyed fat cells over a 2 to 3 month period.",
+    timelineItems: [
+      { when: "Immediately", what: "The area feels cold, firm, and temporary numbness or redness is expected." },
+      { when: "Week 2", what: "Numbness fades, and the body's natural lymphatic clearance process begins." },
+      { when: "Week 6", what: "First visible reduction in fat layer thickness. Clothes start fitting looser." },
+      { when: "Month 3", what: "Maximum fat reduction (up to 25% of treated fat layer) is fully realized." }
+    ],
+    ctaRating: "95+ patients treated",
+    ctaTitle: "Ready to eliminate",
+    ctaTitle2: "stubborn fat permanently?",
+    ctaEmphasized: "Start now.",
+    ctaDesc: "A body assessment maps your target fat zones and designs the most effective reduction protocol for lasting results.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹18,000 / session" },
+      { label: "Duration", val: "45 minutes" },
+      { label: "Recommended", val: "3–5 sessions" },
+      { label: "Frequency", val: "Every 4 weeks" },
+      { label: "Downtime", val: "None" },
+      { label: "Performed by", val: "Body Specialist" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Fat Reduction/before.webp",
+      afterImage: "/services/before&after/Fat Reduction/after.webp",
+      treatmentName: "Advanced Fat Reduction",
+      testimonialText: "The fat on my abdomen that diet and exercise couldn't touch is now gone. Completely non-invasive and zero downtime.",
+      patientName: "Ananya R., 31",
+      subtitle: "Permanent non-surgical fat elimination"
+    },
+  },
+  "body-tightening": {
+    id: "body-tightening",
+    title: "Skin & Body",
+    titleEmphasized: "Tightening.",
+    experienceNo: "Signature Experience",
+    description: "Restore firmness and elasticity to loose, sagging skin with advanced radiofrequency and ultrasound body tightening treatments that stimulate deep collagen remodelling.",
+    heroRating: "4.8 · Rated by 110+ patients",
+    heroImage: "/services/body-tightening/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Aesthetic Specialist",
+    performedBySub: "Safe • Personalised • Professional",
+    stats: [
+      { n: "4–6", l: "Sessions recommended" },
+      { n: "0", l: "Days downtime" },
+      { n: "6 mo", l: "Progressive improvement" },
+      { n: "100%", l: "Non-invasive" }
+    ],
+    whatIsThisTitle: "This is not",
+    whatIsThisEmphasized: "a surface-level treatment.",
+    whatIsThisDesc1: "Body tightening at Cosmo Home uses radiofrequency and focused ultrasound energy to penetrate deep into the dermis and subcutaneous tissue, stimulating fibroblasts to produce new collagen and elastin fibres.",
+    whatIsThisDesc2: "Unlike topical creams or superficial treatments, our deep-tissue tightening protocols target the structural layers responsible for skin firmness. The result is a progressive, natural tightening effect that continues to improve over 3–6 months as new collagen matures.",
+    benefits: [
+      { icon: "🔬", b: "Deep collagen stimulation", d: "Energy penetrates to tissue layers that control skin structure" },
+      { icon: "📈", b: "Progressive improvement", d: "Results continue to improve over 3–6 months post-treatment" },
+      { icon: "✨", b: "Natural-looking results", d: "Gradual tightening looks natural, not surgical" },
+      { icon: "💧", b: "Skin quality improvement", d: "Improves texture, tone, and overall skin elasticity" }
+    ],
+    clinicalNote: "Skin elasticity and firmness are assessed before and after treatment. Radiofrequency temperature is monitored in real-time to ensure safe, effective collagen stimulation.",
+    sideImage: "/services/body-tightening/2.webp",
+    whoNeedsDesc: "Ideal for anyone experiencing mild to moderate skin laxity, crepey skin, or sagging after pregnancy or weight fluctuations.",
+    notSuitable: "Pacemakers, internal defibrillators, metal implants in the treatment zone, pregnancy.",
+    whoNeedsItems: [
+      { tag: "Post-pregnancy tightening", desc: "Restoring abdominal skin firmness and elasticity." },
+      { tag: "Upper arms laxity", desc: "Tightening sagging skin underneath the arms ('bat wings')." },
+      { tag: "Inner & outer thighs", desc: "Smoothing and firming loose skin around the thighs." },
+      { tag: "Crepey knee skin", desc: "Revitalizing skin structure and elasticity around the joints." }
+    ],
+    machineTitle: "Deep Collagen",
+    machineEmphasized: "Remodelling Technology.",
+    deviceName: "Radiofrequency Body Tightening System",
+    deviceSub: "FDA Cleared · Collagen Stimulating · Non-Invasive",
+    deviceDesc: "Our radiofrequency tightening system delivers controlled thermal energy to the deep dermis and subdermal tissue. The precise temperature targets activate fibroblasts—the cells responsible for collagen and elastin production—without damaging overlying skin.",
+    deviceFeatures: ["Deep dermis thermal targeting", "Real-time temperature control", "Multi-polar RF delivery", "Skin cooling protection"],
+    deviceImage: "/services/body-tightening/3.webp",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
+    comparisonRows: [
+      { label: "Depth", ours: "Deep dermis & subdermal layers", standard: "Surface level only" },
+      { label: "Monitoring", ours: "Real-time temperature tracking", standard: "Manual estimation" },
+      { label: "Protocol", ours: "Customised per skin zone", standard: "Generic applicator" },
+      { label: "Results timeline", ours: "Progressive over 6 months", standard: "Variable and short-lived" }
+    ],
+    sessionPlanDesc: "We recommend a sequence of 4 to 6 sessions scheduled 2 to 3 weeks apart to allow collagen remodeling.",
+    sessionPlanSteps: [
+      { n: "01", label: "Skin Assessment", duration: "15 min", detail: "We test skin elasticity, measure hydration, and map the treatment zones for precise energy depth." },
+      { n: "02", label: "Thermal Collagen Induction", duration: "45 min", detail: "Radiofrequency or focused ultrasound energy is delivered. Feels like pleasant, pulsing deep warmth." },
+      { n: "03", label: "Collagen Boost Infusion", duration: "10 min", detail: "A nourishing clinical serum rich in peptides and hyaluronic acid is massaged into the warm, receptive skin." }
+    ],
+    timelineDesc: "Initial tightening is visible from heat-induced collagen contraction, with progressive improvements as new collagen grows.",
+    timelineItems: [
+      { when: "Immediately", what: "Skin feels tighter and warmer. A temporary plumped, healthy glow is visible." },
+      { when: "Week 2", what: "Early collagen synthesis begins, resulting in smoother and more hydrated skin texture." },
+      { when: "Month 2", what: "Significant tightening is visible as new collagen fibers organize and strengthen." },
+      { when: "Month 6", what: "Optimal tightening and skin lift achieved. Skin feels firm, bouncy, and youthful." }
+    ],
+    ctaRating: "110+ patients tightened",
+    ctaTitle: "Ready to restore",
+    ctaTitle2: "your skin's firmness?",
+    ctaEmphasized: "Book now.",
+    ctaDesc: "A skin assessment ensures we target the correct tissue depth and select the most effective tightening protocol for your specific concern.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹10,000 / session" },
+      { label: "Duration", val: "45–60 minutes" },
+      { label: "Recommended", val: "4–6 sessions" },
+      { label: "Frequency", val: "Every 2–3 weeks" },
+      { label: "Downtime", val: "None" },
+      { label: "Performed by", val: "Aesthetic Specialist" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/Body Tightening/before.webp",
+      afterImage: "/services/before&after/Body Tightening/after.webp",
+      treatmentName: "Body Skin Tightening",
+      testimonialText: "After losing weight, I had loose skin on my abdomen and arms. The body tightening sessions have noticeably firmed everything up without surgery.",
+      patientName: "Meena S., 42",
+      subtitle: "Deep radiofrequency collagen remodelling"
+    },
+  },
   "exosomes-prp-gfc": {
     id: "exosomes-prp-gfc",
     title: "Advanced Regenerative",
@@ -1015,11 +1276,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       treatmentName: "GFC Hair Growth Therapy",
       testimonialText: "My hair was thinning rapidly on the crown. After three sessions of Growth Factor Concentrate (GFC), my shedding has stopped completely and new thick hair has filled in.",
       patientName: "Nikhil P., 29",
-      subtitle: "Autologous growth factor concentrate for hair density"
     },
-  }
-
-  ,
+  },
   "botox": {
     id: "botox",
     title: "Wrinkle Relaxing",
@@ -2049,161 +2307,183 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
   },
   "prp": {
     id: "prp",
-    title: "Scalp Growth Factor",
-    titleEmphasized: "PRP.",
+    title: "Autologous Platelet",
+    titleEmphasized: "PRP Therapy.",
     experienceNo: "Signature Experience",
-    description: "Stimulate hair growth and increase follicle thickness using active growth factors isolated from your own blood.",
-    heroRating: "4.8 · Rated by 240+ patients",
+    description: "Stimulate natural cellular repair and collagen production using concentrated platelets and growth factors from your own blood.",
+    heroRating: "4.9 · Rated by 280+ patients",
     heroImage: "/services/exosomes-prp-gfc/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
-    performedByName: "Board-Certified Dermatologist",
-    performedBySub: "Safe • Autologous Platelets • Hair Care",
+    performedByName: "Doctor Supervised",
+    performedBySub: "Safe • Personalised • Professional",
     stats: [
-      { n: "3-4", l: "Sessions recommended" },
-      { n: "12-24h", l: "Downtime bumps" },
-      { n: "4 Weeks", l: "Shedding reduction" },
-      { n: "100%", l: "Autologous yield" }
+      { n: "3–4", l: "Sessions recommended" },
+      { n: "12-24h", l: "Minor swelling" },
+      { n: "3-4w", l: "Initial results" },
+      { n: "100%", l: "Doctor performed" }
     ],
-    whatIsThisTag: "What is PRP?",
     whatIsThisTitle: "This is",
-    whatIsThisEmphasized: "natural follicle repair.",
-    whatIsThisDesc1: "Platelet-Rich Plasma (PRP) uses a sample of your own blood processed to isolate concentrated platelets. When injected into the scalp, these platelets release growth factors that nourish hair roots.",
-    whatIsThisDesc2: "This treatment helps reverse hair thinning, wakes up dormant follicles, and strengthens hair anchoring to minimize hair loss naturally.",
+    whatIsThisEmphasized: "autologous cellular repair.",
+    whatIsThisDesc1: "Platelet-Rich Plasma (PRP) therapy utilizes a concentrated source of autologous platelets from your own blood. These platelets are rich in growth factors that stimulate tissue regeneration, collagen production, and hair follicle restoration when injected back into target areas.",
+    whatIsThisDesc2: "We process your blood in a sterile environment using a medical centrifuge to separate unwanted inflammatory cells, yielding a highly concentrated PRP layer for precise, dermatologist-guided micro-injections.",
     benefits: [
-      { icon: "🌱", b: "Nourishes Hair Roots", d: "Delivers growth factors directly to hair follicles." },
-      { icon: "🧬", b: "Reverses Hair Thinning", d: "Increases hair shaft thickness and density." },
-      { icon: "✨", b: "Minimizes Hair Fall", d: "PDO micro-injections strengthen anchoring." },
-      { icon: "🛡️", b: "Safe and Autologous", d: "Uses your own blood, eliminating allergy risks." }
+      { icon: "🧬", b: "Bio-regenerative healing", d: "Uses natural cell-signaling pathways for repair" },
+      { icon: "🧪", b: "Collagen Remodelling", d: "Improves skin elasticity, fine lines, and under-eye hollows." },
+      { icon: "🌱", b: "Hair Growth Stimulation", d: "Reactivates dormant hair roots to treat thinning." },
+      { icon: "🛡️", b: "High Safety Standard", d: "Completely autologous treatment eliminates allergic risk." }
     ],
-    clinicalNote: "PRP is prepared in a closed sterile centrifuge to guarantee high active platelet count.",
+    clinicalNote: "Blood is processed using a medical centrifuge to obtain a highly concentrated layer of growth factors and platelets.",
     sideImage: "/services/exosomes-prp-gfc/2.webp",
-    machineTitle: "Closed centrifuge",
-    machineEmphasized: "for platelet isolation.",
-    deviceName: "Medical PRP Centrifuge",
-    deviceSub: "STERILE PREPARATION • COMFORT SYRINGE • SCALP VECTORING",
-    deviceDesc: "We process your sample using double-spin parameters in a sterile system, delivering maximum platelet concentration to target follicles.",
-    deviceFeatures: ["Closed Sterile Kits", "High Platelet Count", "Micro-needles", "Dermatologist-led"],
+    machineTitle: "Centrifuged platelet",
+    machineEmphasized: "isolation system.",
+    deviceName: "Medical Centrifuge System",
+    deviceSub: "Centrifugation · Sterile Preparation · Platelet Concentration",
+    deviceDesc: "Blood is processed using a medical-grade centrifuge to isolate the highest concentration of active platelets while removing red and white blood cells that cause inflammation.",
+    deviceFeatures: ["Medical-grade centrifuge", "High-concentration PRP", "Precision injection protocol", "Sterile preparation system"],
     deviceImage: "/services/exosomes-prp-gfc/3.webp",
-    comparisonTitle: "COSMO HOME vs Standard PRP",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
-      { label: "Separation", ours: "Double-spin parameters for high platelet yield", standard: "Single-spin lab devices with low active count" },
-      { label: "Injecting", ours: "Micro-droplet injection vectors for scalp", standard: "Deep bolus syringe shots (painful)" },
-      { label: "Safety", ours: "Board-certified dermatologist-led sterile suite", standard: "Delegated non-medical operators" },
-      { label: "Recovery", ours: "LED red light therapy is included to soothe scalp", standard: "Standard cleaning only" }
+      { label: "Active Agent", ours: "Concentrated growth factor isolated platelets", standard: "Basic PRP containing red/white blood cells" },
+      { label: "Discomfort", ours: "Minimal discomfort with precision injection techniques", standard: "Painful, inflammatory burning" },
+      { label: "Active Yield", ours: "Highly concentrated regenerative growth factors", standard: "Low, uncalibrated platelet count" },
+      { label: "Safety", ours: "Closed, sterile single-use medical kits", standard: "Open laboratory test tubes" },
+      { label: "Method", ours: "Precision doctor-controlled injection protocol", standard: "General deep bolus syringe shots" }
     ],
-    whoNeedsDesc: "Ideal for patients with pattern hair thinning, androgenetic alopecia, or general hair fall.",
-    notSuitable: "Bleeding disorders, blood thinners, active scalp infections, pregnancy.",
+    whoNeedsDesc: "Ideal for patients looking for natural anti-aging, under-eye rejuvenation, acne scar repair, or hair restoration without synthetic chemicals.",
+    notSuitable: "Bleeding disorders, blood-thinning medications, active skin infections, pregnancy, or uncontrolled medical conditions.",
     whoNeedsItems: [
-      { tag: "Pattern hair thinning", desc: "Stimulate dormant hair follicles to support density." },
-      { tag: "General hair fall", desc: "Nourish hair roots to reduce daily shedding." },
-      { tag: "Thin hair shafts", desc: "Deliver growth factors to increase hair thickness." },
-      { tag: "DHT hair loss", desc: "Manage hormonal hair thinning in men and women." }
+      { tag: "Hair thinning & loss", desc: "Regaining volume and crown hair density." },
+      { tag: "Androgenetic Alopecia", desc: "Helps improve hair density in male and female pattern hair loss." },
+      { tag: "Thin, crepey skin", desc: "Improves skin thickness, elasticity, and overall skin quality." },
+      { tag: "Deep acne scarring", desc: "Stimulates collagen remodeling to improve the appearance of acne scars." },
+      { tag: "Under-eye circles", desc: "Improves skin quality and supports natural collagen production in the under-eye area." },
+      { tag: "Skin rejuvenation", desc: "Supports collagen production for smoother, firmer, and healthier-looking skin." }
     ],
-    sessionPlanDesc: "We recommend a course of 3 to 4 sessions, spaced 4 weeks apart, followed by seasonal maintenance.",
+    sessionPlanDesc: "A typical treatment plan includes 3–4 sessions performed 4 weeks apart, followed by maintenance treatments as recommended by your dermatologist.",
     sessionPlanSteps: [
-      { n: "01", label: "Sample & Numbing", duration: "30 min", detail: "A blood sample is drawn, and scalp sanitization is completed for comfort." },
-      { n: "02", label: "PRP Separation", duration: "15 min", detail: "The sample is centrifuged in a sterile system to isolate concentrated platelets." },
-      { n: "03", label: "Precision Injection", duration: "20 min", detail: "PRP is injected into target thinning zones using precision micro-needles." }
+      { n: "01", label: "Centrifugation", duration: "30 min", detail: "A small blood sample is collected and processed using a medical centrifuge to isolate the platelet-rich layer." },
+      { n: "02", label: "Micro-Droplet Delivery", duration: "30 min", detail: "Once the numbing cream is removed, our cosmetic dermatologist performs precise micro-droplet injections into the targeted skin or scalp." },
+      { n: "03", label: "LED Red Light Recovery", duration: "15 min", detail: "LED red light therapy helps reduce post-treatment redness, supports skin recovery, and improves patient comfort." }
     ],
-    timelineDesc: "Hair shedding reduces in 4 weeks, with hair density improving in 3 months.",
+    timelineDesc: "Hair follicles and collagen remodeling continue to improve gradually over the following 3–6 months.",
     timelineItems: [
-      { when: "Immediately", what: "Scalp may feel warm or show minor injection bumps, resolving in 12-24 hours." },
-      { when: "Week 4", what: "Noticeable reduction in hair shedding and stronger hair roots." },
-      { when: "Month 3", what: "Fine new hair growth begins to show in target zones." },
-      { when: "Month 6+", what: "Continued density improvements supported by maintenance sessions." }
+      { when: "Immediately", what: "Mild redness, swelling, or tenderness may occur and typically settles within 12–24 hours." },
+      { when: "Week 1", what: "Early skin recovery begins. Hair shedding may gradually reduce in treated areas." },
+      { when: "Month 1", what: "Early improvements in skin texture become visible. Fine new hair growth may begin to appear in treated areas." },
+      { when: "Month 3", what: "Noticeable improvements in hair density, skin quality, and acne scar appearance continue to develop." },
+      { when: "Month 6+", what: "Continued regeneration is supported with maintenance treatments as recommended." }
     ],
-    ctaRating: "240+ hair density stories",
-    ctaTitle: "Ready to reverse",
-    ctaTitle2: "hair thinning and hair fall?",
+    ctaRating: "280+ patients regenerated",
+    ctaTitle: "Ready to restore",
+    ctaTitle2: "hair volume or skin density?",
     ctaEmphasized: "Begin today.",
-    ctaDesc: "Book a clinical scalp assessment to design a customized PRP plan.",
+    ctaDesc: "Include a medical assessment of your follicle density or skin thickness to map the target injection areas.",
     ctaQuickFacts: [
       { label: "Price from", val: "₹10,000 / session" },
-      { label: "Duration", val: "60 minutes" },
-      { label: "Recommended", val: "3-4 sessions" },
+      { label: "Duration", val: "60–75 minutes" },
+      { label: "Recommended", val: "3–4 sessions" },
       { label: "Frequency", val: "Every 4 weeks" },
-      { label: "Downtime", val: "12-24 hours" }
+      { label: "Downtime", val: "12–24 hours (swelling/bumps)" },
+      { label: "Performed by", val: "Medical Aesthetic Team" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "PRP Hair Growth Therapy",
+      testimonialText: "My hair thinning was stressing me out. After three sessions of targeted PRP therapy, my hair fall has decreased significantly, and my hair feels thicker.",
+      patientName: "Arjun V., 32",
+      subtitle: "Autologous Platelet-Rich Plasma for hair restoration"
+    },
   },
   "gfc": {
     id: "gfc",
-    title: "Highly Purified",
-    titleEmphasized: "GFC.",
+    title: "Purified Growth Factor",
+    titleEmphasized: "GFC Therapy.",
     experienceNo: "Signature Experience",
-    description: "Restore hair volume and scalp health with highly purified Growth Factor Concentrate derived from your own platelets for maximum effectiveness and safety.",
-    heroRating: "4.9 · Rated by 270+ patients",
+    description: "Next-generation cellular therapy delivering highly concentrated, cell-free growth factors directly from your blood for maximum repair.",
+    heroRating: "4.9 · Rated by 280+ patients",
     heroImage: "/services/exosomes-prp-gfc/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
-    performedByName: "Board-Certified Dermatologist",
-    performedBySub: "Safe • Purified Growth Factors • Hair Expert",
+    performedByName: "Doctor Supervised",
+    performedBySub: "Safe • Personalised • Professional",
     stats: [
-      { n: "3-4", l: "Sessions recommended" },
-      { n: "12-24h", l: "Downtime bumps" },
-      { n: "3 Weeks", l: "Reduced hair shedding" },
-      { n: "100%", l: "Purified growth factors" }
+      { n: "3–4", l: "Sessions recommended" },
+      { n: "12-24h", l: "Minor swelling" },
+      { n: "3-4w", l: "Initial results" },
+      { n: "100%", l: "Doctor performed" }
     ],
-    whatIsThisTag: "What is GFC?",
     whatIsThisTitle: "This is",
-    whatIsThisEmphasized: "purified hair repair.",
-    whatIsThisDesc1: "Growth Factor Concentrate (GFC) is an advanced hair treatment where growth factors are extracted from platelets and purified into a clear, cell-free solution. This guarantees direct action.",
-    whatIsThisDesc2: "Because it contains zero red or white blood cells, it minimizes post-procedure soreness and inflammation, delivering optimal growth factors straight to target follicles.",
+    whatIsThisEmphasized: "cell-free growth factors.",
+    whatIsThisDesc1: "Growth Factor Concentrate (GFC) is an advanced, next-generation refinement of PRP. Platelets are activated in a specialized tube to release all their growth factors, which are then completely separated from cells. The resulting pure, cell-free growth factor concentrate is injected directly to deliver maximum therapeutic effect with zero pain or inflammation.",
+    whatIsThisDesc2: "By removing inflammatory red and white blood cells, GFC delivers a purer, more concentrated clinical effect with significantly less post-injection swelling and downtime.",
     benefits: [
-      { icon: "🧬", b: "Purified Growth Factors", d: "High active concentration without inflammatory cells." },
-      { icon: "🌱", b: "Follicle Reactivation", d: "Wakes up dormant follicles to support hair density." },
-      { icon: "✨", b: "Less Soreness", d: "Cell-free solution minimizes swelling and pain." },
-      { icon: "🛡️", b: "High Safety", d: "Prepared in sealed, medical-grade GFC tubes." }
+      { icon: "🧪", b: "High-Purity Concentrate", d: "Completely cell-free growth factors for high potency." },
+      { icon: "🛡️", b: "Zero Inflammation & Pain", d: "Absence of red/white cells minimizes post-procedure soreness." },
+      { icon: "🧬", b: "Rapid Repair", d: "Highly direct cellular signaling for faster healing." },
+      { icon: "🌱", b: "Follicular Recovery", d: "Strongly reactivates dormant hair roots to treat thinning." }
     ],
-    clinicalNote: "GFC tubes are processed to extract growth factors from platelets automatically.",
+    clinicalNote: "GFC is prepared in specialized tubes that activate platelets to release growth factors prior to centrifuge separation.",
     sideImage: "/services/exosomes-prp-gfc/2.webp",
-    machineTitle: "Purified separation",
-    machineEmphasized: "for hair growth factors.",
-    deviceName: "Medical GFC System",
-    deviceSub: "PURIFIED EXTRACTION • STERILE SOLUTIONS • MINIMAL DISCOMFORT",
-    deviceDesc: "We process your sample in specific GFC tubes to release active growth factors from platelets, creating a cell-free concentrate.",
-    deviceFeatures: ["GFC Technology", "Cell-Free Solution", "Micro-needles", "Dermatologist-led"],
+    machineTitle: "Cell-free growth factor",
+    machineEmphasized: "activation protocol.",
+    deviceName: "Advanced GFC System",
+    deviceSub: "Activation Tubes · Centrifugation · Cell-free Isolation",
+    deviceDesc: "Our GFC preparation uses advanced pre-activated tubes that trigger platelets to release growth factors before centrifuge separation, yielding a highly concentrated therapeutic serum.",
+    deviceFeatures: ["Pre-activated tubes", "Cell-free separation", "Sterile preparation", "Dermatologist-led"],
     deviceImage: "/services/exosomes-prp-gfc/3.webp",
-    comparisonTitle: "COSMO HOME vs Standard PRP",
+    comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
-      { label: "Purity", ours: "Highly purified solution (no red/white blood cells)", standard: "Basic plasma containing inflammatory cells" },
-      { label: "Soreness", ours: "Minimal swelling or post-injection soreness", standard: "Significant swelling and burning sensation" },
-      { label: "Yield", ours: "Standardized high concentration of growth factors", standard: "Variable platelet count" },
-      { label: "Safety", ours: "Sealed GFC tubes prevent contamination", standard: "Standard lab tubes" }
+      { label: "Active Agent", ours: "Pure cell-free concentrated growth factors", standard: "Basic PRP containing red/white blood cells" },
+      { label: "Discomfort", ours: "Minimal discomfort with cell-free formulation", standard: "Painful, inflammatory burning" },
+      { label: "Active Yield", ours: "Maximized growth factor concentration", standard: "Low, uncalibrated platelet count" },
+      { label: "Safety", ours: "Closed, sterile single-use medical kits", standard: "Open laboratory test tubes" },
+      { label: "Method", ours: "Precision doctor-controlled injection protocol", standard: "General deep bolus syringe shots" }
     ],
-    whoNeedsDesc: "Ideal for patients with advanced hair thinning, androgenetic alopecia, or seeking rapid hair shedding control.",
-    notSuitable: "Bleeding disorders, blood thinners, active scalp infections, pregnancy.",
+    whoNeedsDesc: "Ideal for patients seeking a highly potent, virtually painless alternative to standard PRP for advanced hair restoration and deep skin repair.",
+    notSuitable: "Bleeding disorders, blood-thinning medications, active skin infections, pregnancy, or uncontrolled medical conditions.",
     whoNeedsItems: [
-      { tag: "Advanced hair thinning", desc: "Stimulate dormant hair follicles to support density." },
-      { tag: "Pattern hair loss", desc: "Manage androgenetic alopecia in men and women." },
-      { tag: "Severe hair shedding", desc: "Accelerate hair fall reduction and root anchoring." },
-      { tag: "Thin hair follicles", desc: "Increase hair shaft thickness and quality." }
+      { tag: "Advanced hair thinning", desc: "Provides high-potency growth factors directly to hair roots." },
+      { tag: "Deep acne scars", desc: "Stimulates structural tissue remodeling to smooth scars." },
+      { tag: "Aged skin & wrinkles", desc: "Accelerates collagen synthesis for overall skin tightening." },
+      { tag: "Under-eye hollows", desc: "Promotes natural volume and tissue repair in periorbital layers." }
     ],
-    sessionPlanDesc: "We recommend a course of 3 to 4 sessions, spaced 4 weeks apart, followed by seasonal maintenance.",
+    sessionPlanDesc: "A typical treatment plan includes 3–4 sessions performed 4 weeks apart, followed by maintenance treatments as recommended by your dermatologist.",
     sessionPlanSteps: [
-      { n: "01", label: "Sample Collection", duration: "15 min", detail: "A blood sample is drawn in GFC tubes and prepared for activation." },
-      { n: "02", label: "Activation & Separation", duration: "30 min", detail: "The sample is activated and centrifuged to isolate purified growth factors." },
-      { n: "03", label: "GFC Injection", duration: "20 min", detail: "The cell-free concentrate is injected into target zones using precision micro-needles." }
+      { n: "01", label: "Activation & Centrifugation", duration: "35 min", detail: "A blood sample is drawn into GFC tubes, incubated for activation, and centrifuged to isolate the cell-free growth factor concentrate." },
+      { n: "02", label: "Micro-Droplet Delivery", duration: "30 min", detail: "Once the numbing cream is removed, our cosmetic dermatologist performs precise micro-droplet injections into the targeted skin or scalp." },
+      { n: "03", label: "LED Red Light Recovery", duration: "15 min", detail: "LED red light therapy helps reduce post-treatment redness, supports skin recovery, and improves patient comfort." }
     ],
-    timelineDesc: "Hair shedding reduces in 3 weeks, with hair density improving in 3 months.",
+    timelineDesc: "Hair follicles and collagen remodeling continue to improve gradually over the following 3–6 months.",
     timelineItems: [
-      { when: "Immediately", what: "Scalp may feel warm with minor pinkness, resolving in 12-24 hours." },
-      { when: "Week 3", what: "Noticeable reduction in hair shedding and stronger hair roots." },
-      { when: "Month 3", what: "Fine new hair growth begins to show in target zones." },
-      { when: "Month 6+", what: "Continued density improvements supported by maintenance sessions." }
+      { when: "Immediately", what: "Mild redness, swelling, or tenderness may occur and typically settles within 12–24 hours." },
+      { when: "Week 1", what: "Early skin recovery begins. Hair shedding may gradually reduce in treated areas." },
+      { when: "Month 1", what: "Early improvements in skin texture become visible. Fine new hair growth may begin to appear in treated areas." },
+      { when: "Month 3", what: "Noticeable improvements in hair density, skin quality, and acne scar appearance continue to develop." },
+      { when: "Month 6+", what: "Continued regeneration is supported with maintenance treatments as recommended." }
     ],
-    ctaRating: "270+ GFC stories",
-    ctaTitle: "Ready for purified",
-    ctaTitle2: "hair growth factors?",
+    ctaRating: "280+ patients regenerated",
+    ctaTitle: "Ready to restore",
+    ctaTitle2: "hair volume or skin density?",
     ctaEmphasized: "Begin today.",
-    ctaDesc: "Book a clinical scalp assessment to design a customized GFC plan.",
+    ctaDesc: "Include a medical assessment of your follicle density or skin thickness to map the target injection areas.",
     ctaQuickFacts: [
       { label: "Price from", val: "₹18,000 / session" },
-      { label: "Duration", val: "60 minutes" },
-      { label: "Recommended", val: "3-4 sessions" },
+      { label: "Duration", val: "60–75 minutes" },
+      { label: "Recommended", val: "3–4 sessions" },
       { label: "Frequency", val: "Every 4 weeks" },
-      { label: "Downtime", val: "12-24 hours" }
+      { label: "Downtime", val: "12–24 hours (swelling/bumps)" },
+      { label: "Performed by", val: "Medical Aesthetic Team" }
     ],
-    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "GFC Hair Growth Therapy",
+      testimonialText: "My hair was thinning rapidly on the crown. After three sessions of Growth Factor Concentrate (GFC), my shedding has stopped completely and new thick hair has filled in.",
+      patientName: "Nikhil P., 29",
+      subtitle: "Autologous growth factor concentrate for hair density"
+    },
   },
   "mnrf-gfc": {
     id: "mnrf-gfc",

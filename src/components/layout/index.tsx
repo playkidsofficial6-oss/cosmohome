@@ -57,14 +57,14 @@ const MEGA_MENU_CONTENT = {
   },
   Body: {
     icon: BodyIcon,
-    treatments: ["Muscle Sculpting"],
+    treatments: ["Muscle Sculpting", "Body Contouring", "Fat Reduction", "Body Tightening"],
     viewAll: "VIEW ALL BODY TREATMENTS",
     image: "/services/muscle-sculpting/1.webp",
     desc: "Sculpt and define your body with precision."
   },
   Injectables: {
     icon: Syringe,
-    treatments: ["Exosomes / PRP / GFC"],
+    treatments: ["PRP", "GFC", "Exosomes"],
     viewAll: "VIEW ALL INJECTABLES",
     image: "/services/exosomes-prp-gfc/1.webp",
     desc: "Targeted treatments for a refreshed appearance."
@@ -307,27 +307,25 @@ export function Nav({ ready }: { ready: boolean }) {
                               <div className="w-[280px] shrink-0 border border-[#C9956A]/15 bg-[#C9956A]/[0.02] rounded-2xl p-5 flex flex-col justify-between select-none">
                                 <div>
                                   <span className="inline-block px-2.5 py-0.5 bg-[#C9956A]/10 text-[#C9956A] text-[9px] font-semibold tracking-[0.2em] uppercase rounded-full mb-3" style={M}>
-                                    {activeCategory === "Skin" ? "Dermal Science" :
-                                      activeCategory === "Hair" ? "Follicle Science" :
-                                        activeCategory === "Body" ? "Body Sculpting" : "Cellular Healing"}
+                                    Clinical Indications
                                   </span>
                                   <h4 style={D} className="text-[15px] font-medium text-[#2C1810] mb-2 leading-snug">
-                                    {activeCategory === "Skin" ? "Healthy Skin Barrier" :
-                                      activeCategory === "Hair" ? "Follicle Nourishment" :
-                                        activeCategory === "Body" ? "Precision Contouring" : "Regenerative Purity"}
+                                    {activeCategory === "Skin" ? "Stretch Marks & Scars" :
+                                      activeCategory === "Hair" ? "Hair Loss & Thinning" :
+                                        activeCategory === "Body" ? "Body Contouring & Laxity" : "Cellular Regeneration"}
                                   </h4>
                                   <p style={B} className="text-[12px] text-[#5C4A42] leading-relaxed font-light">
-                                    {activeCategory === "Skin" ? "We target deeper skin layers to rebuild collagen fibers and fade stretch marks organically." :
-                                      activeCategory === "Hair" ? "Advanced growth therapies to awaken dormant hair roots and improve overall density." :
-                                        activeCategory === "Body" ? "Custom body shaping protocols leveraging advanced high-intensity platforms." :
-                                          activeCategory === "Injectables" ? "High-purity micro-injections of autologous growth factors and signaling vesicles." : ""}
+                                    {activeCategory === "Skin" ? "Clinical treatments indicated for deep dermal tears, stretch marks, active acne lesions, acne scarring, and skin texture restoration." :
+                                      activeCategory === "Hair" ? "Evidence-based medical therapies designed for androgenetic alopecia (pattern baldness), telogen effluvium, active hair shedding, and thinning." :
+                                        activeCategory === "Body" ? "Non-surgical treatment protocols indicated for stubborn localized fat deposits, muscle tone improvement, and postpartum skin laxity." :
+                                          activeCategory === "Injectables" ? "Targeted micro-infusions of autologous growth factors and exosome signaling vesicles indicated for deep tissue healing, repair, and rejuvenation." : ""}
                                   </p>
                                 </div>
                                 <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-[#C9956A]/10">
-                                  {(activeCategory === "Skin" ? ["Collagen Rebuilding", "Safe Resurfacing", "Zero Downtime"] :
-                                    activeCategory === "Hair" ? ["Root Stimulation", "Zero Hair Shedding", "Sustained Density"] :
-                                      activeCategory === "Body" ? ["Targeted Definition", "Muscle Sculpting", "Non-Invasive"] :
-                                        activeCategory === "Injectables" ? ["Autologous Purity", "Rapid Regeneration", "Natural Results"] : []).map(f => (
+                                  {(activeCategory === "Skin" ? ["Dermal Tear Repair", "Acne Scar Revision", "Textural Resurfacing"] :
+                                    activeCategory === "Hair" ? ["Androgenetic Alopecia", "Telogen Effluvium", "Follicular Weakness"] :
+                                      activeCategory === "Body" ? ["Localized Fat Deposits", "Muscle Toning", "Postpartum Laxity"] :
+                                        activeCategory === "Injectables" ? ["Growth Factor Therapy", "Exosomal Signaling", "Deep Tissue Repair"] : []).map(f => (
                                           <div key={f} className="flex items-center gap-2 text-[10px] text-[#8A6D5C] font-semibold uppercase tracking-wider" style={M}>
                                             <span className="text-[#C9956A] text-[7px]">✦</span>
                                             <span>{f}</span>
@@ -340,20 +338,21 @@ export function Nav({ ready }: { ready: boolean }) {
 
                           {/* Bottom Area: View All link + EXPERT-LED Footer */}
                           <div className="pt-6 mt-auto border-t border-[#E8E1D7]/40 flex items-center justify-between shrink-0">
-                            <a
-                              href={`/service/${getTreatmentSlug(hasSubs ? Object.values(catData.subcategories as Record<string, string[]>)[0][0] : catData.treatments[0], activeCategory)}`}
+                            <motion.a
+                              whileHover={{ scale: 1.02 }}
+                              whileTap={{ scale: 0.98 }}
+                              href={`/service?category=${activeCategory}`}
                               onClick={(e) => {
                                 e.preventDefault();
                                 setActiveMenu(null);
-                                const firstSlug = getTreatmentSlug(hasSubs ? Object.values(catData.subcategories as Record<string, string[]>)[0][0] : catData.treatments[0], activeCategory);
-                                navigate(`/service/${firstSlug}`);
+                                navigate(`/service?category=${activeCategory}`);
                               }}
                               style={B}
-                              className="text-[10px] tracking-[0.15em] uppercase text-[#8A6D5C] font-semibold hover:text-[#2C1810] transition-colors flex items-center gap-2 group"
+                              className="text-[10px] tracking-[0.15em] uppercase bg-[#8C5D47] text-[#FAF7F2] border border-[#8C5D47] rounded-[4px] px-5 py-2 hover:bg-[#734A37] hover:border-[#734A37] transition-all duration-300 flex items-center gap-2 group shadow-sm cursor-pointer"
                             >
                               {catData.viewAll}
                               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                            </a>
+                            </motion.a>
 
                             {/* Moved tag: EXPERT-LED • ETHICAL • PERSONAL */}
                             <div className="flex items-center gap-2">
