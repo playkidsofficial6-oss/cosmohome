@@ -1128,7 +1128,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "💧", b: "Skin quality improvement", d: "Improves texture, tone, and overall skin elasticity" }
     ],
     clinicalNote: "Skin elasticity and firmness are assessed before and after treatment. Radiofrequency temperature is monitored in real-time to ensure safe, effective collagen stimulation.",
-    sideImage: "/services/body-tightening/2.webp",
+    sideImage: "/services/MNRF/2.webp",
     whoNeedsDesc: "Ideal for anyone experiencing mild to moderate skin laxity, crepey skin, or sagging after pregnancy or weight fluctuations.",
     notSuitable: "Pacemakers, internal defibrillators, metal implants in the treatment zone, pregnancy.",
     whoNeedsItems: [
@@ -2011,7 +2011,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA-APPROVED • GOLD-PLATED NEEDLES • PRECISION CONTROL",
     deviceDesc: "We use premium MNRF technology with insulated gold-plated needles, allowing precise depth control (0.5mm to 3.5mm) to protect the skin barrier.",
     deviceFeatures: ["FDA-Approved", "Insulated Needles", "Precision Depth Control", "Minimal Epidermal Heat"],
-    deviceImage: "/services/MNRF/scarlet.webp",
+    deviceImage: "/services/products-tech-images/scarlet.webp",
     comparisonTitle: "COSMO HOME vs Standard MNRF",
     comparisonRows: [
       { label: "Needles", ours: "Insulated needles (protects outer skin)", standard: "Non-insulated needles (heats surface)" },
@@ -2054,8 +2054,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/Laser Scar Reduction/before.webp",
-      afterImage: "/services/before&after/Laser Scar Reduction/after.webp",
+      beforeImage: "/services/MNRF/before.webp",
+      afterImage: "/services/MNRF/after.webp",
       treatmentName: "MNRF Skin Tightening",
       testimonialText: "My skin feels firmer, tighter, and my open pores are much less visible. The improvement in texture is remarkable.",
       patientName: "Vikram R., 35",
