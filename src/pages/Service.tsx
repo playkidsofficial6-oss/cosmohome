@@ -130,7 +130,10 @@ const slugToOptionMap: Record<string, string> = {
   "body-contouring": "Body Contouring",
   "fat-reduction": "Fat Reduction",
   "body-tightening": "Body Tightening",
-  "exosomes-prp-gfc": "Exosomes / PRP / GFC"
+  "exosomes-prp-gfc": "Exosomes / PRP / GFC",
+  "prp": "PRP",
+  "gfc": "GFC",
+  "exosomes": "Exosomes"
 };
 
 const getTrustIcon = (text: string) => {
@@ -456,7 +459,7 @@ export default function ServicePage() {
                   </div>
                   <div className="relative aspect-[16/9] overflow-hidden shrink-0">
                     <img src={service.deviceImage}
-                      alt={service.deviceName} className="w-full h-full object-cover opacity-75" />
+                      alt={service.deviceName} className="w-full h-full object-cover" />
                     {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#FAF7F2]/60" /> */}
                   </div>
                   <div className="p-7 relative z-10">

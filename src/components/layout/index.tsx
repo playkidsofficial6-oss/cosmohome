@@ -64,7 +64,7 @@ const MEGA_MENU_CONTENT = {
   },
   Injectables: {
     icon: Syringe,
-    treatments: ["Exosomes / PRP / GFC"],
+    treatments: ["PRP", "GFC", "Exosomes"],
     viewAll: "VIEW ALL INJECTABLES",
     image: "/services/exosomes-prp-gfc/1.webp",
     desc: "Targeted treatments for a refreshed appearance."
@@ -338,20 +338,21 @@ export function Nav({ ready }: { ready: boolean }) {
 
                           {/* Bottom Area: View All link + EXPERT-LED Footer */}
                           <div className="pt-6 mt-auto border-t border-[#E8E1D7]/40 flex items-center justify-between shrink-0">
-                            <a
-                              href={`/service/${getTreatmentSlug(hasSubs ? Object.values(catData.subcategories as Record<string, string[]>)[0][0] : catData.treatments[0], activeCategory)}`}
+                            <motion.a
+                              whileHover={{ scale: 1.02 }}
+                              whileTap={{ scale: 0.98 }}
+                              href={`/service?category=${activeCategory}`}
                               onClick={(e) => {
                                 e.preventDefault();
                                 setActiveMenu(null);
-                                const firstSlug = getTreatmentSlug(hasSubs ? Object.values(catData.subcategories as Record<string, string[]>)[0][0] : catData.treatments[0], activeCategory);
-                                navigate(`/service/${firstSlug}`);
+                                navigate(`/service?category=${activeCategory}`);
                               }}
                               style={B}
-                              className="text-[10px] tracking-[0.15em] uppercase text-[#8A6D5C] font-semibold hover:text-[#2C1810] transition-colors flex items-center gap-2 group"
+                              className="text-[10px] tracking-[0.15em] uppercase bg-[#8C5D47] text-[#FAF7F2] border border-[#8C5D47] rounded-[4px] px-5 py-2 hover:bg-[#734A37] hover:border-[#734A37] transition-all duration-300 flex items-center gap-2 group shadow-sm cursor-pointer"
                             >
                               {catData.viewAll}
                               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                            </a>
+                            </motion.a>
 
                             {/* Moved tag: EXPERT-LED • ETHICAL • PERSONAL */}
                             <div className="flex items-center gap-2">
