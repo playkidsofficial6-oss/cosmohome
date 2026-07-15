@@ -71,12 +71,21 @@ const MEGA_MENU_CONTENT = {
   }
 };
 
-const getTreatmentSlug = (name: string, category?: string) => {
+const getTreatmentSlug = (name: string, category?: string, subcategory?: string) => {
   const base = name.toLowerCase()
     .replace(/\s*\/\s*/g, '-')
     .replace(/\s+/g, '-')
     .replace(/[^a-z0-9-]/g, '')
     .replace(/-+/g, '-');
+  
+  if (name.toLowerCase() === "skin boosters" && subcategory) {
+    const subSlug = subcategory.toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '')
+      .replace(/-+/g, '-');
+    return `skin-boosters-${subSlug}`;
+  }
+
   if (category && (category === "Skin" || category === "Hair")) {
     const prefix = `${category.toLowerCase()}-`;
     if (base.startsWith(prefix)) {
@@ -255,11 +264,11 @@ export function Nav({ ready }: { ready: boolean }) {
                                           <div className={subKeys.length === 1 ? "grid grid-cols-2 gap-x-12 gap-y-4" : "flex flex-col gap-4"}>
                                             {subcategories[subName].map((treatment) => (
                                               <a
-                                                href={`/service/${getTreatmentSlug(treatment, activeCategory)}`}
+                                                href={`/service/${getTreatmentSlug(treatment, activeCategory, subName)}`}
                                                 onClick={(e) => {
                                                   e.preventDefault();
                                                   setActiveMenu(null);
-                                                  navigate(`/service/${getTreatmentSlug(treatment, activeCategory)}`);
+                                                  navigate(`/service/${getTreatmentSlug(treatment, activeCategory, subName)}`);
                                                 }}
                                                 key={treatment}
                                                 style={B}
@@ -492,7 +501,7 @@ export function Nav({ ready }: { ready: boolean }) {
                                                     key={treatment}
                                                     onClick={() => {
                                                       setOpen(false);
-                                                      navigate(`/service/${getTreatmentSlug(treatment, cat)}`);
+                                                      navigate(`/service/${getTreatmentSlug(treatment, cat, subName)}`);
                                                     }}
                                                     className="text-left text-[13px] text-[#5C4A42]/90 hover:text-[#C9956A] transition-colors py-1"
                                                     style={B}

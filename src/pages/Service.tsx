@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Stethoscope, Lock, Clock, Check } from "lucide-react";
@@ -139,6 +139,9 @@ const slugToOptionMap: Record<string, string> = {
   "vampire-lift": "Vampire Lift",
   "thread-lift": "Thread Lift",
   "skin-boosters": "Skin Boosters",
+  "skin-boosters-anti-ageing": "Skin Boosters",
+  "skin-boosters-acne": "Skin Boosters",
+  "skin-boosters-skin-renewal": "Skin Boosters",
   "mnrf": "MNRF",
   "dermapen": "Dermapen",
   "co2-laser": "CO2 Laser",
