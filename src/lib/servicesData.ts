@@ -1314,7 +1314,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "PREMIUM BRANDS • STERILE SYSTEM • PINPOINT PRECISION",
     deviceDesc: "We exclusively use original, FDA-approved botulinum toxin formulations to guarantee maximum safety and predictable, natural-looking results.",
     deviceFeatures: ["FDA-Approved", "Original Products", "Precise Dosing", "Comfort-Focused Needle"],
-    deviceImage: "/services/hifu/hifu.webp",
+    deviceImage: "/services/Botox/3.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Dosage", ours: "Calibrated micro-dosing for soft movement", standard: "Standardized high-dose frozen look" },
@@ -1357,8 +1357,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/injections/before.webp",
-      afterImage: "/services/before&after/injections/after.webp",
+      beforeImage: "/services/Botox/before.webp",
+      afterImage: "/services/Botox/after.webp",
       treatmentName: "Botox Wrinkle Relaxing",
       testimonialText: "I wanted to soften my frown lines without looking frozen. The results are subtle, natural, and precisely what I hoped for.",
       patientName: "Priyanka M., 34",
@@ -1401,7 +1401,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA-APPROVED GELS • SEAMLESS INTEGRATION • EXPERT ANATOMICAL PLACEMENT",
     deviceDesc: "We select specific gel densities (from soft lip fillers to firm structural jaw fillers) using top-tier global brands to guarantee predictable lifting and safety.",
     deviceFeatures: ["FDA-Approved GELS", "Cohesive Technology", "Anatomical Precision", "Reversible Option"],
-    deviceImage: "/services/hifu/hifu.webp",
+    deviceImage: "/services/fillers/3.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Approach", ours: "Volume restoration based on bone support", standard: "Overfilling soft tissue (puffy look)" },
@@ -1444,8 +1444,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/injections/before.webp",
-      afterImage: "/services/before&after/injections/after.webp",
+      beforeImage: "/services/fillers/before.webp",
+      afterImage: "/services/fillers/after.webp",
       treatmentName: "Dermal Fillers Volume Restoration",
       testimonialText: "My cheeks and jawline feel beautifully contoured and restored. The treatment was comfortable and the results look completely natural.",
       patientName: "Shweta K., 38",
