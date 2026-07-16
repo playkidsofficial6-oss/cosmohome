@@ -86,6 +86,14 @@ const getTreatmentSlug = (name: string, category?: string, subcategory?: string)
     return `skin-boosters-${subSlug}`;
   }
 
+  if (name.toLowerCase() === "mesopeels" && subcategory) {
+    const subSlug = subcategory.toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '')
+      .replace(/-+/g, '-');
+    return `mesopeels-${subSlug}`;
+  }
+
   if (category && (category === "Skin" || category === "Hair")) {
     const prefix = `${category.toLowerCase()}-`;
     if (base.startsWith(prefix)) {

@@ -151,6 +151,8 @@ const slugToOptionMap: Record<string, string> = {
   "laser-toning": "Laser Toning",
   "mnrf-gfc": "MNRF + GFC",
   "mesopeels": "Mesopeels",
+  "mesopeels-acne": "Mesopeels",
+  "mesopeels-skin-renewal": "Mesopeels",
   "carbon-peel": "Carbon Peel",
   "led-therapy": "LED Therapy",
   "skin-mnrf": "Skin MNRF",
