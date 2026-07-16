@@ -59,7 +59,7 @@ const MEGA_MENU_CONTENT = {
     icon: BodyIcon,
     treatments: ["Muscle Sculpting", "Body Contouring", "Fat Reduction", "Body Tightening"],
     viewAll: "VIEW ALL BODY TREATMENTS",
-    image: "/services/muscle-sculpting/1.webp",
+    image: "/services/Muscle Sculpting/1.webp",
     desc: "Sculpt and define your body with precision."
   },
   Injectables: {
@@ -77,7 +77,7 @@ const getTreatmentSlug = (name: string, category?: string, subcategory?: string)
     .replace(/\s+/g, '-')
     .replace(/[^a-z0-9-]/g, '')
     .replace(/-+/g, '-');
-  
+
   if (name.toLowerCase() === "skin boosters" && subcategory) {
     const subSlug = subcategory.toLowerCase()
       .replace(/\s+/g, '-')
