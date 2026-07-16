@@ -495,7 +495,7 @@ export default function ServicePage() {
             animate={{ scale: [1, 1.15, 1] }} transition={{ duration: 9, repeat: Infinity }} />
 
           <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-16 relative z-10">
-            <div className="text-center mb-14">
+            <div className="text-center mb-6 md:mb-14">
               <FadeUp>
                 <Tag>{service.technologyTag || "🔬 The Technology"}</Tag>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
