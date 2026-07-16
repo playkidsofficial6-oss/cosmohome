@@ -501,6 +501,12 @@ export default function ServicePage() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
                   {service.machineTitle}<br /><span>{service.machineEmphasized}</span>
                 </h2>
+                {/* Mobile-only badge under title */}
+                <div className="md:hidden flex justify-center mt-4">
+                  <div className="px-4 py-1.5 rounded-full text-xs text-[#C9956A] font-medium" style={{ background: "rgba(250,247,242,0.92)", border: "1px solid rgba(201,149,106,0.35)", ...M }}>
+                    {service.ourDeviceLabel || "✅ Our Technology"}
+                  </div>
+                </div>
               </FadeUp>
             </div>
 
@@ -510,7 +516,7 @@ export default function ServicePage() {
               <FadeUp delay={0.05}>
                 <div className="relative rounded-3xl overflow-hidden h-full flex flex-col"
                   style={{ background: "linear-gradient(145deg, #FFFFFF, #FAF7F2)", border: "1px solid rgba(201,149,106,0.25)", boxShadow: "0 8px 32px rgba(44,24,16,0.06)" }}>
-                  <div className="absolute top-4 left-4 sm:top-5 sm:left-5 px-4 py-1.5 rounded-full text-xs text-[#C9956A] font-medium z-10" style={{ background: "rgba(250,247,242,0.92)", backdropFilter: "blur(8px)", border: "1px solid rgba(201,149,106,0.35)", ...M }}>
+                  <div className="hidden md:block absolute top-4 left-4 sm:top-5 sm:left-5 px-4 py-1.5 rounded-full text-xs text-[#C9956A] font-medium z-10" style={{ background: "rgba(250,247,242,0.92)", backdropFilter: "blur(8px)", border: "1px solid rgba(201,149,106,0.35)", ...M }}>
                     {service.ourDeviceLabel || "✅ Our Technology"}
                   </div>
                   <div className="relative aspect-[16/9] overflow-hidden shrink-0">

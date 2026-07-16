@@ -102,7 +102,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Signature Experience",
     description: "Rediscover the elegant architecture of your face. Our signature HIFU lift works deep within the SMAS layer—where structural definition begins—to gently sculpt, lift, and refine your contours. No surgeries, no downtime, just the quiet confidence of your natural beauty restored.",
     heroRating: "4.8 · Rated by 190+ patients",
-    heroImage: "/services/hifu/hifu-new.webp",
+    heroImage: "/services/hifu/hifu-new1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Doctor-Supervised Care",
     performedBySub: "Safe • Personalised • Professional",
