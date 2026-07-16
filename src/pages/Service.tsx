@@ -274,9 +274,9 @@ export default function ServicePage() {
         transition={{ duration: 0.5 }}
       >
         {/* ══ 1. CINEMATIC HERO ══ */}
-        <section className="relative min-h-screen lg:h-screen flex flex-col lg:grid lg:grid-cols-2 bg-[#FAF6F0] pt-16 overflow-hidden">
+        <section className="relative min-h-[calc(100vh-4rem)] lg:h-[calc(100vh-4rem)] flex flex-col lg:grid lg:grid-cols-2 bg-[#FAF6F0] mt-16 overflow-hidden">
           {/* Left — content */}
-          <div className="relative z-10 flex flex-col justify-center px-5 sm:px-10 md:px-16 pt-6 pb-12 md:py-20 lg:py-0">
+          <div className="relative z-10 flex flex-col justify-center px-5 sm:px-10 md:px-16 pt-8 pb-12 md:py-20 lg:py-0">
             <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
               {/* Social proof badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
@@ -288,7 +288,7 @@ export default function ServicePage() {
 
             <FadeUp>
               <p className="text-xs tracking-[0.35em] uppercase text-[#C9956A] mb-3" style={M}>{service.experienceNo}</p>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] xl:text-7xl text-[#2C1810] leading-[1.0] mb-6" style={D}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.8rem] xl:text-[3.4rem] text-[#2C1810] leading-[1.1] mb-6" style={D}>
                 {service.title}<br /><span>{service.titleEmphasized}</span>
               </h1>
               <p className="text-base md:text-lg text-[#5C4A42] max-w-md leading-loose mb-8" style={B}>
