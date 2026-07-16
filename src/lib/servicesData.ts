@@ -1215,6 +1215,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🌱", b: "Hair Follicle Stimulation", d: "Helps reactivate dormant follicles to encourage healthier hair growth." }
     ],
     clinicalNote: "Blood is processed using a medical centrifuge to obtain a highly concentrated layer of growth factors and platelets.",
+    technologyTag: "🧬 Regenerative Science",
+    ourDeviceLabel: "✅ Autologous Method",
     sideImage: "/services/exosomes-prp-gfc/2.webp",
     machineTitle: "Precision Growth",
     machineEmphasized: "factor isolation.",
@@ -1308,6 +1310,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🌿", b: "Natural Expression", d: "Retains facial expression while softening aging signs." }
     ],
     clinicalNote: "Doses are precisely calibrated to preserve natural facial expression and muscle dynamics.",
+    technologyTag: "🧪 The Formulation",
+    ourDeviceLabel: "✅ Premium Brands",
     sideImage: "/services/Botox/2.webp",
     machineTitle: "Precision isolation",
     machineEmphasized: "for muscle relaxing.",
@@ -1395,6 +1399,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "⏱️", b: "Long-Lasting Results", d: "Sustained improvement for 9 to 18 months." }
     ],
     clinicalNote: "We exclusively use premium, cohesive hyaluronic acid gels for smooth integration with tissue layers.",
+    technologyTag: "✨ The Formulation",
+    ourDeviceLabel: "✅ Premium Gels",
     sideImage: "/services/fillers/2.webp",
     machineTitle: "Structural support",
     machineEmphasized: "using premium gels.",
@@ -1482,6 +1488,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🌟", b: "Deep Radiance", d: "Accelerates cell renewal for a lasting clinical glow." }
     ],
     clinicalNote: "We use high-concentration sterile centrifuges to harvest maximum growth factor yield safely.",
+    technologyTag: "🧬 Regenerative Science",
+    ourDeviceLabel: "✅ Autologous Method",
     sideImage: "/services/Vampire Lift/2.webp",
     machineTitle: "Autologous cellular",
     machineEmphasized: "skin restoration.",
@@ -1569,6 +1577,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "⚡", b: "Minimal Recovery", d: "Quick recovery compared to traditional surgical facelifts." }
     ],
     clinicalNote: "Threads are carefully placed along precise vectors to achieve a balanced, natural lift.",
+    technologyTag: "🧵 Suture Vectors",
+    ourDeviceLabel: "✅ Premium Threads",
     sideImage: "/services/thread lift/2.webp",
     machineTitle: "Structural vectors",
     machineEmphasized: "for natural lifting.",
@@ -1656,6 +1666,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🌿", b: "Smooths Fine Lines", d: "Plumps superficial dryness lines on cheeks and neck." }
     ],
     clinicalNote: "Micro-injections are distributed evenly to maximize moisture and glow across target zones.",
+    technologyTag: "💧 The Formulation",
+    ourDeviceLabel: "✅ Premium Hydrators",
     sideImage: "/services/Skin Boosters/2.webp",
     machineTitle: "Micro-injection",
     machineEmphasized: "moisture delivery.",
@@ -1743,6 +1755,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "✨", b: "Youthful Radiance", d: "Delivers a natural, refreshed, and hydrated appearance." }
     ],
     clinicalNote: "Treatment parameters are customized to target specific aging zones like cheeks, neck, and hands.",
+    technologyTag: "💧 The Formulation",
+    ourDeviceLabel: "✅ Premium Hydrators",
     sideImage: "/services/Skin Boosters/2.webp",
     machineTitle: "Micro-injection",
     machineEmphasized: "collagen stimulation.",
@@ -1830,6 +1844,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🧬", b: "Supports Healing", d: "Promotes healthy cell regeneration and skin barrier repair." }
     ],
     clinicalNote: "Formulated specifically to ensure deep hydration without triggering active acne breakouts.",
+    technologyTag: "💧 The Formulation",
+    ourDeviceLabel: "✅ Premium Hydrators",
     sideImage: "/services/Skin Boosters/2.webp",
     machineTitle: "Micro-injection",
     machineEmphasized: "pore refinement.",
@@ -1917,6 +1933,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🌿", b: "Smooths Fine Lines", d: "Plumps superficial dryness lines on cheeks and neck." }
     ],
     clinicalNote: "Micro-injections are distributed evenly to maximize moisture and glow across target zones.",
+    technologyTag: "💧 The Formulation",
+    ourDeviceLabel: "✅ Premium Hydrators",
     sideImage: "/services/Skin Boosters/2.webp",
     machineTitle: "Micro-injection",
     machineEmphasized: "moisture delivery.",
@@ -2265,6 +2283,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "⚡", b: "No Downtime", d: "Rapid recovery with comfortable injection techniques." }
     ],
     clinicalNote: "Scalp mapping is completed prior to treatment to identify target thinning areas.",
+    technologyTag: "🧬 Regenerative Science",
+    ourDeviceLabel: "✅ Cellular Shield",
     sideImage: "/services/exosomes-prp-gfc/2.webp",
     machineTitle: "Biotech exosomes",
     machineEmphasized: "for hair density.",
@@ -2352,6 +2372,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🛡️", b: "No Downtime", d: "Immediate return to daily activities." }
     ],
     clinicalNote: "Nutrient cocktails are customized based on scalp health and hair quality.",
+    technologyTag: "🧪 The Formulation",
+    ourDeviceLabel: "✅ Active Serums",
     sideImage: "/services/exosomes-prp-gfc/2.webp",
     machineTitle: "Nutrient-rich cocktails",
     machineEmphasized: "for hair strength.",
@@ -2439,6 +2461,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🛡️", b: "Absorbable Material", d: "PDO sutures dissolve safely over 6 months." }
     ],
     clinicalNote: "Threads are placed in a grid pattern to cover target thinning zones safely.",
+    technologyTag: "🧵 Suture Vectors",
+    ourDeviceLabel: "✅ Absorbable Threads",
     sideImage: "/services/exosomes-prp-gfc/2.webp",
     machineTitle: "PDO micro-threads",
     machineEmphasized: "for scalp strength.",
@@ -2526,6 +2550,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "⚡", b: "No Downtime", d: "Micro-injections integrate with minimal soreness." }
     ],
     clinicalNote: "Exosomes are prepared in a sterile clinical room to protect cellular active signals.",
+    technologyTag: "🧬 Regenerative Science",
+    ourDeviceLabel: "✅ Cellular Vesicles",
     sideImage: "/services/hydrafacial-medifacial/2.webp",
     machineTitle: "Biotech cellular signals",
     machineEmphasized: "for skin rejuvenation.",
@@ -2699,6 +2725,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🛡️", b: "High Safety Standard", d: "Completely autologous treatment eliminates allergic risk." }
     ],
     clinicalNote: "Blood is processed using a medical centrifuge to obtain a highly concentrated layer of growth factors and platelets.",
+    technologyTag: "🧬 Regenerative Science",
+    ourDeviceLabel: "✅ Autologous Method",
     sideImage: "/services/exosomes-prp-gfc/2.webp",
     machineTitle: "Centrifuged platelet",
     machineEmphasized: "isolation system.",
@@ -2790,6 +2818,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🌱", b: "Follicular Recovery", d: "Strongly reactivates dormant hair roots to treat thinning." }
     ],
     clinicalNote: "GFC is prepared in specialized tubes that activate platelets to release growth factors prior to centrifuge separation.",
+    technologyTag: "🧬 Regenerative Science",
+    ourDeviceLabel: "✅ Pure Concentrate",
     sideImage: "/services/exosomes-prp-gfc/2.webp",
     machineTitle: "Cell-free growth factor",
     machineEmphasized: "activation protocol.",
@@ -2940,13 +2970,13 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
   }
   ,
 
-  "mesopeels": {
-    id: "mesopeels",
-    title: "Advanced Exfoliation",
+  "mesopeels-acne": {
+    id: "mesopeels-acne",
+    title: "Acne Control",
     titleEmphasized: "Mesopeels.",
-    experienceNo: "Acne & Renewal Experience",
-    description: "Restore your skin's clarity and brightness with our customized medical peeling treatments. Using botanical acids calibrated to your skin's specific barrier threshold, we gently lift dry, damaged cells, clear congestion, and fade persistent dark spots.",
-    heroRating: "4.8 · Rated by 190+ patients",
+    experienceNo: "Signature Acne Experience",
+    description: "Directly target active breakouts, regulate excess oil production, and fade stubborn post-acne marks with our customized chemical peeling treatments, specifically calibrated for acne-prone skin.",
+    heroRating: "4.8 · Rated by 195+ patients",
     heroImage: "/services/Mesophils/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Clinical Aesthetic Expert",
@@ -2957,60 +2987,62 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { n: "48h", l: "Texture smoothing" },
       { n: "100%", l: "Medical-grade acids" }
     ],
-    whatIsThisTag: "What is a Mesopeel?",
-    whatIsThisTitle: "Bespoke acids",
-    whatIsThisEmphasized: "for elegant cell renewal.",
-    whatIsThisDesc1: "We utilize medical-grade organic acids—including glycolic, lactic, and salicylic formulations—to gently dissolve the bonds holding dull cells together. This cellular clearing triggers fresh cell regeneration without harsh abrasion.",
-    whatIsThisDesc2: "Every peel is selected and layered according to your skin sensitivity, targeted to resolve acne breakouts, fade post-inflammatory marks, and reveal a bright, polished, and balanced complexion.",
+    whatIsThisTag: "What is Acne Mesopeel?",
+    whatIsThisTitle: "A deep chemical purge",
+    whatIsThisEmphasized: "for congested and oily skin.",
+    whatIsThisDesc1: "Acne Mesopeels utilize clinical-grade organic salicylic acid and mandelic acid blends. These lipophilic beta-hydroxy acids (BHAs) penetrate deep into oily pores, dissolving sebum plugs, calming red inflammation, and destroying acne-causing bacteria.",
+    whatIsThisDesc2: "By removing the outer layer of dead cells that trap oils, the peel prevents new acne blockages from forming, while glycolic components speed up the fading of post-acne dark marks (PIH).",
     benefits: [
-      { icon: "🧪", b: "Custom Acid Blends", d: "Formulated specifically for acne, pigmentation, or anti-aging." },
-      { icon: "✨", b: "Purges Congestion", d: "Dissolves sebum and debris to clear blackheads and breakout blockages." },
-      { icon: "🎯", b: "Fades Dark Spots", d: "Targets melanocytes to lift stubborn post-acne marks." },
-      { icon: "⚡", b: "Gentle Recovery", d: "Progressive peeling that avoids aggressive raw skin shedding." }
+      { icon: "🧪", b: "Salicylic Acid Blends", d: "Formulated specifically to penetrate and purify oily pore structures." },
+      { icon: "✨", b: "Calms Active Acne", d: "Anti-inflammatory properties soothe red, painful blemishes quickly." },
+      { icon: "🎯", b: "Controls Excess Sebum", d: "Regulates sebaceous glands to reduce skin oiliness over time." },
+      { icon: "⚡", b: "Fades Post-Acne Marks", d: "Accelerates cell turnover to lift stubborn hyperpigmentation." }
     ],
-    clinicalNote: "Acid selection is customized based on your skin sensitivity and Fitzpatrick classification.",
+    clinicalNote: "Peel strength and exposure times are customized according to the severity of your acne and skin sensitivity.",
+    technologyTag: "🧪 The Formulation",
+    ourDeviceLabel: "✅ Calibrated Serums",
     sideImage: "/services/Mesophils/2.webp",
-    machineTitle: "Botanical acid infusions",
-    machineEmphasized: "for dermal clarity.",
-    deviceName: "Calibrated Mesopeel Serums",
-    deviceSub: "CLINICAL EXFOLIATOR • GLYCOLIC / SALICYLIC • BALANCED PH",
-    deviceDesc: "We select the precise combination of AHA/BHA acids at a controlled pH level to resurface your skin safely and effectively.",
-    deviceFeatures: ["Custom pH Balances", "AHA & BHA Blends", "Brightening Serums", "Dermatologist-formulated"],
+    machineTitle: "Salicylic & Mandelic acids",
+    machineEmphasized: "for acne purification.",
+    deviceName: "Acne Purifying Mesopeels",
+    deviceSub: "CLINICAL SALICYLIC BLENDS • SEBUM CONTROL • PH BALANCED",
+    deviceDesc: "We select the precise combination of BHAs at a controlled pH level to safely exfoliate and target acne breakouts at their root.",
+    deviceFeatures: ["Salicylic & Mandelic Acid", "Sebum Regulation", "Anti-Inflammatory", "Dermatologist-formulated"],
     deviceImage: "/services/hydrafacial-medifacial/Hydrafacial  Medifacial.webp",
-    comparisonTitle: "COSMO HOME vs Home Peels",
+    comparisonTitle: "COSMO HOME vs Standard Care",
     comparisonRows: [
-      { label: "Acid Potency", ours: "Medical-grade active concentrations", standard: "Weak over-the-counter exfoliants" },
-      { label: "pH Calibration", ours: "Buffers prevent acid burn risks", standard: "Unbuffered acidic home products" },
-      { label: "Targeting", ours: "Dermatologist-calibrated layering", standard: "Uniform superficial rubbing only" },
-      { label: "Extraction Combo", ours: "Includes clinical extraction checks", standard: "Pores left clogged after peeling" }
+      { label: "Acid Potency", ours: "Medical BHA targeting acne depth", standard: "Weak over-the-counter exfoliants" },
+      { label: "Pore Cleansing", ours: "Dissolves deep blockages inside follicles", standard: "Surface level cleansing only" },
+      { label: "Inflammation", ours: "Calms blemish redness and irritation", standard: "Scrubs irritate active acne further" },
+      { label: "Post-Acne Fading", ours: "Accelerates fading of dark marks (PIH)", standard: "Takes months to fade marks" }
     ],
-    whoNeedsDesc: "Perfect for anyone struggling with active acne, blackheads, post-acne dark spots, dullness, or rough skin texture.",
-    notSuitable: "Active sunburn, open wounds in treatment area, use of oral retinoids within past 6 months.",
+    whoNeedsDesc: "Highly recommended for patients struggling with active acne, blackheads, excessive oiliness, or post-inflammatory dark marks.",
+    notSuitable: "Active skin infections in treatment sites, pregnancy, use of oral isotretinoin within past 6 months.",
     whoNeedsItems: [
       { tag: "Active acne breakouts", desc: "Salicylic formulations calm inflammation and clear pore blockages." },
-      { tag: "Stubborn dark spots", desc: "Glycolic and lactic blends lift superficial melanin layers." },
-      { tag: "Enlarged clogged pores", desc: "Exfoliation helps shrink pore size and clear debris." },
-      { tag: "Dull uneven skin", desc: "Resurfacing reveals fresh skin cells for natural radiance." }
+      { tag: "Excessive oil production", desc: "Balances sebum production to reduce future pore blockages." },
+      { tag: "Blackheads & whiteheads", desc: "Purges trapped skin cells and debris from clogged pores." },
+      { tag: "Post-acne dark marks", desc: "Lifts pigmented cells to reveal a clearer, more even skin tone." }
     ],
-    sessionPlanDesc: "Mesopeels are performed as a progressive course of 4 to 6 sessions, spaced 2 to 3 weeks apart.",
+    sessionPlanDesc: "Performed as a progressive course of 4 to 6 sessions, scheduled every 2 to 3 weeks for optimal acne clearance.",
     sessionPlanSteps: [
-      { n: "01", label: "Skin Preparation", duration: "10 min", detail: "Skin is deep cleansed and degreased to ensure even absorption of the peel." },
-      { n: "02", label: "Peel Application", duration: "15 min", detail: "The customized chemical peel is layered onto the skin and timed under strict observation." },
-      { n: "03", label: "Neutralization & Soothing", duration: "15 min", detail: "The peel is deactivated with a neutralizing solution, followed by a calming clinical mask." }
+      { n: "01", label: "Acne Zone Mapping", duration: "10 min", detail: "The skin is deep cleansed, degreased, and target acne zones mapped for custom peel layers." },
+      { n: "02", label: "Peel Delivery", duration: "15 min", detail: "The salicylic/mandelic formulation is layered over breakouts and monitored closely for target activation." },
+      { n: "03", label: "Neutralization & Calm", duration: "15 min", detail: "The peel is neutralized and a soothing, anti-inflammatory clinical mask is applied." }
     ],
-    timelineDesc: "Flaking starts in 2 days and skin looks bright and smooth by day 5.",
+    timelineDesc: "Blemishes begin to dry up in 48 hours, with overall skin clarity improving over a 4-week cycle.",
     timelineItems: [
-      { when: "Immediately", what: "Skin feels tight and may show mild temporary pinkness." },
-      { when: "Day 2–3", what: "Mild, superficial flaking begins around the mouth and nose." },
-      { when: "Day 5", what: "Flaking completes, revealing fresh, bright, and soft skin." },
-      { when: "Week 2", what: "Breakouts are noticeably reduced and texture feels smoother." },
-      { when: "Month 2+", what: "Acne scars fade and overall skin tone becomes more even." }
+      { when: "Immediately", what: "Skin feels cleaner and tight. Blemish redness begins to settle." },
+      { when: "Day 2–3", what: "Mild, superficial flaking may occur around active breakouts." },
+      { when: "Day 5", what: "Active acne begins drying up and skin texture feels smoother." },
+      { when: "Week 2", what: "New breakouts are significantly reduced and oil levels are balanced." },
+      { when: "Month 2+", what: "Stubborn post-acne dark marks fade, revealing a clear complexion." }
     ],
-    ctaRating: "190+ clear skin stories",
-    ctaTitle: "Ready to resurface",
-    ctaTitle2: "and clear your skin?",
+    ctaRating: "195+ acne cleared cases",
+    ctaTitle: "Ready for clearer,",
+    ctaTitle2: "acne-free skin?",
     ctaEmphasized: "Start today.",
-    ctaDesc: "Book a skin evaluation to identify the ideal Mesopeel formula for your goals.",
+    ctaDesc: "Book a clinical skin check to identify the ideal Mesopeel formula for your acne type and skin barrier.",
     ctaQuickFacts: [
       { label: "Price from", val: "₹3,500 / session" },
       { label: "Duration", val: "40 minutes" },
@@ -3022,10 +3054,100 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     beforeAfter: {
       beforeImage: "/services/before&after/carbon feel/before.webp",
       afterImage: "/services/before&after/carbon feel/after.webp",
-      treatmentName: "Mesopeels Skin Renewal",
-      testimonialText: "My active acne has reduced and the post-acne marks have faded. My skin looks cleaner and refreshed.",
-      patientName: "Pooja D., 25",
-      subtitle: "Medical-grade peel formulation for skin texture and clarity"
+      treatmentName: "Acne Control Mesopeel",
+      testimonialText: "My active acne dried up within two sessions, and the dark marks on my cheeks have faded dramatically.",
+      patientName: "Sandra K., 24",
+      subtitle: "Acne control BHA peel for active breakouts and dark marks"
+    },
+  },
+  "mesopeels-skin-renewal": {
+    id: "mesopeels-skin-renewal",
+    title: "Skin Renewal",
+    titleEmphasized: "Mesopeels.",
+    experienceNo: "Signature Renewal Experience",
+    description: "Reveal a brighter, smoother, and more youthful complexion. Our Skin Renewal Mesopeels utilize clinical organic acids to gently dissolve dull outer cell layers and stimulate healthy cellular regeneration.",
+    heroRating: "4.8 · Rated by 190+ patients",
+    heroImage: "/services/Mesophils/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Clinical Aesthetic Expert",
+    performedBySub: "Safe • Botanical Peels • Resurfacing",
+    stats: [
+      { n: "4–6", l: "Sessions recommended" },
+      { n: "1–3", l: "Days mild flaking" },
+      { n: "48h", l: "Texture smoothing" },
+      { n: "100%", l: "Medical-grade acids" }
+    ],
+    whatIsThisTag: "What is Renewal Mesopeel?",
+    whatIsThisTitle: "A dynamic resurfacing",
+    whatIsThisEmphasized: "for skin glow and cell turnover.",
+    whatIsThisDesc1: "Skin Renewal Mesopeels combine glycolic acid, lactic acid, and citric acid formulations. These alpha-hydroxy acids (AHAs) break down the dead protein bonds on the skin's surface, triggering rapid cell turnover and collagen production in the layers underneath.",
+    whatIsThisDesc2: "This organic peeling treatment lifts superficial sun spots, softens fine dryness lines, improves skin elasticity, and restores a hydrated, dewy glass-skin glow.",
+    benefits: [
+      { icon: "🧪", b: "Glycolic & Lactic Blends", d: "Formulated specifically to speed up cellular renewal and hydration." },
+      { icon: "✨", b: "Restores Natural Glow", d: "Gently clears away dry, dead skin cell build-up that causes dullness." },
+      { icon: "🎯", b: "Evens Out Complexion", d: "Targets surface melanin to lift sun spots and uneven pigmentation." },
+      { icon: "⚡", b: "Softens Fine Lines", d: "Stimulates dermal collagen to plump fine dryness lines." }
+    ],
+    clinicalNote: "AHA peel parameters are carefully calibrated to your skin's natural pH threshold for safe, progressive renewal.",
+    technologyTag: "🧪 The Formulation",
+    ourDeviceLabel: "✅ Calibrated Serums",
+    sideImage: "/services/Mesophils/2.webp",
+    machineTitle: "Glycolic & Lactic acids",
+    machineEmphasized: "for cell renewal.",
+    deviceName: "Renewal Resurfacing Mesopeels",
+    deviceSub: "CLINICAL GLYCOLIC BLENDS • CELL TURNOVER • MOISTURE INFUSION",
+    deviceDesc: "We select the optimal combination of AHAs at a controlled pH level to safely resurface skin texture and restore hydration.",
+    deviceFeatures: ["Glycolic & Lactic Acid", "Cell Regeneration", "Hydration Boost", "Dermatologist-formulated"],
+    deviceImage: "/services/hydrafacial-medifacial/Hydrafacial  Medifacial.webp",
+    comparisonTitle: "COSMO HOME vs Home Peels",
+    comparisonRows: [
+      { label: "Acid Potency", ours: "Medical-grade AHA concentrations", standard: "Weak over-the-counter exfoliants" },
+      { label: "pH Calibration", ours: "Buffers prevent skin barrier damage", standard: "Acidic home solutions risk burns" },
+      { label: "Texture Lift", ours: "Stimulates deep collagen and turnover", standard: "Slight surface exfoliation only" },
+      { label: "Recovery Support", ours: "Includes soothing barrier-repair masks", standard: "Peeled skin left dry and sensitive" }
+    ],
+    whoNeedsDesc: "Ideal for patients looking to address dull or tired skin, sun damage, uneven pigmentation, early fine lines, or rough texture.",
+    notSuitable: "Active sunburn, eczema, open wounds, pregnancy.",
+    whoNeedsItems: [
+      { tag: "Dull or tired skin", desc: "Lifts dead cells to restore healthy, youthful radiance." },
+      { tag: "Sun spots & pigmentation", desc: "Fades superficial pigmentation and sun damage." },
+      { tag: "Rough skin texture", desc: "Smooths out rough patches and refines skin texture." },
+      { tag: "Early fine lines", desc: "Supports natural collagen to plump fine lines." }
+    ],
+    sessionPlanDesc: "We recommend a course of 4 to 6 sessions, spaced 2 to 3 weeks apart to allow healthy cell regeneration.",
+    sessionPlanSteps: [
+      { n: "01", label: "Skin Hydration Check", duration: "10 min", detail: "The skin barrier and hydration levels are assessed before selecting the custom AHA peel." },
+      { n: "02", label: "Resurfacing Application", duration: "15 min", detail: "The AHA peel is layered onto the skin and timed under close observation." },
+      { n: "03", label: "Nourishing Lock", duration: "15 min", detail: "The peel is neutralized and a hydrating, barrier-repair mask is applied." }
+    ],
+    timelineDesc: "Superficial flaking completes in 5 days, revealing a soft, refreshed, and dewy glass-skin glow.",
+    timelineItems: [
+      { when: "Immediately", what: "Skin feels plump, tight, and warm with a temporary rosy glow." },
+      { when: "Day 2–3", what: "Very light, superficial flaking begins around the nose and mouth." },
+      { when: "Day 5", what: "Flaking completes, revealing extremely soft and radiant skin." },
+      { when: "Week 2", what: "Pigmentation begins to fade and texture feels noticeably smoother." },
+      { when: "Month 2+", what: "Collagen production increases, softening fine lines and maintaining glow." }
+    ],
+    ctaRating: "190+ renewal stories",
+    ctaTitle: "Ready to restore",
+    ctaTitle2: "your skin's radiance?",
+    ctaEmphasized: "Begin today.",
+    ctaDesc: "Book a skin assessment to design a customized renewal peel plan tailored to your skin type.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹3,500 / session" },
+      { label: "Duration", val: "40 minutes" },
+      { label: "Recommended", val: "4–6 sessions" },
+      { label: "Frequency", val: "Every 2–3 weeks" },
+      { label: "Downtime", val: "1–3 days mild flaking" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/carbon feel/before.webp",
+      afterImage: "/services/before&after/carbon feel/after.webp",
+      treatmentName: "Skin Renewal Mesopeel",
+      testimonialText: "My skin has completely renewed. The rough patches and dullness are gone, and I have a steady glow every day.",
+      patientName: "Mini V., 42",
+      subtitle: "Skin renewal AHA peel for tone and brightness"
     },
   },
   "carbon-peel": {
@@ -3497,6 +3619,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🛡️", b: "Natural Rebuilding", d: "Stimulates organic collagen remodeling for gradual skin blending." }
     ],
     clinicalNote: "Typically combined with Microneedling (Dermapen) to maximize tissue absorption.",
+    technologyTag: "🧬 Regenerative Science",
+    ourDeviceLabel: "✅ Autologous Method",
     sideImage: "/services/hydrafacial-medifacial/2.webp",
     machineTitle: "Centrifuge separation",
     machineEmphasized: "for pure platelets.",
@@ -3585,6 +3709,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "⚡", b: "Minimal Downtime", d: "Highly purified serum integrates cleanly with minimal soreness." }
     ],
     clinicalNote: "GFC tubes are incubated for 30 minutes to ensure full platelet activation before centrifugation.",
+    technologyTag: "🧬 Regenerative Science",
+    ourDeviceLabel: "✅ Pure Concentrate",
     sideImage: "/services/laser-scar-reduction/2.webp",
     machineTitle: "Incubation activation",
     machineEmphasized: "for pure GFC.",
@@ -3673,6 +3799,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "⚡", b: "Biotech Pure Yield", d: "Ultra-pure vesicles maximize cellular response and healing." }
     ],
     clinicalNote: "Exosomes are stored in a deep-freeze environment and reconstituted immediately before treatment.",
+    technologyTag: "🧬 Regenerative Science",
+    ourDeviceLabel: "✅ Cellular Vesicles",
     sideImage: "/services/hydrafacial-medifacial/2.webp",
     machineTitle: "Biotech cellular signals",
     machineEmphasized: "for stretch mark repair.",
@@ -3761,6 +3889,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🛡️", b: "Natural Restoration", d: "Improves hair density and scalp health organically." }
     ],
     clinicalNote: "A clean scalp mapping is performed to identify target thinning areas before injections.",
+    technologyTag: "🧬 Regenerative Science",
+    ourDeviceLabel: "✅ Autologous Method",
     sideImage: "/services/PRP/2.webp",
     machineTitle: "Centrifuge separation",
     machineEmphasized: "for pure platelets.",
@@ -3849,6 +3979,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🛡️", b: "Consistent Results", d: "Highly standardized growth factor yield per session." }
     ],
     clinicalNote: "GFC tubes are incubated for 30 minutes to activate platelets before dry centrifugation.",
+    technologyTag: "🧬 Regenerative Science",
+    ourDeviceLabel: "✅ Pure Concentrate",
     sideImage: "/services/laser-hair-reduction/2.webp",
     machineTitle: "Incubation activation",
     machineEmphasized: "for hair growth.",
@@ -3937,6 +4069,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "⚡", b: "Biotech Purity", d: "Highly concentrated vesicles for rapid follicle activation." }
     ],
     clinicalNote: "Exosomes are prepared in a sterile room and injected immediately to protect cell signaling active states.",
+    technologyTag: "🧬 Regenerative Science",
+    ourDeviceLabel: "✅ Cellular Vesicles",
     sideImage: "/services/laser-hair-reduction/2.webp",
     machineTitle: "Biotech cellular signals",
     machineEmphasized: "for hair regrowth.",
@@ -4025,6 +4159,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "⚡", b: "No Oral Side Effects", d: "Local scalp delivery avoids the systemic side effects of oral pills." }
     ],
     clinicalNote: "Scalp numbing or cooling is applied to ensure full comfort during injections.",
+    technologyTag: "🧬 Regenerative Science",
+    ourDeviceLabel: "✅ Cellular Shield",
     sideImage: "/services/laser-hair-reduction/2.webp",
     machineTitle: "Hormonal block & growth",
     machineEmphasized: "for hair roots.",
@@ -4113,6 +4249,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🛡️", b: "Long-lasting Action", d: "Maintains active collagen induction for up to 12 months." }
     ],
     clinicalNote: "Topical numbing gel is applied for 45 minutes to ensure full comfort during insertion.",
+    technologyTag: "🧵 Suture Vectors",
+    ourDeviceLabel: "✅ Absorbable Threads",
     sideImage: "/services/laser-hair-reduction/2.webp",
     machineTitle: "Absorbable threads",
     machineEmphasized: "for scalp collagen.",
