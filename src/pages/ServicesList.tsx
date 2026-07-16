@@ -41,7 +41,7 @@ const CATEGORY_MAPPING: Record<string, string[]> = {
     "led-therapy",
     "mnrf",
     "co2-laser",
-    "exosomes",
+    "exosomes-face",
     "laser-toning",
     "mnrf-gfc"
   ],
@@ -76,7 +76,7 @@ const CATEGORY_MAPPING: Record<string, string[]> = {
   Injectables: [
     "prp",
     "gfc",
-    "exosomes"
+    "exosomes-injectables"
   ]
 };
 
@@ -96,7 +96,8 @@ const SERVICE_TAG_MAPPING: Record<string, string> = {
   "led-therapy": "Face : Acne",
   "mnrf": "Face : Acne",
   "co2-laser": "Face : Acne",
-  "exosomes": "Face & Injectables",
+  "exosomes-face": "Face : Skin Renewal",
+  "exosomes-injectables": "Injectables",
   "laser-toning": "Face : Skin Renewal",
   "mnrf-gfc": "Face : Skin Renewal",
   "hydrafacial-medifacial": "Face : Skin Renewal",

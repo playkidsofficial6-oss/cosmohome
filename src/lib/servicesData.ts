@@ -2521,12 +2521,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       subtitle: "PDO thread grid vectoring for follicle anchoring and scalp support"
     },
   },
-  "exosomes": {
-    id: "exosomes",
+  "exosomes-face": {
+    id: "exosomes-face",
     title: "Regenerative Dermal",
     titleEmphasized: "Exosomes.",
-    experienceNo: "Signature Experience",
-    description: "The frontier of cellular beauty. Exosome therapy delivers billions of highly concentrated, biotechnology-derived signaling molecules deep into your skin, instructing surrounding cells to build collagen and repair damage.",
+    experienceNo: "Face Renewal Experience",
+    description: "The frontier of facial rejuvenation. Dermal Exosome therapy delivers billions of highly concentrated, biotechnology-derived cell-signaling molecules deep into the facial dermis, prompting rapid skin repair, refining acne scars, and smoothing fine lines.",
     heroRating: "4.9 · Rated by 130+ patients",
     heroImage: "/services/hydrafacial-medifacial/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
@@ -2539,60 +2539,60 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { n: "100%", l: "Biotech pure yield" }
     ],
     whatIsThisTag: "What are Exosomes?",
-    whatIsThisTitle: "Pure biotechnology",
-    whatIsThisEmphasized: "for deep skin repair.",
-    whatIsThisDesc1: "Exosomes are microscopic cell-signaling vesicles rich in growth factors and regenerative proteins. When delivered directly into the dermis, they prompt a powerful cellular repair response that thickens thin, papery skin.",
-    whatIsThisDesc2: "This advanced regenerative treatment targets stubborn pigmentation, softens fine lines, and accelerates scar repair at the cellular level—free of synthetic chemicals or fillers.",
+    whatIsThisTitle: "Biotech cell signals",
+    whatIsThisEmphasized: "for skin resurfacing and renewal.",
+    whatIsThisDesc1: "Dermal Exosomes are microscopic cell-signaling vesicles harvested from pure stem cells, rich in growth factors and structural proteins. When delivered directly into the facial skin layers, they signal fibroblast cells to produce new collagen and elastin.",
+    whatIsThisDesc2: "This treatment dramatically increases skin thickness, refines stubborn post-acne scarring, tightens pores, and softens fine dryness lines around the eyes and cheeks—all without using synthetic fillers.",
     benefits: [
-      { icon: "🧬", b: "Cellular Signaling", d: "Triggers target skin cells to produce collagen and repair damage." },
-      { icon: "✨", b: "Improves Density", d: "Thickens thin, papery skin on the cheeks and under-eyes." },
-      { icon: "🎯", b: "Fades Pigmentation", d: "Regulates melanocytes to improve skin tone clarity." },
-      { icon: "⚡", b: "No Downtime", d: "Micro-injections integrate with minimal soreness." }
+      { icon: "🧬", b: "Collagen Rebuilding", d: "Instructs facial skin cells to dramatically increase collagen and elastin." },
+      { icon: "✨", b: "Refines Skin Texture", d: "Helps smooth out post-acne scarring and refines enlarged pores." },
+      { icon: "🎯", b: "Fades Pigmentation", d: "Balances melanin production to clear up sun damage and uneven tone." },
+      { icon: "⚡", b: "Fast Dermal Healing", d: "Accelerates skin barrier repair with minimal downtime bumps." }
     ],
-    clinicalNote: "Exosomes are prepared in a sterile clinical room to protect cellular active signals.",
+    clinicalNote: "Exosome formulations are kept frozen and prepared immediately before treatment in a sterile clinical room to preserve active cell-signaling states.",
     technologyTag: "🧬 Regenerative Science",
     ourDeviceLabel: "✅ Cellular Vesicles",
     sideImage: "/services/hydrafacial-medifacial/2.webp",
-    machineTitle: "Biotech cellular signals",
-    machineEmphasized: "for skin rejuvenation.",
+    machineTitle: "Biotech exosomes",
+    machineEmphasized: "for dermal regeneration.",
     deviceName: "Premium Dermal Exosomes",
-    deviceSub: "CELLULAR VEISLES • STERILE PREPARATION • MICRO-INJECTION",
-    deviceDesc: "We use premium exosome formulations prepared under strict biotechnology standards to guarantee maximum safety and effectiveness.",
-    deviceFeatures: ["Cellular Signaling", "Biotech Quality", "Micro-needles", "Dermatologist-led"],
+    deviceSub: "CELLULAR SIGNALING • SKIN TEXTURE REPAIR • PH BUFFERED",
+    deviceDesc: "We utilize premium exosome serums (like ASCE+) containing billions of active vesicles to trigger deep cellular remodeling.",
+    deviceFeatures: ["ASCE+ Exosomes", "Cell-signaling Vesicles", "Microneedling Delivery", "Dermatologist-formulated"],
     deviceImage: "/services/hydrafacial-medifacial/Hydrafacial  Medifacial.webp",
-    comparisonTitle: "COSMO HOME vs Standard Care",
+    comparisonTitle: "COSMO HOME vs Topical Serums",
     comparisonRows: [
-      { label: "Active Agent", ours: "Billions of exosome cellular signals", standard: "Basic peptide or vitamin serums" },
-      { label: "Delivery", ours: "Micro-injections directly to the dermis", standard: "Superficial skin rubbing" },
-      { label: "Safety", ours: "Sterile medical-grade preparation", standard: "Budget homecare creams" },
-      { label: "Efficacy", ours: "Rebuilds dermal structure from within", standard: "Temporary moisture layer" }
+      { label: "Active Agent", ours: "Billions of exosome cellular signals", standard: "Basic cosmetic peptide creams" },
+      { label: "Delivery Depth", ours: "Delivered directly into the dermis", standard: "Sits superficially on dead skin layer" },
+      { label: "Scar Remodeling", ours: "Clinically proven to repair acne scars", standard: "No effect on structural skin scarring" },
+      { label: "Efficacy Onset", ours: "Visible glow and elasticity in 7 days", standard: "Takes months for minor hydration changes" }
     ],
-    whoNeedsDesc: "Ideal for patients with thin skin, dull complexion, acne scars, or fine lines.",
-    notSuitable: "Active skin infections, bleeding disorders, pregnancy.",
+    whoNeedsDesc: "Perfect for patients with thin papery skin, persistent dullness, superficial wrinkles, or post-acne scarring.",
+    notSuitable: "Active skin infections in target injection sites, pregnancy, bleeding disorders.",
     whoNeedsItems: [
-      { tag: "Thin skin texture", desc: "Rebuild dermal thickness and skin elasticity." },
-      { tag: "Persistent dullness", desc: "Stimulate cellular turnover to brighten complexion." },
-      { tag: "Acne scarring", desc: "Stimulate tissue remodeling to smooth scars." },
-      { tag: "Superficial wrinkles", desc: "Plump up fine lines around eyes and neck." }
+      { tag: "Acne & texture scars", desc: "Stimulates dermal tissue remodeling to smooth out uneven indentations." },
+      { tag: "Thin under-eye skin", desc: "Increases dermal thickness to soften dark circles and crepey skin." },
+      { tag: "Superficial wrinkles", desc: "Plump early fine lines across cheeks, mouth, and forehead." },
+      { tag: "Dull damaged skin", desc: "Restores healthy skin barrier function and lit-from-within glow." }
     ],
-    sessionPlanDesc: "We recommend a course of 3 to 4 sessions, spaced 4 weeks apart, followed by seasonal maintenance.",
+    sessionPlanDesc: "We recommend a course of 3 to 4 sessions, spaced 4 weeks apart, followed by maintenance every 6 months.",
     sessionPlanSteps: [
-      { n: "01", label: "Skin Assessment", duration: "15 min", detail: "Our dermatologist evaluates skin thickness and texture to map target areas." },
-      { n: "02", label: "Exosome Injection", duration: "25 min", detail: "Exosomes are delivered to skin layers using precision micro-needles for comfort." },
-      { n: "03", label: "Barrier Soothing", duration: "15 min", detail: "Soothing barrier repair creams are applied to minimize redness." }
+      { n: "01", label: "Facial Mapping", duration: "15 min", detail: "Our dermatologist maps target skin zones and selects the optimal exosome formulation." },
+      { n: "02", label: "Serums Infusion", duration: "25 min", detail: "Exosome signaling vesicles are infused into target dermis layers using micro-injection sweeps." },
+      { n: "03", label: "Soothing Recovery", duration: "15 min", detail: "A professional calming barrier repair mask is applied to minimize redness." }
     ],
-    timelineDesc: "Skin softness improves in a few days, with maximum results at 4 weeks.",
+    timelineDesc: "Initial skin hydration and softness return in 3 days, with structural improvements visible by week 4.",
     timelineItems: [
-      { when: "Immediately", what: "Skin may show tiny injection bumps, resolving within 12-24 hours." },
-      { when: "Day 3–5", what: "Skin feels softer, smoother, and more hydrated." },
-      { when: "Week 4", what: "Dermal thickness and skin radiance show visible improvement." },
-      { when: "Month 6+", what: "Exosome cellular signals degrade, signaling the time for maintenance." }
+      { when: "Immediately", what: "Skin feels plump and tight, with minor redness resolving in 12-24 hours." },
+      { when: "Day 3–5", what: "Facial skin texture feels smoother, softer, and deeply hydrated." },
+      { when: "Week 4", what: "Dermal density improves and fine dryness lines appear softened." },
+      { when: "Month 6+", what: "Exosome cell signals degrade, signaling the time for maintenance." }
     ],
-    ctaRating: "130+ exosome stories",
-    ctaTitle: "Ready to stimulate",
-    ctaTitle2: "cellular skin rejuvenation?",
+    ctaRating: "130+ skin renewal stories",
+    ctaTitle: "Ready to restore",
+    ctaTitle2: "your skin's density?",
     ctaEmphasized: "Begin today.",
-    ctaDesc: "Book a clinical skin assessment to design a customized exosome plan.",
+    ctaDesc: "Book a skin assessment to design a custom dermal exosome plan with our dermatologist.",
     ctaQuickFacts: [
       { label: "Price from", val: "₹20,000 / session" },
       { label: "Duration", val: "45 minutes" },
@@ -2604,10 +2604,99 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     beforeAfter: {
       beforeImage: "/services/before&after/injections/before.webp",
       afterImage: "/services/before&after/injections/after.webp",
-      treatmentName: "Exosomes Regenerative Therapy",
-      testimonialText: "My skin texture is completely renewed. It healed so quickly and feels incredibly soft, hydrated, and youthful.",
+      treatmentName: "Dermal Exosome Therapy",
+      testimonialText: "My skin has completely renewed. The texture is smoother, my acne scars are softer, and it looks so healthy.",
       patientName: "Sneha V., 33",
-      subtitle: "Exosome cellular therapy for skin rejuvenation"
+      subtitle: "Dermal exosome therapy for facial skin rejuvenation and scar repair"
+    },
+  },
+  "exosomes-injectables": {
+    id: "exosomes-injectables",
+    title: "Cellular Injectable",
+    titleEmphasized: "Exosomes.",
+    experienceNo: "Signature Injectable Experience",
+    description: "Advanced regenerative medicine. Our Injectable Exosomes deliver billions of highly purified, stem-cell-derived signaling vesicles directly to targeted tissue layers to accelerate healing, restore cellular health, and promote deep tissue repair.",
+    heroRating: "4.9 · Rated by 130+ patients",
+    heroImage: "/services/hydrafacial-medifacial/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Board-Certified Dermatologist",
+    performedBySub: "Safe • Pure Exosomes • Cellular Repair",
+    stats: [
+      { n: "3-4", l: "Sessions recommended" },
+      { n: "12-24h", l: "Downtime bumps" },
+      { n: "7 Days", l: "Texture improvement" },
+      { n: "100%", l: "Biotech pure yield" }
+    ],
+    whatIsThisTag: "What are Injectable Exosomes?",
+    whatIsThisTitle: "Pure regenerative vesicles",
+    whatIsThisEmphasized: "for structural tissue healing.",
+    whatIsThisDesc1: "Injectable Exosomes are highly concentrated active vesicles containing growth factors, co-enzymes, and amino acids. Prepared under strict clinical standards, they act as intercellular messengers, signaling target tissues to repair damage and generate new healthy cells.",
+    whatIsThisDesc2: "This autologous-free regenerative therapy triggers deep dermal cell repair, targets chronic inflammation, and boosts collagen synthesis at a structural level without adding synthetic volume.",
+    benefits: [
+      { icon: "🧬", b: "Deep Tissue Repair", d: "Triggers target tissue cells to repair damage and synthesize collagen." },
+      { icon: "✨", b: "Cellular Signaling", d: "Acts as intercellular messengers to activate natural healing mechanisms." },
+      { icon: "🎯", b: "Calms Inflammation", d: "Strong anti-inflammatory signals calm irritated or compromised tissues." },
+      { icon: "⚡", b: "Safe Pure Formula", d: "Ultra-pure biotech preparation ensures high safety and predictable results." }
+    ],
+    clinicalNote: "Exosomes are kept in deep-freeze environments and reconstituted immediately before injection to maintain cell signaling active states.",
+    technologyTag: "🧬 Regenerative Science",
+    ourDeviceLabel: "✅ Cellular Vesicles",
+    sideImage: "/services/hydrafacial-medifacial/2.webp",
+    machineTitle: "Biotech exosomes",
+    machineEmphasized: "for cellular injectables.",
+    deviceName: "Clinical Injectable Exosomes",
+    deviceSub: "STEM CELL VESICLES • CELLULAR SIGNALLING • STRUCTURAL REPAIR",
+    deviceDesc: "We select standardized clinical exosome formulations containing highly concentrated growth factor signals to trigger target cell renewal.",
+    deviceFeatures: ["Purified Stem Cell Vesicles", "Intercellular Messaging", "Clinical-grade Formulation", "Sterile Preparation"],
+    deviceImage: "/services/hydrafacial-medifacial/Hydrafacial  Medifacial.webp",
+    comparisonTitle: "COSMO HOME vs Standard Care",
+    comparisonRows: [
+      { label: "Active Agent", ours: "Billions of exosome cell-signaling vesicles", standard: "Basic vitamin or peptide injections" },
+      { label: "Purity", ours: "Highly purified biotechnology standards", standard: "Basic chemical compounds" },
+      { label: "Action Mechanism", ours: "Signals cells to repair and regenerate", standard: "Provides raw material only" },
+      { label: "Safety", ours: "Completely sterile clinical preparation", standard: "Standard salon care" }
+    ],
+    whoNeedsDesc: "Ideal for patients looking for advanced cell regeneration, deep tissue healing, and non-surgical restoration.",
+    notSuitable: "Active skin infections, bleeding disorders, pregnancy.",
+    whoNeedsItems: [
+      { tag: "Advanced skin aging", desc: "Restores healthy cellular communication to reverse aging signs." },
+      { tag: "Compromised skin barrier", desc: "Calms chronic inflammation and accelerates tissue healing." },
+      { tag: "Structured cell damage", desc: "Stimulates dermal tissue remodeling for overall tissue strength." },
+      { tag: "Non-filler volume boost", desc: "Improves skin health and tone without synthetics." }
+    ],
+    sessionPlanDesc: "We recommend a personalized protocol of 3 to 4 sessions, spaced 4 weeks apart, for optimal tissue repair.",
+    sessionPlanSteps: [
+      { n: "01", label: "Clinical Assessment", duration: "15 min", detail: "Our dermatologist conducts a medical evaluation of tissue health to plan target zones." },
+      { n: "02", label: "Targeted Injection", duration: "25 min", detail: "The reconstituted exosome serum is delivered to target tissue layers using micro-needles." },
+      { n: "03", label: "Post-procedure Care", duration: "15 min", detail: "Skin is cleansed and a specialized recovery ointment is applied to protect injection points." }
+    ],
+    timelineDesc: "Cellular healing begins immediately, with noticeable tissue strength and texture improvement by week 4.",
+    timelineItems: [
+      { when: "Immediately", what: "Minor injection site bumps may appear, settling within 12-24 hours." },
+      { when: "Day 3–5", what: "Treated area feels softer, more hydrated, and less irritated." },
+      { when: "Week 4", what: "Visible improvement in skin thickness, texture, and resilience." },
+      { when: "Month 6+", what: "Maintenance session is recommended to sustain active cell signaling." }
+    ],
+    ctaRating: "130+ cellular recovery stories",
+    ctaTitle: "Ready to start",
+    ctaTitle2: "cellular tissue repair?",
+    ctaEmphasized: "Begin today.",
+    ctaDesc: "Book an expert assessment to design a customized injectable exosome plan.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹20,000 / session" },
+      { label: "Duration", val: "45 minutes" },
+      { label: "Recommended", val: "3-4 sessions" },
+      { label: "Frequency", val: "Every 4 weeks" },
+      { label: "Downtime", val: "12-24 hours" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/before&after/injections/before.webp",
+      afterImage: "/services/before&after/injections/after.webp",
+      treatmentName: "Injectable Exosome Therapy",
+      testimonialText: "The results are amazing. My skin feels stronger, the redness is gone, and the overall quality is much better.",
+      patientName: "Rhea M., 35",
+      subtitle: "Injectable exosome therapy for deep tissue repair and cellular health"
     },
   },
   "laser-toning": {
