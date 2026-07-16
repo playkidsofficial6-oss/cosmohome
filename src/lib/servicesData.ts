@@ -1143,7 +1143,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "FDA Cleared · Collagen Stimulating · Non-Invasive",
     deviceDesc: "Our radiofrequency tightening system delivers controlled thermal energy to the deep dermis and subdermal tissue. The precise temperature targets activate fibroblasts—the cells responsible for collagen and elastin production—without damaging overlying skin.",
     deviceFeatures: ["Deep dermis thermal targeting", "Real-time temperature control", "Multi-polar RF delivery", "Skin cooling protection"],
-    deviceImage: "/services/products-tech-images/ultraformer.webp",
+    deviceImage: "/services/products-tech-images/cm-slim.webp",
     comparisonTitle: "COSMO HOME vs Standard Clinic",
     comparisonRows: [
       { label: "Depth", ours: "Deep dermis & subdermal layers", standard: "Surface level only" },
