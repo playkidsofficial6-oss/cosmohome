@@ -94,6 +94,11 @@ const getTreatmentSlug = (name: string, category?: string, subcategory?: string)
     return `mesopeels-${subSlug}`;
   }
 
+  if (name.toLowerCase() === "exosomes") {
+    if (category === "Face") return "exosomes-face";
+    if (category === "Injectables") return "exosomes-injectables";
+  }
+
   if (category && (category === "Skin" || category === "Hair")) {
     const prefix = `${category.toLowerCase()}-`;
     if (base.startsWith(prefix)) {

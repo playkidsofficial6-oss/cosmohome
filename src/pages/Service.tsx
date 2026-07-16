@@ -134,6 +134,8 @@ const slugToOptionMap: Record<string, string> = {
   "prp": "PRP",
   "gfc": "GFC",
   "exosomes": "Exosomes",
+  "exosomes-face": "Exosomes",
+  "exosomes-injectables": "Exosomes",
   "botox": "Botox",
   "fillers": "Fillers",
   "vampire-lift": "Vampire Lift",
