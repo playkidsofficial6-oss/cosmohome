@@ -841,7 +841,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Signature Experience",
     description: "Define and strengthen your natural core. Using high-intensity electromagnetic waves, this treatment induces powerful muscle contractions to build deep core strength, lift glutes, and sculpt definition, completely non-invasively.",
     heroRating: "4.8 · Rated by 160+ patients",
-    heroImage: "/services/muscle-sculpting/1.webp",
+    heroImage: "/services/Muscle Sculpting/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Body Contouring Specialist",
     performedBySub: "Safe • Personalised • Professional",
@@ -862,7 +862,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🔥", b: "Fat Metabolism Boost", d: "Intense muscle contractions stimulate natural fat metabolism around the treated area." }
     ],
     clinicalNote: "Treatment intensity is customized based on your body composition and goals to maximize muscle definition safely.",
-    sideImage: "/services/muscle-sculpting/2.webp",
+    sideImage: "/services/Muscle Sculpting/2.webp",
     machineTitle: "High-Intensity Muscle",
     machineEmphasized: "Contraction Technology.",
     deviceName: "HIFEM Body Sculpting System",
@@ -918,8 +918,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format"
     ,
     beforeAfter: {
-      beforeImage: "/services/before&after/Muscle Sculpting/before.webp",
-      afterImage: "/services/before&after/Muscle Sculpting/after.webp",
+      beforeImage: "/services/Muscle Sculpting/before.webp",
+      afterImage: "/services/Muscle Sculpting/after.webp",
       treatmentName: "HIFEM Abdominal Definition",
       testimonialText: "Even with regular exercise, I couldn't get my core definition back after pregnancy. Four sessions of muscle sculpting completely firmed up my abdominal wall.",
       patientName: "Sarah L., 36",
