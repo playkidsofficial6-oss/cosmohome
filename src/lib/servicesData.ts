@@ -2875,7 +2875,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       afterImage: "/services/prp-injectable/after.webp",
       treatmentName: "Dermal PRP Therapy",
       testimonialText: "My skin texture has improved dramatically. The fine lines around my eyes are softer, and my skin looks and feels much thicker and healthier.",
-      patientName: "Sandra R., 34",
+      patientName: "Sandra R., 44",
       subtitle: "Dermal Platelet-Rich Plasma for facial skin rejuvenation and texture"
     },
   },
