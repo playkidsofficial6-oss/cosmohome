@@ -2172,7 +2172,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     title: "Deep Laser Resurfacing",
     titleEmphasized: "CO2 Laser.",
     experienceNo: "Signature Experience",
-    description: "Resurface, rebuild, renew. The fractional CO2 laser is the gold standard for severe skin texture irregularities, stretch marks, and deep acne scars, replacing damaged tissue with fresh, smooth skin.",
+    description: "Resurface, rebuild, renew. The fractional CO2 laser is the gold standard for severe skin texture irregularities, fine wrinkles, and deep acne scars, replacing damaged tissue with fresh, smooth skin.",
     heroRating: "4.8 · Rated by 170+ patients",
     heroImage: "/services/laser-scar-reduction/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
@@ -2191,11 +2191,13 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     whatIsThisDesc2: "This targeted heat triggers a powerful cellular response that breaks down old scarred tissue and replaces it with fresh, smooth, and firm collagen fibers, restoring uniform texture over several weeks.",
     benefits: [
       { icon: "🧬", b: "Deep Collagen Remodeling", d: "Replaces old damaged fibers with fresh skin." },
-      { icon: "🎯", b: "Fades Stretch Marks", d: "Smoothes stretch marks and restores skin density." },
+      { icon: "🎯", b: "Reduces Fine Lines", d: "Softens deep wrinkles and improves skin firmness." },
       { icon: "✨", b: "Smoothes Severe Scars", d: "Fades rolling, boxcar, and surgical scars." },
       { icon: "⚡", b: "Improves Skin Tightness", d: "Reduces skin laxity and refines overall texture." }
     ],
     clinicalNote: "Treatment parameters are customized to protect the surrounding skin and support fast healing.",
+    technologyTag: "🔬 The Technology",
+    ourDeviceLabel: "✅ Our Technology",
     sideImage: "/services/laser-scar-reduction/2.webp",
     machineTitle: "Fractional CO2 beams",
     machineEmphasized: "for deep resurfacing.",
@@ -2211,11 +2213,11 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Comfort", ours: "Numbing cream and cold air support", standard: "High heat with minimal cooling" },
       { label: "Recovery", ours: "Calming barrier recovery system included", standard: "Standard ointment only" }
     ],
-    whoNeedsDesc: "Perfect for patients with deep acne scars, stretch marks, surgical scars, or severe skin texture issues.",
+    whoNeedsDesc: "Perfect for patients with deep acne scars, surgical scars, open pores, or severe skin texture issues.",
     notSuitable: "Active tan, history of keloids, active skin infections, pregnancy.",
     whoNeedsItems: [
       { tag: "Deep acne scars", desc: "Break up scar fibers and lift skin tissue." },
-      { tag: "Stretch marks", desc: "Rebuild collagen to smooth and blend stretch marks." },
+      { tag: "Fine lines & wrinkles", desc: "Stimulates deep collagen production to plump aged skin." },
       { tag: "Surgical scars", desc: "Soften and flatten surgical incision lines." },
       { tag: "Severe texture issues", desc: "Resurface rough, damaged skin for a smooth finish." }
     ],
@@ -2790,8 +2792,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     id: "prp",
     title: "Autologous Platelet",
     titleEmphasized: "PRP Therapy.",
-    experienceNo: "Signature Experience",
-    description: "A pure, organic cellular restoration. Our signature autologous PRP experience isolates the platelet-rich growth factors from your own blood, delivering them directly into your skin or scalp to trigger deep rejuvenation and cellular repair naturally.",
+    experienceNo: "Signature Injectable Experience",
+    description: "A pure, organic cellular restoration. Our signature autologous PRP experience isolates the platelet-rich growth factors from your own blood, delivering them directly into your skin to trigger deep rejuvenation and cellular repair naturally.",
     heroRating: "4.9 · Rated by 280+ patients",
     heroImage: "/services/exosomes-prp-gfc/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
@@ -2805,12 +2807,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     whatIsThisTitle: "Harvesting your body's",
     whatIsThisEmphasized: "indigenous healing power.",
-    whatIsThisDesc1: "Your cells hold the blueprint for skin and hair health. Platelet-Rich Plasma (PRP) utilizes a concentrated pool of your own platelets. When micro-injected, these active cells release natural growth factors that stimulate tissue repair, smooth lines, and reactivate thinning follicles.",
+    whatIsThisDesc1: "Your cells hold the blueprint for skin health. Platelet-Rich Plasma (PRP) utilizes a concentrated pool of your own platelets. When micro-injected, these active cells release natural growth factors that stimulate tissue repair, smooth lines, and support dermal regeneration.",
     whatIsThisDesc2: "Prepared in a sterile closed system under Dr. Ruxana's medical guidance, the blood sample is centrifuged to separate active platelets from unwanted red and white blood cells. This pure plasma is then delivered precisely to restore density and radiance.",
     benefits: [
       { icon: "🧬", b: "Bio-regenerative healing", d: "Uses natural cell-signaling pathways for repair" },
       { icon: "🧪", b: "Collagen Remodelling", d: "Improves skin elasticity, fine lines, and under-eye hollows." },
-      { icon: "🌱", b: "Hair Growth Stimulation", d: "Reactivates dormant hair roots to treat thinning." },
+      { icon: "✨", b: "Restores Radiance", d: "Gently clears away dry, dead skin cell build-up that causes dullness." },
       { icon: "🛡️", b: "High Safety Standard", d: "Completely autologous treatment eliminates allergic risk." }
     ],
     clinicalNote: "Blood is processed using a medical centrifuge to obtain a highly concentrated layer of growth factors and platelets.",
@@ -2832,11 +2834,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Safety", ours: "Closed, sterile single-use medical kits", standard: "Open laboratory test tubes" },
       { label: "Method", ours: "Precision doctor-controlled injection protocol", standard: "General deep bolus syringe shots" }
     ],
-    whoNeedsDesc: "Ideal for patients looking for natural anti-aging, under-eye rejuvenation, acne scar repair, or hair restoration without synthetic chemicals.",
+    whoNeedsDesc: "Ideal for patients looking for natural anti-aging, under-eye rejuvenation, acne scar repair, or skin restoration without synthetic chemicals.",
     notSuitable: "Bleeding disorders, blood-thinning medications, active skin infections, pregnancy, or uncontrolled medical conditions.",
     whoNeedsItems: [
-      { tag: "Hair thinning & loss", desc: "Regaining volume and crown hair density." },
-      { tag: "Androgenetic Alopecia", desc: "Helps improve hair density in male and female pattern hair loss." },
       { tag: "Thin, crepey skin", desc: "Improves skin thickness, elasticity, and overall skin quality." },
       { tag: "Deep acne scarring", desc: "Stimulates collagen remodeling to improve the appearance of acne scars." },
       { tag: "Under-eye circles", desc: "Improves skin quality and supports natural collagen production in the under-eye area." },
@@ -2845,22 +2845,22 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     sessionPlanDesc: "A typical treatment plan includes 3–4 sessions performed 4 weeks apart, followed by maintenance treatments as recommended by your dermatologist.",
     sessionPlanSteps: [
       { n: "01", label: "Centrifugation", duration: "30 min", detail: "A small blood sample is collected and processed using a medical centrifuge to isolate the platelet-rich layer." },
-      { n: "02", label: "Micro-Droplet Delivery", duration: "30 min", detail: "Once the numbing cream is removed, our cosmetic dermatologist performs precise micro-droplet injections into the targeted skin or scalp." },
+      { n: "02", label: "Micro-Droplet Delivery", duration: "30 min", detail: "Once the numbing cream is removed, our cosmetic dermatologist performs precise micro-droplet injections into the targeted skin." },
       { n: "03", label: "LED Red Light Recovery", duration: "15 min", detail: "LED red light therapy helps reduce post-treatment redness, supports skin recovery, and improves patient comfort." }
     ],
-    timelineDesc: "Hair follicles and collagen remodeling continue to improve gradually over the following 3–6 months.",
+    timelineDesc: "Collagen remodeling continues to improve gradually over the following 3–6 months.",
     timelineItems: [
       { when: "Immediately", what: "Mild redness, swelling, or tenderness may occur and typically settles within 12–24 hours." },
-      { when: "Week 1", what: "Early skin recovery begins. Hair shedding may gradually reduce in treated areas." },
-      { when: "Month 1", what: "Early improvements in skin texture become visible. Fine new hair growth may begin to appear in treated areas." },
-      { when: "Month 3", what: "Noticeable improvements in hair density, skin quality, and acne scar appearance continue to develop." },
+      { when: "Week 1", what: "Early skin recovery begins. Skin feels smoother and more hydrated." },
+      { when: "Month 1", what: "Early improvements in skin texture and overall radiance become visible." },
+      { when: "Month 3", what: "Noticeable improvements in skin quality, density, and acne scar appearance continue to develop." },
       { when: "Month 6+", what: "Continued regeneration is supported with maintenance treatments as recommended." }
     ],
     ctaRating: "280+ patients regenerated",
     ctaTitle: "Ready to restore",
-    ctaTitle2: "hair volume or skin density?",
+    ctaTitle2: "skin volume or skin density?",
     ctaEmphasized: "Begin today.",
-    ctaDesc: "Include a medical assessment of your follicle density or skin thickness to map the target injection areas.",
+    ctaDesc: "Include a medical assessment of your skin thickness to map the target injection areas.",
     ctaQuickFacts: [
       { label: "Price from", val: "₹10,000 / session" },
       { label: "Duration", val: "60–75 minutes" },
@@ -2873,18 +2873,18 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     beforeAfter: {
       beforeImage: "/services/before&after/injections/before.webp",
       afterImage: "/services/before&after/injections/after.webp",
-      treatmentName: "PRP Hair Growth Therapy",
-      testimonialText: "My hair thinning was stressing me out. After three sessions of targeted PRP therapy, my hair fall has decreased significantly, and my hair feels thicker.",
-      patientName: "Arjun V., 32",
-      subtitle: "Autologous Platelet-Rich Plasma for hair restoration"
+      treatmentName: "Dermal PRP Therapy",
+      testimonialText: "My skin texture has improved dramatically. The fine lines around my eyes are softer, and my skin looks and feels much thicker and healthier.",
+      patientName: "Sandra R., 34",
+      subtitle: "Dermal Platelet-Rich Plasma for facial skin rejuvenation and texture"
     },
   },
   "gfc": {
     id: "gfc",
     title: "Purified Growth Factor",
     titleEmphasized: "GFC Therapy.",
-    experienceNo: "Signature Experience",
-    description: "The peak of regenerative aesthetics. GFC therapy delivers a highly concentrated, cell-free concentrate of your body's own growth proteins directly to hair roots or skin layers, prompting rapid regeneration with unmatched comfort and minimal downtime.",
+    experienceNo: "Signature Injectable Experience",
+    description: "The peak of regenerative aesthetics. GFC therapy delivers a highly concentrated, cell-free concentrate of your body's own growth proteins directly to skin layers, prompting rapid regeneration with unmatched comfort and minimal downtime.",
     heroRating: "4.9 · Rated by 280+ patients",
     heroImage: "/services/exosomes-prp-gfc/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
@@ -2897,14 +2897,14 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { n: "100%", l: "Doctor performed" }
     ],
     whatIsThisTitle: "Pure, cell-free gold",
-    whatIsThisEmphasized: "for maximum skin and scalp repair.",
+    whatIsThisEmphasized: "for maximum skin repair and tightening.",
     whatIsThisDesc1: "GFC represents a clinical advancement over traditional PRP. Platelets are activated in specialized tubes to release their entire growth factor content before separation. The blood cells are then completely filtered out, yielding a pure, cell-free gold concentrate.",
-    whatIsThisDesc2: "By removing cellular debris, GFC delivers a highly potent clinical effect directly to targeted tissue layers. Because the serum is purified, injections are exceptionally comfortable, and post-procedure swelling is virtually eliminated.",
+    whatIsThisDesc2: "By removing cellular debris, GFC delivers a highly potent clinical effect directly to targeted dermal layers. Because the serum is purified, injections are exceptionally comfortable, and post-procedure swelling is virtually eliminated.",
     benefits: [
       { icon: "🧪", b: "High-Purity Concentrate", d: "Completely cell-free growth factors for high potency." },
       { icon: "🛡️", b: "Zero Inflammation & Pain", d: "Absence of red/white cells minimizes post-procedure soreness." },
-      { icon: "🧬", b: "Rapid Repair", d: "Highly direct cellular signaling for faster healing." },
-      { icon: "🌱", b: "Follicular Recovery", d: "Strongly reactivates dormant hair roots to treat thinning." }
+      { icon: "🧬", b: "Rapid Dermal Repair", d: "Highly direct cellular signaling for faster collagen stimulation." },
+      { icon: "✨", b: "Restores Radiance", d: "Improves overall skin density and softens signs of aging." }
     ],
     clinicalNote: "GFC is prepared in specialized tubes that activate platelets to release growth factors prior to centrifuge separation.",
     technologyTag: "🧬 Regenerative Science",
@@ -2925,33 +2925,33 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Safety", ours: "Closed, sterile single-use medical kits", standard: "Open laboratory test tubes" },
       { label: "Method", ours: "Precision doctor-controlled injection protocol", standard: "General deep bolus syringe shots" }
     ],
-    whoNeedsDesc: "Ideal for patients seeking a highly potent, virtually painless alternative to standard PRP for advanced hair restoration and deep skin repair.",
+    whoNeedsDesc: "Ideal for patients seeking a highly potent, virtually painless alternative to standard PRP for advanced skin repair and anti-aging.",
     notSuitable: "Bleeding disorders, blood-thinning medications, active skin infections, pregnancy, or uncontrolled medical conditions.",
     whoNeedsItems: [
-      { tag: "Advanced hair thinning", desc: "Provides high-potency growth factors directly to hair roots." },
       { tag: "Deep acne scars", desc: "Stimulates structural tissue remodeling to smooth scars." },
       { tag: "Aged skin & wrinkles", desc: "Accelerates collagen synthesis for overall skin tightening." },
-      { tag: "Under-eye hollows", desc: "Promotes natural volume and tissue repair in periorbital layers." }
+      { tag: "Under-eye hollows", desc: "Promotes natural volume and tissue repair in periorbital layers." },
+      { tag: "Skin dullness", desc: "Deeply hydrates and restores skin vitality from within." }
     ],
     sessionPlanDesc: "A typical treatment plan includes 3–4 sessions performed 4 weeks apart, followed by maintenance treatments as recommended by your dermatologist.",
     sessionPlanSteps: [
       { n: "01", label: "Activation & Centrifugation", duration: "35 min", detail: "A blood sample is drawn into GFC tubes, incubated for activation, and centrifuged to isolate the cell-free growth factor concentrate." },
-      { n: "02", label: "Micro-Droplet Delivery", duration: "30 min", detail: "Once the numbing cream is removed, our cosmetic dermatologist performs precise micro-droplet injections into the targeted skin or scalp." },
+      { n: "02", label: "Micro-Droplet Delivery", duration: "30 min", detail: "Once the numbing cream is removed, our cosmetic dermatologist performs precise micro-droplet injections into the targeted skin layers." },
       { n: "03", label: "LED Red Light Recovery", duration: "15 min", detail: "LED red light therapy helps reduce post-treatment redness, supports skin recovery, and improves patient comfort." }
     ],
-    timelineDesc: "Hair follicles and collagen remodeling continue to improve gradually over the following 3–6 months.",
+    timelineDesc: "Dermal thickness and collagen remodeling continue to improve gradually over the following 3–6 months.",
     timelineItems: [
       { when: "Immediately", what: "Mild redness, swelling, or tenderness may occur and typically settles within 12–24 hours." },
-      { when: "Week 1", what: "Early skin recovery begins. Hair shedding may gradually reduce in treated areas." },
-      { when: "Month 1", what: "Early improvements in skin texture become visible. Fine new hair growth may begin to appear in treated areas." },
-      { when: "Month 3", what: "Noticeable improvements in hair density, skin quality, and acne scar appearance continue to develop." },
+      { when: "Week 1", what: "Early skin recovery begins. Skin feels smoother and has a healthy glow." },
+      { when: "Month 1", what: "Early improvements in skin texture become visible." },
+      { when: "Month 3", what: "Noticeable improvements in skin density, firmness, and acne scar appearance continue to develop." },
       { when: "Month 6+", what: "Continued regeneration is supported with maintenance treatments as recommended." }
     ],
     ctaRating: "280+ patients regenerated",
     ctaTitle: "Ready to restore",
-    ctaTitle2: "hair volume or skin density?",
+    ctaTitle2: "skin density?",
     ctaEmphasized: "Begin today.",
-    ctaDesc: "Include a medical assessment of your follicle density or skin thickness to map the target injection areas.",
+    ctaDesc: "Include a medical assessment of your skin thickness to map the target injection areas.",
     ctaQuickFacts: [
       { label: "Price from", val: "₹18,000 / session" },
       { label: "Duration", val: "60–75 minutes" },
@@ -2964,10 +2964,10 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     beforeAfter: {
       beforeImage: "/services/before&after/injections/before.webp",
       afterImage: "/services/before&after/injections/after.webp",
-      treatmentName: "GFC Hair Growth Therapy",
-      testimonialText: "My hair was thinning rapidly on the crown. After three sessions of Growth Factor Concentrate (GFC), my shedding has stopped completely and new thick hair has filled in.",
+      treatmentName: "Dermal GFC Therapy",
+      testimonialText: "The GFC treatment was so much more comfortable than traditional PRP. My acne scars have smoothed out beautifully and my skin looks refreshed.",
       patientName: "Nikhil P., 29",
-      subtitle: "Autologous growth factor concentrate for hair density"
+      subtitle: "Autologous growth factor concentrate for skin texture and scars"
     },
   },
   "mnrf-gfc": {
