@@ -1005,8 +1005,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/Body Contouring/before.webp",
-      afterImage: "/services/before&after/Body Contouring/after.webp",
+      beforeImage: "/services/body-contouring/before.webp",
+      afterImage: "/services/body-contouring/after.webp",
       treatmentName: "Precision Body Contouring",
       testimonialText: "I had stubborn fat around my waist that wouldn't budge despite dieting. After 5 body contouring sessions, my waistline is completely transformed.",
       patientName: "Priya M., 34",
