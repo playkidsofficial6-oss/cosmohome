@@ -1020,7 +1020,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Signature Experience",
     description: "Target and release stubborn fat pockets with precision. Our advanced fat reduction experiences use non-invasive cooling and energy platforms to target subcutaneous fat cells, allowing your body to naturally clear them for a refined contour.",
     heroRating: "4.9 · Rated by 95+ patients",
-    heroImage: "/services/fat-reduction/1.webp",
+    heroImage: "/services/Fat Reduction Body/1 .webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Body Specialist",
     performedBySub: "Safe • Personalised • Professional",
@@ -1041,7 +1041,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🌿", b: "Natural elimination", d: "Body processes destroyed fat cells through the lymphatic system" }
     ],
     clinicalNote: "Fat thickness is measured before and after treatment using clinical assessment tools to track and document reduction progress.",
-    sideImage: "/services/fat-reduction/2.webp",
+    sideImage: "/services/Fat Reduction Body/2.webp",
     whoNeedsDesc: "Designed for individuals looking to eliminate stubborn fat bulges in areas like the belly, love handles, back fat, or under the chin.",
     notSuitable: "Cryoglobulinemia, cold urticaria, pregnancy, active hernia in the treatment zone.",
     whoNeedsItems: [
@@ -1092,8 +1092,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/Fat Reduction/before.webp",
-      afterImage: "/services/before&after/Fat Reduction/after.webp",
+      beforeImage: "/services/Fat Reduction Body/before.webp",
+      afterImage: "/services/Fat Reduction Body/after.webp",
       treatmentName: "Advanced Fat Reduction",
       testimonialText: "The fat on my abdomen that diet and exercise couldn't touch is now gone. Completely non-invasive and zero downtime.",
       patientName: "Ananya R., 31",
