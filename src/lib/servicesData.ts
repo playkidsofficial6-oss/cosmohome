@@ -2964,9 +2964,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     beforeAfter: {
       beforeImage: "/services/GFC-Injectable/before.webp",
       afterImage: "/services/GFC-Injectable/after.webp",
-      treatmentName: "Dermal GFC Therapy",
-      testimonialText: "The GFC treatment was so much more comfortable than traditional PRP. My acne scars have smoothed out beautifully and my skin looks refreshed.",
-      patientName: "Ranjini P., 32",
+      treatmentName: "HAIR GFC THERAPY",
+      testimonialText: "The GFC treatment was far more comfortable than I expected. Within a few sessions, my hair fall reduced noticeably, and I could see healthier, thicker hair growing back. My confidence has truly returned.",
+      patientName: "Rera M., 32",
       subtitle: "Autologous growth factor concentrate for skin texture and scars"
     },
   },
