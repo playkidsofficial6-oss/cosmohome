@@ -2696,7 +2696,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       beforeImage: "/services/exosomes-injectables/before.webp",
       afterImage: "/services/exosomes-injectables/after.webp",
       treatmentName: "Injectable Exosome Therapy",
-      testimonialText: "The results are amazing. My skin feels stronger, the redness is gone, and the overall quality is much better.",
+      testimonialText: "After my Exosome Therapy sessions, I noticed a remarkable reduction in hair fall. My hair feels thicker, healthier, and new growth has become visible. The treatment was comfortable, and the results exceeded my expectations.",
       patientName: "Rhea M., 35",
       subtitle: "Injectable exosome therapy for deep tissue repair and cellular health"
     },
@@ -3956,7 +3956,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Hair Restoration Experience",
     description: "Activate natural follicle renewal. Our signature Hair PRP therapy concentrates the regenerative growth factors from your own blood platelets, delivering them directly to the hair roots to stimulate thinning areas and naturally increase density.",
     heroRating: "4.8 · Rated by 320+ patients",
-    heroImage: "/services/PRP/1.webp",
+    heroImage: "/services/Hair-PRP/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Hair Expert",
     performedBySub: "Safe • Autologous Platelets • Hair Regrowth",
@@ -4031,11 +4031,11 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/PRP/before.webp",
-      afterImage: "/services/PRP/after.webp",
+      beforeImage: "/services/Hair-PRP/before.webp",
+      afterImage: "/services/Hair-PRP/after.webp",
       treatmentName: "Hair PRP Restoration",
       testimonialText: "My hair shedding has reduced substantially, and my hair feels thicker and healthier.",
-      patientName: "Siddharth K., 31",
+      patientName: "Sandra K., 31",
       subtitle: "Platelet-Rich Plasma therapy for hair restoration and growth"
     },
   },
