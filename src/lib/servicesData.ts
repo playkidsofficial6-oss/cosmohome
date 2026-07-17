@@ -3422,7 +3422,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Body Restoration Experience",
     description: "Restore structural harmony to your skin. Our bespoke body MNRF treatment delivers calibrated radiofrequency energy deep into the dermis, initiating a powerful cellular renewal process to tighten loose skin and smooth stretch marks from within.",
     heroRating: "4.9 · Rated by 130+ patients",
-    heroImage: "/services/laser-scar-reduction/1.webp",
+    heroImage: "/services/Skin-MNRF/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Clinical Expert",
     performedBySub: "Safe • Gold-plated Needles • Deep Remodeling",
@@ -3444,7 +3444,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🛡️", b: "Epidermal Safety", d: "Saves outer skin layer to minimize pigmentation risks." }
     ],
     clinicalNote: "Medical numbing cream is applied for 45 minutes prior to the procedure to ensure comfort.",
-    sideImage: "/services/laser-scar-reduction/2.webp",
+    sideImage: "/services/Skin-MNRF/2.webp",
     machineTitle: "Gold-plated RF tips",
     machineEmphasized: "for dermal remodeling.",
     deviceName: "Fractional MNRF System",
@@ -3495,8 +3495,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/Laser Scar Reduction/before.webp",
-      afterImage: "/services/before&after/Laser Scar Reduction/after.webp",
+      beforeImage: "/services/Skin-MNRF/before.webp",
+      afterImage: "/services/Skin-MNRF/after.webp",
       treatmentName: "Skin MNRF Tightening",
       testimonialText: "My skin elasticity has improved significantly. It feels firmer, smoother, and younger.",
       patientName: "Latha M., 42",
