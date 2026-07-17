@@ -66,7 +66,7 @@ const beforeAfterData = {
     beforeImage: "/services/before&after/Laser Scar Reduction/before.webp",
     afterImage: "/services/before&after/Laser Scar Reduction/after.webp",
     testimonialText: "The fractional CO2 laser worked wonders on my deep scars. The texture of my skin has improved dramatically.",
-    patientName: "Rohan J., 32",
+    patientName: "Roshni J., 28",
     subtitle: "Fractional CO2 laser resurfacing for deep skin remodelling"
   },
   "dutexome": {

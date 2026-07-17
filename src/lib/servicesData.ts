@@ -922,7 +922,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       afterImage: "/services/Muscle Sculpting/after.webp",
       treatmentName: "HIFEM Abdominal Definition",
       testimonialText: "Even with regular exercise, I couldn't get my core definition back after pregnancy. Four sessions of muscle sculpting completely firmed up my abdominal wall.",
-      patientName: "Sarah L., 36",
+      patientName: "Aneena L., 31",
       subtitle: "High-intensity electromagnetic body definition"
     },
   },
@@ -1183,7 +1183,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       afterImage: "/services/Body Tightening/after.webp",
       treatmentName: "Body Skin Tightening",
       testimonialText: "After losing weight, I had loose skin on my abdomen and arms. The body tightening sessions have noticeably firmed everything up without surgery.",
-      patientName: "Meena S., 42",
+      patientName: "Meena S., 34",
       subtitle: "Deep radiofrequency collagen remodelling"
     },
   },
@@ -1900,7 +1900,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       afterImage: "/services/before&after/injections/after.webp",
       treatmentName: "Skin Boosters for Acne & Texture",
       testimonialText: "My skin was dry and peeling from acne meds. This booster hydrated my skin completely without causing any new breakouts.",
-      patientName: "Arun K., 28",
+      patientName: "Maya K., 30",
       subtitle: "Micro-injections of hyaluronic acid for post-acne skin repair"
     },
   },
@@ -2252,7 +2252,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       afterImage: "/services/before&after/Laser Scar Reduction/after.webp",
       treatmentName: "CO2 Laser Resurfacing",
       testimonialText: "The fractional CO2 laser worked wonders on my deep scars. The texture of my skin has improved dramatically.",
-      patientName: "Rohan J., 32",
+      patientName: "Roshni J., 28",
       subtitle: "Fractional CO2 laser resurfacing for deep skin remodelling"
     },
   },
@@ -2697,7 +2697,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       afterImage: "/services/exosomes-injectables/after.webp",
       treatmentName: "Injectable Exosome Therapy",
       testimonialText: "After my Exosome Therapy sessions, I noticed a remarkable reduction in hair fall. My hair feels thicker, healthier, and new growth has become visible. The treatment was comfortable, and the results exceeded my expectations.",
-      patientName: "Rhea M., 35",
+      patientName: "Mariyam., 45",
       subtitle: "Injectable exosome therapy for deep tissue repair and cellular health"
     },
   },
@@ -2875,7 +2875,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       afterImage: "/services/prp-injectable/after.webp",
       treatmentName: "Dermal PRP Therapy",
       testimonialText: "My skin texture has improved dramatically. The fine lines around my eyes are softer, and my skin looks and feels much thicker and healthier.",
-      patientName: "Sandra R., 44",
+      patientName: "Annama R., 44",
       subtitle: "Dermal Platelet-Rich Plasma for facial skin rejuvenation and texture"
     },
   },
@@ -3235,7 +3235,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       afterImage: "/services/before&after/carbon feel/after.webp",
       treatmentName: "Skin Renewal Mesopeel",
       testimonialText: "My skin has completely renewed. The rough patches and dullness are gone, and I have a steady glow every day.",
-      patientName: "Mini V., 42",
+      patientName: "Sandra K., 24",
       subtitle: "Skin renewal AHA peel for tone and brightness"
     },
   },
@@ -4215,7 +4215,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       afterImage: "/services/before&after/injections/after.webp",
       treatmentName: "Hair Exosome Therapy",
       testimonialText: "Exosomes gave my hair the ultimate boost. The thinning has reversed and my scalp feels healthier.",
-      patientName: "Meera D., 35",
+      patientName: "Megha D., 35",
       subtitle: "Regenerative exosome therapy for advanced hair thinning"
     },
   },
