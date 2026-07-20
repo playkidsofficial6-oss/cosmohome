@@ -1985,10 +1985,10 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/injections/before.webp",
-      afterImage: "/services/before&after/injections/after.webp",
+      beforeImage: "/services/skin-boosters-skin-renewal/befroe.webp",
+      afterImage: "/services/skin-boosters-skin-renewal/after.webp",
       treatmentName: "Skin Boosters Deep Hydration",
-      testimonialText: "My dry skin has transformed completely. It feels hydrated, plump, and has a steady, natural glow every day.",
+      testimonialText: "1My dry skin has transformed completely. It feels hydrated, plump, and has a steady, natural glow every day.",
       patientName: "Divya N., 31",
       subtitle: "Micro-injections of hyaluronic acid for deep skin hydration"
     },
