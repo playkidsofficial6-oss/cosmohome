@@ -3141,11 +3141,11 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/carbon feel/before.webp",
-      afterImage: "/services/before&after/carbon feel/after.webp",
+      beforeImage: "/services/Mesophils/before (1).webp",
+      afterImage: "/services/Mesophils/after.webp",
       treatmentName: "Acne Control Mesopeel",
       testimonialText: "My active acne dried up within two sessions, and the dark marks on my cheeks have faded dramatically.",
-      patientName: "Sandra K., 24",
+      patientName: "Sandra K., 28",
       subtitle: "Acne control BHA peel for active breakouts and dark marks"
     },
   },
