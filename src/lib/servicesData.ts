@@ -2977,7 +2977,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Signature Experience",
     description: "The ultimate synergy in scar remodeling. MNRF + GFC pairs deep radiofrequency energy with highly concentrated Growth Factor Concentrate, accelerating cell repair and restoring structural smoothness to scarred skin.",
     heroRating: "4.9 · Rated by 110+ patients",
-    heroImage: "/services/laser-scar-reduction/1.webp",
+    heroImage: "/services/mnrf-gfc-Skin-renewal/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Board-Certified Dermatologist",
     performedBySub: "Safe • Synergistic Remodeling • Scar Expert",
@@ -2999,7 +2999,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "⚡", b: "Faster Healing", d: "GFC accelerates skin barrier recovery." }
     ],
     clinicalNote: "GFC is applied immediately after MNRF to maximize absorption through micro-channels.",
-    sideImage: "/services/laser-scar-reduction/2.webp",
+    sideImage: "/services/mnrf-gfc-Skin-renewal/2.webp",
     machineTitle: "RF and GFC",
     machineEmphasized: "for rapid repair.",
     deviceName: "MNRF Platform & GFC Preparation",
@@ -3049,11 +3049,11 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaDesc: "Book a clinical scar assessment to design a customized MNRF + GFC plan.",
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/Laser Scar Reduction/before.webp",
-      afterImage: "/services/before&after/Laser Scar Reduction/after.webp",
+      beforeImage: "/services/mnrf-gfc-Skin-renewal/before.webp",
+      afterImage: "/services/mnrf-gfc-Skin-renewal/after.webp",
       treatmentName: "MNRF + GFC Combination Therapy",
       testimonialText: "Combining MNRF with GFC was the best decision for my acne scars. The healing was faster and the results are amazing.",
-      patientName: "Aditya N., 31",
+      patientName: "Shali N., 38",
       subtitle: "Combined microneedling radiofrequency and growth factors"
     },
   }
