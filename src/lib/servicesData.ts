@@ -2708,7 +2708,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Signature Experience",
     description: "Glow with absolute clarity. Our gentle Q-switched Laser Toning treatment breaks down deep melanin clusters beneath the skin's surface, fading stubborn spots and restoring a bright, even skin tone with zero downtime.",
     heroRating: "4.8 · Rated by 160+ patients",
-    heroImage: "/services/laser-pigment-reduction/1.webp",
+    heroImage: "/services/lasor toning skin Renewal/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Board-Certified Dermatologist",
     performedBySub: "Safe • Q-switched Nd:YAG • Brightening Expert",
@@ -2730,7 +2730,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "⚡", b: "Gentle Energy", d: "Minimizes redness and irritation during treatment." }
     ],
     clinicalNote: "Laser parameters are calibrated to Fitzpatrick skin types to prevent irritation risks.",
-    sideImage: "/services/laser-pigment-reduction/2.webp",
+    sideImage: "/services/lasor toning skin Renewal/2.webp",
     machineTitle: "Low-fluence laser",
     machineEmphasized: "for gentle toning.",
     deviceName: "Q-Switched Nd:YAG Laser",
@@ -2780,11 +2780,11 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/Laser Pigment Reduction/before.webp",
-      afterImage: "/services/before&after/Laser Pigment Reduction/after.webp",
+      beforeImage: "/services/lasor toning skin Renewal/before.webp",
+      afterImage: "/services/lasor toning skin Renewal/after.webp",
       treatmentName: "Laser Toning Brightening",
       testimonialText: "My skin tone is much brighter and even. The dullness is gone, and there was zero downtime after the laser sessions.",
-      patientName: "Megha S., 29",
+      patientName: "Megha S., 34",
       subtitle: "Q-Switched laser toning for skin brightening and pigmentation"
     },
   },
