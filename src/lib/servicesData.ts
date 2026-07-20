@@ -3861,7 +3861,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
   },
   "skin-exosomes": {
     id: "skin-exosomes",
-    title: "Stretch Mark Exosomes",
+    title: "Stretch Mark ",
     titleEmphasized: "Exosomes.",
     experienceNo: "Cellular Rebuilding Experience",
     description: "The height of biotechnology in body care. Exosome therapy infuses billions of purified cellular signaling vesicles directly into stretch mark channels, directing surrounding cells to remodel torn fibers and restore density.",
