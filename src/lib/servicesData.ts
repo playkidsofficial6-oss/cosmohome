@@ -1988,8 +1988,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       beforeImage: "/services/skin-boosters-skin-renewal/befroe.webp",
       afterImage: "/services/skin-boosters-skin-renewal/after.webp",
       treatmentName: "Skin Boosters Deep Hydration",
-      testimonialText: "1My dry skin has transformed completely. It feels hydrated, plump, and has a steady, natural glow every day.",
-      patientName: "Divya N., 31",
+      testimonialText: "My dry skin has transformed completely. It feels hydrated, plump, and has a steady, natural glow every day.",
+      patientName: "Divya N., 33",
       subtitle: "Micro-injections of hyaluronic acid for deep skin hydration"
     },
   },
