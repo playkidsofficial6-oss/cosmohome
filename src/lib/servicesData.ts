@@ -3765,7 +3765,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       afterImage: "/services/PRP-Skin/after.webp",
       treatmentName: "Skin PRP Rejuvenation",
       testimonialText: "My skin has a natural, healthy glow. The texture feels plump and rejuvenated.",
-      patientName: "Deepika R., 33",
+      patientName: "Deepika R., 28",
       subtitle: "Autologous Platelet-Rich Plasma for facial rejuvenation"
     },
   },
