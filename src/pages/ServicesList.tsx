@@ -59,7 +59,8 @@ const CATEGORY_MAPPING: Record<string, string[]> = {
     "hair-exosome",
     "hair-dutexome",
     "hair-mesotherapy",
-    "hair-monothreads"
+    "hair-monothreads",
+    "hair-laser"
   ],
   Laser: [
     "laser-pigment-reduction",
@@ -123,6 +124,7 @@ const SERVICE_TAG_MAPPING: Record<string, string> = {
   "hair-dutexome": "Hair : Scalp Therapy",
   "hair-mesotherapy": "Hair : Scalp Therapy",
   "hair-monothreads": "Hair : Scalp Therapy",
+  "hair-laser": "Hair : Laser Therapy",
 
   // Body treatments
   "muscle-sculpting": "Body : Sculpting",
