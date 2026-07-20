@@ -13,6 +13,7 @@ import ServicesListPage from "../pages/ServicesList";
 import BookConsultationPage from "../pages/BookConsultation";
 import ExperiencePage from "../pages/Experience";
 import DrRuxanaPage from "../pages/DrRuxana";
+import JournalPage from "../pages/Journal";
 export function AppContent() {
     const location = useLocation();
     const [ready, setReady] = useState(() => location.pathname !== "/");
@@ -42,6 +43,8 @@ export function AppContent() {
           <Route path="/experience/:slug" element={<ExperiencePage />} />
           <Route path="/book-consultation" element={<BookConsultationPage />} />
           <Route path="/dr-ruxana" element={<DrRuxanaPage />} />
+          <Route path="/journal" element={<JournalPage />} />
+          <Route path="/journal/:slug" element={<JournalPage />} />
         </Routes>
         <Footer />
       </motion.div>
