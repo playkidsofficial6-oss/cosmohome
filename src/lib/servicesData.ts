@@ -3620,7 +3620,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "🛡️", b: "Deep Resurfacing", d: "Smooths the texture difference of deep stretch mark channels." }
     ],
     clinicalNote: "A protective recovery ointment must be applied continuously for 5 days post-procedure.",
-    sideImage: "/services/laser-pigment-reduction/2.webp",
+    sideImage: "/services/skin-co2-laser/2.webp",
     machineTitle: "Fractional carbon dioxide laser",
     machineEmphasized: "for deep resurfacing.",
     deviceName: "Fractional CO2 Laser Platform",
