@@ -159,7 +159,7 @@ export function Nav({ ready }: { ready: boolean }) {
     { label: "Treatments", action: () => navigate("/service"), hasDropdown: true },
     { label: "Dr. Ruxana", href: "/dr-ruxana" },
     // { label: "Results", href: "/#results" },
-    { label: "Journal", href: "/#journal", hasDropdown: true },
+    { label: "Journal", href: "/journal" },
   ];
 
   const toggleMobileExpanded = (label: string) => {
@@ -644,6 +644,7 @@ export function Footer() {
               links: [
                 { label: "Our Philosophy", href: "/#philosophy" },
                 { label: "Dr. Ruxana", href: "/dr-ruxana" },
+                { label: "Journal & Insights", href: "/journal" },
                 { label: "Our Team", href: "/#our-team" },
                 { label: "Our Standards", href: "/#our-standards" },
                 { label: "Begin Your Story", href: "/book-consultation" }

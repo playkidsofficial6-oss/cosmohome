@@ -3539,7 +3539,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "DIGITAL NEEDLING • AUTO-CALIBRATED SPEED • MULTI-DEPTH",
     deviceDesc: "The Dermapen 4 delivers rapid vertical needle sweeps to target stretch marks precisely at deep dermal layer tiers.",
     deviceFeatures: ["Automated Vertical Needling", "Adjustable Needle Depth", "Disposable Sterile Tips", "Concomitant Serum Infusion"],
-    deviceImage: "/services/Derma-pen-Skin/3.webp",
+    deviceImage: "/services/Derma-pen-Skin/3.png",
     comparisonTitle: "COSMO HOME vs Dermarollers",
     comparisonRows: [
       { label: "Needle Entry", ours: "Strictly vertical 90-degree puncture", standard: "Angled entry tears and grazes skin" },
