@@ -3598,7 +3598,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Body Restoration Experience",
     description: "Complete texture resurfacing for your body. The fractional CO2 laser delivers precise micro-beams to vaporize columns of damaged stretch mark tissue, prompting the body to replace them with smooth, fresh, and dense skin.",
     heroRating: "4.9 · Rated by 140+ patients",
-    heroImage: "/services/laser-pigment-reduction/1.webp",
+    heroImage: "/services/skin-co2-laser/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Laser Specialist",
     performedBySub: "Safe • Fractional CO2 • Intense Resurfacing",
@@ -3671,11 +3671,11 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/before&after/Laser Scar Reduction/before.webp",
-      afterImage: "/services/before&after/Laser Scar Reduction/after.webp",
+      beforeImage: "/services/skin-co2-laser/before.webp",
+      afterImage: "/services/skin-co2-laser/after.webp",
       treatmentName: "Skin CO2 Laser Resurfacing",
       testimonialText: "The laser treatment smoothed my uneven skin. The texture has improved and scars are barely noticeable.",
-      patientName: "Gaurav B., 34",
+      patientName: "Ramya K., 30",
       subtitle: "Fractional CO2 laser resurfacing for skin texture improvement"
     },
   },
