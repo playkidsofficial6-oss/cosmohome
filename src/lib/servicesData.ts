@@ -3945,7 +3945,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       afterImage: "/services/skin-exosomes/after.webp",
       treatmentName: "Skin Exosome Rejuvenation",
       testimonialText: "This exosome treatment did wonders for my fine lines. My skin looks so refreshed and glowing.",
-      patientName: "Malini V., 45",
+      patientName: "Malini V., 36",
       subtitle: "Advanced exosome therapy for anti-ageing and cell renewal"
     },
   },
@@ -4398,6 +4398,96 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       patientName: "Amala, 25",
       subtitle: "PDO monothreads grid vectors for scalp structural support"
     },
+  },
+  "hair-laser": {
+    id: "hair-laser",
+    title: "Precision Medical",
+    titleEmphasized: "Hair Laser.",
+    experienceNo: "Hair Laser Experience",
+    description: "Precision photo-biomodulation for scalp follicle activation. Powered by the US-FDA cleared Lumenis laser system, Hair Laser Therapy delivers calibrated optical energy deep into hair roots, halting excessive shedding and encouraging thick, healthy hair regrowth.",
+    heroRating: "4.9 · Rated by 190+ patients",
+    heroImage: "/services/Hair-PRP/1.webp",
+    performedByLabel: "👩‍⚕️ Performed by",
+    performedByName: "Cosmetic Dermatologist",
+    performedBySub: "Non-Invasive • Lumenis Laser • Follicle Stimulation",
+    stats: [
+      { n: "6-8", l: "Sessions recommended" },
+      { n: "0 Min", l: "Downtime required" },
+      { n: "85%", l: "Reduction in hair shedding" },
+      { n: "100%", l: "Painless & non-invasive" }
+    ],
+    whatIsThisTag: "What is Hair Laser Therapy?",
+    whatIsThisTitle: "Low-level laser photo-stimulation",
+    whatIsThisEmphasized: "for hair follicle reactivation.",
+    whatIsThisDesc1: "Hair Laser Therapy utilizes clinical-grade low-level laser therapy (LLLT) and targeted diode optical pulses to penetrate deep into the scalp dermis. The light energy is absorbed by hair follicle chromophores, boosting cellular ATP energy production and nutrient delivery to miniaturized roots.",
+    whatIsThisDesc2: "Without heat damage or invasive procedures, Hair Laser therapy reverses follicle miniaturization, extends the active growth (anagen) phase of the hair cycle, and strengthens root anchor points.",
+    benefits: [
+      { icon: "💡", b: "Photobiomodulation", d: "Boosts mitochondrial ATP production in hair root cells." },
+      { icon: "🩸", b: "Scalp Micro-circulation", d: "Increases capillary blood flow and oxygen delivery to roots." },
+      { icon: "🛡️", b: "Stops Hair Shedding", d: "Reduces inflammatory follicle stress and halts excessive shedding." },
+      { icon: "✨", b: "Thickens Hair Shaft", d: "Transforms fine, miniaturized hair into thick, resilient strands." }
+    ],
+    clinicalNote: "Hair Laser sessions can be combined with Hair PRP or Exosome therapy for synergistically enhanced hair regrowth results.",
+    technologyTag: "⚡ Advanced Medical Laser",
+    ourDeviceLabel: "✅ Lumenis Laser System",
+    sideImage: "/services/Hair-PRP/1.webp",
+    machineTitle: "US-FDA Approved Lumenis",
+    machineEmphasized: "Laser Technology.",
+    deviceName: "Lumenis Hair Laser System",
+    deviceSub: "CLINICAL OPTICAL PULSES • PRECISION WAVELENGTH • HIGH-SAFETY PROTOCOL",
+    deviceDesc: "Powered by the world-renowned Lumenis laser platform, providing uniform, safe optical energy delivery to targeted scalp zones.",
+    deviceFeatures: ["Clinical OptiPulse Wavelength", "US-FDA Approved Safety", "Pain-Free Contact Cooling", "Dermatologist-Calibrated Energy"],
+    deviceImage: "/services/products-tech-images/lumenis.webp",
+    comparisonTitle: "COSMO HOME vs Basic LED Caps",
+    comparisonRows: [
+      { label: "Laser Technology", ours: "Medical-grade Lumenis laser diode system", standard: "Low-power consumer LED bulbs" },
+      { label: "Depth of Penetration", ours: "Targeted dermal depth to reach follicle bulbs", standard: "Superficial surface light exposure" },
+      { label: "Clinical Efficacy", ours: "Supervised by cosmetic dermatologists", standard: "Unmonitored home device usage" },
+      { label: "Safety & Comfort", ours: "Built-in contact cooling & zero downtime", standard: "Overheating risk & uneven energy" }
+    ],
+    whoNeedsDesc: "Ideal for men and women experiencing early-to-moderate hair thinning, active hair shedding, or seeking post-transplant care.",
+    notSuitable: "Active scalp infections, open wounds on scalp, severe photosensitizing conditions.",
+    whoNeedsItems: [
+      { tag: "Pattern Hair Thinning", desc: "Reactivates miniaturized follicles on crown and hairline." },
+      { tag: "Excessive Daily Hair Fall", desc: "Stabilizes hair shedding and accelerates recovery." },
+      { tag: "Weak & Fine Hair Strands", desc: "Increases individual hair shaft caliber and tensile strength." },
+      { tag: "Post-PRP Maintenance", desc: "Sustains and enhances hair density after growth factor therapies." }
+    ],
+    sessionPlanDesc: "We recommend a course of 6 to 8 sessions, spaced 1 to 2 weeks apart.",
+    sessionPlanSteps: [
+      { n: "01", label: "Scalp Trichoscopy", duration: "15 min", detail: "Digital analysis of hair density and root health." },
+      { n: "02", label: "Laser Session", duration: "25 min", detail: "Targeted Lumenis hair laser treatment applied across mapped scalp grids." },
+      { n: "03", label: "Nutrient Serum", duration: "10 min", detail: "Infusion of medical scalp growth peptides for maximal absorption." }
+    ],
+    timelineDesc: "Shedding reduces in 2-3 weeks, with new hair growth visible within 2-3 months.",
+    timelineItems: [
+      { when: "Immediately", what: "Scalp feels warm and invigorated with zero pain or downtime." },
+      { when: "Week 2–3", what: "Noticeable reduction in daily hair shedding during brushing." },
+      { when: "Month 2", what: "Fine hair strands feel thicker and hair roots show improved grip." },
+      { when: "Month 3–4", what: "New baby hair sprouting in thinning crown and hairline zones." },
+      { when: "Month 6+", what: "Maximal hair density and scalp coverage sustained with maintenance." }
+    ],
+    ctaRating: "190+ hair laser reviews",
+    ctaTitle: "Ready to revitalize your hair",
+    ctaTitle2: "with medical laser precision?",
+    ctaEmphasized: "Book your consultation.",
+    ctaDesc: "Schedule a scalp evaluation with Dr. Ruxana and our dermatology experts.",
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹4,500 / session" },
+      { label: "Duration", val: "45 minutes" },
+      { label: "Recommended", val: "6–8 sessions" },
+      { label: "Frequency", val: "Every 1–2 weeks" },
+      { label: "Downtime", val: "Zero downtime" }
+    ],
+    ctaImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1600&h=900&fit=crop&auto=format",
+    beforeAfter: {
+      beforeImage: "/services/Hair-PRP/1.webp",
+      afterImage: "/services/Hair-PRP/1.webp",
+      treatmentName: "Hair Laser Therapy",
+      testimonialText: "The Hair Laser treatment reduced my hair fall drastically in just 4 weeks. My scalp feels so much healthier!",
+      patientName: "Rahul M., 29",
+      subtitle: "Lumenis Hair Laser therapy for hair density restoration"
+    }
   }
 
 };

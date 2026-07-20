@@ -186,7 +186,7 @@ const beforeAfterData = {
     beforeImage: "/services/before&after/injections/before.webp",
     afterImage: "/services/before&after/injections/after.webp",
     testimonialText: "This exosome treatment did wonders for my fine lines. My skin looks so refreshed and glowing.",
-    patientName: "Malini V., 45",
+    patientName: "Malini V., 36",
     subtitle: "Advanced exosome therapy for anti-ageing and cell renewal"
   },
   "hair-prp": {

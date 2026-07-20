@@ -50,7 +50,7 @@ const MEGA_MENU_CONTENT = {
   },
   Hair: {
     icon: Wind,
-    treatments: ["PRP", "GFC", "Exosome", "Dutexome", "Hair Mesotherapy", "Monothreads"],
+    treatments: ["PRP", "GFC", "Exosome", "Dutexome", "Hair Mesotherapy", "Monothreads", "Hair Laser"],
     viewAll: "VIEW ALL HAIR TREATMENTS",
     image: "/services/laser-hair-reduction/1.webp",
     desc: "Advanced solutions for hair restoration and health."
