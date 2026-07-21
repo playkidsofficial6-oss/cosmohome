@@ -4406,7 +4406,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Hair Laser Experience",
     description: "Precision photo-biomodulation for scalp follicle activation. Powered by the US-FDA cleared Lumenis laser system, Hair Laser Therapy delivers calibrated optical energy deep into hair roots, halting excessive shedding and encouraging thick, healthy hair regrowth.",
     heroRating: "4.9 · Rated by 190+ patients",
-    heroImage: "/services/Hair-PRP/1.webp",
+    heroImage: "/services/hair-hair-laser/1.webp",
     performedByLabel: "👩‍⚕️ Performed by",
     performedByName: "Cosmetic Dermatologist",
     performedBySub: "Non-Invasive • Lumenis Laser • Follicle Stimulation",
@@ -4430,7 +4430,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     clinicalNote: "Hair Laser sessions can be combined with Hair PRP or Exosome therapy for synergistically enhanced hair regrowth results.",
     technologyTag: "⚡ Advanced Medical Laser",
     ourDeviceLabel: "✅ Lumenis Laser System",
-    sideImage: "/services/Hair-PRP/1.webp",
+    sideImage: "/services/hair-hair-laser/2.webp",
     machineTitle: "US-FDA Approved Lumenis",
     machineEmphasized: "Laser Technology.",
     deviceName: "Lumenis Hair Laser System",
@@ -4481,11 +4481,11 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     ctaImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1600&h=900&fit=crop&auto=format",
     beforeAfter: {
-      beforeImage: "/services/Hair-PRP/1.webp",
-      afterImage: "/services/Hair-PRP/1.webp",
+      beforeImage: "/services/hair-hair-laser/before.webp",
+      afterImage: "/services/hair-hair-laser/after.webp",
       treatmentName: "Hair Laser Therapy",
       testimonialText: "The Hair Laser treatment reduced my hair fall drastically in just 4 weeks. My scalp feels so much healthier!",
-      patientName: "Rahul M., 29",
+      patientName: "Rahul M., 25",
       subtitle: "Lumenis Hair Laser therapy for hair density restoration"
     }
   }
