@@ -586,7 +586,7 @@ export default function ServicePage() {
                     <div className="relative max-w-[320px] sm:max-w-[380px] lg:max-w-[440px]" style={{ perspective: 1000 }}>
                       <motion.img
                         animate={{ rotateY: rotation }}
-                        transition={{ duration: 0.9, ease: "easeInOut" }}
+                        transition={{ duration: 1.8, ease: "easeInOut" }}
                         src="/services/body-inbody-380/bg.png"
                         alt="InBody 380 Diagnostic Test"
                         className="w-full h-auto object-contain"
