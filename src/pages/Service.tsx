@@ -209,7 +209,6 @@ export default function ServicePage() {
     subtitle: `${serviceTitle} clinical case study`
   };
   const [activeSession, setActiveSession] = useState(0);
-  const [activeReportTab, setActiveReportTab] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   const [formSent, setFormSent] = useState(false);
@@ -522,104 +521,84 @@ export default function ServicePage() {
               </div>
 
               {(() => {
-                const reportSheets = [
+                const reportMetrics = [
                   {
-                    num: "01",
-                    title: "Body Composition Result Sheet",
-                    desc: "A comprehensive assessment illustrating your fundamental muscle, fat, and hydration distribution compared to clinical standard baselines.",
-                    image: "/services/body-inbody-380/380-result1.jpg",
-                    metrics: [
-                      "Intracellular & Extracellular Water ratios",
-                      "Dry Lean Mass vs. Skeletal Muscle Mass (SMM)",
-                      "Total Body Fat Mass in kilograms",
-                      "Body Mass Index (BMI) & Percent Body Fat (PBF)"
-                    ]
+                    title: "Body Composition Analysis",
+                    icon: Droplet,
+                    highlights: "Total Body Water · Protein · Minerals · Body Fat Mass",
+                    desc: "Differentiates fat tissue, muscle mass, and body water. Highlights the core building blocks of your physical health."
                   },
                   {
-                    num: "02",
-                    title: "Result Sheet for Children",
-                    desc: "Designed specifically to track and evaluate physical development in children, providing standard growth curve diagnostics.",
-                    image: "/services/body-inbody-380/380-result2.jpg",
-                    metrics: [
-                      "Standard height-for-age percentile curves",
-                      "Skeletal Muscle vs. Body Fat distribution balance",
-                      "Segmental Lean Analysis mapping children's growth",
-                      "Total Body Water & dry lean tissue ratios"
-                    ]
+                    title: "Muscle-Fat Analysis",
+                    icon: Dumbbell,
+                    highlights: "Skeletal Muscle Mass (SMM) · Body Fat Mass · Weight",
+                    desc: "Compares your muscle and fat distribution to understand your physical strength and baseline body shape profile (I, D, or C type)."
                   },
                   {
-                    num: "03",
-                    title: "Thermal Result Printout",
-                    desc: "A quick, convenient receipt-style printed summary outputted on the go from a connected thermal printer.",
-                    image: "/services/body-inbody-380/380-result3.jpg",
-                    metrics: [
-                      "Fast clinical body weight metrics",
-                      "Skeletal Muscle Mass summary stats",
-                      "Percent Body Fat (PBF) quick readout",
-                      "Essential water & lean mass metrics"
-                    ]
+                    title: "Obesity Analysis",
+                    icon: Activity,
+                    highlights: "Body Mass Index (BMI) · Percent Body Fat (PBF)",
+                    desc: "Tracks your exact fat percentage and body mass index against healthy clinical standard guidelines, rather than just simple scale weight."
+                  },
+                  {
+                    title: "Segmental Lean Analysis",
+                    icon: Target,
+                    highlights: "5 Body Zones (Arms, Legs, Trunk)",
+                    desc: "Individually measures muscle mass across five segments to identify muscle balance, physical asymmetry, and growth targets."
+                  },
+                  {
+                    title: "Body Water Balance",
+                    icon: Heart,
+                    highlights: "Extracellular Water / Total Body Water (ECW/TBW)",
+                    desc: "Evaluates cell hydration levels and fluid distribution. Essential for detecting physical inflammation, swelling, and water retention."
+                  },
+                  {
+                    title: "Vitality & Metabolic Risks",
+                    icon: Zap,
+                    highlights: "Overall InBody Score · Visceral Fat Level",
+                    desc: "Evaluates abdominal visceral fat (fat around organs) which is key for long-term health, and calculates an overall composition score."
                   }
                 ];
 
                 return (
-                  <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-10 md:gap-16 items-center">
-                    {/* Left Column: Interactive Tab Control Workbench */}
-                    <div className="flex flex-col gap-4 order-2 lg:order-1">
-                      {reportSheets.map((sheet, idx) => (
-                        <motion.button
-                          key={sheet.title}
-                          onClick={() => setActiveReportTab(idx)}
-                          whileHover={{ x: 6 }}
-                          className={`text-left p-6 rounded-2xl border transition-all duration-300 flex flex-col gap-3 group relative overflow-hidden ${activeReportTab === idx
-                            ? "bg-white border-[#C9956A] shadow-[0_15px_35px_rgba(44,24,16,0.04)]"
-                            : "bg-white/40 border-[#C9956A]/12 text-[#5C4A42] hover:bg-white hover:border-[#C9956A]/30"
-                            }`}
-                        >
-                          {/* Accent Line */}
-                          {activeReportTab === idx && (
-                            <div className="absolute top-0 bottom-0 left-0 w-1.5 bg-[#C9956A]" />
-                          )}
-
-                          <div className="flex items-center gap-3">
-                            <span className={`text-[10px] font-mono tracking-widest uppercase ${activeReportTab === idx ? "text-[#C9956A]" : "text-[#C9956A]/60"
-                              }`}>
-                              Report Sheet {sheet.num}
-                            </span>
-                          </div>
-
-                          <h3 className="text-lg font-semibold text-[#2C1810]" style={D}>
-                            {sheet.title}
-                          </h3>
-
-                          {activeReportTab === idx && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              transition={{ duration: 0.3 }}
-                              className="flex flex-col gap-3 mt-1"
-                            >
-                              <p className="text-xs text-[#5C4A42] leading-relaxed font-light" style={B}>
-                                {sheet.desc}
-                              </p>
-                              {/* Bullet points metrics */}
-                              <div className="flex flex-col gap-1.5 pt-2 border-t border-[#C9956A]/10">
-                                {sheet.metrics.map((m) => (
-                                  <div key={m} className="flex items-center gap-2 text-[11px] text-[#2C1810]">
-                                    <span className="text-[#C9956A] text-xs">✓</span>
-                                    <span style={B}>{m}</span>
-                                  </div>
-                                ))}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center">
+                    {/* Left Column Cards (Desktop layout) */}
+                    <div className="flex flex-col gap-6 lg:col-start-1 lg:row-start-1 lg:row-span-3">
+                      {reportMetrics.slice(0, 3).map((item, idx) => (
+                        <FadeUp key={item.title} delay={0.05 * idx}>
+                          <motion.div
+                            whileHover={{ y: -4, boxShadow: "0 12px 30px rgba(44,24,16,0.04)" }}
+                            transition={{ duration: 0.3, ease: EASE }}
+                            className="p-6 rounded-2xl border bg-white/60 border-[#C9956A]/12 text-[#5C4A42] hover:bg-white hover:border-[#C9956A]/35 transition-all duration-300 flex flex-col gap-3 relative overflow-hidden group"
+                          >
+                            <div className="absolute top-0 bottom-0 left-0 w-1 bg-[#C9956A]/0 group-hover:bg-[#C9956A]/80 transition-all duration-300" />
+                            
+                            <div className="flex items-start gap-4">
+                              <div className="w-10 h-10 rounded-xl bg-[#C9956A]/10 flex items-center justify-center text-[#C9956A] group-hover:bg-[#C9956A] group-hover:text-white transition-colors duration-300 shrink-0">
+                                <item.icon size={20} strokeWidth={2} />
                               </div>
-                            </motion.div>
-                          )}
-                        </motion.button>
+                              <div>
+                                <h3 className="text-base font-semibold text-[#2C1810]" style={D}>
+                                  {item.title}
+                                </h3>
+                                <span className="text-[9px] font-mono tracking-wider uppercase text-[#C9956A]/80 mt-0.5 block" style={M}>
+                                  {item.highlights}
+                                </span>
+                              </div>
+                            </div>
+
+                            <p className="text-xs text-[#5C4A42] leading-relaxed font-light mt-1" style={B}>
+                              {item.desc}
+                            </p>
+                          </motion.div>
+                        </FadeUp>
                       ))}
                     </div>
 
-                    {/* Right Column: High-Clarity Viewer */}
-                    <div className="order-1 lg:order-2 flex flex-col items-center">
+                    {/* Centered Image Column */}
+                    <div className="order-first md:order-none md:col-span-2 lg:col-span-1 lg:col-start-2 lg:row-start-1 lg:row-span-3 flex flex-col items-center justify-center mb-8 md:mb-12 lg:mb-0">
                       <FadeUp delay={0.15}>
-                        <div className="relative group cursor-zoom-in max-w-[680px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(44,24,16,0.06)] border border-[#C9956A]/15 bg-white p-4">
+                        <div className="relative group cursor-zoom-in max-w-[480px] w-full mx-auto rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(44,24,16,0.06)] border border-[#C9956A]/15 bg-white p-4 transition-all duration-500 hover:shadow-[0_30px_60px_rgba(201,149,106,0.12)] hover:border-[#C9956A]/30">
                           {/* Click overlay */}
                           <div
                             onClick={() => setIsLightboxOpen(true)}
@@ -630,23 +609,49 @@ export default function ServicePage() {
                             </span>
                           </div>
 
-                          <AnimatePresence mode="wait">
-                            <motion.img
-                              key={activeReportTab}
-                              initial={{ opacity: 0, scale: 0.98 }}
-                              animate={{ opacity: 1, scale: 1 }}
-                              exit={{ opacity: 0, scale: 0.98 }}
-                              transition={{ duration: 0.25 }}
-                              src={reportSheets[activeReportTab].image}
-                              alt={reportSheets[activeReportTab].title}
-                              className="w-full h-auto object-contain max-h-[620px] rounded-2xl"
-                            />
-                          </AnimatePresence>
+                          <img
+                            src="/services/body-inbody-380/380-result1.jpg"
+                            alt="InBody 380 Body Composition Result Sheet"
+                            className="w-full h-auto object-contain max-h-[580px] rounded-2xl transition-transform duration-500 group-hover:scale-[1.01]"
+                          />
                         </div>
                         <p className="text-[10px] text-center mt-3 text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>
                           Click on report to expand full size
                         </p>
                       </FadeUp>
+                    </div>
+
+                    {/* Right Column Cards (Desktop layout) */}
+                    <div className="flex flex-col gap-6 lg:col-start-3 lg:row-start-1 lg:row-span-3">
+                      {reportMetrics.slice(3, 6).map((item, idx) => (
+                        <FadeUp key={item.title} delay={0.05 * (idx + 3)}>
+                          <motion.div
+                            whileHover={{ y: -4, boxShadow: "0 12px 30px rgba(44,24,16,0.04)" }}
+                            transition={{ duration: 0.3, ease: EASE }}
+                            className="p-6 rounded-2xl border bg-white/60 border-[#C9956A]/12 text-[#5C4A42] hover:bg-white hover:border-[#C9956A]/35 transition-all duration-300 flex flex-col gap-3 relative overflow-hidden group"
+                          >
+                            <div className="absolute top-0 bottom-0 left-0 w-1 bg-[#C9956A]/0 group-hover:bg-[#C9956A]/80 transition-all duration-300" />
+                            
+                            <div className="flex items-start gap-4">
+                              <div className="w-10 h-10 rounded-xl bg-[#C9956A]/10 flex items-center justify-center text-[#C9956A] group-hover:bg-[#C9956A] group-hover:text-white transition-colors duration-300 shrink-0">
+                                <item.icon size={20} strokeWidth={2} />
+                              </div>
+                              <div>
+                                <h3 className="text-base font-semibold text-[#2C1810]" style={D}>
+                                  {item.title}
+                                </h3>
+                                <span className="text-[9px] font-mono tracking-wider uppercase text-[#C9956A]/80 mt-0.5 block" style={M}>
+                                  {item.highlights}
+                                </span>
+                              </div>
+                            </div>
+
+                            <p className="text-xs text-[#5C4A42] leading-relaxed font-light mt-1" style={B}>
+                              {item.desc}
+                            </p>
+                          </motion.div>
+                        </FadeUp>
+                      ))}
                     </div>
                   </div>
                 );
@@ -667,20 +672,11 @@ export default function ServicePage() {
                   animate={{ scale: 1, opacity: 1 }}
                   className="relative max-w-5xl max-h-[85vh] overflow-auto rounded-2xl bg-white/5 border border-white/10 p-2 shadow-2xl"
                 >
-                  {(() => {
-                    const reportImages = [
-                      "/services/body-inbody-380/380-result1.jpg",
-                      "/services/body-inbody-380/380-result2.jpg",
-                      "/services/body-inbody-380/380-result3.jpg"
-                    ];
-                    return (
-                      <img
-                        src={reportImages[activeReportTab]}
-                        alt="High Clarity Report Sheet"
-                        className="w-full h-auto object-contain max-h-[80vh] rounded-lg"
-                      />
-                    );
-                  })()}
+                  <img
+                    src="/services/body-inbody-380/380-result1.jpg"
+                    alt="High Clarity Report Sheet"
+                    className="w-full h-auto object-contain max-h-[80vh] rounded-lg"
+                  />
                 </motion.div>
               </div>
             )}

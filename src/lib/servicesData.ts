@@ -1236,13 +1236,13 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ourDeviceLabel: "InBody 380",
     standardClinicLabel: "InBody (260s,270s)",
     comparisonRows: [
+      { label: "Impedance Data", ours: "15 separate impedance measurements (5 segments × 3 frequencies)", standard: "10 impedance measurements only (5 segments × 2 frequencies)" },
       { label: "Water Check", ours: "Differentiates intracellular vs extracellular water (ECW/TBW)", standard: "Total body water only (no cellular water division)" },
-      { label: "Visceral Fat", ours: "Visceral Fat Level tracking to evaluate internal abdominal fat", standard: "No visceral fat index (only tracks general body fat %)" },
+      { label: "Visceral Fat", ours: "Advanced Visceral Fat tracking using multi-frequency analysis for precise abdominal fat measurement", standard: "Standard visceral fat level estimation with higher measurement variance" },
       { label: "Frequencies", ours: "3 frequencies (5 kHz, 50 kHz, 250 kHz) for deep cellular accuracy", standard: "Single or dual frequencies (less precise cell penetration)" },
       { label: "Segmental Lean", ours: "Advanced segmental lean analysis maps 5 body zones and trunk", standard: "Basic body-wide estimations without segmental balance" },
       { label: "Pediatric Data", ours: "Supports children's report sheets and growth curve tracking", standard: "No child-specific growth curve sheets" },
-      { label: "Phase Angle", ours: "Measures Whole-Body Phase Angle to assess cell integrity & vitality", standard: "No Phase Angle metrics (lacks cell wall resistance tracking)" },
-      { label: "Impedance Data", ours: "15 separate impedance measurements (5 segments × 3 frequencies)", standard: "10 impedance measurements only (5 segments × 2 frequencies)" }
+      { label: "Phase Angle", ours: "Measures Whole-Body Phase Angle to assess cell integrity & vitality", standard: "No Phase Angle metrics (lacks cell wall resistance tracking)" }
     ],
     sessionPlanDesc: "A baseline analysis is performed before any contouring or fitness plan, with follow-ups scheduled every 4 to 6 weeks to track progress.",
     sessionPlanSteps: [
