@@ -91,7 +91,7 @@ export default function DrRuxanaPage() {
       <section className="relative min-h-[75vh] flex flex-col justify-center bg-[#FAF6F0] py-12 md:py-20 overflow-hidden border-b border-[#2C1810]/5">
         {/* Advanced Grid & Glow Backdrops */}
         <div className="absolute inset-0 opacity-[0.03] z-0 pointer-events-none" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
-        
+
         {/* Subtle grid backdrop for clinical precision */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(201,149,106,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(201,149,106,0.06)_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] opacity-40 z-0 pointer-events-none" />
 
@@ -104,7 +104,7 @@ export default function DrRuxanaPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-16 lg:px-24 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            
+
             {/* Left Content Column */}
             <div className="lg:col-span-6 flex flex-col justify-center">
               <FadeUp>
@@ -112,11 +112,11 @@ export default function DrRuxanaPage() {
                   <span className="w-1.5 h-1.5 rounded-full bg-[#C9956A] animate-pulse" />
                   Medical Director & Founder
                 </div>
-                
+
                 <h1 className="text-5xl sm:text-7xl lg:text-[5.2rem] text-[#2C1810] leading-[1.0] mt-2 mb-6 font-light tracking-tight" style={D}>
                   Dr. Ruxana <span className="serif text-[#C9956A]">K.</span>
                 </h1>
-                
+
                 {/* Horizontal line divider with signature gold star */}
                 <div className="flex items-center gap-3 my-6 w-full max-w-lg">
                   <div className="h-[1px] bg-[#C9956A]/25 flex-grow hidden sm:block" />
@@ -127,7 +127,7 @@ export default function DrRuxanaPage() {
                 </div>
 
                 <p className="text-base sm:text-[1.05rem] text-[#5C4A42] leading-[1.8] mb-8 max-w-xl font-light">
-                  Dr. Ruxana did not enter aesthetic medicine to sell treatments. She entered it because she witnessed, again and again, how much a woman's confidence shapes her entire life—her relationships, her ambitions, her sense of self.
+                  Dr. Ruxana did not enter Aesthetic Medicine to sell treatments. She entered it because she witnessed, again and again, how much a woman's confidence shapes her entire life—her relationships, her ambitions, her sense of self.
                 </p>
 
                 {/* Glassmorphic Interactive Quote */}
@@ -152,7 +152,7 @@ export default function DrRuxanaPage() {
             {/* Right Column: Advanced Overlapping Interactive Collage */}
             <div className="lg:col-span-6 flex justify-center items-center relative">
               <FadeUp delay={0.2} className="relative w-full max-w-sm sm:max-w-md lg:max-w-xl">
-                
+
                 {/* Decorative floating geometry */}
                 <div className="absolute -top-12 -left-12 w-24 h-24 bg-[#C9956A]/5 rounded-full blur-xl pointer-events-none" />
                 <div className="absolute -bottom-16 -right-12 w-36 h-36 bg-[#2C1810]/5 rounded-full blur-2xl pointer-events-none" />
@@ -161,7 +161,7 @@ export default function DrRuxanaPage() {
                 <div className="relative z-10 w-full group">
                   {/* Luxury offset gold border behind the image */}
                   <div className="absolute inset-0 border border-[#C9956A]/35 rounded-[32px] translate-x-3.5 translate-y-3.5 pointer-events-none transition-transform duration-700 group-hover:translate-x-1.5 group-hover:translate-y-1.5" />
-                  
+
                   {/* The Image Wrapper with a high-end drop shadow */}
                   <div className="relative aspect-[3.8/4.5] w-full rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(44,24,16,0.12)] border border-[#E8E1D7]/80 bg-[#E8DDD1]">
                     <img
@@ -171,7 +171,7 @@ export default function DrRuxanaPage() {
                     />
                     {/* Linear high-tech glass reflex overlay */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#2C1810]/40 via-transparent to-white/10 pointer-events-none" />
-                    
+
                     {/* Floating organic label badge inside the image directly */}
                     <div className="absolute bottom-5 left-6 bg-white/20 backdrop-blur-md border border-white/25 px-4 py-2 rounded-full text-[9px] text-[#FAF7F2] font-semibold uppercase tracking-[0.2em]" style={M}>
                       ✦ Cosmo Home Clinic ✦
@@ -211,8 +211,8 @@ export default function DrRuxanaPage() {
                   className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 z-20 w-16 h-16 sm:w-24 sm:h-24 bg-[#2C1810] text-[#FAF7F2] rounded-full shadow-2xl flex items-center justify-center border border-[#C9956A]/30 overflow-hidden group cursor-pointer"
                 >
                   {/* Rotating circular text SVG */}
-                  <motion.svg 
-                    viewBox="0 0 100 100" 
+                  <motion.svg
+                    viewBox="0 0 100 100"
                     className="w-full h-full origin-center fill-current text-[#C9956A]"
                     animate={{ rotate: 360 }}
                     transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
@@ -241,7 +241,7 @@ export default function DrRuxanaPage() {
       <section className="py-12 md:py-16 px-6 md:px-16 lg:px-24 bg-[#FAF7F2] relative overflow-hidden border-b border-[#2C1810]/5">
         {/* Subtle decorative grid patterns & watermarks */}
         <div className="absolute inset-0 opacity-[0.02] z-0 pointer-events-none" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
-        
+
         {/* Glowing backdrops */}
         <div className="absolute top-1/4 right-0 w-[450px] h-[450px] rounded-full pointer-events-none z-0 opacity-30" style={{ background: "radial-gradient(circle, rgba(201,149,106,0.08) 0%, transparent 70%)" }} />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none z-0 opacity-20" style={{ background: "radial-gradient(circle, rgba(44,24,16,0.04) 0%, transparent 70%)" }} />
@@ -257,20 +257,20 @@ export default function DrRuxanaPage() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-            
+
             {/* Left Column: Portrait of Dr. Ruxana (Roman Arch with Scroll Parallax) */}
-            <motion.div 
+            <motion.div
               style={{ y: portraitYSpring }}
               className="lg:col-span-5 xl:col-span-4 flex flex-col items-center"
             >
               <div className="relative w-full max-w-[320px] aspect-[4/5] z-10">
                 {/* Luxury architectural outer arch outline */}
                 <div className="absolute -inset-4 border border-[#C9956A]/20 rounded-t-full rounded-b-[28px] pointer-events-none z-0 hidden lg:block" />
-                
+
                 <div className="relative w-full h-full rounded-t-full rounded-b-[24px] overflow-hidden shadow-[0_15px_35px_rgba(44,24,16,0.06)] border border-[#E8E1D7] bg-[#FAF7F2] z-10">
-                  <img 
-                    src="/doctor/ruxana.webp" 
-                    alt="Dr. Ruxana K." 
+                  <img
+                    src="/doctor/ruxana.webp"
+                    alt="Dr. Ruxana K."
                     className="w-full h-full object-cover scale-x-[-1]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/20 via-transparent to-transparent" />
@@ -344,7 +344,7 @@ export default function DrRuxanaPage() {
                   },
                 ].map((p) => {
                   return (
-                    <motion.div 
+                    <motion.div
                       key={p.title}
                       whileHover={{ y: -4 }}
                       transition={{ duration: 0.3 }}
@@ -440,7 +440,7 @@ export default function DrRuxanaPage() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
-            
+
             {/* Left Side: Elegant Personal Quote (Replaced Widget) */}
             <div className="lg:col-span-5 flex flex-col justify-center relative py-8 lg:py-0">
               <span className="text-8xl text-[#C9956A]/15 font-serif absolute -top-12 -left-4 select-none">“</span>

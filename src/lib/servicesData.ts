@@ -1187,6 +1187,87 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       subtitle: "Deep radiofrequency collagen remodelling"
     },
   },
+  "inbody-380": {
+    id: "inbody-380",
+    title: "Body Composition",
+    titleEmphasized: "Analysis (InBody 380).",
+    experienceNo: "Advanced Diagnostics",
+    description: "Understand your body beyond the simple weight scale. The US-FDA cleared InBody 380 uses multi-frequency bioelectrical impedance analysis to segmentally measure your body fat percentage, skeletal muscle mass, visceral fat level, and total body water—providing an evidence-based roadmap for your health and aesthetic journey.",
+    heroRating: "4.9 · Rated by 140+ patients",
+    heroImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1600&h=900&fit=crop&auto=format",
+    performedByLabel: "👩‍⚕️ Supervised by",
+    performedByName: "Doctor-Led Diagnostics",
+    performedBySub: "Non-Invasive • Precise • Clinical Blueprint",
+    stats: [
+      { n: "1", l: "Session for complete blueprint" },
+      { n: "0", l: "Days downtime / Non-invasive" },
+      { n: "15s", l: "Fast & precise scanning" },
+      { n: "98%", l: "Correlation with DEXA gold standard" }
+    ],
+    whatIsThisTitle: "A clinical blueprint",
+    whatIsThisEmphasized: "of your health and muscle architecture.",
+    whatIsThisDesc1: "True body transformation cannot be guided by the scale alone. The InBody 380 bioelectrical impedance analyzer sends safe, low-level multi-frequency alternating currents through your body. By measuring the electrical resistance (impedance) of different tissues, it determines the exact proportion of muscle, fat, and water in each segment of your body.",
+    whatIsThisDesc2: "Under Dr. Ruxana's guidance, this analysis is used to plan targeted contouring treatments, customize muscle-building protocols, track real visceral fat reduction, and manage cell health. It offers a clear, objective metric of your progress over time.",
+    benefits: [
+      { icon: "📊", b: "Segmental Muscle & Fat Analysis", d: "Measures skeletal muscle and fat mass individually in each arm, leg, and the trunk." },
+      { icon: "🧬", b: "Visceral Fat Tracking", d: "Identifies hidden abdominal fat levels linked to metabolic health." },
+      { icon: "💧", b: "Water Balance Analysis", d: "Tracks intracellular and extracellular water to evaluate swelling or retention." },
+      { icon: "📈", b: "Accurate Progress Blueprint", d: "Generates clear clinical charts to track actual muscle gain and fat loss over time." }
+    ],
+    clinicalNote: "Body composition tests are best performed while fasting, well-hydrated, and before heavy physical exercise for optimal consistency.",
+    sideImage: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=1600&h=900&fit=crop&auto=format",
+    whoNeedsDesc: "Highly recommended for patients undergoing muscle toning or fat reduction treatments, starting fitness/wellness programs, or tracking metabolic health.",
+    notSuitable: "Patients with pacemakers, internal defibrillators, or other active electronic medical implants. Not recommended during pregnancy.",
+    whoNeedsItems: [
+      { tag: "Fat loss tracking", desc: "Verifying actual fat reduction rather than simple water loss." },
+      { tag: "Muscle gain monitoring", desc: "Tracking muscle hypertrophy and symmetry in limbs." },
+      { tag: "Contouring assessment", desc: "Mapping localized fat distribution before sculpting sessions." },
+      { tag: "Metabolic health check", desc: "Monitoring visceral fat levels to reduce metabolic risk." },
+      { tag: "Fluid retention tracking", desc: "Checking intracellular and extracellular water balance." }
+    ],
+    machineTitle: "Segmental Multi-Frequency",
+    machineEmphasized: "Bio-Impedance Analysis.",
+    deviceName: "InBody 380 Body Composition Analyzer",
+    deviceSub: "US-FDA CLEARED • BIOELECTRICAL IMPEDANCE • CLINICAL DIAGNOSTICS",
+    deviceDesc: "The InBody 380 uses advanced multi-frequency bioelectrical impedance analysis (BIA) with an 8-point tactile electrode system. By sending multiple currents at different frequencies, it penetrates cell membranes to accurately differentiate between intracellular and extracellular water, ensuring high-precision results that correlate closely with gold-standard DEXA scans.",
+    deviceFeatures: ["8-Point Tactile Electrodes", "Dual Wavelength/Frequency Currents", "Segmental Direct Impedance Analysis (DSM-BIA)", "Zero empirical estimations used"],
+    deviceImage: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1600&h=900&fit=crop&auto=format",
+    comparisonTitle: "InBody 380 vs Traditional Weight Scale",
+    comparisonRows: [
+      { label: "Primary metric", ours: "Muscle mass, fat mass, body water, visceral fat", standard: "Total body weight only" },
+      { label: "Precision", ours: "Segmental analysis for individual limbs and trunk", standard: "Uniform whole-body weight" },
+      { label: "Water check", ours: "Differentiates intracellular vs extracellular water", standard: "Cannot detect water retention" },
+      { label: "Fat analysis", ours: "Tracks visceral fat levels and fat percentage", standard: "No fat tracking capability" },
+      { label: "Accuracy", ours: "Direct impedance analysis without calculations", standard: "Vague estimations based on BMI" }
+    ],
+    sessionPlanDesc: "A baseline analysis is performed before any contouring or fitness plan, with follow-ups scheduled every 4 to 6 weeks to track progress.",
+    sessionPlanSteps: [
+      { n: "01", label: "Pre-Test Consultation", duration: "10 min", detail: "Height and general status are recorded. Patient removes shoes, socks, and heavy items to step onto the device." },
+      { n: "02", label: "Impedance Scanning", duration: "1 min", detail: "Patient stands on the InBody foot electrodes and holds hand electrodes. A safe, low-level multi-segment current scans the body in under 30 seconds." },
+      { n: "03", label: "Results Interpretation", duration: "15 min", detail: "Dr. Ruxana reviews the comprehensive InBody sheet, explaining muscle-fat balance, water ratios, and metabolic indicators to outline your plan." }
+    ],
+    timelineDesc: "You receive a complete physical and digital printout instantly. Follow-up scans show your progressive body transformation.",
+    timelineItems: [
+      { when: "Day of Scan", what: "Instant detailed report sheet showing muscle mass, fat mass, visceral fat, and body water balance." },
+      { when: "Week 4", what: "Follow-up scan tracks early changes in fat reduction and muscle toning from treatments/diet." },
+      { when: "Week 8", what: "Second review maps trends in segment-specific muscle gain and fat loss." },
+      { when: "Month 3+", what: "Substantial body composition shift is documented. Visceral fat reduction is clearly visible on charts." }
+    ],
+    ctaQuickFacts: [
+      { label: "Price from", val: "₹2,500 / session" },
+      { label: "Duration", val: "15–20 minutes" },
+      { label: "Recommended", val: "Monthly follow-up" },
+      { label: "Frequency", val: "Every 4–6 weeks" },
+      { label: "Downtime", val: "None" },
+      { label: "Correlation", val: "98% DEXA Gold Standard" }
+    ],
+    ctaRating: "140+ wellness blueprints",
+    ctaTitle: "Ready to discover",
+    ctaTitle2: "your body's true composition?",
+    ctaEmphasized: "Start today.",
+    ctaDesc: "Get a precise, scientific analysis of your muscle, fat, and hydration levels. Your scan includes a clinical consultation to align your aesthetic and health goals.",
+    ctaImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&h=900&fit=crop&auto=format"
+  },
   "exosomes-prp-gfc": {
     id: "exosomes-prp-gfc",
     title: "Advanced Regenerative",

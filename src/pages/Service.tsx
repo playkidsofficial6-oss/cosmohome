@@ -130,6 +130,7 @@ const slugToOptionMap: Record<string, string> = {
   "body-contouring": "Body Contouring",
   "fat-reduction": "Fat Reduction",
   "body-tightening": "Body Tightening",
+  "inbody-380": "InBody 380",
   "exosomes-prp-gfc": "Exosomes / PRP / GFC",
   "prp": "PRP",
   "gfc": "GFC",
@@ -254,6 +255,7 @@ export default function ServicePage() {
     "Body Contouring",
     "Fat Reduction",
     "Body Tightening",
+    "InBody 380",
     "Exosomes / PRP / GFC"
   ];
 
