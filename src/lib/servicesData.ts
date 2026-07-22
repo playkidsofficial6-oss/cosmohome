@@ -1232,13 +1232,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceDesc: "The InBody 380 uses advanced multi-frequency bioelectrical impedance analysis (BIA) with an 8-point tactile electrode system. By sending multiple currents at different frequencies, it penetrates cell membranes to accurately differentiate between intracellular and extracellular water, ensuring high-precision results that correlate closely with gold-standard DEXA scans.",
     deviceFeatures: ["8-Point Tactile Electrodes", "Dual Wavelength/Frequency Currents", "Segmental Direct Impedance Analysis (DSM-BIA)", "Zero empirical estimations used"],
     deviceImage: "/services/body-inbody-380/inbody-380-tech.png",
-    comparisonTitle: "InBody 380 vs Traditional Weight Scale",
+    comparisonTitle: "InBody 380 vs Standard InBody Models",
+    ourDeviceLabel: "InBody 380",
+    standardClinicLabel: "Standard InBody",
     comparisonRows: [
-      { label: "Primary metric", ours: "Muscle mass, fat mass, body water, visceral fat", standard: "Total body weight only" },
-      { label: "Precision", ours: "Segmental analysis for individual limbs and trunk", standard: "Uniform whole-body weight" },
-      { label: "Water check", ours: "Differentiates intracellular vs extracellular water", standard: "Cannot detect water retention" },
-      { label: "Fat analysis", ours: "Tracks visceral fat levels and fat percentage", standard: "No fat tracking capability" },
-      { label: "Accuracy", ours: "Direct impedance analysis without calculations", standard: "Vague estimations based on BMI" }
+      { label: "Water Check", ours: "Differentiates intracellular vs extracellular water (ECW/TBW)", standard: "Total body water only (no cellular water division)" },
+      { label: "Visceral Fat", ours: "Visceral Fat Level tracking to evaluate internal abdominal fat", standard: "No visceral fat index (only tracks general body fat %)" },
+      { label: "Frequencies", ours: "3 frequencies (5 kHz, 50 kHz, 250 kHz) for deep cellular accuracy", standard: "Single or dual frequencies (less precise cell penetration)" },
+      { label: "Segmental Lean", ours: "Advanced segmental lean analysis maps 5 body zones and trunk", standard: "Basic body-wide estimations without segmental balance" },
+      { label: "Pediatric Data", ours: "Supports children's report sheets and growth curve tracking", standard: "No child-specific growth curve sheets" }
     ],
     sessionPlanDesc: "A baseline analysis is performed before any contouring or fitness plan, with follow-ups scheduled every 4 to 6 weeks to track progress.",
     sessionPlanSteps: [
