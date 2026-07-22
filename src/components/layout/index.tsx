@@ -57,7 +57,7 @@ const MEGA_MENU_CONTENT = {
   },
   Body: {
     icon: BodyIcon,
-    treatments: ["Muscle Sculpting", "Body Contouring", "Fat Reduction", "Body Tightening"],
+    treatments: ["Muscle Sculpting", "Body Contouring", "Fat Reduction", "Body Tightening", "InBody 380"],
     viewAll: "VIEW ALL BODY TREATMENTS",
     image: "/services/Muscle Sculpting/1.webp",
     desc: "Sculpt and define your body with precision."
@@ -201,7 +201,7 @@ export function Nav({ ready }: { ready: boolean }) {
           </nav>
 
           <div className="hidden lg:flex z-10">
-            <motion.a href="/book-consultation" style={B} whileHover={{ scale: 1.02 }}
+            <motion.a href="https://api.whatsapp.com/send?phone=919495511628" target="_blank" rel="noopener noreferrer" style={B} whileHover={{ scale: 1.02 }}
               className="text-[11px] font-semibold tracking-[0.15em] bg-[#8C5D47] text-[#FAF7F2] border border-[#8C5D47] rounded-[4px] uppercase px-6 py-2.5 hover:bg-[#734A37] hover:border-[#734A37] transition-all duration-300 flex items-center gap-2">
               <Calendar size={13} className="shrink-0" />
               Book Consultation

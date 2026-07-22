@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Stethoscope, Lock, Clock, Check } from "lucide-react";
+import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Stethoscope, Lock, Clock, Check, Dumbbell, Activity, Droplet, Target, Heart, Zap } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, GRAIN, WA_PATH } from "../lib/constants";
 import { CTAButtons, FadeUp, Tag } from "../components/ui/shared";
@@ -130,6 +130,7 @@ const slugToOptionMap: Record<string, string> = {
   "body-contouring": "Body Contouring",
   "fat-reduction": "Fat Reduction",
   "body-tightening": "Body Tightening",
+  "inbody-380": "InBody 380",
   "exosomes-prp-gfc": "Exosomes / PRP / GFC",
   "prp": "PRP",
   "gfc": "GFC",
@@ -208,6 +209,7 @@ export default function ServicePage() {
     subtitle: `${serviceTitle} clinical case study`
   };
   const [activeSession, setActiveSession] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   const [formSent, setFormSent] = useState(false);
   const [selected, setSelected] = useState("");
@@ -254,6 +256,7 @@ export default function ServicePage() {
     "Body Contouring",
     "Fat Reduction",
     "Body Tightening",
+    "InBody 380",
     "Exosomes / PRP / GFC"
   ];
 
@@ -309,7 +312,7 @@ export default function ServicePage() {
             </FadeUp>
 
             {/* Mobile-only Before & After section in the requested format */}
-            {beforeAfter && (
+            {beforeAfter && slug !== "inbody-380" && (
               <div className="block md:hidden mb-8 w-full">
                 {/* Heading */}
                 <div className="mb-4">
@@ -379,7 +382,7 @@ export default function ServicePage() {
         </section>
 
         {/* Desktop-only Before & After (Second Section) */}
-        {beforeAfter && (
+        {beforeAfter && slug !== "inbody-380" && (
           <section className="hidden md:block pt-24 pb-10 px-6 md:px-16 bg-[#FAF7F2]">
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -429,6 +432,256 @@ export default function ServicePage() {
           </section>
         )}
 
+        {/* InBody 380 Machine Features Showcase Section */}
+        {/* {slug === "inbody-380" && (
+          <section className="py-16 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2] border-t border-[#2C1810]/5">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-12 md:mb-20">
+                <FadeUp>
+                  <Tag>Advanced Hardware</Tag>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
+                    InBody 380 <span className="serif text-[#C9956A]">Technology Specifications</span>
+                  </h2>
+                  <p className="text-sm md:text-base text-[#5C4A42] max-w-xl mx-auto mt-4 leading-relaxed font-light" style={B}>
+                    Engineered for clinical precision, mobility, and ease of use to provide a seamless diagnostic experience.
+                  </p>
+                </FadeUp>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                {[
+                  {
+                    title: "Portable Design",
+                    desc: "Lightweight and compact structure enables easy mobility and space optimization in clinical spaces.",
+                    img: "/services/body-inbody-380/Portable Design.png"
+                  },
+                  {
+                    title: "3-Way Hand Electrode",
+                    desc: "Ergonomically designed hand grip electrodes ensure high-precision bio-impedance measurement.",
+                    img: "/services/body-inbody-380/3-way hand electrode.png"
+                  },
+                  {
+                    title: "4-Point Load Cell & Weight Scale",
+                    desc: "High-precision scale sensors combined with tactile foot electrodes provide accurate baseline weight.",
+                    img: "/services/body-inbody-380/4 point Load Cell combined with Weight Scale.png"
+                  },
+                  {
+                    title: "Smart Recognition",
+                    desc: "Intelligent user recognition interface enables automated profile matching and diagnostic efficiency.",
+                    img: "/services/body-inbody-380/Smart Recognition.png"
+                  }
+                ].map((item, idx) => (
+                  <FadeUp key={item.title} delay={idx * 0.1}>
+                    <motion.div
+                      whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(44,24,16,0.06)" }}
+                      transition={{ type: "spring", stiffness: 260 }}
+                      className="group bg-white rounded-3xl overflow-hidden h-full flex flex-col border border-[#C9956A]/20 shadow-[0_4px_24px_rgba(44,24,16,0.03)]"
+                    >
+                      <div className="relative aspect-[4/3] bg-[#EDE5D8] overflow-hidden">
+                        <img
+                          src={item.img}
+                          alt={item.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="p-6 flex flex-col flex-grow">
+                        <span className="text-[10px] tracking-[0.2em] uppercase text-[#C9956A] mb-2 font-semibold" style={M}>
+                          Feature 0{idx + 1}
+                        </span>
+                        <h3 className="text-lg text-[#2C1810] mb-3 leading-tight" style={D}>
+                          {item.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed flex-grow font-light" style={B}>
+                          {item.desc}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </FadeUp>
+                ))}
+              </div>
+            </div>
+          </section>
+        )} */}
+
+        {/* InBody 380 Diagnostic Results Section */}
+        {slug === "inbody-380" && (
+          <section className="py-16 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
+            <div className="max-w-7xl mx-auto">
+              {/* Heading */}
+              <div className="text-center mb-12 md:mb-20">
+                <FadeUp>
+                  <Tag>Diagnostic Sheets</Tag>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
+                    Your Detailed <span className="serif text-[#C9956A]">InBody 380 Report</span>
+                  </h2>
+                  <p className="text-sm md:text-base text-[#5C4A42] max-w-xl mx-auto mt-4 leading-relaxed font-light" style={B}>
+                    Every scan generates a high-clarity clinical readout mapping your precise body composition, muscle balance, and cellular metrics.
+                  </p>
+                </FadeUp>
+              </div>
+
+              {(() => {
+                const reportMetrics = [
+                  {
+                    title: "Body Composition Analysis",
+                    icon: Droplet,
+                    highlights: "Total Body Water · Protein · Minerals · Body Fat Mass",
+                    desc: "Differentiates fat tissue, muscle mass, and body water. Highlights the core building blocks of your physical health."
+                  },
+                  {
+                    title: "Muscle-Fat Analysis",
+                    icon: Dumbbell,
+                    highlights: "Skeletal Muscle Mass (SMM) · Body Fat Mass · Weight",
+                    desc: "Compares your muscle and fat distribution to understand your physical strength and baseline body shape profile (I, D, or C type)."
+                  },
+                  {
+                    title: "Obesity Analysis",
+                    icon: Activity,
+                    highlights: "Body Mass Index (BMI) · Percent Body Fat (PBF)",
+                    desc: "Tracks your exact fat percentage and body mass index against healthy clinical standard guidelines, rather than just simple scale weight."
+                  },
+                  {
+                    title: "Segmental Lean Analysis",
+                    icon: Target,
+                    highlights: "5 Body Zones (Arms, Legs, Trunk)",
+                    desc: "Individually measures muscle mass across five segments to identify muscle balance, physical asymmetry, and growth targets."
+                  },
+                  {
+                    title: "Body Water Balance",
+                    icon: Heart,
+                    highlights: "Extracellular Water / Total Body Water (ECW/TBW)",
+                    desc: "Evaluates cell hydration levels and fluid distribution. Essential for detecting physical inflammation, swelling, and water retention."
+                  },
+                  {
+                    title: "Vitality & Metabolic Risks",
+                    icon: Zap,
+                    highlights: "Overall InBody Score · Visceral Fat Level",
+                    desc: "Evaluates abdominal visceral fat (fat around organs) which is key for long-term health, and calculates an overall composition score."
+                  }
+                ];
+
+                return (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center">
+                    {/* Left Column Cards (Desktop layout) */}
+                    <div className="flex flex-col gap-6 lg:col-start-1 lg:row-start-1 lg:row-span-3">
+                      {reportMetrics.slice(0, 3).map((item, idx) => (
+                        <FadeUp key={item.title} delay={0.05 * idx}>
+                          <motion.div
+                            whileHover={{ y: -4, boxShadow: "0 12px 30px rgba(44,24,16,0.04)" }}
+                            transition={{ duration: 0.3, ease: EASE }}
+                            className="p-6 rounded-2xl border bg-white/60 border-[#C9956A]/12 text-[#5C4A42] hover:bg-white hover:border-[#C9956A]/35 transition-all duration-300 flex flex-col gap-3 relative overflow-hidden group"
+                          >
+                            <div className="absolute top-0 bottom-0 left-0 w-1 bg-[#C9956A]/0 group-hover:bg-[#C9956A]/80 transition-all duration-300" />
+                            
+                            <div className="flex items-start gap-4">
+                              <div className="w-10 h-10 rounded-xl bg-[#C9956A]/10 flex items-center justify-center text-[#C9956A] group-hover:bg-[#C9956A] group-hover:text-white transition-colors duration-300 shrink-0">
+                                <item.icon size={20} strokeWidth={2} />
+                              </div>
+                              <div>
+                                <h3 className="text-base font-semibold text-[#2C1810]" style={D}>
+                                  {item.title}
+                                </h3>
+                                <span className="text-[9px] font-mono tracking-wider uppercase text-[#C9956A]/80 mt-0.5 block" style={M}>
+                                  {item.highlights}
+                                </span>
+                              </div>
+                            </div>
+
+                            <p className="text-xs text-[#5C4A42] leading-relaxed font-light mt-1" style={B}>
+                              {item.desc}
+                            </p>
+                          </motion.div>
+                        </FadeUp>
+                      ))}
+                    </div>
+
+                    {/* Centered Image Column */}
+                    <div className="order-first md:order-none md:col-span-2 lg:col-span-1 lg:col-start-2 lg:row-start-1 lg:row-span-3 flex flex-col items-center justify-center mb-8 md:mb-12 lg:mb-0">
+                      <FadeUp delay={0.15}>
+                        <div className="relative group cursor-zoom-in max-w-[480px] w-full mx-auto rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(44,24,16,0.06)] border border-[#C9956A]/15 bg-white p-4 transition-all duration-500 hover:shadow-[0_30px_60px_rgba(201,149,106,0.12)] hover:border-[#C9956A]/30">
+                          {/* Click overlay */}
+                          <div
+                            onClick={() => setIsLightboxOpen(true)}
+                            className="absolute inset-0 bg-[#2C1810]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20"
+                          >
+                            <span className="px-5 py-2.5 rounded-full bg-white text-xs font-semibold text-[#2C1810] shadow-md flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300" style={B}>
+                              🔍 View High-Clarity Sheet
+                            </span>
+                          </div>
+
+                          <img
+                            src="/services/body-inbody-380/380-result1.jpg"
+                            alt="InBody 380 Body Composition Result Sheet"
+                            className="w-full h-auto object-contain max-h-[580px] rounded-2xl transition-transform duration-500 group-hover:scale-[1.01]"
+                          />
+                        </div>
+                        <p className="text-[10px] text-center mt-3 text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>
+                          Click on report to expand full size
+                        </p>
+                      </FadeUp>
+                    </div>
+
+                    {/* Right Column Cards (Desktop layout) */}
+                    <div className="flex flex-col gap-6 lg:col-start-3 lg:row-start-1 lg:row-span-3">
+                      {reportMetrics.slice(3, 6).map((item, idx) => (
+                        <FadeUp key={item.title} delay={0.05 * (idx + 3)}>
+                          <motion.div
+                            whileHover={{ y: -4, boxShadow: "0 12px 30px rgba(44,24,16,0.04)" }}
+                            transition={{ duration: 0.3, ease: EASE }}
+                            className="p-6 rounded-2xl border bg-white/60 border-[#C9956A]/12 text-[#5C4A42] hover:bg-white hover:border-[#C9956A]/35 transition-all duration-300 flex flex-col gap-3 relative overflow-hidden group"
+                          >
+                            <div className="absolute top-0 bottom-0 left-0 w-1 bg-[#C9956A]/0 group-hover:bg-[#C9956A]/80 transition-all duration-300" />
+                            
+                            <div className="flex items-start gap-4">
+                              <div className="w-10 h-10 rounded-xl bg-[#C9956A]/10 flex items-center justify-center text-[#C9956A] group-hover:bg-[#C9956A] group-hover:text-white transition-colors duration-300 shrink-0">
+                                <item.icon size={20} strokeWidth={2} />
+                              </div>
+                              <div>
+                                <h3 className="text-base font-semibold text-[#2C1810]" style={D}>
+                                  {item.title}
+                                </h3>
+                                <span className="text-[9px] font-mono tracking-wider uppercase text-[#C9956A]/80 mt-0.5 block" style={M}>
+                                  {item.highlights}
+                                </span>
+                              </div>
+                            </div>
+
+                            <p className="text-xs text-[#5C4A42] leading-relaxed font-light mt-1" style={B}>
+                              {item.desc}
+                            </p>
+                          </motion.div>
+                        </FadeUp>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
+            </div>
+
+            {/* Fullscreen Lightbox Overlay */}
+            {isLightboxOpen && (
+              <div className="fixed inset-0 bg-[#2C1810]/95 backdrop-blur-md z-[9999] flex items-center justify-center p-4 md:p-10">
+                <button
+                  onClick={() => setIsLightboxOpen(false)}
+                  className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white text-xl transition-all duration-200 z-[10000]"
+                >
+                  ✕
+                </button>
+                <motion.div
+                  initial={{ scale: 0.95, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  className="relative max-w-5xl max-h-[85vh] overflow-auto rounded-2xl bg-white/5 border border-white/10 p-2 shadow-2xl"
+                >
+                  <img
+                    src="/services/body-inbody-380/380-result1.jpg"
+                    alt="High Clarity Report Sheet"
+                    className="w-full h-auto object-contain max-h-[80vh] rounded-lg"
+                  />
+                </motion.div>
+              </div>
+            )}
+          </section>
+        )}
         {/* ══ 2. WHAT IS THIS ══ */}
         <section className="pt-6 pb-12 md:pt-12 md:pb-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
@@ -472,7 +725,7 @@ export default function ServicePage() {
                   {service.clinicalNote && (
                     <motion.div
                       whileHover={{ y: -3 }}
-                      className="relative sm:absolute mt-6 sm:mt-0 bottom-auto left-auto sm:-bottom-5 sm:-left-8 p-5 rounded-2xl w-full sm:w-auto sm:max-w-[260px]"
+                      className="relative sm:absolute mt-6 sm:mt-0 bottom-auto left-auto sm:-bottom-5 sm:-left-8 p-5 rounded-2xl w-full sm:w-auto sm:max-w-[260px] z-30"
                       style={{ background: "#2C1810", boxShadow: "0 20px 60px rgba(44,24,16,0.25)" }}
                     >
                       <p className="text-xs tracking-[0.2em] uppercase text-[#C9956A] mb-1.5" style={M}>
@@ -546,6 +799,14 @@ export default function ServicePage() {
                   <p className="text-xs tracking-[0.2em] uppercase text-[#5C4A42]/70 mb-1 md:mb-2" style={M}>
                     {service.comparisonTitle || "COSMO HOME vs Conventional Treatment1"}
                   </p>
+
+                  {/* Desktop Grid Headers */}
+                  <div className="hidden md:grid md:grid-cols-[auto_1fr_1fr] gap-4 md:gap-3 items-center px-5 pb-1 text-[10px] tracking-[0.18em] uppercase text-[#5C4A42]/50 font-semibold" style={M}>
+                    <div className="w-24 shrink-0">Metric</div>
+                    <div>{service.ourDeviceLabel || "InBody 380"}</div>
+                    <div>{service.standardClinicLabel || "Standard InBody"}</div>
+                  </div>
+
                   {service.comparisonRows.map((row, i) => (
                     <motion.div key={row.label} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }} transition={{ delay: i * 0.07 }}
