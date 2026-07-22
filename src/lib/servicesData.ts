@@ -2818,7 +2818,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     clinicalNote: "Blood is processed using a medical centrifuge to obtain a highly concentrated layer of growth factors and platelets.",
     technologyTag: "🧬 Regenerative Science",
     ourDeviceLabel: "✅ Autologous Method",
-    sideImage: "/services/prp-injectable/2 (2).webp",
+    sideImage: "/services/prp-injectable/2.webp",
     machineTitle: "Centrifuged platelet",
     machineEmphasized: "isolation system.",
     deviceName: "Medical Centrifuge System",
