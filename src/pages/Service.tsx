@@ -465,16 +465,26 @@ export default function ServicePage() {
 
               <FadeUp delay={0.15}>
                 <div className="relative">
-                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-[#EDE5D8]">
-                    <img src={service.sideImage}
-                      alt={service.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/50 to-transparent" />
+                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-[#EDE5D8] flex items-center justify-center">
+                    {slug === "inbody-380" && (
+                      <img
+                        src={service.sideImage}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover blur-xl opacity-35 scale-110 pointer-events-none"
+                      />
+                    )}
+                    <img
+                      src={service.sideImage}
+                      alt={service.title}
+                      className={slug === "inbody-380" ? "w-full h-full object-contain relative z-10" : "w-full h-full object-cover"}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/50 to-transparent z-20 pointer-events-none" />
                   </div>
                   {/* Clinical note */}
                   {service.clinicalNote && (
                     <motion.div
                       whileHover={{ y: -3 }}
-                      className="relative sm:absolute mt-6 sm:mt-0 bottom-auto left-auto sm:-bottom-5 sm:-left-8 p-5 rounded-2xl w-full sm:w-auto sm:max-w-[260px]"
+                      className="relative sm:absolute mt-6 sm:mt-0 bottom-auto left-auto sm:-bottom-5 sm:-left-8 p-5 rounded-2xl w-full sm:w-auto sm:max-w-[260px] z-30"
                       style={{ background: "#2C1810", boxShadow: "0 20px 60px rgba(44,24,16,0.25)" }}
                     >
                       <p className="text-xs tracking-[0.2em] uppercase text-[#C9956A] mb-1.5" style={M}>

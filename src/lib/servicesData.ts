@@ -1194,7 +1194,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     experienceNo: "Advanced Diagnostics",
     description: "Understand your body beyond the simple weight scale. The US-FDA cleared InBody 380 uses multi-frequency bioelectrical impedance analysis to segmentally measure your body fat percentage, skeletal muscle mass, visceral fat level, and total body water—providing an evidence-based roadmap for your health and aesthetic journey.",
     heroRating: "4.9 · Rated by 140+ patients",
-    heroImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1600&h=900&fit=crop&auto=format",
+    heroImage: "/services/body-inbody-380/inbody-checkup.png",
     performedByLabel: "👩‍⚕️ Supervised by",
     performedByName: "Doctor-Led Diagnostics",
     performedBySub: "Non-Invasive • Precise • Clinical Blueprint",
@@ -1215,7 +1215,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { icon: "📈", b: "Accurate Progress Blueprint", d: "Generates clear clinical charts to track actual muscle gain and fat loss over time." }
     ],
     clinicalNote: "Body composition tests are best performed while fasting, well-hydrated, and before heavy physical exercise for optimal consistency.",
-    sideImage: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=1600&h=900&fit=crop&auto=format",
+    sideImage: "/services/body-inbody-380/inbody-deatails.png",
     whoNeedsDesc: "Highly recommended for patients undergoing muscle toning or fat reduction treatments, starting fitness/wellness programs, or tracking metabolic health.",
     notSuitable: "Patients with pacemakers, internal defibrillators, or other active electronic medical implants. Not recommended during pregnancy.",
     whoNeedsItems: [
@@ -1231,7 +1231,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "US-FDA CLEARED • BIOELECTRICAL IMPEDANCE • CLINICAL DIAGNOSTICS",
     deviceDesc: "The InBody 380 uses advanced multi-frequency bioelectrical impedance analysis (BIA) with an 8-point tactile electrode system. By sending multiple currents at different frequencies, it penetrates cell membranes to accurately differentiate between intracellular and extracellular water, ensuring high-precision results that correlate closely with gold-standard DEXA scans.",
     deviceFeatures: ["8-Point Tactile Electrodes", "Dual Wavelength/Frequency Currents", "Segmental Direct Impedance Analysis (DSM-BIA)", "Zero empirical estimations used"],
-    deviceImage: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1600&h=900&fit=crop&auto=format",
+    deviceImage: "/services/body-inbody-380/inbody-380-tech.png",
     comparisonTitle: "InBody 380 vs Traditional Weight Scale",
     comparisonRows: [
       { label: "Primary metric", ours: "Muscle mass, fat mass, body water, visceral fat", standard: "Total body weight only" },
