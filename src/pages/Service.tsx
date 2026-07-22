@@ -209,14 +209,8 @@ export default function ServicePage() {
     subtitle: `${serviceTitle} clinical case study`
   };
   const [activeSession, setActiveSession] = useState(0);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [rotation, setRotation] = useState(0);
-
-  useEffect(() => {
-    if (hoveredCard !== null) {
-      setRotation(prev => prev + 360);
-    }
-  }, [hoveredCard]);
+  const [activeReportTab, setActiveReportTab] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   const [formSent, setFormSent] = useState(false);
   const [selected, setSelected] = useState("");
@@ -512,141 +506,186 @@ export default function ServicePage() {
 
         {/* InBody 380 Diagnostic Results Section */}
         {slug === "inbody-380" && (
-          <section className="py-16 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]/40 border-t border-[#2C1810]/5 overflow-hidden">
+          <section className="py-16 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
             <div className="max-w-7xl mx-auto">
               {/* Heading */}
               <div className="text-center mb-12 md:mb-20">
                 <FadeUp>
-                  <Tag>Diagnostic Outcomes</Tag>
+                  <Tag>Diagnostic Sheets</Tag>
                   <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
-                    What outputs do you get <span className="serif text-[#C9956A]">from the InBody 380?</span>
+                    Your Detailed <span className="serif text-[#C9956A]">InBody 380 Report</span>
                   </h2>
                   <p className="text-sm md:text-base text-[#5C4A42] max-w-xl mx-auto mt-4 leading-relaxed font-light" style={B}>
-                    A complete, medically accurate mapping of your internal body composition to track health, fitness, and cosmetic outcomes.
+                    Every scan generates a high-clarity clinical readout mapping your precise body composition, muscle balance, and cellular metrics.
                   </p>
                 </FadeUp>
               </div>
 
-              {/* Grid: Left Column, Centered Image, Right Column */}
-              <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px_1fr] gap-10 items-center">
-                {/* Left Column (Desktop: Align right, Icon right) */}
-                <div className="flex flex-col gap-6 order-2 lg:order-1">
-                  {[
-                    {
-                      num: "01",
-                      title: "Skeletal Muscle Mass",
-                      desc: "Tracks the exact muscle weight in kilograms to evaluate strength progress and physical health improvement.",
-                      iconComponent: Dumbbell
-                    },
-                    {
-                      num: "02",
-                      title: "Segmental Lean Analysis",
-                      desc: "Measures localized muscle mass in five body areas (each limb & trunk) to identify strength imbalances.",
-                      iconComponent: Activity
-                    },
-                    {
-                      num: "03",
-                      title: "Total Body Water",
-                      desc: "Monitors intracellular and extracellular hydration to detect swelling, fluid retention, or hydration quality.",
-                      iconComponent: Droplet
-                    }
-                  ].map((item, idx) => {
-                    const Icon = item.iconComponent;
-                    return (
-                      <FadeUp key={item.title} delay={idx * 0.1}>
-                        <div onMouseEnter={() => setRotation(prev => prev + 360)}>
-                          <motion.div
-                            whileHover={{ y: -4, scale: 1.01 }}
-                            className="p-6 rounded-2xl bg-white border border-[#C9956A]/15 hover:border-[#C9956A]/45 hover:shadow-[0_8px_30px_rgba(44,24,16,0.03)] transition-all flex gap-4 lg:flex-row-reverse lg:text-right text-left items-start cursor-pointer"
-                          >
-                            <div className="w-12 h-12 rounded-xl bg-[#C9956A]/10 border border-[#C9956A]/20 flex items-center justify-center text-[#C9956A] shrink-0">
-                              <Icon size={20} strokeWidth={1.5} />
-                            </div>
-                            <div>
-                              <span className="text-[10px] tracking-[0.2em] text-[#C9956A] uppercase font-semibold block mb-1" style={M}>
-                                Metric {item.num}
-                              </span>
-                              <h3 className="text-base font-semibold text-[#2C1810] mb-2" style={D}>
-                                {item.title}
-                              </h3>
-                              <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed font-light" style={B}>
-                                {item.desc}
-                              </p>
-                            </div>
-                          </motion.div>
-                        </div>
-                      </FadeUp>
-                    );
-                  })}
-                </div>
+              {(() => {
+                const reportSheets = [
+                  {
+                    num: "01",
+                    title: "Body Composition Result Sheet",
+                    desc: "A comprehensive assessment illustrating your fundamental muscle, fat, and hydration distribution compared to clinical standard baselines.",
+                    image: "/services/body-inbody-380/380-result1.jpg",
+                    metrics: [
+                      "Intracellular & Extracellular Water ratios",
+                      "Dry Lean Mass vs. Skeletal Muscle Mass (SMM)",
+                      "Total Body Fat Mass in kilograms",
+                      "Body Mass Index (BMI) & Percent Body Fat (PBF)"
+                    ]
+                  },
+                  {
+                    num: "02",
+                    title: "Result Sheet for Children",
+                    desc: "Designed specifically to track and evaluate physical development in children, providing standard growth curve diagnostics.",
+                    image: "/services/body-inbody-380/380-result2.jpg",
+                    metrics: [
+                      "Standard height-for-age percentile curves",
+                      "Skeletal Muscle vs. Body Fat distribution balance",
+                      "Segmental Lean Analysis mapping children's growth",
+                      "Total Body Water & dry lean tissue ratios"
+                    ]
+                  },
+                  {
+                    num: "03",
+                    title: "Thermal Result Printout",
+                    desc: "A quick, convenient receipt-style printed summary outputted on the go from a connected thermal printer.",
+                    image: "/services/body-inbody-380/380-result3.jpg",
+                    metrics: [
+                      "Fast clinical body weight metrics",
+                      "Skeletal Muscle Mass summary stats",
+                      "Percent Body Fat (PBF) quick readout",
+                      "Essential water & lean mass metrics"
+                    ]
+                  }
+                ];
 
-                {/* Center Column: The Device + Patient Image */}
-                <div className="flex justify-center order-1 lg:order-2">
-                  <FadeUp delay={0.15}>
-                    <div className="relative max-w-[320px] sm:max-w-[380px] lg:max-w-[440px]" style={{ perspective: 1000 }}>
-                      <motion.img
-                        animate={{ rotateY: rotation }}
-                        transition={{ duration: 1.8, ease: "easeInOut" }}
-                        src="/services/body-inbody-380/bg.png"
-                        alt="InBody 380 Diagnostic Test"
-                        className="w-full h-auto object-contain"
-                      />
+                return (
+                  <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-10 md:gap-16 items-center">
+                    {/* Left Column: Interactive Tab Control Workbench */}
+                    <div className="flex flex-col gap-4 order-2 lg:order-1">
+                      {reportSheets.map((sheet, idx) => (
+                        <motion.button
+                          key={sheet.title}
+                          onClick={() => setActiveReportTab(idx)}
+                          whileHover={{ x: 6 }}
+                          className={`text-left p-6 rounded-2xl border transition-all duration-300 flex flex-col gap-3 group relative overflow-hidden ${
+                            activeReportTab === idx
+                              ? "bg-white border-[#C9956A] shadow-[0_15px_35px_rgba(44,24,16,0.04)]"
+                              : "bg-white/40 border-[#C9956A]/12 text-[#5C4A42] hover:bg-white hover:border-[#C9956A]/30"
+                          }`}
+                        >
+                          {/* Accent Line */}
+                          {activeReportTab === idx && (
+                            <div className="absolute top-0 bottom-0 left-0 w-1.5 bg-[#C9956A]" />
+                          )}
+
+                          <div className="flex items-center gap-3">
+                            <span className={`text-[10px] font-mono tracking-widest uppercase ${
+                              activeReportTab === idx ? "text-[#C9956A]" : "text-[#C9956A]/60"
+                            }`}>
+                              Report Sheet {sheet.num}
+                            </span>
+                          </div>
+
+                          <h3 className="text-lg font-semibold text-[#2C1810]" style={D}>
+                            {sheet.title}
+                          </h3>
+
+                          {activeReportTab === idx && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              transition={{ duration: 0.3 }}
+                              className="flex flex-col gap-3 mt-1"
+                            >
+                              <p className="text-xs text-[#5C4A42] leading-relaxed font-light" style={B}>
+                                {sheet.desc}
+                              </p>
+                              {/* Bullet points metrics */}
+                              <div className="flex flex-col gap-1.5 pt-2 border-t border-[#C9956A]/10">
+                                {sheet.metrics.map((m) => (
+                                  <div key={m} className="flex items-center gap-2 text-[11px] text-[#2C1810]">
+                                    <span className="text-[#C9956A] text-xs">✓</span>
+                                    <span style={B}>{m}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </motion.button>
+                      ))}
                     </div>
-                  </FadeUp>
-                </div>
 
-                {/* Right Column (Desktop: Align left, Icon left) */}
-                <div className="flex flex-col gap-6 order-3">
-                  {[
-                    {
-                      num: "04",
-                      title: "Percent Body Fat",
-                      desc: "True ratio of fat mass to total body weight, offering a clearer picture than simple BMI estimations.",
-                      iconComponent: Target
-                    },
-                    {
-                      num: "05",
-                      title: "Visceral Fat Level",
-                      desc: "Assesses the dangerous, hidden abdominal fat surrounding vital organs linked to cardiovascular health.",
-                      iconComponent: Heart
-                    },
-                    {
-                      num: "06",
-                      title: "Basal Metabolic Rate",
-                      desc: "Calculates the base calorie burn required for life support to precisely design customized nutrition plans.",
-                      iconComponent: Zap
-                    }
-                  ].map((item, idx) => {
-                    const Icon = item.iconComponent;
-                    return (
-                      <FadeUp key={item.title} delay={(idx + 3) * 0.1}>
-                        <div onMouseEnter={() => setRotation(prev => prev + 360)}>
-                          <motion.div
-                            whileHover={{ y: -4, scale: 1.01 }}
-                            className="p-6 rounded-2xl bg-white border border-[#C9956A]/15 hover:border-[#C9956A]/45 hover:shadow-[0_8px_30px_rgba(44,24,16,0.03)] transition-all flex gap-4 text-left items-start cursor-pointer"
+                    {/* Right Column: High-Clarity Viewer */}
+                    <div className="order-1 lg:order-2 flex flex-col items-center">
+                      <FadeUp delay={0.15}>
+                        <div className="relative group cursor-zoom-in max-w-[680px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(44,24,16,0.06)] border border-[#C9956A]/15 bg-white p-4">
+                          {/* Click overlay */}
+                          <div
+                            onClick={() => setIsLightboxOpen(true)}
+                            className="absolute inset-0 bg-[#2C1810]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20"
                           >
-                            <div className="w-12 h-12 rounded-xl bg-[#C9956A]/10 border border-[#C9956A]/20 flex items-center justify-center text-[#C9956A] shrink-0">
-                              <Icon size={20} strokeWidth={1.5} />
-                            </div>
-                            <div>
-                              <span className="text-[10px] tracking-[0.2em] text-[#C9956A] uppercase font-semibold block mb-1" style={M}>
-                                Metric {item.num}
-                              </span>
-                              <h3 className="text-base font-semibold text-[#2C1810] mb-2" style={D}>
-                                {item.title}
-                              </h3>
-                              <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed font-light" style={B}>
-                                {item.desc}
-                              </p>
-                            </div>
-                          </motion.div>
+                            <span className="px-5 py-2.5 rounded-full bg-white text-xs font-semibold text-[#2C1810] shadow-md flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300" style={B}>
+                              🔍 View High-Clarity Sheet
+                            </span>
+                          </div>
+
+                          <AnimatePresence mode="wait">
+                            <motion.img
+                              key={activeReportTab}
+                              initial={{ opacity: 0, scale: 0.98 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              exit={{ opacity: 0, scale: 0.98 }}
+                              transition={{ duration: 0.25 }}
+                              src={reportSheets[activeReportTab].image}
+                              alt={reportSheets[activeReportTab].title}
+                              className="w-full h-auto object-contain max-h-[620px] rounded-2xl"
+                            />
+                          </AnimatePresence>
                         </div>
+                        <p className="text-[10px] text-center mt-3 text-[#5C4A42]/60 uppercase tracking-widest font-semibold" style={M}>
+                          Click on report to expand full size
+                        </p>
                       </FadeUp>
-                    );
-                  })}
-                </div>
-              </div>
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
+
+            {/* Fullscreen Lightbox Overlay */}
+            {isLightboxOpen && (
+              <div className="fixed inset-0 bg-[#2C1810]/95 backdrop-blur-md z-[9999] flex items-center justify-center p-4 md:p-10">
+                <button
+                  onClick={() => setIsLightboxOpen(false)}
+                  className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white text-xl transition-all duration-200 z-[10000]"
+                >
+                  ✕
+                </button>
+                <motion.div
+                  initial={{ scale: 0.95, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  className="relative max-w-5xl max-h-[85vh] overflow-auto rounded-2xl bg-white/5 border border-white/10 p-2 shadow-2xl"
+                >
+                  {(() => {
+                    const reportImages = [
+                      "/services/body-inbody-380/380-result1.jpg",
+                      "/services/body-inbody-380/380-result2.jpg",
+                      "/services/body-inbody-380/380-result3.jpg"
+                    ];
+                    return (
+                      <img
+                        src={reportImages[activeReportTab]}
+                        alt="High Clarity Report Sheet"
+                        className="w-full h-auto object-contain max-h-[80vh] rounded-lg"
+                      />
+                    );
+                  })()}
+                </motion.div>
+              </div>
+            )}
           </section>
         )}
         {/* ══ 2. WHAT IS THIS ══ */}
