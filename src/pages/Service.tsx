@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Stethoscope, Lock, Clock, Check } from "lucide-react";
+import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Stethoscope, Lock, Clock, Check, Dumbbell, Activity, Droplet, Target, Heart, Zap } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, GRAIN, WA_PATH } from "../lib/constants";
 import { CTAButtons, FadeUp, Tag } from "../components/ui/shared";
@@ -209,6 +209,14 @@ export default function ServicePage() {
     subtitle: `${serviceTitle} clinical case study`
   };
   const [activeSession, setActiveSession] = useState(0);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [rotation, setRotation] = useState(0);
+
+  useEffect(() => {
+    if (hoveredCard !== null) {
+      setRotation(prev => prev + 360);
+    }
+  }, [hoveredCard]);
 
   const [formSent, setFormSent] = useState(false);
   const [selected, setSelected] = useState("");
@@ -432,7 +440,7 @@ export default function ServicePage() {
         )}
 
         {/* InBody 380 Machine Features Showcase Section */}
-        {slug === "inbody-380" && (
+        {/* {slug === "inbody-380" && (
           <section className="py-16 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2] border-t border-[#2C1810]/5">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-12 md:mb-20">
@@ -500,11 +508,11 @@ export default function ServicePage() {
               </div>
             </div>
           </section>
-        )}
+        )} */}
 
         {/* InBody 380 Diagnostic Results Section */}
         {slug === "inbody-380" && (
-          <section className="py-16 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FFFFFF] border-t border-[#2C1810]/5 overflow-hidden">
+          <section className="py-16 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]/40 border-t border-[#2C1810]/5 overflow-hidden">
             <div className="max-w-7xl mx-auto">
               {/* Heading */}
               <div className="text-center mb-12 md:mb-20">
@@ -528,62 +536,61 @@ export default function ServicePage() {
                       num: "01",
                       title: "Skeletal Muscle Mass",
                       desc: "Tracks the exact muscle weight in kilograms to evaluate strength progress and physical health improvement.",
-                      icon: "💪"
+                      iconComponent: Dumbbell
                     },
                     {
                       num: "02",
                       title: "Segmental Lean Analysis",
                       desc: "Measures localized muscle mass in five body areas (each limb & trunk) to identify strength imbalances.",
-                      icon: "📊"
+                      iconComponent: Activity
                     },
                     {
                       num: "03",
                       title: "Total Body Water",
                       desc: "Monitors intracellular and extracellular hydration to detect swelling, fluid retention, or hydration quality.",
-                      icon: "💧"
+                      iconComponent: Droplet
                     }
-                  ].map((item, idx) => (
-                    <FadeUp key={item.title} delay={idx * 0.1}>
-                      <motion.div
-                        whileHover={{ y: -4, scale: 1.01 }}
-                        className="p-6 rounded-2xl bg-[#FAF7F2]/60 border border-[#C9956A]/15 hover:border-[#C9956A]/45 hover:bg-white shadow-[0_4px_20px_rgba(44,24,16,0.02)] transition-all flex gap-4 lg:flex-row-reverse lg:text-right text-left items-start"
-                      >
-                        <div className="w-12 h-12 rounded-xl bg-[#C9956A]/10 border border-[#C9956A]/20 flex items-center justify-center text-xl shrink-0">
-                          {item.icon}
+                  ].map((item, idx) => {
+                    const Icon = item.iconComponent;
+                    return (
+                      <FadeUp key={item.title} delay={idx * 0.1}>
+                        <div onMouseEnter={() => setRotation(prev => prev + 360)}>
+                          <motion.div
+                            whileHover={{ y: -4, scale: 1.01 }}
+                            className="p-6 rounded-2xl bg-white border border-[#C9956A]/15 hover:border-[#C9956A]/45 hover:shadow-[0_8px_30px_rgba(44,24,16,0.03)] transition-all flex gap-4 lg:flex-row-reverse lg:text-right text-left items-start cursor-pointer"
+                          >
+                            <div className="w-12 h-12 rounded-xl bg-[#C9956A]/10 border border-[#C9956A]/20 flex items-center justify-center text-[#C9956A] shrink-0">
+                              <Icon size={20} strokeWidth={1.5} />
+                            </div>
+                            <div>
+                              <span className="text-[10px] tracking-[0.2em] text-[#C9956A] uppercase font-semibold block mb-1" style={M}>
+                                Metric {item.num}
+                              </span>
+                              <h3 className="text-base font-semibold text-[#2C1810] mb-2" style={D}>
+                                {item.title}
+                              </h3>
+                              <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed font-light" style={B}>
+                                {item.desc}
+                              </p>
+                            </div>
+                          </motion.div>
                         </div>
-                        <div>
-                          <span className="text-[10px] tracking-[0.2em] text-[#C9956A] uppercase font-semibold block mb-1" style={M}>
-                            Metric {item.num}
-                          </span>
-                          <h3 className="text-base font-semibold text-[#2C1810] mb-2" style={D}>
-                            {item.title}
-                          </h3>
-                          <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed font-light" style={B}>
-                            {item.desc}
-                          </p>
-                        </div>
-                      </motion.div>
-                    </FadeUp>
-                  ))}
+                      </FadeUp>
+                    );
+                  })}
                 </div>
 
                 {/* Center Column: The Device + Patient Image */}
                 <div className="flex justify-center order-1 lg:order-2">
                   <FadeUp delay={0.15}>
-                    <div className="relative max-w-[280px] sm:max-w-[340px] md:max-w-[380px] rounded-3xl overflow-hidden shadow-[0_10px_40px_rgba(44,24,16,0.06)] border border-[#C9956A]/15 bg-white p-4">
-                      <img
-                        src="/services/body-inbody-380/inbody-380checkup (2).png"
+                    <div className="relative max-w-[320px] sm:max-w-[380px] lg:max-w-[440px]" style={{ perspective: 1000 }}>
+                      <motion.img
+                        animate={{ rotateY: rotation }}
+                        transition={{ duration: 0.9, ease: "easeInOut" }}
+                        src="/services/body-inbody-380/bg.png"
                         alt="InBody 380 Diagnostic Test"
-                        className="w-full h-auto object-cover rounded-2xl"
+                        className="w-full h-auto object-contain"
                       />
-                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white/90 via-white/40 to-transparent pt-12 pb-6 px-6 text-center">
-                        <span className="text-[10px] tracking-widest uppercase text-[#C9956A] font-bold" style={M}>
-                          Clinical Diagnostics
-                        </span>
-                        <p className="text-xs text-[#2C1810] font-medium mt-1" style={B}>
-                          Non-Invasive • 15 Second Scan
-                        </p>
-                      </div>
                     </div>
                   </FadeUp>
                 </div>
@@ -595,49 +602,53 @@ export default function ServicePage() {
                       num: "04",
                       title: "Percent Body Fat",
                       desc: "True ratio of fat mass to total body weight, offering a clearer picture than simple BMI estimations.",
-                      icon: "🎯"
+                      iconComponent: Target
                     },
                     {
                       num: "05",
                       title: "Visceral Fat Level",
                       desc: "Assesses the dangerous, hidden abdominal fat surrounding vital organs linked to cardiovascular health.",
-                      icon: "⚠️"
+                      iconComponent: Heart
                     },
                     {
                       num: "06",
                       title: "Basal Metabolic Rate",
                       desc: "Calculates the base calorie burn required for life support to precisely design customized nutrition plans.",
-                      icon: "🔥"
+                      iconComponent: Zap
                     }
-                  ].map((item, idx) => (
-                    <FadeUp key={item.title} delay={(idx + 3) * 0.1}>
-                      <motion.div
-                        whileHover={{ y: -4, scale: 1.01 }}
-                        className="p-6 rounded-2xl bg-[#FAF7F2]/60 border border-[#C9956A]/15 hover:border-[#C9956A]/45 hover:bg-white shadow-[0_4px_20px_rgba(44,24,16,0.02)] transition-all flex gap-4 text-left items-start"
-                      >
-                        <div className="w-12 h-12 rounded-xl bg-[#C9956A]/10 border border-[#C9956A]/20 flex items-center justify-center text-xl shrink-0">
-                          {item.icon}
+                  ].map((item, idx) => {
+                    const Icon = item.iconComponent;
+                    return (
+                      <FadeUp key={item.title} delay={(idx + 3) * 0.1}>
+                        <div onMouseEnter={() => setRotation(prev => prev + 360)}>
+                          <motion.div
+                            whileHover={{ y: -4, scale: 1.01 }}
+                            className="p-6 rounded-2xl bg-white border border-[#C9956A]/15 hover:border-[#C9956A]/45 hover:shadow-[0_8px_30px_rgba(44,24,16,0.03)] transition-all flex gap-4 text-left items-start cursor-pointer"
+                          >
+                            <div className="w-12 h-12 rounded-xl bg-[#C9956A]/10 border border-[#C9956A]/20 flex items-center justify-center text-[#C9956A] shrink-0">
+                              <Icon size={20} strokeWidth={1.5} />
+                            </div>
+                            <div>
+                              <span className="text-[10px] tracking-[0.2em] text-[#C9956A] uppercase font-semibold block mb-1" style={M}>
+                                Metric {item.num}
+                              </span>
+                              <h3 className="text-base font-semibold text-[#2C1810] mb-2" style={D}>
+                                {item.title}
+                              </h3>
+                              <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed font-light" style={B}>
+                                {item.desc}
+                              </p>
+                            </div>
+                          </motion.div>
                         </div>
-                        <div>
-                          <span className="text-[10px] tracking-[0.2em] text-[#C9956A] uppercase font-semibold block mb-1" style={M}>
-                            Metric {item.num}
-                          </span>
-                          <h3 className="text-base font-semibold text-[#2C1810] mb-2" style={D}>
-                            {item.title}
-                          </h3>
-                          <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed font-light" style={B}>
-                            {item.desc}
-                          </p>
-                        </div>
-                      </motion.div>
-                    </FadeUp>
-                  ))}
+                      </FadeUp>
+                    );
+                  })}
                 </div>
               </div>
             </div>
           </section>
         )}
-
         {/* ══ 2. WHAT IS THIS ══ */}
         <section className="pt-6 pb-12 md:pt-12 md:pb-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
