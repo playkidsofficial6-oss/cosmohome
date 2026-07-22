@@ -570,11 +570,10 @@ export default function ServicePage() {
                           key={sheet.title}
                           onClick={() => setActiveReportTab(idx)}
                           whileHover={{ x: 6 }}
-                          className={`text-left p-6 rounded-2xl border transition-all duration-300 flex flex-col gap-3 group relative overflow-hidden ${
-                            activeReportTab === idx
-                              ? "bg-white border-[#C9956A] shadow-[0_15px_35px_rgba(44,24,16,0.04)]"
-                              : "bg-white/40 border-[#C9956A]/12 text-[#5C4A42] hover:bg-white hover:border-[#C9956A]/30"
-                          }`}
+                          className={`text-left p-6 rounded-2xl border transition-all duration-300 flex flex-col gap-3 group relative overflow-hidden ${activeReportTab === idx
+                            ? "bg-white border-[#C9956A] shadow-[0_15px_35px_rgba(44,24,16,0.04)]"
+                            : "bg-white/40 border-[#C9956A]/12 text-[#5C4A42] hover:bg-white hover:border-[#C9956A]/30"
+                            }`}
                         >
                           {/* Accent Line */}
                           {activeReportTab === idx && (
@@ -582,9 +581,8 @@ export default function ServicePage() {
                           )}
 
                           <div className="flex items-center gap-3">
-                            <span className={`text-[10px] font-mono tracking-widest uppercase ${
-                              activeReportTab === idx ? "text-[#C9956A]" : "text-[#C9956A]/60"
-                            }`}>
+                            <span className={`text-[10px] font-mono tracking-widest uppercase ${activeReportTab === idx ? "text-[#C9956A]" : "text-[#C9956A]/60"
+                              }`}>
                               Report Sheet {sheet.num}
                             </span>
                           </div>
@@ -805,6 +803,14 @@ export default function ServicePage() {
                   <p className="text-xs tracking-[0.2em] uppercase text-[#5C4A42]/70 mb-1 md:mb-2" style={M}>
                     {service.comparisonTitle || "COSMO HOME vs Conventional Treatment1"}
                   </p>
+
+                  {/* Desktop Grid Headers */}
+                  <div className="hidden md:grid md:grid-cols-[auto_1fr_1fr] gap-4 md:gap-3 items-center px-5 pb-1 text-[10px] tracking-[0.18em] uppercase text-[#5C4A42]/50 font-semibold" style={M}>
+                    <div className="w-24 shrink-0">Metric</div>
+                    <div>{service.ourDeviceLabel || "InBody 380"}</div>
+                    <div>{service.standardClinicLabel || "Standard InBody"}</div>
+                  </div>
+
                   {service.comparisonRows.map((row, i) => (
                     <motion.div key={row.label} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }} transition={{ delay: i * 0.07 }}
