@@ -114,7 +114,7 @@ export default function DrRuxanaPage() {
                 </div>
 
                 <h1 className="text-5xl sm:text-7xl lg:text-[5.2rem] text-[#2C1810] leading-[1.0] mt-2 mb-6 font-light tracking-tight" style={D}>
-                  Dr. Ruxana <span className="serif text-[#C9956A]">K.</span>
+                  Dr. Ruxana <span className="serif text-[#2C1810]">K.</span>
                 </h1>
 
                 {/* Horizontal line divider with signature gold star */}
