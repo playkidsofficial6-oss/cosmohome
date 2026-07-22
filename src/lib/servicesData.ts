@@ -1192,7 +1192,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     title: "Body Composition",
     titleEmphasized: "Analysis (InBody 380).",
     experienceNo: "Advanced Diagnostics",
-    description: "Understand your body beyond the simple weight scale. The US-FDA cleared InBody 380 uses multi-frequency bioelectrical impedance analysis to segmentally measure your body fat percentage, skeletal muscle mass, visceral fat level, and total body water—providing an evidence-based roadmap for your health and aesthetic journey.",
+    description: "Go beyond the scale. The FDA-cleared InBody 380 uses multi-frequency analysis to segmentally measure your muscle, fat, and water levels, providing a precise, evidence-based roadmap for your health and aesthetic journey.",
     heroRating: "4.9 · Rated by 140+ patients",
     heroImage: "/services/body-inbody-380/inbody-checkup.png",
     performedByLabel: "👩‍⚕️ Supervised by",
