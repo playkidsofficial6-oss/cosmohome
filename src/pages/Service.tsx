@@ -311,7 +311,7 @@ export default function ServicePage() {
             </FadeUp>
 
             {/* Mobile-only Before & After section in the requested format */}
-            {beforeAfter && (
+            {beforeAfter && slug !== "inbody-380" && (
               <div className="block md:hidden mb-8 w-full">
                 {/* Heading */}
                 <div className="mb-4">
@@ -381,7 +381,7 @@ export default function ServicePage() {
         </section>
 
         {/* Desktop-only Before & After (Second Section) */}
-        {beforeAfter && (
+        {beforeAfter && slug !== "inbody-380" && (
           <section className="hidden md:block pt-24 pb-10 px-6 md:px-16 bg-[#FAF7F2]">
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -425,6 +425,213 @@ export default function ServicePage() {
                     beforeImage={beforeAfter.beforeImage}
                     afterImage={beforeAfter.afterImage}
                   />
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* InBody 380 Machine Features Showcase Section */}
+        {slug === "inbody-380" && (
+          <section className="py-16 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2] border-t border-[#2C1810]/5">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-12 md:mb-20">
+                <FadeUp>
+                  <Tag>Advanced Hardware</Tag>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
+                    InBody 380 <span className="serif text-[#C9956A]">Technology Specifications</span>
+                  </h2>
+                  <p className="text-sm md:text-base text-[#5C4A42] max-w-xl mx-auto mt-4 leading-relaxed font-light" style={B}>
+                    Engineered for clinical precision, mobility, and ease of use to provide a seamless diagnostic experience.
+                  </p>
+                </FadeUp>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                {[
+                  {
+                    title: "Portable Design",
+                    desc: "Lightweight and compact structure enables easy mobility and space optimization in clinical spaces.",
+                    img: "/services/body-inbody-380/Portable Design.png"
+                  },
+                  {
+                    title: "3-Way Hand Electrode",
+                    desc: "Ergonomically designed hand grip electrodes ensure high-precision bio-impedance measurement.",
+                    img: "/services/body-inbody-380/3-way hand electrode.png"
+                  },
+                  {
+                    title: "4-Point Load Cell & Weight Scale",
+                    desc: "High-precision scale sensors combined with tactile foot electrodes provide accurate baseline weight.",
+                    img: "/services/body-inbody-380/4 point Load Cell combined with Weight Scale.png"
+                  },
+                  {
+                    title: "Smart Recognition",
+                    desc: "Intelligent user recognition interface enables automated profile matching and diagnostic efficiency.",
+                    img: "/services/body-inbody-380/Smart Recognition.png"
+                  }
+                ].map((item, idx) => (
+                  <FadeUp key={item.title} delay={idx * 0.1}>
+                    <motion.div
+                      whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(44,24,16,0.06)" }}
+                      transition={{ type: "spring", stiffness: 260 }}
+                      className="group bg-white rounded-3xl overflow-hidden h-full flex flex-col border border-[#C9956A]/20 shadow-[0_4px_24px_rgba(44,24,16,0.03)]"
+                    >
+                      <div className="relative aspect-[4/3] bg-[#EDE5D8] overflow-hidden">
+                        <img
+                          src={item.img}
+                          alt={item.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="p-6 flex flex-col flex-grow">
+                        <span className="text-[10px] tracking-[0.2em] uppercase text-[#C9956A] mb-2 font-semibold" style={M}>
+                          Feature 0{idx + 1}
+                        </span>
+                        <h3 className="text-lg text-[#2C1810] mb-3 leading-tight" style={D}>
+                          {item.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed flex-grow font-light" style={B}>
+                          {item.desc}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </FadeUp>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* InBody 380 Diagnostic Results Section */}
+        {slug === "inbody-380" && (
+          <section className="py-16 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FFFFFF] border-t border-[#2C1810]/5 overflow-hidden">
+            <div className="max-w-7xl mx-auto">
+              {/* Heading */}
+              <div className="text-center mb-12 md:mb-20">
+                <FadeUp>
+                  <Tag>Diagnostic Outcomes</Tag>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
+                    What outputs do you get <span className="serif text-[#C9956A]">from the InBody 380?</span>
+                  </h2>
+                  <p className="text-sm md:text-base text-[#5C4A42] max-w-xl mx-auto mt-4 leading-relaxed font-light" style={B}>
+                    A complete, medically accurate mapping of your internal body composition to track health, fitness, and cosmetic outcomes.
+                  </p>
+                </FadeUp>
+              </div>
+
+              {/* Grid: Left Column, Centered Image, Right Column */}
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px_1fr] gap-10 items-center">
+                {/* Left Column (Desktop: Align right, Icon right) */}
+                <div className="flex flex-col gap-6 order-2 lg:order-1">
+                  {[
+                    {
+                      num: "01",
+                      title: "Skeletal Muscle Mass",
+                      desc: "Tracks the exact muscle weight in kilograms to evaluate strength progress and physical health improvement.",
+                      icon: "💪"
+                    },
+                    {
+                      num: "02",
+                      title: "Segmental Lean Analysis",
+                      desc: "Measures localized muscle mass in five body areas (each limb & trunk) to identify strength imbalances.",
+                      icon: "📊"
+                    },
+                    {
+                      num: "03",
+                      title: "Total Body Water",
+                      desc: "Monitors intracellular and extracellular hydration to detect swelling, fluid retention, or hydration quality.",
+                      icon: "💧"
+                    }
+                  ].map((item, idx) => (
+                    <FadeUp key={item.title} delay={idx * 0.1}>
+                      <motion.div
+                        whileHover={{ y: -4, scale: 1.01 }}
+                        className="p-6 rounded-2xl bg-[#FAF7F2]/60 border border-[#C9956A]/15 hover:border-[#C9956A]/45 hover:bg-white shadow-[0_4px_20px_rgba(44,24,16,0.02)] transition-all flex gap-4 lg:flex-row-reverse lg:text-right text-left items-start"
+                      >
+                        <div className="w-12 h-12 rounded-xl bg-[#C9956A]/10 border border-[#C9956A]/20 flex items-center justify-center text-xl shrink-0">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <span className="text-[10px] tracking-[0.2em] text-[#C9956A] uppercase font-semibold block mb-1" style={M}>
+                            Metric {item.num}
+                          </span>
+                          <h3 className="text-base font-semibold text-[#2C1810] mb-2" style={D}>
+                            {item.title}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed font-light" style={B}>
+                            {item.desc}
+                          </p>
+                        </div>
+                      </motion.div>
+                    </FadeUp>
+                  ))}
+                </div>
+
+                {/* Center Column: The Device + Patient Image */}
+                <div className="flex justify-center order-1 lg:order-2">
+                  <FadeUp delay={0.15}>
+                    <div className="relative max-w-[280px] sm:max-w-[340px] md:max-w-[380px] rounded-3xl overflow-hidden shadow-[0_10px_40px_rgba(44,24,16,0.06)] border border-[#C9956A]/15 bg-white p-4">
+                      <img
+                        src="/services/body-inbody-380/inbody-380checkup (2).png"
+                        alt="InBody 380 Diagnostic Test"
+                        className="w-full h-auto object-cover rounded-2xl"
+                      />
+                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white/90 via-white/40 to-transparent pt-12 pb-6 px-6 text-center">
+                        <span className="text-[10px] tracking-widest uppercase text-[#C9956A] font-bold" style={M}>
+                          Clinical Diagnostics
+                        </span>
+                        <p className="text-xs text-[#2C1810] font-medium mt-1" style={B}>
+                          Non-Invasive • 15 Second Scan
+                        </p>
+                      </div>
+                    </div>
+                  </FadeUp>
+                </div>
+
+                {/* Right Column (Desktop: Align left, Icon left) */}
+                <div className="flex flex-col gap-6 order-3">
+                  {[
+                    {
+                      num: "04",
+                      title: "Percent Body Fat",
+                      desc: "True ratio of fat mass to total body weight, offering a clearer picture than simple BMI estimations.",
+                      icon: "🎯"
+                    },
+                    {
+                      num: "05",
+                      title: "Visceral Fat Level",
+                      desc: "Assesses the dangerous, hidden abdominal fat surrounding vital organs linked to cardiovascular health.",
+                      icon: "⚠️"
+                    },
+                    {
+                      num: "06",
+                      title: "Basal Metabolic Rate",
+                      desc: "Calculates the base calorie burn required for life support to precisely design customized nutrition plans.",
+                      icon: "🔥"
+                    }
+                  ].map((item, idx) => (
+                    <FadeUp key={item.title} delay={(idx + 3) * 0.1}>
+                      <motion.div
+                        whileHover={{ y: -4, scale: 1.01 }}
+                        className="p-6 rounded-2xl bg-[#FAF7F2]/60 border border-[#C9956A]/15 hover:border-[#C9956A]/45 hover:bg-white shadow-[0_4px_20px_rgba(44,24,16,0.02)] transition-all flex gap-4 text-left items-start"
+                      >
+                        <div className="w-12 h-12 rounded-xl bg-[#C9956A]/10 border border-[#C9956A]/20 flex items-center justify-center text-xl shrink-0">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <span className="text-[10px] tracking-[0.2em] text-[#C9956A] uppercase font-semibold block mb-1" style={M}>
+                            Metric {item.num}
+                          </span>
+                          <h3 className="text-base font-semibold text-[#2C1810] mb-2" style={D}>
+                            {item.title}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-[#5C4A42] leading-relaxed font-light" style={B}>
+                            {item.desc}
+                          </p>
+                        </div>
+                      </motion.div>
+                    </FadeUp>
+                  ))}
                 </div>
               </div>
             </div>
