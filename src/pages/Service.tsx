@@ -289,27 +289,78 @@ export default function ServicePage() {
                   <span className="text-xs text-[#2C1810]/80" style={B}>{service.heroRating}</span>
                 </div>
 
-                {/* InBody District Badge (Exact Same Style as Top Rating Badge) */}
+                {/* InBody District Badge with Decorative Side Accents */}
                 {slug === "inbody-380" && (
-                  <div
-                    className="inline-flex items-center justify-start sm:justify-center gap-2.5 px-5 h-[42px] rounded-full border shrink-0 w-full sm:w-auto"
-                    style={{ background: "rgba(201,149,106,0.12)", borderColor: "rgba(201,149,106,0.3)" }}
-                  >
-                    {/* Left Gold Star with Smooth Zoom In / Zoom Out Animation */}
+                  <div className="relative inline-block w-full sm:w-auto">
+                    {/* Top-Right Radiant Rays Accent */}
                     <motion.div
-                      animate={{ scale: [1, 1.25, 1] }}
-                      transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                      className="shrink-0 text-[#C9956A] flex items-center justify-center"
+                      animate={{ scale: [1, 1.15, 1], rotate: [0, 8, 0] }}
+                      transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                      className="absolute -top-3.5 -right-3.5 z-20 pointer-events-none text-[#C9956A]"
                     >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 transform rotate-12">
+                        <path d="M12 3V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <path d="M19 6L16.2 8.8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <path d="M21 13H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                       </svg>
                     </motion.div>
 
-                    {/* Badge Text (Exact Same Font & Color as Top Rating Badge) */}
-                    <span className="text-xs text-[#2C1810]/80 whitespace-nowrap" style={B}>
-                      First InBody 380 Center in the District
-                    </span>
+                    {/* Bottom-Right Twinkling Golden Sparkle Accent */}
+                    <motion.span
+                      animate={{ opacity: [0.3, 0.9, 0.3], scale: [0.85, 1.25, 0.85] }}
+                      transition={{ repeat: Infinity, duration: 2.4, ease: "easeInOut", delay: 0.4 }}
+                      className="absolute -bottom-2.5 -right-1 z-20 pointer-events-none text-[#C9956A] text-[13px]"
+                    >
+                      ✦
+                    </motion.span>
+
+                    {/* Top-Left Twinkling Golden Sparkle Accent */}
+                    <motion.span
+                      animate={{ opacity: [0.3, 0.85, 0.3], scale: [0.8, 1.15, 0.8] }}
+                      transition={{ repeat: Infinity, duration: 2.8, ease: "easeInOut" }}
+                      className="absolute -top-2.5 -left-1.5 z-20 pointer-events-none text-[#C9956A] text-[11px]"
+                    >
+                      ✦
+                    </motion.span>
+
+                    {/* Badge Capsule */}
+                    <motion.div
+                      animate={{
+                        y: [0, -2, 0],
+                        borderColor: ["rgba(201,149,106,0.3)", "rgba(201,149,106,0.85)", "rgba(201,149,106,0.3)"],
+                        boxShadow: [
+                          "0 2px 10px rgba(201,149,106,0.08)",
+                          "0 6px 22px rgba(201,149,106,0.35)",
+                          "0 2px 10px rgba(201,149,106,0.08)"
+                        ]
+                      }}
+                      transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                      className="relative overflow-hidden inline-flex items-center justify-start sm:justify-center gap-2.5 px-5 h-[42px] rounded-full border shrink-0 w-full sm:w-auto cursor-pointer group"
+                      style={{ background: "rgba(201,149,106,0.12)" }}
+                    >
+                      {/* Periodic Light Sheen Sweep across badge */}
+                      <motion.div
+                        className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/50 to-transparent -skew-x-12 pointer-events-none"
+                        animate={{ x: ["-100%", "250%"] }}
+                        transition={{ repeat: Infinity, repeatDelay: 2.8, duration: 1.4, ease: "easeInOut" }}
+                      />
+
+                      {/* Left Gold Star with Smooth Zoom In / Zoom Out Animation */}
+                      <motion.div
+                        animate={{ scale: [1, 1.25, 1] }}
+                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                        className="shrink-0 text-[#C9956A] flex items-center justify-center"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                      </motion.div>
+
+                      {/* Badge Text */}
+                      <span className="text-xs font-medium text-[#2C1810] whitespace-nowrap" style={B}>
+                        First InBody 380 Center in the District
+                      </span>
+                    </motion.div>
                   </div>
                 )}
               </div>
