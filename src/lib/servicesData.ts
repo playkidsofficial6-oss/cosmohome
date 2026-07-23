@@ -1252,11 +1252,17 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Pediatric Data", ours: "Supports children's report sheets and growth curve tracking", standard: "No child-specific growth curve sheets" },
       { label: "Phase Angle", ours: "Measures Whole-Body Phase Angle to assess cell integrity & vitality", standard: "No Phase Angle metrics (lacks cell wall resistance tracking)" }
     ],
-    sessionPlanDesc: "A baseline analysis is performed before any contouring or fitness plan, with follow-ups scheduled every 4 to 6 weeks to track progress.",
+    sessionPlanTitle: "Every BCA",
+    sessionPlanTitleEmphasized: "Includes:",
+    sessionPlanTag: "BCA Blueprint",
+    sessionPlanDesc: "Each Body Composition Analysis (BCA) at Cosmo Home is a comprehensive clinical assessment designed to provide a precise roadmap for your health and aesthetic journey.",
     sessionPlanSteps: [
-      { n: "01", label: "Pre-Test Consultation", duration: "10 min", detail: "Height and general status are recorded. Patient removes shoes, socks, and heavy items to step onto the device." },
-      { n: "02", label: "Impedance Scanning", duration: "1 min", detail: "Patient stands on the InBody foot electrodes and holds hand electrodes. A safe, low-level multi-segment current scans the body in under 30 seconds." },
-      { n: "03", label: "Results Interpretation", duration: "15 min", detail: "Dr. Ruxana reviews the comprehensive InBody sheet, explaining muscle-fat balance, water ratios, and metabolic indicators to outline your plan." }
+      { n: "01", label: "Full body scan", duration: "", detail: "A fast, non-invasive bioelectrical impedance scan using the InBody 380, segmentally measuring your muscle, fat, and cellular water." },
+      { n: "02", label: "Doctor consultation", duration: "", detail: "A detailed consultation with our specialist doctors to understand your diagnostic indicators, lifestyle factors, and aesthetic goals." },
+      { n: "03", label: "Personalized explanation", duration: "", detail: "A segment-by-segment review of your muscle architecture, visceral fat rating, phase angle, and body water balance so you understand your baseline." },
+      { n: "04", label: "Digital report", duration: "", detail: "Receive a comprehensive digital body composition report sheet containing precise clinical values and historical charts to track your transformation." },
+      { n: "05", label: "Treatment recommendations", duration: "if required", detail: "Tailored recommendations for body contouring, muscle building, fat loss, or skin protocols aligned with your clinical body structure." },
+      { n: "06", label: "Progress tracking", duration: "", detail: "Consistent tracking baseline to monitor real cellular and structural changes every 4 to 6 weeks, verifying actual fat reduction rather than weight fluctuations." }
     ],
     timelineDesc: "You receive a complete physical and digital printout instantly. Follow-up scans show your progressive body transformation.",
     timelineItems: [
