@@ -131,7 +131,7 @@ export default function ExperiencePage() {
         </section>
 
         {/* ══ 2. PHILOSOPHY ══ */}
-        <section className="py-20 md:py-28 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
+        <section className="py-10 md:py-14 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
           <div className="max-w-4xl mx-auto text-center">
             <FadeUp>
               <Tag>The Philosophy</Tag>
@@ -146,7 +146,7 @@ export default function ExperiencePage() {
         </section>
 
         {/* ══ 3. THE JOURNEY STAGES ══ */}
-        <section className="py-20 md:py-28 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
+        <section className="py-10 md:py-14 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
             <div className="text-center mb-16">
               <FadeUp>
@@ -185,7 +185,7 @@ export default function ExperiencePage() {
         </section>
 
         {/* ══ 4. KEY BENEFITS ══ */}
-        <section className="py-20 md:py-28 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
+        <section className="py-10 md:py-14 px-6 md:px-16 lg:px-24 bg-[#FAF7F2]">
           <div className="max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-20 items-center">
               <FadeUp>

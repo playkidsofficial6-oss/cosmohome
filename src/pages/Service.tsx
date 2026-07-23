@@ -505,7 +505,7 @@ export default function ServicePage() {
 
         {/* InBody 380 Diagnostic Results Section */}
         {slug === "inbody-380" && (
-          <section className="py-16 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
+          <section className="py-10 md:py-14 px-5 sm:px-10 md:px-16 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
             <div className="max-w-7xl mx-auto">
               {/* Heading */}
               <div className="text-center mb-12 md:mb-20">
@@ -683,7 +683,7 @@ export default function ServicePage() {
           </section>
         )}
         {/* ══ 2. WHAT IS THIS ══ */}
-        <section className="pt-6 pb-12 md:pt-12 md:pb-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
+        <section className="pt-6 pb-12 md:pt-10 md:pb-14 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-20 items-center">
               <FadeUp>
@@ -731,7 +731,7 @@ export default function ServicePage() {
                       <p className="text-xs tracking-[0.2em] uppercase text-[#C9956A] mb-1.5" style={M}>
                         {service.clinicalNoteLabel || "Clinical note"}
                       </p>
-                      <p className="text-sm text-[#FAF7F2]/90 leading-relaxed font-normal" style={B}>{service.clinicalNote}</p>
+                      <p className="text-sm text-[#FAF7F2]/90 leading-relaxed font-normal text-left" style={B} dangerouslySetInnerHTML={{ __html: service.clinicalNote }} />
                     </motion.div>
                   )}
                 </div>
@@ -741,7 +741,7 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 3. MACHINE ══ */}
-        <section className="py-6 md:py-28 bg-[#FAF6F0] relative overflow-hidden border-t border-[#2C1810]/5">
+        <section className="py-6 md:py-14 bg-[#FAF6F0] relative overflow-hidden border-t border-[#2C1810]/5">
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
           <motion.div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(201,149,106,0.1) 0%, transparent 65%)" }}
@@ -844,7 +844,7 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 4. WHO NEEDS THIS ══ */}
-        <section className="py-6 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
+        <section className="py-6 md:py-14 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-[380px_1fr] gap-6 lg:gap-20 items-start">
               <FadeUp>
@@ -865,137 +865,211 @@ export default function ServicePage() {
                     {service.notSuitable}
                   </p>
                 </div>
-                <CTAButtons light />
-              </FadeUp>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                {service.whoNeedsItems.map((item, i) => (
-                  <FadeUp key={item.tag} delay={i * 0.06}>
-                    <motion.div whileHover={{ y: -5, boxShadow: "0 12px 40px rgba(201,149,106,0.15)" }}
-                      transition={{ type: "spring", stiffness: 260 }}
-                      className="p-5 rounded-2xl h-full flex flex-col gap-2"
-                      style={{ background: "#FFFFFF", border: "1px solid rgba(44,24,16,0.08)", boxShadow: "0 2px 16px rgba(44,24,16,0.04)" }}>
-                      <p className="text-sm font-medium text-[#2C1810]" style={B}>✓ {item.tag}</p>
-                      <p className="text-sm text-[#5C4A42] leading-relaxed" style={B}>{item.desc}</p>
-                    </motion.div>
-                  </FadeUp>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ══ 5. SESSION PLAN — interactive ══ */}
-        <section className="py-6 md:py-28 bg-[#FAF6F0] relative overflow-hidden border-t border-[#2C1810]/5">
-          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
-          <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-16 relative z-10">
-            <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-20 items-start">
-              <FadeUp>
-                <Tag>{service.sessionPlanTag || "Your Treatment Plan"}</Tag>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-6" style={D}>
-                  {service.sessionPlanTitle || "What happens"}<br /><span>{service.sessionPlanTitleEmphasized || "in each session."}</span>
-                </h2>
-                <p className="text-base text-[#5C4A42] leading-loose mb-8" style={B}>
-                  {service.sessionPlanDesc}
-                </p>
-                {/* Session selector */}
-                <div className="flex flex-col gap-2">
-                  {service.sessionPlanSteps.map((s, i) => (
-                    <div key={s.n} className="flex flex-col gap-2">
-                      <motion.button onClick={() => setActiveSession(i)}
-                        whileHover={{ x: 4 }}
-                        className={`text-left px-5 py-4 rounded-xl transition-all duration-250 flex items-center justify-between gap-4 ${activeSession === i ? "bg-[#8C5D47] text-[#FAF7F2]" : "text-[#5C4A42] hover:text-[#2C1810]"}`}
-                        style={{ background: activeSession === i ? "#8C5D47" : "rgba(255,255,255,0.8)", border: `1px solid ${activeSession === i ? "#8C5D47" : "rgba(44,24,16,0.1)"}`, boxShadow: "0 2px 12px rgba(44,24,16,0.04)" }}>
-                        <div className="flex items-center gap-4">
-                          <span className="text-sm w-10 shrink-0" style={M}>{s.n}</span>
-                          <div>
-                            <p className="text-sm font-medium" style={B}>{s.label}</p>
-                            {s.duration && <p className="text-xs opacity-70 mt-0.5" style={B}>{s.duration}</p>}
-                          </div>
-                        </div>
-                        <motion.div animate={{ rotate: activeSession === i ? 90 : 0 }} className="lg:hidden shrink-0 transition-transform">
-                          <ArrowRight size={14} />
-                        </motion.div>
-                        <ArrowRight size={14} className={`hidden lg:block shrink-0 transition-transform ${activeSession === i ? "translate-x-1" : ""}`} />
-                      </motion.button>
-
-                      {/* Mobile Accordion Content */}
-                      <AnimatePresence initial={false}>
-                        {activeSession === i && (
-                          <motion.div
-                            className="lg:hidden overflow-hidden"
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.35, ease: EASE }}
-                          >
-                            <div className="pt-2 pb-4">
-                              <div className="relative p-6 rounded-2xl overflow-hidden"
-                                style={{ background: "rgba(255,255,255,0.9)", border: "1px solid rgba(201,149,106,0.2)", boxShadow: "0 8px 32px rgba(44,24,16,0.05)" }}>
-                                {/* Ghost number */}
-                                <span className="absolute -top-4 -right-2 text-[80px] font-bold leading-none select-none pointer-events-none"
-                                  style={{ ...D, color: "rgba(201,149,106,0.06)" }}>{activeSession + 1}</span>
-                                <p className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] mb-2" style={M}>
-                                  Session {service.sessionPlanSteps[activeSession].n}{service.sessionPlanSteps[activeSession].duration && ` · ${service.sessionPlanSteps[activeSession].duration}`}
-                                </p>
-                                <h3 className="text-xl text-[#2C1810] mb-3" style={{ ...D }}>
-                                  {service.sessionPlanSteps[activeSession].label}
-                                </h3>
-                                <div className="h-px w-8 bg-[#C9956A]/50 mb-4" />
-                                <p className="text-sm text-[#5C4A42] leading-relaxed" style={B}>
-                                  {service.sessionPlanSteps[activeSession].detail}
-                                </p>
-                              </div>
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  ))}
+                <div className="lg:hidden mt-6">
+                  <CTAButtons light />
                 </div>
               </FadeUp>
 
-              <div className="hidden lg:block lg:pt-16">
-                <AnimatePresence mode="wait">
-                  <motion.div key={activeSession} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.35, ease: EASE }}>
-                    <div className="relative p-8 rounded-3xl overflow-hidden"
-                      style={{ background: "rgba(255,255,255,0.9)", border: "1px solid rgba(201,149,106,0.2)", boxShadow: "0 8px 32px rgba(44,24,16,0.05)" }}>
-                      {/* Ghost number */}
-                      <span className="absolute -top-4 -right-2 text-[120px] font-bold leading-none select-none pointer-events-none"
-                        style={{ ...D, color: "rgba(201,149,106,0.06)" }}>{activeSession + 1}</span>
-                      <p className="text-xs tracking-[0.25em] uppercase text-[#C9956A] mb-3" style={M}>
-                        Session {service.sessionPlanSteps[activeSession].n}{service.sessionPlanSteps[activeSession].duration && ` · ${service.sessionPlanSteps[activeSession].duration}`}
-                      </p>
-                      <h3 className="text-2xl text-[#2C1810] mb-4" style={{ ...D }}>
-                        {service.sessionPlanSteps[activeSession].label}
-                      </h3>
-                      <div className="h-px w-12 bg-[#C9956A]/50 mb-5" />
-                      <p className="text-base text-[#5C4A42] leading-loose" style={B}>
-                        {service.sessionPlanSteps[activeSession].detail}
-                      </p>
-                    </div>
-
-                    {/* Progress indicator */}
-                    <div className="flex gap-2 mt-5">
-                      {service.sessionPlanSteps.map((_, i) => (
-                        <motion.div key={i} className="h-1 flex-1 rounded-full"
-                          animate={{ backgroundColor: i <= activeSession ? "#C9956A" : "rgba(201,149,106,0.2)" }}
-                          transition={{ duration: 0.3 }} />
-                      ))}
-                    </div>
-                    <p className="text-xs text-[#5C4A42]/60 mt-2" style={B}>
-                      Session {activeSession + 1} of {service.sessionPlanSteps.length}
-                    </p>
-                  </motion.div>
-                </AnimatePresence>
+              <div className="flex flex-col gap-8">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {service.whoNeedsItems.map((item, i) => (
+                    <FadeUp key={item.tag} delay={i * 0.06}>
+                      <motion.div whileHover={{ y: -5, boxShadow: "0 12px 40px rgba(201,149,106,0.15)" }}
+                        transition={{ type: "spring", stiffness: 260 }}
+                        className="p-5 rounded-2xl h-full flex flex-col gap-2"
+                        style={{ background: "#FFFFFF", border: "1px solid rgba(44,24,16,0.08)", boxShadow: "0 2px 16px rgba(44,24,16,0.04)" }}>
+                        <p className="text-sm font-medium text-[#2C1810]" style={B}>✓ {item.tag}</p>
+                        {item.desc && <p className="text-sm text-[#5C4A42] leading-relaxed" style={B}>{item.desc}</p>}
+                      </motion.div>
+                    </FadeUp>
+                  ))}
+                </div>
+                <FadeUp delay={0.12}>
+                  <div className="hidden lg:flex justify-start">
+                    <CTAButtons light />
+                  </div>
+                </FadeUp>
               </div>
             </div>
           </div>
         </section>
+                     {/* ══ 5. SESSION PLAN — interactive ══ */}
+        <section className="py-6 md:py-14 bg-[#FAF6F0] relative overflow-hidden border-t border-[#2C1810]/5">
+          {(() => {
+            const stepPrefix = service.id === "inbody-380" ? "Inclusion" : "Session";
+            return (
+              <>
+                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
+                <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-16 relative z-10">
+                  <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-20 items-start">
+                    <FadeUp>
+                      <Tag>{service.sessionPlanTag || "Your Treatment Plan"}</Tag>
+                      <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3 mb-6" style={D}>
+                        {service.sessionPlanTitle || "What happens"}<br /><span>{service.sessionPlanTitleEmphasized || "in each session."}</span>
+                      </h2>
+                      <p className="text-base text-[#5C4A42] leading-loose mb-8" style={B}>
+                        {service.sessionPlanDesc}
+                      </p>
+                      {/* Session selector */}
+                      <div className="flex flex-col gap-3">
+                        {service.sessionPlanSteps.map((s, i) => {
+                          const isActive = activeSession === i;
+                          return (
+                            <div key={s.n} className="flex flex-col gap-2">
+                              <motion.button 
+                                onClick={() => setActiveSession(i)}
+                                whileHover={{ x: isActive ? 0 : 3 }}
+                                className={`relative text-left px-6 py-4.5 rounded-2xl border transition-all duration-300 cursor-pointer flex items-center justify-between gap-4 w-full ${
+                                  isActive 
+                                    ? "border-[#C9956A]/35 bg-[#FAF5EE] shadow-[0_12px_28px_rgba(201,149,106,0.05)] text-[#2C1810]" 
+                                    : "border-[#2C1810]/5 bg-white/65 hover:bg-white hover:border-[#C9956A]/20 text-[#5C4A42] hover:text-[#2C1810]"
+                                }`}
+                              >
+                                {isActive && (
+                                  <motion.div 
+                                    layoutId="activeSessionIndicator"
+                                    className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-[#C9956A] rounded-r-full"
+                                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                                  />
+                                )}
+                                <div className="flex items-center gap-4 pl-1">
+                                  <span className={`text-xs font-serif ${isActive ? "text-[#C9956A]" : "text-[#C9956A]/60"}`}>0{i + 1}</span>
+                                  <div>
+                                    <p className="text-sm font-medium" style={B}>{s.label}</p>
+                                    {s.duration && <p className="text-[10px] opacity-75 mt-0.5 uppercase tracking-wider text-[#C9956A]/90" style={M}>{s.duration}</p>}
+                                  </div>
+                                </div>
+                                <ChevronRight size={14} className={`transition-all duration-300 shrink-0 ${isActive ? "text-[#C9956A] translate-x-0.5" : "text-[#2C1810]/30"}`} />
+                              </motion.button>
+ 
+                              {/* Mobile Accordion Content */}
+                              <AnimatePresence initial={false}>
+                                {isActive && (
+                                  <motion.div
+                                    className="lg:hidden overflow-hidden"
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: "auto", opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.35, ease: EASE }}
+                                  >
+                                    <div className="pt-2 pb-4">
+                                      <div 
+                                        className="relative p-6 rounded-2xl overflow-hidden"
+                                        style={{ 
+                                          background: "linear-gradient(145deg, rgba(255,255,255,0.95), rgba(250,247,242,0.95))", 
+                                          border: "1px solid rgba(201,149,106,0.18)", 
+                                          boxShadow: "0 12px 28px rgba(44,24,16,0.04)" 
+                                        }}
+                                      >
+                                        <span className="absolute -top-4 -right-2 text-[90px] font-serif font-semibold leading-none select-none pointer-events-none opacity-20 text-[#C9956A]/30">
+                                          0{i + 1}
+                                        </span>
+                                        <p className="text-[9px] tracking-[0.25em] uppercase text-[#C9956A] mb-2 font-semibold" style={M}>
+                                          {stepPrefix} 0{i + 1} {s.duration && ` · ${s.duration}`}
+                                        </p>
+                                        <h3 className="text-xl text-[#2C1810] mb-3" style={D}>
+                                          {s.label}
+                                        </h3>
+                                        <div className="h-0.5 w-8 bg-[#C9956A] mb-4 rounded-full" />
+                                        <p className="text-sm text-[#5C4A42] leading-relaxed mb-4" style={B}>
+                                          {s.detail}
+                                        </p>
+                                        {s.image && (
+                                          <div className="rounded-xl overflow-hidden border border-[#2C1810]/5 bg-[#FAF6F0] aspect-[16/10] relative shadow-inner">
+                                            <img 
+                                              src={s.image} 
+                                              alt={s.label}
+                                              className="w-full h-full object-cover"
+                                            />
+                                          </div>
+                                        )}
+                                      </div>
+                                    </div>
+                                  </motion.div>
+                                )}
+                              </AnimatePresence>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </FadeUp>
+ 
+                    <div className="hidden lg:block lg:pt-16 w-full">
+                      <AnimatePresence mode="wait">
+                        <motion.div 
+                          key={activeSession} 
+                          initial={{ opacity: 0, y: 20 }} 
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -12 }} 
+                          transition={{ duration: 0.35, ease: EASE }}
+                        >
+                          <div 
+                            className="relative p-8 md:p-10 rounded-[32px] overflow-hidden backdrop-blur-md"
+                            style={{ 
+                              background: "linear-gradient(145deg, rgba(255,255,255,0.95), rgba(250,247,242,0.95))", 
+                              border: "1px solid rgba(201,149,106,0.18)", 
+                              boxShadow: "0 24px 60px rgba(44,24,16,0.04)" 
+                            }}
+                          >
+                            {/* Decorative gold circular gradient in corner */}
+                            <div className="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-[#C9956A]/5 blur-2xl pointer-events-none" />
+ 
+                            {/* Ghost number */}
+                            <span className="absolute -top-6 -right-2 text-[140px] font-serif font-semibold leading-none select-none pointer-events-none opacity-20 text-[#C9956A]/40">
+                              0{activeSession + 1}
+                            </span>
+ 
+                            <span className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] mb-2 font-semibold block" style={M}>
+                              {stepPrefix} 0{activeSession + 1} {service.sessionPlanSteps[activeSession].duration && ` · ${service.sessionPlanSteps[activeSession].duration}`}
+                            </span>
+ 
+                            <h3 className="text-2xl sm:text-3xl text-[#2C1810] mb-4 font-normal" style={D}>
+                              {service.sessionPlanSteps[activeSession].label}
+                            </h3>
+                            
+                            <div className="h-0.5 w-10 bg-[#C9956A] mb-6 rounded-full" />
+                            
+                            <p className="text-base text-[#5C4A42] leading-relaxed mb-6" style={B}>
+                              {service.sessionPlanSteps[activeSession].detail}
+                            </p>
+ 
+                            {service.sessionPlanSteps[activeSession].image && (
+                              <div className="rounded-2xl overflow-hidden border border-[#2C1810]/5 bg-[#FAF6F0] aspect-[16/10] relative shadow-inner">
+                                <img 
+                                  src={service.sessionPlanSteps[activeSession].image} 
+                                  alt={service.sessionPlanSteps[activeSession].label}
+                                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                                />
+                              </div>
+                            )}
+                          </div>
+ 
+                          {/* Progress indicator */}
+                          <div className="flex gap-2 mt-6">
+                            {service.sessionPlanSteps.map((_, i) => (
+                              <motion.div 
+                                key={i} 
+                                className="h-1 flex-1 rounded-full"
+                                animate={{ backgroundColor: i <= activeSession ? "#C9956A" : "rgba(201,149,106,0.2)" }}
+                                transition={{ duration: 0.3 }} 
+                              />
+                            ))}
+                          </div>
+                          <p className="text-xs text-[#5C4A42]/60 mt-3" style={B}>
+                            {stepPrefix} {activeSession + 1} of {service.sessionPlanSteps.length}
+                          </p>
+                        </motion.div>
+                      </AnimatePresence>
+                    </div>
+                  </div>
+                </div>
+              </>
+            );
+          })()}
+        </section>
 
         {/* ══ 6. RESULTS TIMELINE ══ */}
-        <section className="py-6 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
+        <section className="py-6 md:py-14 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-6 gap-6">
               <FadeUp>
@@ -1012,21 +1086,27 @@ export default function ServicePage() {
             </div>
 
             {/* Desktop: staggered cards */}
-            <div className="hidden lg:grid grid-cols-5 gap-4">
+            <div className={`hidden lg:grid gap-4 ${
+              service.timelineItems.length === 6 
+                ? "grid-cols-6" 
+                : service.timelineItems.length === 5 
+                  ? "grid-cols-5" 
+                  : "grid-cols-4"
+            }`}>
               {service.timelineItems.map((t, i) => (
                 <FadeUp key={t.when} delay={i * 0.1}>
                   <motion.div whileHover={{ y: -8, boxShadow: "0 16px 48px rgba(201,149,106,0.18)" }}
                     transition={{ type: "spring", stiffness: 240 }}
                     className={`relative p-5 rounded-2xl flex flex-col ${i % 2 === 1 ? "mt-8" : ""}`}
                     style={{ background: "#FFFFFF", border: "1px solid rgba(201,149,106,0.2)", boxShadow: "0 4px 20px rgba(44,24,16,0.05)" }}>
-                    <span className="text-2xl mb-3">{t.icon || ["✨", "🌱", "🌿", "🌸", "🏆"][i]}</span>
+                    <span className="text-2xl mb-3">{t.icon || ["✨", "🌱", "🌿", "🌸", "🏆", "🌟"][i]}</span>
                     <p className="text-xs tracking-[0.22em] uppercase text-[#C9956A] mb-2" style={M}>{t.when}</p>
                     <p className="text-sm text-[#2C1810] leading-relaxed flex-1" style={B}>{t.what}</p>
                     {/* Fill bar */}
                     <div className="mt-4 h-1 rounded-full" style={{ background: "rgba(201,149,106,0.12)" }}>
                       <motion.div className="h-full rounded-full bg-[#C9956A]"
                         initial={{ width: "0%" }}
-                        whileInView={{ width: `${20 + i * 20}%` }}
+                        whileInView={{ width: `${Math.round(((i + 1) / service.timelineItems.length) * 100)}%` }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.9, delay: 0.2 + i * 0.1 }} />
                     </div>
@@ -1067,7 +1147,7 @@ export default function ServicePage() {
             style={{ background: "radial-gradient(circle, rgba(201,149,106,0.15) 0%, transparent 70%)" }}
             animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }} transition={{ duration: 7, repeat: Infinity }} />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-10 md:px-16 py-6 md:py-36">
+          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-10 md:px-16 py-6 md:py-20">
             <div className="grid lg:grid-cols-[1fr_auto] gap-14 lg:gap-24 items-center">
               <FadeUp>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"

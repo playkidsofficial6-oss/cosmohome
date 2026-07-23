@@ -82,88 +82,69 @@ const CATEGORY_MAPPING: Record<string, string[]> = {
 };
 
 const SERVICE_TAG_MAPPING: Record<string, string> = {
-  // Face treatments
-  "hifu": "Face : Anti Ageing",
-  "botox": "Face : Anti Ageing",
-  "fillers": "Face : Anti Ageing",
-  "vampire-lift": "Face : Anti Ageing",
-  "thread-lift": "Face : Anti Ageing",
-  "skin-boosters-anti-ageing": "Face : Anti Ageing",
-  "skin-boosters-acne": "Face : Acne",
-  "skin-boosters-skin-renewal": "Face : Skin Renewal",
-  "mesopeels-acne": "Face : Acne",
-  "mesopeels-skin-renewal": "Face : Skin Renewal",
-  "carbon-peel": "Face : Acne",
-  "led-therapy": "Face : Acne",
-  "mnrf": "Face : Acne",
-  "co2-laser": "Face : Acne",
-  "exosomes-face": "Face : Skin Renewal",
-  "exosomes-injectables": "Injectables",
-  "laser-toning": "Face : Skin Renewal",
-  "mnrf-gfc": "Face : Skin Renewal",
-  "hydrafacial-medifacial": "Face : Skin Renewal",
-  "mesopeels-carbon-peel": "Face : Acne",
+  // Face -> Anti Ageing
+  "hifu": "Anti Ageing : HIFU",
+  "botox": "Anti Ageing : Botox",
+  "fillers": "Anti Ageing : Fillers",
+  "vampire-lift": "Anti Ageing : Vampire Lift",
+  "thread-lift": "Anti Ageing : Thread Lift",
+  "skin-boosters-anti-ageing": "Anti Ageing : Skin Boosters",
 
-  // Skin treatments
-  "skin-mnrf": "Skin : Stretch Marks",
-  "skin-dermapen": "Skin : Stretch Marks",
-  "skin-co2-laser": "Skin : Stretch Marks",
-  "skin-prp": "Skin : Stretch Marks",
-  "skin-gfc": "Skin : Stretch Marks",
-  "skin-exosomes": "Skin : Stretch Marks",
-  "laser-pigment-reduction": "Skin : Laser",
-  "laser-scar-reduction": "Skin : Laser",
-  "phototherapy": "Skin : Laser",
-  "excimer-laser": "Skin : Laser",
+  // Face -> Acne
+  "mesopeels-acne": "Acne : Mesopeels",
+  "carbon-peel": "Acne : Carbon Peel",
+  "led-therapy": "Acne : LED Therapy",
+  "mnrf": "Acne : MNRF",
+  "co2-laser": "Acne : CO₂ Laser",
+  "skin-boosters-acne": "Acne : Skin Boosters",
 
-  // Hair treatments
-  "laser-hair-reduction": "Hair : Laser",
-  "hair-prp": "Hair : Scalp Therapy",
-  "hair-gfc": "Hair : Scalp Therapy",
-  "hair-exosome": "Hair : Scalp Therapy",
-  "hair-dutexome": "Hair : Scalp Therapy",
-  "hair-mesotherapy": "Hair : Scalp Therapy",
-  "hair-monothreads": "Hair : Scalp Therapy",
-  "hair-laser": "Hair : Laser Therapy",
+  // Face -> Skin Renewal
+  "mesopeels-skin-renewal": "Skin Renewal : Mesopeels",
+  "exosomes-face": "Skin Renewal : Exosomes",
+  "laser-toning": "Skin Renewal : Laser Toning",
+  "skin-boosters-skin-renewal": "Skin Renewal : Skin Boosters",
+  "mnrf-gfc": "Skin Renewal : MNRF + GFC",
 
-  // Body treatments
-  "muscle-sculpting": "Body : Sculpting",
-  "body-contouring": "Body : Contouring",
+  // Skin
+  "skin-mnrf": "Skin : MNRF",
+  "skin-dermapen": "Skin : Dermapen",
+  "skin-co2-laser": "Skin : CO₂ Laser",
+  "skin-prp": "Skin : PRP",
+  "skin-gfc": "Skin : GFC",
+  "skin-exosomes": "Skin : Exosomes",
+
+  // Hair
+  "hair-prp": "Hair : PRP",
+  "hair-gfc": "Hair : GFC",
+  "hair-exosome": "Hair : Exosomes",
+  "hair-dutexome": "Hair : Dutexome",
+  "hair-mesotherapy": "Hair : Mesotherapy",
+  "hair-monothreads": "Hair : Monothreads",
+  "hair-laser": "Hair : Laser",
+
+  // Body
+  "muscle-sculpting": "Body : Muscle Sculpting",
+  "body-contouring": "Body : Body Contouring",
   "fat-reduction": "Body : Fat Reduction",
-  "body-tightening": "Body : Tightening",
-  "inbody-380": "Body : Composition Analysis",
+  "body-tightening": "Body : Body Tightening",
+  "inbody-380": "Body : InBody 380",
 
   // Injectables
-  "prp": "Injectables",
-  "gfc": "Injectables"
+  "prp": "Injectables : PRP",
+  "gfc": "Injectables : GFC",
+  "exosomes-injectables": "Injectables : Exosomes"
 };
 
 const getServiceCategory = (id: string): string => {
   for (const [cat, ids] of Object.entries(CATEGORY_MAPPING)) {
-    if (cat === "Laser") continue; // Skip laser for badges to show more specific skin/face category
+    if (cat === "Laser") continue;
     if (ids.includes(id)) return cat;
   }
-  return "Skin"; // Fallback
+  return "Skin";
 };
 
 const getServiceTag = (key: string, selectedCategory: string): string => {
-  const defaultTag = SERVICE_TAG_MAPPING[key] || getServiceCategory(key);
-  if (selectedCategory === "all") {
-    return defaultTag;
-  }
-  const activeCategoryObj = CATEGORIES.find((c) => c.key === selectedCategory);
-  const activeLabel = activeCategoryObj ? activeCategoryObj.label : selectedCategory;
-  if (defaultTag.includes(" : ")) {
-    const parts = defaultTag.split(" : ");
-    return `${activeLabel} : ${parts[1]}`;
-  }
-  if (defaultTag.includes(" & ")) {
-    return activeLabel;
-  }
-  if (defaultTag === "Injectables" && activeLabel !== "Injectables") {
-    return activeLabel;
-  }
-  return defaultTag;
+  return SERVICE_TAG_MAPPING[key] || getServiceCategory(key);
 };
 
 const getServiceQuickSpec = (service: ServiceData) => {
@@ -382,6 +363,9 @@ export default function ServicesListPage() {
 
   // Filter services based on category selection
   const filteredServiceKeys = Object.keys(SERVICES_DATA).filter((key) => {
+    // Only show treatments that are defined in the menu tags mapping (menu-only filter)
+    if (!SERVICE_TAG_MAPPING[key]) return false;
+
     if (selectedCategory === "all") return true;
     const mappedIds = CATEGORY_MAPPING[selectedCategory] || [];
     return mappedIds.includes(key);
@@ -986,7 +970,7 @@ export default function ServicesListPage() {
                 stars: 5,
                 review: "My go-to treatment is the Hydrafacial. It offers an immediate glow, deep hydration, and completely cleared out congestion. Truly a premium skin renewal experience with zero redness.",
                 patient: "Priya R.",
-                treatment: "Skin Renewal Experience"
+                treatment: "Hydrafacial Skin Renewal"
               }
             ].map((item, tIndex) => (
               <div key={tIndex} className="bg-white p-8 rounded-[24px] shadow-[0_4px_30px_rgba(44,24,16,0.01)] border border-[#2C1810]/5 flex flex-col justify-between hover:shadow-[0_12px_40px_rgba(44,24,16,0.03)] transition-all duration-300">

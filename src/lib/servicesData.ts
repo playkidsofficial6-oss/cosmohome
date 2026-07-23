@@ -48,7 +48,7 @@ export interface ServiceData {
   sessionPlanTitle?: string;
   sessionPlanTitleEmphasized?: string;
   sessionPlanDesc: string;
-  sessionPlanSteps: Array<{ n: string; label: string; duration: string; detail: string }>;
+  sessionPlanSteps: Array<{ n: string; label: string; duration: string; detail: string, image?: string }>;
 
   // Section 6: Results timeline
   timelineTag?: string;
@@ -1189,12 +1189,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
   },
   "inbody-380": {
     id: "inbody-380",
-    title: "Body Composition",
-    titleEmphasized: "Analysis (InBody 380).",
+    title: "Stop Guessing.",
+    titleEmphasized: "Start Understanding Your Body.",
     experienceNo: "Advanced Diagnostics",
-    description: "Go beyond the scale. The FDA-cleared InBody 380 uses multi-frequency analysis to segmentally measure your muscle, fat, and water levels, providing a precise, evidence-based roadmap for your health and aesthetic journey.",
+    description: "Before starting any weight-loss, skin, body contouring, or wellness journey, understand exactly what's happening inside your body—not just what the scale shows.",
     heroRating: "4.9 · Rated by 140+ patients",
-    heroImage: "/services/body-inbody-380/inbody-checkup.png",
+    heroImage: "/services/body-inbody-380/inbody-checkup.webp",
     performedByLabel: "👩‍⚕️ Supervised by",
     performedByName: "Doctor-Led Diagnostics",
     performedBySub: "Non-Invasive • Precise • Clinical Blueprint",
@@ -1204,26 +1204,34 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { n: "15s", l: "Fast & precise scanning" },
       { n: "98%", l: "Correlation with DEXA gold standard" }
     ],
-    whatIsThisTitle: "A clinical blueprint",
-    whatIsThisEmphasized: "of your health and muscle architecture.",
-    whatIsThisDesc1: "True body transformation cannot be guided by the scale alone. The InBody 380 bioelectrical impedance analyzer sends safe, low-level multi-frequency alternating currents through your body. By measuring the electrical resistance (impedance) of different tissues, it determines the exact proportion of muscle, fat, and water in each segment of your body.",
-    whatIsThisDesc2: "Under Dr. Ruxana's guidance, this analysis is used to plan targeted contouring treatments, customize muscle-building protocols, track real visceral fat reduction, and manage cell health. It offers a clear, objective metric of your progress over time.",
+    whatIsThisTitle: "Before Any Treatment,",
+    whatIsThisEmphasized: "Know Your Body First.",
+    whatIsThisDesc1: "Many people rely only on the weighing scale—but weight alone doesn't tell the full story.<br/><br/>A Body Composition Analysis reveals how much of your body is muscle, fat, water, and visceral fat, helping our doctors understand your body before recommending the right treatment plan.",
+    whatIsThisDesc2: "Under expert medical guidance, this analysis is used to plan targeted contouring treatments, customize muscle-building protocols, track real visceral fat reduction, and manage cell health. It offers a clear, objective metric of your progress over time.",
     benefits: [
-      { icon: "📊", b: "Segmental Muscle & Fat Analysis", d: "Measures skeletal muscle and fat mass individually in each arm, leg, and the trunk." },
+      { icon: "💪", b: "Know if you're losing fat or muscle", d: "Measures skeletal muscle and fat mass individually in each arm, leg, and the trunk." },
       { icon: "🧬", b: "Visceral Fat Tracking", d: "Identifies hidden abdominal fat levels linked to metabolic health." },
-      { icon: "💧", b: "Water Balance Analysis", d: "Tracks intracellular and extracellular water to evaluate swelling or retention." },
-      { icon: "📈", b: "Accurate Progress Blueprint", d: "Generates clear clinical charts to track actual muscle gain and fat loss over time." }
+      { icon: "💧", b: "Understand bloating & water retention", d: "Tracks intracellular and extracellular water to evaluate swelling or retention." },
+      { icon: "📈", b: "Track real results—not just your weight", d: "Generates clear clinical charts to track actual muscle gain and fat loss over time." }
     ],
-    clinicalNote: "Body composition tests are best performed while fasting, well-hydrated, and before heavy physical exercise for optimal consistency.",
-    sideImage: "/services/body-inbody-380/inbody-deatails.png",
+    clinicalNoteLabel: "Why every consultation starts here",
+    clinicalNote: "✔️ Personalized treatment planning<br/>✔️ Accurate progress tracking<br/>✔️ Better treatment decisions",
+    sideImage: "/services/body-inbody-380/inbody-deatails.webp",
+    whoNeedsTitle: "This scan is",
+    whoNeedsTitleEmphasized: "recommended if...",
     whoNeedsDesc: "Highly recommended for patients undergoing muscle toning or fat reduction treatments, starting fitness/wellness programs, or tracking metabolic health.",
     notSuitable: "Patients with pacemakers, internal defibrillators, or other active electronic medical implants. Not recommended during pregnancy.",
     whoNeedsItems: [
-      { tag: "Fat loss tracking", desc: "Verifying actual fat reduction rather than simple water loss." },
-      { tag: "Muscle gain monitoring", desc: "Tracking muscle hypertrophy and symmetry in limbs." },
-      { tag: "Contouring assessment", desc: "Mapping localized fat distribution before sculpting sessions." },
-      { tag: "Metabolic health check", desc: "Monitoring visceral fat levels to reduce metabolic risk." },
-      { tag: "Fluid retention tracking", desc: "Checking intracellular and extracellular water balance." }
+      { tag: "You've been dieting but nothing changes", desc: "" },
+      { tag: "Your weight keeps fluctuating", desc: "" },
+      { tag: "You're starting body contouring", desc: "" },
+      { tag: "You're joining a fitness program", desc: "" },
+      { tag: "You want to know if you're actually healthy", desc: "" },
+      { tag: "You feel bloated", desc: "" },
+      { tag: "PCOS weight management", desc: "" },
+      { tag: "Thyroid-related weight changes", desc: "" },
+      { tag: "Post pregnancy weight loss", desc: "" },
+      { tag: "Diabetes lifestyle monitoring", desc: "" }
     ],
     machineTitle: "Segmental Multi-Frequency",
     machineEmphasized: "Bio-Impedance Analysis.",
@@ -1244,18 +1252,29 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { label: "Pediatric Data", ours: "Supports children's report sheets and growth curve tracking", standard: "No child-specific growth curve sheets" },
       { label: "Phase Angle", ours: "Measures Whole-Body Phase Angle to assess cell integrity & vitality", standard: "No Phase Angle metrics (lacks cell wall resistance tracking)" }
     ],
-    sessionPlanDesc: "A baseline analysis is performed before any contouring or fitness plan, with follow-ups scheduled every 4 to 6 weeks to track progress.",
+    sessionPlanTitle: "Every BCA",
+    sessionPlanTitleEmphasized: "Includes:",
+    sessionPlanTag: "BCA Blueprint",
+    sessionPlanDesc: "Each Body Composition Analysis (BCA) at Cosmo Home is a comprehensive clinical assessment designed to provide a precise roadmap for your health and aesthetic journey.",
     sessionPlanSteps: [
-      { n: "01", label: "Pre-Test Consultation", duration: "10 min", detail: "Height and general status are recorded. Patient removes shoes, socks, and heavy items to step onto the device." },
-      { n: "02", label: "Impedance Scanning", duration: "1 min", detail: "Patient stands on the InBody foot electrodes and holds hand electrodes. A safe, low-level multi-segment current scans the body in under 30 seconds." },
-      { n: "03", label: "Results Interpretation", duration: "15 min", detail: "Dr. Ruxana reviews the comprehensive InBody sheet, explaining muscle-fat balance, water ratios, and metabolic indicators to outline your plan." }
+      { n: "01", label: "Full body scan", duration: "", detail: "A fast, non-invasive bioelectrical impedance scan using the InBody 380, segmentally measuring your muscle, fat, and cellular water.", image: "/services/body-inbody-380/inbody-380-tech.png" },
+      { n: "02", label: "Doctor consultation", duration: "", detail: "A detailed consultation with our specialist doctors to understand your diagnostic indicators, lifestyle factors, and aesthetic goals.", image: "/services/body-inbody-380/inbody-checkup.webp" },
+      { n: "03", label: "Personalized explanation", duration: "", detail: "A segment-by-segment review of your muscle architecture, visceral fat rating, phase angle, and body water balance so you understand your baseline.", image: "/services/body-inbody-380/inbody-deatails.webp" },
+      { n: "04", label: "Digital report", duration: "", detail: "Receive a comprehensive digital body composition report sheet containing precise clinical values and historical charts to track your transformation.", image: "/services/body-inbody-380/380-result2.jpg" },
+      { n: "05", label: "Treatment recommendations", duration: "if required", detail: "Tailored recommendations for body contouring, muscle building, fat loss, or skin protocols aligned with your clinical body structure.", image: "/services/body-inbody-380/380-result3.jpg" },
+      { n: "06", label: "Progress tracking", duration: "", detail: "Consistent tracking baseline to monitor real cellular and structural changes every 4 to 6 weeks, verifying actual fat reduction rather than weight fluctuations.", image: "/services/body-inbody-380/380-result1.jpg" }
     ],
-    timelineDesc: "You receive a complete physical and digital printout instantly. Follow-up scans show your progressive body transformation.",
+    timelineTag: "The Difference",
+    timelineTitle: "Most people trust",
+    timelineTitleEmphasized: "the scale.",
+    timelineDesc: "The scale only tells your weight. We tell you the rest—revealing the crucial details that make a huge difference.",
     timelineItems: [
-      { when: "Day of Scan", what: "Instant detailed report sheet showing muscle mass, fat mass, visceral fat, and body water balance." },
-      { when: "Week 4", what: "Follow-up scan tracks early changes in fat reduction and muscle toning from treatments/diet." },
-      { when: "Week 8", what: "Second review maps trends in segment-specific muscle gain and fat loss." },
-      { when: "Month 3+", what: "Substantial body composition shift is documented. Visceral fat reduction is clearly visible on charts." }
+      { icon: "💪", when: "Muscle", what: "Accurately calculates your skeletal muscle structure across all segments." },
+      { icon: "📊", when: "Fat", what: "Measures overall body fat mass and under-skin fat proportions." },
+      { icon: "💧", when: "Water", what: "Differentiates intracellular vs extracellular water to monitor bloating." },
+      { icon: "🧬", when: "Visceral Fat", what: "Tracks deeper abdominal fat surrounding organs linked to metabolic risk." },
+      { icon: "⚖️", when: "Body Balance", what: "Compares left/right and upper/lower muscle balance for posture analysis." },
+      { icon: "📈", when: "Metabolic Health", what: "Analyzes phase angle and cellular health index to guide treatment paths." }
     ],
     ctaQuickFacts: [
       { label: "Price from", val: "₹2,500 / session" },

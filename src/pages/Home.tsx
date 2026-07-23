@@ -656,10 +656,11 @@ export function Experiences() {
     }
   }, [location.search]);
   const exps = [
-    { name: "Skin Renewal Experience ✨", tagline: "Rediscover your glow", desc: "A deeply personalised skin journey combining medical-grade analysis, bespoke topical protocols, and precision regenerative treatments. Designed to restore luminosity and texture — naturally, gradually, lastingly.", duration: "From 3 sessions", suitedFor: "All skin types seeking radiance" },
-    { name: "Age Gracefully Experience 🌸", tagline: "Confidence, not correction", desc: "A staged approach to natural facial rejuvenation. We work with the architecture of your face — not against it — using subtle volume restoration and refined contouring.", duration: "Ongoing, quarterly", suitedFor: "35–60 · natural longevity seekers" },
-    { name: "Confidence Restoration 🦋", tagline: "Return to yourself", desc: "For those at a turning point — post-pregnancy, post-illness, post-life-change — it is built around rebuilding your relationship with yourself and your reflection.", duration: "Bespoke programme", suitedFor: "Women navigating life transitions" },
-    { name: "Hair Revival Experience 🌿", tagline: "Strength from within", desc: "A clinical and holistic approach to hair thinning and scalp health. Addresses the root cause, not just the symptom, through advanced growth factor therapies.", duration: "6-month programme", suitedFor: "Hair thinning at any age" },
+    { name: "Face Rejuvenation ✨", tagline: "Lift. Smooth. Restore.", desc: "Medical-grade anti-ageing protocols tailored to facial harmony.", duration: "", suitedFor: "" },
+    { name: "Skin Transformation ✨", tagline: "Healthy skin begins with diagnosis.", desc: "Designed for acne, pigmentation, scars and texture improvement.", duration: "", suitedFor: "" },
+    { name: "Body Contouring 🌸", tagline: "Shape with confidence.", desc: "Non-surgical body sculpting and tightening.", duration: "", suitedFor: "" },
+    { name: "Hair Restoration 🌿", tagline: "Stronger hair. Healthier scalp.", desc: "Evidence-based treatments for thinning and hair loss.", duration: "", suitedFor: "" },
+    { name: "Regenerative Aesthetics 💉", tagline: "Repair. Regenerate. Rejuvenate.", desc: "Advanced regenerative therapies for natural results.", duration: "", suitedFor: "" },
     { name: "Personalised Aesthetic Journey 💫", tagline: "Your vision. Our expertise.", desc: "A comprehensive long-term relationship with aesthetic care. Dr. Ruxana designs a multi-year plan aligned with your goals, lifestyle, and evolving beauty.", duration: "Annual programme", suitedFor: "Anyone committed to the long view" },
   ];
   return (
@@ -685,38 +686,84 @@ export function Experiences() {
                     </motion.div>
                   </div>
                 </motion.button>
-
+ 
                 {/* Mobile Content (Always Expanded) */}
                 <div className="block lg:hidden overflow-hidden">
                   <div className="pb-8 pt-2">
                     <p className="text-sm text-[#5C4A42] leading-loose mb-5" style={B}>{e.desc}</p>
-                    {[{ label: "Duration", val: e.duration }, { label: "Suited for", val: e.suitedFor }].map(({ label, val }) => (
-                      <div key={label} className="flex gap-4 mb-2">
-                        <span className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] w-20 shrink-0 pt-0.5" style={M}>{label}</span>
-                        <span className="text-xs text-[#2C1810]/85" style={B}>{val}</span>
+                    {i === 0 || i === 1 || i === 2 || i === 3 || i === 4 ? (
+                      <div className="mb-5">
+                        <p className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] mb-3 font-semibold" style={M}>Includes</p>
+                        <div className="flex flex-wrap gap-2">
+                          {(i === 0 ? [
+                            { name: "HIFU", slug: "hifu" },
+                            { name: "Botox", slug: "botox" },
+                            { name: "Fillers", slug: "fillers" },
+                            { name: "Thread Lift", slug: "thread-lift" },
+                            { name: "Skin Boosters", slug: "skin-boosters-anti-ageing" }
+                          ] : i === 1 ? [
+                            { name: "Mesopeels", slug: "mesopeels-acne" },
+                            { name: "Carbon Peel", slug: "carbon-peel" },
+                            { name: "MNRF", slug: "skin-mnrf" },
+                            { name: "CO₂ Laser", slug: "skin-co2-laser" },
+                            { name: "Exosomes", slug: "skin-exosomes" }
+                          ] : i === 2 ? [
+                            { name: "Fat Reduction", slug: "fat-reduction" },
+                            { name: "Muscle Sculpting", slug: "muscle-sculpting" },
+                            { name: "Body Tightening", slug: "body-tightening" }
+                          ] : i === 3 ? [
+                            { name: "PRP", slug: "hair-prp" },
+                            { name: "GFC", slug: "hair-gfc" },
+                            { name: "Exosomes", slug: "hair-exosome" },
+                            { name: "Mesotherapy", slug: "hair-mesotherapy" }
+                          ] : [
+                            { name: "PRP", slug: "prp" },
+                            { name: "GFC", slug: "gfc" },
+                            { name: "Exosomes", slug: "exosomes-injectables" }
+                          ]).map((item) => (
+                            <motion.button
+                              key={item.name}
+                              onClick={() => navigate(`/service/${item.slug}`)}
+                              whileTap={{ scale: 0.96 }}
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#2C1810]/10 rounded-full text-[11px] tracking-wider uppercase text-[#2C1810] bg-white transition-all shadow-sm cursor-pointer"
+                              style={M}
+                            >
+                              {item.name}
+                              <ChevronRight size={11} className="text-[#C9956A]" />
+                            </motion.button>
+                          ))}
+                        </div>
                       </div>
-                    ))}
+                    ) : (
+                      [{ label: "Duration", val: e.duration }, { label: "Suited for", val: e.suitedFor }].map(({ label, val }) => (
+                        <div key={label} className="flex gap-4 mb-2">
+                          <span className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] w-20 shrink-0 pt-0.5" style={M}>{label}</span>
+                          <span className="text-xs text-[#2C1810]/85" style={B}>{val}</span>
+                        </div>
+                      ))
+                    )}
                     <div className="mt-6 flex flex-col gap-3">
-                      {i === 0 && (
+                      {i === 0 || i === 1 || i === 2 || i === 3 || i === 4 ? (
                         <motion.button
-                          onClick={() => navigate("/service")}
+                          onClick={() => navigate(i === 0 ? "/service?category=Face" : i === 1 ? "/service?category=Skin" : i === 2 ? "/service?category=Body" : i === 3 ? "/service?category=Hair" : "/service?category=Injectables")}
                           whileTap={{ scale: 0.97 }}
                           style={B}
-                          className="cursor-pointer inline-flex justify-center items-center gap-3 w-full py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-lg shadow-lg shadow-[#C9956A]/30 group"
+                          className="cursor-pointer inline-flex justify-center items-center gap-3 w-full py-3.5 border border-[#C9956A]/40 text-[#C9956A] text-xs tracking-[0.22em] uppercase rounded-lg hover:bg-[#C9956A]/10 transition-colors group"
                         >
-                          View Full Service Details
+                          Enquire
                           <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                         </motion.button>
+                      ) : (
+                        <motion.a
+                          href="/#invitation"
+                          whileTap={{ scale: 0.97 }}
+                          style={B}
+                          className="inline-flex justify-center items-center gap-3 w-full py-3.5 border border-[#C9956A]/40 text-[#C9956A] text-xs tracking-[0.22em] uppercase rounded-lg hover:bg-[#C9956A]/10 transition-colors group"
+                        >
+                          Enquire
+                          <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                        </motion.a>
                       )}
-                      <motion.a
-                        href="/#invitation"
-                        whileTap={{ scale: 0.97 }}
-                        style={B}
-                        className="inline-flex justify-center items-center gap-3 w-full py-3.5 border border-[#C9956A]/40 text-[#C9956A] text-xs tracking-[0.22em] uppercase rounded-lg hover:bg-[#C9956A]/10 transition-colors group"
-                      >
-                        Enquire
-                        <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
-                      </motion.a>
                     </div>
                   </div>
                 </div>
@@ -729,35 +776,87 @@ export function Experiences() {
                 transition={{ duration: 0.4, ease: EASE }}>
                 <h3 className="text-2xl md:text-3xl text-[#2C1810] mb-4" style={{ ...D }}>{exps[active].name}</h3>
                 <p className="text-base text-[#5C4A42] leading-loose mb-7" style={B}>{exps[active].desc}</p>
-                {[{ label: "Duration", val: exps[active].duration }, { label: "Suited for", val: exps[active].suitedFor }].map(({ label, val }) => (
-                  <div key={label} className="flex gap-4 mb-3">
-                    <span className="text-xs tracking-[0.25em] uppercase text-[#C9956A] w-24 shrink-0 pt-0.5" style={M}>{label}</span>
-                    <span className="text-sm text-[#2C1810]" style={B}>{val}</span>
+                {active === 0 || active === 1 || active === 2 || active === 3 || active === 4 ? (
+                  <div className="mb-8">
+                    <p className="text-xs tracking-[0.25em] uppercase text-[#C9956A] mb-4 font-semibold" style={M}>Includes</p>
+                    <div className="flex flex-wrap gap-3">
+                      {(active === 0 ? [
+                        { name: "HIFU", slug: "hifu" },
+                        { name: "Botox", slug: "botox" },
+                        { name: "Fillers", slug: "fillers" },
+                        { name: "Thread Lift", slug: "thread-lift" },
+                        { name: "Skin Boosters", slug: "skin-boosters-anti-ageing" }
+                      ] : active === 1 ? [
+                        { name: "Mesopeels", slug: "mesopeels-acne" },
+                        { name: "Carbon Peel", slug: "carbon-peel" },
+                        { name: "MNRF", slug: "skin-mnrf" },
+                        { name: "CO₂ Laser", slug: "skin-co2-laser" },
+                        { name: "Exosomes", slug: "skin-exosomes" }
+                      ] : active === 2 ? [
+                        { name: "Fat Reduction", slug: "fat-reduction" },
+                        { name: "Muscle Sculpting", slug: "muscle-sculpting" },
+                        { name: "Body Tightening", slug: "body-tightening" }
+                      ] : active === 3 ? [
+                        { name: "PRP", slug: "hair-prp" },
+                        { name: "GFC", slug: "hair-gfc" },
+                        { name: "Exosomes", slug: "hair-exosome" },
+                        { name: "Mesotherapy", slug: "hair-mesotherapy" }
+                      ] : [
+                        { name: "PRP", slug: "prp" },
+                        { name: "GFC", slug: "gfc" },
+                        { name: "Exosomes", slug: "exosomes-injectables" }
+                      ]).map((item) => (
+                        <motion.button
+                          key={item.name}
+                          onClick={() => navigate(`/service/${item.slug}`)}
+                          whileHover={{ 
+                            y: -2,
+                            borderColor: "#C9956A", 
+                            backgroundColor: "rgba(201,149,106,0.05)",
+                            boxShadow: "0 6px 20px rgba(201,149,106,0.12)"
+                          }}
+                          whileTap={{ scale: 0.97 }}
+                          className="inline-flex items-center gap-2 px-4.5 py-2.5 border border-[#2C1810]/15 rounded-full text-xs tracking-wider uppercase text-[#2C1810] bg-white/80 transition-all duration-300 cursor-pointer shadow-sm"
+                          style={M}
+                        >
+                          <span>{item.name}</span>
+                          <ChevronRight size={12} className="text-[#C9956A] transition-transform duration-300 group-hover:translate-x-0.5" />
+                        </motion.button>
+                      ))}
+                    </div>
                   </div>
-                ))}
+                ) : (
+                  [{ label: "Duration", val: exps[active].duration }, { label: "Suited for", val: exps[active].suitedFor }].map(({ label, val }) => (
+                    <div key={label} className="flex gap-4 mb-3">
+                      <span className="text-xs tracking-[0.25em] uppercase text-[#C9956A] w-24 shrink-0 pt-0.5" style={M}>{label}</span>
+                      <span className="text-sm text-[#2C1810]" style={B}>{val}</span>
+                    </div>
+                  ))
+                )}
                 <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                  {active === 0 && (
+                  {active === 0 || active === 1 || active === 2 || active === 3 || active === 4 ? (
                     <motion.button
-                      onClick={() => navigate("/service")}
-                      whileHover={{ scale: 1.03, boxShadow: "0 0 28px rgba(201,149,106,0.5)" }}
+                      onClick={() => navigate(active === 0 ? "/service?category=Face" : active === 1 ? "/service?category=Skin" : active === 2 ? "/service?category=Body" : active === 3 ? "/service?category=Hair" : "/service?category=Injectables")}
+                      whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.97 }}
                       style={B}
-                      className="inline-flex items-center gap-3 px-6 py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-lg shadow-lg shadow-[#C9956A]/30 group"
+                      className="inline-flex items-center gap-3 px-6 py-3.5 border border-[#C9956A]/40 text-[#C9956A] text-xs tracking-[0.22em] uppercase rounded-lg hover:bg-[#C9956A]/10 transition-colors group cursor-pointer"
                     >
-                      View Full Service Details
+                      Enquire
                       <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                     </motion.button>
+                  ) : (
+                    <motion.a
+                      href="/#invitation"
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                      style={B}
+                      className="inline-flex items-center gap-3 px-6 py-3.5 border border-[#C9956A]/40 text-[#C9956A] text-xs tracking-[0.22em] uppercase rounded-lg hover:bg-[#C9956A]/10 transition-colors group"
+                    >
+                      Enquire
+                      <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                    </motion.a>
                   )}
-                  <motion.a
-                    href="/#invitation"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    style={B}
-                    className="inline-flex items-center gap-3 px-6 py-3.5 border border-[#C9956A]/40 text-[#C9956A] text-xs tracking-[0.22em] uppercase rounded-lg hover:bg-[#C9956A]/10 transition-colors group"
-                  >
-                    Enquire
-                    <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
-                  </motion.a>
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -1066,8 +1165,8 @@ export function TeamAndStandards() {
 
 export function Stories() {
   const stories = [
-    { author: "Isabelle W., 42", context: "Entrepreneur · Skin Renewal Experience", pull: "I had forgotten what my own confidence felt like. 💛", body: "Two years running a company, two years of putting everything else first. When I finally walked through COSMO HOME's door, I did not want a procedure. I wanted to feel like myself again. Six months in, my team keeps asking what I have changed. I tell them: my relationship with myself." },
-    { author: "Nadia P., 35", context: "Creative Director · Age Gracefully Experience", pull: "She listened before she said a single word about treatment. 🌸", body: "I had been to two other clinics before COSMO HOME. Both had a menu ready before I finished a sentence. Dr. Ruxana asked me what I was feeling. A year later, I look the way I feel on my best days. That is all I ever wanted." },
+    { author: "Isabelle W., 42", context: "Entrepreneur · Face Rejuvenation Experience", pull: "I had forgotten what my own confidence felt like. 💛", body: "Two years running a company, two years of putting everything else first. When I finally walked through COSMO HOME's door, I did not want a procedure. I wanted to feel like myself again. Six months in, my team keeps asking what I have changed. I tell them: my relationship with myself." },
+    { author: "Nadia P., 35", context: "Creative Director · Skin Transformation Experience", pull: "She listened before she said a single word about treatment. 🌸", body: "I had been to two other clinics before COSMO HOME. Both had a menu ready before I finished a sentence. Dr. Ruxana asked me what I was feeling. A year later, I look the way I feel on my best days. That is all I ever wanted." },
     { author: "Claudia M., 51", context: "Architect · Personalised Aesthetic Journey", pull: "Beauty should grow with you, not fight against you. ✨", body: "Dr. Ruxana designed a two-year plan for me. Not to look younger — to look like myself at my best. The most considered, thoughtful investment I have made in myself. I'm prouder of how I look at 51 than I ever was at 35." },
   ];
   return (
@@ -1172,10 +1271,11 @@ export function Invitation() {
                   {(() => {
                     const options = [
                       "I am not sure yet",
-                      "Skin Renewal Experience",
-                      "Age Gracefully Experience",
-                      "Confidence Restoration",
-                      "Hair Revival Experience",
+                      "Face Rejuvenation Experience",
+                      "Skin Transformation Experience",
+                      "Body Contouring Experience",
+                      "Hair Restoration Experience",
+                      "Regenerative Aesthetics Experience",
                       "Personalised Aesthetic Journey",
                     ];
                     return (
