@@ -281,11 +281,21 @@ export default function ServicePage() {
           {/* Left — content */}
           <div className="relative z-10 flex flex-col justify-center px-5 sm:px-10 md:px-16 pt-8 pb-12 md:py-20 lg:py-0">
             <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-              {/* Social proof badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
-                style={{ background: "rgba(201,149,106,0.12)", borderColor: "rgba(201,149,106,0.3)" }}>
-                <span className="text-yellow-400 text-sm">★★★★★</span>
-                <span className="text-xs text-[#2C1810]/80" style={B}>{service.heroRating}</span>
+              {/* Social proof & District Exclusive badge */}
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-4 sm:mb-6">
+                <div className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-1.5 sm:py-2 rounded-full border h-8 sm:h-9 w-[275px] max-w-full sm:w-auto"
+                  style={{ background: "rgba(201,149,106,0.12)", borderColor: "rgba(201,149,106,0.3)" }}>
+                  <span className="text-yellow-400 text-xs sm:text-sm">★★★★★</span>
+                  <span className="text-[11px] sm:text-xs text-[#2C1810]/80 whitespace-nowrap" style={B}>{service.heroRating}</span>
+                </div>
+                {slug === "inbody-380" && (
+                  <div className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-1.5 sm:py-2 rounded-full bg-[#B47C56] text-white shadow-sm border border-[#9E6944] h-8 sm:h-9 w-[275px] max-w-full sm:w-auto">
+                    <span className="text-xs sm:text-sm leading-none">👑</span>
+                    <span className="text-[11px] sm:text-xs font-bold tracking-wider uppercase text-white whitespace-nowrap" style={M}>
+                      District's Only InBody 380 Center
+                    </span>
+                  </div>
+                )}
               </div>
             </motion.div>
 
