@@ -1204,9 +1204,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { n: "15s", l: "Fast & precise scanning" },
       { n: "98%", l: "Correlation with DEXA gold standard" }
     ],
-    whatIsThisTitle: "A clinical blueprint",
-    whatIsThisEmphasized: "of your health and muscle architecture.",
-    whatIsThisDesc1: "True body transformation cannot be guided by the scale alone. The InBody 380 bioelectrical impedance analyzer sends safe, low-level multi-frequency alternating currents through your body. By measuring the electrical resistance (impedance) of different tissues, it determines the exact proportion of muscle, fat, and water in each segment of your body.",
+    whatIsThisTitle: "Before Any Treatment,",
+    whatIsThisEmphasized: "Know Your Body First.",
+    whatIsThisDesc1: "Many people rely only on the weighing scale—but weight alone doesn't tell the full story.<br/><br/>A Body Composition Analysis reveals how much of your body is muscle, fat, water, and visceral fat, helping our doctors understand your body before recommending the right treatment plan.",
     whatIsThisDesc2: "Under Dr. Ruxana's guidance, this analysis is used to plan targeted contouring treatments, customize muscle-building protocols, track real visceral fat reduction, and manage cell health. It offers a clear, objective metric of your progress over time.",
     benefits: [
       { icon: "📊", b: "Segmental Muscle & Fat Analysis", d: "Measures skeletal muscle and fat mass individually in each arm, leg, and the trunk." },
