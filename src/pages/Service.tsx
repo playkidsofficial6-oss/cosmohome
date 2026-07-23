@@ -364,31 +364,40 @@ export default function ServicePage() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#FAF6F0] via-transparent to-transparent lg:from-transparent lg:via-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#FAF6F0]/60 to-transparent lg:from-[#FAF6F0]/10" />
 
-            {/* Floating Circular High-Tech Badge (Centered over vertical dividing line - Ultra-Modern & Readable) */}
+            {/* Floating Circular High-Tech Badge (Centered over vertical dividing line - Ultra-Standard Luxury Seal) */}
             {slug === "inbody-380" && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.06 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="absolute top-6 -left-12 lg:-left-16 lg:top-8 z-30 w-24 h-24 sm:w-32 sm:h-32 bg-[#2C1810] text-[#FAF7F2] rounded-full shadow-[0_12px_40px_rgba(44,24,16,0.3)] flex items-center justify-center border-2 border-[#C9956A] overflow-hidden group cursor-pointer"
+                className="absolute top-6 -left-12 lg:-left-16 lg:top-8 z-30 w-24 h-24 sm:w-32 sm:h-32 bg-[#2C1810] text-[#FAF7F2] rounded-full shadow-[0_14px_40px_rgba(44,24,16,0.4),0_0_20px_rgba(201,149,106,0.2)] flex items-center justify-center border-2 border-[#C9956A] overflow-hidden group cursor-pointer"
               >
-                {/* Rotating circular text SVG */}
+                {/* Rotating circular text SVG with Inner Stitched Luxury Rings */}
                 <motion.svg
                   viewBox="0 0 100 100"
                   className="w-full h-full origin-center fill-current"
                   animate={{ rotate: 360 }}
                   transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
                 >
-                  <path id="circlePathInbodyHero" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
-                  <text fontFamily="system-ui, -apple-system, sans-serif" fontSize="8" fontWeight="900" letterSpacing="1.8" fill="#FAF6F0">
+                  {/* Outer & Inner Stitched Accent Rings */}
+                  <circle cx="50" cy="50" r="46" fill="none" stroke="#C9956A" strokeWidth="0.8" opacity="0.4" strokeDasharray="2 2" />
+                  <circle cx="50" cy="50" r="28" fill="none" stroke="#C9956A" strokeWidth="0.8" opacity="0.5" />
+
+                  {/* Curved Text Path */}
+                  <path id="circlePathInbodyHero" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="none" />
+                  <text fontFamily="system-ui, -apple-system, sans-serif" fontSize="7.8" fontWeight="900" letterSpacing="2" fill="#FFFDF9">
                     <textPath href="#circlePathInbodyHero">
                       ✦ FIRST INBODY 380 CENTER ✦ IN DISTRICT
                     </textPath>
                   </text>
                 </motion.svg>
-                {/* Cosmo Home Official Favicon Icon in absolute center */}
+
+                {/* Cosmo Home Official Favicon Icon inside Golden Medallion */}
                 <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none">
-                  <img src="/icon.svg" alt="Cosmo Home Icon" className="w-5 h-5 sm:w-7 sm:h-7 object-contain drop-shadow-md" />
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#C9956A]/15 border border-[#C9956A]/30 flex items-center justify-center backdrop-blur-xs shadow-inner">
+                    <img src="/icon.svg" alt="Cosmo Home Icon" className="w-5 h-5 sm:w-6 sm:h-6 object-contain drop-shadow-[0_2px_8px_rgba(201,149,106,0.5)]" />
+                  </div>
                 </div>
               </motion.div>
             )}
