@@ -281,24 +281,11 @@ export default function ServicePage() {
           {/* Left — content */}
           <div className="relative z-10 flex flex-col justify-center px-5 sm:px-10 md:px-16 pt-8 pb-12 md:py-20 lg:py-0">
             <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-              {/* Social proof & District Exclusive badge */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-[#C9956A]/40 bg-[#FAF0E6] text-[#2C1810] h-8 sm:h-9 shadow-sm max-w-full">
-                  <span className="text-amber-500 text-xs sm:text-sm">★★★★★</span>
-                  <span className="text-[11px] sm:text-xs text-[#2C1810] font-semibold whitespace-nowrap" style={B}>{service.heroRating}</span>
-                </div>
-                {slug === "inbody-380" && (
-                  <motion.div
-                    animate={{ scale: [1, 1.03, 1] }}
-                    transition={{ repeat: Infinity, repeatDelay: 3.5, duration: 1.2, ease: "easeInOut" }}
-                    className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-[#2C1810] via-[#5C3D2E] to-[#2C1810] text-white border-2 border-[#C9956A] shadow-[0_0_16px_rgba(201,149,106,0.4)] h-8 sm:h-9 max-w-full cursor-pointer"
-                  >
-                    <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0 animate-pulse" />
-                    <span className="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-white whitespace-nowrap" style={M}>
-                      District's Only InBody 380 Center
-                    </span>
-                  </motion.div>
-                )}
+              {/* Social proof badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-6"
+                style={{ background: "rgba(201,149,106,0.12)", borderColor: "rgba(201,149,106,0.3)" }}>
+                <span className="text-yellow-400 text-sm">★★★★★</span>
+                <span className="text-xs text-[#2C1810]/80" style={B}>{service.heroRating}</span>
               </div>
             </motion.div>
 
@@ -376,6 +363,36 @@ export default function ServicePage() {
               alt={service.title} className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#FAF6F0] via-transparent to-transparent lg:from-transparent lg:via-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#FAF6F0]/60 to-transparent lg:from-[#FAF6F0]/10" />
+
+            {/* Floating Circular High-Tech Badge (Centered over vertical dividing line - Dr. Ruxana Style) */}
+            {slug === "inbody-380" && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="absolute top-6 -left-10 lg:-left-14 lg:top-8 z-30 w-20 h-20 sm:w-28 sm:h-28 bg-[#2C1810] text-[#FAF7F2] rounded-full shadow-2xl flex items-center justify-center border border-[#C9956A]/40 overflow-hidden group cursor-pointer"
+              >
+                {/* Rotating circular text SVG */}
+                <motion.svg
+                  viewBox="0 0 100 100"
+                  className="w-full h-full origin-center fill-current text-[#C9956A]"
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+                >
+                  <path id="circlePathInbodyHero" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+                  <text fontFamily="monospace" fontSize="6.5" fontWeight="bold" letterSpacing="1.8">
+                    <textPath href="#circlePathInbodyHero">
+                      ✦ FIRST INBODY 380 CENTER ✦ IN DISTRICT
+                    </textPath>
+                  </text>
+                </motion.svg>
+                {/* Small gold sparkle in the absolute center */}
+                <div className="absolute inset-0 flex items-center justify-center text-xs sm:text-base font-light text-[#FAF7F2] select-none">
+                  ✨
+                </div>
+              </motion.div>
+            )}
+
             {/* Floating trust card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}
@@ -585,7 +602,7 @@ export default function ServicePage() {
                             className="p-6 rounded-2xl border bg-white/60 border-[#C9956A]/12 text-[#5C4A42] hover:bg-white hover:border-[#C9956A]/35 transition-all duration-300 flex flex-col gap-3 relative overflow-hidden group"
                           >
                             <div className="absolute top-0 bottom-0 left-0 w-1 bg-[#C9956A]/0 group-hover:bg-[#C9956A]/80 transition-all duration-300" />
-                            
+
                             <div className="flex items-start gap-4">
                               <div className="w-10 h-10 rounded-xl bg-[#C9956A]/10 flex items-center justify-center text-[#C9956A] group-hover:bg-[#C9956A] group-hover:text-white transition-colors duration-300 shrink-0">
                                 <item.icon size={20} strokeWidth={2} />
@@ -644,7 +661,7 @@ export default function ServicePage() {
                             className="p-6 rounded-2xl border bg-white/60 border-[#C9956A]/12 text-[#5C4A42] hover:bg-white hover:border-[#C9956A]/35 transition-all duration-300 flex flex-col gap-3 relative overflow-hidden group"
                           >
                             <div className="absolute top-0 bottom-0 left-0 w-1 bg-[#C9956A]/0 group-hover:bg-[#C9956A]/80 transition-all duration-300" />
-                            
+
                             <div className="flex items-start gap-4">
                               <div className="w-10 h-10 rounded-xl bg-[#C9956A]/10 flex items-center justify-center text-[#C9956A] group-hover:bg-[#C9956A] group-hover:text-white transition-colors duration-300 shrink-0">
                                 <item.icon size={20} strokeWidth={2} />
@@ -906,7 +923,7 @@ export default function ServicePage() {
             </div>
           </div>
         </section>
-                     {/* ══ 5. SESSION PLAN — interactive ══ */}
+        {/* ══ 5. SESSION PLAN — interactive ══ */}
         <section className="py-6 md:py-14 bg-[#FAF6F0] relative overflow-hidden border-t border-[#2C1810]/5">
           {(() => {
             const stepPrefix = service.id === "inbody-380" ? "Inclusion" : "Session";
@@ -929,17 +946,16 @@ export default function ServicePage() {
                           const isActive = activeSession === i;
                           return (
                             <div key={s.n} className="flex flex-col gap-2">
-                              <motion.button 
+                              <motion.button
                                 onClick={() => setActiveSession(i)}
                                 whileHover={{ x: isActive ? 0 : 3 }}
-                                className={`relative text-left px-6 py-4.5 rounded-2xl border transition-all duration-300 cursor-pointer flex items-center justify-between gap-4 w-full ${
-                                  isActive 
-                                    ? "border-[#C9956A]/35 bg-[#FAF5EE] shadow-[0_12px_28px_rgba(201,149,106,0.05)] text-[#2C1810]" 
-                                    : "border-[#2C1810]/5 bg-white/65 hover:bg-white hover:border-[#C9956A]/20 text-[#5C4A42] hover:text-[#2C1810]"
-                                }`}
+                                className={`relative text-left px-6 py-4.5 rounded-2xl border transition-all duration-300 cursor-pointer flex items-center justify-between gap-4 w-full ${isActive
+                                  ? "border-[#C9956A]/35 bg-[#FAF5EE] shadow-[0_12px_28px_rgba(201,149,106,0.05)] text-[#2C1810]"
+                                  : "border-[#2C1810]/5 bg-white/65 hover:bg-white hover:border-[#C9956A]/20 text-[#5C4A42] hover:text-[#2C1810]"
+                                  }`}
                               >
                                 {isActive && (
-                                  <motion.div 
+                                  <motion.div
                                     layoutId="activeSessionIndicator"
                                     className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-[#C9956A] rounded-r-full"
                                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
@@ -954,7 +970,7 @@ export default function ServicePage() {
                                 </div>
                                 <ChevronRight size={14} className={`transition-all duration-300 shrink-0 ${isActive ? "text-[#C9956A] translate-x-0.5" : "text-[#2C1810]/30"}`} />
                               </motion.button>
- 
+
                               {/* Mobile Accordion Content */}
                               <AnimatePresence initial={false}>
                                 {isActive && (
@@ -966,12 +982,12 @@ export default function ServicePage() {
                                     transition={{ duration: 0.35, ease: EASE }}
                                   >
                                     <div className="pt-2 pb-4">
-                                      <div 
+                                      <div
                                         className="relative p-6 rounded-2xl overflow-hidden"
-                                        style={{ 
-                                          background: "linear-gradient(145deg, rgba(255,255,255,0.95), rgba(250,247,242,0.95))", 
-                                          border: "1px solid rgba(201,149,106,0.18)", 
-                                          boxShadow: "0 12px 28px rgba(44,24,16,0.04)" 
+                                        style={{
+                                          background: "linear-gradient(145deg, rgba(255,255,255,0.95), rgba(250,247,242,0.95))",
+                                          border: "1px solid rgba(201,149,106,0.18)",
+                                          boxShadow: "0 12px 28px rgba(44,24,16,0.04)"
                                         }}
                                       >
                                         <span className="absolute -top-4 -right-2 text-[90px] font-serif font-semibold leading-none select-none pointer-events-none opacity-20 text-[#C9956A]/30">
@@ -989,8 +1005,8 @@ export default function ServicePage() {
                                         </p>
                                         {s.image && (
                                           <div className="rounded-xl overflow-hidden border border-[#2C1810]/5 bg-[#FAF6F0] aspect-[16/10] relative shadow-inner">
-                                            <img 
-                                              src={s.image} 
+                                            <img
+                                              src={s.image}
                                               alt={s.label}
                                               className="w-full h-full object-cover"
                                             />
@@ -1006,65 +1022,65 @@ export default function ServicePage() {
                         })}
                       </div>
                     </FadeUp>
- 
+
                     <div className="hidden lg:block lg:pt-16 w-full">
                       <AnimatePresence mode="wait">
-                        <motion.div 
-                          key={activeSession} 
-                          initial={{ opacity: 0, y: 20 }} 
+                        <motion.div
+                          key={activeSession}
+                          initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -12 }} 
+                          exit={{ opacity: 0, y: -12 }}
                           transition={{ duration: 0.35, ease: EASE }}
                         >
-                          <div 
+                          <div
                             className="relative p-8 md:p-10 rounded-[32px] overflow-hidden backdrop-blur-md"
-                            style={{ 
-                              background: "linear-gradient(145deg, rgba(255,255,255,0.95), rgba(250,247,242,0.95))", 
-                              border: "1px solid rgba(201,149,106,0.18)", 
-                              boxShadow: "0 24px 60px rgba(44,24,16,0.04)" 
+                            style={{
+                              background: "linear-gradient(145deg, rgba(255,255,255,0.95), rgba(250,247,242,0.95))",
+                              border: "1px solid rgba(201,149,106,0.18)",
+                              boxShadow: "0 24px 60px rgba(44,24,16,0.04)"
                             }}
                           >
                             {/* Decorative gold circular gradient in corner */}
                             <div className="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-[#C9956A]/5 blur-2xl pointer-events-none" />
- 
+
                             {/* Ghost number */}
                             <span className="absolute -top-6 -right-2 text-[140px] font-serif font-semibold leading-none select-none pointer-events-none opacity-20 text-[#C9956A]/40">
                               0{activeSession + 1}
                             </span>
- 
+
                             <span className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] mb-2 font-semibold block" style={M}>
                               {stepPrefix} 0{activeSession + 1} {service.sessionPlanSteps[activeSession].duration && ` · ${service.sessionPlanSteps[activeSession].duration}`}
                             </span>
- 
+
                             <h3 className="text-2xl sm:text-3xl text-[#2C1810] mb-4 font-normal" style={D}>
                               {service.sessionPlanSteps[activeSession].label}
                             </h3>
-                            
+
                             <div className="h-0.5 w-10 bg-[#C9956A] mb-6 rounded-full" />
-                            
+
                             <p className="text-base text-[#5C4A42] leading-relaxed mb-6" style={B}>
                               {service.sessionPlanSteps[activeSession].detail}
                             </p>
- 
+
                             {service.sessionPlanSteps[activeSession].image && (
                               <div className="rounded-2xl overflow-hidden border border-[#2C1810]/5 bg-[#FAF6F0] aspect-[16/10] relative shadow-inner">
-                                <img 
-                                  src={service.sessionPlanSteps[activeSession].image} 
+                                <img
+                                  src={service.sessionPlanSteps[activeSession].image}
                                   alt={service.sessionPlanSteps[activeSession].label}
                                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                                 />
                               </div>
                             )}
                           </div>
- 
+
                           {/* Progress indicator */}
                           <div className="flex gap-2 mt-6">
                             {service.sessionPlanSteps.map((_, i) => (
-                              <motion.div 
-                                key={i} 
+                              <motion.div
+                                key={i}
                                 className="h-1 flex-1 rounded-full"
                                 animate={{ backgroundColor: i <= activeSession ? "#C9956A" : "rgba(201,149,106,0.2)" }}
-                                transition={{ duration: 0.3 }} 
+                                transition={{ duration: 0.3 }}
                               />
                             ))}
                           </div>
@@ -1099,13 +1115,12 @@ export default function ServicePage() {
             </div>
 
             {/* Desktop: staggered cards */}
-            <div className={`hidden lg:grid gap-4 ${
-              service.timelineItems.length === 6 
-                ? "grid-cols-6" 
-                : service.timelineItems.length === 5 
-                  ? "grid-cols-5" 
-                  : "grid-cols-4"
-            }`}>
+            <div className={`hidden lg:grid gap-4 ${service.timelineItems.length === 6
+              ? "grid-cols-6"
+              : service.timelineItems.length === 5
+                ? "grid-cols-5"
+                : "grid-cols-4"
+              }`}>
               {service.timelineItems.map((t, i) => (
                 <FadeUp key={t.when} delay={i * 0.1}>
                   <motion.div whileHover={{ y: -8, boxShadow: "0 16px 48px rgba(201,149,106,0.18)" }}
