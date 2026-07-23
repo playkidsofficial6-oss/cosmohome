@@ -433,7 +433,7 @@ export default function DrRuxanaPage() {
       </section>
 
       {/* ═╦═ 4. SIGNATURE CONSULTATION CTA (MODERN SPLIT DESIGN) ═╦═ */}
-      <section className="py-20 md:py-28 px-6 md:px-16 lg:px-24 bg-[#FAF7F2] relative overflow-hidden border-t border-[#2C1810]/5">
+      <section className="py-10 md:py-14 px-6 md:px-16 lg:px-24 bg-[#FAF7F2] relative overflow-hidden border-t border-[#2C1810]/5">
         {/* Decorative background elements */}
         <div className="absolute inset-0 opacity-[0.02] z-0 pointer-events-none" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full pointer-events-none z-0 opacity-20" style={{ background: "radial-gradient(circle, rgba(201,149,106,0.1) 0%, transparent 70%)" }} />

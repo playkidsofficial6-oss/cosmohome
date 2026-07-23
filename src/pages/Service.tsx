@@ -505,7 +505,7 @@ export default function ServicePage() {
 
         {/* InBody 380 Diagnostic Results Section */}
         {slug === "inbody-380" && (
-          <section className="py-16 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
+          <section className="py-10 md:py-14 px-5 sm:px-10 md:px-16 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
             <div className="max-w-7xl mx-auto">
               {/* Heading */}
               <div className="text-center mb-12 md:mb-20">
@@ -683,7 +683,7 @@ export default function ServicePage() {
           </section>
         )}
         {/* ══ 2. WHAT IS THIS ══ */}
-        <section className="pt-6 pb-12 md:pt-12 md:pb-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
+        <section className="pt-6 pb-12 md:pt-10 md:pb-14 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-20 items-center">
               <FadeUp>
@@ -741,7 +741,7 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 3. MACHINE ══ */}
-        <section className="py-6 md:py-28 bg-[#FAF6F0] relative overflow-hidden border-t border-[#2C1810]/5">
+        <section className="py-6 md:py-14 bg-[#FAF6F0] relative overflow-hidden border-t border-[#2C1810]/5">
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />
           <motion.div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(201,149,106,0.1) 0%, transparent 65%)" }}
@@ -844,7 +844,7 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 4. WHO NEEDS THIS ══ */}
-        <section className="py-6 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
+        <section className="py-6 md:py-14 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-[380px_1fr] gap-6 lg:gap-20 items-start">
               <FadeUp>
@@ -894,7 +894,7 @@ export default function ServicePage() {
           </div>
         </section>
                      {/* ══ 5. SESSION PLAN — interactive ══ */}
-        <section className="py-6 md:py-28 bg-[#FAF6F0] relative overflow-hidden border-t border-[#2C1810]/5">
+        <section className="py-6 md:py-14 bg-[#FAF6F0] relative overflow-hidden border-t border-[#2C1810]/5">
           {(() => {
             const stepPrefix = service.id === "inbody-380" ? "Inclusion" : "Session";
             return (
@@ -1069,7 +1069,7 @@ export default function ServicePage() {
         </section>
 
         {/* ══ 6. RESULTS TIMELINE ══ */}
-        <section className="py-6 md:py-28 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
+        <section className="py-6 md:py-14 px-5 sm:px-10 md:px-16 bg-[#FAF7F2]">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-6 gap-6">
               <FadeUp>
@@ -1147,7 +1147,7 @@ export default function ServicePage() {
             style={{ background: "radial-gradient(circle, rgba(201,149,106,0.15) 0%, transparent 70%)" }}
             animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }} transition={{ duration: 7, repeat: Infinity }} />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-10 md:px-16 py-6 md:py-36">
+          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-10 md:px-16 py-6 md:py-20">
             <div className="grid lg:grid-cols-[1fr_auto] gap-14 lg:gap-24 items-center">
               <FadeUp>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 border"
