@@ -1257,7 +1257,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     sessionPlanTag: "BCA Blueprint",
     sessionPlanDesc: "Each Body Composition Analysis (BCA) at Cosmo Home is a comprehensive clinical assessment designed to provide a precise roadmap for your health and aesthetic journey.",
     sessionPlanSteps: [
-      { n: "01", label: "Full body scan", duration: "", detail: "A fast, non-invasive bioelectrical impedance scan using the InBody 380, segmentally measuring your muscle, fat, and cellular water.", image: "/services/body-inbody-380/inbody-380-tech.png" },
+      { n: "01", label: "Full body scan", duration: "", detail: "A fast, non-invasive bioelectrical impedance scan using the InBody 380, segmentally measuring your muscle, fat, and cellular water.", image: "/services/body-inbody-380/inbody-380-tech.webp" },
       { n: "02", label: "Doctor consultation", duration: "", detail: "A detailed consultation with our specialist doctors to understand your diagnostic indicators, lifestyle factors, and aesthetic goals.", image: "/services/body-inbody-380/inbody-checkup.webp" },
       { n: "03", label: "Personalized explanation", duration: "", detail: "A segment-by-segment review of your muscle architecture, visceral fat rating, phase angle, and body water balance so you understand your baseline.", image: "/services/body-inbody-380/inbody-deatails.webp" },
       { n: "04", label: "Digital report", duration: "", detail: "Receive a comprehensive digital body composition report sheet containing precise clinical values and historical charts to track your transformation.", image: "/services/body-inbody-380/380-result2.jpg" },
