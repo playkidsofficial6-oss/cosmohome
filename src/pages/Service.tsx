@@ -1086,21 +1086,27 @@ export default function ServicePage() {
             </div>
 
             {/* Desktop: staggered cards */}
-            <div className="hidden lg:grid grid-cols-5 gap-4">
+            <div className={`hidden lg:grid gap-4 ${
+              service.timelineItems.length === 6 
+                ? "grid-cols-6" 
+                : service.timelineItems.length === 5 
+                  ? "grid-cols-5" 
+                  : "grid-cols-4"
+            }`}>
               {service.timelineItems.map((t, i) => (
                 <FadeUp key={t.when} delay={i * 0.1}>
                   <motion.div whileHover={{ y: -8, boxShadow: "0 16px 48px rgba(201,149,106,0.18)" }}
                     transition={{ type: "spring", stiffness: 240 }}
                     className={`relative p-5 rounded-2xl flex flex-col ${i % 2 === 1 ? "mt-8" : ""}`}
                     style={{ background: "#FFFFFF", border: "1px solid rgba(201,149,106,0.2)", boxShadow: "0 4px 20px rgba(44,24,16,0.05)" }}>
-                    <span className="text-2xl mb-3">{t.icon || ["✨", "🌱", "🌿", "🌸", "🏆"][i]}</span>
+                    <span className="text-2xl mb-3">{t.icon || ["✨", "🌱", "🌿", "🌸", "🏆", "🌟"][i]}</span>
                     <p className="text-xs tracking-[0.22em] uppercase text-[#C9956A] mb-2" style={M}>{t.when}</p>
                     <p className="text-sm text-[#2C1810] leading-relaxed flex-1" style={B}>{t.what}</p>
                     {/* Fill bar */}
                     <div className="mt-4 h-1 rounded-full" style={{ background: "rgba(201,149,106,0.12)" }}>
                       <motion.div className="h-full rounded-full bg-[#C9956A]"
                         initial={{ width: "0%" }}
-                        whileInView={{ width: `${20 + i * 20}%` }}
+                        whileInView={{ width: `${Math.round(((i + 1) / service.timelineItems.length) * 100)}%` }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.9, delay: 0.2 + i * 0.1 }} />
                     </div>

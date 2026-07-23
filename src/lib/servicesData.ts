@@ -48,7 +48,7 @@ export interface ServiceData {
   sessionPlanTitle?: string;
   sessionPlanTitleEmphasized?: string;
   sessionPlanDesc: string;
-  sessionPlanSteps: Array<{ n: string; label: string; duration: string; detail: string }>;
+  sessionPlanSteps: Array<{ n: string; label: string; duration: string; detail: string, image?: string }>;
 
   // Section 6: Results timeline
   timelineTag?: string;
@@ -1207,7 +1207,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     whatIsThisTitle: "Before Any Treatment,",
     whatIsThisEmphasized: "Know Your Body First.",
     whatIsThisDesc1: "Many people rely only on the weighing scale—but weight alone doesn't tell the full story.<br/><br/>A Body Composition Analysis reveals how much of your body is muscle, fat, water, and visceral fat, helping our doctors understand your body before recommending the right treatment plan.",
-    whatIsThisDesc2: "Under Dr. Ruxana's guidance, this analysis is used to plan targeted contouring treatments, customize muscle-building protocols, track real visceral fat reduction, and manage cell health. It offers a clear, objective metric of your progress over time.",
+    whatIsThisDesc2: "Under expert medical guidance, this analysis is used to plan targeted contouring treatments, customize muscle-building protocols, track real visceral fat reduction, and manage cell health. It offers a clear, objective metric of your progress over time.",
     benefits: [
       { icon: "💪", b: "Know if you're losing fat or muscle", d: "Measures skeletal muscle and fat mass individually in each arm, leg, and the trunk." },
       { icon: "🧬", b: "Visceral Fat Tracking", d: "Identifies hidden abdominal fat levels linked to metabolic health." },
@@ -1264,12 +1264,17 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { n: "05", label: "Treatment recommendations", duration: "if required", detail: "Tailored recommendations for body contouring, muscle building, fat loss, or skin protocols aligned with your clinical body structure.", image: "/services/body-inbody-380/380-result3.jpg" },
       { n: "06", label: "Progress tracking", duration: "", detail: "Consistent tracking baseline to monitor real cellular and structural changes every 4 to 6 weeks, verifying actual fat reduction rather than weight fluctuations.", image: "/services/body-inbody-380/380-result1.jpg" }
     ],
-    timelineDesc: "You receive a complete physical and digital printout instantly. Follow-up scans show your progressive body transformation.",
+    timelineTag: "The Difference",
+    timelineTitle: "Most people trust",
+    timelineTitleEmphasized: "the scale.",
+    timelineDesc: "The scale only tells your weight. We tell you the rest—revealing the crucial details that make a huge difference.",
     timelineItems: [
-      { when: "Day of Scan", what: "Instant detailed report sheet showing muscle mass, fat mass, visceral fat, and body water balance." },
-      { when: "Week 4", what: "Follow-up scan tracks early changes in fat reduction and muscle toning from treatments/diet." },
-      { when: "Week 8", what: "Second review maps trends in segment-specific muscle gain and fat loss." },
-      { when: "Month 3+", what: "Substantial body composition shift is documented. Visceral fat reduction is clearly visible on charts." }
+      { icon: "💪", when: "Muscle", what: "Accurately calculates your skeletal muscle structure across all segments." },
+      { icon: "📊", when: "Fat", what: "Measures overall body fat mass and under-skin fat proportions." },
+      { icon: "💧", when: "Water", what: "Differentiates intracellular vs extracellular water to monitor bloating." },
+      { icon: "🧬", when: "Visceral Fat", what: "Tracks deeper abdominal fat surrounding organs linked to metabolic risk." },
+      { icon: "⚖️", when: "Body Balance", what: "Compares left/right and upper/lower muscle balance for posture analysis." },
+      { icon: "📈", when: "Metabolic Health", what: "Analyzes phase angle and cellular health index to guide treatment paths." }
     ],
     ctaQuickFacts: [
       { label: "Price from", val: "₹2,500 / session" },
