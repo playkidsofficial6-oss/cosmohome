@@ -289,12 +289,19 @@ export default function ServicePage() {
                   <span className="text-[11px] sm:text-xs text-[#2C1810]/80 whitespace-nowrap" style={B}>{service.heroRating}</span>
                 </div>
                 {slug === "inbody-380" && (
-                  <div className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-1.5 sm:py-2 rounded-full bg-[#B47C56] text-white shadow-sm border border-[#9E6944] h-8 sm:h-9 w-[275px] max-w-full sm:w-auto">
-                    <span className="text-xs sm:text-sm leading-none">👑</span>
-                    <span className="text-[11px] sm:text-xs font-bold tracking-wider uppercase text-white whitespace-nowrap" style={M}>
+                  <motion.div
+                    animate={{ scale: [1, 1.04, 1] }}
+                    transition={{ repeat: Infinity, repeatDelay: 3.5, duration: 1.2, ease: "easeInOut" }}
+                    className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-[#2C1810] via-[#8C5D47] to-[#2C1810] text-white border-2 border-[#C9956A] shadow-[0_0_20px_rgba(201,149,106,0.5)] h-8 sm:h-9 w-[275px] max-w-full sm:w-auto"
+                  >
+                    <span className="relative flex h-2.5 w-2.5 shrink-0">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-80"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400"></span>
+                    </span>
+                    <span className="text-[10px] sm:text-[11px] font-extrabold tracking-[0.16em] uppercase text-white whitespace-nowrap" style={M}>
                       District's Only InBody 380 Center
                     </span>
-                  </div>
+                  </motion.div>
                 )}
               </div>
             </motion.div>
