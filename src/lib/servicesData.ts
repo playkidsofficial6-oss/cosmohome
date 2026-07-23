@@ -1209,7 +1209,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     whatIsThisDesc1: "Many people rely only on the weighing scale—but weight alone doesn't tell the full story.<br/><br/>A Body Composition Analysis reveals how much of your body is muscle, fat, water, and visceral fat, helping our doctors understand your body before recommending the right treatment plan.",
     whatIsThisDesc2: "Under Dr. Ruxana's guidance, this analysis is used to plan targeted contouring treatments, customize muscle-building protocols, track real visceral fat reduction, and manage cell health. It offers a clear, objective metric of your progress over time.",
     benefits: [
-      { icon: "📊", b: "Know if you're losing fat or muscle", d: "Measures skeletal muscle and fat mass individually in each arm, leg, and the trunk." },
+      { icon: "💪", b: "Know if you're losing fat or muscle", d: "Measures skeletal muscle and fat mass individually in each arm, leg, and the trunk." },
       { icon: "🧬", b: "Visceral Fat Tracking", d: "Identifies hidden abdominal fat levels linked to metabolic health." },
       { icon: "💧", b: "Understand bloating & water retention", d: "Tracks intracellular and extracellular water to evaluate swelling or retention." },
       { icon: "📈", b: "Track real results—not just your weight", d: "Generates clear clinical charts to track actual muscle gain and fat loss over time." }
