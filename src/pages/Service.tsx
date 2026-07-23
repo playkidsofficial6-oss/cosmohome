@@ -282,23 +282,19 @@ export default function ServicePage() {
           <div className="relative z-10 flex flex-col justify-center px-5 sm:px-10 md:px-16 pt-8 pb-12 md:py-20 lg:py-0">
             <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
               {/* Social proof & District Exclusive badge */}
-              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-4 sm:mb-6">
-                <div className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-1.5 sm:py-2 rounded-full border h-8 sm:h-9 w-[275px] max-w-full sm:w-auto"
-                  style={{ background: "rgba(201,149,106,0.12)", borderColor: "rgba(201,149,106,0.3)" }}>
-                  <span className="text-yellow-400 text-xs sm:text-sm">★★★★★</span>
-                  <span className="text-[11px] sm:text-xs text-[#2C1810]/80 whitespace-nowrap" style={B}>{service.heroRating}</span>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+                <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-[#C9956A]/40 bg-[#FAF0E6] text-[#2C1810] h-8 sm:h-9 shadow-sm max-w-full">
+                  <span className="text-amber-500 text-xs sm:text-sm">★★★★★</span>
+                  <span className="text-[11px] sm:text-xs text-[#2C1810] font-semibold whitespace-nowrap" style={B}>{service.heroRating}</span>
                 </div>
                 {slug === "inbody-380" && (
                   <motion.div
-                    animate={{ scale: [1, 1.04, 1] }}
+                    animate={{ scale: [1, 1.03, 1] }}
                     transition={{ repeat: Infinity, repeatDelay: 3.5, duration: 1.2, ease: "easeInOut" }}
-                    className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-[#2C1810] via-[#8C5D47] to-[#2C1810] text-white border-2 border-[#C9956A] shadow-[0_0_20px_rgba(201,149,106,0.5)] h-8 sm:h-9 w-[275px] max-w-full sm:w-auto"
+                    className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-[#2C1810] via-[#5C3D2E] to-[#2C1810] text-white border-2 border-[#C9956A] shadow-[0_0_16px_rgba(201,149,106,0.4)] h-8 sm:h-9 max-w-full cursor-pointer"
                   >
-                    <span className="relative flex h-2.5 w-2.5 shrink-0">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-80"></span>
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400"></span>
-                    </span>
-                    <span className="text-[10px] sm:text-[11px] font-extrabold tracking-[0.16em] uppercase text-white whitespace-nowrap" style={M}>
+                    <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0 animate-pulse" />
+                    <span className="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-white whitespace-nowrap" style={M}>
                       District's Only InBody 380 Center
                     </span>
                   </motion.div>

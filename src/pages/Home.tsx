@@ -693,7 +693,7 @@ export function Experiences() {
                     <p className="text-sm text-[#5C4A42] leading-loose mb-5" style={B}>{e.desc}</p>
                     {i === 0 || i === 1 || i === 2 || i === 3 || i === 4 ? (
                       <div className="mb-5">
-                        <p className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] mb-3 font-semibold" style={M}>Includes</p>
+                        <p className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] mb-3 font-semibold" style={M}>Key Treatments</p>
                         <div className="flex flex-wrap gap-2">
                           {(i === 0 ? [
                             { name: "HIFU", slug: "hifu" },
@@ -778,7 +778,7 @@ export function Experiences() {
                 <p className="text-base text-[#5C4A42] leading-loose mb-7" style={B}>{exps[active].desc}</p>
                 {active === 0 || active === 1 || active === 2 || active === 3 || active === 4 ? (
                   <div className="mb-8">
-                    <p className="text-xs tracking-[0.25em] uppercase text-[#C9956A] mb-4 font-semibold" style={M}>Includes</p>
+                    <p className="text-xs tracking-[0.25em] uppercase text-[#C9956A] mb-4 font-semibold" style={M}>Key Treatments</p>
                     <div className="flex flex-wrap gap-3">
                       {(active === 0 ? [
                         { name: "HIFU", slug: "hifu" },
