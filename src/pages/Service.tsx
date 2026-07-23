@@ -281,15 +281,15 @@ export default function ServicePage() {
           {/* Left — content */}
           <div className="relative z-10 flex flex-col justify-center px-5 sm:px-10 md:px-16 pt-8 pb-12 md:py-20 lg:py-0">
             <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-              {/* Social proof badge & InBody District Badge */}
+              {/* Social proof badge & InBody District Badge (Matching Exact Same Height) */}
               <div className="flex flex-wrap items-center gap-3 mb-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border shrink-0"
+                <div className="inline-flex items-center gap-2 px-4.5 h-10 sm:h-[42px] rounded-full border shrink-0"
                   style={{ background: "rgba(201,149,106,0.12)", borderColor: "rgba(201,149,106,0.3)" }}>
                   <span className="text-yellow-400 text-sm">★★★★★</span>
                   <span className="text-xs text-[#2C1810]/80" style={B}>{service.heroRating}</span>
                 </div>
 
-                {/* Premium Luxury Healthcare Announcement Badge */}
+                {/* Premium Luxury Healthcare Announcement Badge with Orbiting Comet Border */}
                 {slug === "inbody-380" && (
                   <motion.div
                     initial={{ opacity: 0, y: -6 }}
@@ -309,23 +309,41 @@ export default function ServicePage() {
                       </svg>
                     </div>
 
-                    {/* Capsule Container */}
-                    <div className="relative h-[46px] sm:h-[48px] px-5 sm:px-6 rounded-full border-[1.5px] border-[#C9956A]/70 group-hover:border-[#C9956A] bg-gradient-to-b from-[#FFFDF9] to-[#FAF4EC] shadow-[0_8px_25px_rgba(201,149,106,0.18)] group-hover:shadow-[0_12px_32px_rgba(201,149,106,0.28)] group-hover:-translate-y-0.5 transition-all duration-300 ease-out flex items-center gap-3 cursor-pointer">
-                      {/* Left Gold Star with Smooth Zoom In / Zoom Out Animation (No BG Circle) */}
-                      <motion.div
-                        animate={{ scale: [1, 1.28, 1] }}
-                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                        className="shrink-0 text-[#C9956A] flex items-center justify-center"
-                      >
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-xs">
-                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                      </motion.div>
+                    {/* Outer Capsule Frame with Orbiting Comet Border Light Beam */}
+                    <div className="relative rounded-full p-[1.5px] overflow-hidden shadow-[0_8px_25px_rgba(201,149,106,0.18)] group-hover:shadow-[0_12px_32px_rgba(201,149,106,0.28)] group-hover:-translate-y-0.5 transition-all duration-300 ease-out cursor-pointer">
+                      {/* Base border fallback */}
+                      <div className="absolute inset-0 rounded-full border border-[#C9956A]/40 z-0" />
 
-                      {/* Badge Text */}
-                      <span className="text-[10.5px] sm:text-[11.5px] font-semibold tracking-[0.28em] uppercase text-[#4B3628] whitespace-nowrap" style={M}>
-                        First InBody 380 Center in the District
-                      </span>
+                      {/* Orbiting Golden Comet Light Beam (Continuous 1-Direction Smooth Orbit) */}
+                      <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none z-0">
+                        <motion.div
+                          className="absolute -top-[125%] -left-[125%] w-[350%] h-[350%] aspect-square transform-gpu will-change-transform"
+                          style={{
+                            background: "conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 270deg, rgba(201,149,106,0.25) 310deg, #C9956A 345deg, #FFFFFF 360deg)",
+                          }}
+                          animate={{ rotate: 360 }}
+                          transition={{ repeat: Infinity, duration: 3.6, ease: "linear" }}
+                        />
+                      </div>
+
+                      {/* Inner Capsule Content Container (Matching Height h-10 sm:h-[42px]) */}
+                      <div className="relative z-10 h-9 sm:h-[42px] px-3.5 sm:px-6 rounded-full bg-gradient-to-b from-[#FFFDF9] to-[#FAF4EC] flex items-center justify-center gap-2 sm:gap-3 max-w-full">
+                        {/* Left Gold Star with Smooth Zoom In / Zoom Out Animation */}
+                        <motion.div
+                          animate={{ scale: [1, 1.28, 1] }}
+                          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                          className="shrink-0 text-[#C9956A] flex items-center justify-center"
+                        >
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-xs sm:w-4 sm:h-4">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                          </svg>
+                        </motion.div>
+
+                        {/* Badge Text (Matching Rating Badge Font Style B) */}
+                        <span className="text-[11px] sm:text-xs font-medium text-[#2C1810]/90 whitespace-nowrap tracking-normal" style={B}>
+                          First InBody 380 Center in the District
+                        </span>
+                      </div>
                     </div>
                   </motion.div>
                 )}
