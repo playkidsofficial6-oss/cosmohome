@@ -1322,7 +1322,7 @@ export default function ServicePage() {
                         </motion.button>
 
                         <p className="text-[10px] text-[#5C4A42]/70 text-center" style={B}>
-                          {service.ctaFormFooter || "Dr. Ruxana personally reviews every request. 💛"}
+                          {service.ctaFormFooter || "Our team personally reviews every request. 💛"}
                         </p>
                       </motion.form>
                     ) : (
@@ -1348,7 +1348,7 @@ export default function ServicePage() {
                           {service.ctaFormSuccessTitle || "Thank you."}
                         </p>
                         <p className="text-xs text-[#5C4A42] leading-loose max-w-[250px]" style={B}>
-                          {service.ctaFormSuccessDesc || "Dr. Ruxana will personally review your request and be in touch within 24 hours. Your journey begins now."}
+                          {service.ctaFormSuccessDesc || "Our team will personally review your request and be in touch within 24 hours. Your journey begins now."}
                         </p>
                       </motion.div>
                     )}
