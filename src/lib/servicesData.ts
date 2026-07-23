@@ -116,7 +116,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     whatIsThisTitle: "A journey to",
     whatIsThisEmphasized: "your skin's structural core.",
     whatIsThisDesc1: "True rejuvenation does not mask or pull; it rebuilds. The Cosmo Home HIFU experience delivers calibrated ultrasound energy deep into the SMAS layer—the same structural foundation lifted during surgery. By stimulating your cells from within, it triggers a gentle, progressive renewal that honors your natural expressions.",
-    whatIsThisDesc2: "Guided by Dr. Ruxana's medical artistry, parameters are personalized to the unique contours of your face. As new collagen develops over the coming months, your skin lifts and firms naturally—revealing a refreshed, timeless version of yourself.",
+    whatIsThisDesc2: "Under expert medical guidance, parameters are personalized to the unique contours of your face. As new collagen develops over the coming months, your skin lifts and firms naturally—revealing a refreshed, timeless version of yourself.",
     benefits: [
       { icon: "🧬", b: "Deep Collagen Activation", d: "Stimulates collagen where structural support begins." },
       { icon: "📈", b: "Tightens & Lifts Over Time", d: "Gradual improvement with beautifully natural results." },
@@ -1406,7 +1406,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     whatIsThisTitle: "The art of",
     whatIsThisEmphasized: "preserved expression.",
     whatIsThisDesc1: "A dynamic face is a beautiful face. We use premium, FDA-approved purified proteins to gently relax hyperactive muscles that cause forehead creases, frown lines, and crow's feet. Instead of freezing movement, we calibrate the dose to soften shadows.",
-    whatIsThisDesc2: "Administered with Dr. Ruxana's precise understanding of facial muscle networks, the treatment takes minutes but offers months of restfulness. You look refreshed, relaxed, and entirely like yourself.",
+    whatIsThisDesc2: "Administered with a precise understanding of facial muscle networks, the treatment takes minutes but offers months of restfulness. You look refreshed, relaxed, and entirely like yourself.",
     benefits: [
       { icon: "✨", b: "Smooths Fine Lines", d: "Visibly softens forehead lines, frown lines, and crow's feet." },
       { icon: "🛡️", b: "Preventive Care", d: "Keeps static wrinkles from forming over time." },
@@ -2118,7 +2118,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     whatIsThisTitle: "Deep thermal vectors",
     whatIsThisEmphasized: "for scar restructuring.",
     whatIsThisDesc1: "We use insulated, gold-plated micro-needles to deliver radiofrequency thermal energy directly into the deep dermis layers. By leaving the outer skin intact, we trigger powerful collagen remodeling with minimal surface redness.",
-    whatIsThisDesc2: "This treatment is highly effective for lifting depressed acne scars, tightening a softening jawline, and refining skin texture. The parameters are carefully calibrated by Dr. Ruxana to suit your skin structure.",
+    whatIsThisDesc2: "This treatment is highly effective for lifting depressed acne scars, tightening a softening jawline, and refining skin texture. The parameters are carefully calibrated to suit your unique skin structure.",
     benefits: [
       { icon: "🧬", b: "Deep Remodeling", d: "Stimulates collagen synthesis in the deep dermis layers." },
       { icon: "🎯", b: "Smoothes Acne Scars", d: "Plumps up deep rolling and boxcar scars." },
@@ -2912,7 +2912,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     whatIsThisTitle: "Harvesting your body's",
     whatIsThisEmphasized: "indigenous healing power.",
     whatIsThisDesc1: "Your cells hold the blueprint for skin health. Platelet-Rich Plasma (PRP) utilizes a concentrated pool of your own platelets. When micro-injected, these active cells release natural growth factors that stimulate tissue repair, smooth lines, and support dermal regeneration.",
-    whatIsThisDesc2: "Prepared in a sterile closed system under Dr. Ruxana's medical guidance, the blood sample is centrifuged to separate active platelets from unwanted red and white blood cells. This pure plasma is then delivered precisely to restore density and radiance.",
+    whatIsThisDesc2: "Prepared in a sterile closed system under strict medical supervision, the blood sample is centrifuged to separate active platelets from unwanted red and white blood cells. This pure plasma is then delivered precisely to restore density and radiance.",
     benefits: [
       { icon: "🧬", b: "Bio-regenerative healing", d: "Uses natural cell-signaling pathways for repair" },
       { icon: "🧪", b: "Collagen Remodelling", d: "Improves skin elasticity, fine lines, and under-eye hollows." },
@@ -4575,7 +4575,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaTitle: "Ready to revitalize your hair",
     ctaTitle2: "with medical laser precision?",
     ctaEmphasized: "Book your consultation.",
-    ctaDesc: "Schedule a scalp evaluation with Dr. Ruxana and our dermatology experts.",
+    ctaDesc: "Schedule a scalp evaluation with our specialist dermatology team.",
     ctaQuickFacts: [
       { label: "Price from", val: "₹4,500 / session" },
       { label: "Duration", val: "45 minutes" },
