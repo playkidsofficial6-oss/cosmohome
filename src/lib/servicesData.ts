@@ -1239,7 +1239,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "US-FDA CLEARED • BIOELECTRICAL IMPEDANCE • CLINICAL DIAGNOSTICS",
     deviceDesc: "The InBody 380 uses advanced multi-frequency bioelectrical impedance analysis (BIA) with an 8-point tactile electrode system. By sending multiple currents at different frequencies, it penetrates cell membranes to accurately differentiate between intracellular and extracellular water, ensuring high-precision results that correlate closely with gold-standard DEXA scans.",
     deviceFeatures: ["8-Point Tactile Electrodes", "Dual Wavelength/Frequency Currents", "Segmental Direct Impedance Analysis (DSM-BIA)", "Zero empirical estimations used"],
-    deviceImage: "/services/body-inbody-380/inbody-380-tech.png",
+    deviceImage: "/services/body-inbody-380/inbody-380-tech.webp",
     comparisonTitle: "InBody 380 vs Standard InBody Models",
     ourDeviceLabel: "InBody 380",
     standardClinicLabel: "InBody (260s,270s)",
