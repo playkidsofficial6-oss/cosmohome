@@ -281,11 +281,87 @@ export default function ServicePage() {
           {/* Left — content */}
           <div className="relative z-10 flex flex-col justify-center px-5 sm:px-10 md:px-16 pt-8 pb-12 md:py-20 lg:py-0">
             <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-              {/* Social proof badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-6"
-                style={{ background: "rgba(201,149,106,0.12)", borderColor: "rgba(201,149,106,0.3)" }}>
-                <span className="text-yellow-400 text-sm">★★★★★</span>
-                <span className="text-xs text-[#2C1810]/80" style={B}>{service.heroRating}</span>
+              {/* Social proof badge & InBody District Badge (Matching Height, Width & Left Alignment on Mobile) */}
+              <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-3 mb-6 w-full max-w-[360px] sm:max-w-none">
+                <div className="inline-flex items-center justify-start sm:justify-center gap-2.5 px-5 h-[42px] rounded-full border shrink-0 w-full sm:w-auto"
+                  style={{ background: "rgba(201,149,106,0.12)", borderColor: "rgba(201,149,106,0.3)" }}>
+                  <span className="text-yellow-400 text-sm">★★★★★</span>
+                  <span className="text-xs text-[#2C1810]/80" style={B}>{service.heroRating}</span>
+                </div>
+
+                {/* InBody District Badge with Decorative Side Accents */}
+                {slug === "inbody-380" && (
+                  <div className="relative inline-block w-full sm:w-auto">
+                    {/* Top-Right Radiant Rays Accent */}
+                    <motion.div
+                      animate={{ scale: [1, 1.15, 1], rotate: [0, 8, 0] }}
+                      transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                      className="absolute -top-3.5 -right-3.5 z-20 pointer-events-none text-[#C9956A]"
+                    >
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 transform rotate-12">
+                        <path d="M12 3V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <path d="M19 6L16.2 8.8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <path d="M21 13H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                      </svg>
+                    </motion.div>
+
+                    {/* Bottom-Right Twinkling Golden Sparkle Accent */}
+                    <motion.span
+                      animate={{ opacity: [0.3, 0.9, 0.3], scale: [0.85, 1.25, 0.85] }}
+                      transition={{ repeat: Infinity, duration: 2.4, ease: "easeInOut", delay: 0.4 }}
+                      className="absolute -bottom-2.5 -right-1 z-20 pointer-events-none text-[#C9956A] text-[13px]"
+                    >
+                      ✦
+                    </motion.span>
+
+                    {/* Top-Left Twinkling Golden Sparkle Accent */}
+                    <motion.span
+                      animate={{ opacity: [0.3, 0.85, 0.3], scale: [0.8, 1.15, 0.8] }}
+                      transition={{ repeat: Infinity, duration: 2.8, ease: "easeInOut" }}
+                      className="absolute -top-2.5 -left-1.5 z-20 pointer-events-none text-[#C9956A] text-[11px]"
+                    >
+                      ✦
+                    </motion.span>
+
+                    {/* Badge Capsule (Rock-Solid Text Stability with Glowing Border & Sheen Highlight) */}
+                    <motion.div
+                      animate={{
+                        borderColor: ["rgba(201,149,106,0.3)", "rgba(201,149,106,0.85)", "rgba(201,149,106,0.3)"],
+                        boxShadow: [
+                          "0 2px 10px rgba(201,149,106,0.08)",
+                          "0 6px 22px rgba(201,149,106,0.35)",
+                          "0 2px 10px rgba(201,149,106,0.08)"
+                        ]
+                      }}
+                      transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                      className="relative overflow-hidden inline-flex items-center justify-start sm:justify-center gap-2.5 px-5 h-[42px] rounded-full border shrink-0 w-full sm:w-auto cursor-pointer group transform-gpu"
+                      style={{ background: "rgba(201,149,106,0.12)" }}
+                    >
+                      {/* Periodic Light Sheen Sweep across badge */}
+                      <motion.div
+                        className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/50 to-transparent -skew-x-12 pointer-events-none"
+                        animate={{ x: ["-100%", "250%"] }}
+                        transition={{ repeat: Infinity, repeatDelay: 2.8, duration: 1.4, ease: "easeInOut" }}
+                      />
+
+                      {/* Left Gold Star with Smooth Zoom In / Zoom Out Animation */}
+                      <motion.div
+                        animate={{ scale: [1, 1.25, 1] }}
+                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                        className="shrink-0 text-[#C9956A] flex items-center justify-center"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                      </motion.div>
+
+                      {/* Badge Text */}
+                      <span className="text-xs font-medium text-[#2C1810] whitespace-nowrap" style={B}>
+                        First InBody 380 Center in the District
+                      </span>
+                    </motion.div>
+                  </div>
+                )}
               </div>
             </motion.div>
 
@@ -364,43 +440,7 @@ export default function ServicePage() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#FAF6F0] via-transparent to-transparent lg:from-transparent lg:via-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#FAF6F0]/60 to-transparent lg:from-[#FAF6F0]/10" />
 
-            {/* Floating Circular High-Tech Badge (Centered over vertical dividing line - Ultra-Standard Luxury Seal) */}
-            {slug === "inbody-380" && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.06 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="absolute top-6 -left-12 lg:-left-16 lg:top-8 z-30 w-24 h-24 sm:w-32 sm:h-32 bg-[#2C1810] text-[#FAF7F2] rounded-full shadow-[0_14px_40px_rgba(44,24,16,0.4),0_0_20px_rgba(201,149,106,0.2)] flex items-center justify-center border-2 border-[#C9956A] overflow-hidden group cursor-pointer"
-              >
-                {/* Rotating circular text SVG with Inner Stitched Luxury Rings */}
-                <motion.svg
-                  viewBox="0 0 100 100"
-                  className="w-full h-full origin-center fill-current"
-                  animate={{ rotate: 360 }}
-                  transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-                >
-                  {/* Outer & Inner Stitched Accent Rings */}
-                  <circle cx="50" cy="50" r="46" fill="none" stroke="#C9956A" strokeWidth="0.8" opacity="0.4" strokeDasharray="2 2" />
-                  <circle cx="50" cy="50" r="28" fill="none" stroke="#C9956A" strokeWidth="0.8" opacity="0.5" />
 
-                  {/* Curved Text Path */}
-                  <path id="circlePathInbodyHero" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" fill="none" />
-                  <text fontFamily="system-ui, -apple-system, sans-serif" fontSize="7.8" fontWeight="900" letterSpacing="2" fill="#FFFDF9">
-                    <textPath href="#circlePathInbodyHero">
-                      ✦ FIRST INBODY 380 CENTER ✦ IN DISTRICT
-                    </textPath>
-                  </text>
-                </motion.svg>
-
-                {/* Cosmo Home Official Favicon Icon inside Golden Medallion */}
-                <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none">
-                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#C9956A]/15 border border-[#C9956A]/30 flex items-center justify-center backdrop-blur-xs shadow-inner">
-                    <img src="/icon.svg" alt="Cosmo Home Icon" className="w-5 h-5 sm:w-6 sm:h-6 object-contain drop-shadow-[0_2px_8px_rgba(201,149,106,0.5)]" />
-                  </div>
-                </div>
-              </motion.div>
-            )}
 
             {/* Floating trust card */}
             <motion.div
