@@ -364,31 +364,31 @@ export default function ServicePage() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#FAF6F0] via-transparent to-transparent lg:from-transparent lg:via-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#FAF6F0]/60 to-transparent lg:from-[#FAF6F0]/10" />
 
-            {/* Floating Circular High-Tech Badge (Centered over vertical dividing line - Dr. Ruxana Style) */}
+            {/* Floating Circular High-Tech Badge (Centered over vertical dividing line - Ultra-Modern & Readable) */}
             {slug === "inbody-380" && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="absolute top-6 -left-10 lg:-left-14 lg:top-8 z-30 w-20 h-20 sm:w-28 sm:h-28 bg-[#2C1810] text-[#FAF7F2] rounded-full shadow-2xl flex items-center justify-center border border-[#C9956A]/40 overflow-hidden group cursor-pointer"
+                className="absolute top-6 -left-12 lg:-left-16 lg:top-8 z-30 w-24 h-24 sm:w-32 sm:h-32 bg-[#2C1810] text-[#FAF7F2] rounded-full shadow-[0_12px_40px_rgba(44,24,16,0.3)] flex items-center justify-center border-2 border-[#C9956A] overflow-hidden group cursor-pointer"
               >
                 {/* Rotating circular text SVG */}
                 <motion.svg
                   viewBox="0 0 100 100"
-                  className="w-full h-full origin-center fill-current text-[#C9956A]"
+                  className="w-full h-full origin-center fill-current"
                   animate={{ rotate: 360 }}
                   transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
                 >
-                  <path id="circlePathInbodyHero" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
-                  <text fontFamily="monospace" fontSize="6.5" fontWeight="bold" letterSpacing="1.8">
+                  <path id="circlePathInbodyHero" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                  <text fontFamily="system-ui, -apple-system, sans-serif" fontSize="8" fontWeight="900" letterSpacing="1.8" fill="#FAF6F0">
                     <textPath href="#circlePathInbodyHero">
                       ✦ FIRST INBODY 380 CENTER ✦ IN DISTRICT
                     </textPath>
                   </text>
                 </motion.svg>
-                {/* Small gold sparkle in the absolute center */}
-                <div className="absolute inset-0 flex items-center justify-center text-xs sm:text-base font-light text-[#FAF7F2] select-none">
-                  ✨
+                {/* Center sparkle icon */}
+                <div className="absolute inset-0 flex items-center justify-center text-sm sm:text-base font-bold text-[#C9956A] select-none">
+                  ✦
                 </div>
               </motion.div>
             )}
