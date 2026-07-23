@@ -876,7 +876,7 @@ export default function ServicePage() {
                       className="p-5 rounded-2xl h-full flex flex-col gap-2"
                       style={{ background: "#FFFFFF", border: "1px solid rgba(44,24,16,0.08)", boxShadow: "0 2px 16px rgba(44,24,16,0.04)" }}>
                       <p className="text-sm font-medium text-[#2C1810]" style={B}>✓ {item.tag}</p>
-                      <p className="text-sm text-[#5C4A42] leading-relaxed" style={B}>{item.desc}</p>
+                      {item.desc && <p className="text-sm text-[#5C4A42] leading-relaxed" style={B}>{item.desc}</p>}
                     </motion.div>
                   </FadeUp>
                 ))}
