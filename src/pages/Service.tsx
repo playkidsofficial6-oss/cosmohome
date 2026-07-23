@@ -281,11 +281,54 @@ export default function ServicePage() {
           {/* Left — content */}
           <div className="relative z-10 flex flex-col justify-center px-5 sm:px-10 md:px-16 pt-8 pb-12 md:py-20 lg:py-0">
             <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-              {/* Social proof badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-6"
-                style={{ background: "rgba(201,149,106,0.12)", borderColor: "rgba(201,149,106,0.3)" }}>
-                <span className="text-yellow-400 text-sm">★★★★★</span>
-                <span className="text-xs text-[#2C1810]/80" style={B}>{service.heroRating}</span>
+              {/* Social proof badge & InBody District Badge */}
+              <div className="flex flex-wrap items-center gap-3 mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border shrink-0"
+                  style={{ background: "rgba(201,149,106,0.12)", borderColor: "rgba(201,149,106,0.3)" }}>
+                  <span className="text-yellow-400 text-sm">★★★★★</span>
+                  <span className="text-xs text-[#2C1810]/80" style={B}>{service.heroRating}</span>
+                </div>
+
+                {/* Premium Luxury Healthcare Announcement Badge */}
+                {slug === "inbody-380" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="relative group shrink-0"
+                  >
+                    {/* Subtle ambient glow behind badge */}
+                    <div className="absolute inset-0 rounded-full bg-[#C9956A]/15 blur-md -z-10 transition-opacity duration-300 group-hover:opacity-100" />
+
+                    {/* Top-Right Decorative Sparkle / Radiant Rays */}
+                    <div className="absolute -top-3 -right-3 z-20 pointer-events-none text-[#C9956A]">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 transform rotate-12">
+                        <path d="M12 3V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <path d="M19 6L16.2 8.8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <path d="M21 13H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                      </svg>
+                    </div>
+
+                    {/* Capsule Container */}
+                    <div className="relative h-[46px] sm:h-[48px] px-5 sm:px-6 rounded-full border-[1.5px] border-[#C9956A]/70 group-hover:border-[#C9956A] bg-gradient-to-b from-[#FFFDF9] to-[#FAF4EC] shadow-[0_8px_25px_rgba(201,149,106,0.18)] group-hover:shadow-[0_12px_32px_rgba(201,149,106,0.28)] group-hover:-translate-y-0.5 transition-all duration-300 ease-out flex items-center gap-3 cursor-pointer">
+                      {/* Left Gold Star with Smooth Zoom In / Zoom Out Animation (No BG Circle) */}
+                      <motion.div
+                        animate={{ scale: [1, 1.28, 1] }}
+                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                        className="shrink-0 text-[#C9956A] flex items-center justify-center"
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-xs">
+                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                      </motion.div>
+
+                      {/* Badge Text */}
+                      <span className="text-[10.5px] sm:text-[11.5px] font-semibold tracking-[0.28em] uppercase text-[#4B3628] whitespace-nowrap" style={M}>
+                        First InBody 380 Center in the District
+                      </span>
+                    </div>
+                  </motion.div>
+                )}
               </div>
             </motion.div>
 
