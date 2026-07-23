@@ -865,21 +865,30 @@ export default function ServicePage() {
                     {service.notSuitable}
                   </p>
                 </div>
-                <CTAButtons light />
+                <div className="lg:hidden mt-6">
+                  <CTAButtons light />
+                </div>
               </FadeUp>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                {service.whoNeedsItems.map((item, i) => (
-                  <FadeUp key={item.tag} delay={i * 0.06}>
-                    <motion.div whileHover={{ y: -5, boxShadow: "0 12px 40px rgba(201,149,106,0.15)" }}
-                      transition={{ type: "spring", stiffness: 260 }}
-                      className="p-5 rounded-2xl h-full flex flex-col gap-2"
-                      style={{ background: "#FFFFFF", border: "1px solid rgba(44,24,16,0.08)", boxShadow: "0 2px 16px rgba(44,24,16,0.04)" }}>
-                      <p className="text-sm font-medium text-[#2C1810]" style={B}>✓ {item.tag}</p>
-                      {item.desc && <p className="text-sm text-[#5C4A42] leading-relaxed" style={B}>{item.desc}</p>}
-                    </motion.div>
-                  </FadeUp>
-                ))}
+              <div className="flex flex-col gap-8">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {service.whoNeedsItems.map((item, i) => (
+                    <FadeUp key={item.tag} delay={i * 0.06}>
+                      <motion.div whileHover={{ y: -5, boxShadow: "0 12px 40px rgba(201,149,106,0.15)" }}
+                        transition={{ type: "spring", stiffness: 260 }}
+                        className="p-5 rounded-2xl h-full flex flex-col gap-2"
+                        style={{ background: "#FFFFFF", border: "1px solid rgba(44,24,16,0.08)", boxShadow: "0 2px 16px rgba(44,24,16,0.04)" }}>
+                        <p className="text-sm font-medium text-[#2C1810]" style={B}>✓ {item.tag}</p>
+                        {item.desc && <p className="text-sm text-[#5C4A42] leading-relaxed" style={B}>{item.desc}</p>}
+                      </motion.div>
+                    </FadeUp>
+                  ))}
+                </div>
+                <FadeUp delay={0.12}>
+                  <div className="hidden lg:flex justify-start">
+                    <CTAButtons light />
+                  </div>
+                </FadeUp>
               </div>
             </div>
           </div>
