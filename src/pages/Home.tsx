@@ -656,12 +656,54 @@ export function Experiences() {
     }
   }, [location.search]);
   const exps = [
-    { name: "Face Rejuvenation ✨", tagline: "Lift. Smooth. Restore.", desc: "Medical-grade anti-ageing protocols tailored to facial harmony.", duration: "", suitedFor: "" },
-    { name: "Skin Transformation ✨", tagline: "Healthy skin begins with diagnosis.", desc: "Designed for acne, pigmentation, scars and texture improvement.", duration: "", suitedFor: "" },
-    { name: "Body Contouring 🌸", tagline: "Shape with confidence.", desc: "Non-surgical body sculpting and tightening.", duration: "", suitedFor: "" },
-    { name: "Hair Restoration 🌿", tagline: "Stronger hair. Healthier scalp.", desc: "Evidence-based treatments for thinning and hair loss.", duration: "", suitedFor: "" },
-    { name: "Regenerative Aesthetics 💉", tagline: "Repair. Regenerate. Rejuvenate.", desc: "Advanced regenerative therapies for natural results.", duration: "", suitedFor: "" },
-    { name: "Personalised Aesthetic Journey 💫", tagline: "Your vision. Our expertise.", desc: "A comprehensive long-term relationship with aesthetic care. Dr. Ruxana designs a multi-year plan aligned with your goals, lifestyle, and evolving beauty.", duration: "Annual programme", suitedFor: "Anyone committed to the long view" },
+    {
+      name: "Face Rejuvenation ✨",
+      tagline: "Lift. Smooth. Restore.",
+      desc: "Medical-grade anti-ageing protocols tailored to facial harmony. Non-surgical lifting, contouring, and volume restoration designed to enhance your natural features with zero downtime.",
+      highlights: ["Non-Surgical Lifting", "Customized Facial Mapping", "Natural Volume Restoration"],
+      duration: "45 – 60 Mins",
+      suitedFor: "Fine lines, sagging skin & volume loss"
+    },
+    {
+      name: "Skin Transformation ✨",
+      tagline: "Healthy skin begins with diagnosis.",
+      desc: "Comprehensive diagnostic and therapeutic solutions for active acne, stubborn pigmentation, acne scars, and uneven texture using medical peels, lasers, and exosome therapies.",
+      highlights: ["Targeted Pigmentation Repair", "Collagen Resurfacing", "Advanced Cellular Healing"],
+      duration: "30 – 60 Mins",
+      suitedFor: "Acne, scars, pigmentation & dullness"
+    },
+    {
+      name: "Body Contouring 🌸",
+      tagline: "Shape with confidence.",
+      desc: "Advanced non-invasive body sculpting, muscle toning, and skin tightening protocols. Designed to refine contours and restore skin firmness safely without surgical intervention.",
+      highlights: ["Targeted Fat Reduction", "Non-Invasive Muscle Sculpting", "Firming & Tightening"],
+      duration: "45 – 90 Mins",
+      suitedFor: "Stubborn fat pockets & skin laxity"
+    },
+    {
+      name: "Hair Restoration 🌿",
+      tagline: "Stronger hair. Healthier scalp.",
+      desc: "Biologically driven hair follicle activation using growth factor concentrate (GFC), PRP, scalp exosomes, and mesotherapy to halt hair shedding and promote natural density.",
+      highlights: ["Follicular Revitalization", "Autologous Growth Factors", "Scalp Barrier Optimization"],
+      duration: "45 – 60 Mins",
+      suitedFor: "Thinning hair, hair fall & scalp health"
+    },
+    {
+      name: "Regenerative Aesthetics 💉",
+      tagline: "Repair. Regenerate. Rejuvenate.",
+      desc: "Next-generation cellular therapies harnessing exosomes and bio-stimulators to trigger deep tissue repair, accelerate collagen synthesis, and restore youthful skin vitality.",
+      highlights: ["Exosome Bio-Therapies", "Deep Cellular Regeneration", "Long-Term Skin Quality"],
+      duration: "45 – 60 Mins",
+      suitedFor: "Aging skin, deep tissue repair & radiance"
+    },
+    {
+      name: "Personalised Aesthetic Journey 💫",
+      tagline: "Your vision. Our expertise.",
+      desc: "A comprehensive long-term relationship with aesthetic care. Our expert medical team designs a multi-year master plan aligned with your aesthetic goals, lifestyle, and evolving beauty.",
+      highlights: ["Multi-Year Master Plan", "Continuous Medical Monitoring", "Tailored Multi-Modality Care"],
+      duration: "Annual programme",
+      suitedFor: "Anyone committed to the long view"
+    },
   ];
   return (
     <section id="experiences" className="pt-6 pb-12 md:pt-12 md:pb-12 bg-[#FAF7F2] border-t border-[#2C1810]/5">
@@ -691,6 +733,17 @@ export function Experiences() {
                 <div className="block lg:hidden overflow-hidden">
                   <div className="pb-8 pt-2">
                     <p className="text-sm text-[#5C4A42] leading-loose mb-5" style={B}>{e.desc}</p>
+
+                    {/* Highlights grid */}
+                    <div className="grid grid-cols-1 gap-2 mb-5">
+                      {e.highlights.map((h) => (
+                        <div key={h} className="flex items-center gap-2 p-2 rounded-lg bg-[#FAF0E6]/80 border border-[#C9956A]/20">
+                          <span className="text-[#C9956A] text-xs">✦</span>
+                          <span className="text-[11px] text-[#2C1810] font-medium" style={M}>{h}</span>
+                        </div>
+                      ))}
+                    </div>
+
                     {i === 0 || i === 1 || i === 2 || i === 3 || i === 4 ? (
                       <div className="mb-5">
                         <p className="text-[10px] tracking-[0.25em] uppercase text-[#C9956A] mb-3 font-semibold" style={M}>Key Treatments</p>
@@ -770,16 +823,30 @@ export function Experiences() {
               </div>
             ))}
           </div>
-          <div className="hidden lg:flex lg:pl-14 pt-6 lg:pt-0 flex-col justify-center">
+
+          {/* Desktop Preview Right Panel */}
+          <div className="hidden lg:flex lg:pl-14 pt-8 lg:pt-0 flex-col justify-center">
             <AnimatePresence mode="wait">
               <motion.div key={active} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.4, ease: EASE }}>
+                <p className="text-xs tracking-[0.22em] uppercase text-[#C9956A] mb-2 font-semibold" style={M}>{exps[active].tagline}</p>
                 <h3 className="text-2xl md:text-3xl text-[#2C1810] mb-4" style={{ ...D }}>{exps[active].name}</h3>
-                <p className="text-base text-[#5C4A42] leading-loose mb-7" style={B}>{exps[active].desc}</p>
+                <p className="text-base text-[#5C4A42] leading-loose mb-6" style={B}>{exps[active].desc}</p>
+
+                {/* Key Clinical Highlights Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-6">
+                  {exps[active].highlights.map((h) => (
+                    <div key={h} className="flex items-center gap-2 p-2.5 rounded-lg bg-[#FAF0E6]/80 border border-[#C9956A]/20">
+                      <span className="text-[#C9956A] text-xs">✦</span>
+                      <span className="text-[11px] text-[#2C1810] font-medium leading-snug" style={M}>{h}</span>
+                    </div>
+                  ))}
+                </div>
+
                 {active === 0 || active === 1 || active === 2 || active === 3 || active === 4 ? (
-                  <div className="mb-8">
-                    <p className="text-xs tracking-[0.25em] uppercase text-[#C9956A] mb-4 font-semibold" style={M}>Key Treatments</p>
-                    <div className="flex flex-wrap gap-3">
+                  <div className="mb-6">
+                    <p className="text-xs tracking-[0.25em] uppercase text-[#C9956A] mb-3.5 font-semibold" style={M}>Key Treatments</p>
+                    <div className="flex flex-wrap gap-2.5">
                       {(active === 0 ? [
                         { name: "HIFU", slug: "hifu" },
                         { name: "Botox", slug: "botox" },
@@ -812,11 +879,11 @@ export function Experiences() {
                           whileHover={{ 
                             y: -2,
                             borderColor: "#C9956A", 
-                            backgroundColor: "rgba(201,149,106,0.05)",
+                            backgroundColor: "rgba(201,149,106,0.08)",
                             boxShadow: "0 6px 20px rgba(201,149,106,0.12)"
                           }}
                           whileTap={{ scale: 0.97 }}
-                          className="inline-flex items-center gap-2 px-4.5 py-2.5 border border-[#2C1810]/15 rounded-full text-xs tracking-wider uppercase text-[#2C1810] bg-white/80 transition-all duration-300 cursor-pointer shadow-sm"
+                          className="inline-flex items-center gap-2 px-4 py-2 border border-[#2C1810]/15 rounded-full text-xs tracking-wider uppercase text-[#2C1810] bg-white transition-all duration-300 cursor-pointer shadow-sm"
                           style={M}
                         >
                           <span>{item.name}</span>
@@ -825,15 +892,21 @@ export function Experiences() {
                       ))}
                     </div>
                   </div>
-                ) : (
-                  [{ label: "Duration", val: exps[active].duration }, { label: "Suited for", val: exps[active].suitedFor }].map(({ label, val }) => (
-                    <div key={label} className="flex gap-4 mb-3">
-                      <span className="text-xs tracking-[0.25em] uppercase text-[#C9956A] w-24 shrink-0 pt-0.5" style={M}>{label}</span>
-                      <span className="text-sm text-[#2C1810]" style={B}>{val}</span>
-                    </div>
-                  ))
-                )}
-                <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                ) : null}
+
+                {/* Session Meta Info */}
+                <div className="flex flex-wrap gap-8 mb-6 pt-4 border-t border-[#2C1810]/10">
+                  <div>
+                    <span className="text-[10px] tracking-[0.2em] uppercase text-[#C9956A] block mb-0.5" style={M}>Session Time</span>
+                    <span className="text-xs text-[#2C1810] font-semibold" style={B}>{exps[active].duration}</span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] tracking-[0.2em] uppercase text-[#C9956A] block mb-0.5" style={M}>Target Concern</span>
+                    <span className="text-xs text-[#2C1810] font-semibold" style={B}>{exps[active].suitedFor}</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-3">
                   {active === 0 || active === 1 || active === 2 || active === 3 || active === 4 ? (
                     <motion.button
                       onClick={() => navigate(active === 0 ? "/service?category=Face" : active === 1 ? "/service?category=Skin" : active === 2 ? "/service?category=Body" : active === 3 ? "/service?category=Hair" : "/service?category=Injectables")}
