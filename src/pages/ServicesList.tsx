@@ -986,7 +986,7 @@ export default function ServicesListPage() {
                 stars: 5,
                 review: "My go-to treatment is the Hydrafacial. It offers an immediate glow, deep hydration, and completely cleared out congestion. Truly a premium skin renewal experience with zero redness.",
                 patient: "Priya R.",
-                treatment: "Skin Renewal Experience"
+                treatment: "Hydrafacial Skin Renewal"
               }
             ].map((item, tIndex) => (
               <div key={tIndex} className="bg-white p-8 rounded-[24px] shadow-[0_4px_30px_rgba(44,24,16,0.01)] border border-[#2C1810]/5 flex flex-col justify-between hover:shadow-[0_12px_40px_rgba(44,24,16,0.03)] transition-all duration-300">

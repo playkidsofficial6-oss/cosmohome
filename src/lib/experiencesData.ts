@@ -17,140 +17,174 @@ export interface ExperienceData {
 }
 
 export const EXPERIENCES_DATA: Record<string, ExperienceData> = {
-  "skin-renewal": {
-    id: "skin-renewal",
-    title: "Skin Renewal Experience",
-    tagline: "Rediscover your glow",
-    subtitle: "Bespoke Epidermal Restoration",
-    description: "A deeply personalised skin journey combining medical-grade analysis, bespoke topical protocols, and precision regenerative treatments. Designed to restore luminosity, clarity, and texture — naturally, gradually, and lastingly.",
+  "face-rejuvenation": {
+    id: "face-rejuvenation",
+    title: "Face Rejuvenation Experience",
+    tagline: "Lift. Smooth. Restore.",
+    subtitle: "Non-Surgical Facial Harmonisation",
+    description: "Medical-grade anti-ageing protocols tailored to facial harmony.",
     duration: "From 3 sessions",
-    suitedFor: "All skin types seeking clarity, texture refinement, and a natural radiance.",
-    philosophy: "Healthy skin begins at the cellular level. Rather than masking imperfections with temporary superficial treatments, the Skin Renewal Experience rebuilds the epidermal barrier, targets hyperpigmentation, and optimizes cellular turnover.",
-    image: "/services/hydrafacial-medifacial/1.webp",
-    stages: [
-      {
-        n: "01",
-        title: "Clinical Analysis & Mapping",
-        description: "We begin with a multi-spectral skin scan and wood's lamp analysis to locate deep pigmentation, measure hydration levels, and evaluate structural health."
-      },
-      {
-        n: "02",
-        title: "Controlled Resurfacing",
-        description: "A custom mesopeel formulation and carbon laser treatment gently sweep away damaged epidermal cells, refine pores, and stimulate cellular turnover."
-      },
-      {
-        n: "03",
-        title: "Regenerative Infusion",
-        description: "The treatment concludes with an infusion of pure hyaluronic acid, antioxidants, and growth factors, sealed under calming phototherapy to accelerate barrier repair."
-      }
-    ],
-    benefits: [
-      "Visibly refined skin texture and smaller pore appearance",
-      "Noticeable reduction in sun spots, melasma, and hyperpigmentation",
-      "Enhanced epidermal barrier function and deep hydration",
-      "Restored natural, healthy luminosity and skin clarity"
-    ]
-  },
-  "age-gracefully": {
-    id: "age-gracefully",
-    title: "Age Gracefully Experience",
-    tagline: "Confidence, not correction",
-    subtitle: "Structural Rejuvenation & Longevity",
-    description: "A staged approach to natural facial rejuvenation. We work with the unique architecture of your face — not against it — using subtle structural restoration and advanced collagen stimulation.",
-    duration: "Ongoing, quarterly sessions",
-    suitedFor: "Individuals aged 35–60 seeking natural longevity, subtle lifting, and volume restoration.",
-    philosophy: "Aging is a privilege, and rejuvenation should look entirely like you. We believe in soft calibrations that restore structural volume and stimulate deep collagen production to maintain your natural features rather than freezing them.",
+    suitedFor: "Individuals seeking subtle structural lifting, smoothing of lines, and restored facial harmony.",
+    philosophy: "True rejuvenation is about harmony, not over-correction. We work with your unique bone structure and facial dynamics to lift, smooth, and restore natural contours using precision medical-grade protocols.",
     image: "/services/hifu/1.webp",
     stages: [
       {
         n: "01",
-        title: "Structural Evaluation",
-        description: "Dr. Ruxana completes a detailed assessment of bone structure, facial muscle tone, fat pad distribution, and skin elasticity to map volume loss."
+        title: "Structural Assessment",
+        description: "We analyze your facial architecture, volume distribution, and skin elasticity to draft a customized anti-ageing strategy."
       },
       {
         n: "02",
-        title: "Deep Collagen Activation",
-        description: "Utilizing medical-grade High-Intensity Focused Ultrasound (HIFU), we target the SMAS layer beneath the skin to lift and tighten facial contours naturally."
+        title: "Precision Calibration",
+        description: "Utilizing advanced technologies like HIFU to target the deep SMAS layer, we stimulate lasting collagen synthesis and firm contours."
       },
       {
         n: "03",
-        title: "Refinement & Hydration",
-        description: "Subtle hyaluronic acid mapping or autologous growth factors restore key support structures around the jawline and mid-face, followed by skin plumping."
+        title: "Volume & Smooth Refinement",
+        description: "Subtle applications of injectables, fillers, or skin boosters restore volume loss and smooth fine lines for a cohesive, natural finish."
       }
     ],
     benefits: [
-      "Natural-looking lift and tightening along the jawline and cheeks",
-      "Restored structural volume in areas of gradual depletion",
-      "Long-term collagen synthesis for firmer, more resilient skin",
-      "Softer fine lines and wrinkles with zero unnatural frozen appearance"
+      "Natural structural lift along the jawline, cheeks, and brow",
+      "Smoothed fine lines and dynamic expression wrinkles",
+      "Restored youthful volume and optimized facial symmetry",
+      "Long-term collagen and elastin regeneration for resilient skin"
     ]
   },
-  "confidence-restoration": {
-    id: "confidence-restoration",
-    title: "Confidence Restoration",
-    tagline: "Return to yourself",
-    subtitle: "Post-Transition Cellular Repair",
-    description: "For those at a major turning point — post-pregnancy, post-illness, or post-stress — this experience is designed to rebuild your skin barrier and restore your relationship with your reflection.",
-    duration: "Bespoke 3 to 6-month programme",
-    suitedFor: "Anyone navigating life transitions, hormonal shifts, or recovery seeking skin comfort.",
-    philosophy: "Our bodies reflect our life's journeys. The Confidence Restoration experience is a gentle, supportive, and restorative path focusing on healing vascular redness, restoring skin elasticity, and calming inflammation.",
-    image: "/services/phototherapy/1.webp",
+  "skin-transformation": {
+    id: "skin-transformation",
+    title: "Skin Transformation Experience",
+    tagline: "Healthy skin begins with diagnosis.",
+    subtitle: "Epidermal Renewal & Repair",
+    description: "Designed for acne, pigmentation, scars and texture improvement.",
+    duration: "From 3 sessions",
+    suitedFor: "Acne, pigmentation, scars, and texture issues.",
+    philosophy: "Healthy skin begins with an accurate diagnosis. By understanding your skin's specific needs, we design targeted protocols incorporating medical-grade peels, advanced lasers, and regenerative therapies to restore skin health at a cellular level.",
+    image: "/services/laser-pigment-reduction/1.webp",
     stages: [
       {
         n: "01",
-        title: "Barrier Assessment",
-        description: "We evaluate skin sensitivity, transepidermal water loss, and vascular reactivity to establish a baseline for gentle repair."
+        title: "Advanced Diagnosis",
+        description: "We perform a multi-spectral scan to analyze depth of pigmentation, sebum production, and scar tissue distribution."
       },
       {
         n: "02",
-        title: "Vascular & Redness Relief",
-        description: "Using medical-grade LED phototherapy and soothing antioxidants, we calm inflamed tissues and strengthen fragile capillaries."
+        title: "Targeted Purge & Resurface",
+        description: "Utilizing custom Mesopeels or Carbon Peels to target acne and pigment, followed by CO₂ Laser or MNRF to rebuild scar tissue."
       },
       {
         n: "03",
-        title: "Textural Polish & Rehydration",
-        description: "Gentle enzymes and deep water-binding serums polish rough patches and restore volume, leaving the skin feeling comfortable and hydrated."
+        title: "Dermal Repair & Infusion",
+        description: "Exosome therapy accelerates skin repair, stimulating healthy cell turnover and collagen production for refined texture."
       }
     ],
     benefits: [
-      "Repaired skin barrier function and significantly reduced sensitivity",
-      "Calmed facial redness, vascular flushing, and inflammation",
-      "Restored skin softness, elasticity, and comfort",
-      "A peaceful, supportive clinical environment centered on wellness"
+      "Cleared active acne and balanced sebum production",
+      "Faded pigmentation, sun spots, and post-acne marks",
+      "Smoother skin texture and refined acne scar appearance",
+      "Enhanced skin barrier repair and accelerated cell regeneration"
     ]
   },
-  "hair-revival": {
-    id: "hair-revival",
-    title: "Hair Revival Experience",
-    tagline: "Strength from within",
-    subtitle: "Regenerative Scalp & Follicle Therapy",
-    description: "A clinical and holistic approach to hair thinning and scalp health. Addresses the root causes of hair loss through advanced growth factor therapies and personalized nutrition guidelines.",
-    duration: "6-month clinical programme",
-    suitedFor: "Men and women experiencing gradual thinning, hair fall, or dry, inflamed scalp conditions.",
-    philosophy: "Healthy hair is an extension of scalp health. By isolating and delivering high concentrations of autologous growth factors directly to dormant hair follicles, we stimulate active growth and increase hair density.",
+  "body-contouring": {
+    id: "body-contouring",
+    title: "Body Contouring Experience",
+    tagline: "Shape with confidence.",
+    subtitle: "Non-surgical Sculpting & Tightening",
+    description: "Non-surgical body sculpting and tightening.",
+    duration: "From 4 sessions",
+    suitedFor: "Individuals seeking non-invasive fat reduction, muscle toning, or skin tightening.",
+    philosophy: "Body contouring is about feeling confident in your own shape. We design targeted, non-surgical treatment plans using advanced technologies to reduce fat, sculpt muscle, and tighten skin safely and gradually.",
+    image: "/services/Muscle Sculpting/1.webp",
+    stages: [
+      {
+        n: "01",
+        title: "Composition & Mapping",
+        description: "We analyze your muscle mass, body fat distribution, and skin elasticity to select custom treatments."
+      },
+      {
+        n: "02",
+        title: "Precision Sculpting",
+        description: "Utilizing muscle sculpting or fat reduction technology to target specific areas of fat loss or muscle building."
+      },
+      {
+        n: "03",
+        title: "Dermal Tightening",
+        description: "Applying radiofrequency or focused energies to tighten loose skin and contour body shapes."
+      }
+    ],
+    benefits: [
+      "Noticeable reduction in localized stubborn fat deposits",
+      "Increased muscle definition and core strength in target areas",
+      "Tightened and smoothed skin texture in contouring zones",
+      "Completely non-surgical protocols with zero downtime"
+    ]
+  },
+  "hair-restoration": {
+    id: "hair-restoration",
+    title: "Hair Restoration Experience",
+    tagline: "Stronger hair. Healthier scalp.",
+    subtitle: "Regenerative Scalp Therapy",
+    description: "Evidence-based treatments for thinning and hair loss.",
+    duration: "From 3 sessions",
+    suitedFor: "Individuals experiencing hair thinning, hair fall, or dry, inflamed scalp conditions.",
+    philosophy: "Healthy hair starts with a healthy scalp. Our Hair Restoration protocols combine growth factor concentrates, exosomes, and mesotherapy to stimulate active hair follicles, increase density, and restore hair thickness naturally and effectively.",
     image: "/services/exosomes-prp-gfc/1.webp",
     stages: [
       {
         n: "01",
-        title: "Follicular Mapping",
-        description: "We inspect the scalp using high-resolution trichoscopy to evaluate follicle density, hair diameter, and sebum levels."
+        title: "Follicular Assessment",
+        description: "We analyze your scalp using high-resolution trichoscopy to evaluate hair density and follicular health."
       },
       {
         n: "02",
-        title: "Growth Factor Concentrate (GFC)",
-        description: "Using a medical centrifuge, we isolate concentrated growth factors from your own blood and deliver them to target thinning zones."
+        title: "Active Stimulation",
+        description: "Utilizing PRP or GFC to deliver high concentrations of growth factors directly to thinning zones."
       },
       {
         n: "03",
-        title: "Scalp Renewal & Homecare",
-        description: "We calm the scalp with phototherapy and establish a daily topical protocol combined with nutritional support to maintain active growth."
+        title: "Regenerative Polish",
+        description: "Exosomes and clinical mesotherapy nourish hair follicles, strengthening the shaft and speeding up regrowth."
       }
     ],
     benefits: [
-      "Noticeable reduction in hair fall and follicle shedding",
-      "Improved hair shaft thickness, volume, and scalp coverage",
       "Reactivated dormant hair follicles in thinning zones",
-      "Balanced scalp pH with reduced oiliness or dryness"
+      "Significant reduction in hair shedding and fall",
+      "Improved hair shaft density, thickness, and volume",
+      "Calmed, balanced, and hydrated scalp environment"
+    ]
+  },
+  "regenerative-aesthetics": {
+    id: "regenerative-aesthetics",
+    title: "Regenerative Aesthetics",
+    tagline: "Repair. Regenerate. Rejuvenate.",
+    subtitle: "Advanced Regenerative Therapy",
+    description: "Advanced regenerative therapies for natural results.",
+    duration: "From 3 sessions",
+    suitedFor: "Individuals seeking naturally refreshed skin, volume restoration, or tissue repair.",
+    philosophy: "True rejuvenation comes from within. Our Regenerative Aesthetics protocols use autologous growth factors and cellular exosomes to trigger your body's natural healing mechanisms, repairing skin at a cellular level.",
+    image: "/services/exosomes-injectables/1.webp",
+    stages: [
+      {
+        n: "01",
+        title: "Cellular Profiling",
+        description: "We analyze your skin's health and aging factors to map out a precise cell-stimulating protocol."
+      },
+      {
+        n: "02",
+        title: "Therapeutic Delivery",
+        description: "Delivering high concentrations of PRP, GFC, or clinical exosomes deep into target treatment areas."
+      },
+      {
+        n: "03",
+        title: "Regenerative Lock-in",
+        description: "Nourishing cellular recovery and using soothing light therapy to optimize tissue healing and collagen synthesis."
+      }
+    ],
+    benefits: [
+      "Naturally stimulated collagen and elastin production",
+      "Faded fine lines, wrinkles, and acne scars",
+      "Restored hydration, elasticity, and youthful radiance",
+      "Accelerated skin repair with minimal to no social downtime"
     ]
   },
   "personalised-journey": {

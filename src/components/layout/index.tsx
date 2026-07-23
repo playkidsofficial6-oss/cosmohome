@@ -632,10 +632,11 @@ export function Footer() {
             {
               heading: "Experiences",
               links: [
-                { label: "Skin Renewal", href: "/experience/skin-renewal" },
-                { label: "Age Gracefully", href: "/experience/age-gracefully" },
-                { label: "Confidence Restoration", href: "/experience/confidence-restoration" },
-                { label: "Hair Revival", href: "/experience/hair-revival" },
+                { label: "Face Rejuvenation", href: "/experience/face-rejuvenation" },
+                { label: "Skin Transformation", href: "/experience/skin-transformation" },
+                { label: "Body Contouring", href: "/experience/body-contouring" },
+                { label: "Hair Restoration", href: "/experience/hair-restoration" },
+                { label: "Regenerative Aesthetics", href: "/experience/regenerative-aesthetics" },
                 { label: "Personalised Journey", href: "/experience/personalised-journey" }
               ]
             },
