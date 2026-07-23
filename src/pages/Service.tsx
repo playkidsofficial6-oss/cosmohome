@@ -323,10 +323,9 @@ export default function ServicePage() {
                       ✦
                     </motion.span>
 
-                    {/* Badge Capsule */}
+                    {/* Badge Capsule (Rock-Solid Text Stability with Glowing Border & Sheen Highlight) */}
                     <motion.div
                       animate={{
-                        y: [0, -2, 0],
                         borderColor: ["rgba(201,149,106,0.3)", "rgba(201,149,106,0.85)", "rgba(201,149,106,0.3)"],
                         boxShadow: [
                           "0 2px 10px rgba(201,149,106,0.08)",
@@ -335,7 +334,7 @@ export default function ServicePage() {
                         ]
                       }}
                       transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                      className="relative overflow-hidden inline-flex items-center justify-start sm:justify-center gap-2.5 px-5 h-[42px] rounded-full border shrink-0 w-full sm:w-auto cursor-pointer group"
+                      className="relative overflow-hidden inline-flex items-center justify-start sm:justify-center gap-2.5 px-5 h-[42px] rounded-full border shrink-0 w-full sm:w-auto cursor-pointer group transform-gpu"
                       style={{ background: "rgba(201,149,106,0.12)" }}
                     >
                       {/* Periodic Light Sheen Sweep across badge */}
