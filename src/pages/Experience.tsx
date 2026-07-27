@@ -291,7 +291,7 @@ export default function ExperiencePage() {
                           const name = [firstName, lastName].filter(Boolean).join(" ") || "Not provided";
 
                           const lines = [
-                            "🔔 *NEW LEAD RECEIVED*",
+                            "🔔 *NEW CONSULTATION REQUEST*",
                             "",
                             "👤 *Patient Details*",
                             `• Name: ${name}`,
