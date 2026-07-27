@@ -6,6 +6,7 @@ import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Stethoscope, 
 import { D, M, B, GOLD, EASE, GRAIN, WA_PATH } from "../lib/constants";
 import { CTAButtons, FadeUp, Tag } from "../components/ui/shared";
 import { SERVICES_DATA } from "../lib/servicesData";
+import { openWhatsApp } from "../lib/whatsapp";
 
 function BeforeAfterSlider({ beforeImage, afterImage }: { beforeImage: string; afterImage: string }) {
   const [sliderPos, setSliderPos] = useState(50);
@@ -1238,14 +1239,14 @@ export default function ServicePage() {
                   <span>{service.ctaEmphasized}</span>
                 </h2>
                 <div className="flex flex-col sm:flex-row gap-3.5 mb-8">
-                  <motion.a href={service.ctaButtonLink || "/book-consultation"}
+                  <motion.a href={service.ctaButtonLink || "https://wa.me/919495511628"} target="_blank" rel="noopener noreferrer"
                     whileHover={{ scale: 1.03, y: -2, boxShadow: "0 12px 30px rgba(201,149,106,0.35)" }}
                     whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.18em] uppercase rounded-xl shadow-lg shadow-[#C9956A]/20 font-semibold group transition-all" style={B}>
                     {service.ctaButtonText || "Book My Consultation"}
                     <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform shrink-0" />
                   </motion.a>
-                  <motion.a href={service.ctaSecondaryButtonLink || "https://api.whatsapp.com/send?phone=919946336480"} target="_blank" rel="noopener noreferrer"
+                  <motion.a href={service.ctaSecondaryButtonLink || "https://api.whatsapp.com/send?phone=919495511628"} target="_blank" rel="noopener noreferrer"
                     whileHover={{ scale: 1.02, y: -2, borderColor: "#C9956A", color: "#C9956A", backgroundColor: "rgba(201,149,106,0.03)" }} whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 border border-[#2C1810]/15 text-[#2C1810] text-xs tracking-[0.15em] uppercase rounded-xl transition-all font-semibold" style={B}>
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" className="shrink-0"><path d={WA_PATH} /></svg>
@@ -1275,7 +1276,7 @@ export default function ServicePage() {
               </FadeUp>
 
               {/* Compact info card */}
-              <FadeUp delay={0.2} className="hidden lg:block shrink-0">
+              <FadeUp delay={0.2} className="w-full lg:w-auto shrink-0 mt-8 lg:mt-0">
                 <motion.div
                   whileHover={{ y: -5 }}
                   className="p-8 rounded-3xl w-[360px]"
@@ -1293,6 +1294,36 @@ export default function ServicePage() {
                         exit={{ opacity: 0, y: -12 }}
                         onSubmit={(e) => {
                           e.preventDefault();
+                          const form = e.currentTarget;
+                          const inputs = form.querySelectorAll("input");
+                          const firstName = inputs[0]?.value || "";
+                          const lastName = inputs[1]?.value || "";
+                          const phone = inputs[2]?.value || "";
+                          const experienceOfInterest = selected || service.title || "Not specified";
+                          const tellUsALittle = form.querySelector("textarea")?.value || "";
+
+                          const name = [firstName, lastName].filter(Boolean).join(" ") || "Not provided";
+
+                          const lines = [
+                            "🔔 *NEW CONSULTATION REQUEST*",
+                            "",
+                            "👤 *Patient Details*",
+                            `• Name: ${name}`,
+                            `• Phone: ${phone || "Not provided"}`,
+                            "",
+                            "✨ *Treatment Interest*",
+                            `• ${experienceOfInterest || "General Consultation"}`,
+                            "",
+                            "📝 *Message*",
+                            `"${tellUsALittle || "None"}"`,
+                            "",
+                            "━━━━━━━━━━━━━━━━━━",
+                            "🏥 COSMO HOME",
+                            "Aesthetic Medicine",
+                            "🌐 cosmohome.in",
+                          ];
+
+                          openWhatsApp(lines.join("\n"));
                           setFormSent(true);
                         }}
                         className="flex flex-col gap-5"

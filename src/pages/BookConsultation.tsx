@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { D, M, B, EASE, DOCTORS } from "../lib/constants";
+import { openWhatsApp } from "../lib/whatsapp";
 import {
   ChevronLeft,
   ChevronRight,
@@ -556,6 +557,35 @@ export default function BookConsultation() {
 
   const handleInput = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleConfirmAppointment = () => {
+    const lines = [
+      "🔔 *NEW APPOINTMENT BOOKING*",
+      "",
+      "👤 *Patient Details*",
+      `• Name: ${formData.fullName || "Not provided"}`,
+      `• Phone: ${formData.countryCode} ${formData.phone || "Not provided"}`,
+      `• Email: ${formData.email || "Not provided"}`,
+      "",
+      "✨ *Appointment Info*",
+      `• Doctor: ${selectedDoctor?.name || "Not specified"}`,
+      `• Date: ${formatDate(selectedDate)}`,
+      `• Time: ${selectedTime}`,
+      `• Branch: ${formData.branch || "Kochi"}`,
+      `• Treatment: ${formData.treatment || "General Consultation"}`,
+      "",
+      "📝 *Message*",
+      `"${formData.notes || "None"}"`,
+      "",
+      "━━━━━━━━━━━━━━━━━━",
+      "🏥 COSMO HOME",
+      "Aesthetic Medicine",
+      "🌐 cosmohome.in",
+    ];
+
+    const message = lines.join("\n");
+    openWhatsApp(message);
   };
 
   /* ════════════ MOBILE LAYOUT ════════════ */
@@ -1180,11 +1210,14 @@ export default function BookConsultation() {
           )}
           {mobileStep === 4 && (
             <button
-              onClick={mobileNext}
+              onClick={() => {
+                handleConfirmAppointment();
+                mobileNext();
+              }}
               className="w-full bg-[#986E4F] text-white py-4 rounded-xl text-sm tracking-[0.12em] uppercase flex items-center justify-center gap-2 hover:bg-[#8A6346] transition-colors"
               style={B}
             >
-              CONFIRM APPOINTMENT
+              CONFIRM APPOINTMENT VIA WHATSAPP
             </button>
           )}
           {mobileStep === 5 && (
@@ -1740,10 +1773,11 @@ export default function BookConsultation() {
                   <ArrowLeft size={16} /> Back
                 </button>
                 <button
-                  className="bg-[#986E4F] text-white px-10 py-4 rounded-full text-xs tracking-[0.15em] uppercase hover:bg-[#8A6346] transition-colors flex items-center gap-2 shadow-lg shadow-[#986E4F]/20"
+                  onClick={handleConfirmAppointment}
+                  className="bg-[#986E4F] text-white px-10 py-4 rounded-full text-xs tracking-[0.15em] uppercase hover:bg-[#8A6346] transition-colors flex items-center gap-2 shadow-lg shadow-[#986E4F]/20 cursor-pointer"
                   style={B}
                 >
-                  CONFIRM APPOINTMENT <ArrowRight size={16} />
+                  CONFIRM APPOINTMENT VIA WHATSAPP <ArrowRight size={16} />
                 </button>
               </div>
 
