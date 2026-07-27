@@ -6,7 +6,7 @@ import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Stethoscope, 
 import { D, M, B, GOLD, EASE, GRAIN, WA_PATH } from "../lib/constants";
 import { CTAButtons, FadeUp, Tag } from "../components/ui/shared";
 import { SERVICES_DATA } from "../lib/servicesData";
-import { openWhatsApp } from "../lib/whatsapp";
+import { openWhatsApp, getWhatsAppUrl, buildConsultationMessage } from "../lib/whatsapp";
 
 function BeforeAfterSlider({ beforeImage, afterImage }: { beforeImage: string; afterImage: string }) {
   const [sliderPos, setSliderPos] = useState(50);
@@ -1239,14 +1239,14 @@ export default function ServicePage() {
                   <span>{service.ctaEmphasized}</span>
                 </h2>
                 <div className="flex flex-col sm:flex-row gap-3.5 mb-8">
-                  <motion.a href={service.ctaButtonLink || "https://wa.me/919495511628"} target="_blank" rel="noopener noreferrer"
+                  <motion.a href={service.ctaButtonLink || getWhatsAppUrl()} target="_blank" rel="noopener noreferrer"
                     whileHover={{ scale: 1.03, y: -2, boxShadow: "0 12px 30px rgba(201,149,106,0.35)" }}
                     whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.18em] uppercase rounded-xl shadow-lg shadow-[#C9956A]/20 font-semibold group transition-all" style={B}>
                     {service.ctaButtonText || "Book My Consultation"}
                     <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform shrink-0" />
                   </motion.a>
-                  <motion.a href={service.ctaSecondaryButtonLink || "https://api.whatsapp.com/send?phone=919495511628"} target="_blank" rel="noopener noreferrer"
+                  <motion.a href={service.ctaSecondaryButtonLink || getWhatsAppUrl()} target="_blank" rel="noopener noreferrer"
                     whileHover={{ scale: 1.02, y: -2, borderColor: "#C9956A", color: "#C9956A", backgroundColor: "rgba(201,149,106,0.03)" }} whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 border border-[#2C1810]/15 text-[#2C1810] text-xs tracking-[0.15em] uppercase rounded-xl transition-all font-semibold" style={B}>
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" className="shrink-0"><path d={WA_PATH} /></svg>
@@ -1304,26 +1304,14 @@ export default function ServicePage() {
 
                           const name = [firstName, lastName].filter(Boolean).join(" ") || "Not provided";
 
-                          const lines = [
-                            "🔔 *NEW CONSULTATION REQUEST*",
-                            "",
-                            "👤 *Patient Details*",
-                            `• Name: ${name}`,
-                            `• Phone: ${phone || "Not provided"}`,
-                            "",
-                            "✨ *Treatment Interest*",
-                            `• ${experienceOfInterest || "General Consultation"}`,
-                            "",
-                            "📝 *Message*",
-                            `"${tellUsALittle || "None"}"`,
-                            "",
-                            "━━━━━━━━━━━━━━━━━━",
-                            "🏥 COSMO HOME",
-                            "Aesthetic Medicine",
-                            "🌐 cosmohome.in",
-                          ];
+                          const msg = buildConsultationMessage({
+                            name,
+                            phone,
+                            treatment: experienceOfInterest,
+                            message: tellUsALittle,
+                          });
 
-                          openWhatsApp(lines.join("\n"));
+                          openWhatsApp(msg);
                           setFormSent(true);
                         }}
                         className="flex flex-col gap-5"

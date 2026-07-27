@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useInView, useScroll, useTransform } from "mot
 import { ArrowRight, Menu, X, Instagram, Facebook, Home, MessageCircle, ClipboardList, Sparkles, Heart, Award, Shield, AlertTriangle, CheckCircle, XCircle, Phone, BadgeCheck, Stethoscope, GraduationCap, Users, ChevronRight } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, EASE2, GRAIN, WA_PATH } from "../../lib/constants";
+import { getWhatsAppUrl } from "../../lib/whatsapp";
 export function FadeUp({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
@@ -118,17 +119,19 @@ export function Preloader({ onDone }: { onDone: () => void }) {
   );
 }
 
-export function InputField({ label, type = "text", placeholder }: { label: string; type?: string; placeholder: string }) {
-  const [focused, setFocused] = useState(false);
+export function InputField({ label, type = "text", placeholder = "", value = "", onChange, required = false }: {
+  label: string; type?: string; placeholder?: string; value?: string; onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void; required?: boolean;
+}) {
   return (
-    <div className="flex flex-col gap-2">
-      <label className="text-xs tracking-[0.25em] uppercase text-[#5C4A42]" style={M}>{label}</label>
-      <div className={`relative transition-all duration-300 ${focused ? "shadow-[0_0_0_2px_rgba(201,149,106,0.35)]" : ""}`}>
-        <input type={type} placeholder={placeholder}
-          className="w-full border-b-2 bg-transparent pb-2.5 pt-1 text-sm text-[#2C1810] placeholder:text-[#5C4A42]/40 focus:outline-none transition-colors"
-          onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
-          style={{ borderBottomColor: focused ? GOLD : "rgba(44,24,16,0.2)", ...B }} />
-      </div>
+    <div className="flex flex-col gap-1.5">
+      <label className="text-xs text-[#5C4A42] tracking-wider uppercase font-medium" style={M}>{label} {required && <span className="text-[#C9956A]">*</span>}</label>
+      {type === "textarea" ? (
+        <textarea rows={4} placeholder={placeholder} value={value} onChange={onChange}
+          className="bg-white/80 border border-[#2C1810]/15 rounded-xl px-4 py-3 text-sm text-[#2C1810] placeholder-[#5C4A42]/40 focus:outline-none focus:border-[#C9956A] transition-colors resize-none" style={B} />
+      ) : (
+        <input type={type} placeholder={placeholder} value={value} onChange={onChange}
+          className="bg-white/80 border border-[#2C1810]/15 rounded-xl px-4 py-3 text-sm text-[#2C1810] placeholder-[#5C4A42]/40 focus:outline-none focus:border-[#C9956A] transition-colors" style={B} />
+      )}
     </div>
   );
 }
@@ -136,13 +139,13 @@ export function InputField({ label, type = "text", placeholder }: { label: strin
 export function CTAButtons({ light = false }: { light?: boolean }) {
   return (
     <div className="flex flex-col sm:flex-row gap-3">
-      <motion.a href="https://wa.me/919495511628" target="_blank" rel="noopener noreferrer"
+      <motion.a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer"
         whileHover={{ scale: 1.04, boxShadow: "0 0 36px rgba(201,149,106,0.55)" }}
         whileTap={{ scale: 0.97 }}
         className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase whitespace-nowrap rounded-xl shadow-xl shadow-[#C9956A]/30 font-semibold group" style={B}>
         Book Consultation <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform shrink-0" />
       </motion.a>
-      <motion.a href="https://wa.me/919495511628" target="_blank" rel="noopener noreferrer"
+      <motion.a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer"
         whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
         className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl border border-[#C9956A]/40 hover:border-[#C9956A] text-[#C9956A] hover:bg-[#C9956A]/5 text-xs tracking-[0.18em] uppercase whitespace-nowrap transition-all duration-300 font-semibold select-none" style={B}>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366" className="shrink-0"><path d={WA_PATH} /></svg>

@@ -7,6 +7,7 @@ import { D, M, B, GOLD, EASE, GRAIN } from "../lib/constants";
 import { CTAButtons, FadeUp, Tag } from "../components/ui/shared";
 
 import { useSEO } from "../lib/useSEO";
+import { getWhatsAppUrl } from "../lib/whatsapp";
 
 export default function DrRuxanaPage() {
   const navigate = useNavigate();
@@ -483,7 +484,7 @@ export default function DrRuxanaPage() {
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-4 items-center">
                 <motion.a
-                  href="https://wa.me/919495511628"
+                  href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.04, boxShadow: "0 10px 30px rgba(201,149,106,0.3)" }}
