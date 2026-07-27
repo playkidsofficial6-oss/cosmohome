@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useInView, useScroll, useTransform } from "mot
 import { ArrowRight, Menu, X, Instagram, Facebook, Youtube, Home, MessageCircle, ClipboardList, Sparkles, Sparkle, Heart, Award, Shield, AlertTriangle, CheckCircle, XCircle, Phone, BadgeCheck, Stethoscope, GraduationCap, Users, ChevronRight, Plus, Minus, Syringe, User, Droplet, Wind, Smile, Accessibility, Calendar } from "lucide-react";
 
 import { D, M, B, GOLD, EASE, WA_PATH } from "../../lib/constants";
+import { getWhatsAppUrl } from "../../lib/whatsapp";
 
 function BodyIcon({ size = 20, strokeWidth = 2, ...props }: React.SVGProps<SVGSVGElement> & { size?: number; strokeWidth?: number }) {
   return (
@@ -201,7 +202,7 @@ export function Nav({ ready }: { ready: boolean }) {
           </nav>
 
           <div className="hidden lg:flex z-10">
-            <motion.a href="https://api.whatsapp.com/send?phone=919495511628" target="_blank" rel="noopener noreferrer" style={B} whileHover={{ scale: 1.02 }}
+            <motion.a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" style={B} whileHover={{ scale: 1.02 }}
               className="text-[11px] font-semibold tracking-[0.15em] bg-[#8C5D47] text-[#FAF7F2] border border-[#8C5D47] rounded-[4px] uppercase px-6 py-2.5 hover:bg-[#734A37] hover:border-[#734A37] transition-all duration-300 flex items-center gap-2">
               <Calendar size={13} className="shrink-0" />
               Book Consultation
@@ -438,7 +439,7 @@ export function Nav({ ready }: { ready: boolean }) {
                   </div>
                 </div>
               </a>
-              <button className="bg-[#C9956A] rounded-[4px] text-[#FAF7F2] text-[10px] tracking-widest px-4 py-2 uppercase font-medium hover:bg-[#A0603A] transition-colors" style={B} onClick={() => { setOpen(false); window.open('https://wa.me/919495511628', '_blank'); }}>
+              <button className="bg-[#C9956A] rounded-[4px] text-[#FAF7F2] text-[10px] tracking-widest px-4 py-2 uppercase font-medium hover:bg-[#A0603A] transition-colors" style={B} onClick={() => { setOpen(false); window.open(getWhatsAppUrl(), '_blank'); }}>
                 Book
               </button>
             </div>
@@ -564,7 +565,7 @@ export function Nav({ ready }: { ready: boolean }) {
 
               {/* Book Consultation CTA */}
               <button
-                onClick={() => { setOpen(false); window.open("https://wa.me/919495511628", "_blank"); }}
+                onClick={() => { setOpen(false); window.open(getWhatsAppUrl(), "_blank"); }}
                 className="w-full mt-2 py-5 px-6 bg-[#8C5D47] text-[#FAF7F2] uppercase tracking-[0.15em] text-xs font-semibold flex justify-between items-center transition-colors hover:bg-[#734A37] shadow-[0_0_35px_rgba(140,93,71,0.2)]"
                 style={B}
               >
@@ -583,7 +584,7 @@ export function Nav({ ready }: { ready: boolean }) {
                   <Phone size={16} className="text-[#C9956A]" />
                   <span className="text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase" style={B}>Call 094955 11628</span>
                 </a>
-                <a href="https://api.whatsapp.com/send?phone=919495511628" target="_blank" rel="noopener noreferrer"
+                <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 w-full py-5 bg-[#C9956A] text-[#FAF7F2] transition-colors"
                 >
                   <MessageCircle size={16} className="fill-current" />
@@ -648,7 +649,7 @@ export function Footer() {
                 { label: "Journal & Insights", href: "/journal" },
                 { label: "Our Team", href: "/#our-team" },
                 { label: "Our Standards", href: "/#our-standards" },
-                { label: "Begin Your Story", href: "https://wa.me/919495511628" }
+                { label: "Begin Your Story", href: getWhatsAppUrl() }
               ]
             },
           ].map(({ heading, links }) => (
@@ -704,7 +705,7 @@ export function MobileBottomCTA() {
               <Phone className="w-4 h-4 text-[#C9956A]" />
               <span className="text-[10px] sm:text-xs font-medium tracking-[0.1em] uppercase">Call Cosmo Home</span>
             </a>
-            <a href="https://api.whatsapp.com/send?phone=919495511628" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 py-4 bg-[#C9956A] text-[#160A05] hover:bg-[#d6a57c] active:bg-[#B8806A] transition-colors" style={B}>
+            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 py-4 bg-[#C9956A] text-[#160A05] hover:bg-[#d6a57c] active:bg-[#B8806A] transition-colors" style={B}>
               <MessageCircle className="w-4 h-4 fill-current" />
               <span className="text-[10px] sm:text-xs font-medium tracking-[0.1em] uppercase">WhatsApp</span>
             </a>

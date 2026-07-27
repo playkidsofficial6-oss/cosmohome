@@ -10,6 +10,7 @@ import {
 import { D, M, B, GOLD, EASE, EASE2, GRAIN, WA_PATH } from "../lib/constants";
 import { FadeUp, Tag } from "../components/ui/shared";
 import { SERVICES_DATA, ServiceData } from "../lib/servicesData";
+import { getWhatsAppUrl } from "../lib/whatsapp";
 
 // Custom type for Category Icon
 type IconType = React.FC<{ size?: number; className?: string; strokeWidth?: number }>;
@@ -467,7 +468,7 @@ export default function ServicesListPage() {
                 className="flex flex-col sm:flex-row gap-4 mb-4"
               >
                 <motion.a
-                  href="https://wa.me/919495511628"
+                  href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02, boxShadow: "0 10px 30px rgba(201,149,106,0.3)" }}
@@ -733,7 +734,7 @@ export default function ServicesListPage() {
                     {/* Action buttons */}
                     <div className="mt-auto pt-4 border-t border-[#2C1810]/5 flex items-center gap-3 shrink-0">
                       <motion.a
-                        href="https://wa.me/919495511628"
+                        href={getWhatsAppUrl()}
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.02 }}
@@ -805,7 +806,7 @@ export default function ServicesListPage() {
 
                 <div>
                   <motion.a
-                    href="https://wa.me/919495511628"
+                    href={getWhatsAppUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.03, boxShadow: "0 0 32px rgba(201,149,106,0.3)" }}
@@ -1065,7 +1066,7 @@ export default function ServicesListPage() {
             <div className="flex flex-col sm:flex-row gap-3.5 justify-center items-center">
               {/* Glowing Book Button */}
               <motion.a
-                href="https://wa.me/919495511628"
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03, y: -2, boxShadow: "0 12px 30px rgba(201,149,106,0.35)" }}
@@ -1081,7 +1082,7 @@ export default function ServicesListPage() {
 
               {/* WhatsApp consultation */}
               <motion.a
-                href="https://api.whatsapp.com/send?phone=919495511628"
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02, y: -2, borderColor: "#C9956A", color: "#C9956A", backgroundColor: "rgba(201,149,106,0.05)" }}

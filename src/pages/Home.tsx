@@ -8,7 +8,7 @@ import { D, M, B, GOLD, EASE, GRAIN, STEPS, DOCTORS, STANDARDS, type Step } from
 import { FadeUp, SlideIn, Rule, Tag, InputField } from "../components/ui/shared";
 import { TeamSection } from "../components/home/TeamSection";
 import { Transformation } from "../components/home/Transformation";
-import { openWhatsApp } from "../lib/whatsapp";
+import { openWhatsApp, getWhatsAppUrl, buildConsultationMessage } from "../lib/whatsapp";
 export function Hero({ ready }: { ready: boolean }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -194,7 +194,7 @@ export function Hero({ ready }: { ready: boolean }) {
             transition={{ duration: 0.7, delay: d(1.2) }}
           >
             <motion.a
-              href="https://wa.me/919495511628"
+              href={getWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03, backgroundColor: "#734A37", boxShadow: "0 12px 32px rgba(140,93,71,0.25)" }}
@@ -289,24 +289,30 @@ export function Hero({ ready }: { ready: boolean }) {
           </motion.p>
 
           <h1 className="text-[#2C1810] text-[2.75rem] leading-[1.08] mb-3.5 font-light" style={D}>
-            {["Beauty", "Feels", "At Home."].map((word, i) => (
-              <div key={word} className="overflow-hidden">
-                <motion.span className={`block ${i === 1 ? "serif  text-[#C9956A]" : ""}`}
-                  initial={{ y: "105%" }} animate={ready ? { y: 0 } : {}}
-                  transition={{ duration: 1.0, delay: d(0.45 + i * 0.15), ease: EASE }}>
-                  {word}
-                </motion.span>
-              </div>
-            ))}
+            <div className="overflow-hidden">
+              <motion.span className="block"
+                initial={{ y: "105%" }} animate={ready ? { y: 0 } : {}}
+                transition={{ duration: 1.0, delay: d(0.45), ease: EASE }}>
+                Beauty <span className="serif text-[#C9956A]">Feels</span>
+              </motion.span>
+            </div>
+            <div className="overflow-hidden">
+              <motion.span className="block"
+                initial={{ y: "105%" }} animate={ready ? { y: 0 } : {}}
+                transition={{ duration: 1.0, delay: d(0.6), ease: EASE }}>
+                At Home.
+              </motion.span>
+            </div>
           </h1>
 
           <motion.div className="w-8 h-px bg-[#2C1810]/20 mb-3.5"
             initial={{ scaleX: 0 }} animate={ready ? { scaleX: 1 } : {}} transition={{ delay: d(0.9), duration: 0.8 }} />
 
-          <motion.p className="text-[#5C4A42] text-sm leading-relaxed max-w-[280px] font-light" style={B}
+          <motion.p className="text-[#5C4A42] text-[13px] leading-relaxed max-w-[300px] font-light" style={B}
             initial={{ opacity: 0, y: 18 }} animate={ready ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: d(0.95) }}>
-            Expert-led aesthetic medicine designed around confidence, care, and your most natural beauty.
+            Expert-led aesthetic medicine designed around<br />
+            confidence, care, and your most natural beauty.
           </motion.p>
 
           <motion.div
@@ -334,7 +340,7 @@ export function Hero({ ready }: { ready: boolean }) {
             ))}
           </motion.div>
 
-          <motion.a href="https://wa.me/919495511628" target="_blank" rel="noopener noreferrer"
+          <motion.a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer"
             whileTap={{ scale: 0.98 }}
             className="w-full py-4.5 h-[52px] bg-[#8C5D47] text-[#FAF7F2] text-[11px] tracking-[0.25em] uppercase rounded-[16px] flex items-center justify-center gap-2.5 font-semibold shadow-[0_12px_24px_rgba(140,93,71,0.25)] relative overflow-hidden group" style={B}
             initial={{ opacity: 0, y: 20 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: d(1.3), duration: 0.8 }}>
@@ -403,7 +409,7 @@ export function Philosophy() {
             <FadeUp delay={0.25}>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full">
                 <motion.a
-                  href="https://wa.me/919495511628"
+                  href={getWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.03, backgroundColor: "#734A37" }}
@@ -1347,26 +1353,14 @@ export function Invitation() {
 
                     const name = [firstName, lastName].filter(Boolean).join(" ") || "Not provided";
 
-                    const lines = [
-                      "🔔 *NEW CONSULTATION REQUEST*",
-                      "",
-                      "👤 *Patient Details*",
-                      `• Name: ${name}`,
-                      `• Phone: ${phone || "Not provided"}`,
-                      "",
-                      "✨ *Treatment Interest*",
-                      `• ${experienceOfInterest || "General Consultation"}`,
-                      "",
-                      "📝 *Message*",
-                      `"${tellUsALittle || "None"}"`,
-                      "",
-                      "━━━━━━━━━━━━━━━━━━",
-                      "🏥 COSMO HOME",
-                      "Aesthetic Medicine",
-                      "🌐 cosmohome.in",
-                    ];
+                    const msg = buildConsultationMessage({
+                      name,
+                      phone,
+                      treatment: experienceOfInterest,
+                      message: tellUsALittle,
+                    });
 
-                    openWhatsApp(lines.join("\n"));
+                    openWhatsApp(msg);
                     setSent(true);
                   }}
                   className="bg-white/80 backdrop-blur-md border border-[#2C1810]/8 rounded-3xl shadow-[0_16px_48px_rgba(44,24,16,0.06)] p-5 sm:p-8 md:p-10 flex flex-col gap-5">

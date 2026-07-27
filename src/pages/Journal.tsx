@@ -5,6 +5,7 @@ import { Search, ArrowLeft, ArrowRight, Clock, Calendar, User, Tag, Sparkles, Sh
 import { D, M, B, GOLD, EASE } from "../lib/constants";
 import { JOURNAL_ARTICLES, JOURNAL_CATEGORIES, JournalArticle } from "../lib/journalData";
 import { useSEO } from "../lib/useSEO";
+import { getWhatsAppUrl } from "../lib/whatsapp";
 
 export default function JournalPage() {
   const { slug } = useParams<{ slug?: string }>();
@@ -197,7 +198,7 @@ export default function JournalPage() {
               </p>
             </div>
             <motion.a
-              href="https://wa.me/919495511628"
+              href={getWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
@@ -489,7 +490,7 @@ export default function JournalPage() {
             </p>
             <div className="pt-4">
               <a
-                href="https://wa.me/919495511628"
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 bg-[#8C5D47] text-[#FAF7F2] uppercase tracking-[0.18em] text-xs font-semibold px-8 py-4 rounded-[4px] hover:bg-[#A0603A] transition-all shadow-md"
