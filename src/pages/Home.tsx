@@ -1341,16 +1341,23 @@ export function Invitation() {
                     const firstName = inputs[0]?.value || "";
                     const lastName = inputs[1]?.value || "";
                     const phone = inputs[2]?.value || "";
-                    const textarea = form.querySelector("textarea")?.value || "";
+                    const experienceOfInterest = selected || "Not specified";
+                    const tellUsALittle = form.querySelector("textarea")?.value || "";
 
                     const lines = [
-                      "Hello Dr. Ruxana & Cosmo Home Team,",
-                      "I would like to request a consultation:",
-                      (firstName || lastName) ? `Name: ${firstName} ${lastName}`.trim() : "",
-                      phone ? `Phone: ${phone}` : "",
-                      selected ? `Experience of interest: ${selected}` : "",
-                      textarea ? `Note: ${textarea}` : "",
-                    ].filter(Boolean);
+                      "*COSMO HOME | Aesthetic Medicine*",
+                      "----------------------------------------",
+                      "*NEW CONSULTATION REQUEST*",
+                      "",
+                      `• *First Name:* ${firstName || "-"}`,
+                      `• *Last Name:* ${lastName || "-"}`,
+                      `• *Phone:* ${phone || "-"}`,
+                      `• *Experience of Interest:* ${experienceOfInterest}`,
+                      `• *Tell Us A Little:* ${tellUsALittle || "-"}`,
+                      "",
+                      "----------------------------------------",
+                      "_Sent via cosmohome.in_",
+                    ];
 
                     const whatsappUrl = `https://wa.me/919495511628?text=${encodeURIComponent(lines.join("\n"))}`;
                     window.open(whatsappUrl, "_blank");

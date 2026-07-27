@@ -559,29 +559,24 @@ export default function BookConsultation() {
   };
 
   const handleConfirmAppointment = () => {
-    const doctorText = selectedDoctor?.name ? `Doctor: ${selectedDoctor.name}` : "";
-    const dateText = selectedDate ? `Date: ${formatDate(selectedDate)}` : "";
-    const timeText = selectedTime ? `Time: ${selectedTime}` : "";
-    const nameText = formData.fullName ? `Name: ${formData.fullName}` : "";
-    const phoneText = formData.phone ? `Phone: ${formData.countryCode} ${formData.phone}` : "";
-    const emailText = formData.email ? `Email: ${formData.email}` : "";
-    const branchText = formData.branch ? `Branch: ${formData.branch}` : "";
-    const treatmentText = formData.treatment ? `Treatment: ${formData.treatment}` : "";
-    const notesText = formData.notes ? `Notes: ${formData.notes}` : "";
-
     const lines = [
-      "Hello Cosmo Home,",
-      "I would like to book a consultation appointment:",
-      nameText,
-      phoneText,
-      emailText,
-      doctorText,
-      dateText,
-      timeText,
-      branchText,
-      treatmentText,
-      notesText,
-    ].filter(Boolean);
+      "*COSMO HOME | Aesthetic Medicine*",
+      "----------------------------------------",
+      "*APPOINTMENT BOOKING*",
+      "",
+      `• *Patient Name:* ${formData.fullName || "-"}`,
+      `• *Phone:* ${formData.countryCode} ${formData.phone || "-"}`,
+      `• *Email:* ${formData.email || "-"}`,
+      `• *Doctor:* ${selectedDoctor?.name || "-"}`,
+      `• *Date:* ${formatDate(selectedDate)}`,
+      `• *Time:* ${selectedTime}`,
+      `• *Branch:* ${formData.branch || "-"}`,
+      `• *Treatment:* ${formData.treatment || "General Consultation"}`,
+      `• *Notes:* ${formData.notes || "-"}`,
+      "",
+      "----------------------------------------",
+      "_Sent via cosmohome.in_",
+    ];
 
     const message = lines.join("\n");
     const whatsappUrl = `https://wa.me/919495511628?text=${encodeURIComponent(message)}`;

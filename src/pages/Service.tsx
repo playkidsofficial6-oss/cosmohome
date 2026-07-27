@@ -1275,7 +1275,7 @@ export default function ServicePage() {
               </FadeUp>
 
               {/* Compact info card */}
-              <FadeUp delay={0.2} className="hidden lg:block shrink-0">
+              <FadeUp delay={0.2} className="w-full lg:w-auto shrink-0 mt-8 lg:mt-0">
                 <motion.div
                   whileHover={{ y: -5 }}
                   className="p-8 rounded-3xl w-[360px]"
@@ -1298,16 +1298,23 @@ export default function ServicePage() {
                           const firstName = inputs[0]?.value || "";
                           const lastName = inputs[1]?.value || "";
                           const phone = inputs[2]?.value || "";
-                          const textarea = form.querySelector("textarea")?.value || "";
+                          const experienceOfInterest = selected || selectedOption || service.title || "Not specified";
+                          const tellUsALittle = form.querySelector("textarea")?.value || "";
 
                           const lines = [
-                            "Hello Cosmo Home Team,",
-                            `I would like to inquire about ${service.title}:`,
-                            (firstName || lastName) ? `Name: ${firstName} ${lastName}`.trim() : "",
-                            phone ? `Phone: ${phone}` : "",
-                            selectedOption ? `Interest: ${selectedOption}` : "",
-                            textarea ? `Note: ${textarea}` : "",
-                          ].filter(Boolean);
+                            "*COSMO HOME | Aesthetic Medicine*",
+                            "----------------------------------------",
+                            "*NEW CONSULTATION REQUEST*",
+                            "",
+                            `• *First Name:* ${firstName || "-"}`,
+                            `• *Last Name:* ${lastName || "-"}`,
+                            `• *Phone:* ${phone || "-"}`,
+                            `• *Experience of Interest:* ${experienceOfInterest}`,
+                            `• *Tell Us A Little:* ${tellUsALittle || "-"}`,
+                            "",
+                            "----------------------------------------",
+                            "_Sent via cosmohome.in_",
+                          ];
 
                           const whatsappUrl = `https://wa.me/919495511628?text=${encodeURIComponent(lines.join("\n"))}`;
                           window.open(whatsappUrl, "_blank");
