@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { D, M, B, EASE, DOCTORS } from "../lib/constants";
+import { openWhatsApp } from "../lib/whatsapp";
 import {
   ChevronLeft,
   ChevronRight,
@@ -560,27 +561,31 @@ export default function BookConsultation() {
 
   const handleConfirmAppointment = () => {
     const lines = [
-      "*COSMO HOME | Aesthetic Medicine*",
-      "----------------------------------------",
-      "*APPOINTMENT BOOKING*",
+      "🔔 *NEW APPOINTMENT BOOKING*",
       "",
-      `• *Patient Name:* ${formData.fullName || "-"}`,
-      `• *Phone:* ${formData.countryCode} ${formData.phone || "-"}`,
-      `• *Email:* ${formData.email || "-"}`,
-      `• *Doctor:* ${selectedDoctor?.name || "-"}`,
-      `• *Date:* ${formatDate(selectedDate)}`,
-      `• *Time:* ${selectedTime}`,
-      `• *Branch:* ${formData.branch || "-"}`,
-      `• *Treatment:* ${formData.treatment || "General Consultation"}`,
-      `• *Notes:* ${formData.notes || "-"}`,
+      "👤 *Patient Details*",
+      `• Name: ${formData.fullName || "Not provided"}`,
+      `• Phone: ${formData.countryCode} ${formData.phone || "Not provided"}`,
+      `• Email: ${formData.email || "Not provided"}`,
       "",
-      "----------------------------------------",
-      "_Sent via cosmohome.in_",
+      "✨ *Appointment Info*",
+      `• Doctor: ${selectedDoctor?.name || "Not specified"}`,
+      `• Date: ${formatDate(selectedDate)}`,
+      `• Time: ${selectedTime}`,
+      `• Branch: ${formData.branch || "Kochi"}`,
+      `• Treatment: ${formData.treatment || "General Consultation"}`,
+      "",
+      "📝 *Message*",
+      `"${formData.notes || "None"}"`,
+      "",
+      "━━━━━━━━━━━━━━━━━━",
+      "🏥 COSMO HOME",
+      "Aesthetic Medicine",
+      "🌐 cosmohome.in",
     ];
 
     const message = lines.join("\n");
-    const whatsappUrl = `https://wa.me/919495511628?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
+    openWhatsApp(message);
   };
 
   /* ════════════ MOBILE LAYOUT ════════════ */

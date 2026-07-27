@@ -8,6 +8,7 @@ import { D, M, B, GOLD, EASE, GRAIN, STEPS, DOCTORS, STANDARDS, type Step } from
 import { FadeUp, SlideIn, Rule, Tag, InputField } from "../components/ui/shared";
 import { TeamSection } from "../components/home/TeamSection";
 import { Transformation } from "../components/home/Transformation";
+import { openWhatsApp } from "../lib/whatsapp";
 export function Hero({ ready }: { ready: boolean }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -1344,23 +1345,28 @@ export function Invitation() {
                     const experienceOfInterest = selected || "Not specified";
                     const tellUsALittle = form.querySelector("textarea")?.value || "";
 
+                    const name = [firstName, lastName].filter(Boolean).join(" ") || "Not provided";
+
                     const lines = [
-                      "*COSMO HOME | Aesthetic Medicine*",
-                      "----------------------------------------",
-                      "*NEW CONSULTATION REQUEST*",
+                      "🔔 *NEW LEAD RECEIVED*",
                       "",
-                      `• *First Name:* ${firstName || "-"}`,
-                      `• *Last Name:* ${lastName || "-"}`,
-                      `• *Phone:* ${phone || "-"}`,
-                      `• *Experience of Interest:* ${experienceOfInterest}`,
-                      `• *Tell Us A Little:* ${tellUsALittle || "-"}`,
+                      "👤 *Patient Details*",
+                      `• Name: ${name}`,
+                      `• Phone: ${phone || "Not provided"}`,
                       "",
-                      "----------------------------------------",
-                      "_Sent via cosmohome.in_",
+                      "✨ *Treatment Interest*",
+                      `• ${experienceOfInterest || "General Consultation"}`,
+                      "",
+                      "📝 *Message*",
+                      `"${tellUsALittle || "None"}"`,
+                      "",
+                      "━━━━━━━━━━━━━━━━━━",
+                      "🏥 COSMO HOME",
+                      "Aesthetic Medicine",
+                      "🌐 cosmohome.in",
                     ];
 
-                    const whatsappUrl = `https://wa.me/919495511628?text=${encodeURIComponent(lines.join("\n"))}`;
-                    window.open(whatsappUrl, "_blank");
+                    openWhatsApp(lines.join("\n"));
                     setSent(true);
                   }}
                   className="bg-white/80 backdrop-blur-md border border-[#2C1810]/8 rounded-3xl shadow-[0_16px_48px_rgba(44,24,16,0.06)] p-5 sm:p-8 md:p-10 flex flex-col gap-5">

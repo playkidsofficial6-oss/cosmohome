@@ -6,6 +6,7 @@ import { ArrowRight, Star, ShieldCheck, ChevronLeft, ChevronRight, Stethoscope, 
 import { D, M, B, GOLD, EASE, GRAIN, WA_PATH } from "../lib/constants";
 import { CTAButtons, FadeUp, Tag } from "../components/ui/shared";
 import { SERVICES_DATA } from "../lib/servicesData";
+import { openWhatsApp } from "../lib/whatsapp";
 
 function BeforeAfterSlider({ beforeImage, afterImage }: { beforeImage: string; afterImage: string }) {
   const [sliderPos, setSliderPos] = useState(50);
@@ -1298,26 +1299,31 @@ export default function ServicePage() {
                           const firstName = inputs[0]?.value || "";
                           const lastName = inputs[1]?.value || "";
                           const phone = inputs[2]?.value || "";
-                          const experienceOfInterest = selected || selectedOption || service.title || "Not specified";
+                          const experienceOfInterest = selected || service.title || "Not specified";
                           const tellUsALittle = form.querySelector("textarea")?.value || "";
 
+                          const name = [firstName, lastName].filter(Boolean).join(" ") || "Not provided";
+
                           const lines = [
-                            "*COSMO HOME | Aesthetic Medicine*",
-                            "----------------------------------------",
-                            "*NEW CONSULTATION REQUEST*",
+                            "🔔 *NEW CONSULTATION REQUEST*",
                             "",
-                            `• *First Name:* ${firstName || "-"}`,
-                            `• *Last Name:* ${lastName || "-"}`,
-                            `• *Phone:* ${phone || "-"}`,
-                            `• *Experience of Interest:* ${experienceOfInterest}`,
-                            `• *Tell Us A Little:* ${tellUsALittle || "-"}`,
+                            "👤 *Patient Details*",
+                            `• Name: ${name}`,
+                            `• Phone: ${phone || "Not provided"}`,
                             "",
-                            "----------------------------------------",
-                            "_Sent via cosmohome.in_",
+                            "✨ *Treatment Interest*",
+                            `• ${experienceOfInterest || "General Consultation"}`,
+                            "",
+                            "📝 *Message*",
+                            `"${tellUsALittle || "None"}"`,
+                            "",
+                            "━━━━━━━━━━━━━━━━━━",
+                            "🏥 COSMO HOME",
+                            "Aesthetic Medicine",
+                            "🌐 cosmohome.in",
                           ];
 
-                          const whatsappUrl = `https://wa.me/919495511628?text=${encodeURIComponent(lines.join("\n"))}`;
-                          window.open(whatsappUrl, "_blank");
+                          openWhatsApp(lines.join("\n"));
                           setFormSent(true);
                         }}
                         className="flex flex-col gap-5"
