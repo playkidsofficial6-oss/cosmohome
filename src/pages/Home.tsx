@@ -193,7 +193,9 @@ export function Hero({ ready }: { ready: boolean }) {
             transition={{ duration: 0.7, delay: d(1.2) }}
           >
             <motion.a
-              href="/book-consultation"
+              href="https://wa.me/919495511628"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.03, backgroundColor: "#734A37", boxShadow: "0 12px 32px rgba(140,93,71,0.25)" }}
               whileTap={{ scale: 0.97 }}
               className="group inline-flex items-center gap-3 px-8 py-4 bg-[#8C5D47] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase font-semibold transition-all rounded-xl shadow-lg"
@@ -331,7 +333,7 @@ export function Hero({ ready }: { ready: boolean }) {
             ))}
           </motion.div>
 
-          <motion.a href="/book-consultation"
+          <motion.a href="https://wa.me/919495511628" target="_blank" rel="noopener noreferrer"
             whileTap={{ scale: 0.98 }}
             className="w-full py-4.5 h-[52px] bg-[#8C5D47] text-[#FAF7F2] text-[11px] tracking-[0.25em] uppercase rounded-[16px] flex items-center justify-center gap-2.5 font-semibold shadow-[0_12px_24px_rgba(140,93,71,0.25)] relative overflow-hidden group" style={B}
             initial={{ opacity: 0, y: 20 }} animate={ready ? { opacity: 1, y: 0 } : {}} transition={{ delay: d(1.3), duration: 0.8 }}>
@@ -400,7 +402,9 @@ export function Philosophy() {
             <FadeUp delay={0.25}>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full">
                 <motion.a
-                  href="/book-consultation"
+                  href="https://wa.me/919495511628"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.03, backgroundColor: "#734A37" }}
                   whileTap={{ scale: 0.97 }}
                   className="group flex justify-center items-center gap-2.5 px-6 py-4 w-full sm:w-auto bg-[#8C5D47] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase font-semibold transition-all rounded-xl shadow-lg"
@@ -728,7 +732,7 @@ export function Experiences() {
                     </motion.div>
                   </div>
                 </motion.button>
- 
+
                 {/* Mobile Content (Always Expanded) */}
                 <div className="block lg:hidden overflow-hidden">
                   <div className="pb-8 pt-2">
@@ -876,9 +880,9 @@ export function Experiences() {
                         <motion.button
                           key={item.name}
                           onClick={() => navigate(`/service/${item.slug}`)}
-                          whileHover={{ 
+                          whileHover={{
                             y: -2,
-                            borderColor: "#C9956A", 
+                            borderColor: "#C9956A",
                             backgroundColor: "rgba(201,149,106,0.08)",
                             boxShadow: "0 6px 20px rgba(201,149,106,0.12)"
                           }}
@@ -1311,7 +1315,7 @@ export function Invitation() {
             </p>
             <div className="flex flex-col gap-4 mb-10">
               {[
-                { label: "Phone", value: "+91 99463 36480" },
+                { label: "Phone", value: "+91 94955 11628" },
                 { label: "Email", value: "cosmohomenilambur@gmail.com" },
                 { label: "Address", value: "Kalathinkadavu Rd, Nilambur, Kerala 679329" },
                 { label: "Hours", value: "Mon–Sat · 9am–7pm" },
@@ -1330,7 +1334,28 @@ export function Invitation() {
             <AnimatePresence mode="wait">
               {!sent ? (
                 <motion.form key="form" exit={{ opacity: 0, y: -16 }}
-                  onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const form = e.currentTarget;
+                    const inputs = form.querySelectorAll("input");
+                    const firstName = inputs[0]?.value || "";
+                    const lastName = inputs[1]?.value || "";
+                    const phone = inputs[2]?.value || "";
+                    const textarea = form.querySelector("textarea")?.value || "";
+
+                    const lines = [
+                      "Hello Dr. Ruxana & Cosmo Home Team,",
+                      "I would like to request a consultation:",
+                      (firstName || lastName) ? `Name: ${firstName} ${lastName}`.trim() : "",
+                      phone ? `Phone: ${phone}` : "",
+                      selected ? `Experience of interest: ${selected}` : "",
+                      textarea ? `Note: ${textarea}` : "",
+                    ].filter(Boolean);
+
+                    const whatsappUrl = `https://wa.me/919495511628?text=${encodeURIComponent(lines.join("\n"))}`;
+                    window.open(whatsappUrl, "_blank");
+                    setSent(true);
+                  }}
                   className="bg-white/80 backdrop-blur-md border border-[#2C1810]/8 rounded-3xl shadow-[0_16px_48px_rgba(44,24,16,0.06)] p-5 sm:p-8 md:p-10 flex flex-col gap-5">
                   <p className="text-xl text-[#2C1810] mb-1" style={{ ...D, }}>Begin your story. 🌸</p>
 

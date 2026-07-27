@@ -233,14 +233,14 @@ export default function ExperiencePage() {
                   Book a clinical consultation. Dr. Ruxana will map your skin barrier, evaluate your aesthetic goals, and construct your personalised journey timeline.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3.5 mb-8">
-                  <motion.a href="/book-consultation"
+                  <motion.a href="https://wa.me/919495511628" target="_blank" rel="noopener noreferrer"
                     whileHover={{ scale: 1.03, y: -2, boxShadow: "0 12px 30px rgba(201,149,106,0.35)" }}
                     whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.18em] uppercase rounded-xl shadow-lg shadow-[#C9956A]/20 font-semibold group transition-all" style={B}>
                     Request Consultation
                     <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform shrink-0" />
                   </motion.a>
-                  <motion.a href="https://api.whatsapp.com/send?phone=919946336480" target="_blank" rel="noopener noreferrer"
+                  <motion.a href="https://api.whatsapp.com/send?phone=919495511628" target="_blank" rel="noopener noreferrer"
                     whileHover={{ scale: 1.02, y: -2, borderColor: "#C9956A", color: "#C9956A", backgroundColor: "rgba(201,149,106,0.03)" }} whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 border border-[#2C1810]/15 text-[#2C1810] text-xs tracking-[0.15em] uppercase rounded-xl transition-all font-semibold" style={B}>
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366" className="shrink-0"><path d={WA_PATH} /></svg>
@@ -279,6 +279,23 @@ export default function ExperiencePage() {
                         exit={{ opacity: 0, y: -12 }}
                         onSubmit={(e) => {
                           e.preventDefault();
+                          const form = e.currentTarget;
+                          const inputs = form.querySelectorAll("input");
+                          const firstName = inputs[0]?.value || "";
+                          const lastName = inputs[1]?.value || "";
+                          const phone = inputs[2]?.value || "";
+                          const textarea = form.querySelector("textarea")?.value || "";
+
+                          const lines = [
+                            "Hello Cosmo Home Team,",
+                            "I would like to inquire about this experience:",
+                            (firstName || lastName) ? `Name: ${firstName} ${lastName}`.trim() : "",
+                            phone ? `Phone: ${phone}` : "",
+                            textarea ? `Note: ${textarea}` : "",
+                          ].filter(Boolean);
+
+                          const whatsappUrl = `https://wa.me/919495511628?text=${encodeURIComponent(lines.join("\n"))}`;
+                          window.open(whatsappUrl, "_blank");
                           setFormSent(true);
                         }}
                         className="flex flex-col gap-5"

@@ -483,7 +483,9 @@ export default function DrRuxanaPage() {
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-4 items-center">
                 <motion.a
-                  href="/book-consultation"
+                  href="https://wa.me/919495511628"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.04, boxShadow: "0 10px 30px rgba(201,149,106,0.3)" }}
                   whileTap={{ scale: 0.98 }}
                   className="px-8 sm:px-10 py-5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase rounded-xl font-bold transition-all duration-300 shadow-md shadow-[#C9956A]/10 text-center"

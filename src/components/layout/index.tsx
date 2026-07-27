@@ -438,7 +438,7 @@ export function Nav({ ready }: { ready: boolean }) {
                   </div>
                 </div>
               </a>
-              <button className="bg-[#C9956A] rounded-[4px] text-[#FAF7F2] text-[10px] tracking-widest px-4 py-2 uppercase font-medium hover:bg-[#A0603A] transition-colors" style={B} onClick={() => { setOpen(false); navigate('/book-consultation'); }}>
+              <button className="bg-[#C9956A] rounded-[4px] text-[#FAF7F2] text-[10px] tracking-widest px-4 py-2 uppercase font-medium hover:bg-[#A0603A] transition-colors" style={B} onClick={() => { setOpen(false); window.open('https://wa.me/919495511628', '_blank'); }}>
                 Book
               </button>
             </div>
@@ -564,7 +564,7 @@ export function Nav({ ready }: { ready: boolean }) {
 
               {/* Book Consultation CTA */}
               <button
-                onClick={() => { setOpen(false); navigate("/book-consultation"); }}
+                onClick={() => { setOpen(false); window.open("https://wa.me/919495511628", "_blank"); }}
                 className="w-full mt-2 py-5 px-6 bg-[#8C5D47] text-[#FAF7F2] uppercase tracking-[0.15em] text-xs font-semibold flex justify-between items-center transition-colors hover:bg-[#734A37] shadow-[0_0_35px_rgba(140,93,71,0.2)]"
                 style={B}
               >
@@ -577,13 +577,13 @@ export function Nav({ ready }: { ready: boolean }) {
 
               {/* Bottom Contact Buttons */}
               <div className="pt-8 pb-8 flex flex-col gap-4">
-                <a href="tel:09946336480"
+                <a href="tel:09495511628"
                   className="flex items-center justify-center gap-3 w-full py-5 bg-white border border-[#2C1810]/15 text-[#2C1810] hover:bg-[#2C1810]/5 transition-colors"
                 >
                   <Phone size={16} className="text-[#C9956A]" />
-                  <span className="text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase" style={B}>Call 099463 36480</span>
+                  <span className="text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase" style={B}>Call 094955 11628</span>
                 </a>
-                <a href="https://api.whatsapp.com/send?phone=919946336480" target="_blank" rel="noopener noreferrer"
+                <a href="https://api.whatsapp.com/send?phone=919495511628" target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 w-full py-5 bg-[#C9956A] text-[#FAF7F2] transition-colors"
                 >
                   <MessageCircle size={16} className="fill-current" />
@@ -648,7 +648,7 @@ export function Footer() {
                 { label: "Journal & Insights", href: "/journal" },
                 { label: "Our Team", href: "/#our-team" },
                 { label: "Our Standards", href: "/#our-standards" },
-                { label: "Begin Your Story", href: "/book-consultation" }
+                { label: "Begin Your Story", href: "https://wa.me/919495511628" }
               ]
             },
           ].map(({ heading, links }) => (
@@ -657,7 +657,16 @@ export function Footer() {
               <ul className="flex flex-col gap-3">
                 {links.map(link => (
                   <li key={link.label}>
-                    <motion.a href={link.href} whileHover={{ x: 3 }} className="text-sm text-[#5C4A42] hover:text-[#2C1810] transition-colors block" style={B}>{link.label}</motion.a>
+                    <motion.a 
+                      href={link.href} 
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      whileHover={{ x: 3 }} 
+                      className="text-sm text-[#5C4A42] hover:text-[#2C1810] transition-colors block" 
+                      style={B}
+                    >
+                      {link.label}
+                    </motion.a>
                   </li>
                 ))}
               </ul>
@@ -691,11 +700,11 @@ export function MobileBottomCTA() {
           className="fixed bottom-0 left-0 right-0 z-50 block md:hidden bg-[#160A05]/95 backdrop-blur-md border-t border-[#C9956A]/20 shadow-2xl"
         >
           <div className="grid grid-cols-2 gap-px bg-[#FAF7F2]/10">
-            <a href="tel:09946336480" className="flex items-center justify-center space-x-2 py-4 bg-[#1C0E08] text-[#FAF7F2] hover:bg-[#2C1810] active:bg-[#160A05] transition-colors" style={B}>
+            <a href="tel:09495511628" className="flex items-center justify-center space-x-2 py-4 bg-[#1C0E08] text-[#FAF7F2] hover:bg-[#2C1810] active:bg-[#160A05] transition-colors" style={B}>
               <Phone className="w-4 h-4 text-[#C9956A]" />
               <span className="text-[10px] sm:text-xs font-medium tracking-[0.1em] uppercase">Call Cosmo Home</span>
             </a>
-            <a href="https://api.whatsapp.com/send?phone=919946336480" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 py-4 bg-[#C9956A] text-[#160A05] hover:bg-[#d6a57c] active:bg-[#B8806A] transition-colors" style={B}>
+            <a href="https://api.whatsapp.com/send?phone=919495511628" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 py-4 bg-[#C9956A] text-[#160A05] hover:bg-[#d6a57c] active:bg-[#B8806A] transition-colors" style={B}>
               <MessageCircle className="w-4 h-4 fill-current" />
               <span className="text-[10px] sm:text-xs font-medium tracking-[0.1em] uppercase">WhatsApp</span>
             </a>

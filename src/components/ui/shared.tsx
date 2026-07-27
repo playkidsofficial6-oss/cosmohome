@@ -136,13 +136,13 @@ export function InputField({ label, type = "text", placeholder }: { label: strin
 export function CTAButtons({ light = false }: { light?: boolean }) {
   return (
     <div className="flex flex-col sm:flex-row gap-3">
-      <motion.a href="/book-consultation"
+      <motion.a href="https://wa.me/919495511628" target="_blank" rel="noopener noreferrer"
         whileHover={{ scale: 1.04, boxShadow: "0 0 36px rgba(201,149,106,0.55)" }}
         whileTap={{ scale: 0.97 }}
         className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.22em] uppercase whitespace-nowrap rounded-xl shadow-xl shadow-[#C9956A]/30 font-semibold group" style={B}>
         Book Consultation <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform shrink-0" />
       </motion.a>
-      <motion.a href="https://wa.me/919946336480" target="_blank" rel="noopener noreferrer"
+      <motion.a href="https://wa.me/919495511628" target="_blank" rel="noopener noreferrer"
         whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
         className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl border border-[#C9956A]/40 hover:border-[#C9956A] text-[#C9956A] hover:bg-[#C9956A]/5 text-xs tracking-[0.18em] uppercase whitespace-nowrap transition-all duration-300 font-semibold select-none" style={B}>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366" className="shrink-0"><path d={WA_PATH} /></svg>

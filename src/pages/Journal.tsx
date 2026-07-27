@@ -197,7 +197,9 @@ export default function JournalPage() {
               </p>
             </div>
             <motion.a
-              href="/book-consultation"
+              href="https://wa.me/919495511628"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               className="z-10 shrink-0 bg-[#8C5D47] text-[#FAF7F2] px-7 py-3.5 rounded-[4px] text-xs font-semibold tracking-[0.15em] uppercase hover:bg-[#A0603A] transition-all flex items-center gap-2.5 shadow-md"
@@ -486,14 +488,16 @@ export default function JournalPage() {
               Have specific skin concerns? Speak directly with Dr. Ruxana for an ethical, evidence-based treatment plan tailored to you.
             </p>
             <div className="pt-4">
-              <Link
-                to="/book-consultation"
+              <a
+                href="https://wa.me/919495511628"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 bg-[#8C5D47] text-[#FAF7F2] uppercase tracking-[0.18em] text-xs font-semibold px-8 py-4 rounded-[4px] hover:bg-[#A0603A] transition-all shadow-md"
                 style={B}
               >
                 Book Your Consultation
                 <ArrowRight size={16} />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

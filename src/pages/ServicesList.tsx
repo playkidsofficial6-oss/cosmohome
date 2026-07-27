@@ -467,7 +467,9 @@ export default function ServicesListPage() {
                 className="flex flex-col sm:flex-row gap-4 mb-4"
               >
                 <motion.a
-                  href="/book-consultation"
+                  href="https://wa.me/919495511628"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.02, boxShadow: "0 10px 30px rgba(201,149,106,0.3)" }}
                   whileTap={{ scale: 0.98 }}
                   className="relative overflow-hidden inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase rounded-xl font-semibold shadow-lg shadow-[#C9956A]/20 transition-all group"
@@ -731,7 +733,9 @@ export default function ServicesListPage() {
                     {/* Action buttons */}
                     <div className="mt-auto pt-4 border-t border-[#2C1810]/5 flex items-center gap-3 shrink-0">
                       <motion.a
-                        href="/book-consultation"
+                        href="https://wa.me/919495511628"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         className="flex-1 text-center py-3.5 px-4 bg-[#C9956A] text-[#FAF7F2] text-[10px] tracking-widest uppercase rounded-xl font-bold shadow-md shadow-[#C9956A]/10 hover:bg-[#b88057] transition-all"
@@ -801,7 +805,9 @@ export default function ServicesListPage() {
 
                 <div>
                   <motion.a
-                    href="/book-consultation"
+                    href="https://wa.me/919495511628"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.03, boxShadow: "0 0 32px rgba(201,149,106,0.3)" }}
                     whileTap={{ scale: 0.97 }}
                     className="inline-flex items-center gap-3 px-8 py-4.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.2em] uppercase rounded-xl font-medium shadow-lg shadow-[#C9956A]/10"
@@ -1059,7 +1065,9 @@ export default function ServicesListPage() {
             <div className="flex flex-col sm:flex-row gap-3.5 justify-center items-center">
               {/* Glowing Book Button */}
               <motion.a
-                href="/book-consultation"
+                href="https://wa.me/919495511628"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.03, y: -2, boxShadow: "0 12px 30px rgba(201,149,106,0.35)" }}
                 whileTap={{ scale: 0.98 }}
                 className="relative inline-flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#C9956A] text-[#FAF7F2] text-xs tracking-[0.18em] uppercase rounded-xl font-semibold overflow-hidden group shadow-lg shadow-[#C9956A]/20 transition-all"
@@ -1073,7 +1081,7 @@ export default function ServicesListPage() {
 
               {/* WhatsApp consultation */}
               <motion.a
-                href="https://api.whatsapp.com/send?phone=919946336480"
+                href="https://api.whatsapp.com/send?phone=919495511628"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02, y: -2, borderColor: "#C9956A", color: "#C9956A", backgroundColor: "rgba(201,149,106,0.05)" }}
