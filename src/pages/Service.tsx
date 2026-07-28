@@ -293,7 +293,7 @@ export default function ServicePage() {
                 </div>
 
                 {/* InBody District Badge with Decorative Side Accents */}
-                {(slug === "inbody-380" || slug === "inbody-270") && (
+                {slug === "inbody-270" && (
                   <div className="relative inline-block w-full sm:w-auto">
                     {/* Top-Right Radiant Rays Accent */}
                     <motion.div
@@ -391,7 +391,7 @@ export default function ServicePage() {
             </FadeUp>
 
             {/* Mobile-only Before & After section in the requested format */}
-            {beforeAfter && slug !== "inbody-380" && slug !== "inbody-270" && (
+            {beforeAfter && slug !== "inbody-270" && (
               <div className="block md:hidden mb-8 w-full">
                 {/* Heading */}
                 <div className="mb-4">
@@ -464,7 +464,7 @@ export default function ServicePage() {
         </section>
 
         {/* Desktop-only Before & After (Second Section) */}
-        {beforeAfter && slug !== "inbody-380" && slug !== "inbody-270" && (
+        {beforeAfter && slug !== "inbody-270" && (
           <section className="hidden md:block pt-24 pb-10 px-6 md:px-16 bg-[#FAF7F2]">
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -585,8 +585,8 @@ export default function ServicePage() {
           </section>
         )} */}
 
-        {/* InBody 380 Diagnostic Results Section */}
-        {(slug === "inbody-380" || slug === "inbody-270") && (
+        {/* InBody 270 Diagnostic Results Section */}
+        {slug === "inbody-270" && (
           <section className="py-10 md:py-14 px-5 sm:px-10 md:px-16 bg-[#FAF6F0] border-t border-[#2C1810]/5 overflow-hidden">
             <div className="max-w-7xl mx-auto">
               {/* Heading */}
@@ -594,7 +594,7 @@ export default function ServicePage() {
                 <FadeUp>
                   <Tag>Diagnostic Sheets</Tag>
                   <h2 className="text-3xl sm:text-4xl md:text-5xl text-[#2C1810] leading-[1.05] mt-3" style={D}>
-                    Your Detailed <span className="serif text-[#C9956A]">{slug === "inbody-270" ? "InBody 270 Report" : "InBody 380 Report"}</span>
+                    Your Detailed <span className="serif text-[#C9956A]">InBody 270 Report</span>
                   </h2>
                   <p className="text-sm md:text-base text-[#5C4A42] max-w-xl mx-auto mt-4 leading-relaxed font-light" style={B}>
                     Every scan generates a high-clarity clinical readout mapping your precise body composition, muscle balance, and cellular metrics.
@@ -693,7 +693,7 @@ export default function ServicePage() {
 
                           <img
                             src="/services/body-inbody-380/380-result1.jpg"
-                            alt={slug === "inbody-270" ? "InBody 270 Body Composition Result Sheet" : "InBody 380 Body Composition Result Sheet"}
+                            alt="InBody 270 Body Composition Result Sheet"
                             className="w-full h-auto object-contain max-h-[580px] rounded-2xl transition-transform duration-500 group-hover:scale-[1.01]"
                           />
                         </div>
@@ -978,7 +978,7 @@ export default function ServicePage() {
         {/* ══ 5. SESSION PLAN — interactive ══ */}
         <section className="py-6 md:py-14 bg-[#FAF6F0] relative overflow-hidden border-t border-[#2C1810]/5">
           {(() => {
-            const stepPrefix = (service.id === "inbody-380" || service.id === "inbody-270") ? "Inclusion" : "Session";
+            const stepPrefix = service.id === "inbody-270" ? "Inclusion" : "Session";
             return (
               <>
                 <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: GRAIN, backgroundSize: "180px" }} />

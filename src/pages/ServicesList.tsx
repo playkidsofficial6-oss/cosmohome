@@ -74,7 +74,7 @@ const CATEGORY_MAPPING: Record<string, string[]> = {
     "laser-toning",
     "carbon-peel"
   ],
-  Body: ["muscle-sculpting", "body-contouring", "fat-reduction", "body-tightening", "inbody-380", "inbody-270"],
+  Body: ["muscle-sculpting", "body-contouring", "fat-reduction", "body-tightening", "inbody-270"],
   Injectables: [
     "prp",
     "gfc",
@@ -100,11 +100,6 @@ const SERVICES_BREADCRUMB_MAP: Record<string, string> = {
   "phototherapy": "Face : Phototherapy",
   "excimer-laser": "Face : Excimer Laser",
 
-  // Skin
-  "co2-laser": "Skin : CO2 Laser",
-  "skin-co2-laser": "Skin : CO2 Laser",
-  "laser-toning": "Skin : Laser Toning",
-
   // Hair
   "laser-hair-reduction": "Hair : Laser Hair Reduction",
 
@@ -113,7 +108,6 @@ const SERVICES_BREADCRUMB_MAP: Record<string, string> = {
   "body-contouring": "Body : Body Contouring",
   "fat-reduction": "Body : Fat Reduction",
   "body-tightening": "Body : Body Tightening",
-  "inbody-380": "Body : InBody 380",
   "inbody-270": "Body : InBody 270",
 
   // Face -> Anti Ageing
@@ -389,9 +383,6 @@ export default function ServicesListPage() {
 
   // Filter services based on category selection
   const filteredServiceKeys = Object.keys(SERVICES_DATA).filter((key) => {
-    // Only show treatments that are defined in the menu tags mapping (menu-only filter)
-    if (!SERVICE_TAG_MAPPING[key]) return false;
-
     if (selectedCategory === "all") return true;
     const mappedIds = CATEGORY_MAPPING[selectedCategory] || [];
     return mappedIds.includes(key);
