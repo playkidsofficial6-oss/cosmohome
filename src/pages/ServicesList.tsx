@@ -74,7 +74,7 @@ const CATEGORY_MAPPING: Record<string, string[]> = {
     "laser-toning",
     "carbon-peel"
   ],
-  Body: ["muscle-sculpting", "body-contouring", "fat-reduction", "body-tightening", "inbody-380"],
+  Body: ["muscle-sculpting", "body-contouring", "fat-reduction", "body-tightening", "inbody-380", "inbody-270"],
   Injectables: [
     "prp",
     "gfc",
@@ -83,8 +83,40 @@ const CATEGORY_MAPPING: Record<string, string[]> = {
 };
 
 const SERVICE_TAG_MAPPING: Record<string, string> = {
+  "laser-scar-reduction": "Acne Scars",
+  "excimer-laser": "Vitiligo / Psoriasis",
+  "prp": "Hair Loss",
+  "gfc": "Hair Thinning",
+  "exosomes-injectables": "Advanced Regeneration"
+};
+
+const SERVICES_BREADCRUMB_MAP: Record<string, string> = {
+  // Face
+  "hifu": "Face : HIFU",
+  "hydrafacial-medifacial": "Face : Hydrafacial & Medifacial",
+  "mesopeels-carbon-peel": "Face : Mesopeels & Carbon Peel",
+  "laser-pigment-reduction": "Face : Laser Pigment Reduction",
+  "laser-scar-reduction": "Face : Laser Scar Reduction",
+  "phototherapy": "Face : Phototherapy",
+  "excimer-laser": "Face : Excimer Laser",
+
+  // Skin
+  "co2-laser": "Skin : CO2 Laser",
+  "skin-co2-laser": "Skin : CO2 Laser",
+  "laser-toning": "Skin : Laser Toning",
+
+  // Hair
+  "laser-hair-reduction": "Hair : Laser Hair Reduction",
+
+  // Body
+  "muscle-sculpting": "Body : Muscle Sculpting",
+  "body-contouring": "Body : Body Contouring",
+  "fat-reduction": "Body : Fat Reduction",
+  "body-tightening": "Body : Body Tightening",
+  "inbody-380": "Body : InBody 380",
+  "inbody-270": "Body : InBody 270",
+
   // Face -> Anti Ageing
-  "hifu": "Anti Ageing : HIFU",
   "botox": "Anti Ageing : Botox",
   "fillers": "Anti Ageing : Fillers",
   "vampire-lift": "Anti Ageing : Vampire Lift",
@@ -122,13 +154,6 @@ const SERVICE_TAG_MAPPING: Record<string, string> = {
   "hair-mesotherapy": "Hair : Mesotherapy",
   "hair-monothreads": "Hair : Monothreads",
   "hair-laser": "Hair : Laser",
-
-  // Body
-  "muscle-sculpting": "Body : Muscle Sculpting",
-  "body-contouring": "Body : Body Contouring",
-  "fat-reduction": "Body : Fat Reduction",
-  "body-tightening": "Body : Body Tightening",
-  "inbody-380": "Body : InBody 380",
 
   // Injectables
   "prp": "Injectables : PRP",
