@@ -1187,8 +1187,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       subtitle: "Deep radiofrequency collagen remodelling"
     },
   },
-  "inbody-380": {
-    id: "inbody-380",
+  "inbody-270": {
+    id: "inbody-270",
     title: "Stop Guessing.",
     titleEmphasized: "Start Understanding Your Body.",
     experienceNo: "Advanced Diagnostics",
@@ -1216,7 +1216,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     clinicalNoteLabel: "Why every consultation starts here",
     clinicalNote: "✔️ Personalized treatment planning<br/>✔️ Accurate progress tracking<br/>✔️ Better treatment decisions",
-    sideImage: "/services/body-inbody-380/inbody-deatails.webp",
+    sideImage: "/services/body-inbody-380/inbody-deatails-neww.webp",
     whoNeedsTitle: "This scan is",
     whoNeedsTitleEmphasized: "recommended if...",
     whoNeedsDesc: "Highly recommended for patients undergoing muscle toning or fat reduction treatments, starting fitness/wellness programs, or tracking metabolic health.",
@@ -1235,14 +1235,14 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     machineTitle: "Segmental Multi-Frequency",
     machineEmphasized: "Bio-Impedance Analysis.",
-    deviceName: "InBody 380 Body Composition Analyzer",
+    deviceName: "InBody 270 Body Composition Analyzer",
     deviceSub: "US-FDA CLEARED • BIOELECTRICAL IMPEDANCE • CLINICAL DIAGNOSTICS",
-    deviceDesc: "The InBody 380 uses advanced multi-frequency bioelectrical impedance analysis (BIA) with an 8-point tactile electrode system. By sending multiple currents at different frequencies, it penetrates cell membranes to accurately differentiate between intracellular and extracellular water, ensuring high-precision results that correlate closely with gold-standard DEXA scans.",
+    deviceDesc: "The InBody 270 uses advanced multi-frequency bioelectrical impedance analysis (BIA) with an 8-point tactile electrode system. By sending multiple currents at different frequencies, it penetrates cell membranes to accurately differentiate between intracellular and extracellular water, ensuring high-precision results that correlate closely with gold-standard DEXA scans.",
     deviceFeatures: ["8-Point Tactile Electrodes", "Dual Wavelength/Frequency Currents", "Segmental Direct Impedance Analysis (DSM-BIA)", "Zero empirical estimations used"],
-    deviceImage: "/services/body-inbody-380/inbody-380-tech.webp",
-    comparisonTitle: "InBody 380 vs Standard InBody Models",
-    ourDeviceLabel: "InBody 380",
-    standardClinicLabel: "InBody (260s,270s)",
+    deviceImage: "/services/body-inbody-380/inbody-380-tech-neww.webp",
+    comparisonTitle: "InBody 270 vs Standard InBody Models",
+    ourDeviceLabel: "InBody 270",
+    standardClinicLabel: "Standard InBody Models",
     comparisonRows: [
       { label: "Impedance Data", ours: "15 separate impedance measurements (5 segments × 3 frequencies)", standard: "10 impedance measurements only (5 segments × 2 frequencies)" },
       { label: "Water Check", ours: "Differentiates intracellular vs extracellular water (ECW/TBW)", standard: "Total body water only (no cellular water division)" },
@@ -1257,9 +1257,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     sessionPlanTag: "BCA Blueprint",
     sessionPlanDesc: "Each Body Composition Analysis (BCA) at Cosmo Home is a comprehensive clinical assessment designed to provide a precise roadmap for your health and aesthetic journey.",
     sessionPlanSteps: [
-      { n: "01", label: "Full body scan", duration: "", detail: "A fast, non-invasive bioelectrical impedance scan using the InBody 380, segmentally measuring your muscle, fat, and cellular water.", image: "/services/body-inbody-380/inbody-380-tech.webp" },
+      { n: "01", label: "Full body scan", duration: "", detail: "A fast, non-invasive bioelectrical impedance scan using the InBody 270, segmentally measuring your muscle, fat, and cellular water.", image: "/services/body-inbody-380/inbody-380-tech-neww.webp" },
       { n: "02", label: "Doctor consultation", duration: "", detail: "A detailed consultation with our specialist doctors to understand your diagnostic indicators, lifestyle factors, and aesthetic goals.", image: "/services/body-inbody-380/inbody-checkup.webp" },
-      { n: "03", label: "Personalized explanation", duration: "", detail: "A segment-by-segment review of your muscle architecture, visceral fat rating, phase angle, and body water balance so you understand your baseline.", image: "/services/body-inbody-380/inbody-deatails.webp" },
+      { n: "03", label: "Personalized explanation", duration: "", detail: "A segment-by-segment review of your muscle architecture, visceral fat rating, phase angle, and body water balance so you understand your baseline.", image: "/services/body-inbody-380/inbody-deatails-neww.webp" },
       { n: "04", label: "Digital report", duration: "", detail: "Receive a comprehensive digital body composition report sheet containing precise clinical values and historical charts to track your transformation.", image: "/services/body-inbody-380/380-result2.jpg" },
       { n: "05", label: "Treatment recommendations", duration: "if required", detail: "Tailored recommendations for body contouring, muscle building, fat loss, or skin protocols aligned with your clinical body structure.", image: "/services/body-inbody-380/380-result3.jpg" },
       { n: "06", label: "Progress tracking", duration: "", detail: "Consistent tracking baseline to monitor real cellular and structural changes every 4 to 6 weeks, verifying actual fat reduction rather than weight fluctuations.", image: "/services/body-inbody-380/380-result1.jpg" }

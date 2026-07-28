@@ -58,7 +58,7 @@ const MEGA_MENU_CONTENT = {
   },
   Body: {
     icon: BodyIcon,
-    treatments: ["Muscle Sculpting", "Body Contouring", "Fat Reduction", "Body Tightening", "InBody 380"],
+    treatments: ["Muscle Sculpting", "Body Contouring", "Fat Reduction", "Body Tightening", "InBody 270"],
     viewAll: "VIEW ALL BODY TREATMENTS",
     image: "/services/Muscle Sculpting/1.webp",
     desc: "Sculpt and define your body with precision."
