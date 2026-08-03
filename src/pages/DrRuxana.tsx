@@ -166,7 +166,7 @@ export default function DrRuxanaPage() {
                   {/* The Image Wrapper with a high-end drop shadow */}
                   <div className="relative aspect-[3.8/4.5] w-full rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(44,24,16,0.12)] border border-[#E8E1D7]/80 bg-[#E8DDD1]">
                     <img
-                      src="/hero/main banner.webp"
+                      src="/hero/main banner  Ruxana .webp"
                       alt="Dr. Ruxana K at Cosmo Home"
                       className="w-full h-full object-cover object-right transition-transform duration-[1.8s] ease-out group-hover:scale-105"
                     />
