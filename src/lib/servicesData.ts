@@ -3201,7 +3201,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     deviceSub: "CLINICAL SALICYLIC BLENDS • SEBUM CONTROL • PH BALANCED",
     deviceDesc: "We select the precise combination of BHAs at a controlled pH level to safely exfoliate and target acne breakouts at their root.",
     deviceFeatures: ["Salicylic & Mandelic Acid", "Sebum Regulation", "Anti-Inflammatory", "Dermatologist-formulated"],
-    deviceImage: "/services/hydrafacial-medifacial/Hydrafacial  Medifacial.webp",
+    deviceImage: "/services/hydrafacial-medifacial/hydrafacial -medifacial.png",
     comparisonTitle: "COSMO HOME vs Standard Care",
     comparisonRows: [
       { label: "Acid Potency", ours: "Medical BHA targeting acne depth", standard: "Weak over-the-counter exfoliants" },
