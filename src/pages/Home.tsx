@@ -44,7 +44,7 @@ export function Hero({ ready }: { ready: boolean }) {
 
       {/* Mobile Background Image */}
       <motion.img
-        src="/hero/ruxana main banner mob8 copy.webp"
+        src="/hero/banner mob.webp"
         alt="Dr. Ruxana K"
         initial={{ opacity: 0, scale: 1.05, y: 20 }}
         animate={ready ? { opacity: 1, scale: 1, y: 0 } : {}}
@@ -54,7 +54,7 @@ export function Hero({ ready }: { ready: boolean }) {
 
       {/* Background Image ( ivory style ) */}
       <motion.img
-        src="/hero/main banner  Ruxana .webp"
+        src="/hero/banner.webp"
         alt="Dr. Ruxana K"
         initial={{ opacity: 0, scale: 1.05, y: 20 }}
         animate={ready ? { opacity: 1, scale: 1, y: 0 } : {}}
@@ -585,7 +585,7 @@ export function DrRuxana() {
             />
 
             <motion.img
-              src="/hero/ruxana banner-mob.webp"
+              src="/hero/Ruxana banner 2.webp"
               alt="Dr. Ruxana K (MBBS, DDVL)"
               className="w-full h-auto block lg:hidden"
             />
